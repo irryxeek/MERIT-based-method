@@ -1,0 +1,97 @@
+{
+  "split": "val",
+  "scope": "MERIT-to-QVHighlights adaptation; frozen open-source models",
+  "queries": 1550,
+  "status_counts": {
+    "ok": 1541,
+    "failed": 9
+  },
+  "constant_score_queries": 35,
+  "tied_maximum_queries": 1444,
+  "mean_retrieval_rounds": 1.3987096774193548,
+  "mean_query_seconds": 17.314255349324462,
+  "model_requests": {
+    "keys": {
+      "logical_requests": 22670,
+      "attempts": 22670,
+      "seconds": 21213.964867932256,
+      "prompt_tokens": 4052368,
+      "completion_tokens": 1844392,
+      "total_tokens": 5896760,
+      "submitted_images_including_retries": 0
+    },
+    "score": {
+      "logical_requests": 7704,
+      "attempts": 7711,
+      "seconds": 19059.23340352683,
+      "prompt_tokens": 59385843,
+      "completion_tokens": 459507,
+      "total_tokens": 59845350,
+      "submitted_images_including_retries": 325248
+    },
+    "caption": {
+      "logical_requests": 22682,
+      "attempts": 22691,
+      "seconds": 34284.345199139556,
+      "prompt_tokens": 30958076,
+      "completion_tokens": 1860501,
+      "total_tokens": 32818577,
+      "submitted_images_including_retries": 226762
+    },
+    "decide": {
+      "logical_requests": 2168,
+      "attempts": 2168,
+      "seconds": 4472.47989652527,
+      "prompt_tokens": 13136057,
+      "completion_tokens": 46473,
+      "total_tokens": 13182530,
+      "submitted_images_including_retries": 91557
+    },
+    "filter": {
+      "logical_requests": 2168,
+      "attempts": 2168,
+      "seconds": 2470.761455689557,
+      "prompt_tokens": 1875739,
+      "completion_tokens": 182082,
+      "total_tokens": 2057821,
+      "submitted_images_including_retries": 0
+    }
+  },
+  "official_metrics": {
+    "brief": {
+      "HL-min-Fair-mAP": 46.69,
+      "HL-min-Fair-Hit1": 41.68,
+      "HL-min-Good-mAP": 37.85,
+      "HL-min-Good-Hit1": 39.42,
+      "HL-min-VeryGood-mAP": 21.67,
+      "HL-min-VeryGood-Hit1": 31.23
+    },
+    "HL-min-Fair": {
+      "HL-mAP": 46.69,
+      "HL-Hit1": 41.68
+    },
+    "HL-min-Good": {
+      "HL-mAP": 37.85,
+      "HL-Hit1": 39.42
+    },
+    "HL-min-VeryGood": {
+      "HL-mAP": 21.67,
+      "HL-Hit1": 31.23
+    }
+  },
+  "failed_qids": [
+    4508,
+    5612,
+    5427,
+    41,
+    76,
+    6065,
+    7295,
+    5762,
+    166
+  ],
+  "failure_stage_counts": {
+    "memory": 9
+  },
+  "videos_without_complete_memory": 9
+}

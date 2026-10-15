@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-10-16T00:21:31.081349+08:00",
+  "scope": "Publication verification only; no model inference or changes to the historical archive",
+  "byte_identical_to_sources": [
+    "comparisons/qvhighlights/merit_main_2026-10-15/val_report.json",
+    "comparisons/qvhighlights/merit_main_2026-10-15/val_predictions.jsonl",
+    "comparisons/qvhighlights/analysis_2026-10-15/per_query_metrics.csv",
+    "comparisons/qvhighlights/analysis_2026-10-15/timing_per_query.csv",
+    "comparisons/qvhighlights/analysis_2026-10-15/videoarm_initial_per_query.csv",
+    "comparisons/qvhighlights/analysis_2026-10-15/merit_query_sha256.json",
+    "comparisons/qvhighlights/analysis_2026-10-15/analyze.py",
+    "comparisons/qvhighlights/analysis_2026-10-15/videoarm_initial_audit.py"
+  ],
+  "analysis_statistics_match_original": true,
+  "merit_prediction_queries": 1550,
+  "merit_official_metrics_recomputed": {
+    "Fair": {
+      "HL-mAP": 46.69,
+      "HL-Hit1": 41.68
+    },
+    "Good": {
+      "HL-mAP": 37.85,
+      "HL-Hit1": 39.42
+    },
+    "VeryGood": {
+      "HL-mAP": 21.67,
+      "HL-Hit1": 31.23
+    }
+  },
+  "videoarm_initial_audit_recomputed_queries": 419,
+  "videoarm_initial_metrics_bootstrap_and_csv_match_original": true,
+  "analysis_scripts_compile": true,
+  "timing_cli_help_passed": true,
+  "limitations": [
+    "Only 419 final-success-selected VideoARM queries; not full validation.",
+    "Original MERIT memory and request logs are not included; timing summaries were preserved, not remeasured.",
+    "New scoring adaptation and parallel runner remain plans."
+  ],
+  "publication_local_links_checked": 64,
+  "publication_machine_path_and_credential_scan_passed": true,
+  "historical_archive_git_changes": false
+}

@@ -1,0 +1,146 @@
+{
+  "published_at": "2026-10-16T00:22:30.101088+08:00",
+  "scope": "Research reports, completed MERIT predictions, offline comparisons, timing summaries and initialization audit",
+  "historical_archive_changed": false,
+  "transformation": "Replace machine-specific source path prefixes with repository paths/source_runs aliases; update documentation links; parameterize timing script run directory. Predictions and numerical results preserved.",
+  "source_hash_note": "Historical input hashes in analysis files identify original inputs before public path redaction. Use public_sha256 here to verify exported files.",
+  "new_model_inference": false,
+  "files": [
+    {
+      "path": "README.md",
+      "source_label": "Publication-only documentation or verification",
+      "public_sha256": "1a0d0be13b921f4a8524892c4f93225c4f7b356840cd93f668c7ca216b2fdb89",
+      "bytes": 11186
+    },
+    {
+      "path": "comparisons/qvhighlights/README.md",
+      "source_label": "comparisons/qvhighlights/README.md",
+      "source_sha256": "af54742e1355b87bceca62391e46d33077d6977f1fdf7f41650fadc639e68316",
+      "public_sha256": "d9dd285e043622e45196aa2a19e00000893a8d237926d5400d64a75ec9711052",
+      "bytes": 1384
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/PUBLICATION.md",
+      "source_label": "Publication-only documentation or verification",
+      "public_sha256": "ea2ee34f77355cb8187372ffdb01d894146392ceb7838bbda0ffbfe09c7aff41",
+      "bytes": 2335
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/README.md",
+      "source_label": "comparisons/qvhighlights/analysis_2026-10-15/README.md",
+      "source_sha256": "649fccc9a43133667c08f9ebdd6fa3ff2776cc33e47c10425a1047dbd245b6be",
+      "public_sha256": "8a8b9b4ff91fe0d9258be2b9c1e9807c5fee31aac04f36fac899672767d535d0",
+      "bytes": 12754
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/analysis.json",
+      "source_label": "comparisons/qvhighlights/analysis_2026-10-15/analysis.json",
+      "source_sha256": "5f81644bed0af7e2a5ddac88c75af4133f728bb322532d566cac3ec4ff8c710a",
+      "public_sha256": "f5101d44a176041e2aedb1ffaf948c3120ba70ae91e1151e461a53b82873dfed",
+      "bytes": 59578
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/analyze.py",
+      "source_label": "comparisons/qvhighlights/analysis_2026-10-15/analyze.py",
+      "source_sha256": "820cb2752e0f6985cfdef1ee1a96f3136145d2792f30ad34dc9b7bf2ffd10cba",
+      "public_sha256": "820cb2752e0f6985cfdef1ee1a96f3136145d2792f30ad34dc9b7bf2ffd10cba",
+      "bytes": 13614
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/merit_query_sha256.json",
+      "source_label": "comparisons/qvhighlights/analysis_2026-10-15/merit_query_sha256.json",
+      "source_sha256": "f007087b7b26dfae0fe903703681ec6b02050a1ac1430187b5993897907ab897",
+      "public_sha256": "f007087b7b26dfae0fe903703681ec6b02050a1ac1430187b5993897907ab897",
+      "bytes": 120816
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/per_query_metrics.csv",
+      "source_label": "comparisons/qvhighlights/analysis_2026-10-15/per_query_metrics.csv",
+      "source_sha256": "49657f84e16860462d39ab873396bc7eb77c387134e437e6b3de6c6c561420e0",
+      "public_sha256": "49657f84e16860462d39ab873396bc7eb77c387134e437e6b3de6c6c561420e0",
+      "bytes": 1503404
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/publication_verification.json",
+      "source_label": "Publication-only documentation or verification",
+      "public_sha256": "6649f4ce0830035fce16d704e9872682d7a5e9cb5069115220ab1065dca354c3",
+      "bytes": 1734
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/timing_analyze.py",
+      "source_label": "comparisons/qvhighlights/analysis_2026-10-15/timing_analyze.py",
+      "source_sha256": "58a28b57b83f659ec492d2ceb1617cd884b875cbf13440a7a7608e428853f798",
+      "public_sha256": "209509ea714688a2cb802e7aa417c06d5b6c64c1aa339da11f15f1ddacabfffb",
+      "bytes": 6573
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/timing_comparison.json",
+      "source_label": "comparisons/qvhighlights/analysis_2026-10-15/timing_comparison.json",
+      "source_sha256": "4955339e0717ec18f3b8b40dcd281e8290510ba5ece01dedec4876ed4a398ad9",
+      "public_sha256": "41d80038f6c936dc1c667c84d1fc386b177fc1926777bfee88e2ae58ee30069f",
+      "bytes": 4804
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/timing_per_query.csv",
+      "source_label": "comparisons/qvhighlights/analysis_2026-10-15/timing_per_query.csv",
+      "source_sha256": "927d3d664b9547c2c9818de894c3f4249a42e0b64f9fac22e03cd93192b09161",
+      "public_sha256": "927d3d664b9547c2c9818de894c3f4249a42e0b64f9fac22e03cd93192b09161",
+      "bytes": 66395
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/videoarm_initial_audit.json",
+      "source_label": "comparisons/qvhighlights/analysis_2026-10-15/videoarm_initial_audit.json",
+      "source_sha256": "9ecc5de2ca9cdc201becbc2fdb864880001bda025cd09e96f23725aad27a2d53",
+      "public_sha256": "9ecc5de2ca9cdc201becbc2fdb864880001bda025cd09e96f23725aad27a2d53",
+      "bytes": 4039
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/videoarm_initial_audit.py",
+      "source_label": "comparisons/qvhighlights/analysis_2026-10-15/videoarm_initial_audit.py",
+      "source_sha256": "d548485480d03f7110d88e0bc89fd93d40e5b93352f079e0b8ddac24d195c7d9",
+      "public_sha256": "d548485480d03f7110d88e0bc89fd93d40e5b93352f079e0b8ddac24d195c7d9",
+      "bytes": 6365
+    },
+    {
+      "path": "comparisons/qvhighlights/analysis_2026-10-15/videoarm_initial_per_query.csv",
+      "source_label": "comparisons/qvhighlights/analysis_2026-10-15/videoarm_initial_per_query.csv",
+      "source_sha256": "1c67c60c57d906b93ab4543427abcccb516f46f25e56fabd2f4f3bd4977b55de",
+      "public_sha256": "1c67c60c57d906b93ab4543427abcccb516f46f25e56fabd2f4f3bd4977b55de",
+      "bytes": 70375
+    },
+    {
+      "path": "comparisons/qvhighlights/merit_main_2026-10-15/README.md",
+      "source_label": "Publication-only documentation or verification",
+      "public_sha256": "e5b7095581aa6b7772e393198547d524b037c3827d97d77a5b7af588e5f84604",
+      "bytes": 1335
+    },
+    {
+      "path": "comparisons/qvhighlights/merit_main_2026-10-15/val_predictions.jsonl",
+      "source_label": "source_runs/merit_qvh_main_v1-15f5f6e4ee00/val_predictions.jsonl",
+      "source_sha256": "4c77697e7702a5c0aa51f8e35dcc99cd94dd1842c4ffcbac8ea02737f655f0f5",
+      "public_sha256": "4c77697e7702a5c0aa51f8e35dcc99cd94dd1842c4ffcbac8ea02737f655f0f5",
+      "bytes": 776412
+    },
+    {
+      "path": "comparisons/qvhighlights/merit_main_2026-10-15/val_report.json",
+      "source_label": "source_runs/merit_qvh_main_v1-15f5f6e4ee00/val_report.json",
+      "source_sha256": "1cd5decff39ae25b56a2963c8ece3b98a0def7a601d0a4d18bde58b524dd4b21",
+      "public_sha256": "1cd5decff39ae25b56a2963c8ece3b98a0def7a601d0a4d18bde58b524dd4b21",
+      "bytes": 2346
+    },
+    {
+      "path": "docs/research_directions_2026-10-15.md",
+      "source_label": "docs/research_directions_2026-10-15.md",
+      "source_sha256": "47427e2a6f21263cdc8ee8539b16c99778a6aa64ca552ed8447e50a29b3c1779",
+      "public_sha256": "7b3b3acb3486022c536bd83a55875e526560a16ce20d56dd7dde67e089bb4d87",
+      "bytes": 21453
+    },
+    {
+      "path": "docs/research_directions_summary_2026-10-15.md",
+      "source_label": "docs/research_directions_summary_2026-10-15.md",
+      "source_sha256": "4c451c539c1d02172f8189d2fa9ea0752b1143d55f07db06a584bc0335ebbe9d",
+      "public_sha256": "b34105e2699aecb09fbdc94785ee15edd6909ebff7ef190b6f042a7eba4e6bad",
+      "bytes": 13316
+    }
+  ]
+}

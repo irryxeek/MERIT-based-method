@@ -1,0 +1,129 @@
+{
+  "scope": "Post-hoc rescoring of archived initialization and final outputs; no model calls",
+  "warning": "419 final-success-selected queries; not a full baseline run or an unselected ablation",
+  "queries": 419,
+  "unchanged_score_vectors": 233,
+  "changed_score_vectors": 186,
+  "changed_clip_scores": 849,
+  "metrics": {
+    "initial": {
+      "Fair_mAP": 60.01,
+      "Fair_Hit1": 61.34,
+      "Good_mAP": 49.98,
+      "Good_Hit1": 57.76,
+      "VeryGood_mAP": 29.01,
+      "VeryGood_Hit1": 44.63
+    },
+    "final": {
+      "Fair_mAP": 60.55,
+      "Fair_Hit1": 63.01,
+      "Good_mAP": 50.55,
+      "Good_Hit1": 58.95,
+      "VeryGood_mAP": 29.45,
+      "VeryGood_Hit1": 45.58
+    }
+  },
+  "final_minus_initial": {
+    "queries": 419,
+    "source_videos": 138,
+    "metrics": {
+      "Fair_mAP": {
+        "delta_pp": 0.5365530146867844,
+        "ci95_pp": [
+          -0.10317603457129709,
+          1.200769310033382
+        ],
+        "wins": 88,
+        "ties": 265,
+        "losses": 66
+      },
+      "Fair_Hit1": {
+        "delta_pp": 1.6706443914081146,
+        "ci95_pp": [
+          -0.2512721035910028,
+          3.712871287128713
+        ],
+        "wins": 13,
+        "ties": 400,
+        "losses": 6
+      },
+      "Good_mAP": {
+        "delta_pp": 0.5655170024533922,
+        "ci95_pp": [
+          -0.06320628424594552,
+          1.2044685051684971
+        ],
+        "wins": 93,
+        "ties": 261,
+        "losses": 65
+      },
+      "Good_Hit1": {
+        "delta_pp": 1.1933174224343674,
+        "ci95_pp": [
+          -0.9501187648456056,
+          3.3680161058742724
+        ],
+        "wins": 13,
+        "ties": 398,
+        "losses": 8
+      },
+      "VeryGood_mAP": {
+        "delta_pp": 0.44476082594087035,
+        "ci95_pp": [
+          0.11259127046909062,
+          0.7734463659005366
+        ],
+        "wins": 88,
+        "ties": 277,
+        "losses": 54
+      },
+      "VeryGood_Hit1": {
+        "delta_pp": 0.954653937947494,
+        "ci95_pp": [
+          -1.152073732718894,
+          3.0445262069211467
+        ],
+        "wins": 13,
+        "ties": 397,
+        "losses": 9
+      }
+    }
+  },
+  "merit_shared_native_413": {
+    "initial": {
+      "Fair_mAP": 60.06627599549728,
+      "Fair_Hit1": 61.743341404358354,
+      "Good_mAP": 50.11531129777288,
+      "Good_Hit1": 58.11138014527845,
+      "VeryGood_mAP": 28.999879988965287,
+      "VeryGood_Hit1": 44.794188861985475
+    },
+    "final": {
+      "Fair_mAP": 60.56981769319531,
+      "Fair_Hit1": 63.43825665859564,
+      "Good_mAP": 50.649298770111415,
+      "Good_Hit1": 59.32203389830509,
+      "VeryGood_mAP": 29.42889452222706,
+      "VeryGood_Hit1": 45.76271186440678
+    }
+  },
+  "bootstrap": {
+    "replicates": 10000,
+    "seed": 42,
+    "cluster": "source video: vid.rsplit(\"_\", 2)[0]",
+    "aggregation": "query-weighted paired mean difference",
+    "ci": "percentile 95%",
+    "multiple_comparison_adjustment": false,
+    "interpretation": "exploratory; not a method-isolating ablation"
+  },
+  "input_sha256": {
+    "2026-10-15_194620/videoarm/runs/formal_c0c8ae9799ad_hd_val_M1/state.sqlite.gz": "b3271c71e4ae4c64e3d40c7ca8ffa5199934849b50d903ecf292031a0fc7a2ac",
+    "2026-10-15_194620/videoarm/runs/formal_c0c8ae9799ad_hd_val_M1/predictions.jsonl": "c9a3edda37f7282bec430e19b6c64a66ac2aabb741d37cfc808ae5286b22c577",
+    "2026-10-15_194620/common/ground_truth_val.jsonl": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02",
+    "analysis_2026-10-15/analysis.json": "5f81644bed0af7e2a5ddac88c75af4133f728bb322532d566cac3ec4ff8c710a",
+    "analysis_2026-10-15/analyze.py": "820cb2752e0f6985cfdef1ee1a96f3136145d2792f30ad34dc9b7bf2ffd10cba",
+    "2026-10-15_194620/common/evaluator/standalone_eval/eval.py": "679e43d8f83ca08a682dbe2e4e3f4629ddc2e6911981bcd0c0e54cf1c0cfabca",
+    "2026-10-15_194620/common/evaluator/standalone_eval/utils.py": "7cb2f9733ffb3fe22d0b4044ef7ba82679b85972a3e7e0ac88b3eee44904d637"
+  },
+  "script_sha256": "d548485480d03f7110d88e0bc89fd93d40e5b93352f079e0b8ddac24d195c7d9"
+}

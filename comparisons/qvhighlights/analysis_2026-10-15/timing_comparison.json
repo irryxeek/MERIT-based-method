@@ -1,0 +1,146 @@
+{
+  "checked_at": "2026-10-15T22:58:05.969970+08:00",
+  "common_success_queries": 413,
+  "common_success_videos": 400,
+  "paired_statistics": {
+    "merit_memory_seconds": {
+      "n": 413,
+      "mean": 36.854650455094045,
+      "median": 36.899881552904844,
+      "p95": 39.232521516084674,
+      "sum": 15220.97063795384
+    },
+    "merit_query_seconds": {
+      "n": 413,
+      "mean": 17.90247073835134,
+      "median": 13.212081959005445,
+      "p95": 35.03884249262046,
+      "sum": 7393.720414939104
+    },
+    "merit_memory_plus_query_seconds": {
+      "n": 413,
+      "mean": 54.757121193445386,
+      "median": 50.600554615142755,
+      "p95": 72.04544613140169,
+      "sum": 22614.691052892944
+    },
+    "merit_vlm_request_seconds": {
+      "n": 413,
+      "mean": 54.04843222267602,
+      "median": 50.0083402718883,
+      "p95": 70.92686911011114,
+      "sum": 22322.002507965197
+    },
+    "merit_tokens": {
+      "n": 413,
+      "mean": 76106.64648910411,
+      "median": 62198.0,
+      "p95": 124539.8,
+      "sum": 31432045.0
+    },
+    "merit_request_attempts": {
+      "n": 413,
+      "mean": 37.83050847457627,
+      "median": 37.0,
+      "p95": 41.0,
+      "sum": 15624.0
+    },
+    "merit_cache_hits": {
+      "n": 413,
+      "mean": 0.004842615012106538,
+      "median": 0.0,
+      "p95": 0.0,
+      "sum": 2.0
+    },
+    "videoarm_active_seconds": {
+      "n": 413,
+      "mean": 85.40927898418497,
+      "median": 80.47422091802582,
+      "p95": 132.4054587544873,
+      "sum": 35274.03222046839
+    },
+    "videoarm_request_elapsed": {
+      "n": 413,
+      "mean": 80.80798749775558,
+      "median": 75.83339837798849,
+      "p95": 126.35918094350488,
+      "sum": 33373.69883657305
+    },
+    "videoarm_tokens": {
+      "n": 413,
+      "mean": 33901.9612590799,
+      "median": 31111.0,
+      "p95": 69790.99999999994,
+      "sum": 14001510.0
+    },
+    "videoarm_requests": {
+      "n": 413,
+      "mean": 7.365617433414044,
+      "median": 7.0,
+      "p95": 17.0,
+      "sum": 3042.0
+    },
+    "videoarm_shared_cache_hits": {
+      "n": 413,
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "sum": 0.0
+    }
+  },
+  "videoarm_all_success_active_seconds": {
+    "n": 419,
+    "mean": 85.47639309809414,
+    "median": 80.5130818010075,
+    "p95": 132.0198219196987,
+    "sum": 35814.60870810144
+  },
+  "videoarm_statuses": {
+    "pending": 1093,
+    "succeeded": 419,
+    "failed": 34,
+    "paused": 4
+  },
+  "videoarm_all_budget_totals": {
+    "requests": 3275,
+    "actual_requests": 3275,
+    "cache_hits": 0,
+    "shared_cache_hits": 0,
+    "actual_input_tokens": 14558537,
+    "actual_output_tokens": 628320,
+    "active_seconds": 39561.295795071754
+  },
+  "observed_execution": {
+    "MERIT": {
+      "wall_seconds": 81400.33714318275,
+      "completed_queries": 1550,
+      "successful_queries": 1541,
+      "workers": 1,
+      "completed_queries_per_hour": 68.55008462906991,
+      "successful_queries_per_hour": 68.1520518796108,
+      "scope": "Recorded main launch to supervisor completion; includes smoke/restart/evaluation, excludes earlier model/frame preparation and previously prepared memory"
+    },
+    "VideoARM": {
+      "wall_seconds": 9897.055336046033,
+      "terminal_queries": 453,
+      "successful_queries": 419,
+      "partially_paused_queries": 4,
+      "workers": 4,
+      "terminal_queries_per_hour": 164.77628391754754,
+      "successful_queries_per_hour": 152.40896900982875,
+      "scope": "Recorded partial validation runner wall time to pause; includes failure/paused work, excludes service startup"
+    }
+  },
+  "notes": [
+    "MERIT memory+query timing excludes frame preparation/index/overhead and charges full recorded memory build per query even when videos repeat; VideoARM active_seconds includes intra-query work and concurrent service waits.",
+    "MERIT per-request timings include original records of any reused responses; cache counts are retained.",
+    "Different service versions, concurrency, pixels and scopes: not a controlled speed benchmark.",
+    "Query latency sums in a concurrent run are not GPU time."
+  ],
+  "inputs_sha256": {
+    "comparisons/qvhighlights/2026-10-15_194620/videoarm/runs/formal_c0c8ae9799ad_hd_val_M1/state.sqlite.gz": "b3271c71e4ae4c64e3d40c7ca8ffa5199934849b50d903ecf292031a0fc7a2ac",
+    "comparisons/qvhighlights/2026-10-15_194620/videoarm/runs/formal_c0c8ae9799ad_hd_val_M1/execution.json": "6440e9a217b2fffeedb3f723a0339926bb782d861ab8fb364807c62a8b8e3bf8",
+    "source_runs/merit_qvh_main_v1-15f5f6e4ee00/execution_status.json": "9af61680ce0292a57a52b525357fea8aaaa3bf74ba2b0e97639e6ddf9635718e",
+    "source_runs/merit_qvh_main_v1-15f5f6e4ee00/runtime/execution_previous_1791998406578990936.json": "85ccb1e65d0f276601752da719ea1f4f4e3ee15d406096b4dd26139ddacc5871"
+  }
+}

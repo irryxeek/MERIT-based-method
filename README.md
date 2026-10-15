@@ -12,6 +12,9 @@
 - [执行记录](docs/execution_status.md)：已完成检查、当前运行位置和进度。
 - [自动执行与恢复](docs/automation.md)：每分钟监控、服务恢复、断点续跑和 systemd 管理命令。
 - [历史实验对比数据](comparisons/qvhighlights/README.md)：LONGVT 四组完整验证结果、VideoARM 的 28 个历史运行、预测、请求账本及逐查询对齐表。
+- [后续实验方向报告](docs/research_directions_summary_2026-10-15.md)、[研究方案详版](docs/research_directions_2026-10-15.md)：更新至 2026-10-16，包含适配差异、初始化审计、MERIT 新评分方案及并行计划；新方案尚未实现或运行。
+- [统一结果分析](comparisons/qvhighlights/analysis_2026-10-15/README.md)：MERIT 完整 val、LongVT 对照、VideoARM 同样本子集和时间开销。
+- [MERIT 最终预测与报告](comparisons/qvhighlights/merit_main_2026-10-15/README.md)：1,550 条完整 val，VeryGood mAP **21.67**、Hit@1 **31.23**，含 9 条失败回退。
 
 ## 固定实验协议
 
@@ -44,7 +47,7 @@ git submodule update --init --recursive
 - 视频自行准备到 `data/QVHighlights/videos/<vid>.mp4`。
 - 官方标注和评估器由 `third_party/moment_detr` 子模块提供。
 - 视觉模型放在 `models/Qwen3-VL-8B-Instruct/`；检索模型放在 `models/Qwen3-Embedding-4B/`。
-- 运行产物写入 `artifacts/`。数据、权重和运行产物不上传 Git。
+- 运行产物写入 `artifacts/`。视频、权重和完整运行缓存不上传 Git；精选预测、报告和对比记录保存在 `comparisons/`。
 
 可将上述目录链接到数据盘，或修改配置路径。两份主实验配置的模型与数据路径应保持一致，所有命令从仓库根目录执行。路径变化也会改变协议哈希，新机器不能直接接续历史运行。
 
@@ -126,7 +129,7 @@ $MERIT_PY -m merit_qvh.cli evaluate --config "$MERIT_CONFIG" --split val
 
 模型放在 `models/`，生成的大文件放在 `artifacts/`。每次运行目录包含 `protocol.json`、源码快照 `source_snapshot/`、数据/模型审计、`memories/`、原始请求 `requests/`、逐查询轨迹 `queries/`、`*_predictions.jsonl` 和 `*_report.json`。报告区分模型正常输出与失败回退。官方示例预测已单独核对评估器；其分数不是本项目结果。
 
-历史进度文档仅代表其中注明的时间点。本次发布不包含运行产物或完整验证集性能结论；实际结果以对应运行的 `val_report.json` 为准。
+历史进度文档仅代表其中注明的时间点。2026-10-15 主实验已完成，公开的[最终报告](comparisons/qvhighlights/merit_main_2026-10-15/val_report.json)与[预测](comparisons/qvhighlights/merit_main_2026-10-15/val_predictions.jsonl)保持原始字节；完整请求、记忆和图片缓存未随本次导出。新研究方案仍处于讨论与文档阶段。
 
 ## 开发约定
 
