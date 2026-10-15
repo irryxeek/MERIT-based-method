@@ -1,0 +1,2271 @@
+                                             Keep It Simple: Multi-Key Episodic Memory
+                                             Retrieval for Ultra-Long Video Understanding
+
+                                                            Yeeun Choi1 , Youngbeom Yoo1 , Joon-Young Lee2 ,
+                                                                 Hyolim Kang1,† , and Seon Joo Kim1,†
+                                                                    1                       2
+                                                                        Yonsei University       Adobe Research
+arXiv:2608.07663v2 [cs.CV] 16 Sep 2026
+
+
+
+
+                                                         Project Page: https://choi-yeeun.github.io/MERIT
+
+                                                    Abstract. When videos extend from hours to days, directly process-
+                                                    ing them end-to-end becomes impractical for current Multi-modal Large
+                                                    Language Models (MLLMs). This ultra-long setting necessitates a two-
+                                                    stage paradigm: query-agnostic memory construction followed by retrieval-
+                                                    based inference. Prior work invests in complex memory construction to
+                                                    pre-model high-level relations in videos, despite not knowing the down-
+                                                    stream query at build time. We instead prioritize high-recall retrievabil-
+                                                    ity during memory building, and defer query-specific, high-level relation
+                                                    composition to inference time. To this end, we propose MERIT (Multi-
+                                                    key Episodic Retrieval with Inference-time Temporal expansion), a sim-
+                                                    ple yet effective agentic framework for ultra-long video understanding.
+                                                    First, we formulate an episodic multi-key representation that enables
+                                                    precise retrieval of fine-grained memories through a simple key-matching
+                                                    mechanism. Second, we introduce a neighbor filtering mechanism to cap-
+                                                    ture broader semantic context without the massive computational over-
+                                                    head of global memory construction. This is achieved by expanding the
+                                                    temporal scope exclusively around the retrieved segments at inference
+                                                    time. By leveraging simple key-matching with this on-demand tempo-
+                                                    ral expansion, MERIT achieves state-of-the-art performance across three
+                                                    long-video benchmarks: EgoLifeQA, LVBench, and Video-MME (Long).
+
+
+                                         1        Introduction
+
+                                         The rapid evolution of Multi-modal Large Language Models (MLLMs) [3, 4, 6,
+                                         25, 39] has shifted video understanding from short temporal clips to ultra-long
+                                         streams spanning hours or even days. This shift enables the development of
+                                         personal AI assistants capable of agentic reasoning over continuous egocentric
+                                         or surveillance video. However, as temporal length scales dramatically, direct
+                                         end-to-end modeling becomes infeasible, making external memory and Retrieval-
+                                         Augmented Generation (RAG) [7, 9, 14] frameworks essential.
+                                             A defining property of ultra-long video understanding is the structural sep-
+                                         aration between memory construction time and inference time. During memory
+                                         construction, the system processes the entire video without knowledge of future
+                                         queries and builds an external memory. At inference time, a specific question is
+                                             †
+                                                 Co-corresponding authors.
+2              Y. Choi et al.
+
+
+                                                                                              80                    77.7
+                                                              Event                Dialogue
+                                                                                                      71.5                         71.8
+                                                                                                                    76.6                  MERIT
+                                                              Object               Summary
+                                                                                                     65.6
+                                                                                              60
+                                                                                                                                   61.9 WorldMM
+                  Hierarchical Graph Memory               Simple Multi-key Memory
+                                                                                                     52.0
+
+                                                                                              40
+                                                                                                                     41.1
+                                                                       Temporal
+
+    Question
+     Query                                     Question
+                                                Query
+                                                                       Expansion
+                                                                                                                                          EgoRAG
+                                                                                                                                   32.2
+
+                    Episodic        Semantic
+                                                                                                   EgoLifeQA     Video-MME       LVBench
+               (a) Previous Works                         (b) MERIT                                            (c) Performance
+
+Fig. 1: (a) Previous methods: Construct hierarchical graph-based episodic and seman-
+tic memories, and at inference time, search and aggregate relevant information across
+these structured memories. (b) Our method: MERIT constructs a simple episodic multi-
+key memory, and at inference time, retrieves the matched clips along with temporal
+expansion to perform query-driven semantic reasoning. (c) Performance of MERIT
+against EgoRAG [32] and WorldMM [33] across various benchmarks [8, 28, 32].
+
+
+
+posed, and the system must retrieve relevant evidence and perform reasoning.
+This decoupling fundamentally distinguishes long-video settings from conven-
+tional short-video Question Answering (QA).
+    To address long-range dependencies, prior work has proposed increasingly so-
+phisticated memory architectures. Hierarchical frameworks [26, 32] pre-compute
+multi-scale temporal representations to enable structured retrieval, while graph-
+based methods [24, 33] explicitly model relational dependencies across events.
+These designs are motivated by the assumption that naive segment-level retrieval
+is insufficient for capturing high-level semantics (Fig. 1(a)).
+    However, constructing structured memories is not only computationally heavy
+but also reasoning-demanding. For instance, EgoRAG [32] builds a hierarchical
+memory by progressively merging 30-second segments into hour-level and day-
+level summaries, requiring multiple rounds of MLLM inference at each temporal
+scale. WorldMM [33] goes further: it constructs multi-scale knowledge graphs
+across different temporal resolutions, where each scale requires caption gener-
+ation, triplet extraction, and graph consolidation via a Large Language Model
+(LLM) that continuously merges new knowledge while resolving conflicts with
+existing relations. As video length increases, these multi-stage processes grow
+rapidly in both computational cost and MLLM calls. More importantly, these
+structuring decisions are made without access to the downstream query, forcing
+a query-agnostic abstraction that may not align with what is ultimately asked.
+    This reveals a practical issue of Intelligence Allocation. If strong MLLMs are
+available, using them primarily for query-agnostic preprocessing is inefficient: it
+expends high-capability reasoning before the task is even specified. A more prin-
+cipled alternative is to preserve high-fidelity episodic evidence and defer semantic
+composition to inference time, when the query determines which relations and
+abstractions matter. From this perspective, the bottleneck shifts from building
+static semantics in advance to enabling high-recall retrieval that consistently
+delivers the right evidence.
+                                                                  MERIT         3
+
+    Motivated by this view, we adopt a simpler design (Fig. 1(b)): rather than
+constructing complex semantic hierarchies during memory building, we retrieve
+over minimally processed episodic segments and form task-specific relations on
+demand. To this end, we introduce MERIT, a lightweight yet effective framework
+built on two key ideas: multi-key indexing and neighbor filtering.
+    First, we propose a Multi-key Indexing strategy. Rather than construct-
+ing hierarchical or graph-based structures, we attach multiple complementary
+keys to each minimal temporal segment. These keys capture different perspec-
+tives—such as event-centric, object-centric, dialogue-centric, or summary-level
+cues—allowing diverse queries to match relevant evidence without requiring ex-
+plicit multi-scale memory design. By enriching each fine-grained segment with
+heterogeneous semantic anchors, we substantially improve retrieval robustness
+while keeping memory construction simple.
+    Second, we introduce Neighbor Filtering, a query-aware local aggrega-
+tion mechanism grounded in the inductive bias of temporal continuity. When
+a segment is retrieved via key matching, its temporally adjacent neighbors are
+jointly considered to form a local evidence cluster. Within this cluster, we per-
+form query-conditioned relevance selection to extract information most pertinent
+to the query. In other words, neighbor filtering consists of both local temporal
+expansion and query-aware evidence refinement, enabling coherent context re-
+construction without pre-computed hierarchical structures.
+    Through these two simple components, our framework eliminates the need
+for expensive multi-stage memory consolidation while maintaining strong re-
+trieval quality. As shown in Fig. 1(c), MERIT achieves state-of-the-art perfor-
+mance across multiple long-video QA benchmarks, including EgoLifeQA [32],
+LVBench [28] and Video-MME [8], outperforming prior methods such as EgoRAG
+[32] and WorldMM [33] with a significantly simpler memory pipeline. These re-
+sults validate our central hypothesis: deferring semantic composition to query
+time, rather than investing in query-agnostic preprocessing, yields both better
+performance and greater efficiency.
+
+
+2     Related Work
+2.1   Ultra-long Video Understanding with MLLMs
+The paradigm of video understanding has shifted from short-clip analysis to ex-
+tended temporal reasoning. While recent proprietary MLLMs [6, 25] and open-
+source models [3, 5, 15, 23, 34, 38, 39] can natively process hour-long videos via
+extended context windows, the emergence of ultra-long benchmarks [26, 32] has
+pushed context requirements beyond these capacities. Despite increased window
+sizes, processing such extreme scales remains computationally prohibitive. Stan-
+dard MLLMs under strict memory limits often resort to sparse uniform sampling,
+which inevitably discards fine-grained details and misses critical events.
+Our Work. Rather than modifying or retraining the MLLM backbone, MERIT
+leverages off-the-shelf MLLMs by providing them with only query-relevant evi-
+dence. Since these models are highly capable yet constrained by limited context
+4      Y. Choi et al.
+
+windows, the key is to feed them the evidence that matters for each query rather
+than the entire video. To this end, MERIT avoids heavy query-agnostic memory
+construction and instead maintains a lightweight memory for inference time re-
+trieval and evidence curation. This defers query-specific reasoning to inference,
+where the model’s capacity can be used most effectively.
+
+
+2.2   Memory-based Architectures for Video QA
+
+To overcome the context window limitations of MLLMs, recent studies [11,12,16–
+18, 22, 24, 26, 30–33] have adopted the Retrieval-Augmented Generation (RAG)
+paradigm for the video domain. These frameworks construct a structured exter-
+nal memory from video data, enabling the system to retrieve and incorporate
+relevant visual evidence at inference time.
+Hierarchy-based Memory. Temporal hierarchy is a widely adopted structure
+for managing long-form video memory. EgoRAG [32] organizes video data into
+multiple temporal scales by recursively summarizing short 30-second segments.
+While this multi-level indexing provides a broad overview, the recursive sum-
+marization process inevitably discards fine-grained details. Furthermore, such
+top-down retrieval is highly sensitive to initial errors; a mismatch at the coarse
+summary level often leads to total QA failure. To mitigate these structural weak-
+nesses, Ego-R1 [26] introduces an agentic approach that utilizes multi-turn tool
+calling to dynamically navigate the hierarchical memory. However, performance
+remains fundamentally limited by the resolution of the underlying summaries.
+Graph-based Memory. Another prominent direction involves representing
+video memory as a graph to capture complex relational context. Techniques from
+text-based RAG [10, 11] have been extended to the multimodal domain [12], in-
+corporating visual features into structured knowledge graphs. Models such as
+HippoRAG [11] and HippoMM [16] utilize short-to-long-term memory consoli-
+dation to build semantic graphs, while M3-Agent [17] incorporates entity-centric
+episodic and semantic memory. WorldMM [33] further utilizes multiple graph-
+based memories for adaptive retrieval, and EGAgent [21] constructs time-aware
+graphs to improve temporal reasoning. However, graph-based approaches require
+intensive pre-computation for graph construction, incurring significant compu-
+tational overhead and latency. For instance, WorldMM [33] not only constructs
+multi-granular episodic graphs but also aggregates them into a global seman-
+tic graph, which inevitably necessitates continuous memory consolidation as the
+representation expands. Consequently, managing such cascading structural up-
+dates becomes prohibitively expensive as video length scales to multiple days.
+Our Work. In contrast to pre-structured hierarchies or graphs, MERIT utilizes
+a multi-key episodic memory that bypasses the intensive preprocessing required
+for complex memory construction. By maintaining simple yet effective keys, we
+preserve fine-grained episodic details while minimizing memory building costs.
+Our framework achieves both efficiency and semantic depth by performing on-
+demand temporal expansion during inference, providing a scalable solution for
+ultra-long video understanding.
+                                                                   MERIT         5
+
+2.3   Caption-based Video RAG
+An alternative paradigm represents video understanding in the language space,
+converting visual content into captions and delegating reasoning to a powerful
+LLM. LLoVi [36] densely captions short clips and aggregates them with an LLM,
+SiLVR [35] extends this caption-and-reason recipe with multisensory descriptions
+fed into a dedicated reasoning LLM, and VideoTree [29] organizes frames into
+a query-adaptive hierarchical tree for coarse-to-fine reasoning. As videos grow
+longer, video RAG systems build on such textual representations and retrieve
+only the query-relevant evidence from them at inference time [2, 18, 31]. Since
+retrieval is performed after the query is given, several works further generate
+query-aware, more informative evidence at this stage. For instance, iRAG [1]
+keeps only a lightweight index after preprocessing. For each query, it runs heavier
+vision models on the retrieved clips to caption details that were not extracted
+beforehand. DrVideo [19], instead, starts from a coarse document and runs an
+agentic loop, re-captioning key frames until the gathered information suffices.
+Our Work. MERIT is likewise a caption-based, agentic video RAG framework.
+To obtain query-aware evidence, however, MERIT does not re-run captioning
+on the raw video at every inference step. Instead, it retrieves diverse relevant
+clips through complementary multi-keys enabling high-recall retrieval, and then
+distills query-aware, rich information from the pre-built captions via neighbor
+filtering. In doing so, MERIT also reconstructs the surrounding temporal context
+that single-clip retrieval would otherwise miss, without re-captioning per query.
+
+3     Method
+In this section, we present MERIT, a minimalist agentic framework designed
+to improve retrieval accuracy through a straightforward and simplified memory
+structure for ultra-long video QA. Unlike prior approaches [33] that rely on
+complex hierarchical graph construction, our method maintains minimal episodic
+representations and performs query-driven temporal expansion on demand.
+
+3.1   Problem Formulation
+In the ultra-long video setting, directly performing question answering (QA)
+by feeding raw video frames into MLLMs is infeasible due to context length
+limitations. Therefore, the common paradigm constructs an external memory
+representation M from the video V :
+                                     M=\mathcal {F}(V),                        (1)
+where F(·) denotes the memory construction procedure. The memory is built
+in a query-agnostic manner, meaning that the natural language query Q is not
+available during memory construction. At inference time, the QA solver takes
+the query Q and the pre-built memory M to produce the final answer A:
+                                    A=\mathcal {G}(Q, M),                      (2)
+where G(·) denotes the QA solver.
+6                       Y. Choi et al.
+
+ (a) Stage 1 | Episodic Memory Construction                                                                                                                                                                                                                                                                                                                                                                      (b) Stage 2 | Agentic Retrieval and Answering
+
+                                                  Ultra-Long Video
+                                                                                                                                                                                                                                                                                                                                                                                                                  Q : Who is the person that bought the carton of eggs in the fridge?
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                          : Who bought the carton of eggs?
+                30s
+                      Sampling (1fps)                                                                                                                                     Dense Caption
+
+                                                 I push the cart out. Tasha joins and sets a carton of eggs in
+ the cart. ˝Guess why we need to buy eggs,˛ she says.
+˝We need to make dessert today,˛ I say, and Lucia agrees.
+˝How many do you need?˛ I ask. I watch them chat and laugh.
+˝Ah, eggs?˛ Tasha says. ˝Yeah, how many do you need?˛
+I repeat. ˝For one dessert, maybe 10 eggs,˛ Tasha says...
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           Top 1
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                        . . .
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                         . . .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Key-wise
+Max Similarity
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    . . .
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     . . .
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    . . .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                . . .
+                           Captioning
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Top N
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                     Memory M
+[16:44:00 - 16:44:30]
+    30s Clip
+                                                                                                                                                                                                                                                                                                                                                                                                                  Neighbor Filtering
+
+
+                                       Episodic Multi-key Extraction
+
+
+
+
+                                  ˝Tasha asks why
+we need to buy eggs˛                                                                                  ˝Carton of eggs is
+set in the cart˛                                                                                                                                 ˝Shopping eggs
+for dessert˛
+  ˝I push the cart out˛
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Tasha put a carton of eggs into the shopping cart and ...
+                                                                                                                                                                                                                                                                                                                                                                                                                 Memory M
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                 Answer?                    Search More?
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    On DAY3 16:44, Tasha placed a carton of eggs into the shopping cart and discussed needing many eggs for dessert. ANSWER is C: Tasha
+                                                                                                                                                                                                                                                                                          Memory M
+
+
+
+Fig. 2: Overall Pipeline of MERIT. (a) Stage 1: Episodic memory construction.
+For each 30-second video clip, dense captions are generated. Subsequently, an episodic
+multi-key extraction process derives four distinct keys per clip, collectively forming the
+memory M . (b) Stage 2: Agentic retrieval and answering. The solver regenerates
+a query and matches it against multi-keys to retrieve the most relevant clips. Neighbor
+Filtering then expands the temporal context around these clips, extracting additional
+query-relevant information to formulate the final answer.
+
+
+
+3.2               Overall Pipeline
+
+Fig. 2 illustrates the overall pipeline of our method MERIT. MERIT follows
+a minimalist memory-based agentic pipeline, with an emphasis on high-recall
+retrieval and lightweight preprocessing.
+Episodic memory construction. We partition the video V into a sequence
+of non-overlapping clips: V = {v1 , v2 , . . . , vT }. We generate a dense caption di
+for each clip vi . For each clip, we additionally derive a set of textual keys Ki .
+The resulting memory is:
+
+                                                                                                                                                                                                                    \label {eq:memory_store} M = \mathcal {F}(V) = \{(v_i, d_i, K_i)\}_{i=1}^{T}.                                                                                                                                                                                                                                                                            (3)
+
+Conceptually, M can be viewed as a minimal key–value store, where Ki serves
+as retrieval keys and (vi , di ) provides the associated values.
+Agentic retrieval and answering. During QA, the solver G runs an iterative
+multi-turn procedure [17, 26, 33]. At round j, the solver forms a retrieval query
+q (j) from Q and the retrieval results accumulated up to the previous round,
+namely evidence E (j−1) , with E (0) = ∅. It then retrieves a set of relevant clip
+indices R(j) ⊆ {1, . . . , T } by matching q (j) against the stored keys {Ki } using a
+sentence embedding model E(·) and similarity scoring. For each retrieved index
+i ∈ R(j) , the agent collects the corresponding episodic record as an evidence item
+                                                                                                                                    MERIT    7
+
+ei = (vi , di ), where di is used during the iterative retrieval, and vi is reserved for
+generating the final answer A. It updates the accumulated evidence set as
+                             \label {eq:evidence_set} \mathcal {E}^{(j)} = \mathcal {E}^{(j-1)} \cup \{e_i \mid i \in R^{(j)}\}.            (4)
+After each retrieval round, the agent assesses whether the currently collected ev-
+idence is sufficient to answer Q. If not, it refines the retrieval query and repeats
+retrieval. Once sufficient evidence is obtained, the agent leverages the solver’s
+reasoning to integrate evidence across retrieved episodes and infer the relation-
+ships required to produce A.
+
+3.3     Multi-Key Memory and Retrieval
+MERIT defers query-specific relation reasoning to the solver at inference time,
+so retrieval becomes the key bottleneck, as the solver can only reason over re-
+lationships present in the retrieved evidence E. In long video QA, a clip can be
+relevant via different cues, such as actions, spoken mentions, object interactions
+and state changes, or coarse scene context; collapsing these cues into a single
+textual index is often brittle. Therefore, instead of the standard single-key in-
+dexing, we represent each record (vi , di ) with a set of complementary keys Ki
+and use late-interaction matching [13, 20, 27] to favor high-recall retrieval.
+Multi-Key Memory. The representation is explicitly formulated as a combi-
+nation of four distinct categories, defined as
+                               K_i = \{k^{evt}_i, k^{dial}_i, k^{obj}_i, k^{sum}_i\}.                                                       (5)
+ –    Event / Action Key (kievt ): Captures observable physical actions and inter-
+   actions between entities.
+ – Dialogue / Mention Key (kidial ): Records spoken content, exact words, or
+   commands mentioned in the audio track, providing crucial linguistic context.
+ – Object Key (kiobj ): Describes specific items being handled, requested, or
+   moved, along with their state transitions.
+ – Summary Key (kisum ): A compact keyword-style abstraction capturing the
+   core narrative and the coarse information of the overall clip.
+This decoupled representation ensures that each clip can be matched from diverse
+perspectives, effectively handling varying query intents.
+Maximum Similarity Retrieval. At retrieval round j, given the retrieval
+query q (j) , we embed q (j) and each key k ∈ Ki using E(·) and define the clip
+relevance by the maximum cosine similarity:
+                            \label {eq:clip_score} S_i^{(j)} = \max _{k \in K_i} \text {sim}\!\big (E(q^{(j)}),\, E(k)\big ),               (6)
+
+where sim(·, ·) denotes the cosine similarity score between two embeddings. We
+then select the top N clips:
+                                     \label {eq:topn_retrieval} R^{(j)} = \mathrm {TopN}\big (\{S_i^{(j)}\}_{i=1}^{T}\big ).                (7)
+This maximum similarity formulation improves recall by allowing each clip to
+match the query through its best-aligned aspect.
+8        Y. Choi et al.
+
+3.4    Temporal Expansion via Neighbor Filtering
+Videos exhibit strong temporal locality: the evidence required to answer a query
+often spans multiple nearby moments rather than a single 30-second clip. While
+short clips enable lightweight indexing, retrieving only the anchor clip can miss
+necessary preconditions or follow-up context, limiting the solver’s ability to infer
+query-specific relationships.
+Neighbor Filtering. We exploit this inductive bias with a minimal temporal
+structure. Instead of pre-computing multi-granularity hierarchies, we attach a
+local neighborhood of temporally adjacent clips to each retrieved anchor on
+demand, effectively forming the simplest graph over the timeline. This query-
+driven expansion enriches the retrieved evidence at low cost, allowing a powerful
+solver to compose higher-level temporal and semantic relations in a query-aware
+manner at inference time.
+    For each retrieved index i ∈ R(j) in round j, we define a symmetric temporal
+window
+                       \label {eq:nbhd} W_i = \{t \in \{1,...,T\}|i-\Delta \leq t \leq i+\Delta \},  (8)
+where ∆ is an integer radius indicating the number of adjacent clips on each side
+(e.g., ∆=2 spans ±1 minute under a 30-second clip setting).
+    The full textual context for neighbor filtering at round j is obtained by con-
+catenating the dense captions within the neighborhood of each retrieved index:
+
+                             D^{(j)} = \operatorname {Concat}\big (\{d_t|t\in W_i, i \in R^{(j)}\}\big ).    (9)
+We then use the solver G as a query-aware filter to distill only the information
+relevant to Q from this expanded context: I (j) = Gfilter (Q, D(j) ), where Gfilter de-
+notes the solver equipped with a filtering prompt. The resulting I (j) is appended
+to the evidence set E (j) and used for subsequent query-aware reasoning.
+
+
+4     Experiments
+4.1    Benchmarks
+We evaluate MERIT against existing memory-based models on three long-video
+benchmarks, formulating all tasks as multiple-choice questions (MCQs) and us-
+ing QA accuracy as the primary evaluation metric.
+EgoLifeQA [32]: An ultra-long egocentric dataset averaging 44.3 hours per
+video, capturing six individuals over seven days with 500 QA pairs. It features
+five QA types: EntityLog and EventRecall test precise factual grounding of ob-
+jects and events, while HabitInsight, RelationMap, and TaskMaster evaluate
+semantic reasoning over human behaviors, interactions, and future planning.
+LVBench [28]: A benchmark for hour-long video understanding with an av-
+erage duration of 1.12 hours and a maximum of 2.33 hours. It includes 1,549
+questions across six skill categories: Entity Recognition (ER) and Event Under-
+standing (EU) for tracking and classification; Temporal Grounding (TG) and
+Key Information Retrieval (KIR) for locating specific moments and details; and
+                                                                                      MERIT           9
+
+Table 1: Comparison of MERIT against various baselines on EgoLifeQA [32]. Baseline
+results are from [21, 33]. Bold and underline denote the best and second-best scores,
+respectively. Solvers are indicated per model (pre-trained models report weights only).
+
+      Model                           EntityLog EventRecall HabitInsight RelationMap TaskMaster Avg
+
+      MLLMs (Uniform Sampling)
+      Qwen3-VL-8B [3]                   35.2       30.2        39.3        46.4        46.0    38.6
+      Gemini 2.5 Pro [6]                43.2       40.5        41.0        55.2        52.4    46.4
+      GPT-5 [25]                        47.2       42.1        47.5        53.6        55.6    48.6
+      Hierarchical Memory Based
+      EgoRAG [32] (GPT-5)               40.0       56.3        62.3        54.4        52.4    52.0
+      Ego-R1 [26] (3B)                  51.2       53.2        63.9        50.4        50.8    53.0
+      Graph Memory Based
+      LightRAG [10] (GPT-5)             40.8       48.4        67.2        50.4        44.4    48.8
+      HippoRAG [11] (GPT-5)             48.8       60.3        70.5        60.8        66.7    59.6
+      Video-RAG [18] (GPT-5)            49.6       56.3        67.2        55.2        54.0    55.4
+      HippoMM [16] (GPT-5)              45.6       53.2        70.5        55.2        58.7    54.6
+      M3-Agent [17] (7B)                44.4       54.8        62.3        56.8        54.0    53.5
+      EGAgent [21] (Gemini 2.5 Pro)     54.4       57.1        60.3        62.4        74.6    57.5
+      WorldMM [33] (Qwen3-VL-8B)        49.6       56.4        63.9        58.4        58.7    56.4
+      WorldMM [33] (GPT-5)              62.4       64.3        75.4        62.4        71.4    65.6
+      Ours
+      MERIT (Qwen3-VL-8B)               43.2       54.0        67.2        53.6        65.1    54.2
+      MERIT (Gemini 2.5 Pro)            60.8       61.1        65.6        65.6        73.0    64.2
+      MERIT (GPT-5)                     67.2       70.6        73.8        74.4        71.4    71.2
+
+
+
+
+Summarization (Sum) and Reasoning (Rea) for synthesizing global content and
+causal inference. Among these, ER and EU account for the largest proportion.
+Video-MME [8]: This is a comprehensive benchmark for evaluating the gen-
+eral video understanding capabilities of MLLMs. It is categorized into Short,
+Medium, and Long subsets based on video duration. In our experiments, we
+use only the Long subset (30–60 mins), which comprises 900 questions from 300
+videos, with three questions per video. The benchmark covers 12 question types,
+with Object Reasoning, Action Reasoning, and Information Synopsis being the
+most prevalent in the Long subset.
+
+
+4.2     Implementation Details
+
+To evaluate our framework, we applied MERIT in Qwen3-VL-8B [3], GPT-5 [25],
+and Gemini 2.5 Pro [6]. Following the previous work [33], we employ GPT-
+5-mini [25] to generate dense captions for each 30-second clip. We also use the
+same model to generate episodic multi-key for each segment. For EgoLifeQA [32]
+and Video-MME(Long) [8], we incorporate ASR transcripts as an additional
+modality during captioning [21, 33]. For LVBench [28], which does not rely on
+dialogue or speech, we use only visual frames for captioning and exclude the
+dialogue key. The prompts used for multi-key extraction and neighbor filtering,
+along with further implementation details, are provided in the Appendix.
+10      Y. Choi et al.
+
+Table 2: Comparison of MERIT against various baselines on LVBench [28] and Video-
+MME(L) [8] benchmarks. Baseline results are from [21, 33]. Solvers are indicated per
+model (pre-trained models report weights only).
+
+                 Model                           LVBench Video-MME(L)
+
+                 MLLMs (Uniform Sampling)
+                 Gemini 2.5 Pro [6]                57.0      55.7
+                 GPT-5 [25]                        60.4      74.3
+
+                 Hierarchical Memory Based
+                 EgoRAG [32] (GPT-5)               32.2      41.1
+                 Ego-R1 [26] (3B)                  34.1      42.7
+
+                 Graph Memory Based
+                 LightRAG [10] (GPT-5)             30.4      46.6
+                 HippoRAG [11] (GPT-5)             54.0      52.1
+                 Video-RAG [18] (GPT-5)            33.1      55.4
+                 HippoMM [16] (GPT-5)              38.2      41.6
+                 M3-Agent [17] (7B)                49.3      55.3
+                 EGAgent [21] (Gemini 2.5 Pro)      -        74.1
+                 WorldMM [33] (GPT-5)              61.9      76.6
+
+                 Ours
+                 MERIT (Gemini 2.5 Pro)            -         76.3
+                 MERIT (GPT-5)                    71.8       77.7
+
+
+
+
+4.3   Main Results
+
+Results on Ultra-Long Video QA. Table 1 presents the evaluation on the
+ultra-long benchmark EgoLifeQA. Uniform-sampling MLLMs exhibit the low-
+est overall performance due to strict context length limits. This confirms that
+processing full ultra-long videos is computationally prohibitive and inaccurate,
+thereby necessitating memory-based architectures. MERIT outperforms existing
+memory-based approaches and establishes a new state-of-the-art. Using GPT-5,
+our framework achieves an average accuracy of 71.2%, yielding a +5.6% improve-
+ment over the previous SOTA method.
+    An analysis of individual QA types highlights the strengths of MERIT in
+fine-grained categories such as EntityLog and EventRecall. This proves that our
+simple key representation prevents information loss during retrieval, passing in-
+tact raw evidence directly to the solver. Furthermore, the significant +12.0%
+improvement in RelationMap proves that expanding the temporal radius dur-
+ing inference successfully captures query-relevant semantic information without
+the heavy overhead of pre-structuring semantic memory. This superiority is con-
+sistent across advanced models; utilizing Gemini 2.5 Pro yields a +6.7% gain
+over the best graph-memory baseline. Consequently, these results indicate that
+MERIT effectively leverages advanced reasoning to maximize performance.
+Results on Hour-Long Video QA. Table 2 demonstrates that MERIT also
+establishes new SOTA results on hour-long benchmarks. Specifically, on LVBench,
+                                                                                            MERIT               11
+
+Table 3: Ablation study on Neighbor Filtering (NF) across two solver models. Tar-
+get Time Oracle provides ground-truth temporal segments as an upper bound, while
+MERIT uses retrieved segments.
+
+EXP                                    NF EntityLog EventRecall HabitInsight RelationMap TaskMaster Avg Hit Rate
+
+                                       ✗     60.0      69.8        70.5         54.4        73.0   64.0   1.0
+Target Time Oracle (Qwen3-VL-8B [3])
+                                       ✓     56.8       66.7       68.9        67.2        76.2    65.8   1.0
+                                       ✗     41.6      54.0        50.8         42.4        57.1   48.0   0.35
+MERIT (Qwen3-VL-8B [3])
+                                       ✓     43.2      54.0        67.2        53.6        65.1    54.2   0.42
+
+                                       ✗     82.4      89.7        85.3         73.6        82.5   82.4   1.0
+Target Time Oracle (GPT-5 [25])
+                                       ✓     80.8       88.1       85.3        76.8        88.9    83.2   1.0
+                                       ✗     68.0       69.8       68.9         73.6        68.3   70.0   0.40
+MERIT (GPT-5 [25])
+                                       ✓     67.2      70.6        73.8        74.4        71.4    71.2   0.56
+
+
+
+
+our GPT-5 setting achieves 71.8%, outperforming the prior SOTA by a signif-
+icant margin of +9.9%. Unlike the day-long setting, uniform-sampling MLLMs
+show competitive performance on these shorter videos (averaging 0.69 hours
+for Video-MME(L) and 1.12 hours for LVBench), occasionally surpassing ex-
+isting memory-based models. However, as video duration increases to over an
+hour in LVBench, the performance gap between uniform sampling and MERIT
+widens significantly. For instance, with GPT-5, the gap expands from +3.4%
+on Video-MME(L) to an impressive +11.4% on LVBench. This confirms that
+while MLLMs can manage moderately long contexts, their scalability strictly
+limits them in longer settings, highlighting the robustness and the efficacy of
+our memory framework for arbitrarily long videos.
+
+
+4.4     Ablation Studies
+
+We conduct ablation studies to evaluate the individual components of MERIT.
+All ablation experiments are conducted on the EgoLifeQA [32] benchmark. For
+the backbone QA solvers, we use both open-source and proprietary models. To
+analyze retrieval performance, we additionally measure Hit Rate. Given a query
+and its corresponding target timestamp, a hit is scored as 1 if the target time
+falls within the retrieved memory interval, and 0 otherwise. The Hit Rate is the
+average of hit scores across all queries.
+Effect of Neighbor Filtering. Table 3 evaluates the impact of expanded tem-
+poral context on QA performance. Neighbor Filtering (NF) is a mechanism that
+dynamically expands the temporal radius around a retrieved clip at inference
+time to incorporate surrounding information. In the absence of NF, the solver
+is strictly limited to the memory of the single retrieved 30-second clip, without
+any adjacent context.
+    To establish an upper bound for this single-clip setting, we evaluate a “Target
+Time Oracle” configuration, which directly provides the solver with frames and
+captions from the ground-truth 30-second clip. This oracle setting reveals a sub-
+stantial performance gap compared to prior state-of-the-art models, confirming
+that precise retrieval remains the primary bottleneck in ultra-long video QA.
+12      Y. Choi et al.
+
+
+Table 4: Performance analysis based on         Table 5: Retrieval accuracy comparison
+key combinations with Qwen3-VL-8B [3].         with baseline models using GPT-5 [25].
+Darker colors indicate higher accuracy.        The (∗ ) denotes values obtained from our
+                                               reproduction of the baseline models under
+     N Key Event Dial Object Sum Acc Avg       the same evaluation settings.
+             ✓                   44.6
+                  ✓              44.8                   EXP      QA Acc Hit Rate
+     1 key                              46.4
+                         ✓       46.8                 EgoRAG∗      49.7      0.15
+                             ✓   49.4
+                                                     WorldMM∗      63.2      0.53
+             ✓    ✓              49.6                  MERIT       71.2     0.56
+             ✓           ✓       47.0
+             ✓               ✓   49.0          Table 6: Comparison of memory con-
+     2 key                              49.4
+                  ✓      ✓       49.2          struction efficiency with reproduced base-
+                  ✓          ✓   51.2          line models(∗ ) using GPT-5 [25].
+                         ✓   ✓   50.6
+
+             ✓    ✓      ✓       49.8                      LLM Call       Input     Output
+                                                  EXP       Count         Tokens    Tokens
+             ✓    ✓          ✓   52.0
+     3 key                              51.1
+             ✓           ✓   ✓   50.8           EgoRAG∗         339       1,049K    247K
+                  ✓      ✓   ✓   51.6          WorldMM∗        23,731     6,860K    2,472K
+     4 key   ✓    ✓      ✓   ✓   54.2 54.2       MERIT         6,223      815K       288K
+
+
+
+
+    Applying NF mitigates this bottleneck by expanding the temporal context
+during inference, which significantly improves both the hit rate and overall ac-
+curacy. Specifically, the expanded temporal scope drives consistent performance
+gains in QA categories that inherently require a broader semantic context, such
+as HabitInsight, RelationMap, and TaskMaster.
+    Notably, these improvements are also consistently observed in the “Target
+Time Oracle w/ NF” setting. This indicates that even with perfect temporal lo-
+calization, a single isolated 30-second segment often lacks sufficient episodic con-
+text to resolve complex queries. By incorporating information from surrounding
+clips, NF provides the necessary temporal and relational cues to capture a com-
+plete semantic understanding. Consequently, this on-demand expansion yields
+significant performance gains without incurring the massive computational over-
+head of additional pre-processing.
+Effect of Multi-Key Combinations. Table 4 details the performance vari-
+ations across different configurations of our multi-key representation using the
+Qwen3-VL-8B [3]. Specifically, our framework extracts four distinct keys per clip:
+event, dialogue, object, and summary. This ablation study evaluates the impact
+of these individual keys, their various combinations, and the effect of scaling the
+total number of keys utilized for retrieval.
+    Under the single-key setting, the summary key outperforms the other indi-
+vidual keys by a margin of up to +4.8%. Instead of focusing on specific aspects,
+the summary key captures coarse, abstract context, serving as a robust primary
+anchor for retrieval.
+                                                                    MERIT        13
+
+    Furthermore, combining multiple keys leads to a steady increase in over-
+all accuracy. While intermediate multi-key combinations show minor variances,
+the distinct keys function in a highly complementary manner. Consequently,
+utilizing all four keys simultaneously yields the peak accuracy of 54.2%. These
+findings empirically validate our premise: maintaining a decoupled multi-key rep-
+resentation ensures that each video clip can be accurately matched from diverse
+semantic perspectives, thereby effectively handling varying query intents.
+Retrieval Accuracy vs. Baselines. To investigate the correlation between
+retrieval accuracy and overall QA performance, we evaluate the hit rate of re-
+produced models representing distinct memory architectures (Table 5). These
+baselines are built on the same 30-second dense captions as MERIT, produced
+by the same captioner [25], using their official code for controlled comparison.
+    Compared to the hierarchical memory of EgoRAG [32] and the graph mem-
+ory of WorldMM [33], MERIT employs the simplest memory key structure yet
+achieves both the highest hit rate and the highest overall accuracy. This di-
+rect alignment confirms that successful information retrieval is critical for QA
+performance. Unlike MERIT and EgoRAG, which retrieve in a fixed 30-second
+granularity, WorldMM retrieves clips across multi-scale temporal windows, in-
+cluding up to 1 hour segments. While retrieving such extensive temporal win-
+dows inherently increases the probability of capturing the target timestamp, our
+framework still achieves a higher hit rate using only a single granularity. In our
+reproduction, evaluating WorldMM solely with 30-second clips yields a hit rate
+of 0.31. These results demonstrate that precise, fine-grained retrieval capabilities
+are closely correlated with maximizing overall QA performance.
+Memory Construction Efficiency. In Table 6, we evaluate the memory con-
+struction cost. Since all methods use the same 30-second captions, we compare
+memory construction efficiency by measuring the total number of caption tokens
+consumed by each method, excluding the common initial captioning step.
+    Compared to WorldMM [33], MERIT demonstrates a significant efficiency
+advantage, achieving an 8.4× reduction in input tokens and an 8.6× reduction in
+output tokens. WorldMM’s pipeline generates captions across four granularities,
+applies OpenIE to each, and continuously updates multi-level semantic graphs,
+incurring 23.7K LLM calls and millions of input/output tokens. In contrast,
+MERIT builds its memory in a single pass: each clip is captioned once and
+indexed with lightweight multi-keys, which eliminates the repeated generation
+and graph-update steps.
+    Furthermore, while EgoRAG [32] requires fewer LLM calls by batching in-
+puts within its hierarchical structure, MERIT consumes 22% fewer input to-
+kens (815K vs. 1.05M). This efficiency is achieved because MERIT processes
+each caption exactly once, avoiding the redundant re-reading of intermediate
+summaries inherent to EgoRAG’s hierarchy levels. Although MERIT generates
+slightly more output tokens than EgoRAG, this is a deliberate design choice:
+rather than heavily compressing information into single summaries, MERIT gen-
+erates fine-grained multi-keys per clip, which is critical for preserving detailed
+temporal context and enabling highly accurate retrieval.
+14        Y. Choi et al.
+
+Table 7: Impact of the retrieved clip count (Top N ) across both open-source and
+proprietary QA solvers. Colors denote higher performance within each individual solver.
+
+          Solver          Top N EntityLog EventRecall HabitInsight RelationMap TaskMaster Avg
+
+                            5      41.6      47.6        63.9         37.6       55.6    46.6
+     Qwen3-VL-4B [3]
+                           10      37.6      53.2        59.0         39.2       52.4    46.4
+
+                            5      43.2      54.0        67.2         53.6       65.1    54.2
+     Qwen3-VL-8B [3]
+                           10      44.0      57.9        63.9         40.8       68.3    52.2
+
+                            5      53.6      62.7        60.7         65.6       66.7    61.4
+     Gemini 2.5 pro [6]
+                           10      60.8      61.1        65.6         65.6       73.0    64.2
+
+                            5      62.4      67.5        73.8         68.0       69.8    67.4
+        GPT-5 [25]
+                           10      67.2      70.6        73.8         74.4       71.4    71.2
+
+
+
+
+Effect of Retrieved Clip Quantity Across Solver Capacities. Table 7
+investigates the effect of the number of retrieved clips (Top N ) across QA solvers
+with varying capacities. We observe a distinct divergence in performance trends
+dependent on the solver’s inherent capabilities. For open-source models [3], re-
+stricting retrieval to Top 5 clips yields optimal results, whereas expanding to
+Top 10 degrades performance. This suggests that models with limited reasoning
+capacity struggle to effectively consolidate information from extended contexts,
+often becoming confused by the increased noise during inference.
+    Conversely, proprietary models [6,25] demonstrate substantial improvements
+when provided with a larger pool of clips. Increasing to Top 10 boosts the ac-
+curacy of Gemini 2.5 Pro (61.4% to 64.2%) and GPT-5 (67.4% to 71.2%). This
+suggests that high-capacity solvers possess the noise-tolerance required to ef-
+fectively filter query-aware evidence from expanded context. Rather than being
+hindered by redundant information in additional temporal windows, they distill
+critical semantic cues from extended contexts to enhance reasoning accuracy.
+
+
+5     Qualitative Results
+
+Effect of Multi-Key Memory. Fig. 3 (a) illustrates an example from the
+EntityLog category of EgoLifeQA [32]. The query requires identifying the spe-
+cific moment an object was handed over. Our multi-key memory matches this
+query to the stored event key: “I hand Tasha a bottle of AD calcium milk.”
+By retrieving the exact target segment associated with this key, our retrieval
+mechanism provides the solver with the visual evidence necessary to identify
+the target entity. This successful retrieval of the fine-grained event leads to the
+correct answer.
+Effect of Neighbor Filtering. Fig. 3 (b) presents a RelationMap case from
+EgoLifeQA [32], requiring an understanding of interpersonal relationships and
+interactions. The query asks about an event from two days before the query time,
+where multiple individuals are present. While multi-key matching accurately
+retrieves the target segment, a single clip lacks the context to identify specific
+                                                                                                                                                                                                                                                                                                                                                                                                                                        MERIT                                                  15
+
+
+                                                                                                                                                                                                                                                                                       ...                                                                                                                                                                ...
+
+
+
+
+                          [Day5 12:19:09]                                                                                                                                                                                                                                                         [Day5 16:14:55]
+                          Q: Who gave Tasha the AD calcium milk she is holding?                                                                                                                                                                                                                   Q: Who was next to me the last time I was taste-testing something?
+                          (A) Alice €(B) Lucia€(C) Me €(D) Shure                                                                                                                                                                                                                                  (A) Alice and Violet €(B) Lucia and Nicous (C) Shure and Choiszt€(D) Tasha and Alice
+
+
+    Memory M                                                                                                                                                                                                               : ˝Tasha AD calcium milk giver˛                                     Memory M                                                                     : ˝Last taste-testing scene who was next to me˛
+
+         Max Similarity                                                                                                                                                                                                                                                                             Max Similarity                      [DAY3 16:57:30  DAY3 16:58:30]
+I look right and turn right. Alice says, ˝Look, we
+have it.˛
+
+                     Event Key : ˝I hand Tasha a bottle of AD calcium milk˛
+
+                 [DAY5 12:11:30  DAY5 12:12:00]
+"I arrive at the first-floor living room. Tasha says, Get a napkin.
+Okay, I say. I grab a bottle of AD calcium milk, drink it while
+snacking, and head to the kitchen. I hand Tasha a bottle of AD
+calcium milk. Tasha asks, & "                                                    [DAY3 16:58:30  DAY3 16:59:00]
+Others: ˝Give it a try.ˇ Oh, it used to be 39, now itˇs
+on sale for 22.9.˛ I take a bite.
+
+                                                                                                                                                                                                                                                                                                          Temporal
+Expansion
+
+                                                                                                                                                                                                                                                                                                                                        [DAY3 16:59:00  DAY3 17:00:00]
+I eat, circle the aisle, and walk toward Tasha.
+
+
+                   In the [Day5 12:11:30 ~ 12:12:29] context, it explicitly states
+I hand Tasha a bottle of AD calcium milk. Therefore, the person asking (Me) gave Tasha the drink.
+                                                                                                                                                                                                                                                                                             with Neighbor Filter                                                                                              without Neighbor Filter
+    Reasoning                                                                                                                                                                                                                                                                                                                  Answer : D                                                                                                                            Answer : C
+(Lack of evidence)
+                   Answer : C
+
+                                (a) Multi-Key Memory and Retrieval                                                                                                                                                                                                                                      (b)  Temporal Expansion via Neighbor Filtering
+
+Fig. 3: Qualitative results of MERIT on EgoLifeQA [32]. (a) The event key precisely
+matches the query, enabling retrieval of the exact target segment. (b) While both set-
+tings retrieve the correct segment, neighbor filter supplies the surrounding ±∆ context
+necessary to resolve relational queries that cannot be answered from a single clip alone.
+
+
+
+individuals. Neighbor filtering resolves this by expanding the temporal context,
+allowing the query-aware filter to extract the details: “I was taste-testing and
+next to me were Tasha and Alice.” This confirms that while multi-key indexing
+localizes anchor clips, neighbor filtering provides the broader situational context
+required for relational queries—without relying on pre-built semantic memories.
+
+
+6        Conclusion
+We present MERIT, a simple yet effective framework for ultra-long video under-
+standing that preserves fine-grained episodic evidence through multi-key index-
+ing and enriches retrieved context via query-time neighbor filtering. Despite its
+simplicity, MERIT achieves state-of-the-art performance across multiple bench-
+marks, suggesting that deferring semantic composition to inference time is more
+effective than query-agnostic preprocessing. We hope MERIT serves as a practi-
+cal and scalable foundation for future work on ultra-long video understanding.
+
+
+Acknowledgements
+This work was supported by Institute of Information & Communications Tech-
+nology Planning & Evaluation (IITP) grant funded by the Korea government
+(MSIT) (No. RS-2020-II201361, Artificial Intelligence Graduate School Program
+(Yonsei University)), National Research Foundation of Korea (NRF) (RS-2025-
+00554790), and No.RS-2022-II220124, Development of Artificial Intelligence Tech-
+nology for Self-Improving Competency-Aware Learning Capabilities.
+16      Y. Choi et al.
+
+References
+ 1. Arefeen, M.A., Debnath, B., Uddin, M.Y.S., Chakradhar, S.: irag: Advancing rag
+    for videos with an incremental approach. In: Proceedings of the 33rd ACM Inter-
+    national Conference on Information and Knowledge Management. pp. 4341–4348
+    (2024)
+ 2. Ataallah, K., Shen, X., Abdelrahman, E., Sleiman, E., Zhuge, M., Ding, J., Zhu,
+    D., Schmidhuber, J., Elhoseiny, M.: Goldfish: Vision-language understanding of
+    arbitrarily long videos. In: European Conference on Computer Vision. pp. 251–
+    267. Springer (2024)
+ 3. Bai, S., Cai, Y., Chen, R., Chen, K., Chen, X., Cheng, Z., Deng, L., Ding, W.,
+    Gao, C., Ge, C., et al.: Qwen3-vl technical report. arXiv preprint arXiv:2511.21631
+    (2025)
+ 4. Bai, S., Chen, K., Liu, X., Wang, J., Ge, W., Song, S., Dang, K., Wang, P., Wang,
+    S., Tang, J., Zhong, H., Zhu, Y., Yang, M., Li, Z., Wan, J., Wang, P., Ding, W.,
+    Fu, Z., Xu, Y., Ye, J., Zhang, X., Xie, T., Cheng, Z., Zhang, H., Yang, Z., Xu, H.,
+    Lin, J.: Qwen2.5-vl technical report. arXiv preprint arXiv:2502.13923 (2025)
+ 5. Chen, Z., Wang, W., Cao, Y., Liu, Y., Gao, Z., Cui, E., Zhu, J., Ye, S., Tian,
+    H., Liu, Z., et al.: Expanding performance boundaries of open-source multimodal
+    models with model, data, and test-time scaling. arXiv preprint arXiv:2412.05271
+    (2024)
+ 6. Comanici, G., Bieber, E., Schaekermann, M., Pasupat, I., Sachdeva, N., Dhillon,
+    I., Blistein, M., Ram, O., Zhang, D., Rosen, E., et al.: Gemini 2.5: Pushing the
+    frontier with advanced reasoning, multimodality, long context, and next generation
+    agentic capabilities. arXiv preprint arXiv:2507.06261 (2025)
+ 7. Edge, D., Trinh, H., Cheng, N., Bradley, J., Chao, A., Mody, A., Truitt, S.,
+    Metropolitansky, D., Ness, R.O., Larson, J.: From local to global: A graph rag
+    approach to query-focused summarization. arXiv preprint arXiv:2404.16130 (2024)
+ 8. Fu, C., Dai, Y., Luo, Y., Li, L., Ren, S., Zhang, R., Wang, Z., Zhou, C., Shen, Y.,
+    Zhang, M., et al.: Video-mme: The first-ever comprehensive evaluation benchmark
+    of multi-modal llms in video analysis. In: 2025 IEEE/CVF Conference on Computer
+    Vision and Pattern Recognition (CVPR). pp. 24108–24118. IEEE (2025)
+ 9. Gao, Y., Xiong, Y., Gao, X., Jia, K., Pan, J., Bi, Y., Dai, Y., Sun, J., Wang, M.,
+    Wang, H.: Retrieval-augmented generation for large language models: A survey.
+    arXiv preprint arXiv:2312.10997 (2023)
+10. Guo, Z., Xia, L., Yu, Y., Ao, T., Huang, C.: Lightrag: Simple and fast retrieval-
+    augmented generation. In: EMNLP (Findings). pp. 10746–10761 (2025)
+11. Gutiérrez, B.J., Shu, Y., Qi, W., Zhou, S., Su, Y.: From rag to memory:
+    Non-parametric continual learning for large language models. arXiv preprint
+    arXiv:2502.14802 (2025)
+12. Jeong, S., Kim, K., Baek, J., Hwang, S.J.: Videorag: Retrieval-augmented genera-
+    tion over video corpus. In: Findings of the Association for Computational Linguis-
+    tics: ACL 2025. pp. 21278–21298 (2025)
+13. Khattab, O., Zaharia, M.: Colbert: Efficient and effective passage search via con-
+    textualized late interaction over bert. In: Proceedings of the 43rd International
+    ACM SIGIR conference on research and development in Information Retrieval.
+    pp. 39–48 (2020)
+14. Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H.,
+    Lewis, M., Yih, W.t., Rocktäschel, T., et al.: Retrieval-augmented generation for
+    knowledge-intensive nlp tasks. Advances in neural information processing systems
+    33, 9459–9474 (2020)
+                                                                          MERIT          17
+
+15. Li, B., Zhang, Y., Guo, D., Zhang, R., Li, F., Zhang, H., Zhang, K., Zhang, P.,
+    Li, Y., Liu, Z., et al.: Llava-onevision: Easy visual task transfer. arXiv preprint
+    arXiv:2408.03326 (2024)
+16. Lin, Y., Zhang, J., Wang, Q., Ye, H., Fu, Y., Liu, Y., Li, H.H., Chen, Y.: Hippomm:
+    Hippocampal-inspired multimodal memory for long audiovisual event understand-
+    ing. In: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
+    Recognition. pp. 5968–5977 (2026)
+17. Long, L., He, Y., Ye, W., Pan, Y., Lin, Y., Li, H., Zhao, J., Li, W.: Seeing, listening,
+    remembering, and reasoning: A multimodal agent with long-term memory. In: In-
+    ternational Conference on Learning Representations. vol. 2026, pp. 146197–146246
+    (2026)
+18. Luo, Y., Zheng, X., Li, G., Yin, S., Lin, H., Fu, C., Huang, J., Ji, J., Chao, F.,
+    Luo, J., et al.: Video-rag: Visually-aligned retrieval-augmented long video compre-
+    hension. Advances in Neural Information Processing Systems 38, 168008–168033
+    (2026)
+19. Ma, Z., Gou, C., Shi, H., Sun, B., Li, S., Rezatofighi, H., Cai, J.: Drvideo: Doc-
+    ument retrieval based long video understanding. In: 2025 IEEE/CVF Conference
+    on Computer Vision and Pattern Recognition (CVPR). pp. 18936–18946. IEEE
+    (2025)
+20. Reddy, A., Martin, A., Yang, E., Yates, A., Sanders, K., Murray, K., Kriz, R.,
+    De Melo, C.M., Van Durme, B., Chellappa, R.: Video-colbert: Contextualized late
+    interaction for text-to-video retrieval. In: 2025 IEEE/CVF Conference on Com-
+    puter Vision and Pattern Recognition (CVPR). pp. 19691–19701. IEEE (2025)
+21. Rege, A., Sadhu, A., Li, Y., Li, K., Vinayak, R.K., Chai, Y., Lee, Y.J., Kim, H.J.:
+    Agentic very long video understanding. In: Proceedings of the 64th Annual Meeting
+    of the Association for Computational Linguistics (Volume 1: Long Papers). pp.
+    46575–46602 (2026)
+22. Ren, X., Xu, L., Xia, L., Wang, S., Yin, D., Huang, C.: Videorag: Retrieval-
+    augmented generation with extreme long-context videos. In: Proceedings of the
+    32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 1.
+    pp. 2390–2401 (2026)
+23. Shen, X., Xiong, Y., Zhao, C., Wu, L., Chen, J., Zhu, C., Liu, Z., Xiao, F.,
+    Varadarajan, B., Bordes, F., Liu, Z., Xu, H., Kim, H.J., Soran, B., Krishnamoorthi,
+    R., Elhoseiny, M., Chandra, V.: Longvu: Spatiotemporal adaptive compression for
+    long video-language understanding. arXiv preprint arXiv:2410.17434 (2024)
+24. Shen, X., Zhang, W., Chen, J., Elhoseiny, M.: Vgent: Graph-based retrieval-
+    reasoning-augmented generation for long video understanding. Advances in Neural
+    Information Processing Systems 38, 100805–100830 (2026)
+25. Singh, A., Fry, A., Perelman, A., Tart, A., Ganesh, A., El-Kishky, A., McLaughlin,
+    A., Low, A., Ostrow, A., Ananthram, A., et al.: Openai gpt-5 system card. arXiv
+    preprint arXiv:2601.03267 (2025)
+26. Tian, S., Wang, R., Guo, H., Wu, P., Dong, Y., Wang, X., Yang, J., Zhang, H.,
+    Zhu, H., Liu, Z.: Ego-R1: Agentic chain-of-tool-thought for ultra-long egocentric
+    video reasoning. IEEE Transactions on Pattern Analysis and Machine Intelligence
+    (2026)
+27. Wan, D., Wang, H., Stengel-Eskin, E., Cho, J., Bansal, M.: Clamr: Contextualized
+    late-interaction for multimodal content retrieval. arXiv preprint arXiv:2506.06144
+    (2025)
+28. Wang, W., He, Z., Hong, W., Cheng, Y., Zhang, X., Qi, J., Ding, M., Gu, X., Huang,
+    S., Xu, B., et al.: Lvbench: An extreme long video understanding benchmark.
+18      Y. Choi et al.
+
+    In: 2025 IEEE/CVF International Conference on Computer Vision (ICCV). pp.
+    22958–22967. IEEE (2025)
+29. Wang, Z., Yu, S., Stengel-Eskin, E., Yoon, J., Cheng, F., Bertasius, G., Bansal,
+    M.: Videotree: Adaptive tree-based video representation for llm reasoning on long
+    videos. In: 2025 IEEE/CVF Conference on Computer Vision and Pattern Recog-
+    nition (CVPR). pp. 3272–3282. IEEE (2025)
+30. Xu, Z., Zhang, J., Wang, Q., Liu, Y.: E-vrag: Enhancing long video under-
+    standing with resource-efficient retrieval augmented generation. arXiv preprint
+    arXiv:2508.01546 (2025)
+31. Xue, Z., Zhang, J., Xie, X., Cai, Y., Liu, Y., Li, X., Tao, D.: Adavideorag: Omni-
+    contextual adaptive retrieval-augmented efficient long video understanding. arXiv
+    preprint arXiv:2506.13589 (2025)
+32. Yang, J., Liu, S., Guo, H., Dong, Y., Zhang, X., Zhang, S., Wang, P., Zhou, Z., Xie,
+    B., Wang, Z., et al.: Egolife: Towards egocentric life assistant. In: 2025 IEEE/CVF
+    Conference on Computer Vision and Pattern Recognition (CVPR). pp. 28885–
+    28900. IEEE (2025)
+33. Yeo, W., Kim, K., Yoon, J., Hwang, S.J.: Worldmm: Dynamic multimodal memory
+    agent for long video reasoning. In: Proceedings of the IEEE/CVF Conference on
+    Computer Vision and Pattern Recognition. pp. 25599–25609 (2026)
+34. Zhang, B., Li, K., Cheng, Z., Hu, Z., Yuan, Y., Chen, G., Leng, S., Jiang, Y.,
+    Zhang, H., Li, X., et al.: Videollama 3: Frontier multimodal foundation models for
+    image and video understanding. arXiv preprint arXiv:2501.13106 (2025)
+35. Zhang, C., Lin, Y.B., Wang, Z., Bansal, M., Bertasius, G.: SiLVR: A simple
+    language-based video reasoning framework. Transactions on Machine Learning Re-
+    search (2026), https://openreview.net/forum?id=mQZbh9Zlbw
+36. Zhang, C., Lu, T., Islam, M.M., Wang, Z., Yu, S., Bansal, M., Bertasius, G.: A
+    simple llm framework for long-range video question-answering. In: Proceedings of
+    the 2024 Conference on Empirical Methods in Natural Language Processing. pp.
+    21715–21737 (2024)
+37. Zhang, Y., Li, M., Long, D., Zhang, X., Lin, H., Yang, B., Xie, P., Yang, A., Liu,
+    D., Lin, J., et al.: Qwen3 embedding: Advancing text embedding and reranking
+    through foundation models. arXiv preprint arXiv:2506.05176 (2025)
+38. Zhang, Y., Li, B., Liu, h., Lee, Y.j., Gui, L., Fu, D., Feng, J., Liu, Z., Li, C.:
+    Llava-next: A strong zero-shot video understanding model (April 2024), https:
+    //llava-vl.github.io/blog/2024-04-30-llava-next-video/
+39. Zhang, Y., Wu, J., Li, W., Li, B., Ma, Z., Liu, Z., Li, C.: Llava-video: Video
+    instruction tuning with synthetic data. arXiv preprint arXiv:2410.02713 (2024)
+                                                                   MERIT        19
+
+Supplementary Materials
+
+This supplementary material provides additional details and analyses that com-
+plement the main paper. We first describe additional implementation details of
+MERIT (Section A), followed by detailed performance comparisons on LVBench
+and Video-MME(Long) (Section B). We then present additional ablations and
+analyses, including the retrieval round distribution, a comparison with a flat re-
+trieval baseline, and the effect of the neighbor filtering window size (Section C).
+Next, we discuss the solver dependency, intelligence allocation, and future direc-
+tions of our framework (Section D). We further provide additional qualitative
+analyses, including comparisons with memory-based baselines and failure cases
+(Section E). Lastly, we list all prompts used throughout our pipeline (Section F).
+
+
+A    Additional Implementation Details
+
+Data Preprocessing and Retrieval Pipeline. To generate the textual cap-
+tions, we partition the input video into 30-second clips and uniformly sample
+frames at 1 FPS. During memory construction, the model is prompted to ex-
+tract four distinct types of keys simultaneously, relying solely on these gen-
+erated captions without visual inputs. For the retrieval process, we compute
+embeddings for both the natural language query and the stored keys using the
+Qwen3-Embedding-4B [37]. Once the top-N anchor clips are retrieved, we ap-
+ply temporal expansion via neighbor filtering. The concatenated textual context
+from these local neighborhoods is processed in a single batch by the solver with
+a filtering prompt to distill query-relevant information. Consequently, each re-
+trieval round requires exactly two Large Language Models(LLM) calls: one for
+assessing evidence sufficiency and formulating the query, and another for neigh-
+bor filtering. Once the retrieval loop terminates, one final LLM call is executed
+during the ultimate QA stage. In our experimental setup, all inference-time
+roles, including the retrieval agent and the solver, are served by a single iden-
+tical MLLM backbone G. All specific LLM prompts used in this pipeline are
+provided in Section F.
+Frame Sampling Strategy for Final QA. While the iterative retrieval pro-
+cess relies solely on textual context, visual frames are exclusively inputted to
+the solver during the final QA stage. To supply visual evidence for this final
+inference, we employ an adaptive frame sampling strategy that balances visual
+information richness with computational efficiency based on the preceding re-
+trieval rounds. When employing the GPT-5 solver, we retrieve the top 10 most
+relevant 30-second video clips in each round. For Round 1, we uniformly sample
+6 frames per clip (60 frames total), providing dense visual coverage for initial
+context gathering. In Round 2, we sample 6 frames only from the top 5 ranked
+clips (30 frames), as lower ranked clips are less likely to contain relevant visual
+information. From Round 3 onward, we sample 1 frame per clip (10 frames per
+round), since the accumulated textual context from prior rounds is typically
+sufficient and additional frames serve mainly as supplementary visual cues.
+20      Y. Choi et al.
+
+Table 8: Category-wise performance breakdown of MERIT and baselines on LVBench.
+Baseline results are taken from [33]. Solvers are indicated per model (pre-trained models
+report weights only).
+
+                         Model                 Short Med. Long Avg.
+
+                         MLLMs (Uniform Sampling)
+                         Qwen3-VL-8B [3]    48.8 44.4 53.4 48.3
+                         Gemini 2.5 Pro [6] 57.1 52.2 65.2 57.0
+                         GPT-5 [25]         59.1 59.1 69.1 60.4
+
+                         Hierarchical Memory Based
+                         EgoRAG [32] (GPT-5)  32.4 32.0 31.9 32.2
+                         Ego-R1 [26] (3B)     32.5 36.5 37.3 34.1
+
+                         Graph Memory Based
+                         LightRAG [10] (GPT-5) 30.2    28.6 34.3 30.4
+                         HippoRAG [11] (GPT-5) 54.9    47.5 62.3 54.0
+                         Video-RAG [18] (GPT-5) 32.9   30.2 39.7 33.1
+                         HippoMM [16] (GPT-5) 40.7     33.3 35.8 38.2
+                         M3-Agent [17] (7B)     53.0   40.7 48.5 49.3
+                         WorldMM [33] (GPT-5) 58.3     65.4 72.1 61.9
+
+                         Ours
+                         MERIT (GPT-5)          72.1 72.4 69.1 71.8
+
+
+
+    On EgoLifeQA [32], the majority of questions (68.2%) are resolved within a
+single search round, using only 60 frames. On average, each question requires
+1.72 search rounds with 73.4 frames. For more complex queries where the model
+reaches the maximum of 5 rounds, up to 120 frames are used.
+
+
+B     Detailed Performance Comparisons
+B.1    Extended Analysis on LVBench
+Clue Duration. Each question in LVBench [28] is annotated with a “time ref-
+erence” field indicating the video segment required to answer it. We refer to the
+temporal span of this segment as the “clue duration” and categorize questions
+into three groups following prior work [33]: Short (<30s), Medium (30s-5min),
+and Long (>5min). Of the 1,549 total questions, 1,534 are retained for this
+duration-based analysis after excluding 15 with missing or malformed annota-
+tions. Short-clue questions constitute the majority of the benchmark (59.6%),
+followed by Medium (27.1%) and Long (13.3%). The mean clue duration in-
+creases substantially across groups: 8.0s for Short, 1m 33s for Medium, and 44m
+52s for Long. Notably, the longest segment in the Long group spans over 2 hours,
+effectively requiring global comprehension of the entire video.
+Question Type Composition. The distribution of question types varies no-
+tably across clue-duration groups. Short-clue questions are dominated by “Entity
+                                                                                             MERIT               21
+
+Table 9: Category-wise performance breakdown of MERIT and baselines on Video-
+MME(L) [8]. Baseline results are taken from [21, 33]. Solvers are indicated per model
+(pre-trained models report weights only).
+
+Model                        ARES AREC ATTR CNT ISYN OCR ORES OREC SPER SRES TPER TRES Avg
+
+MLLMs (Uniform Sampling)
+Qwen3-VL-8B [3]          62.2        54.0   51.9   43.8 68.1 42.9     62.9   57.4   33.3   45.5   33.3   67.0 61.0
+Gemini 2.5 Pro [6]       56.9        47.6   66.7   41.7 71.8 57.1     53.3   40.7    0.0   72.7   66.7   48.4 55.7
+GPT-5 [25]               71.1        69.8   70.4   47.9 88.3 57.1     75.8   74.1   33.3   72.7   50.0   75.8 74.3
+
+Hierarchical Memory Based
+EgoRAG [32] (GPT-5)       31.1       55.6   33.3   22.9 41.1 28.6     44.6   48.2   33.3   54.5   66.7   48.4 41.1
+Ego-R1 [26] (3B)          37.2       52.4   40.7   35.4 38.0 35.7     42.1   51.9   66.7   63.6   50.0   52.8 42.7
+
+Graph Memory Based
+LightRAG [10] (GPT-5)         41.7   30.2   40.7 35.4   54.0   50.0   46.7   61.1   33.3   45.5   50.0   52.8   46.6
+HippoRAG [11] (GPT-5)         45.6   47.6   40.7 37.5   52.2   42.9   52.9   64.8   66.7   54.5   50.0   70.3   52.1
+Video-RAG [18] (GPT-5)        51.7   47.6   37.0 39.6   49.7   57.1   62.1   68.5   66.7   45.5   50.0   68.1   55.4
+HippoMM [16] (GPT-5)          41.1   42.9   55.6 35.4   38.7   35.7   37.9   53.7   33.3   54.5   50.0   47.3   41.6
+M3-Agent [17] (7B)            52.2   57.1   59.3 45.8   51.5   42.9   54.6   64.8   33.3   45.5   50.0   71.4   55.3
+EGAgent [21] (Gemini 2.5 Pro)  -      -      -    -      -      -      -      -      -      -      -      -     74.1
+WorldMM [33] (GPT-5)          81.1   73.0   70.4 54.2   85.3   42.9   75.0   77.8   33.3   72.7   66.7   79.1   76.6
+
+Ours
+MERIT (Gemini 2.5 Pro)        75.0   74.6   88.9 54.2 82.2 78.6 77.1         79.6   33.3   100    83.3   71.4 76.3
+MERIT (GPT-5)                 78.3   68.3   81.5 54.2 87.7 64.3 79.2         74.1   33.3   90.9   83.3   75.8 77.7
+
+
+
+
+Recognition” (50.8%) and “Event Understanding” (36.5%), reflecting factual,
+moment-level queries. In contrast, Long-clue questions exhibit a markedly higher
+proportion of “Summarization” (13.2% vs. 0.5% in Short). These compositional
+differences indicate that Long-clue questions are inherently more abstract, heav-
+ily evaluating global video comprehension rather than the retrieval of localized
+temporal evidence.
+Accuracy by Clue Duration. Table 8 compares our method against previous
+baselines across the clue-duration groups. MERIT achieves substantial gains on
+Short (+13.8%) and Medium (+7.0%) clue-duration questions, yielding an over-
+all average improvement of +9.3% points. These results demonstrate that our
+multi-key retrieval framework is effective for questions with localized answers,
+where diverse keys align with any given query to retrieve the essential context.
+    For the Long-clue subset, where the required context averages nearly 45 min-
+utes and often demands full-video summarization, the performance naturally
+relies less on pinpoint retrieval. Nevertheless, MERIT achieves a highly compet-
+itive score of 69.1% on this subset, performing on par with the GPT-5 baseline
+that relies on dense uniform frame sampling. Fundamentally, our inference-time
+temporal expansion mechanism directly drives this competitive performance on
+summarization-heavy tasks. By dynamically expanding the retrieved episodic
+clips on demand, the framework provides the solver with sufficient surrounding
+context to synthesize higher-level semantic relations. This highlights the comple-
+mentary strengths of our approach. Multi-key retrieval excels at robustly match-
+22      Y. Choi et al.
+
+ing diverse queries to localized segments, while temporal expansion seamlessly
+handles queries requiring global comprehension.
+
+
+B.2   Extended Analysis on Video-MME(Long)
+
+Dataset Scope and Taxonomy. The Video-MME [8] benchmark is designed
+to evaluate Multimodal Large Language Models (MLLMs) on diverse video un-
+derstanding tasks. It incorporates a wide range of data modalities and temporal
+durations, spanning 6 key domains and 30 sub-class video types with expert-
+annotated QA pairs. To provide a granular evaluation, the benchmark catego-
+rizes questions into 12 QA types: Action Reasoning (ARES), Action Recognition
+(AREC), Attribute Perception (ATTR), Counting Problem (CNT), Information
+Synopsis (ISYN), OCR Problems (OCR), Object Reasoning (ORES), Object
+Recognition (OREC), Spatial Perception (SPER), Spatial Reasoning (SRES),
+Temporal Perception (TPER), and Temporal Reasoning (TRES).
+Temporal Characteristics and Certificate Length. One metric reported in
+Video-MME is the “certificate length”, which analyzes the temporal difficulty of
+the QA pairs [8]. The certificate is defined as the minimum set of sub-clips that
+are both necessary and sufficient to verify the correct annotation. According to
+the original benchmark analysis, the “Long” subset features an average certifi-
+cate length of approximately 16.1 minutes against an average total video length
+of 39.8 minutes. This indicates that answering a typical query requires compre-
+hending roughly 40.6% of the entire video context. Thus, this subset generally
+evaluates the model’s ability to aggregate broad temporal information.
+Detailed Performance Breakdown. Table 9 reports the detailed performance
+breakdown across the 12 QA types (EGAgent is excluded as it only reports the
+overall average). Given the substantial 40.6% certificate requirement, standard
+MLLMs employing uniform sampling establish strong baselines, suggesting that
+external memory architectures might be less critical for this specific dataset.
+This is evident in Information Synopsis (ISYN), a major QA type focusing on
+overall context (e.g., “What is the main idea of the video?”), where a standard
+GPT-5 with uniformly sampled frames achieves the highest score.
+    Despite these dataset characteristics inherently favoring standard MLLM
+baselines, MERIT establishes state-of-the-art results across the majority of QA
+types. The key to answering such global-context queries lies in our neighbor filter-
+ing mechanism during inference-time temporal expansion. By expanding around
+the retrieved clips, this filtering step selectively extracts query-relevant infor-
+mation from the temporal neighborhood, effectively reconstructing the broader
+semantic context. This ensures that the solver grasps the continuous semantic
+flow required for holistic questions.
+    Looking forward, as the field advances toward true ultra-long video set-
+tings, the proportion of query-irrelevant content will drastically increase, caus-
+ing the relative certificate length ratio to drop significantly. As the required
+context becomes a progressively smaller fraction of the entire video, tasks are
+expected to increasingly shift from summarizing the entire video to retrieving
+                                                                     MERIT         23
+
+Table 10: Round distribution, accuracy, and cumulative retrieval hit rate on Ego-
+LifeQA [32]. “Prop.” denotes the proportion of questions terminated at each round.
+“C. HR” is the cumulative hit rate (%) up to that round. Count, Prop., and Acc. are
+measured among questions terminated at each round, while Cum. HR is the cumulative
+proportion of all questions with at least one retrieval hit up to that round. WorldMM∗
+denotes our reproduction of the original WorldMM [33].
+
+                                WorldMM∗                    MERIT
+            Round        Count Prop. Acc. C. HR     Count Prop. Acc. C. HR
+               0            3    0.6 100.0    0.0      1     0.2 100.0    0.0
+               1          214   42.8 73.4    37.4    341    68.2 74.5    46.4
+               2           80   16.0 56.3    45.6     64    12.8 71.9    52.6
+               3           68   13.6 51.5    49.2     32     6.4 62.5    54.4
+               4           27    5.4 55.6    51.6     16     3.2 62.5    54.6
+               5          108   21.6 56.5    53.0     46     9.2 54.3    55.6
+             Total        500 100.0 63.2 53.0        500 100.0 71.2 55.6
+        Avg. Rounds                 2.45                      1.72
+         ≤2 Rounds                 59.4%                     81.2%
+
+
+
+specific, isolated information from extensive continuous streams. Consequently,
+our retrieval-centric framework is highly aligned with the anticipated demands
+of future ultra-long video understanding.
+
+
+C     Additional Ablations and Analysis
+
+C.1    Round Distribution and Retrieval Hit Rate Analysis
+
+Following the overall retrieval evaluation presented in Table 5 of the main paper,
+this section analyzes the round-wise distribution and hit rates of the multi-
+turn QA process. We compare MERIT against the reproduced WorldMM [33]
+baseline, as both frameworks employ a multi-turn, agentic retrieval flow. The
+models are evaluated on EgoLifeQA [32] using GPT-5 [25] as the solver. Table 10
+presents the detailed round-by-round breakdown. Round 0 indicates instances
+where the model answers immediately without any retrieval.
+    A key advantage of MERIT is its high hit rate in the initial retrieval rounds.
+By Round 1, MERIT achieves a cumulative hit rate of 46.4%, outperforming
+WorldMM by +9.0 percentage points. Because the target evidence is effec-
+tively retrieved earlier, MERIT can answer questions in fewer rounds. Specif-
+ically, MERIT resolves 68.2% of the questions within a single round at an ac-
+curacy of 74.5%, whereas WorldMM resolves only 42.8%. This trend continues
+into Round 2, where 81.2% of MERIT’s questions are answered (vs. 59.4% for
+WorldMM), and its cumulative hit rate reaches 52.6% (vs. 45.6%).
+    Consequently, this early-round effectiveness significantly reduces the total
+number of retrieval iterations. MERIT averages only 1.72 rounds compared to
+24        Y. Choi et al.
+
+
+Table 11: Comparing MERIT against                  Table 12: Ablation on neighbor filtering
+a flat retrieval baseline on the Ego-              window size on EgoLifeQA [32]. Perfor-
+LifeQA [32]. ‘Key’ denotes the use of              mance across varying numbers of adjacent
+multi-key representations, and ‘NF’ de-            clips. The default (∆ = 2) is highlighted.
+notes neighbor filtering.
+                                                    ∆    Ent.   Evt. Hab.   Rel.   Task. Avg.   Hit.
+     Key NF   Ent.   Evt. Hab.   Rel. Task. Avg.     0   68.0 69.8 68.9 73.6       68.3   70.0 0.40
+     ✗   ✗    40.0 48.4 52.5 43.2     57.1 46.6      1   64.8 75.4 70.5 72.8       68.6   70.6 0.52
+     ✓   ✗    41.6 54.0 50.8 42.4     57.1 48.0      2   67.2 70.6 73.8 74.4       71.4   71.2 0.56
+     ✗   ✓    46.4 50.8 52.5 53.6     68.3 52.8      3   64.0 71.4 72.1 79.2       71.4   71.6 0.60
+     ✓   ✓    43.2 54.0 67.2 53.6     65.1 54.2      4   72.0 69.8 70.5 74.4       74.6   72.2 0.61
+
+
+
+
+2.45 for WorldMM, resulting in fewer LLM calls and faster inference. Despite this
+reduction in computational steps, MERIT consistently yields higher per-round
+accuracy across Rounds 1 to 4 (e.g., 71.9% vs. 56.3% in Round 2). Furthermore,
+only 9.2% of queries reach the maximum limit of 5 rounds in MERIT, compared
+to 21.6% in WorldMM, yet MERIT still attains a higher final cumulative hit
+rate. These results demonstrate that our multi-key based retrieval, combined
+with contextual neighbor filtering, successfully isolates relevant segments up-
+front. Instead of relying on extensive multi-turn iterations to compensate for
+initial retrieval failures, MERIT leverages highly effective early retrieval to min-
+imize computational overhead while achieving a higher overall accuracy.
+
+C.2      Comparison with Flat Retrieval Baseline
+In Table 11, we present an ablation study on EgoLifeQA [32] using Qwen3-VL-
+8B [3] to compare the core components of MERIT against a flat retrieval baseline.
+The flat baseline (Key=✗, NF=✗) performs retrieval using only standard 30-
+second dense caption embeddings, achieving an average score of 46.6.
+    By progressively integrating our proposed multi-key representations (Key)
+and the neighbor filtering (NF) mechanism, the overall average performance is
+significantly boosted to 54.2. Notably, the full configuration reaches peak scores
+in specific sub-categories such as EventRecall (54.0), HabitInsight (67.2), and Re-
+lationMap (53.6). These results demonstrate that both components are essential
+to the effectiveness of the retrieval design in MERIT, providing a substantial
+improvement over a standard flat retrieval approach.
+
+C.3      Ablation on Neighbor Filtering Window Size
+During neighbor filtering, temporal context is constructed by including a specific
+number of adjacent clips, defined as the window size (∆). Table 12 presents an
+ablation study on this parameter, evaluated on EgoLifeQA [32] using GPT-5 [25]
+with the base clip length fixed at 30-second.
+   Initially, expanding the temporal window yields substantial improvements in
+both retrieval hit rate and overall accuracy. Compared to the baseline without
+                                                                                                                                 MERIT      25
+
+neighbor filtering (∆ = 0), which yields a hit rate of 0.40 and an average accuracy
+of 70.0, integrating adjacent clips up to ∆ = 2 noticeably boosts the hit rate to
+0.56 and the average accuracy to 71.2. At this setting, MERIT also achieves a
+peak score in the HabitInsight category (73.8).
+    While further increasing ∆ to 3 and 4 continues to incrementally improve
+the hit rate (up to 0.61) and average accuracy (up to 72.2), the overall rate of
+performance gain begins to plateau. More importantly, incorporating additional
+adjacent clips linearly scales the number of input tokens, which significantly
+increases the computational overhead during the inference stage. Therefore, to
+strike an optimal balance between downstream task performance and token ef-
+ficiency, we establish ∆ = 2 as the default configuration for MERIT.
+
+
+
+                                                         EgoLifeQA            LVBench                            Video-MME(L)
+      Questions ending at round (%)
+
+
+
+
+                                           (a)                                                             (b)
+                                                                                                      62
+
+                                      80                                          Avg. Accuracy (%)   60
+                                                                                                      58
+                                      60                                                              56
+                                                                         μ=1.69                       54
+                                      40                                 μ=1.52                       52
+                                                                         μ=1.30
+                                      20                                                              50
+                                                                                                      48
+                                       0                                                              46
+                                            1        2       3       4        5                             1      2      3       4     5
+                                                 Number of retrieval rounds                                      Max retrieval rounds
+
+Fig. 4: Retrieval round distribution and performance scaling in MERIT. (a) The dis-
+tribution of required retrieval rounds to answer a query across different benchmarks.
+(b) Average accuracy scaling against the maximum round budget.
+
+
+C.4                                   Analysis of Retrieval Rounds
+
+We present a detailed analysis of the multi-turn retrieval mechanism in MERIT,
+evaluated with Qwen3-VL-8B [3] across multiple long video benchmarks. Fig. 4 (a)
+illustrates the distribution of required retrieval rounds to answer a query, capped
+at a default maximum of 5 rounds. The results show that most queries are re-
+solved highly efficiently in the early stages, with average retrieval rounds (µ) of
+1.69 for EgoLifeQA [32], 1.52 for LVBench [28], and 1.30 for Video-MME(L) [8].
+This empirical evidence demonstrates a direct correlation between the video
+length and the required retrieval budget; longer video contexts naturally neces-
+sitate slightly more iterative searches.
+    Additionally, Fig. 4 (b) plots the performance scaling against the maximum
+round budget across all three benchmarks. As the round limit increases, the av-
+erage accuracy steadily improves and eventually converges. This consistent trend
+confirms that the multi-turn mechanism in MERIT effectively resolves complex
+questions requiring iterative refinement, while maintaining computational effi-
+ciency for simpler queries.
+26      Y. Choi et al.
+
+D     Discussion
+
+D.1    Solver Dependency and Intelligence Allocation
+
+Perspective on Memory Building. From the perspective of memory build-
+ing, MERIT demonstrates effective retrieval capabilities. As evidenced by the hit
+rate results, the lightweight episodic memory construction successfully locates
+relevant temporal evidence without relying on complex, pre-computed hierarchi-
+cal graph structures. This suggests that elaborate structural pre-computation of
+the memory is largely redundant, as the inherent richness of the raw episodic
+memory itself provides sufficient grounding for accurate retrieval.
+Perspective on Solver and Intelligence Allocation. From the solver’s per-
+spective, however, post-retrieval reasoning emerges as the critical factor for over-
+all performance. As shown in Table 1 of the main paper, upgrading the solver
+from Qwen3-VL-8B [3] to GPT-5 [25] yields a substantial 17% performance
+improvement. Crucially, the underlying episodic memory M remains identical
+across both settings. This confirms that once the relevant evidence is retrieved,
+the solver’s inherent capacity to process the provided information plays a signif-
+icantly more decisive role than the structural complexity of the memory itself.
+    Furthermore, this insight highlights a critical inefficiency in conventional
+memory-based approaches. Prior methods typically require computationally ex-
+pensive MLLMs for both pre-computing complex hierarchical graphs and answer-
+ing the final queries, resulting in redundant intelligence usage. Consequently, our
+empirical findings and the structural observations of previous baselines strongly
+support our core motivation of intelligence allocation. Rather than engineering
+complex static memory structures upfront with redundant computational costs,
+we shift the primary intelligence requirement entirely to the inference stage. By
+providing rich context through temporal expansion, we enable capable solvers
+to maximize their reasoning potential.
+
+
+D.2    Future Works
+
+By allocating the high-level reasoning to capable MLLMs, MERIT maintains a
+strictly lightweight episodic memory. Without the structural overhead of con-
+stantly updating complex memory, our framework is naturally suited for lifelong
+video understanding. Future work will explore scaling this multi-key retrieval
+approach to effectively process unbounded, continuous video streams.
+
+
+E     Additional Qualitative Analysis
+
+E.1   Qualitative Comparison with Memory-based Baselines
+
+In this section, we present a qualitative comparison of MERIT, against two
+memory-based baselines: EgoRAG [32] (hierarchy-based memory) and WorldMM
+                                                                    MERIT        27
+
+[33](graph-based memory), evaluated on the EgoLifeQA [32]. EgoRAG con-
+structs a temporal hierarchy (ranging from 30-second clips to day-level gran-
+ularity) and retrieves evidence by matching question keywords with text embed-
+dings within a heuristically determined time scope. WorldMM constructs three
+types of multimodal memory: episodic, semantic, and visual. When querying
+its episodic memory, WorldMM searches a multi-granularity episodic graph and
+employs multi-round query reformulation, retrieving relevant nodes based on
+Personalized PageRank (PPR) scores.
+    Fig. 5 illustrates a RelationMap query with a short temporal context (query
+time at Day 1). The question, “who helped Tasha spread cream on the cake?”,
+requires not only temporal localization but also precise relationship mapping
+among multiple individuals in the scene. While all three models localize the tar-
+get time window, EgoRAG and WorldMM fail to identify the helpers, erroneously
+including the camera wearer (“I”). In contrast, MERIT accurately resolves these
+complex interpersonal interactions. Our Neighbor Filtering module effectively
+synthesizes the surrounding context to pinpoint the exact individuals and their
+corresponding actions, providing accurate filtered information.
+    Fig. 6 demonstrates an EventRecall query over an extended temporal horizon
+(query time at Day 6). The query demands fine-grained object details (e.g., the
+color of a previously used power bank). EgoRAG fails to localize the correct
+target time entirely, and WorldMM also fails despite its multi-round retrieval
+attempts. MERIT, however, successfully retrieves the target clip because the
+pre-extracted Summary Key explicitly preserves critical fine-grained attributes
+(e.g., “black power bank”), enabling direct and accurate localization.
+    Fig. 7 highlights a scenario with an extreme temporal gap between the target
+event (Day 1) and the query time (Day 7). MERIT achieves accurate retrieval
+in a single round, as the pre-extracted Event Key robustly captures the specific
+objects and actions requested by the query. Subsequently, the Neighbor Filtering
+module expands the local temporal context to extract the precise evidence re-
+quired to answer the question (e.g., asking Alice for help). Conversely, EgoRAG
+completely fails to localize the target time. While WorldMM eventually locates
+the target time after five retrieval rounds, it still yields an incorrect answer due
+to a lack of sufficient contextual information in its retrieved memory.
+
+
+E.2   Failure Cases
+Fig. 8 illustrates a typical failure case involving frequency or counting queries
+(e.g., “how many times” or “usually”). A fundamental limitation of current
+retrieval-based systems is that they return a limited set of individual events,
+rather than aggregating all relevant instances across the entire video timeline.
+While MERIT successfully retrieves the correct evidence within its top-3 re-
+sults, the QA solver is ultimately misled because the higher-ranked clips (top-1
+and top-2) support the incorrect Answer A. Consequently, queries that demand
+global temporal aggregation or routine reasoning remain a challenging direction
+for memory-based video understanding.
+28                  Y. Choi et al.
+
+ QA# 99 - RelationMap | Query Time: Day1 21:51:30 | Target Time: Day1 21:43:53
+
+
+
+                                                              ...
+
+
+                                                                                                                                          ......
+
+
+
+
+ Q: Who helped Tasha spread cream on the cake?
+
+ (A) Lucia, Katrina, Alice               (B) Lucia, Shure, Alice (C) Me, Lucia, Shure                     (D) Lucia, Shure, Katrina
+
+
+
+
+ MERIT
+
+
+ Round 1: “Tasha spread cream on the cake who helped”
+
+
+ Top 1: [DAY1 21:44:01 - DAY1 21:44:30]
+ Key
+                 (Event) I take the piping bag from Tasha and pipe cream onto the cake
+
+ Caption
+             "I look at the strawberry cake Alice picked up..."
+
+ Filtered Info
+
+
+     "Lucia and Katrina took turns squeezing cream with the piping bag; I also piped some while Tasha decorated with fruit."
+
+
+
+
+
+ Top 2: [DAY1 21:44:30 - DAY1 21:45:00]
+ Key
+                 (Event) Tasha pipes frosting and replenishes cakes with flower shapes
+
+ Caption
+             "I lean on a stool, watching Tasha pipe frosting..."
+
+ Filtered Info
+
+
+     "I took the piping bag from Tasha and piped cream onto the cake; later Tasha continued piping."
+
+
+
+
+
+ Top 3: [DAY1 21:41:01 - DAY1 21:41:30]
+ Key
+                 (Object) Tasha squeezes a neat circle and fills it with cream using a piping bag
+
+ Caption
+             "I walk back over and lean in to watch Tasha pipe cream..."
+
+ Filtered Info
+
+
+     "I piped cream, then handed the bag to Katrina who continued; Lucia also whipped and squeezed cream."
+
+
+
+
+
+ Top 4: [DAY1 21:41:30 - DAY1 21:42:00]
+ Key
+                 (Event) I pipe cream tracing a circle while Tasha arranges decorations
+
+ Caption
+             "We watch up close. Alice asks, 'Can you just give me a tiny bit..."
+
+ Filtered Info
+
+      "Lucia passed the piping tool to Alice, who then started squeezing cream onto the cake."
+
+
+
+
+
+ Top
+
+  5: [DAY1 17:22:01 - DAY1 17:22:30]
+ Key
+                 (Dialogue) Tasha says we can buy two, one for making a cake and one to eat
+
+ Caption
+             "Tasha holds a box, talking to Alice..."
+
+ Filtered Info
+
+
+     None
+
+
+
+
+
+ Top 6: [DAY1 17:32:00 - DAY1 17:32:30]
+ Key
+                 (Dialogue) Tasha asks if we were going to bake a cake that day
+
+ Caption
+             "Tasha comes over to me..."
+
+ Filtered Info
+
+
+     None
+
+
+
+
+
+ Top 7: [DAY1 21:42:31 - DAY1 21:43:00]
+ Key
+                 (Object) Tasha picks up a fruit to decorate
+
+ Caption
+             "I watch Lucia squeeze carefully..."
+
+ Filtered Info        "Lucia squeezed cream and then handed the tool to Alice who squeezed; earlier Katrina was also squeezing/whipping cream while Tasha
+                      added fruit."
+
+
+
+ REASONING: The context shows several people took turns piping/spreading cream. Lucia, Katrina, and Alice each squeezed cream onto the cakes
+
+ while Tasha decorated. There’s no evidence Shure helped. ANSWER: A ✅
+
+
+
+
+ EgoRAG
+
+
+ Keyword: “help Tasha, spread cream”
+
+
+ Time: DAY1-21440100-21443000_24 (evidence_info) "The narrator says, “I pipe cream onto the cake, squeezing rosettes one by one,” and later, “I hand the
+                                 piping bag back to Tasha,” with Tasha commenting, “You poured too much cream.”"
+
+ Time: DAY1-21413000-21420000_2              (evidence_info) "I take the piping bag from Tasha and pipe cream, tracing a circle, while Tasha arranges decorations"
+
+
+ ANSWER: C ❌
+
+
+
+ WorldMM
+
+ Round 1: (Episodic) “Tasha cake cream spreading helpers”
+
+
+ Top 1: [DAY1 21:42:00 - DAY1 21:45:00] (3min) "The group engages in decorating cakes together, with each person performing specific tasks while I ..."
+ Top 2: [DAY1 21:41:01 - DAY1 21:41:30] (30s) "I walk back over and lean in to watch Tasha pipe cream onto the cake with a piping bag while Katrina ..."
+ Top 3: [DAY1 21:44:01 - DAY1 21:44:30] (30s) "I look at the strawberry cake Alice picked up. Tasha asks, “So this one, should we not use it?... Strawberry ..."
+
+
+ Round 2: (Episodic) “Shure cake cream piping with Tasha”
+
+
+ Top 1: [DAY1 21:39:00 - DAY1 21:42:00] (3min) "I observed Katrina browsing decorations on her phone while I opened the cabinet and moved around the ..."
+ Top 2: [DAY1 21:41:30 - DAY1 21:42:00] (30s) "We watch up close. Alice asks, “Can you just give me a tiny bit because I don't eat cream?” Tasha adds ..."
+ Top 3: [DAY1 21:44:30 - DAY1 21:45:00] (30s) "I lean on a stool, watching Tasha pipe frosting and replenish the cakes with flower shapes ..."
+
+
+ Round 3: (Episodic) “Tasha spread cream helpers”
+
+
+ Top 1: [DAY1 19:09:00 - DAY1 20:09:00] (1h) "Upon arriving at the yard, I announced the password aloud to open the door and entered the dark ..."
+
+ Top 2: [DAY1 13:24:00 - DAY1 13:27:00] (3min) "I observed and engaged with the group as they assembled a puzzle, commenting on the difficulty and ..."
+
+ Top 3: [DAY1 13:25:30 - DAY1 13:26:00] (30s)"I glance left as Tasha carries tools outside. Tasha says, “Orchid tip.” “Oh,” I say. ..."
+
+
+ ANSWER: C ❌
+
+
+
+
+Fig. 5: Qualitative comparison on a RelationMap query, where MERIT successfully
+resolves complex interpersonal interactions using Neighbor Filtering, while other base-
+lines fail.
+                                                                                                                                         MERIT               29
+
+
+
+ QA# 432 - EventRecall | Query Time: Day6 15:39:11 | Target Time: Day6 15:16:38
+
+                                                               ...
+
+
+                                                                                                                                           ......
+
+
+
+
+ Q: I am now plugging in a power bank, what was the color of the power bank I used last time?
+
+ (A) White          (B) Black (C) Green (D) Yellow
+
+
+
+
+ MERIT
+
+
+ Round 1: “power bank color last time”
+
+
+ Top 1: [DAY2 13:19:01 - DAY2 13:19:30]
+ Key
+                 (Object) Power bank is green and others ask if it can be charged
+
+ Caption
+             "I point with my left hand. 'Hehe,' I say..."
+
+ Filtered Info
+
+
+     None
+
+
+
+
+
+ Top 2: [DAY2 12:02:30 - DAY2 12:03:00]
+ Key
+                 (Object) Power bank is picked up
+
+ Caption
+             "I extend my phone toward Katrina. 'Look at the time,' I say..."
+
+ Filtered Info
+
+
+     None
+
+
+
+
+
+ Top 3: [DAY6 12:47:30 - DAY6 12:48:00]
+ Key
+                 (Object) Power bank is picked up and its battery checked
+
+ Caption
+             "I walk forward and sit by the sofa. I pick up a power bank..."
+
+ Filtered Info
+
+
+     None
+
+
+
+
+
+ Top 4: [DAY1 14:11:31 - DAY1 14:11:59]
+ Key
+                 (Dialogue) Katrina asks if the power bank is out of battery and doesn't light up
+
+ Caption
+             "I check my phone. 'It's too dirty, right?' I say..."
+
+ Filtered Info
+
+      None
+
+
+
+
+
+
+Top 5: [DAY6 10:27:31 - DAY6 10:28:00]
+ Key
+               (Object) Power bank is picked up and its battery is checked
+
+ Caption
+           "I pick up the power bank with my right hand..."
+
+ Filtered Info
+
+
+   None
+
+
+
+
+
+ Top 6: [DAY6 15:16:31 - DAY6 15:16:59]
+ Key
+                 (Summary) black power bank unplug turn on check battery ask installation
+
+ Caption
+             "I move to the bedside, glance at the bed..."
+
+ Filtered Info
+
+
+     "He picked up a black power bank and later carried two black power banks."
+
+
+
+
+
+ Top 7: [DAY6 09:56:30 - DAY6 09:57:00]
+ Key
+                 (Object) Power bank battery is checked
+
+ Caption
+             "I check the power bank’s battery, pick up my phone..."
+
+ Filtered Info        None
+
+
+
+ REASONING: Just before the current time (15:39 on Day6), the last interaction with a power bank was ... earlier at 15:16 on Day6 he explicitly picked
+
+ up a black power bank as well. Hence, the last one used was black. ANSWER: B ✅
+
+
+
+
+ EgoRAG
+
+
+ Keyword: “use power bank”
+
+
+ Time: DAY2-13190100-13193000_1                                A
+                                           (evidence_info) "“ nyway, it’s green,” and “It’s green, right?” indicating the item being discussed was green."
+
+
+ ANSWER: C ❌
+
+
+
+ WorldMM
+               (         )
+ Round 1: Episodic “last time plugging in power bank color”
+
+
+ Top 1: [DAY5 11:57:00 - DAY5 12:00:00] (3min) "I moved from patting Nicous toward the living room, encountering Tasha and Alice who inquired ..."
+ Top 2: [DAY4 15:54:00 - DAY4 15:57:00] (3min) "I began by sending a message on my phone while moving around the living room, after ..."
+ Top 3: [DAY5 20:50:30 - DAY5 20:51:00] (30s) "I look at Tasha and her glasses. “Let me see if this is off,” I say..."
+
+ Round      2: (Visual) “DAY5 20:50:30 - DAY5 20:51:00”
+ [DAY5 20:50:30 - DAY5 20:51:00]                [30 images from 1 clips]
+
+ Round      3: (Visual) “DAY5 20:50:00 - DAY5 20:52:00”
+ [DAY5 20:50:00 - DAY5 20:52:00]                [64 images from 1 clips]
+
+ Round 4:      (Visual) “DAY5 20:50:40 - DAY5 20:51:10”
+ [DAY5 20:50:40 - DAY5 20:51:10]                [31 images from 1 clips]
+
+ ANSWER: A ❌
+
+
+
+
+Fig. 6: Qualitative comparison on an EventRecall query over an extended temporal
+horizon, demonstrating that MERIT accurately localizes fine-grained object details
+using the pre-extracted Summary Key while baselines fail to find the target time.
+30                  Y. Choi et al.
+
+ QA# 490 - RelationMap | Query Time: Day7 13:53:36 | Target Time: Day1 19:20:56
+
+                                                             ...
+
+
+                                                                                                                                               ......
+
+
+
+
+ Q: On the first day, when I was lifting the garbage bag, who helped me put the trash from the plate into the
+
+ garbage bag?
+
+ (A) Lucia          (B) Katrina     (C) Tasha       (D) Alice
+
+
+ MERIT
+
+
+ Round 1: “first day lifting garbage bag plate trash helper”
+
+
+ Top 1: [DAY3 20:03:30 - DAY3 20:04:00]
+ Key
+                 (Summary) drop garbage bag courtyard alice organizes trash tasha picks basin
+
+ Caption
+             "I walk to the courtyard corner and drop the garbage bag there..."
+
+ Filtered Info
+
+
+     None
+
+
+
+
+ Top 2: [DAY4 12:17:30 - DAY4 12:17:59]
+ Key
+                 (Summary) tidying pickup trash join lucia alice asks whats wrong why embarrassed
+
+ Caption
+             "I walk forward, picking up trash—paper and leaves—from the ground..."
+
+ Filtered Info
+
+
+     None
+
+
+
+
+ Top 3: [DAY4 11:32:00 - DAY4 11:32:30]
+ Key
+                 (Dialogue) Lucia asks where our trash bag is
+
+ Caption
+             "Shure says, 'Ta-da! The butler brought it...'"
+
+ Filtered Info
+
+
+     None
+
+
+
+
+ Top 4: [DAY5 11:31:00 - DAY5 11:31:30]
+ Key
+                 (Summary) search alice box check lucia box hold takeout dispose trash
+
+ Caption
+             "I pick up something and brush past Lucia..."
+
+ Filtered Info
+
+      None
+
+
+
+
+ Top
+
+   5: [DAY1 19:21:00 - DAY1 19:21:30]
+ Key
+              (Event) I hold a garbage bag and clean up the room while Lucia and Tasha help
+
+ Caption
+          "I hold a garbage bag. 'Leave these two here,' I say..."
+
+ Filtered Info
+
+
+  "Day 1: I asked for help and called Alice over; we scraped the garbage from the plate into the trash bag."
+
+
+
+
+ Top 6: [DAY1 19:23:04 - DAY1 19:23:28]
+ Key
+                 (Summary) picking up litter into trash bag clearing table
+
+ Caption
+             "I scoop up paper scraps and litter from the ground..."
+
+ Filtered Info
+
+      None
+
+
+ REASONING: On Day 1, the context explicitly states that I called Alice over and together we scraped the garbage from the plate into the trash bag,
+
+ indicating Alice helped. ANSWER: D ✅
+
+
+
+
+ EgoRAG
+
+
+ Keyword: “lift garbage bag, help put trash”
+
+
+ Time: DAY1-13303000-13310000            (caption) "Shure says, "Oh, no, a bit lower. " I adjust my position—stand, sway, and turn right. Shure adds ..."
+ Time: DAY1-13303000-13310000            (caption) "The manual. " I notice Tasha holding a knife and helping wash dishes. "Can't this control water? " I ask. ..."
+ Time: DAY1-14033000-14035900            (caption) "I sit down. Lucia asks, "Should we keep this carton, just in case we…" "Keep it, keep it, yeah," I say. I ..."
+
+
+ ANSWER: C ❌
+
+
+
+ WorldMM
+
+ Round 1: (Episodic) “Day 1 lifting garbage bag plate trash helper”
+
+
+ Top 1: [DAY4 11:47:30 - DAY4 11:47:56] (30s) "I carry an empty plate and barbecue sauce outside and set them on the table. I turn, rub my hands, ..."
+
+ Top 2: [DAY2 17:18:00 - DAY2 17:18:30] (30s) "I walk into my room and ask, “Have you two talked them into it?” Alice asks, “Has the bathroom been ..."
+
+ Top 3: [DAY5 11:21:00 - DAY5 11:24:00] (3min) "I gathered leftover food and items from the stool, placing a bottle and a bowl into the bag, then ..."
+
+ Round 2: (Episodic) “DAY1 lifting garbage bag plate trash help”
+
+
+ Top 1: [DAY5 11:23:00 - DAY5 11:23:28] (30s) "I dump the trash, sort the garbage, tie a knot in the bag, close the trash can lid, and walk back through ..."
+
+ Top 2: [DAY5 11:22:30 - DAY5 11:23:00] (30s) "I pick up the white lid and a garbage bag, stand up, go downstairs, walk to the trash pile near the gate, ..."
+
+ Top 3: [DAY2 21:03:00 - DAY2 21:06:00] (3min) "I clean the pool area by tossing trash into a bag and try to wash oil off my hand at the faucet ..."
+
+ Round 3: (Episodic) “DAY1 lifting garbage bag plate someone helps put trash into bag”
+
+
+ Top 1: [DAY5 11:22:00 - DAY5 11:22:30] (30s) "I toss trash into the bag and organize it, tidy leftover food, clear the table and chairs, and collect garbage ..."
+
+ Round 4: (Episodic) “Day 1 help put trash from plate into garbage bag”
+
+
+ Top 1: [DAY1 19:21:00 - DAY1 19:21:30] (30s) "I hold a garbage bag and look around the room while asking if there is more trash to throw away, ..."
+
+ Top 2: [DAY2 21:02:00 - DAY2 21:02:29]         (30s)"I pour leftovers from the plate into the bag, set the plate aside, and put other items..."
+
+ Top 3: [DAY2 20:58:30 - DAY2 20:59:00]         (30s)"We talk about cleaning before leaving the Airbnb, and I ask where to throw away the contents while..."
+
+ Round 5: (Visual) “DAY1 19:20:45 - DAY1 19:21:45”
+
+
+ [DAY1 19:20:45 - DAY1 19:21:45]              [61 images from 1 clips]
+
+
+ ANSWER: A ❌
+
+
+
+
+Fig. 7: Qualitative results for a query with an extreme temporal gap, highlighting that
+MERIT efficiently retrieves the correct context in a single round via the Event Key.
+                                                                                                                                  MERIT                      31
+
+
+
+
+ QA# 19 - HabitInsight | Query Time: Day1 13:19:04 | Target Time: Day1 12:47:13
+
+                                                       ...
+
+
+                                                                                                                                    ......
+
+
+
+
+ Q: What do I usually do after getting close to the sports camera today?
+
+(A) I will rotate the direction of the camera. (B) I will glance at the timer on my phone for the camera.
+
+
+(C) I will see if the camera can swing. (D) I will pick up the power bank charging the camera, take a look, and then put it down.
+
+
+
+ MERIT
+
+
+ Round 1: “today after getting close to the sports camera”
+
+
+ Top 1: [DAY1 11:36:00 - DAY1 11:36:29]
+ Key
+               (Event) I close the door and steady the camera while twisting the screws underneath
+
+ Caption
+           "I close the door. Katrina says, 'He said it would take one to two days for them to bloom.'..."
+
+ Filtered Info
+
+
+   "After approaching the camera, I twist the screws underneath and adjust the camera’s angle/direction with both hands."
+
+
+
+ Top 2: [DAY1 11:18:00 - DAY1 11:18:29]
+ Key
+               (Dialogue) Your hair is always blocking the camera—can you do something about it?
+
+ Caption
+           "Lucia says, 'Yeah, this one is for the bigger ones.' Katrina adds, 'Yeah, the big one can fit in.'..."
+
+ Filtered Info
+
+
+   "I get up to check and adjust the camera angle so Tasha’s hair doesn’t block it, then confirm the angle is good."
+
+
+
+ Top 3: [DAY1 12:47:00 - DAY1 12:47:30]
+ Key
+               (Summary) kitchen phone user fiddles charger glances camera power running out
+
+ Caption
+           "I walk into the kitchen, scrolling on my phone..."
+
+ Filtered Info
+
+
+   "I glance at the camera, pick up and adjust the charger, then power on the camera while checking my phone."
+
+
+
+ Top 4: [DAY1 11:25:30 - DAY1 11:26:00]
+ Key
+               (Event) I watch Shure write
+
+ Caption
+           "'Okay,' I say. I watch Shure write..."
+
+ Filtered Info
+
+    None
+
+
+
+
+Top 5: [DAY1 11:26:30 - DAY1 11:27:00]
+ Key
+               (Event) I watch Shure write
+
+ Caption
+           "I watch Shure, nod and smile, then lean back and glance left at him..."
+
+ Filtered Info
+
+
+   None
+
+
+
+ Top 6: [DAY1 11:50:00 - DAY1 11:50:30]
+ Key
+               (Event) I lean forward watching everyone pack up
+
+ Caption
+           "I lean forward, watching everyone pack up..."
+
+ Filtered Info
+
+    None
+
+ REASONING: Across today’s clips, when I get close to the sports camera I typically adjust it—twisting the screws and changing its angle/direction
+
+ (e.g., 11:18 and 11:36). This fits rotating the camera’s direction better than checking a phone timer or handling the charger. ANSWER: A ❌
+
+
+
+
+   o
+ Eg RAG
+
+
+ Keyword: “do after getting close, sports camera”
+
+ Time: DAY1-11360000-11362900_5 (evidence_info) "After approaching the camera, I adjust it—steadying it with my right hand while my left twists the
+                                 screws underneath; I keep adjusting it with both hands, then pull my hand back, look at the camera, and turn around."
+ Time: DAY1-12063000-12065900_10 (evidence_info) "I look up at the camera and stare at it."
+ ANSWER: A ❌
+
+
+
+ WorldMM
+  Round 1: (Episodic) “after getting close to the sports camera today action taken”
+
+
+ Top 1: [DAY1 11:36:00 - DAY1 11:39:00] (3min) "I secured the camera by closing the door and adjusting its screws with my left hand, ensuring ..."
+ Top 2: [DAY1 11:09:43 - DAY1 12:12:00] (1h) "I initiated the group meeting by setting up my phone as a stopwatch and instructed everyone to mark ..."
+ Top 3: [DAY1 12:12:00 - DAY1 13:12:00] (1h) "The group held a comprehensive event planning meeting focused on scheduling, activities, and resource ..."
+  Round 2: (Episodic) “sports camera phone timer glance today”
+
+
+ Top 1: [DAY1 12:34:01 - DAY1 12:34:29] (30s) "I show my phone with the stopwatch to everyone. “Everyone’s been watching the time, looking at the ..."
+ Top 2: [DAY1 12:23:00 - DAY1 12:23:30] (30s) "Lucia says we are looking for scrap. I pick up my phone and say Tasha’s hair is still covering it. ..."
+ Top 3: [DAY1 12:23:30 - DAY1 12:24:00] (30s) "I work my phone and say it is okay. I show the timer to everyone again and explain that it is safer to ..."
+  Round 3: (Episodic) “after approaching sports camera today action”
+
+
+ Top 1: [DAY1 12:47:31 - DAY1 12:48:00] (30s) "I walk forward, checking my camera and phone. Lucia comments, and I nudge trash aside with my foot. ..."
+ Top 2: [DAY1 12:32:00 - DAY1 12:32:29] (30s)"I pick up my phone and use my left hand to steady Alice’s glasses. I say the light is broken, ..."
+ Top 3: [DAY1 12:55:31 - DAY1 12:56:00] (30s)"I shake my head, operate the rod, and walk beside Alice. I say the red light means the battery is ..."
+ ANSWER: B ❌
+
+
+
+
+Fig. 8: A failure case involving a frequency query, where the QA solver is misled by
+incorrect actions in the top-ranked clips.
+32       Y. Choi et al.
+
+F     Prompt Appendix
+
+     Multi-key Extraction Prompt
+     You are extracting retrieval keys from an episodic video memory clip.
+
+     Each input value corresponds to a ~30-second video clip and consists of:
+     - physical actions and movements
+     - spoken dialogue between people
+     - interactions with objects
+     - reflect the entire clip by summarizing the clip
+
+     Your task is to extract EXACTLY FOUR retrieval keys from the value.
+     Do NOT write extra explanations.
+     Do NOT invent events.
+     Use only information explicitly present in the value.
+
+     The four keys MUST correspond to the following categories:
+
+     1. Event / Action key
+     - What physical actions or events actually happened between people?
+     - Focus on observable actions and interactions.
+     - Use one short sentence or phrase.
+     - Include the agent if identifiable (use actual names if present).
+     - If the speaker uses first-person expressions (I / me), use ’I’ or ’me’.
+
+     2. Dialogue / Mention key
+     - What was said, asked, or mentioned in the dialogue?
+     - Focus on questions, statements, commands, or repeated mentions.
+     - Use one short sentence or phrase.
+
+     3. Object-state / Item-centric key
+     - What object was handled, requested, moved, or referenced?
+     - Describe the object and its state or role in the scene.
+     - Use one short sentence or phrase.
+
+     4. Summary / Retrieval key
+     - Generate ONE concise retrieval key that best represents the core event of the clip.
+     - Abstract away redundant or repeated actions.
+     - Capture the main entities, actions, and intent.
+     - Be concise and retrieval-friendly.
+     - Prefer compact keyword-style phrasing (not a full sentence).
+     - Use spaces between words.
+     - Stay grounded in the value; do not add details.
+
+     Formatting rules:
+     - Output exactly four lines
+     - One key per line, in the order: event, dialogue, object, summary
+     - Use spaces between words
+     - DO NOT use underscores (_)
+     - Do not include numbering, bullets, or extra explanations
+     - Each of lines 1-3 must be a single sentence or a single clause
+     - Line 4 should be a short keyword-style phrase (not necessarily a sentence)
+
+     # Few-shot Examples: [... Few-shot examples ...]
+
+     Now extract the four retrieval keys from the following value.
+
+     Value:
+     {caption}
+
+
+
+                      Fig. 9: Prompt used for Multi-key Extraction.
+                                                                       MERIT          33
+
+
+
+Neighbor Filtering Prompt
+You are a helpful assistant that extracts relevant information from video captions.
+
+Given a question with multiple choice answers and captions from retrieved clips’
+     neighborhoods (±1 minute window each), your task is to:
+1. For each retrieved clip, analyze its 5 neighbor captions (before_2, before_1,
+     center, after_1, after_2)
+2. Extract ONLY the information relevant to answering the question
+3. Return relevant info for each clip
+
+Output format (JSON):
+{
+  "clip_1": "...concise relevant info...",
+  "clip_2": "",
+  ...
+  "clip_N": "..."
+}
+
+Guidelines:
+- Focus on information that directly helps answer the question
+- If no relevant information is found for a clip, output empty string ""
+- Keep each relevant_info concise (1-3 sentences)
+- Output valid JSON only, no extra commentary
+
+
+
+                 Fig. 10: Prompt used for Neighbor Filtering.
+

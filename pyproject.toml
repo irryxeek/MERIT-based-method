@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "merit-qvh"
+version = "0.1.0"
+description = "Frozen-model MERIT adaptation for QVHighlights"
+requires-python = ">=3.10"
+dependencies = ["numpy", "pillow", "decord", "torch", "transformers", "sentence-transformers"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B"]

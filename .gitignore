@@ -1,0 +1,44 @@
+# Python environments, build products and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+
+# Credentials and per-machine configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+configs/*.local.json
+configs/automation_v1.json
+scripts/merit-qvh-supervisor.service
+
+# External datasets, weights and generated experiment output
+/data/
+/models/
+/artifacts/
+/runs/
+/logs/
+/runtime/
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.mp4
+*.mkv
+*.avi
+*.webm
+*.log
+*.pid
+.DS_Store

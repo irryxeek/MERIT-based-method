@@ -1,0 +1,67 @@
+{
+  "run_root": "/path/to/MERIT-based-method/artifacts/runs/<RUN_NAME>",
+  "protocol_id": "<PROTOCOL_ID_FROM_WHERE>",
+  "endpoint": "http://127.0.0.1:8036/v1",
+  "gpu_uuids": {
+    "4": "<UUID_OF_ASSIGNED_GPU_4>",
+    "5": "<UUID_OF_ASSIGNED_GPU_5>"
+  },
+  "poll_seconds": 60,
+  "stall_seconds": 1800,
+  "service_startup_seconds": 600,
+  "stop_service_on_complete": true,
+  "worker_command": [
+    "/path/to/python",
+    "-u",
+    "/path/to/MERIT-based-method/scripts/resume_validation.py",
+    "--run-root",
+    "/path/to/MERIT-based-method/artifacts/runs/<RUN_NAME>",
+    "--endpoint",
+    "http://127.0.0.1:8036/v1"
+  ],
+  "worker_environment": {
+    "CUDA_VISIBLE_DEVICES": "4",
+    "PYTHONPATH": "/path/to/MERIT-based-method/src",
+    "TOKENIZERS_PARALLELISM": "false"
+  },
+  "adopt_worker_command": [
+    "/path/to/python",
+    "-u",
+    "/path/to/MERIT-based-method/scripts/run_main.py",
+    "--config",
+    "/path/to/MERIT-based-method/configs/main_gpu_v1.json",
+    "--endpoint",
+    "http://127.0.0.1:8036/v1"
+  ],
+  "service_command": [
+    "/path/to/python",
+    "-m",
+    "vllm.entrypoints.openai.api_server",
+    "--model",
+    "/path/to/MERIT-based-method/models/Qwen3-VL-8B-Instruct",
+    "--served-model-name",
+    "Qwen/Qwen3-VL-8B-Instruct",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8036",
+    "--tensor-parallel-size",
+    "2",
+    "--dtype",
+    "bfloat16",
+    "--max-model-len",
+    "32768",
+    "--max-num-seqs",
+    "4",
+    "--gpu-memory-utilization",
+    "0.56",
+    "--limit-mm-per-prompt",
+    "{\"image\":90,\"video\":0}",
+    "--mm-processor-kwargs",
+    "{\"max_pixels\":200704}"
+  ],
+  "service_environment": {
+    "CUDA_VISIBLE_DEVICES": "4,5",
+    "TOKENIZERS_PARALLELISM": "false"
+  }
+}

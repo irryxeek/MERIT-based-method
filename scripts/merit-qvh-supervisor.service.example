@@ -1,0 +1,20 @@
+[Unit]
+Description=MERIT QVHighlights experiment supervision and recovery
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+WorkingDirectory=/path/to/MERIT-based-method
+Environment=PYTHONPATH=/path/to/MERIT-based-method/src
+Environment=TOKENIZERS_PARALLELISM=false
+ExecStart=/path/to/python -u /path/to/MERIT-based-method/scripts/experiment_supervisor.py --config /path/to/MERIT-based-method/configs/automation_v1.json
+Restart=on-failure
+RestartSec=15
+# Inference children survive a monitor restart and are re-adopted by PID identity.
+KillMode=process
+TimeoutStopSec=10
+StandardOutput=append:/path/to/MERIT-based-method/artifacts/runs/<RUN_NAME>/logs/supervisor.log
+StandardError=inherit
+
+[Install]
+WantedBy=default.target

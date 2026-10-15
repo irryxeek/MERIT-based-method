@@ -1,0 +1,6 @@
+[submodule "third_party/merit"]
+	path = third_party/merit
+	url = https://github.com/choi-yeeun/MERIT.git
+[submodule "third_party/moment_detr"]
+	path = third_party/moment_detr
+	url = https://github.com/jayleicn/moment_detr.git

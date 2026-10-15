@@ -1,0 +1,42 @@
+{
+  "verified_at_utc": "2026-10-14T08:54:47.002574+00:00",
+  "paper": {
+    "title": "Keep It Simple: Multi-Key Episodic Memory Retrieval for Ultra-Long Video Understanding",
+    "arxiv_id": "2608.07663",
+    "version": "v2",
+    "version_date": "2026-09-16",
+    "venue": "ECCV 2026",
+    "source_url": "https://arxiv.org/pdf/2608.07663v2",
+    "project_url": "https://choi-yeeun.github.io/MERIT/",
+    "local_pdf": "papers/MERIT_2608.07663v2.pdf",
+    "pages": 33,
+    "bytes": 18088197,
+    "sha256": "982d2db50ce6d794beebc332451ee83958bbd6f24430ca61a33178e768c240e8"
+  },
+  "official_code": {
+    "url": "https://github.com/choi-yeeun/MERIT.git",
+    "commit": "6edea6e1ea55af0f6d2e32c46ac170699e955993",
+    "local_path": "third_party/merit",
+    "checkout": "shallow sparse clone",
+    "omitted_upstream_directories": [
+      "assets",
+      "data"
+    ],
+    "verified_files_matching_git_blobs": 59
+  },
+  "existing_qvhighlights_resources": {
+    "repository_path": "third_party/moment_detr",
+    "repository_commit": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca",
+    "training_annotations": "third_party/moment_detr/data/highlight_train_release.jsonl",
+    "training_annotations_sha256": "fd28404187468f57cf99242be2963127dc9b4aef26c7de3cb9469569801f2625",
+    "validation_annotations": "third_party/moment_detr/data/highlight_val_release.jsonl",
+    "validation_annotations_sha256": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02",
+    "validation_queries": 1550,
+    "validation_unique_videos": 1519,
+    "video_root": "data/QVHighlights/videos",
+    "validation_missing_video_files": 0,
+    "validation_check_scope": "File existence only; no decoding performed in this task."
+  },
+  "experiment_status": "Paper and source acquired; QVHighlights adaptation is planned, not implemented or evaluated.",
+  "publication_note": "Historical acquisition record as of verified_at_utc. Host-specific resource paths are mapped to the portable repository layout; hashes and original observations are unchanged. See README.md for the implemented adaptation."
+}

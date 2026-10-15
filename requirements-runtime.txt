@@ -1,0 +1,10 @@
+# Verified existing Python 3.10.12 environment; vLLM runs in a separate serving process.
+torch==2.9.0
+transformers==4.57.6
+sentence-transformers==5.7.0
+huggingface-hub==0.36.2
+numpy==2.2.6
+pillow==12.3.0
+decord==0.6.0
+scipy==1.15.3
+scikit-learn==1.7.2
