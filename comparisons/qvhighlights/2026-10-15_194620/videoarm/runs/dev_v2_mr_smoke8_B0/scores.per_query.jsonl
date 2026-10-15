@@ -1,0 +1,6 @@
+{"qid": 2953, "source_id": "D2Fk3Zke6Kc", "metrics": {"MR-full-mAP": 0.0, "MR-full-mAP@0.5": 0.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 5095, "source_id": "k7k1mP3fD6I", "metrics": {"MR-full-mAP": 0.2, "MR-full-mAP@0.5": 0.5, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 6099, "source_id": "5OCjLnmH2_w", "metrics": {"MR-full-mAP": 0.0, "MR-full-mAP@0.5": 0.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 6415, "source_id": "nqseXA2oerE", "metrics": {"MR-full-mAP": 0.0, "MR-full-mAP@0.5": 0.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 8429, "source_id": "u-61297MT1I", "metrics": {"MR-full-mAP": 0.7, "MR-full-mAP@0.5": 1.0, "MR-full-mAP@0.75": 1.0, "MR-full-R1@0.5": 1.0, "MR-full-R1@0.7": 1.0}}
+{"qid": 8796, "source_id": "ppQ5PNkBKtI", "metrics": {"MR-full-mAP": 0.175, "MR-full-mAP@0.5": 0.25, "MR-full-mAP@0.75": 0.25, "MR-full-R1@0.5": 1.0, "MR-full-R1@0.7": 1.0}}

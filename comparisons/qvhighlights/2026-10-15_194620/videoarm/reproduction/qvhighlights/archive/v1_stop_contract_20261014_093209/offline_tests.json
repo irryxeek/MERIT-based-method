@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "count": 32,
+  "pytest_log": "reproduction/qvhighlights/logs/pytest_final_checked.log",
+  "ruff_log": "reproduction/qvhighlights/logs/ruff_final_checked.log",
+  "scope": "isolated QVH CPU regression tests and F/E9 static checks; no real model inference",
+  "verified_unix": 1791909500.0972106
+}

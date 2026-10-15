@@ -1,0 +1,170 @@
+{
+  "checked_at": "2026-10-14T10:06:23+08:00",
+  "kind": "provisional_status_answer_not_formal_freeze_estimate",
+  "formal_condition_queries": {
+    "val": 9300,
+    "test": 6168,
+    "total": 15468
+  },
+  "execution": "one owned BF16 TP2 model service, max_num_seqs=1, sequential methods/tasks; GPUs 4 and 5",
+  "evidence": {
+    "dev_v2_mr_dev50_B0": {
+      "terminal_queries": 49,
+      "statuses": {
+        "failed": 18,
+        "running": 1,
+        "succeeded": 31
+      },
+      "mean_active_seconds": 11.507832225136536,
+      "median_active_seconds": 5.27060364902718,
+      "mean_initial_model_seconds_including_cache_source_timing": 8.117021134246748,
+      "source": "qvh_data/runs/dev_v2_mr_dev50_B0/state.sqlite"
+    },
+    "dev_v2_mr_smoke8_B0": {
+      "terminal_queries": 8,
+      "statuses": {
+        "failed": 2,
+        "succeeded": 6
+      },
+      "mean_active_seconds": 8.345543176750652,
+      "median_active_seconds": 5.153572112030815,
+      "mean_initial_model_seconds_including_cache_source_timing": 6.603155889752088,
+      "source": "qvh_data/runs/dev_v2_mr_smoke8_B0/state.sqlite"
+    },
+    "dev_v2_mr_smoke8_B1": {
+      "terminal_queries": 8,
+      "statuses": {
+        "failed": 2,
+        "succeeded": 6
+      },
+      "mean_active_seconds": 34.27493686199887,
+      "median_active_seconds": 31.276409502519527,
+      "mean_initial_model_seconds_including_cache_source_timing": 6.603155889752088,
+      "source": "qvh_data/runs/dev_v2_mr_smoke8_B1/state.sqlite"
+    },
+    "dev_v2_mr_smoke8_M1": {
+      "terminal_queries": 8,
+      "statuses": {
+        "failed": 2,
+        "succeeded": 6
+      },
+      "mean_active_seconds": 20.20616359498672,
+      "median_active_seconds": 17.409195550513687,
+      "mean_initial_model_seconds_including_cache_source_timing": 6.603155889752088,
+      "source": "qvh_data/runs/dev_v2_mr_smoke8_M1/state.sqlite"
+    },
+    "dev_v2_mr_smoke8_A1": {
+      "terminal_queries": 8,
+      "statuses": {
+        "failed": 2,
+        "succeeded": 6
+      },
+      "mean_active_seconds": 17.321553215864697,
+      "median_active_seconds": 14.502651615999639,
+      "mean_initial_model_seconds_including_cache_source_timing": 6.603155889752088,
+      "source": "qvh_data/runs/dev_v2_mr_smoke8_A1/state.sqlite"
+    },
+    "dev_v1_hd_dev50_B0": {
+      "terminal_queries": 50,
+      "statuses": {
+        "succeeded": 50
+      },
+      "mean_active_seconds": 40.60278476773529,
+      "median_active_seconds": 45.07340114447288,
+      "mean_initial_model_seconds_including_cache_source_timing": 41.306165047436956,
+      "source": "qvh_data/runs/dev_v1_hd_dev50_B0/state.sqlite"
+    },
+    "dev_v1_hd_dev50_B1": {
+      "terminal_queries": 50,
+      "statuses": {
+        "succeeded": 50
+      },
+      "mean_active_seconds": 52.210814850956666,
+      "median_active_seconds": 50.71403142946656,
+      "mean_initial_model_seconds_including_cache_source_timing": 40.08137455173768,
+      "source": "qvh_data/runs/dev_v1_hd_dev50_B1/state.sqlite"
+    },
+    "dev_v1_hd_dev50_M1": {
+      "terminal_queries": 35,
+      "statuses": {
+        "failed": 28,
+        "paused": 1,
+        "pending": 14,
+        "succeeded": 7
+      },
+      "mean_active_seconds": 29.157589341196164,
+      "median_active_seconds": 19.036555916944053,
+      "mean_initial_model_seconds_including_cache_source_timing": 39.87413852457124,
+      "source": "qvh_data/runs/dev_v1_hd_dev50_M1/state.sqlite"
+    }
+  },
+  "seconds_per_query_assumptions_low_central_high": {
+    "mr_B0_cold": [
+      20,
+      22,
+      30
+    ],
+    "mr_B1_shared_initial": [
+      30,
+      35,
+      45
+    ],
+    "mr_M1_shared_initial": [
+      18,
+      25,
+      40
+    ],
+    "mr_initial_once_on_test": [
+      6,
+      8,
+      12
+    ],
+    "hd_initial_once_per_split": [
+      35,
+      41,
+      50
+    ],
+    "hd_B1_shared_initial": [
+      45,
+      52,
+      65
+    ],
+    "hd_M1_shared_initial": [
+      20,
+      35,
+      65
+    ]
+  },
+  "remaining_dev_hours_low_central_high": [
+    4,
+    5,
+    6
+  ],
+  "val_inference_hours_low_central_high": [
+    72.33333333333333,
+    90.41666666666667,
+    127.01388888888889
+  ],
+  "test_inference_hours_low_central_high": [
+    65.96333333333334,
+    83.95333333333333,
+    118.64833333333333
+  ],
+  "total_remaining_hours_with_5pct_overhead_and_1hr_reporting_low_central_high": [
+    150.21150000000003,
+    189.0885,
+    264.94533333333334
+  ],
+  "projected_completion_low_central_high": [
+    "2026-10-20T16:19+08:00",
+    "2026-10-22T07:11+08:00",
+    "2026-10-25T11:03+08:00"
+  ],
+  "caveats": [
+    "V2 HD adaptive throughput has not yet been measured; v1 HD timings are latency evidence only, not valid method quality evidence.",
+    "Initial-only shared cache is counted once per split, not as a free initializer for the first formal method.",
+    "Early output failures can shorten measured query time and bias throughput optimistically.",
+    "Requires uninterrupted owned GPU availability and no new implementation/environment blocker.",
+    "Does not create checks/full_run_estimate.json or satisfy the formal freeze gate; the worker will save that estimate after completed v2 development."
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "status": "official_success_subset_only",
+  "task": "mr",
+  "coverage": {
+    "planned": 8,
+    "predicted": 2,
+    "missing_qids": [
+      5095,
+      6099,
+      6415,
+      6536,
+      8429,
+      8796
+    ]
+  },
+  "official_metrics": {
+    "short": {
+      "MR-mAP": null,
+      "MR-R1": null
+    },
+    "middle": {
+      "MR-mAP": {
+        "0.5": 75.0,
+        "0.55": 0.0,
+        "0.6": 0.0,
+        "0.65": 0.0,
+        "0.7": 0.0,
+        "0.75": 0.0,
+        "0.8": 0.0,
+        "0.85": 0.0,
+        "0.9": 0.0,
+        "0.95": 0.0,
+        "average": 7.5
+      },
+      "MR-R1": {
+        "0.5": 100.0,
+        "0.55": 0.0,
+        "0.6": 0.0,
+        "0.65": 0.0,
+        "0.7": 0.0,
+        "0.75": 0.0,
+        "0.8": 0.0,
+        "0.85": 0.0,
+        "0.9": 0.0,
+        "0.95": 0.0
+      }
+    },
+    "long": {
+      "MR-mAP": null,
+      "MR-R1": null
+    },
+    "full": {
+      "MR-mAP": {
+        "0.5": 75.0,
+        "0.55": 0.0,
+        "0.6": 0.0,
+        "0.65": 0.0,
+        "0.7": 0.0,
+        "0.75": 0.0,
+        "0.8": 0.0,
+        "0.85": 0.0,
+        "0.9": 0.0,
+        "0.95": 0.0,
+        "average": 7.5
+      },
+      "MR-R1": {
+        "0.5": 100.0,
+        "0.55": 0.0,
+        "0.6": 0.0,
+        "0.65": 0.0,
+        "0.7": 0.0,
+        "0.75": 0.0,
+        "0.8": 0.0,
+        "0.85": 0.0,
+        "0.9": 0.0,
+        "0.95": 0.0
+      }
+    },
+    "brief": {
+      "MR-full-mAP": 7.5,
+      "MR-full-mAP@0.5": 75.0,
+      "MR-full-mAP@0.75": 0.0,
+      "MR-full-R1@0.5": 100.0,
+      "MR-full-R1@0.7": 0.0,
+      "MR-short-mAP": null,
+      "MR-middle-mAP": 7.5,
+      "MR-long-mAP": null
+    }
+  },
+  "undefined_duration_groups": [
+    "short",
+    "long"
+  ],
+  "custom_full_plan_failure_zero_metrics": {
+    "MR-full-mAP": 1.8750000000000002,
+    "MR-full-mAP@0.5": 18.75,
+    "MR-full-mAP@0.75": 0.0,
+    "MR-full-R1@0.5": 25.0,
+    "MR-full-R1@0.7": 0.0
+  },
+  "custom_policy": "sum successful official per-query unrounded metrics / original planned query count; missing queries contribute metric zero, never fabricated predictions",
+  "official_log": "",
+  "manifest_sha256": "e0b649014d98a9e318a53bc8dd5ad2113568e5cbb30d80176fe87776eea264e9",
+  "predictions_sha256": "e7f8e5f9afbae62ff370dd5888de255de1c6435626893e6e044c248035fba478",
+  "gt_sha256": "fd28404187468f57cf99242be2963127dc9b4aef26c7de3cb9469569801f2625",
+  "predictions_path": "/path/to/storage/videoarm-repro/qvh_data/runs/dev_v1_mr_smoke8_A1/predictions.jsonl",
+  "gt_path": "/path/to/storage/videoarm-repro/reproduction/qvhighlights/external/moment_detr/data/highlight_train_release.jsonl"
+}

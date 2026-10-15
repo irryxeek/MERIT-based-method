@@ -1,0 +1,11 @@
+{
+  "run_id": "dev_v1_hd_dev50_B1",
+  "task": "hd",
+  "method": "B1",
+  "planned": 50,
+  "statuses": {
+    "succeeded": 50
+  },
+  "latest_qid": 1491,
+  "updated": 1791940499.9783404
+}

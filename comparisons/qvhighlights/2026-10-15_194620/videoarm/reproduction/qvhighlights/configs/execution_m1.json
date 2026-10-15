@@ -1,0 +1,7 @@
+{
+  "revision": "m1_parallel_v1",
+  "query_workers": 4,
+  "max_num_seqs": 4,
+  "semantic_protocol": "qvh_video_only_v2_stop_contract",
+  "note": "Execution controls only; select query_workers after measured replay. No model, prompt, sampling or budget changes."
+}

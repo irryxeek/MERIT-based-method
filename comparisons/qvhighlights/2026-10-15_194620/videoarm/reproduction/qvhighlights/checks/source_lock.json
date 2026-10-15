@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-10-13T15:40:44.380787+00:00",
+  "official_repository": "https://github.com/jayleicn/moment_detr",
+  "official_commit": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca",
+  "videoarm_commit": "af1973ad8ffdb1ae3815c1f4e3f22b8c82858ef6",
+  "evaluator_sha256": {
+    "standalone_eval/eval.py": "679e43d8f83ca08a682dbe2e4e3f4629ddc2e6911981bcd0c0e54cf1c0cfabca",
+    "standalone_eval/utils.py": "7cb2f9733ffb3fe22d0b4044ef7ba82679b85972a3e7e0ac88b3eee44904d637",
+    "standalone_eval/README.md": "1ccd9453a1ab6e9962185191e2d391bdbd70b28f34ae359a125e36555fe101a0"
+  },
+  "annotations_sha256": {
+    "highlight_test_with_gt.jsonl": "bd50ec6bb5dd3f72571126ba5fdc7418efdd9219a9487984e483a02e2ce5d493",
+    "highlight_train_release.jsonl": "fd28404187468f57cf99242be2963127dc9b4aef26c7de3cb9469569801f2625",
+    "highlight_val_release.jsonl": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02",
+    "highlight_test_release.jsonl": "0462f0cb582b54913671ba5ebfc325931ffa6d422c60cb72520749fc6d5d05a3"
+  },
+  "papers_sha256": {
+    "2107.09609v2.pdf": "47c17a62198ef811a4b0de6d96eb3bbe60305f5c4b3ea0cd80c2764df61d2f47",
+    "2512.12360v2.pdf": "d26a10742e4f98af538ee79d8349dc02d8da235c56e9a5fb0da39d0fad6f6d7b"
+  }
+}

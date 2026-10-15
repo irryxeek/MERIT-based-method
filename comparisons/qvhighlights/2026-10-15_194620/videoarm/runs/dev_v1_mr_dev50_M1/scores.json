@@ -1,0 +1,182 @@
+{
+  "status": "official_success_subset_only",
+  "task": "mr",
+  "coverage": {
+    "planned": 50,
+    "predicted": 13,
+    "missing_qids": [
+      140,
+      479,
+      1206,
+      1441,
+      2216,
+      2424,
+      2605,
+      3788,
+      3823,
+      4276,
+      4994,
+      5095,
+      5245,
+      5409,
+      5549,
+      6099,
+      6415,
+      6536,
+      6544,
+      6701,
+      6763,
+      7184,
+      7593,
+      7673,
+      7712,
+      8091,
+      8110,
+      8429,
+      8699,
+      8796,
+      9121,
+      9199,
+      9291,
+      9517,
+      9908,
+      10227,
+      10284
+    ]
+  },
+  "official_metrics": {
+    "brief": {
+      "MR-full-R1@0.5": 15.38,
+      "MR-full-R1@0.7": 7.69,
+      "MR-full-mAP": 7.62,
+      "MR-full-mAP@0.5": 9.23,
+      "MR-full-mAP@0.75": 8.46,
+      "MR-long-mAP": 22.5,
+      "MR-middle-mAP": 5.62,
+      "MR-short-mAP": 0.0
+    },
+    "full": {
+      "MR-mAP": {
+        "0.5": 9.23,
+        "0.55": 9.23,
+        "0.6": 8.46,
+        "0.65": 8.46,
+        "0.7": 8.46,
+        "0.75": 8.46,
+        "0.8": 8.46,
+        "0.85": 7.69,
+        "0.9": 7.69,
+        "0.95": 0.0,
+        "average": 7.62
+      },
+      "MR-R1": {
+        "0.5": 15.38,
+        "0.55": 15.38,
+        "0.6": 7.69,
+        "0.65": 7.69,
+        "0.7": 7.69,
+        "0.75": 7.69,
+        "0.8": 7.69,
+        "0.85": 7.69,
+        "0.9": 7.69,
+        "0.95": 0.0
+      }
+    },
+    "long": {
+      "MR-mAP": {
+        "0.5": 25.0,
+        "0.55": 25.0,
+        "0.6": 25.0,
+        "0.65": 25.0,
+        "0.7": 25.0,
+        "0.75": 25.0,
+        "0.8": 25.0,
+        "0.85": 25.0,
+        "0.9": 25.0,
+        "0.95": 0.0,
+        "average": 22.5
+      },
+      "MR-R1": {
+        "0.5": 25.0,
+        "0.55": 25.0,
+        "0.6": 25.0,
+        "0.65": 25.0,
+        "0.7": 25.0,
+        "0.75": 25.0,
+        "0.8": 25.0,
+        "0.85": 25.0,
+        "0.9": 25.0,
+        "0.95": 0.0
+      }
+    },
+    "middle": {
+      "MR-mAP": {
+        "0.5": 12.5,
+        "0.55": 12.5,
+        "0.6": 6.25,
+        "0.65": 6.25,
+        "0.7": 6.25,
+        "0.75": 6.25,
+        "0.8": 6.25,
+        "0.85": 0.0,
+        "0.9": 0.0,
+        "0.95": 0.0,
+        "average": 5.62
+      },
+      "MR-R1": {
+        "0.5": 12.5,
+        "0.55": 12.5,
+        "0.6": 0.0,
+        "0.65": 0.0,
+        "0.7": 0.0,
+        "0.75": 0.0,
+        "0.8": 0.0,
+        "0.85": 0.0,
+        "0.9": 0.0,
+        "0.95": 0.0
+      }
+    },
+    "short": {
+      "MR-mAP": {
+        "0.5": 0.0,
+        "0.55": 0.0,
+        "0.6": 0.0,
+        "0.65": 0.0,
+        "0.7": 0.0,
+        "0.75": 0.0,
+        "0.8": 0.0,
+        "0.85": 0.0,
+        "0.9": 0.0,
+        "0.95": 0.0,
+        "average": 0.0
+      },
+      "MR-R1": {
+        "0.5": 0.0,
+        "0.55": 0.0,
+        "0.6": 0.0,
+        "0.65": 0.0,
+        "0.7": 0.0,
+        "0.75": 0.0,
+        "0.8": 0.0,
+        "0.85": 0.0,
+        "0.9": 0.0,
+        "0.95": 0.0
+      }
+    }
+  },
+  "undefined_duration_groups": [],
+  "custom_full_plan_failure_zero_metrics": {
+    "MR-full-mAP": 1.98,
+    "MR-full-mAP@0.5": 2.4,
+    "MR-full-mAP@0.75": 2.2,
+    "MR-full-R1@0.5": 4.0,
+    "MR-full-R1@0.7": 2.0
+  },
+  "custom_policy": "sum successful official per-query unrounded metrics / original planned query count; missing queries contribute metric zero, never fabricated predictions",
+  "official_log": "short: [0, 10], 5/13=38.46 examples.\nmiddle: [10, 30], 8/13=61.54 examples.\nlong: [30, 150], 4/13=30.77 examples.\nfull: [0, 150], 13/13=100.00 examples.\n",
+  "manifest_sha256": "4fa88cdbbc35211e68ba27a9b5af61c372c89a33b45d0411b63a9119f3dbc110",
+  "predictions_sha256": "5694007c8fc23cb52cfd40c54d01e15de6c273c272df5fc5e1b16ce111f34aba",
+  "gt_sha256": "fd28404187468f57cf99242be2963127dc9b4aef26c7de3cb9469569801f2625",
+  "predictions_path": "/path/to/storage/videoarm-repro/qvh_data/runs/dev_v1_mr_dev50_M1/predictions.jsonl",
+  "gt_path": "/path/to/storage/videoarm-repro/reproduction/qvhighlights/external/moment_detr/data/highlight_train_release.jsonl"
+}

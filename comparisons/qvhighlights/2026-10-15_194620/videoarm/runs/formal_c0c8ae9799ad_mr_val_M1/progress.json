@@ -1,0 +1,13 @@
+{
+  "run_id": "formal_c0c8ae9799ad_mr_val_M1",
+  "task": "mr",
+  "method": "M1",
+  "planned": 1550,
+  "statuses": {
+    "failed": 437,
+    "succeeded": 1113
+  },
+  "latest_qid": 5541,
+  "query_workers": 4,
+  "updated": 1791965099.1101298
+}

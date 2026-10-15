@@ -1,0 +1,8 @@
+{"qid": 2953, "status": "succeeded", "error": null, "updated": 1791926232.3694358}
+{"qid": 5095, "status": "succeeded", "error": null, "updated": 1791926244.929196}
+{"qid": 6099, "status": "succeeded", "error": null, "updated": 1791926264.2110715}
+{"qid": 6415, "status": "succeeded", "error": null, "updated": 1791926184.6406572}
+{"qid": 6536, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791926288.0249302}
+{"qid": 8429, "status": "succeeded", "error": null, "updated": 1791926277.342022}
+{"qid": 8796, "status": "succeeded", "error": null, "updated": 1791926254.5783422}
+{"qid": 9291, "status": "failed", "error": "ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates", "updated": 1791926220.1684208}

@@ -1,0 +1,261 @@
+{
+  "project": "VideoARM 在 QVHighlights 上的开源模型迁移评测",
+  "updated_unix": 1791940545.8990898,
+  "data_root": "/path/to/storage/videoarm-repro/qvh_data",
+  "svhighlights_inference": "paused_by_user_unchanged",
+  "stages": {
+    "P0": {
+      "status": "audit_saved",
+      "inventory": "checks/data_inventory.json",
+      "dev_timeline": "checks/data_audit_dev50_mapping.json",
+      "full_timeline": {
+        "planned": 10148,
+        "completed": 10148,
+        "failed": 0
+      }
+    },
+    "P1": {
+      "status": "offline_checked",
+      "tests": {
+        "status": "passed",
+        "count": 32,
+        "pytest_log": "reproduction/qvhighlights/logs/pytest_final_checked.log",
+        "ruff_log": "reproduction/qvhighlights/logs/ruff_final_checked.log",
+        "scope": "isolated QVH CPU regression tests and F/E9 static checks; no real model inference",
+        "verified_unix": 1791909500.0972106
+      },
+      "official_fixture": {
+        "identical_to_official_reference": true,
+        "query_count": 1550,
+        "note": "official author predictions; not VideoARM inference"
+      }
+    },
+    "P2": {
+      "status": "inspect_run_statuses",
+      "runs": {
+        "dev_low_v1_mr_dev50_B1": {
+          "failed": 9,
+          "succeeded": 41
+        },
+        "dev_low_v1_mr_dev50_M1": {
+          "failed": 38,
+          "succeeded": 12
+        },
+        "dev_v1_hd_dev50_B0": {
+          "succeeded": 50
+        },
+        "dev_v1_hd_dev50_B1": {
+          "succeeded": 50
+        },
+        "dev_v1_hd_dev50_M1": {
+          "failed": 1,
+          "pending": 48,
+          "running": 1
+        },
+        "dev_v1_hd_smoke8_A1": {
+          "failed": 6,
+          "succeeded": 2
+        },
+        "dev_v1_hd_smoke8_B0": {
+          "succeeded": 8
+        },
+        "dev_v1_hd_smoke8_B1": {
+          "succeeded": 8
+        },
+        "dev_v1_hd_smoke8_M1": {
+          "failed": 6,
+          "succeeded": 2
+        },
+        "dev_v1_mr_dev50_A1": {
+          "failed": 38,
+          "succeeded": 12
+        },
+        "dev_v1_mr_dev50_B0": {
+          "failed": 16,
+          "succeeded": 34
+        },
+        "dev_v1_mr_dev50_B1": {
+          "failed": 10,
+          "succeeded": 40
+        },
+        "dev_v1_mr_dev50_M1": {
+          "failed": 37,
+          "succeeded": 13
+        },
+        "dev_v1_mr_smoke8_A1": {
+          "failed": 6,
+          "succeeded": 2
+        },
+        "dev_v1_mr_smoke8_B0": {
+          "failed": 2,
+          "succeeded": 6
+        },
+        "dev_v1_mr_smoke8_B1": {
+          "failed": 2,
+          "succeeded": 6
+        },
+        "dev_v1_mr_smoke8_M1": {
+          "failed": 6,
+          "succeeded": 2
+        }
+      },
+      "planned_condition_queries": 664,
+      "smoke8": {
+        "queries_per_condition": 8,
+        "conditions": 8
+      },
+      "dev50": {
+        "queries_per_condition": 50,
+        "default_conditions": 8,
+        "low_budget_conditions": 4
+      },
+      "gpu": {
+        "time": 1791926041.8342834,
+        "gpus": [
+          {
+            "index": "0",
+            "uuid": "GPU-REDACTED-05",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "16653"
+          },
+          {
+            "index": "1",
+            "uuid": "GPU-REDACTED-06",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "13135"
+          },
+          {
+            "index": "2",
+            "uuid": "GPU-REDACTED-07",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "16635"
+          },
+          {
+            "index": "3",
+            "uuid": "GPU-REDACTED-08",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "16653"
+          },
+          {
+            "index": "4",
+            "uuid": "GPU-REDACTED-04",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "15"
+          },
+          {
+            "index": "5",
+            "uuid": "GPU-REDACTED-03",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "15"
+          },
+          {
+            "index": "6",
+            "uuid": "GPU-REDACTED-01",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "15"
+          },
+          {
+            "index": "7",
+            "uuid": "GPU-REDACTED-02",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "16653"
+          }
+        ],
+        "compute_processes": [
+          {
+            "gpu_uuid": "GPU-REDACTED-05",
+            "pid": "7927",
+            "process_name": "/path/to/other-workspace/venvs/afnext/bin/python",
+            "used_gpu_memory [MiB]": "16630"
+          },
+          {
+            "gpu_uuid": "GPU-REDACTED-06",
+            "pid": "8884",
+            "process_name": "VLLM::EngineCore",
+            "used_gpu_memory [MiB]": "13112"
+          },
+          {
+            "gpu_uuid": "GPU-REDACTED-07",
+            "pid": "17679",
+            "process_name": "/path/to/other-workspace/venvs/afnext/bin/python",
+            "used_gpu_memory [MiB]": "16612"
+          },
+          {
+            "gpu_uuid": "GPU-REDACTED-08",
+            "pid": "17845",
+            "process_name": "/path/to/other-workspace/venvs/afnext/bin/python",
+            "used_gpu_memory [MiB]": "16630"
+          },
+          {
+            "gpu_uuid": "GPU-REDACTED-02",
+            "pid": "52498",
+            "process_name": "/path/to/other-workspace/venvs/afnext/bin/python",
+            "used_gpu_memory [MiB]": "16630"
+          }
+        ],
+        "free_indices": [
+          4,
+          5,
+          6
+        ],
+        "blocked": false,
+        "policy": "requires two GPUs with <=200 MiB used AND no compute processes; never terminate others"
+      }
+    },
+    "P3": {
+      "status": "pending_P2_and_freeze",
+      "planned_queries_per_task_method": 1550,
+      "tasks": [
+        "mr",
+        "hd"
+      ],
+      "methods": [
+        "B0",
+        "B1",
+        "M1"
+      ]
+    },
+    "P4": {
+      "status": "pending_P3_same_freeze",
+      "planned_queries_per_task_method": 1542,
+      "tasks": [
+        "mr",
+        "hd"
+      ],
+      "methods": [
+        "B1",
+        "M1"
+      ]
+    },
+    "P5": {
+      "status": "partial_handoff_report",
+      "report": "FINAL_REPORT.md"
+    }
+  },
+  "latest_checkpoints": [
+    "checks/media_all_progress.json"
+  ],
+  "worker": {
+    "status": "running",
+    "phase": "P2",
+    "started_unix": 1791909500.2465765,
+    "heartbeat_unix": 1791926131.579402,
+    "free_indices": [
+      6
+    ],
+    "task": "hd",
+    "split": "dev50",
+    "method": "M1",
+    "run_id": "dev_v1_hd_dev50_M1"
+  },
+  "completed_full_model_evaluations": 0,
+  "performance_claim": null
+}

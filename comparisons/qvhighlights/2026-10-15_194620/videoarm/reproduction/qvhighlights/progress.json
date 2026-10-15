@@ -1,0 +1,354 @@
+{
+  "project": "VideoARM 在 QVHighlights 上的开源模型迁移评测",
+  "updated_unix": 1791975111.0171661,
+  "data_root": "/path/to/storage/videoarm-repro/qvh_data",
+  "svhighlights_inference": "paused_by_user_unchanged",
+  "current_methods": [
+    "M1"
+  ],
+  "paper_comparison": "PAPER_COMPARISON.md",
+  "execution_config": "configs/execution_m1.json",
+  "stages": {
+    "P0": {
+      "status": "audit_saved",
+      "inventory": "checks/data_inventory.json",
+      "dev_timeline": "checks/data_audit_dev50_mapping.json",
+      "full_timeline": {
+        "planned": 10148,
+        "completed": 10148,
+        "failed": 0
+      }
+    },
+    "P1": {
+      "status": "offline_checked",
+      "tests": {
+        "status": "passed",
+        "count": 46,
+        "revision": "v2_stop_contract_m1_parallel_v1",
+        "pytest_log": "reproduction/qvhighlights/logs/pytest_m1_parallel_v1_final.log",
+        "ruff_log": "reproduction/qvhighlights/logs/ruff_m1_parallel_v1_final.log",
+        "scope": "CPU contract/scoring/recovery checks plus overlapping query ledger/cache isolation, pause/resume budgets, pixel identity and parallel GPU time; not model quality",
+        "verified_unix": 1791945407.525629
+      },
+      "official_fixture": {
+        "identical_to_official_reference": true,
+        "query_count": 1550,
+        "note": "official author predictions; not VideoARM inference"
+      }
+    },
+    "P2": {
+      "status": "real_development_attempts_completed",
+      "runs": {
+        "dev_v2_hd_dev50_M1": {
+          "failed": 5,
+          "succeeded": 45
+        },
+        "dev_v2_hd_smoke8_M1": {
+          "succeeded": 8
+        },
+        "dev_v2_mr_dev50_M1": {
+          "failed": 13,
+          "succeeded": 37
+        },
+        "dev_v2_mr_smoke8_M1": {
+          "failed": 2,
+          "succeeded": 6
+        },
+        "formal_c0c8ae9799ad_hd_val_M1": {
+          "failed": 34,
+          "paused": 4,
+          "pending": 1093,
+          "succeeded": 419
+        },
+        "formal_c0c8ae9799ad_mr_val_M1": {
+          "failed": 437,
+          "succeeded": 1113
+        }
+      },
+      "historical_v1_runs": {
+        "dev_low_v1_mr_dev50_B1": {
+          "failed": 9,
+          "succeeded": 41
+        },
+        "dev_low_v1_mr_dev50_M1": {
+          "failed": 38,
+          "succeeded": 12
+        },
+        "dev_v1_hd_dev50_B0": {
+          "succeeded": 50
+        },
+        "dev_v1_hd_dev50_B1": {
+          "succeeded": 50
+        },
+        "dev_v1_hd_dev50_M1": {
+          "failed": 28,
+          "paused": 1,
+          "pending": 14,
+          "succeeded": 7
+        },
+        "dev_v1_hd_smoke8_A1": {
+          "failed": 6,
+          "succeeded": 2
+        },
+        "dev_v1_hd_smoke8_B0": {
+          "succeeded": 8
+        },
+        "dev_v1_hd_smoke8_B1": {
+          "succeeded": 8
+        },
+        "dev_v1_hd_smoke8_M1": {
+          "failed": 6,
+          "succeeded": 2
+        },
+        "dev_v1_mr_dev50_A1": {
+          "failed": 38,
+          "succeeded": 12
+        },
+        "dev_v1_mr_dev50_B0": {
+          "failed": 16,
+          "succeeded": 34
+        },
+        "dev_v1_mr_dev50_B1": {
+          "failed": 10,
+          "succeeded": 40
+        },
+        "dev_v1_mr_dev50_M1": {
+          "failed": 37,
+          "succeeded": 13
+        },
+        "dev_v1_mr_smoke8_A1": {
+          "failed": 6,
+          "succeeded": 2
+        },
+        "dev_v1_mr_smoke8_B0": {
+          "failed": 2,
+          "succeeded": 6
+        },
+        "dev_v1_mr_smoke8_B1": {
+          "failed": 2,
+          "succeeded": 6
+        },
+        "dev_v1_mr_smoke8_M1": {
+          "failed": 6,
+          "succeeded": 2
+        }
+      },
+      "retained_deferred_other_methods": {
+        "dev_v2_mr_dev50_B0": {
+          "failed": 19,
+          "succeeded": 31
+        },
+        "dev_v2_mr_dev50_B1": {
+          "failed": 2,
+          "paused": 1,
+          "pending": 27,
+          "succeeded": 20
+        },
+        "dev_v2_mr_smoke8_A1": {
+          "failed": 2,
+          "succeeded": 6
+        },
+        "dev_v2_mr_smoke8_B0": {
+          "failed": 2,
+          "succeeded": 6
+        },
+        "dev_v2_mr_smoke8_B1": {
+          "failed": 2,
+          "succeeded": 6
+        }
+      },
+      "development_revision": "v2_stop_contract_m1_parallel_v1",
+      "scope_revision": "checks/m1_scope_revision.json",
+      "planned_condition_queries": 116,
+      "smoke8": {
+        "queries_per_condition": 8,
+        "conditions": 2
+      },
+      "dev50": {
+        "queries_per_condition": 50,
+        "default_conditions": 2,
+        "low_budget_conditions": 0
+      },
+      "gpu": {
+        "time": 1791945461.8871758,
+        "gpus": [
+          {
+            "index": "0",
+            "uuid": "GPU-REDACTED-05",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "16653"
+          },
+          {
+            "index": "1",
+            "uuid": "GPU-REDACTED-06",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "13135"
+          },
+          {
+            "index": "2",
+            "uuid": "GPU-REDACTED-07",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "16635"
+          },
+          {
+            "index": "3",
+            "uuid": "GPU-REDACTED-08",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "16653"
+          },
+          {
+            "index": "4",
+            "uuid": "GPU-REDACTED-04",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "15"
+          },
+          {
+            "index": "5",
+            "uuid": "GPU-REDACTED-03",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "15"
+          },
+          {
+            "index": "6",
+            "uuid": "GPU-REDACTED-01",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "15"
+          },
+          {
+            "index": "7",
+            "uuid": "GPU-REDACTED-02",
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory.total [MiB]": "24564",
+            "memory.used [MiB]": "16653"
+          }
+        ],
+        "compute_processes": [
+          {
+            "gpu_uuid": "GPU-REDACTED-05",
+            "pid": "7927",
+            "process_name": "/path/to/other-workspace/venvs/afnext/bin/python",
+            "used_gpu_memory [MiB]": "16630"
+          },
+          {
+            "gpu_uuid": "GPU-REDACTED-06",
+            "pid": "8884",
+            "process_name": "VLLM::EngineCore",
+            "used_gpu_memory [MiB]": "13112"
+          },
+          {
+            "gpu_uuid": "GPU-REDACTED-07",
+            "pid": "17679",
+            "process_name": "/path/to/other-workspace/venvs/afnext/bin/python",
+            "used_gpu_memory [MiB]": "16612"
+          },
+          {
+            "gpu_uuid": "GPU-REDACTED-08",
+            "pid": "17845",
+            "process_name": "/path/to/other-workspace/venvs/afnext/bin/python",
+            "used_gpu_memory [MiB]": "16630"
+          },
+          {
+            "gpu_uuid": "GPU-REDACTED-02",
+            "pid": "52498",
+            "process_name": "/path/to/other-workspace/venvs/afnext/bin/python",
+            "used_gpu_memory [MiB]": "16630"
+          }
+        ],
+        "free_indices": [
+          4,
+          5,
+          6
+        ],
+        "blocked": false,
+        "policy": "requires two GPUs with <=200 MiB used AND no compute processes; never terminate others"
+      }
+    },
+    "P3": {
+      "status": "paused_by_user",
+      "planned_queries_per_task_method": 1550,
+      "tasks": [
+        "mr",
+        "hd"
+      ],
+      "methods": [
+        "M1"
+      ],
+      "paused_task": "hd",
+      "retained_formal_runs": [
+        {
+          "run_id": "formal_c0c8ae9799ad_hd_val_M1",
+          "statuses": {
+            "failed": 34,
+            "paused": 4,
+            "pending": 1093,
+            "succeeded": 419
+          },
+          "requests": {
+            "completed": 3275
+          },
+          "paused_qids": [
+            6590,
+            6656,
+            9684,
+            10033
+          ],
+          "prediction_sha256": "c9a3edda37f7282bec430e19b6c64a66ac2aabb741d37cfc808ae5286b22c577"
+        },
+        {
+          "run_id": "formal_c0c8ae9799ad_mr_val_M1",
+          "statuses": {
+            "failed": 437,
+            "succeeded": 1113
+          },
+          "requests": {
+            "completed": 7056
+          },
+          "paused_qids": [],
+          "prediction_sha256": "cf5a482b6f2e56da40d9bfafad335c2c63648c86216d5600d302aa7035db418b"
+        }
+      ]
+    },
+    "P4": {
+      "status": "pending_P3_same_freeze",
+      "planned_queries_per_task_method": 1542,
+      "tasks": [
+        "mr",
+        "hd"
+      ],
+      "methods": [
+        "M1"
+      ]
+    },
+    "P5": {
+      "status": "partial_handoff_report",
+      "report": "FINAL_REPORT.md"
+    }
+  },
+  "latest_checkpoints": [
+    "checks/media_all_progress.json"
+  ],
+  "worker": {
+    "status": "paused_by_user_or_service_stop",
+    "phase": "P3",
+    "started_unix": 1791945461.1843517,
+    "heartbeat_unix": 1791946137.29793,
+    "task": "hd",
+    "split": "val",
+    "method": "M1",
+    "run_id": "formal_c0c8ae9799ad_hd_val_M1",
+    "updated_unix": 1791975001.380026
+  },
+  "development_amendment": "checks/development_amendment_v2.json",
+  "completed_full_model_evaluations": 0,
+  "performance_claim": null,
+  "execution_status": "paused_by_user",
+  "paused_at": "2026-10-14T18:51:50.717931+08:00",
+  "pause_record": "checks/user_pause_20261014_185150.json"
+}

@@ -1,0 +1,14 @@
+{
+  "run_id": "dev_v1_hd_dev50_M1",
+  "task": "hd",
+  "method": "M1",
+  "planned": 50,
+  "statuses": {
+    "failed": 28,
+    "paused": 1,
+    "pending": 14,
+    "succeeded": 7
+  },
+  "latest_qid": 3788,
+  "updated": 1791941529.6383455
+}

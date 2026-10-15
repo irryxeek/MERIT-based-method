@@ -1,0 +1,17 @@
+[
+  {
+    "candidate_rank": 0,
+    "qid": 3290,
+    "vid": "UGafHWHJrLg_210.0_360.0",
+    "query": "Girl Briefing about car in Bangkok",
+    "duration": 150.0,
+    "num_clips": 75,
+    "youtube_id": "UGafHWHJrLg",
+    "source_start_seconds": 210.0,
+    "source_end_seconds": 360.0,
+    "video_path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos/UGafHWHJrLg_210.0_360.0.mp4",
+    "actual_duration": 150.0,
+    "media_timeline": "local_benchmark_clip",
+    "media_source": "youtube_exact_segment_pre_smoke_only"
+  }
+]

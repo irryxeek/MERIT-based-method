@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "task": "mr",
+      "qid": 2953,
+      "passed": true,
+      "actual_new_requests": 0,
+      "shared_hits": 1,
+      "initializer_protocol": "qvh_video_only_v1"
+    },
+    {
+      "task": "hd",
+      "qid": 2953,
+      "passed": true,
+      "actual_new_requests": 0,
+      "shared_hits": 1,
+      "initializer_protocol": "qvh_video_only_v1"
+    }
+  ],
+  "scope": "initializer pixels/messages/model/sampling/output protocol unchanged; controllers are not shared across versions"
+}

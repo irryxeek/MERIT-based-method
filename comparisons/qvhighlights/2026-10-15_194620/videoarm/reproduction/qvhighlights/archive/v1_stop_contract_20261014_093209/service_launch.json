@@ -1,0 +1,52 @@
+{
+  "command": [
+    "systemd-run",
+    "--user",
+    "--collect",
+    "--unit=videoarm-qvh-model.service",
+    "--property=Restart=no",
+    "--property=WorkingDirectory=/path/to/storage/videoarm-repro",
+    "--setenv=CUDA_VISIBLE_DEVICES=4,5",
+    "--setenv=CUDA_DEVICE_ORDER=PCI_BUS_ID",
+    "--setenv=HF_HUB_OFFLINE=1",
+    "--setenv=TRANSFORMERS_OFFLINE=1",
+    "--setenv=VLLM_NO_USAGE_STATS=1",
+    "--setenv=DO_NOT_TRACK=1",
+    "--setenv=VLLM_CACHE_ROOT=/path/to/storage/videoarm-repro/qvh_data/vllm_cache",
+    "/data/linyifei/videoarm-repro/svhighlights/tf_selector/qwen35_9b/env-vllm017/bin/vllm",
+    "serve",
+    "/path/to/storage/MemDreamer/models/Qwen3-VL-8B-Instruct",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8026",
+    "--served-model-name",
+    "Qwen/Qwen3-VL-8B-Instruct",
+    "--dtype",
+    "bfloat16",
+    "--tensor-parallel-size",
+    "2",
+    "--max-model-len",
+    "32768",
+    "--max-num-seqs",
+    "1",
+    "--limit-mm-per-prompt",
+    "{\"image\":24,\"video\":0}",
+    "--mm-processor-kwargs",
+    "{\"max_pixels\":1048576}",
+    "--gpu-memory-utilization",
+    "0.8",
+    "--enforce-eager",
+    "--skip-mm-profiling",
+    "--no-enable-log-requests"
+  ],
+  "gpu_indices": [
+    4,
+    5
+  ],
+  "gpu_uuids": [
+    "GPU-REDACTED-04",
+    "GPU-REDACTED-03"
+  ],
+  "time": 1791926059.710651
+}

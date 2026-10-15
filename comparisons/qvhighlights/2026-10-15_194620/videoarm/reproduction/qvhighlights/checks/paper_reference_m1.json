@@ -1,0 +1,15 @@
+{
+  "paper": "VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding",
+  "revision": "arXiv:2512.12360v2, 2026-03-30",
+  "source": "https://arxiv.org/html/2512.12360v2",
+  "qvhighlights_reported": false,
+  "main_metric": "video question answering accuracy (%)",
+  "table1": [
+    {"configuration":"o3 + GPT-4.1 + whisper-1", "Video-MME_short":86.4, "Video-MME_medium":78.4, "Video-MME_long":75.3, "Video-MME_overall":80.1, "LongVideoBench_long":69.2, "LongVideoBench_overall":73.7, "EgoSchema_500":78.2, "MLVU":81.2, "LVBench":79.7},
+    {"configuration":"o3 + GPT-4o + whisper-1", "Video-MME_short":85.8, "Video-MME_medium":81.3, "Video-MME_long":81.2, "Video-MME_overall":82.8, "LongVideoBench_long":76.4, "LongVideoBench_overall":78.0, "EgoSchema_500":76.2}
+  ],
+  "table2_qwen_controller_ablation": {"controller":"Qwen3-VL", "temporal_scoping":"Qwen3-VL", "visual_understanding":"GPT-4.1", "audio":"whisper-1", "benchmark":"Video-MME-long stratified 200 QA ablation subset", "accuracy":54.9, "qwen_size_revision":"not specified in the paper table", "all_qwen_video_only":false},
+  "table7_tokens": {"theoretical_30min_single_query": {"VideoARM":80000, "DVD":3980000}, "experiment_10videos_30queries_mean_video_minutes":41.3, "experiment_VideoARM_tokens":1890000, "experiment_DVD_tokens":64210000, "direct_qwen_token_ratio_comparable":false},
+  "method": {"step_budget":10, "interval_localizer_frames":[30,150], "localizer_short_edge":256, "localizer_grid":"3x2 frames with indices", "clip_explorer_short_edge":512, "audio_enabled":true},
+  "comparison_limits": ["QVHighlights temporal localization AP/IoU and query-conditioned highlight AP/Hit1 cannot be subtracted from QA accuracy.", "Paper Qwen controller ablation retains hosted GPT-4.1 visual tools and whisper-1; it is not the present all-Qwen3-VL-8B video-only model.", "Dataset, video lengths, sampling/tiling, memory representation and tokenizers differ; absolute token ratios and claimed paper efficiency gains are not direct local-model speedups.", "No new paper-benchmark inference or resumed SVHighlights run is authorized by this QVHighlights M1 scope change."]
+}

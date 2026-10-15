@@ -1,0 +1,19 @@
+{
+  "segments": [
+    {
+      "start_unix": 1791965104.1917357,
+      "end_unix": 1791975001.2475805,
+      "query_workers": 4,
+      "pending_at_start": 1550,
+      "wall_seconds": 9897.055336046033
+    }
+  ],
+  "query_workers": 4,
+  "backend_command": "/data/linyifei/videoarm-repro/svhighlights/tf_selector/qwen35_9b/env-vllm017/bin/python /data/linyifei/videoarm-repro/svhighlights/tf_selector/qwen35_9b/env-vllm017/bin/vllm serve /path/to/storage/MemDreamer/models/Qwen3-VL-8B-Instruct --host 127.0.0.1 --port 8026 --served-model-name Qwen/Qwen3-VL-8B-Instruct --dtype bfloat16 --tensor-parallel-size 2 --max-model-len 32768 --max-num-seqs 4 --limit-mm-per-prompt {\"image\":24,\"video\":0} --mm-processor-kwargs {\"max_pixels\":1048576} --gpu-memory-utilization 0.8 --enforce-eager --skip-mm-profiling --no-enable-log-requests ",
+  "revision": "m1_parallel_v1",
+  "per_query_actions_sequential": true,
+  "budgets_preserved": true,
+  "started_unix": 1791965104.1917336,
+  "total_wall_seconds": 9897.055336046033,
+  "finished_unix": 1791975001.2476032
+}

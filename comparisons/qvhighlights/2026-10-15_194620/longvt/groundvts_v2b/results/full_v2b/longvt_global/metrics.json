@@ -1,0 +1,14 @@
+{
+  "HL-min-Fair": {
+    "HL-mAP": 32.93,
+    "HL-Hit1": 37.87
+  },
+  "HL-min-Good": {
+    "HL-mAP": 26.18,
+    "HL-Hit1": 36.39
+  },
+  "HL-min-VeryGood": {
+    "HL-mAP": 14.94,
+    "HL-Hit1": 28.45
+  }
+}

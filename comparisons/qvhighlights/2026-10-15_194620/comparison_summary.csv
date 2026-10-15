@@ -1,0 +1,7 @@
+project,protocol,method,task,split,planned,predictions,native_success,failed,paused,pending,VeryGood_mAP,VeryGood_Hit1,metric_scope
+LongVT,compact_v1,global,hd,val,1550,1550,1534,16,0,0,13.9,20.65,full_validation_with_declared_zero_vector_fallback
+LongVT,compact_v1,tool,hd,val,1550,1550,1522,28,0,0,14.6,22.71,full_validation_with_declared_zero_vector_fallback
+LongVT,groundvts_v2b,global,hd,val,1550,1550,1550,0,0,0,14.94,28.45,full_validation_with_declared_zero_vector_fallback
+LongVT,groundvts_v2b,tool,hd,val,1550,1550,1550,0,0,0,15.12,27.23,full_validation_with_declared_zero_vector_fallback
+VideoARM,qvh_video_only_v2_stop_contract,M1,hd,val,1550,419,419,34,4,1093,,,not_scored
+VideoARM,qvh_video_only_v2_stop_contract,M1,mr,val,1550,1113,1113,437,0,0,,,official_success_subset_only

@@ -1,0 +1,3375 @@
+{
+  "archive": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/archive/qvhilights_videos.tar.gz",
+  "archive_size_bytes": 143734787897,
+  "selection_rule": "seeded candidate order; earliest archive-present, duration-valid, decodable media",
+  "records": [
+    {
+      "candidate_rank": 0,
+      "qid": 3290,
+      "vid": "UGafHWHJrLg_210.0_360.0",
+      "archive_member": "videos/UGafHWHJrLg_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/UGafHWHJrLg_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 10255700,
+      "decode_check": {
+        "frame_count": 3750,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1875,
+          3749
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 1,
+      "qid": 6267,
+      "vid": "cOcN2KUgM7U_360.0_510.0",
+      "archive_member": "videos/cOcN2KUgM7U_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/cOcN2KUgM7U_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 14255033,
+      "decode_check": {
+        "frame_count": 3750,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1875,
+          3749
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 2,
+      "qid": 7011,
+      "vid": "0_eIFN2FDoU_510.0_660.0",
+      "archive_member": "videos/0_eIFN2FDoU_510.0_660.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/0_eIFN2FDoU_510.0_660.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 7468845,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 3,
+      "qid": 6519,
+      "vid": "2BzoQ31IPhk_60.0_210.0",
+      "archive_member": "videos/2BzoQ31IPhk_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/2BzoQ31IPhk_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.027,
+      "size": 11108850,
+      "decode_check": {
+        "frame_count": 4314,
+        "fps": 28.755,
+        "decoded_indices": [
+          0,
+          2157,
+          4313
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 4,
+      "qid": 7834,
+      "vid": "QHFy-nWNJYk_360.0_510.0",
+      "archive_member": "videos/QHFy-nWNJYk_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/QHFy-nWNJYk_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.025,
+      "size": 9967916,
+      "decode_check": {
+        "frame_count": 3597,
+        "fps": 23.976023976023978,
+        "decoded_indices": [
+          0,
+          1798,
+          3596
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 5,
+      "qid": 1254,
+      "vid": "a6NmGMEsCWM_360.0_510.0",
+      "archive_member": "videos/a6NmGMEsCWM_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/a6NmGMEsCWM_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 15908032,
+      "decode_check": {
+        "frame_count": 3750,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1875,
+          3749
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 6,
+      "qid": 1940,
+      "vid": "FlIZP8D0_gQ_60.0_210.0",
+      "archive_member": "videos/FlIZP8D0_gQ_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/FlIZP8D0_gQ_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 18144739,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 7,
+      "qid": 3397,
+      "vid": "LcKnx7I97yk_360.0_510.0",
+      "archive_member": "videos/LcKnx7I97yk_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/LcKnx7I97yk_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 143.85,
+      "size": 10845535,
+      "decode_check": {
+        "frame_count": 4309,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2154,
+          4308
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 8,
+      "qid": 848,
+      "vid": "ZjFzkhrqIZs_360.0_510.0",
+      "archive_member": "videos/ZjFzkhrqIZs_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/ZjFzkhrqIZs_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 8815138,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 9,
+      "qid": 9979,
+      "vid": "B7bTx5l-N8I_60.0_210.0",
+      "archive_member": "videos/B7bTx5l-N8I_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/B7bTx5l-N8I_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 5892603,
+      "decode_check": {
+        "frame_count": 3750,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1875,
+          3749
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 10,
+      "qid": 8942,
+      "vid": "B1RpWUrs06U_660.0_810.0",
+      "archive_member": "videos/B1RpWUrs06U_660.0_810.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/B1RpWUrs06U_660.0_810.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 9871425,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 11,
+      "qid": 9758,
+      "vid": "atDm_Gamcqo_360.0_510.0",
+      "archive_member": "videos/atDm_Gamcqo_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/atDm_Gamcqo_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 8472618,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 12,
+      "qid": 3288,
+      "vid": "_OiTj9QUt_g_360.0_510.0",
+      "archive_member": "videos/_OiTj9QUt_g_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/_OiTj9QUt_g_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 11778081,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 13,
+      "qid": 5802,
+      "vid": "RVOg4rk7MRg_60.0_210.0",
+      "archive_member": "videos/RVOg4rk7MRg_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/RVOg4rk7MRg_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 13111457,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 14,
+      "qid": 938,
+      "vid": "UCCqLmaF6n0_210.0_360.0",
+      "archive_member": "videos/UCCqLmaF6n0_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/UCCqLmaF6n0_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 17884520,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 15,
+      "qid": 424,
+      "vid": "EUTccoeKVZg_60.0_210.0",
+      "archive_member": "videos/EUTccoeKVZg_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/EUTccoeKVZg_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 11396909,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 16,
+      "qid": 8295,
+      "vid": "nJUP36AmrSM_660.0_810.0",
+      "archive_member": "videos/nJUP36AmrSM_660.0_810.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/nJUP36AmrSM_660.0_810.0.mp4",
+      "status": "available",
+      "actual_duration": 147.869,
+      "size": 8734558,
+      "decode_check": {
+        "frame_count": 4430,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2215,
+          4429
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 17,
+      "qid": 4854,
+      "vid": "Jz1Cszaqck0_210.0_360.0",
+      "archive_member": "videos/Jz1Cszaqck0_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/Jz1Cszaqck0_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 9538875,
+      "decode_check": {
+        "frame_count": 3750,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1875,
+          3749
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 18,
+      "qid": 7830,
+      "vid": "X3B-d-QsWXY_60.0_210.0",
+      "archive_member": "videos/X3B-d-QsWXY_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/X3B-d-QsWXY_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.025,
+      "size": 14182690,
+      "decode_check": {
+        "frame_count": 3597,
+        "fps": 23.976023976023978,
+        "decoded_indices": [
+          0,
+          1798,
+          3596
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 19,
+      "qid": 7746,
+      "vid": "K3lDAtwYt_4_60.0_210.0",
+      "archive_member": "videos/K3lDAtwYt_4_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/K3lDAtwYt_4_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 10123688,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 20,
+      "qid": 10063,
+      "vid": "c-fzjF9ubUc_210.0_360.0",
+      "archive_member": "videos/c-fzjF9ubUc_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/c-fzjF9ubUc_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 5003618,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 21,
+      "qid": 4934,
+      "vid": "HkLfNhgP0TM_360.0_510.0",
+      "archive_member": "videos/HkLfNhgP0TM_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/HkLfNhgP0TM_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 13210670,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 22,
+      "qid": 7066,
+      "vid": "3Bk5MJEo2EA_510.0_660.0",
+      "archive_member": "videos/3Bk5MJEo2EA_510.0_660.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/3Bk5MJEo2EA_510.0_660.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 10488588,
+      "decode_check": {
+        "frame_count": 3750,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1875,
+          3749
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 23,
+      "qid": 7001,
+      "vid": "MkdG8OXExIo_510.0_660.0",
+      "archive_member": "videos/MkdG8OXExIo_510.0_660.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/MkdG8OXExIo_510.0_660.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 10776914,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 24,
+      "qid": 329,
+      "vid": "a2KIsaS9iJg_210.0_360.0",
+      "archive_member": "videos/a2KIsaS9iJg_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/a2KIsaS9iJg_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 10363579,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 25,
+      "qid": 244,
+      "vid": "7cNySQnKFaE_60.0_210.0",
+      "archive_member": "videos/7cNySQnKFaE_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/7cNySQnKFaE_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 6073867,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 26,
+      "qid": 1671,
+      "vid": "FaF3OJ5e_vE_360.0_510.0",
+      "archive_member": "videos/FaF3OJ5e_vE_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/FaF3OJ5e_vE_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 10422763,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 27,
+      "qid": 8078,
+      "vid": "Kuq50cVSFbw_210.0_360.0",
+      "archive_member": "videos/Kuq50cVSFbw_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/Kuq50cVSFbw_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 7412843,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 28,
+      "qid": 1568,
+      "vid": "Ehpo8gXg27I_60.0_210.0",
+      "archive_member": "videos/Ehpo8gXg27I_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/Ehpo8gXg27I_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 10787109,
+      "decode_check": {
+        "frame_count": 3750,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1875,
+          3749
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 29,
+      "qid": 1777,
+      "vid": "bTqMo5klaCE_210.0_360.0",
+      "archive_member": "videos/bTqMo5klaCE_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/bTqMo5klaCE_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 10635901,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 30,
+      "qid": 4069,
+      "vid": "N5g7D9Qk7WI_360.0_510.0",
+      "archive_member": "videos/N5g7D9Qk7WI_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/N5g7D9Qk7WI_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 9987258,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 31,
+      "qid": 1751,
+      "vid": "A_MFAuOwK5k_210.0_360.0",
+      "archive_member": "videos/A_MFAuOwK5k_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/A_MFAuOwK5k_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 11050922,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 32,
+      "qid": 3615,
+      "vid": "h6sCcWcLU7A_210.0_360.0",
+      "archive_member": "videos/h6sCcWcLU7A_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/h6sCcWcLU7A_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 15862334,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 33,
+      "qid": 3622,
+      "vid": "H15bUc-1LJo_360.0_510.0",
+      "archive_member": "videos/H15bUc-1LJo_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/H15bUc-1LJo_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 15132228,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 34,
+      "qid": 10082,
+      "vid": "tvSJ1O8esRE_60.0_210.0",
+      "archive_member": "videos/tvSJ1O8esRE_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/tvSJ1O8esRE_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.025,
+      "size": 8521977,
+      "decode_check": {
+        "frame_count": 3597,
+        "fps": 23.976023976023978,
+        "decoded_indices": [
+          0,
+          1798,
+          3596
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 35,
+      "qid": 10296,
+      "vid": "rZQjpKRsPMQ_210.0_360.0",
+      "archive_member": "videos/rZQjpKRsPMQ_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/rZQjpKRsPMQ_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 14556258,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 36,
+      "qid": 2513,
+      "vid": "Lc4D95BLgXI_210.0_360.0",
+      "archive_member": "videos/Lc4D95BLgXI_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/Lc4D95BLgXI_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 17147147,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 37,
+      "qid": 4135,
+      "vid": "-4Mlqc7PbZY_360.0_510.0",
+      "archive_member": "videos/-4Mlqc7PbZY_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/-4Mlqc7PbZY_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 11053044,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 38,
+      "qid": 2758,
+      "vid": "kPXnelu5wZk_60.0_210.0",
+      "archive_member": "videos/kPXnelu5wZk_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/kPXnelu5wZk_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 7197488,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 39,
+      "qid": 7666,
+      "vid": "smUAWKLhWnA_60.0_210.0",
+      "archive_member": "videos/smUAWKLhWnA_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/smUAWKLhWnA_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 20865824,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 40,
+      "qid": 10189,
+      "vid": "DTInxNfWXVc_360.0_510.0",
+      "archive_member": "videos/DTInxNfWXVc_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/DTInxNfWXVc_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 4864998,
+      "decode_check": {
+        "frame_count": 3750,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1875,
+          3749
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 41,
+      "qid": 4413,
+      "vid": "aG3duH53XDs_210.0_360.0",
+      "archive_member": "videos/aG3duH53XDs_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/aG3duH53XDs_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 13880154,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 42,
+      "qid": 328,
+      "vid": "qaDShOiRe-0_360.0_510.0",
+      "archive_member": "videos/qaDShOiRe-0_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/qaDShOiRe-0_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 14596768,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 43,
+      "qid": 5687,
+      "vid": "5JOEKQhV1UA_360.0_510.0",
+      "archive_member": "videos/5JOEKQhV1UA_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/5JOEKQhV1UA_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 18125203,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 44,
+      "qid": 7571,
+      "vid": "CkWOpyrAXdw_510.0_660.0",
+      "archive_member": "videos/CkWOpyrAXdw_510.0_660.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/CkWOpyrAXdw_510.0_660.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 11767198,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 45,
+      "qid": 8671,
+      "vid": "KQyJtq52Jcw_510.0_660.0",
+      "archive_member": "videos/KQyJtq52Jcw_510.0_660.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/KQyJtq52Jcw_510.0_660.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 15107367,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 46,
+      "qid": 2808,
+      "vid": "MkdG8OXExIo_360.0_510.0",
+      "archive_member": "videos/MkdG8OXExIo_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/MkdG8OXExIo_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 11937649,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 47,
+      "qid": 8874,
+      "vid": "DLSkojSiAPs_660.0_810.0",
+      "archive_member": "videos/DLSkojSiAPs_660.0_810.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/DLSkojSiAPs_660.0_810.0.mp4",
+      "status": "available",
+      "actual_duration": 137.095,
+      "size": 11362906,
+      "decode_check": {
+        "frame_count": 3425,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1712,
+          3424
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 48,
+      "qid": 9485,
+      "vid": "7QNJyAIprhg_360.0_510.0",
+      "archive_member": "videos/7QNJyAIprhg_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/7QNJyAIprhg_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 12600492,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 49,
+      "qid": 8450,
+      "vid": "pmGyw055pQg_660.0_810.0",
+      "archive_member": "videos/pmGyw055pQg_660.0_810.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/pmGyw055pQg_660.0_810.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 17210537,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 50,
+      "qid": 1109,
+      "vid": "UPwSDYkpzlk_60.0_210.0",
+      "archive_member": "videos/UPwSDYkpzlk_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/UPwSDYkpzlk_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 11438422,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 51,
+      "qid": 635,
+      "vid": "xtaVwcSitCo_210.0_360.0",
+      "archive_member": "videos/xtaVwcSitCo_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/xtaVwcSitCo_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 11226125,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 52,
+      "qid": 9820,
+      "vid": "yqYhbpOrC1Q_210.0_360.0",
+      "archive_member": "videos/yqYhbpOrC1Q_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/yqYhbpOrC1Q_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 8520739,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 53,
+      "qid": 4157,
+      "vid": "Piw-9dOC8YQ_360.0_510.0",
+      "archive_member": "videos/Piw-9dOC8YQ_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/Piw-9dOC8YQ_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 6505312,
+      "decode_check": {
+        "frame_count": 3750,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1875,
+          3749
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 54,
+      "qid": 5787,
+      "vid": "QHFy-nWNJYk_60.0_210.0",
+      "archive_member": "videos/QHFy-nWNJYk_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/QHFy-nWNJYk_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.025,
+      "size": 11999473,
+      "decode_check": {
+        "frame_count": 3597,
+        "fps": 23.976023976023978,
+        "decoded_indices": [
+          0,
+          1798,
+          3596
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 55,
+      "qid": 1678,
+      "vid": "msAkt_9q6H0_60.0_210.0",
+      "archive_member": "videos/msAkt_9q6H0_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/msAkt_9q6H0_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 14251744,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 56,
+      "qid": 934,
+      "vid": "wk2CeU_DcBo_60.0_210.0",
+      "archive_member": "videos/wk2CeU_DcBo_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/wk2CeU_DcBo_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 12905061,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 57,
+      "qid": 10200,
+      "vid": "GizQlpAvD8s_360.0_510.0",
+      "archive_member": "videos/GizQlpAvD8s_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/GizQlpAvD8s_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 7152582,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 58,
+      "qid": 4590,
+      "vid": "DLSkojSiAPs_60.0_210.0",
+      "archive_member": "videos/DLSkojSiAPs_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/DLSkojSiAPs_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 11584795,
+      "decode_check": {
+        "frame_count": 3750,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1875,
+          3749
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 59,
+      "qid": 9724,
+      "vid": "M2LGcH3S_ok_360.0_510.0",
+      "archive_member": "videos/M2LGcH3S_ok_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/M2LGcH3S_ok_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 5689089,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 60,
+      "qid": 3809,
+      "vid": "EjV6yAxwyyI_210.0_360.0",
+      "archive_member": "videos/EjV6yAxwyyI_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/EjV6yAxwyyI_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.025,
+      "size": 7552066,
+      "decode_check": {
+        "frame_count": 3597,
+        "fps": 23.976023976023978,
+        "decoded_indices": [
+          0,
+          1798,
+          3596
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 61,
+      "qid": 9624,
+      "vid": "FWy5ZcDu_i8_360.0_510.0",
+      "archive_member": "videos/FWy5ZcDu_i8_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/FWy5ZcDu_i8_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 7814947,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 62,
+      "qid": 1260,
+      "vid": "cL8ouoEZtKM_360.0_510.0",
+      "archive_member": "videos/cL8ouoEZtKM_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/cL8ouoEZtKM_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 22321072,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 63,
+      "qid": 4630,
+      "vid": "kY4Jm68gg38_210.0_360.0",
+      "archive_member": "videos/kY4Jm68gg38_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/kY4Jm68gg38_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 8414587,
+      "decode_check": {
+        "frame_count": 3750,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1875,
+          3749
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 64,
+      "qid": 3099,
+      "vid": "3fESWnyZC0o_210.0_360.0",
+      "archive_member": "videos/3fESWnyZC0o_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/3fESWnyZC0o_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 14599216,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 65,
+      "qid": 6380,
+      "vid": "EriqfBlZe5Y_360.0_510.0",
+      "archive_member": "videos/EriqfBlZe5Y_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/EriqfBlZe5Y_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.025,
+      "size": 7617391,
+      "decode_check": {
+        "frame_count": 3597,
+        "fps": 23.976023976023978,
+        "decoded_indices": [
+          0,
+          1798,
+          3596
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 66,
+      "qid": 4564,
+      "vid": "w1UC0rFTPcM_210.0_360.0",
+      "archive_member": "videos/w1UC0rFTPcM_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/w1UC0rFTPcM_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 17699475,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 67,
+      "qid": 9825,
+      "vid": "zTf-3BOLi8w_360.0_510.0",
+      "archive_member": "videos/zTf-3BOLi8w_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/zTf-3BOLi8w_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 9238038,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 68,
+      "qid": 9949,
+      "vid": "KDpsbJHx1RI_60.0_210.0",
+      "archive_member": "videos/KDpsbJHx1RI_60.0_210.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/KDpsbJHx1RI_60.0_210.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 3533395,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 69,
+      "qid": 7454,
+      "vid": "GOzEeIvLZO4_660.0_810.0",
+      "archive_member": "videos/GOzEeIvLZO4_660.0_810.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/GOzEeIvLZO4_660.0_810.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 23407635,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 70,
+      "qid": 6977,
+      "vid": "Lc4D95BLgXI_510.0_660.0",
+      "archive_member": "videos/Lc4D95BLgXI_510.0_660.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/Lc4D95BLgXI_510.0_660.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 8000190,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 71,
+      "qid": 4838,
+      "vid": "u4GsXRzTqf8_210.0_360.0",
+      "archive_member": "videos/u4GsXRzTqf8_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/u4GsXRzTqf8_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 11125655,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 72,
+      "qid": 7138,
+      "vid": "A5PIgmXGIdI_660.0_810.0",
+      "archive_member": "videos/A5PIgmXGIdI_660.0_810.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/A5PIgmXGIdI_660.0_810.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 9843079,
+      "decode_check": {
+        "frame_count": 3750,
+        "fps": 25.0,
+        "decoded_indices": [
+          0,
+          1875,
+          3749
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 73,
+      "qid": 8261,
+      "vid": "UDEfgewcr5E_360.0_510.0",
+      "archive_member": "videos/UDEfgewcr5E_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/UDEfgewcr5E_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.025,
+      "size": 5637114,
+      "decode_check": {
+        "frame_count": 3597,
+        "fps": 23.976023976023978,
+        "decoded_indices": [
+          0,
+          1798,
+          3596
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 74,
+      "qid": 9128,
+      "vid": "X6g8OD7TdcY_510.0_660.0",
+      "archive_member": "videos/X6g8OD7TdcY_510.0_660.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/X6g8OD7TdcY_510.0_660.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 9427409,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 75,
+      "qid": 6815,
+      "vid": "OR7oOU8S7Jc_360.0_510.0",
+      "archive_member": "videos/OR7oOU8S7Jc_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/OR7oOU8S7Jc_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 17760384,
+      "decode_check": {
+        "frame_count": 4496,
+        "fps": 29.97002997002997,
+        "decoded_indices": [
+          0,
+          2248,
+          4495
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 76,
+      "qid": 3011,
+      "vid": "ZxHh_2YdmT4_210.0_360.0",
+      "archive_member": "videos/ZxHh_2YdmT4_210.0_360.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/ZxHh_2YdmT4_210.0_360.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 21443659,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 77,
+      "qid": 9906,
+      "vid": "KDpsbJHx1RI_360.0_510.0",
+      "archive_member": "videos/KDpsbJHx1RI_360.0_510.0.mp4",
+      "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_official/KDpsbJHx1RI_360.0_510.0.mp4",
+      "status": "available",
+      "actual_duration": 150.024,
+      "size": 4520784,
+      "decode_check": {
+        "frame_count": 4500,
+        "fps": 30.0,
+        "decoded_indices": [
+          0,
+          2250,
+          4499
+        ],
+        "decoded_shapes": [
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ],
+          [
+            300,
+            534,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_rank": 78,
+      "qid": 6552,
+      "vid": "fZfaa1rJUjM_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 79,
+      "qid": 4814,
+      "vid": "WINZiMUH7Lk_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 80,
+      "qid": 7567,
+      "vid": "Ehpo8gXg27I_660.0_810.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 81,
+      "qid": 5688,
+      "vid": "rrTIeJRVGjg_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 82,
+      "qid": 5764,
+      "vid": "q4WEUoz2wHc_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 83,
+      "qid": 9304,
+      "vid": "0lbehz52PFU_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 84,
+      "qid": 5198,
+      "vid": "VRoXu96WlbM_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 85,
+      "qid": 1755,
+      "vid": "JHiLEkV8l_8_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 86,
+      "qid": 9171,
+      "vid": "iAuIX5wnNYA_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 87,
+      "qid": 8340,
+      "vid": "msAkt_9q6H0_510.0_660.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 88,
+      "qid": 9132,
+      "vid": "X326z_D4OyE_510.0_660.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 89,
+      "qid": 5914,
+      "vid": "h_73QmnwHaQ_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 90,
+      "qid": 3100,
+      "vid": "E75GN8GXDP4_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 91,
+      "qid": 2405,
+      "vid": "XcJPd4NhhCs_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 92,
+      "qid": 9157,
+      "vid": "O3C0weLq0Tg_510.0_660.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 93,
+      "qid": 7770,
+      "vid": "RVOg4rk7MRg_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 94,
+      "qid": 5375,
+      "vid": "6IO6lBl332U_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 95,
+      "qid": 5758,
+      "vid": "0U3-7Ey3siA_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 96,
+      "qid": 2323,
+      "vid": "yeCaAL4uM-U_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 97,
+      "qid": 3899,
+      "vid": "VUV77-5ERxA_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 98,
+      "qid": 1487,
+      "vid": "t83PFfp4TFA_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 99,
+      "qid": 6413,
+      "vid": "VKKH07K1zbI_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 100,
+      "qid": 502,
+      "vid": "Uale9QeyLMI_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 101,
+      "qid": 3924,
+      "vid": "ruYn5dOkIyI_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 102,
+      "qid": 1304,
+      "vid": "h_XoA5-_8W0_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 103,
+      "qid": 8650,
+      "vid": "XzxRMH7G8Lk_510.0_660.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 104,
+      "qid": 5998,
+      "vid": "j0wGIBt61n0_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 105,
+      "qid": 2302,
+      "vid": "OvxqaVabXiE_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 106,
+      "qid": 7421,
+      "vid": "hl_ErejT_CE_510.0_660.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 107,
+      "qid": 7591,
+      "vid": "sDpLUiHK_jE_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 108,
+      "qid": 7691,
+      "vid": "j9NNAmqweOA_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 109,
+      "qid": 3030,
+      "vid": "KJ2il8oTpKY_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 110,
+      "qid": 7585,
+      "vid": "2vFzBa_WKNg_510.0_660.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 111,
+      "qid": 6480,
+      "vid": "O3C0weLq0Tg_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 112,
+      "qid": 5856,
+      "vid": "qHSeudOaXwk_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 113,
+      "qid": 6337,
+      "vid": "_ufoIeYZYjw_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 114,
+      "qid": 9633,
+      "vid": "z96UT5W0sfM_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 115,
+      "qid": 5936,
+      "vid": "AWoPkPjhxSo_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 116,
+      "qid": 6896,
+      "vid": "VRoXu96WlbM_660.0_810.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 117,
+      "qid": 3164,
+      "vid": "FbUT42sj_os_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 118,
+      "qid": 7311,
+      "vid": "gY3GOIn80k8_660.0_810.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 119,
+      "qid": 9885,
+      "vid": "_0u5I0OJP6U_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 120,
+      "qid": 6700,
+      "vid": "OvxqaVabXiE_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 121,
+      "qid": 1440,
+      "vid": "2boYI6YVkCs_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 122,
+      "qid": 2149,
+      "vid": "M7mePz5cXDk_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 123,
+      "qid": 2600,
+      "vid": "SyMt-tik9q0_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 124,
+      "qid": 2386,
+      "vid": "74jtgDnsEBU_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 125,
+      "qid": 3584,
+      "vid": "uoVRb7a58GU_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 126,
+      "qid": 10131,
+      "vid": "GizQlpAvD8s_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 127,
+      "qid": 7685,
+      "vid": "Ifgq2XU0G_s_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 128,
+      "qid": 8242,
+      "vid": "EE0NcEec_mo_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 129,
+      "qid": 6392,
+      "vid": "EriqfBlZe5Y_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 130,
+      "qid": 4389,
+      "vid": "z12l9AAZhXc_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 131,
+      "qid": 7203,
+      "vid": "idvZpkYWOMQ_510.0_660.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 132,
+      "qid": 8675,
+      "vid": "h_XoA5-_8W0_660.0_810.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 133,
+      "qid": 4240,
+      "vid": "HL60CCu_R44_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 134,
+      "qid": 1909,
+      "vid": "_9vleIcuQd0_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 135,
+      "qid": 3194,
+      "vid": "xqe9FSBJDx0_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 136,
+      "qid": 4425,
+      "vid": "H15bUc-1LJo_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 137,
+      "qid": 9667,
+      "vid": "tSWcHfTzuA0_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 138,
+      "qid": 623,
+      "vid": "FbUT42sj_os_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 139,
+      "qid": 8861,
+      "vid": "j0wGIBt61n0_660.0_810.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 140,
+      "qid": 6474,
+      "vid": "X326z_D4OyE_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 141,
+      "qid": 1743,
+      "vid": "rsNuM2HcRh8_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 142,
+      "qid": 3739,
+      "vid": "Jz1Cszaqck0_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 143,
+      "qid": 1800,
+      "vid": "DtLI1xR051U_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 144,
+      "qid": 5606,
+      "vid": "YhntzRB6TwM_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 145,
+      "qid": 4672,
+      "vid": "OiueSrtEfvs_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 146,
+      "qid": 9198,
+      "vid": "1rguOCdMIY8_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 147,
+      "qid": 967,
+      "vid": "_RiI6qVZ1Hk_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 148,
+      "qid": 7410,
+      "vid": "gY3GOIn80k8_510.0_660.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 149,
+      "qid": 9056,
+      "vid": "DTh3uCDtres_510.0_660.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 150,
+      "qid": 9646,
+      "vid": "t9podLZljz0_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 151,
+      "qid": 1214,
+      "vid": "xjV76k420Rc_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 152,
+      "qid": 2309,
+      "vid": "23YBs2JxE-k_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 153,
+      "qid": 6532,
+      "vid": "5oucQKLn88A_360.0_510.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 154,
+      "qid": 137,
+      "vid": "g6cmukMZBug_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 155,
+      "qid": 1057,
+      "vid": "X6g8OD7TdcY_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 156,
+      "qid": 4244,
+      "vid": "Ho_5YisGHyU_210.0_360.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    },
+    {
+      "candidate_rank": 157,
+      "qid": 1495,
+      "vid": "cOcN2KUgM7U_60.0_210.0",
+      "archive_member": null,
+      "status": "not_selected_for_extraction"
+    }
+  ]
+}

@@ -1,0 +1,1375 @@
+arXiv:2107.09609v2 [cs.CV] 29 Nov 2021
+
+QVH IGHLIGHTS: Detecting Moments and Highlights
+in Videos via Natural Language Queries
+
+Jie Lei
+Tamara L. Berg
+Mohit Bansal
+Department of Computer Science
+University of North Carolina at Chapel Hill
+{jielei, tlberg, mbansal}@cs.unc.edu
+
+Abstract
+Detecting customized moments and highlights from videos given natural language
+(NL) user queries is an important but under-studied topic. One of the challenges
+in pursuing this direction is the lack of annotated data. To address this issue, we
+present the Query-based Video Highlights (QVH IGHLIGHTS) dataset. It consists
+of over 10,000 YouTube videos, covering a wide range of topics, from everyday
+activities and travel in lifestyle vlog videos to social and political activities in
+news videos. Each video in the dataset is annotated with: (1) a human-written
+free-form NL query, (2) relevant moments in the video w.r.t. the query, and (3)
+five-point scale saliency scores for all query-relevant clips. This comprehensive
+annotation enables us to develop and evaluate systems that detect relevant moments
+as well as salient highlights for diverse, flexible user queries. We also present a
+strong baseline for this task, Moment-DETR, a transformer encoder-decoder model
+that views moment retrieval as a direct set prediction problem, taking extracted
+video and query representations as inputs and predicting moment coordinates
+and saliency scores end-to-end. While our model does not utilize any human
+prior, we show that it performs competitively when compared to well-engineered
+architectures. With weakly supervised pretraining using ASR captions, MomentDETR substantially outperforms previous methods. Lastly, we present several
+ablations and visualizations of Moment-DETR. Data and code is publicly available
+at https://github.com/jayleicn/moment_detr.
+
+1
+
+Introduction
+
+Internet videos are growing at an unprecedented rate. Enabling users to efficiently search and
+browse these massive collections of videos is essential for improving user experience of online video
+platforms. While a good amount of work has been done in the area of natural language query based
+video search for complete videos (i.e., text-to-video retrieval [42, 43, 17]), returning the whole video
+is not always desirable, since they can be quite long (e.g., from few minutes to hours). Instead,
+users may want to locate precise moments within a video that are most relevant to their query or see
+highlights at a glance so that they can skip to relevant portions of the video easily.
+Many datasets [13, 7, 19, 16, 32] have been proposed for the first task of ‘moment retrieval’ –
+localizing moments in a video given a user query. However, most of the datasets are reported [4, 19]
+to have a strong temporal bias, where more moments appear at the beginning of the videos than at the
+end. Meanwhile, for each video-query pair, all of the datasets provide annotations with only a single
+moment. In reality, there are often multiple moments, i.e., several disjoint moments in a video, that
+are related to a given query. For the second task of ‘highlight detection’, many datasets [39, 12, 37, 8]
+are query-agnostic, where the detected highlights do not change for different input user queries.
+[23, 44] are the two existing datasets that collect highlights based on user queries. However, only
+35th Conference on Neural Information Processing Systems (NeurIPS 2021), Sydney, Australia.
+
+A shark is swimming underwater.
+
+Glass is laying all over the street from broken windows beside other trash and debris in front of store buildings.
+
+Figure 1: QVH IGHLIGHTS examples. We show localized moments in dashed green boxes. The
+highlightness (or saliency) scores from 3 different annotators are shown under the frames as colored
+bars, with height and color intensity proportional to the scores.
+a small set of frames or clips are annotated ( 20 frames out of 331 seconds long videos in [23] or
+around 10 seconds clips out of 60 seconds video in [44]), limiting their ability to accurately learn
+and evaluate highlight detection methods. Lastly, although these two tasks of moment retrieval and
+highlight detection share many common characteristics (e.g., both require learning the similarity
+between user text query and video clips), they are typically studied separately, mostly due to the lack
+of annotations supporting both tasks in a single dataset.
+To address these issues, we collect QVH IGHLIGHTS , a unified benchmark dataset that supports
+query-based video moment retrieval and highlight detection. Based on over 10,000 YouTube videos
+covering a diverse range of topics (from everyday activities and travel in lifestyle vlog videos to social
+and political activities in news videos), we collect high-quality annotations for both tasks. Figure 1
+shows two examples from QVH IGHLIGHTS. For moment retrieval, we provide one or multiple
+disjoint moments for a query in a video, enabling a more realistic, accurate, and less-biased (see
+Section 3.2) evaluation of moment retrieval methods. Within the annotated moments, we also provide
+a five-point Likert-scale (from ‘Very Good’ to ‘Very Bad’) saliency/highlightness score annotation
+for each 2-second clip. This comprehensive saliency annotation gives more space for designing and
+evaluating query-based video highlight detection methods.
+Next, to present strong initial models for this task, we take inspiration from recent work such as
+DETR [3] for object detection, and propose Moment-DETR, an end-to-end transformer encoderdecoder architecture that views moment retrieval as a direct set prediction problem. With this
+method, we effectively eliminate the need for any manually-designed pre-processing (e.g., proposal
+generation) or post-processing (e.g., non-maximum suppression) steps commonly seen in moment
+retrieval methods. We further add a saliency ranking objective on top of the encoder outputs for
+highlight detection. While Moment-DETR does not encode any human prior in its design, our
+experiments show that it is still competitive when compared to highly-engineered architectures.
+Furthermore, with additional weakly-supervised pretraining from ASR captions, Moment-DETR
+substantially outperforms these strong methods. Lastly, we also provide detailed ablations and
+visualizations to help understand the inner workings of Moment-DETR.
+Overall, our contributions are 3-fold: (i) We collect the QVH IGHLIGHTS dataset with over 10,000
+videos, annotated with human-written natural language queries, relevant moments, and saliency
+scores. (ii) We propose Moment-DETR to serve as a strong baseline for our dataset. With weakly
+supervised pretraining, Moment-DETR substantially outperforms several baselines, on both our
+proposed QVH IGHLIGHTS dataset and the moment retrieval dataset CharadesSTA [7]. (iii) We
+present detailed dataset analyses, model ablations and visualizations. For ablations, we examined
+various design choices of Moment-DETR as well as its pre-training strategy. We hope our work
+would inspire and encourage future work towards this important direction.
+
+2
+
+Related Work
+
+Datasets and Tasks. Moment retrieval [13, 7, 19] requires localizing moments from a video given a
+natural language query. Various datasets [13, 7, 19, 16, 32] have been proposed or repurposed for
+2
+
+the task. However, as shown in [13, 4, 19], many of them have a strong temporal bias, where more
+moments are located at the beginning of the videos than the end. In Section 3.2 we show moments in
+QVH IGHLIGHTS distribute almost evenly over the videos. Meanwhile, while these datasets collect
+only a single moment for each query-video pair, we collect one or more moments. Highlight detection
+is another important task in our dataset. Most existing datasets [39, 12, 37, 8] are query-agnostic,
+which do not provide customized highlights for a specific user query. [23, 44] are the two known
+datasets that collect highlights based on user queries. However, they only annotate a small set of
+frames or clips, limiting their ability to accurately learn and evaluate highlight detection methods. In
+contrast, we provide a comprehensive five-point Likert-scale saliency/highlightness score annotation
+for all clips that are relevant to the queries. Besides, although these two tasks share some common
+characteristics, they are typically addressed separately using different benchmark datasets. In this
+work, we collect QVH IGHLIGHTS as a unified benchmark that supports both tasks. In Section 5.2 we
+also demonstrate that jointly detecting saliency is beneficial for retrieving moments.
+Methods. There are a wide range of approaches developed for addressing the moment retrieval and
+highlight detection tasks. For highlight detection, prior methods [39, 23, 12, 22, 34] are typically
+ranking-based, where models are trained to give higher scores for highlight frames or clips, via a
+hinge loss, cross-entropy loss, or reinforcement approaches. For moment retrieval, there are work
+that try to score generated moment proposals [13, 36, 4, 49, 47, 41], predict moment start-end
+indices [18, 9, 19, 21, 45, 48] or regress moment coordinates [7]. However, most of them require a
+preprocessing (e.g., proposal generation) or postprocessing step (e.g., non-maximum suppression) that
+are hand-crafted, and are thus not end-to-end trainable. In this work, drawing inspiration from recent
+work on object detection [3, 15] and video action detection [28, 46], we propose Moment-DETR that
+views moment retrieval as a direct set prediction problem. Moment-DETR takes video and user query
+representations as inputs, and directly outputs moment coordinates and saliency scores end-to-end,
+hence eliminating the need for any pre- or post-processing manually-designed human prior steps.
+
+3
+
+Dataset Collection and Analysis
+
+Our QVH IGHLIGHTS dataset contains over 10,000 videos annotated with human written, free-form
+queries. Each query is associated with one or multiple variable-length moments in its corresponding
+video, and a comprehensive 5-point Likert-scale saliency annotation for each clip in the moments. In
+the following, we describe our data collection process and provide various data analyses.
+3.1
+
+Data Collection
+
+Collecting videos. We would like to collect a set of videos that are less-edited and contain interesting
+and diverse content for user annotation. Following [6, 20], we start with user-created lifestyle vlog
+videos on YouTube. These are created by users from all over the world, showcasing various events
+and aspects of their life, from everyday activities, to travel and sightseeing, etc. These videos are
+captured via different devices (e.g., smartphones or GoPro) with different view angles (e.g., firstperson or third-person), posing important challenges to computer vision systems. To further increase
+the diversity of the dataset, we also consider news videos that have large portions of ‘raw footage’.
+These videos tend to cover more serious and world event topics such as natural disasters and protests.
+To harvest these videos, we use a list of queries, e.g., ‘daily vlog’, ‘travel vlog’, ‘news hurricane’,
+etc. We then download top videos that are 5-30 minutes long from YouTube’s search results, keeping
+videos that are uploaded after 2016 for better visual quality, and filtering out videos with a view count
+under 100 or with a very high dislike ratio. These raw videos are then segmented into 150-second
+short videos for annotation.
+Collecting user queries and relevant moments. To collect free-form natural language queries and
+their associated moments in the videos, we create an annotation task on Amazon Mechanical Turk.
+In this task, we present workers with a video and ask them to watch the video and write a query in
+standard English depicting interesting activities in the video. Next, we present the same worker with
+a grid of 2-second long clips segmented from the video, and ask them to select all clips from the grid
+relevant to the query. The selection can be done very efficiently via click for selecting a single clip
+and click-and-drag for selecting consecutive clips. This 2-second clip annotation protocol allows
+for more precise annotation than using 5-second clip as in [13]. Moreover, different from previous
+work [13, 7, 19, 16, 32] where only a single moment can be selected for a query-video pair, users can
+3
+
+Percentage of Moments
+
+Table 1: Top unique verbs and nouns in queries, in each video category.
+Category
+
+#Queries
+
+Top Unique Verbs
+
+Top Unique Nouns
+
+Daily Vlog
+Travel Vlog
+News
+
+4,473
+4,694
+1,143
+
+cook, apply, cut, clean
+swim, visit, order, travel
+report, gather, protest, discuss
+
+dog, kitchen, baby, floor
+beach, hotel, tour, plane
+news, interview, weather, police
+
+10%
+
+0%
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+16
+
+18
+
+20
+
+22
+
+24
+
+26
+
+28 ≥ 30
+
+Moment Length (seconds)
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+0.5
+
+0.6
+
+0.7
+
+0.8
+
+0.9
+
+1.0
+
+Normalized Moment Center
+
+Figure 2: Distribution of moment lengths (left) and normalized (by video duration) center timestamps
+(right). The moments vary greatly in length, and they distribute almost evenly along the videos.
+select multiple disjoint moments in our setup. To verify the quality of the moment annotation, we use
+a set of 600 query-video pairs, and collect 3 sets of moments for each query from different workers.
+We then calculate the Intersection-over-Union (IoU) between every pair of moments annotated for the
+same query, and take the average of the 3 IoU scores to check the inter-user agreement. We find that,
+for around 90% of queries, their moments have an average IoU score higher than 0.9, suggesting that
+the moments collected via our annotation process are of high inter-user agreement, thus high quality.
+Annotating saliency scores. The relevant moment annotation in the previous step tells us which
+clips in the videos correspond to the user queries. Though all selected clips are relevant to the query,
+they may still vary greatly in their saliency, how representative they are for the query, or whether they
+would make a good highlight. For example, we would expect a clip with a proper camera angle and
+lighting to be better than a clip with a lot of occlusions on the activities being queried, and therefore
+be a better highlight for the video. Thus, we create a second annotation task targeting at collecting
+the saliency scores for each relevant clip. We do not ask workers to select only a small set of clips as
+highlights [44] because many clips may look similar and be equally salient. Hence forcing people to
+pick only a few clips from these similar clips can cause confusion and degrade annotation quality.
+Specifically, we present all the selected clips in the first task along with the queries to another set
+of workers. For each clip, the workers are required to rate them in a Likert-scale system1 with five
+options, ‘Very Good’, ‘Good’, ‘Fair’, ‘Bad’, ‘Very Bad’. As highlightness can be subjective, we
+collect ratings from 3 different workers and use all of them for evaluation.
+Quality control. To ensure data quality, we only allow workers who have done more than 500 HITs
+and with an approval rate of 95% to participate in our annotation task. We also follow [19] to set up a
+qualification test. Our test contains seven multiple-choice questions (see supplementary file for an
+example), and workers have to correctly answer all questions in order to qualify for the task. In total,
+543 workers took the test, with a pass rate of 48%. This qualification ensures high data quality – as
+mentioned earlier in this subsection, we observe high inter-user agreement of moment annotations.
+For query and saliency annotation, we pay workers $0.25 and $0.18 per query, respectively. The
+average hourly pay is around $11.00. The whole collection process took about 3 months and cost
+approximately $16,000.
+3.2
+
+Data Analysis
+
+In total, we collected 10,310 queries associated with 18,367 moments in 10,148 videos. The videos
+are from three main categories, daily vlog, travel vlog, and news events. In Table 1, we show the
+number of queries in each category and the top unique verbs and nouns in the queries. These top
+unique words reflect the major of activities occurring in the videos. For example, in daily and travel
+vlog videos, the top unique verbs are mostly associated with daily activities such as ‘cook’ and ‘clean’,
+while in news videos, they are more about serious activities such as ‘report’, ‘gather’, ‘protest’.
+1
+
+https://en.wikipedia.org/wiki/Likert_scale
+
+4
+
+Table 2: Comparison with existing moment retrieval (top) and highlight detection (bottom) datasets.
+Q=Query, MR=Moment Retrieval, HD=Highlight Detection.
+Dataset
+
+Domain
+
+#Queries/#Videos
+
+Avg
+Query Len
+
+DiDeMo [13]
+ANetCaptions [16]
+CharadesSTA [7]
+TVR [19]
+
+Flickr
+Activity
+Activity
+TV show
+
+41.2K / 10.6K
+72K / 15K
+16.1K / 6.7K
+109K / 21.8K
+
+8.0
+14.8
+7.2
+13.4
+
+6.5 / 29.3
+36.2 / 117.6
+8.1 / 30.6
+9.1 / 76.2
+
+1
+1
+1
+1
+
+3
+3
+3
+3
+
+-
+
+3
+3
+3
+3
+
+YouTubeHighlights [39]
+Video2GIF [12]
+BeautyThumb [37]
+ClickThrough [23]
+ActivityThumb [44]
+
+Activity
+Open
+Open
+Open
+Activity
+
+- / 0.6K
+- / 80K
+- / 1.1K
+- / 1K
+10K / 4K
+
+14.8
+
+- / 143
+- / 332
+- / 169
+- / 331
+8.7 / 60.7
+
+-
+
+-
+
+3
+3
+3
+3
+3
+
+3
+3
+
+Vlog / News
+
+10.3K / 10.2K
+
+11.3
+
+24.6 / 150
+
+1.8
+
+3
+
+3
+
+3
+
+QVH IGHLIGHTS
+
+Avg Len (sec) Avg #Moments
+Moment/Video
+per Query
+
+Supported Tasks
+MR
+HD
+
+Has
+Query
+
+Table 2 shows a comparison between QVH IGHLIGHTS and existing moment retrieval and highlight
+detection datasets. QVH IGHLIGHTS can have multiple disjoint moments paired with a single query
+(on average 1.8 moments per query in a video), while all the moment retrieval datasets can only
+have a single moment. This is a more realistic setup as relevant content to a query in a video might
+be separated by irrelevant content. It also enables a more accurate evaluation since the annotations
+are exhaustive and clean for a single video, i.e., all the relevant moments are properly selected and
+no irrelevant moments are selected. In Figure 2, we show the distribution of moment lengths and
+normalized (by video duration) moment center timestamps. Our dataset has a rich variety of moments
+that vary greatly in length. Around 38% of the moments have a length of equal or less than 10
+seconds, while around 23% are more than 30 seconds. The moments are almost equally distributed
+across the video, with a small peak in the middle (some moments span across the whole video),
+suggesting that our dataset suffers less from the temporal bias commonly seen in other moment
+retrieval datasets [13, 19] – where moments tend to occur nearer to the beginning of videos.
+Most of the highlight detection datasets [39, 12, 37] in Table 2 focus on query-independent highlight detection while QVH IGHLIGHTS focuses on query-dependent highlights detection. ClickThrough [23] and ActivityThumbnails [44] also have highlight annotations for queries, but their
+annotations are not comprehensive: for a video, ClickThrough only annotates 20 key frames and
+ActivityThumbnails restricts highlights to less than five clips. In contrast, we adopt a two-stage
+annotation process with a comprehensive 5-scale saliency score for all relevant clips, making it more
+useful for developing effective models and more accurate for evaluating model performance.
+
+4
+
+Methods: Moment-DETR
+
+Our goal is to simultaneously localize moments and detect highlights in videos from natural language
+queries. Given a natural language query q of Lq tokens, and a video v comprised of a sequence of Lv
+clips, we aim to localize one or more moments {mi } (a moment is a consecutive subset of clips in
+v), as well as predicting clip-wise saliency scores S ∈ RLv (the highest scored clips are selected as
+highlights). Inspired by recent progress in using transformers for object detection (DETR [3]), in
+this work we propose a strong baseline model for our QVH IGHLIGHTS dataset, ‘Moment-DETR’,
+an end-to-end transformer encoder-decoder architecture for joint moment retrieval and highlight
+detection. Moment-DETR removes many hand-crafted components, e.g., proposal generation module
+and non-maximum suppression, commonly used in traditional methods [13, 36, 4, 49, 47, 41], and
+views moment localization as a direct set prediction problem. Given a set of learned moment queries,
+Moment-DETR models the global temporal relations of the clips in the videos and outputs moment
+span coordinates and saliency scores. In the following, we present Moment-DETR in detail.
+4.1
+
+Architecture
+
+Figure 3 shows the overall architecture of Moment-DETR. In the following, we explain it in details.
+Input representations. The input to the transformer encoder is the concatenation of projected
+video and query text features. For video, we use SlowFast [5] and the video encoder (ViT-B/32) of
+CLIP [31] to extract features every 2 seconds. We then normalize the two features and concatenate
+them at hidden dimension. The resulting video feature v is denoted as Ev ∈ RLv ×2816 . For query
+5
+
+saliency scores
+
+Linear
+FFN
+foreground
+
+FFN
+
+span
+
+Transformer Encoder
+
+Man in hoodie
+unpacks his groceries.
+
+FFN
+
+FFN
+
+background foreground
+
+background
+
+span
+
+Transformer Decoder
+
+Moment Queries
+(Trainable embeddings)
+
+L1 + IoU Loss
+
+saliency scores
+
+Cross-Entropy Loss
+
+Hinge Loss
+
+Figure 3: Moment-DETR model overview. The architecture is simple, with a transformer encoderdecoder and three prediction heads for predicting saliency scores, fore-/back-ground scores and
+moment coordinates. For brevity, the video and text feature extractors are not shown in this figure.
+text, we use the CLIP text encoder to extract token level features, Eq ∈ RLq ×512 . Next, we use
+separate 2-layer perceptrons with layernorm [14] and dropout [14] to project the video and query
+features into a shared embedding space of size d. The projected features are concatenated [15] at
+length dimension as the input to the transformer encoder, denoted as Einput ∈ RL×d , L=Lv + Lq .
+Transformer encoder-decoder. The video and query input sequence is encoded using a stack of T
+transformer encoder layers. Each encoder layer has the same architecture as in previous work [40, 3],
+with a multi-head self-attention layer and a feed forward network (FFN). Since the transformer
+architecture is permutation-invariant, fixed positional encodings [29, 1] are added to the input of each
+attention layer, following [3]. The output of the encoder is Eenc ∈ RL×d . The transformer decoder
+is the same as in [40, 3], with a stack of T transformer decoder layers. Each decoder layer consists of
+a multi-head self-attention layer, a cross-attention layer (that allows interaction between the encoder
+outputs and the decoder inputs), and an FFN. The decoder input is a set of N trainable positional
+embeddings of size d, referred to as moment queries.2 These embeddings are added to the input to
+each attention layer as in the encoder layers. The output of the decoder is Edec ∈ RN ×d .
+Prediction heads. Given the encoder output Eenc , we use a linear layer to predict saliency scores
+S ∈ RLv for the input video. Given the decoder output Edec , we use a 3-layer FFN with ReLU [11]
+to predict the normalized moment center coordinate and width w.r.t. the input video. We also follow
+DETR [3] to use a linear layer with softmax to predict class labels. In DETR, this layer is trained
+with object class labels. In our task, since class labels are not available, for a predicted moment, we
+assign it a foreground label if it matches with a ground truth, and background otherwise.
+4.2
+
+Matching and Loss Functions
+
+Set prediction via bipartite matching. We denote ŷ = {ŷi }N
+i=1 as the set of N predictions from the
+moment queries, and y = {yi }N
+as
+the
+set
+of
+ground
+truth
+moments with background ∅ padding.
+i=1
+Note that N is the number of moment queries and is larger than the number of ground truth moments.
+Since the predictions and the ground truth do not have a one-to-one correspondence, in order to
+compute the loss, we need to first find an assignment between predictions and ground truth moments.
+We define the matching cost Cmatch between a prediction and a ground truth moment as:
+Cmatch (yi , ŷσ(i) ) = −1{ci 6=∅} p̂σ(i) (ci ) + 1{ci 6=∅} Lmoment (mi , m̂σ(i) ),
+
+(1)
+
+where each ground truth can be viewed as yi = (ci , mi ), with ci as the class label to indicate
+foreground or background ∅, and mi ∈ [0, 1]2 a vector that defines the normalized moment center
+coordinate and width w.r.t. an input video; ŷσ(i) is the i-th element of the prediction under a permutation σ ∈ SN . Note that the background paddings in the ground truth are ignored in the matching cost.
+With this matching cost, we follow [3, 38], using the Hungarian algorithm to find the optimal bipartite
+PN
+matching between the ground truth and predictions: σ̂ = arg minσ∈SN i Cmatch (yi , ŷσ(i) ). Based
+on this optimal assignment σ̂, in the following, we introduce our loss formulations.
+2
+
+Following [3], we use moment queries to refer to decoder positional embeddings, not the text queries.
+
+6
+
+Moment localization loss. This loss Lmoment is used to measure the discrepancy between the
+prediction and ground truth moments. It consists of an L1 loss and a generalized IoU loss [33]:
+Lmoment (mi , m̂σ̂(i) ) = λL1 ||mi − m̂σ̂(i) || + λiou Liou (mi , m̂σ̂(i) ),
+
+(2)
+
+where λL1 , λiou ∈ R are hyperparameters balancing the two terms. The IoU loss Liou here computes
+1D temporal IoU instead of 2D box IoU as in [33, 3], but they share the same formulation.
+Saliency loss. The saliency loss is computed via a hinge loss between two pairs of positive and
+negative clips. The first pair is a high score clip (with index thigh ) and a low score clip (tlow ) within
+the ground-truth moments.3 The second pair consists of one clip (tin ) within and one clip (tout )
+outside the ground-truth moments. This loss is calculated as (∆ ∈ R is the margin):
+Lsaliency (S) = max(0, ∆ + S(tlow ) − S(thigh )) + max(0, ∆ + S(tout ) − S(tin )).
+
+(3)
+
+Overall loss. The final loss is defined as a linear combination of the losses introduced above:
+L = λsaliency Lsaliency (S) +
+
+N
+X
+
+[−λcls log p̂σ̂(i) (ci ) + 1{ci 6=∅} Lmoment (mi , m̂σ̂(i) )] ,
+
+(4)
+
+i=1
+
+where λsaliency , λcls ∈ R are hyperparameters for saliency and fore/background classification loss.
+Following [3], we down-weight the log-probability by a factor of 10 for the background class ∅ to
+account for class imbalance and apply classification and moment losses to every decoder layer.
+4.3
+
+Weakly-Supervised Pretraining via ASR
+
+Moment-DETR is defined using an end-to-end transformer encoder-decoder architecture, eliminating
+the need for any human priors or hand-crafted components. Such a model typically requires a largerscale dataset for training to unleash its true power, which would be prohibitively expensive to acquire
+with human labeling. Therefore, we additionally experiment with using captions from Automatic
+Speech Recognition (ASR) on our videos for weakly-supervised pretraining. Although very noisy,
+ASR captions have been shown to improve performance for visual recognition and text-to-video
+retrieval [26, 25, 21]. Specifically, we download ASR captions from YouTube, and use these caption
+sentences as queries, training the model to predict their corresponding timestamps. In total, we
+harvest 236K caption-timestamp pairs associated with 5406 train videos. For pretraining, the model
+architecture and learning objectives are the same as in standard training, except that we remove the
+first term in the saliency loss (Equation 3) since the saliency score annotation is not available.
+
+5
+
+Experiments and Results
+
+5.1
+
+Experimental Setup
+
+Data and evaluation metrics. We split QVH IGHLIGHTS into 70% train, 15% val, and 15% test
+portions. To evaluate moment retrieval with multiple moments, we use mean average precision (mAP)
+with IoU thresholds 0.5 and 0.75, as well as the average mAP over multiple IoU thresholds [0.5: 0.05:
+0.95], similar to action detection in [2]. We also report standard metric Recall@1 (R@1) used in
+single moment retrieval, where we define a prediction to be positive if it has a high IoU (>= 0.7) with
+one of the ground truth moments. For highlight detection, we use mAP as the main metric. We also
+follow [23] to use HIT@1 to compute the hit ratio for the highest scored clip. Similar to [23], we
+define a clip as positive if it has a score of ‘Very Good’. Since we have ground truth saliency scores
+from 3 users, we evaluate performance against each then take the average.
+Implementation details. Our model is implemented in PyTorch [30]. We set the hidden size d=256,
+#layers in encoder/decoder T =2, #moment queries N =10. We use dropout of 0.1 for transformer
+layers and 0.5 for input projection layers. We set the loss hyperparameters as λL1 =10, λiou =1, λcls =4,
+λs =1, ∆=0.2. The model weights are initialized with Xavier init [10]. We use AdamW [24] with
+an initial learning rate of 1e-4, weight decay 1e-4 to optimize the model parameters. The model is
+trained for 200 epochs with batch size 32. For pretraining, we use the same setup except that we train
+the model for 100 epochs with batch size 256. Both training/finetuning and pretraining are conducted
+on an RTX 2080Ti GPU, with training/finetuning taking 12 hours and pretraining 2 days.
+3
+
+We average the saliency scores from 3 annotators and then choose a pair of high and low score clips.
+
+7
+
+Table 3: Baseline Comparison on QVH IGHLIGHTS test split. We highlight the best score in each
+column in bold, and the second best score with underline. XML+ denotes our improved XML [19]
+model. PT denotes weakly supervised pretraining with ASR captions. For Moment-DETR variants,
+we also report standard deviation of 5 runs with different random seeds.
+Moment Retrieval
+Method
+BeautyThumb [37]
+DVSE [23]
+MCN [13]
+CAL [4]
+CLIP [31]
+XML [19]
+XML+
+
+R1
+
+Highlight Detection
+>= Very Good
+
+mAP
+
+@0.5
+
+@0.7
+
+@0.5
+
+@0.75
+
+avg
+
+mAP
+
+HIT@1
+
+11.41
+25.49
+16.88
+41.83
+46.69
+
+2.72
+11.54
+5.19
+30.35
+33.46
+
+24.94
+23.40
+18.11
+44.63
+47.89
+
+8.22
+7.65
+7.00
+31.73
+34.67
+
+10.67
+9.89
+7.67
+32.14
+34.90
+
+14.36
+18.75
+31.30
+34.49
+35.38
+
+20.88
+21.79
+61.04
+55.25
+55.06
+
+Moment-DETR
+52.89 ±2.3 33.02±1.7 54.82±1.7 29.40±1.7 30.73±1.4 35.69±0.5 55.60±1.6
+Moment-DETR w/ PT 59.78±0.3 40.33±0.5 60.51±0.2 35.36±0.4 36.14±0.25 37.43±0.2 60.17±0.7
+
+5.2
+
+Results and Analysis
+
+Comparison with baselines. We compare Moment-DETR with various moment retrieval and highlight detection methods on the QVH IGHLIGHTS test split; results are shown in Table 3. For moment
+retrieval, we provide three baselines, two proposal-based methods MCN [13] and CAL [4], and a span
+prediction method XML [19]. For highlight detection, we provide two baselines, BeautyThumb [37]
+based solely on frame quality, and DVSE [23] based on clip-query similarity. Since XML also
+outputs clip-wise similarity scores to the user query, we provide highlight detection results for this
+model as well. The original XML model has a smaller capacity than Moment-DETR, hence for a
+fair comparison, we increased its capacity by adding more layers and train it for the same number of
+epochs as Moment-DETR. Moreover, to leverage the saliency annotations in QVH IGHLIGHTS, we
+further added an auxiliary saliency loss to it (referred to as ‘XML+’). These enhancements improve
+the original XML model by 2.76 average mAP. In addition, for both tasks, we also add CLIP [31] as
+a baseline. Specifically, we compute clip-wise similarity scores by computing image-query scores
+where the image is the center frame of the clip. For highlight detection, we directly use these scores
+as prediction; for moment retrieval, we use TAG [50] to progressively groups top-scored clips with
+the classical watershed algorithm [35].
+Compared to the best baseline XML+, Moment-DETR performs competitively on moment retrieval,
+where it achieves significantly higher scores on a lower IoU threshold, i.e., R1@0.5 and mAP@0.5
+(>7% absolute improvement), but obtains lower scores on higher IoU threshold, i.e., R1@0.7 and
+mAP@0.75. We hypothesize that this is because the L1 and generalized IoU losses give large
+penalties only to large mismatches (i.e., small IoU) between the predicted and ground truth moments.
+This property encourages Moment-DETR to focus more on predictions with small IoUs with the
+ground truth, while less on those with a reasonably large IoU (e.g., 0.5). This observation is the
+same as DETR [3] for object detection, where it shows a notable improvement over the baseline in
+AP50 , but lags behind in AP75 . For highlight detection, Moment-DETR performs similarily to XML+.
+As discussed in Section 4.3, Moment-DETR is designed without human priors or hand-crafted
+components, thus may require more training data to learn these priors from data. Therefore, we
+also use ASR captions for weakly supervised pretraining. With pretraining, Moment-DETR greatly
+outperforms the baselines on both tasks, showing the effectiveness of our approach.4 One surprising
+finding is that CLIP [31] gives the best highlight detection performance in terms of HIT@1, though
+its overall performance is much lower than Moment-DETR.
+Loss ablations. In Table 4, we show the impact of the losses by turning off one loss at a time. When
+turning off the saliency loss, we observe a significant performance drop for highlight detection, and
+surprisingly moment retrieval as well. We hypothesize that the moment span prediction losses (L1
+and IoU) and classification (CLS) loss do not provide strong supervision for learning the similarity
+4
+We also tried pretraining with XML+, and under careful tuning, the results are still worse than without
+pretraining, which might because XML+’s cross-entropy loss gives strong penalties to small mismatches,
+preventing it from learning effectively from noisy (thus many small mismatches) data.
+
+8
+
+Table 4: Loss ablations on QVH IGHLIGHTS val split. All models are trained from scratch.
+L1
+
+Moment Retrieval
+
+gIoU Saliency CLS
+
+R1@0.5 R1@0.7
+3
+3
+3
+
+3
+3
+3
+
+3
+3
+3
+
+3
+3
+3
+3
+
+44.84
+51.10
+50.90
+53.94
+
+Highlight Detection (>=Very Good)
+
+mAP avg
+
+mAP
+
+Hit@1
+
+25.05
+27.61
+28.84
+32.20
+
+17.84
+35.28
+36.61
+35.65
+
+20.19
+54.32
+56.71
+55.55
+
+25.87
+31.16
+30.97
+34.84
+
+Figure 4: Visualization of all moment span predictions for all the 1550 videos on QVH IGHLIGHTS val
+split, for all the 10 moment query slots in Moment-DETR decoder. x-axis denotes the normalized
+moment span center coordinates w.r.t. the videos, y-axis denotes the normalized moment span width
+(also indicated by color). We observe that each slot learns to predict moments in different temporal
+locations and different widths. For example, the first slot mostly predicts short moments near the
+beginning of the videos, while the second slot mostly predicts short moments near the end.
+Table 5: Effect of pretraining data domain and size, results are on QVH IGHLIGHTS val split.
+Moment Retrieval
+
+Highlight Detection
+
+R1@0.5
+
+R1@0.7
+
+mAP avg
+
+mAP
+
+HIT@1
+
+None
+2.5K HowTo100M
+5K HowTo100M
+10k HowTo100M
+
+53.94
+54.58
+55.23
+56.06
+
+34.84
+36.45
+35.74
+38.39
+
+32.20
+32.82
+32.84
+34.16
+
+35.65
+36.27
+36.82
+35.97
+
+55.55
+56.45
+58.39
+56.84
+
+5.4K QVH IGHLIGHTS
+
+59.68
+
+40.84
+
+36.30
+
+37.70
+
+60.32
+
+Pretraining Videos
+
+between the input text queries and their relevant clips, while the saliency loss gives a direct signal
+to learn such similarity. Under our framework, this also suggests that jointly detecting saliency is
+beneficial to retrieve moments. When turning off one of the span predictions losses (L1 or IoU), we
+see a notable drop in moment retrieval performance while the highlight detection performance stays
+similar, showing that both losses are important for moment retrieval.
+Moment query analysis. In Figure 4, we visualize moment span predictions for all the 1550
+QVH IGHLIGHTS val videos, for the 10 moment query slots in Moment-DETR decoder. As shown in
+the figure, each slot learns to predict moments of different patterns, i.e., different temporal locations
+and different widths. For example, some slots learn to predict short moments near the beginning
+or end of the videos (e.g., the first two slots), while some slots learn to predict both short and long
+moments near the center (e.g., the third slot). Overall, most of the slots learn to predict short moments
+while only a handful of them learn to predict long moments, possibly because there are more short
+moments in QVH IGHLIGHTS than long moments (see our data analysis in Section 3.2).
+Pretraining data domain and size. To better understand the role of pretraining, we examine the effect of using data of different domain and sizes for pretraining. Specifically, we use HowTo100M [26]
+instructional videos of different sizes for pretraining Moment-DETR and then evaluate its finetuning
+performance on QVH IGHLIGHTS dataset. The results are shown in Table 5. We notice that out-ofdomain pretraining on HowTo100M videos also improves the model performance, even when only
+trained on 2.5K videos. When increasing the number videos, we see there is a steady performance
+gain for the moment retrieval task. While for highlight detection, the performance fluctuates, probably
+because of the pretraining task is not well aligned with the goal of detecting highlights. Compared to
+in-domain and out-of-domain videos, we notice that 5.4K in-domain QVH IGHLIGHTS videos greatly
+outperforms 10K HowTo100M videos, demonstrating the importance of aligning the pretraining and
+the downstream task domain.
+9
+
+Table 6: Results on CharadesSTA [7] test split.
+Method
+
+R1@0.5
+
+R1@0.7
+
+CAL [4]
+2D TAN [49]
+VSLNet [48]
+IVG-DCL [27]
+
+44.90
+39.70
+47.31
+50.24
+
+24.37
+23.31
+30.19
+32.88
+
+Moment-DETR
+Moment-DETR w/ PT (on 10K HowTo100M videos)
+
+53.63
+55.65
+
+31.37
+34.17
+
+An Asian woman wearing a Boston t-shirt is in her home talking.
+
+Saliency scores
+
+A family is playing basketball together on a green court outside.
+
+Saliency scores
+
+Figure 5: Prediction visualization. Predictions are shown in solid red boxes or lines, ground-truth are
+indicated by dashed green lines. Top row shows a correct prediction, bottom row shows a failure.
+Generalization to other datasets. In Table 6, we test Moment-DETR’s performance on moment
+retrieval dataset CharadesSTA [7]. Similar to our observations in Table 3, when comparing to SOTA
+methods, we notice that Moment-DETR shows a significant performance gain on R1@0.5, while
+performs slightly worse on a tighter metric, i.e., R1@0.7. Meanwhile, after pretrained on 10K
+HowTo100M videos, Moment-DETR’s performance is greatly improved, setting new state-of-the-art
+for the dataset. This shows Moment-DETR’s potential to adapt to different data and tasks.
+Prediction visualization. Figure 5 (top) shows a correct prediction from Moment-DETR. We can
+see that the model is able to correctly localize two disjoint moments relevant to the user query.
+Meanwhile, the saliency scores also align very well with the ground truth score curve (obtained
+by averaging the scores from 3 annotators). And not surprisingly, this saliency score curve also
+matches the moment predictions – where we see higher scores for localized regions than those outside.
+Figure 5 (bottom) shows a failure case, where it incorrectly localized a partially true moment (2nd
+frame) where the family is playing on a court but not playing basketball. More examples in Appendix.
+
+6
+
+Conclusion
+
+We collect QVH IGHLIGHTS dataset for moment retrieval and highlight detection from natural
+language queries. This new dataset consists of over 10,000 diverse YouTube videos, each annotated
+with a free-form query, relevant moment timestamps and clip-wise saliency scores. Detailed data
+analyses are provided comparing the collected data to previous works. We further propose MomentDETR, an encoder-decoder transformer that jointly perform moment retrieval and highlight detection.
+We show that this new model performs competitively with baseline methods. Additionally, it also
+learns effectively from noisy data. With weakly supervised pretraining using ASR captions, MomentDETR substantially outperforms previous methods, setting a strong precedence for future work.
+Lastly, we provide ablations and prediction visualizations of Moment-DETR.
+Social Impact The predictions from our system reflect the distribution of the collected dataset. These
+predictions can be inaccurate, and hence users should not completely rely on our predictions for
+making real-world decisions (similar to previous work on modeling video-based predictions). In
+addition, please see license and usage of the data and code in the supplementary file.
+10
+
+Acknowledgements: We thank Linjie Li and the reviewers for the helpful discussion. This work is
+supported by NSF Award #1562098, DARPA KAIROS Grant #FA8750-19-2-1004, ARO-YIP Award
+#W911NF-18-1-0336, DARPA MCS Grant N66001-19-2-4031, and a Google Focused Research
+Award. The views contained in this article are those of the authors and not of the funding agency.
+
+A
+
+Additional Results
+
+Performance breakdown by video category. In Table 7, we show model performance breakdown
+on the 3 major video categories: daily vlog, travel vlog and news.
+Table 7: Performance breakdown by video category, on QVH IGHLIGHTS test split. We highlight the
+best score in each column in bold, and the second best score with underline. All models are trained
+from scratch.
+Moment Retrieval | R1 IoU=0.5
+
+Method
+
+Highlight Detection | HIT@1
+
+daily (46.5%) travel (43.1%) news (10.4%) daily (46.5%) travel (43.1%) news (10.4%)
+BeautyThumb [37]
+DVSE [23]
+MCN [13]
+CAL [4]
+XML [19]
+XML+
+
+8.23
+24.83
+45.05
+49.37
+
+14.44
+26.92
+40.45
+46.62
+
+13.12
+22.50
+33.12
+35.00
+
+24.13
+21.90
+58.58
+57.18
+
+17.44
+21.50
+53.08
+54.44
+
+20.62
+22.50
+49.38
+48.12
+
+Moment-DETR
+Moment-DETR w/ PT
+
+51.80
+63.22
+
+56.57
+59.08
+
+42.50
+48.63
+
+56.15
+60.27
+
+56.93
+61.95
+
+47.62
+51.75
+
+Ablations on #moment queries. In Table 8, we show the effect of using different #moment queries.
+As can be seen from the table, this hyper-parameter has a large impact on moment retrieval task
+where a reasonably smaller value (e.g., 10) gives better performance. For highlight detection, the
+performance does not change much in terms of mAP, but HIT@1 favors smaller number of moment
+queries as well. Considering performance of both tasks, our best model use 10 moment queries.
+Table 8: Ablations on #moment queries on QVH IGHLIGHTS val split.
+#Moment Queries
+5
+10
+20
+50
+100
+
+Moment Retrieval
+
+Highlight Detection (>=Very Good)
+
+R1@0.5 R1@0.7 mAP avg
+
+mAP
+
+Hit@1
+
+54.90
+53.94
+47.94
+39.81
+41.16
+
+36.04
+35.65
+36.34
+34.96
+34.52
+
+57.03
+55.55
+55.94
+53.48
+51.87
+
+34.06
+34.84
+29.10
+21.16
+21.68
+
+31.08
+32.20
+24.81
+18.47
+19.51
+
+Saliency loss ablations. As described in main text Equation 3, Moment-DETR’s saliency loss
+consists of two terms, one term that distinguishes between high and low score clips (i.e., thigh , tlow ),
+another term distinguishes between clips in and outside the ground-truth moments (i.e., tin , tout ). In
+Table 9, we study the effect of using the two terms. We notice that adding one of them improves the
+model performance across all metrics, while the term (tin , tout ) typically works better. Overall, the
+best performance is achieved by using both terms.
+Table 9: Ablations on saliency loss on QVH IGHLIGHTS val split.
+Saliency Loss Type
+None
+(tin , tout )
+(thigh , tlow )
+(tin , tout ) + (thigh , tlow )
+
+Moment Retrieval
+
+Highlight Detection (>=Very Good)
+
+R1@0.5 R1@0.7 mAP avg
+
+mAP
+
+HIT@1
+
+44.84
+52.90
+52.52
+53.94
+
+17.84
+35.62
+29.32
+35.65
+
+20.19
+52.58
+40.77
+55.55
+
+25.87
+36.32
+33.16
+34.84
+
+25.05
+31.46
+30.35
+32.20
+
+11
+
+More prediction examples. We show more correct predictions and failure cases from our MomentDETR model in Figure 6 and Figure 7.
+
+B
+
+Additional Data Analysis and Collection Details
+
+Distribution of saliency scores. In Table 10, we show the distribution of annotated saliency scores.
+We noticed 94.41% of the annotated clips are rated by two or more users as ‘Fair’ or better (i.e., >=3,
+meaning they may be less saliency, but still relevant, see supplementary file Figure 11). Only 0.96%
+of the clips have two or more users rated as ‘Very Bad’. This result is consistent with our earlier
+moment verification experiments.
+Table 10: Distribution of annotated saliency scores on QVH IGHLIGHTS train split. Since we have
+scores from 3 users, we show the percentage as two or more users agree on a certain setting, e.g., at
+least two users agree that 5.59% of the clips should be rated with a score lower than or equal to ‘Bad’.
+Score
+Percentage of Clips
+
+=1 (Very Bad)
+
+<=2 (Bad)
+
+<=3 (Fair)
+
+<=4 (Good)
+
+<=5 (Very Good)
+
+0.96
+
+5.59
+
+23.44
+
+62.10
+
+100.00
+
+Annotation Instructions and Interfaces. To ensure data quality, we require workers to pass our
+qualification test before participating in our annotation task. We show an example question from
+our qualification test in Figure 8. Our data collection process consists of two stages: (1) query and
+moment annotation, we show its instructions and annotation interface in Figure 9 and Figure 10,
+respectively; (2) saliency score annotation, we show its instructions and interface in Figure 11.
+
+C
+
+Content, License and Usage
+
+Our data5 and code6 are publicly available at https://github.com/jayleicn/moment_detr.
+Additionally, this dataset should be used for research purposes only and not be used for any purpose
+(e.g., surveillance) that may violate human rights. The videos in the dataset are collected from a
+curated list of non-offensive topics such as vlogs and news. We use these YouTube videos under
+the Fair Use.7 Our study was conducted on Amazon Mechanical Turk (AMT), based on an IRB
+application approved by our university IRB officials. The collected data via AMT does not contain
+any personally identifiable information.
+
+References
+[1] Irwan Bello, Barret Zoph, Ashish Vaswani, Jonathon Shlens, and Quoc V Le. Attention
+augmented convolutional networks. In ICCV, 2019. 6
+[2] Fabian Caba Heilbron, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles. Activitynet:
+A large-scale video benchmark for human activity understanding. In CVPR, 2015. 7
+[3] Nicolas Carion, Francisco Massa, Gabriel Synnaeve, Nicolas Usunier, Alexander Kirillov, and
+Sergey Zagoruyko. End-to-end object detection with transformers. In ECCV, 2020. 2, 3, 5, 6, 7,
+8
+[4] Victor Escorcia, Mattia Soldan, Josef Sivic, Bernard Ghanem, and Bryan Russell. Temporal localization of moments in video collections with natural language. arXiv preprint
+arXiv:1907.12763, 2019. 1, 3, 5, 8, 10, 11
+[5] Christoph Feichtenhofer, Haoqi Fan, Jitendra Malik, and Kaiming He. Slowfast networks for
+video recognition. In ICCV, 2019. 5
+[6] David F Fouhey, Wei-cheng Kuo, Alexei A Efros, and Jitendra Malik. From lifestyle vlogs to
+everyday interactions. In CVPR, 2018. 3
+5
+
+CC BY-NC-SA 4.0 license https://creativecommons.org/licenses/by-nc-sa/4.0/
+MIT license https://opensource.org/licenses/MIT
+7
+https://www.copyright.gov/fair-use/
+6
+
+12
+
+Some friends have a birthday meal together around a large table at a restaurant.
+
+A few cars are in a parking lot.
+
+Water is running through a stream.
+
+20
+
+Saliency scores
+
+Figure 6: Correct predictions from Moment-DETR. Predictions are shown in solid red boxes or lines,
+ground-truth are indicated by dashed green lines.
+A man cuts watermeoln into small peices on a glass tray.
+
+Kids exercise in front of parked cars.
+
+Man gives a press conference between corporate logos.
+
+Figure 7: Wrong predictions from Moment-DETR. Predictions are shown in solid red boxes or lines,
+ground-truth are indicated by dashed green lines.
+[7] Jiyang Gao, Chen Sun, Zhenheng Yang, and Ram Nevatia. Tall: Temporal activity localization
+via language query. In ICCV, 2017. 1, 2, 3, 5, 10
+[8] Ana Garcia del Molino and Michael Gygli. Phd-gifs: personalized highlight detection for
+automatic gif creation. In Proceedings of the 26th ACM international conference on Multimedia,
+pages 600–608, 2018. 1, 3
+[9] Soham Ghosh, Anuva Agarwal, Zarana Parekh, and Alexander Hauptmann. Excl: Extractive
+clip localization using natural language descriptions. In NAACL, 2019. 3
+13
+
+Figure 8: Example question from our qualification test.
+[10] Xavier Glorot and Yoshua Bengio. Understanding the difficulty of training deep feedforward
+neural networks. In AISTATS, 2010. 7
+[11] Xavier Glorot, Antoine Bordes, and Yoshua Bengio. Deep sparse rectifier neural networks. In
+AISTATS, 2011. 6
+[12] Michael Gygli, Yale Song, and Liangliang Cao. Video2gif: Automatic generation of animated
+gifs from video. In Proceedings of the IEEE conference on computer vision and pattern
+recognition, pages 1001–1009, 2016. 1, 3, 5
+[13] Lisa Anne Hendricks, Oliver Wang, Eli Shechtman, Josef Sivic, Trevor Darrell, and Bryan
+Russell. Localizing moments in video with natural language. In ICCV, 2017. 1, 2, 3, 5, 8, 11
+[14] Geoffrey E Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever, and Ruslan R Salakhutdinov. Improving neural networks by preventing co-adaptation of feature detectors. arXiv
+preprint arXiv:1207.0580, 2012. 6
+[15] Aishwarya Kamath, Mannat Singh, Yann LeCun, Gabriel Synnaeve, Ishan Misra, and Nicolas
+Carion. Mdetr-modulated detection for end-to-end multi-modal understanding. In ICCV, 2021.
+3, 6
+[16] Ranjay Krishna, Kenji Hata, Frederic Ren, Li Fei-Fei, and Juan Carlos Niebles. Densecaptioning events in videos. In ICCV, 2017. 1, 2, 3, 5
+[17] Jie Lei, Linjie Li, Luowei Zhou, Zhe Gan, Tamara L Berg, Mohit Bansal, and Jingjing Liu. Less
+is more: Clipbert for video-and-language learning via sparse sampling. In CVPR, 2021. 1
+[18] Jie Lei, Licheng Yu, Tamara L Berg, and Mohit Bansal. Tvqa+: Spatio-temporal grounding for
+video question answering. In ACL, 2020. 3
+[19] Jie Lei, Licheng Yu, Tamara L Berg, and Mohit Bansal. Tvr: A large-scale dataset for videosubtitle moment retrieval. In ECCV, 2020. 1, 2, 3, 4, 5, 8, 11
+[20] Jie Lei, Licheng Yu, Tamara L Berg, and Mohit Bansal. What is more likely to happen next?
+video-and-language future event prediction. In EMNLP, 2020. 3
+[21] Linjie Li, Yen-Chun Chen, Yu Cheng, Zhe Gan, Licheng Yu, and Jingjing Liu. Hero: Hierarchical encoder for video+ language omni-representation pre-training. In EMNLP, 2020. 3,
+7
+[22] Chunxi Liu, Qingming Huang, and Shuqiang Jiang. Query sensitive dynamic web video
+thumbnail generation. In ICIP, 2011. 3
+[23] Wu Liu, Tao Mei, Yongdong Zhang, Cherry Che, and Jiebo Luo. Multi-task deep visual-semantic
+embedding for video thumbnail selection. In CVPR, 2015. 1, 2, 3, 5, 7, 8, 11
+14
+
+Figure 9: Annotation instructions (with some examples) for collecting queries and moments.
+[24] Ilya Loshchilov and Frank Hutter. Decoupled weight decay regularization. In ICLR, 2019. 7
+[25] Antoine Miech, Jean-Baptiste Alayrac, Lucas Smaira, Ivan Laptev, Josef Sivic, and Andrew
+Zisserman. End-to-end learning of visual representations from uncurated instructional videos.
+In CVPR, 2020. 7
+[26] Antoine Miech, Dimitri Zhukov, Jean-Baptiste Alayrac, Makarand Tapaswi, Ivan Laptev, and
+Josef Sivic. Howto100m: Learning a text-video embedding by watching hundred million
+narrated video clips. In ICCV, 2019. 7, 9
+[27] Guoshun Nan, Rui Qiao, Yao Xiao, Jun Liu, Sicong Leng, Hao Zhang, and Wei Lu. Interventional video grounding with dual contrastive learning. In CVPR, 2021. 10
+15
+
+Figure 10: Annotation interface for collecting queries and moments. A short version of the instruction
+is also shown, the complete instructions (shown in Figure 9) can be viewed by clicking the top green
+button Detailed Instructions & Examples (click to show/hide).
+
+[28] Megha Nawhal and Greg Mori. Activity graph transformer for temporal action localization.
+arXiv, 2021. 3
+[29] Niki Parmar, Ashish Vaswani, Jakob Uszkoreit, Lukasz Kaiser, Noam Shazeer, Alexander Ku,
+and Dustin Tran. Image transformer. In ICML. PMLR, 2018. 6
+[30] Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer, James Bradbury, Gregory Chanan,
+Trevor Killeen, Zeming Lin, Natalia Gimelshein, Luca Antiga, Alban Desmaison, Andreas
+Kopf, Edward Yang, Zachary DeVito, Martin Raison, Alykhan Tejani, Sasank Chilamkurthy,
+Benoit Steiner, Lu Fang, Junjie Bai, and Soumith Chintala. Pytorch: An imperative style,
+high-performance deep learning library. In NeurIPS, 2019. 7
+[31] Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal,
+Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, et al. Learning transferable visual
+models from natural language supervision. arXiv, 2021. 5, 8
+[32] Michaela Regneri, Marcus Rohrbach, Dominikus Wetzel, Stefan Thater, Bernt Schiele, and
+Manfred Pinkal. Grounding action descriptions in videos. TACL, 2013. 1, 2, 3
+[33] Hamid Rezatofighi, Nathan Tsoi, JunYoung Gwak, Amir Sadeghian, Ian Reid, and Silvio
+Savarese. Generalized intersection over union: A metric and a loss for bounding box regression.
+In CVPR, 2019. 7
+16
+
+Figure 11: Annotation instructions and interface for saliency score annotation.
+
+[34] Mrigank Rochan, Mahesh Kumar Krishna Reddy, Linwei Ye, and Yang Wang. Adaptive video
+highlight detection by learning from user history. In ECCV, 2020. 3
+[35] Jos BTM Roerdink and Arnold Meijster. The watershed transform: Definitions, algorithms and
+parallelization strategies. Fundamenta informaticae, 2000. 8
+[36] Dian Shao, Yu Xiong, Yue Zhao, Qingqiu Huang, Yu Qiao, and Dahua Lin. Find and focus:
+Retrieve and localize video events with natural language queries. In ECCV, 2018. 3, 5
+[37] Yale Song, Miriam Redi, Jordi Vallmitjana, and Alejandro Jaimes. To click or not to click:
+Automatic selection of beautiful thumbnails from videos. In CIKM, 2016. 1, 3, 5, 8, 11
+[38] Russell Stewart, Mykhaylo Andriluka, and Andrew Y Ng. End-to-end people detection in
+crowded scenes. In CVPR, 2016. 6
+[39] Min Sun, Ali Farhadi, and Steve Seitz. Ranking domain-specific highlights by analyzing edited
+videos. In European conference on computer vision, pages 787–802. Springer, 2014. 1, 3, 5
+[40] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez,
+Łukasz Kaiser, and Illia Polosukhin. Attention is all you need. In NeurIPS, 2017. 6
+[41] Huijuan Xu, Kun He, Bryan A Plummer, Leonid Sigal, Stan Sclaroff, and Kate Saenko.
+Multilevel language and vision integration for text-to-clip retrieval. In AAAI, 2019. 3, 5
+[42] Jun Xu, Tao Mei, Ting Yao, and Yong Rui. Msr-vtt: A large video description dataset for
+bridging video and language. In CVPR, 2016. 1
+17
+
+[43] Youngjae Yu, Jongseok Kim, and Gunhee Kim. A joint sequence fusion model for video
+question answering and retrieval. In ECCV, 2018. 1
+[44] Yitian Yuan, Lin Ma, and Wenwu Zhu. Sentence specified dynamic video thumbnail generation.
+In ACM MM, 2019. 1, 2, 3, 4, 5
+[45] Bowen Zhang, Hexiang Hu, Joonseok Lee, Ming Zhao, Sheide Chammas, Vihan Jain, Eugene
+Ie, and Fei Sha. A hierarchical multi-modal encoder for moment localization in video corpus.
+arXiv preprint arXiv:2011.09046, 2020. 3
+[46] Chuhan Zhang, Ankush Gupta, and Andrew Zisserman. Temporal query networks for finegrained video understanding. In CVPR, 2021. 3
+[47] Da Zhang, Xiyang Dai, Xin Wang, Yuan-Fang Wang, and Larry S Davis. Man: Moment
+alignment network for natural language moment retrieval via iterative graph adjustment. In
+CVPR, 2019. 3, 5
+[48] Hao Zhang, Aixin Sun, Wei Jing, and Joey Tianyi Zhou. Span-based localizing network for
+natural language video localization. In ACL, 2020. 3, 10
+[49] Songyang Zhang, Houwen Peng, Jianlong Fu, and Jiebo Luo. Learning 2d temporal adjacent
+networks for moment localization with natural language. In AAAI, 2020. 3, 5, 10
+[50] Yue Zhao, Yuanjun Xiong, Limin Wang, Zhirong Wu, Xiaoou Tang, and Dahua Lin. Temporal
+action detection with structured segment networks. In ICCV, 2017. 8
+
+18
+
+

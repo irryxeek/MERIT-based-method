@@ -1,0 +1,576 @@
+{
+  "checked_at": "2026-10-14T11:07:35+08:00",
+  "runs": {
+    "dev_v2_mr_dev50_M1": {
+      "statuses": {
+        "succeeded": 37,
+        "failed": 13
+      },
+      "reasons": {
+        "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query": 10,
+        "ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates": 1,
+        "ValueError: overview invalid after at most one retry: truncated/nonterminal model response": 1,
+        "ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline": 1
+      },
+      "http_or_uncertain_request_errors": 0,
+      "stop_schema_failures": 0,
+      "examples": [
+        {
+          "qid": 1206,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5411,
+            "total_tokens": 5419,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 1441,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5078,
+            "total_tokens": 5086,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 2216,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5762,
+            "total_tokens": 5770,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 3839,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5948,
+            "total_tokens": 5956,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 5409,
+          "error": "ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\": [[28.12, 34.36, 0.95], [46.88, 65.64, 0.92], [59.36, 65.64, 0.9], [28.12, 28.12, 0.85], [46.88, 46.88, 0.85], [53.12, 53.12, 0.85], [65.64, 65.64, 0.85], [71.88, 71.88, 0.85], [78.12, 78.12, 0.85], [84.36, 84.36, 0.85], [90.64, 90.64, 0.85], [96.88, 96.88, 0.85], [103.12, 103.12, 0.85], [109.36, 109.36, 0.85], [115.64, 115.64, 0.85], [121.88, 121.88, 0.85], [128.12, 128.12, 0.85], [134.36, 134.36, 0.85], [140.64, 140.64, 0.85], [146.88, 146.88, 0.85]]}",
+          "usage": {
+            "prompt_tokens": 4888,
+            "total_tokens": 5311,
+            "completion_tokens": 423,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 6415,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5399,
+            "total_tokens": 5407,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 6536,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 6178,
+            "total_tokens": 6186,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 6544,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 4875,
+            "total_tokens": 4883,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 6701,
+          "error": "ValueError: overview invalid after at most one retry: truncated/nonterminal model response",
+          "stage": "overview",
+          "attempt": 1,
+          "finish_reason": "length",
+          "raw": "{\"events\":\"At 9.376s, a couple poses for a photo with the Golden Gate Bridge in the background. They are seen again at 59.359s, smiling and waving in front of the bridge. The woman is also seen at 12.812s and 12.812s admiring the view from a rocky shoreline with the bridge visible. The couple is also seen at 12.812s and 12.812s walking along a path near the bridge. The woman is seen at 12.812s and 12.812s wearing a red cap and a grey shirt with the words 'PLAY LIKE A CHAMPION' on it. The couple is also seen at 12.812s and 12.812s in a parking lot with a yellow car and the bridge in the background. The woman is seen at 12.812s and 12.812s wearing a red cap and a grey shirt with the words 'PLAY LIKE A CHAMPION' on it. The couple is also seen at 12.812s and 12.812s in a parking lot with a yellow car and the bridge in the background. The woman is seen at 12.812s and 12.812s wearing a red cap and a grey shirt with the words 'PLAY LIKE A CHAMPION' on it. The couple is also seen at 12.812s and 12.812s in a parking lot with a yellow car and the bridge in the background. The woman is seen at 12.812s and 12.812s wearing a red cap and a grey shirt with the words 'PLAY LIKE A CHAMPION' on it. The couple is also seen at 12.812s and 12.812s in a parking lot with a yellow car and the bridge in the background. The woman is seen at 12.812s and 12.812s wearing a red cap and a grey shirt with the words 'PLAY LIKE A CHAMPION' on it. The couple is also seen at 12.812s and 12.812s in a parking lot with a yellow car and the bridge in the background. The woman is seen at 12.812s and 12.812s wearing a red cap and a grey shirt with the words 'PLAY LIKE A CHAMPION' on it. The couple is also seen at 12.812s and 12.812s in a parking lot with a yellow car and the bridge in the background. The woman is seen at 12.812s and 12.812s wearing a red cap and a grey shirt with the words 'PLAY LIKE A CHAMPION' on it. The couple is also seen at 12.812s and 12.812s in a parking lot with a yellow car and the bridge in the background. The woman is seen at 12.812s and 12.812s wearing a red cap and a grey shirt with the words 'PLAY LIKE A CHAMPION' on it. The couple is also seen at 12.812s and 12.812s in a parking lot with a yellow car and the bridge in the background. The woman is seen at 12.812s and 12.812s wearing a red cap and a grey shirt with the words 'PLAY LIKE A CHAMPION' on it. The couple is also seen at 12.812s and 12.812s in a parking lot with a yellow car and the bridge in the background. The woman is seen at 12.812s and 12.812s wearing a red cap and a grey shirt with the words 'PLAY LIKE A CHAMPION' on it. The couple is also seen at 12.812s and 12.812s in a parking lot with a yellow car and the bridge in the background. The woman is seen at 12.812s and 12.812s wearing a red cap and a grey shirt with the words 'PLAY LIKE A CHAMPION' on it. The couple is also seen at 12.812s and 12.812s in a parking lot with a yellow car and the bridge in the background. The woman is seen at",
+          "usage": {
+            "prompt_tokens": 4503,
+            "total_tokens": 5527,
+            "completion_tokens": 1024,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 6763,
+          "error": "ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\": [[3.128125, 15.640625, 0.98], [146.855042, 146.855042, 0.0]]}",
+          "usage": {
+            "prompt_tokens": 5014,
+            "total_tokens": 5078,
+            "completion_tokens": 64,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 7673,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\": []}",
+          "usage": {
+            "prompt_tokens": 4995,
+            "total_tokens": 5004,
+            "completion_tokens": 9,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 7712,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5544,
+            "total_tokens": 5552,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 9908,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5390,
+            "total_tokens": 5398,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        }
+      ]
+    },
+    "dev_v2_hd_dev50_M1": {
+      "statuses": {
+        "succeeded": 45,
+        "failed": 5
+      },
+      "reasons": {
+        "ValueError: controller_0 invalid after at most one retry: HD local clip range must contain 1..24 clips": 5
+      },
+      "http_or_uncertain_request_errors": 0,
+      "stop_schema_failures": 0,
+      "examples": [
+        {
+          "qid": 1206,
+          "error": "ValueError: controller_0 invalid after at most one retry: HD local clip range must contain 1..24 clips",
+          "stage": "controller_0",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"action\":\"clip_analyzer\",\"start\":0.0,\"end\":150.0,\"question\":\"Does the couple discuss movies in this entire segment?\"}",
+          "usage": {
+            "prompt_tokens": 6931,
+            "total_tokens": 6966,
+            "completion_tokens": 35,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 1441,
+          "error": "ValueError: controller_0 invalid after at most one retry: HD local clip range must contain 1..24 clips",
+          "stage": "controller_0",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"action\":\"clip_analyzer\",\"start\":0.0,\"end\":150.0,\"question\":\"Analyze the entire video to confirm if a woman is discussing her thoughts on being worried and fearful, focusing on her facial expressions and body language.\"}",
+          "usage": {
+            "prompt_tokens": 6938,
+            "total_tokens": 6992,
+            "completion_tokens": 54,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 1821,
+          "error": "ValueError: controller_0 invalid after at most one retry: HD local clip range must contain 1..24 clips",
+          "stage": "controller_0",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"action\":\"clip_analyzer\",\"start\":0.0,\"end\":150.0,\"question\":\"Does the video show a woman wearing sunglasses talking and walking around Venice, Italy, showing different areas of the city, and then eating at a restaurant?\"}",
+          "usage": {
+            "prompt_tokens": 6815,
+            "total_tokens": 6870,
+            "completion_tokens": 55,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 9217,
+          "error": "ValueError: controller_0 invalid after at most one retry: HD local clip range must contain 1..24 clips",
+          "stage": "controller_0",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"action\":\"clip_analyzer\",\"start\":0.0,\"end\":150.0,\"question\":\"Analyze the entire video for weather broadcaster explaining weather map\"}",
+          "usage": {
+            "prompt_tokens": 6908,
+            "total_tokens": 6944,
+            "completion_tokens": 36,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 9908,
+          "error": "ValueError: controller_0 invalid after at most one retry: HD local clip range must contain 1..24 clips",
+          "stage": "controller_0",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"action\":\"clip_analyzer\",\"start\":0.0,\"end\":150.0,\"question\":\"Is there a BBC news caster taking an opinion of a person about election 2020?\"}",
+          "usage": {
+            "prompt_tokens": 6801,
+            "total_tokens": 6846,
+            "completion_tokens": 45,
+            "prompt_tokens_details": null
+          }
+        }
+      ]
+    },
+    "formal_c0c8ae9799ad_mr_val_M1": {
+      "statuses": {
+        "pending": 1484,
+        "failed": 19,
+        "succeeded": 43,
+        "running": 4
+      },
+      "reasons": {
+        "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query": 15,
+        "ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates": 2,
+        "ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline": 2
+      },
+      "http_or_uncertain_request_errors": 0,
+      "stop_schema_failures": 0,
+      "examples": [
+        {
+          "qid": 342,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5038,
+            "total_tokens": 5046,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 721,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5394,
+            "total_tokens": 5402,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 1961,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5492,
+            "total_tokens": 5500,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 2321,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5521,
+            "total_tokens": 5529,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 2585,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\": []}",
+          "usage": {
+            "prompt_tokens": 4862,
+            "total_tokens": 4871,
+            "completion_tokens": 9,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 2960,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\": []}",
+          "usage": {
+            "prompt_tokens": 5014,
+            "total_tokens": 5023,
+            "completion_tokens": 9,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 3001,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5086,
+            "total_tokens": 5094,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 3183,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 6362,
+            "total_tokens": 6370,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 3403,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5239,
+            "total_tokens": 5247,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 3407,
+          "error": "ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\": [[140.6405, 146.880067, 0.95], [134.367567, 140.6405, 0.9], [128.128, 134.367567, 0.85], [115.6155, 128.128, 0.8], [103.136367, 115.6155, 0.75], [96.863433, 103.136367, 0.7], [78.111367, 96.863433, 0.65], [65.632233, 78.111367, 0.6], [53.119733, 65.632233, 0.55], [46.880167, 53.119733, 0.5], [34.367667, 46.880167, 0.45], [28.1281, 34.367667, 0.4], [21.888533, 28.1281, 0.35], [15.6156, 21.888533, 0.3], [9.376033, 15.6156, 0.25], [3.136467, 9.376033, 0.2]]}",
+          "usage": {
+            "prompt_tokens": 4978,
+            "total_tokens": 5412,
+            "completion_tokens": 434,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 3525,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5038,
+            "total_tokens": 5046,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 3584,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\": []}",
+          "usage": {
+            "prompt_tokens": 5011,
+            "total_tokens": 5020,
+            "completion_tokens": 9,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 4508,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 5364,
+            "total_tokens": 5372,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 4854,
+          "error": "ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\": [[96.88, 103.12, 0.98], [140.64, 140.64, 0.01]]}",
+          "usage": {
+            "prompt_tokens": 4859,
+            "total_tokens": 4910,
+            "completion_tokens": 51,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 6746,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\": []}",
+          "usage": {
+            "prompt_tokens": 5433,
+            "total_tokens": 5442,
+            "completion_tokens": 9,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 7735,
+          "error": "ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\": [[140.64, 146.88, 0.98], [128.12, 134.36, 0.95], [121.88, 128.12, 0.92], [115.64, 121.88, 0.88], [109.36, 115.64, 0.85], [103.12, 109.36, 0.82], [96.88, 103.12, 0.79], [90.64, 96.88, 0.76], [84.36, 90.64, 0.73], [78.12, 84.36, 0.7], [71.88, 78.12, 0.67], [65.64, 71.88, 0.64], [59.36, 65.64, 0.61], [53.12, 59.36, 0.58], [46.88, 53.12, 0.55], [40.64, 46.88, 0.52], [34.36, 40.64, 0.49], [28.12, 34.36, 0.46], [21.88, 28.12, 0.43], [15.64, 21.88, 0.4], [9.36, 15.64, 0.37], [3.12, 9.36, 0.34]]}",
+          "usage": {
+            "prompt_tokens": 4801,
+            "total_tokens": 5257,
+            "completion_tokens": 456,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 7803,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\": []}",
+          "usage": {
+            "prompt_tokens": 4922,
+            "total_tokens": 4931,
+            "completion_tokens": 9,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 8056,
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\":[]}",
+          "usage": {
+            "prompt_tokens": 4944,
+            "total_tokens": 4952,
+            "completion_tokens": 8,
+            "prompt_tokens_details": null
+          }
+        },
+        {
+          "qid": 8721,
+          "error": "ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline",
+          "stage": "final",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "raw": "{\"pred_relevant_windows\": [[71.88, 84.36, 0.95], [46.88, 59.36, 0.9], [128.12, 140.64, 0.85], [103.12, 109.36, 0.8], [115.64, 128.12, 0.75], [134.36, 146.88, 0.7], [65.64, 71.88, 0.65], [146.88, 146.88, 0.6], [109.36, 115.64, 0.55], [121.88, 128.12, 0.5]]}",
+          "usage": {
+            "prompt_tokens": 4968,
+            "total_tokens": 5185,
+            "completion_tokens": 217,
+            "prompt_tokens_details": null
+          }
+        }
+      ]
+    }
+  },
+  "interpretation": {
+    "empty_mr": "Legal JSON and allowed expression of non-detection. Classified failed because official R1 cannot score empty candidates; separate from syntax failure.",
+    "zero_length_mr": "Generic interval error message includes start=end, not necessarily a timestamp beyond video duration.",
+    "hd_scope": "All five development failures request 0..150 seconds (=75 clips), violating the documented per-tool cap of 24 clips.",
+    "retry": "Same prompt, temperature 0 and fixed seed; no error-specific repair feedback; repeated output violations often survive the single retry.",
+    "experiment": "Formal frozen protocol continues; no post-val quality tuning, dropped failures or fabricated predictions."
+  }
+}

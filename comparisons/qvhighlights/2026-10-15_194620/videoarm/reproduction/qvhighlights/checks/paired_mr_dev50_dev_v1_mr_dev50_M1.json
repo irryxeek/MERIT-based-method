@@ -1,0 +1,1068 @@
+{
+  "costs": {
+    "/path/to/storage/videoarm-repro/qvh_data/runs/dev_v1_mr_dev50_B0": {
+      "planned": 50,
+      "succeeded": 34,
+      "failures": [
+        {
+          "qid": 1206,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 1441,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 1680,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 2216,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 5220,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 5761,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: truncated/nonterminal model response"
+        },
+        {
+          "qid": 6536,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6544,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6701,
+          "status": "failed",
+          "error": "ValueError: overview invalid after at most one retry: truncated/nonterminal model response"
+        },
+        {
+          "qid": 6763,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline"
+        },
+        {
+          "qid": 7673,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 8091,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 9233,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 9291,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates"
+        },
+        {
+          "qid": 9517,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates"
+        },
+        {
+          "qid": 9908,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        }
+      ],
+      "totals": {
+        "requests": 116,
+        "controllers": 0,
+        "images": 2784,
+        "input_tokens": 550856,
+        "output_tokens": 24017,
+        "local_frames": 0,
+        "active_seconds": 941.1405509629985,
+        "retries": 17,
+        "cache_hits": 0,
+        "shared_cache_hits": 8,
+        "actual_requests": 108,
+        "actual_images": 2592,
+        "actual_input_tokens": 514978,
+        "actual_output_tokens": 22848,
+        "uncertain_requests": 0
+      },
+      "unique_frames_sum_over_queries": 1200,
+      "elapsed_p50_p95_seconds": [
+        12.090762847976293,
+        35.331237240077435
+      ],
+      "tool_frequency": {},
+      "early_stop_queries": 0,
+      "requests_with_uncertain_usage": 0,
+      "format_or_contract_failures": 33,
+      "empty_mr_responses": 22,
+      "truncated_responses": 4,
+      "budget_interrupted_queries": 0,
+      "mr_candidates_without_direct_sample_pts": 4,
+      "cold_equivalent_model_request_seconds": 923.4387828440522,
+      "peak_gpu_memory_mib": 41262,
+      "gpu_hours": 0.5228558616461103,
+      "gpu_telemetry_note": "TP2 allocated GPU hours over active query work; excludes startup/idle; peak is sum of two GPU allocations sampled every 5 seconds, may miss brief spikes"
+    },
+    "/path/to/storage/videoarm-repro/qvh_data/runs/dev_v1_mr_dev50_B1": {
+      "planned": 50,
+      "succeeded": 40,
+      "failures": [
+        {
+          "qid": 1206,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 2216,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 4994,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates"
+        },
+        {
+          "qid": 5220,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 5409,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline"
+        },
+        {
+          "qid": 6415,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6536,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6701,
+          "status": "failed",
+          "error": "ValueError: overview invalid after at most one retry: truncated/nonterminal model response"
+        },
+        {
+          "qid": 7673,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 9908,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        }
+      ],
+      "totals": {
+        "requests": 358,
+        "controllers": 0,
+        "images": 8592,
+        "input_tokens": 1708685,
+        "output_tokens": 35707,
+        "local_frames": 5880,
+        "active_seconds": 1865.9193694406422,
+        "retries": 14,
+        "cache_hits": 0,
+        "shared_cache_hits": 49,
+        "actual_requests": 309,
+        "actual_images": 7416,
+        "actual_input_tokens": 1489103,
+        "actual_output_tokens": 27779,
+        "uncertain_requests": 0
+      },
+      "unique_frames_sum_over_queries": 6089,
+      "elapsed_p50_p95_seconds": [
+        32.96262670098804,
+        57.94468113231702
+      ],
+      "tool_frequency": {
+        "clip_analyzer": 245
+      },
+      "early_stop_queries": 0,
+      "requests_with_uncertain_usage": 0,
+      "format_or_contract_failures": 25,
+      "empty_mr_responses": 14,
+      "truncated_responses": 4,
+      "budget_interrupted_queries": 0,
+      "mr_candidates_without_direct_sample_pts": 0,
+      "cold_equivalent_model_request_seconds": 1810.0609777584323,
+      "peak_gpu_memory_mib": 41262,
+      "gpu_hours": 1.036621871911468,
+      "gpu_telemetry_note": "TP2 allocated GPU hours over active query work; excludes startup/idle; peak is sum of two GPU allocations sampled every 5 seconds, may miss brief spikes"
+    },
+    "/path/to/storage/videoarm-repro/qvh_data/runs/dev_v1_mr_dev50_M1": {
+      "planned": 50,
+      "succeeded": 13,
+      "failures": [
+        {
+          "qid": 140,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 479,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 1206,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 1441,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline"
+        },
+        {
+          "qid": 2216,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 2424,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 2605,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 3788,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 3823,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 4276,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 4994,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 5095,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 5245,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 5409,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 5549,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6099,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6415,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6536,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6544,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6701,
+          "status": "failed",
+          "error": "ValueError: overview invalid after at most one retry: truncated/nonterminal model response"
+        },
+        {
+          "qid": 6763,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 7184,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 7593,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 7673,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 7712,
+          "status": "failed",
+          "error": "ValueError: controller_3 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8091,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8110,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8429,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8699,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8796,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9121,
+          "status": "failed",
+          "error": "ValueError: controller_4 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9199,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9291,
+          "status": "failed",
+          "error": "ValueError: controller_4 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9517,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9908,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 10227,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 10284,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        }
+      ],
+      "totals": {
+        "requests": 391,
+        "controllers": 185,
+        "images": 9384,
+        "input_tokens": 2025547,
+        "output_tokens": 29095,
+        "local_frames": 3048,
+        "active_seconds": 1357.5859123968403,
+        "retries": 38,
+        "cache_hits": 0,
+        "shared_cache_hits": 49,
+        "actual_requests": 342,
+        "actual_images": 8208,
+        "actual_input_tokens": 1805965,
+        "actual_output_tokens": 21167,
+        "uncertain_requests": 0
+      },
+      "unique_frames_sum_over_queries": 2175,
+      "elapsed_p50_p95_seconds": [
+        16.298604702024022,
+        53.058163125251276
+      ],
+      "tool_frequency": {
+        "clip_analyzer": 126,
+        "scene_snapper": 1
+      },
+      "early_stop_queries": 0,
+      "requests_with_uncertain_usage": 0,
+      "format_or_contract_failures": 76,
+      "empty_mr_responses": 12,
+      "truncated_responses": 4,
+      "budget_interrupted_queries": 20,
+      "mr_candidates_without_direct_sample_pts": 0,
+      "cold_equivalent_model_request_seconds": 1468.0634159144247,
+      "peak_gpu_memory_mib": 41262,
+      "gpu_hours": 0.7542143957760223,
+      "gpu_telemetry_note": "TP2 allocated GPU hours over active query work; excludes startup/idle; peak is sum of two GPU allocations sampled every 5 seconds, may miss brief spikes"
+    },
+    "/path/to/storage/videoarm-repro/qvh_data/runs/dev_v1_mr_dev50_A1": {
+      "planned": 50,
+      "succeeded": 12,
+      "failures": [
+        {
+          "qid": 140,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 479,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 1206,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 1347,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 1680,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 1821,
+          "status": "failed",
+          "error": "ValueError: controller_3 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 2216,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 2424,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 2605,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 3788,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 3823,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 3839,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline"
+        },
+        {
+          "qid": 4276,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 4994,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 5095,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 5245,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 5409,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 5549,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6099,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6415,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6536,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6544,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6701,
+          "status": "failed",
+          "error": "ValueError: overview invalid after at most one retry: truncated/nonterminal model response"
+        },
+        {
+          "qid": 6763,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 7184,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 7593,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 7673,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 7712,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 8091,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8110,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates"
+        },
+        {
+          "qid": 8429,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8699,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8796,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9199,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9517,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9908,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 10227,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 10284,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        }
+      ],
+      "totals": {
+        "requests": 396,
+        "controllers": 183,
+        "images": 9504,
+        "input_tokens": 2009917,
+        "output_tokens": 25674,
+        "local_frames": 3096,
+        "active_seconds": 1224.803321232961,
+        "retries": 39,
+        "cache_hits": 0,
+        "shared_cache_hits": 49,
+        "actual_requests": 347,
+        "actual_images": 8328,
+        "actual_input_tokens": 1790335,
+        "actual_output_tokens": 17746,
+        "uncertain_requests": 0
+      },
+      "unique_frames_sum_over_queries": 2086,
+      "elapsed_p50_p95_seconds": [
+        17.211855409521377,
+        51.536564654740495
+      ],
+      "tool_frequency": {
+        "clip_analyzer": 127,
+        "scene_snapper": 2
+      },
+      "early_stop_queries": 0,
+      "requests_with_uncertain_usage": 0,
+      "format_or_contract_failures": 77,
+      "empty_mr_responses": 16,
+      "truncated_responses": 2,
+      "budget_interrupted_queries": 22,
+      "mr_candidates_without_direct_sample_pts": 0,
+      "cold_equivalent_model_request_seconds": 1341.33930492308,
+      "peak_gpu_memory_mib": 41262,
+      "gpu_hours": 0.6804462895738672,
+      "gpu_telemetry_note": "TP2 allocated GPU hours over active query work; excludes startup/idle; peak is sum of two GPU allocations sampled every 5 seconds, may miss brief spikes"
+    }
+  },
+  "paired": {
+    "planned": 50,
+    "common_success": 12,
+    "common_coverage": 0.24,
+    "common_success_ci": {
+      "MR-full-mAP": {
+        "estimate": -4.625,
+        "ci95": [
+          -27.416666666666668,
+          15.875
+        ],
+        "clusters": 12,
+        "queries": 12,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-mAP@0.5": {
+        "estimate": -20.416666666666668,
+        "ci95": [
+          -51.666666666666664,
+          7.5
+        ],
+        "clusters": 12,
+        "queries": 12,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-mAP@0.75": {
+        "estimate": -0.8333333333333334,
+        "ci95": [
+          -25.0,
+          23.333333333333332
+        ],
+        "clusters": 12,
+        "queries": 12,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-R1@0.5": {
+        "estimate": -25.0,
+        "ci95": [
+          -58.333333333333336,
+          8.333333333333334
+        ],
+        "clusters": 12,
+        "queries": 12,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-R1@0.7": {
+        "estimate": -8.333333333333334,
+        "ci95": [
+          -33.333333333333336,
+          16.666666666666668
+        ],
+        "clusters": 12,
+        "queries": 12,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      }
+    },
+    "custom_full_plan_failure_zero_ci": {
+      "MR-full-mAP": {
+        "estimate": -17.298333333333336,
+        "ci95": [
+          -27.538333333333334,
+          -7.77825
+        ],
+        "clusters": 50,
+        "queries": 50,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-mAP@0.5": {
+        "estimate": -31.78333333333333,
+        "ci95": [
+          -45.133750000000006,
+          -18.883333333333336
+        ],
+        "clusters": 50,
+        "queries": 50,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-mAP@0.75": {
+        "estimate": -14.916666666666668,
+        "ci95": [
+          -26.6,
+          -4.216666666666667
+        ],
+        "clusters": 50,
+        "queries": 50,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-R1@0.5": {
+        "estimate": -36.0,
+        "ci95": [
+          -50.0,
+          -22.0
+        ],
+        "clusters": 50,
+        "queries": 50,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-R1@0.7": {
+        "estimate": -20.0,
+        "ci95": [
+          -32.0,
+          -8.0
+        ],
+        "clusters": 50,
+        "queries": 50,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      }
+    },
+    "official_common_success_scores": {
+      "B1": {
+        "brief": {
+          "MR-full-R1@0.5": 41.67,
+          "MR-full-R1@0.7": 16.67,
+          "MR-full-mAP": 12.87,
+          "MR-full-mAP@0.5": 30.42,
+          "MR-full-mAP@0.75": 10.0,
+          "MR-long-mAP": 3.12,
+          "MR-middle-mAP": 32.86,
+          "MR-short-mAP": 0.0
+        },
+        "full": {
+          "MR-mAP": {
+            "0.5": 30.42,
+            "0.55": 13.75,
+            "0.6": 13.75,
+            "0.65": 12.08,
+            "0.7": 12.08,
+            "0.75": 10.0,
+            "0.8": 10.0,
+            "0.85": 10.0,
+            "0.9": 8.33,
+            "0.95": 8.33,
+            "average": 12.87
+          },
+          "MR-R1": {
+            "0.5": 41.67,
+            "0.55": 25.0,
+            "0.6": 25.0,
+            "0.65": 16.67,
+            "0.7": 16.67,
+            "0.75": 16.67,
+            "0.8": 16.67,
+            "0.85": 16.67,
+            "0.9": 8.33,
+            "0.95": 8.33
+          }
+        },
+        "long": {
+          "MR-mAP": {
+            "0.5": 6.25,
+            "0.55": 6.25,
+            "0.6": 6.25,
+            "0.65": 6.25,
+            "0.7": 6.25,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0,
+            "average": 3.12
+          },
+          "MR-R1": {
+            "0.5": 0.0,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0
+          }
+        },
+        "middle": {
+          "MR-mAP": {
+            "0.5": 71.43,
+            "0.55": 42.86,
+            "0.6": 42.86,
+            "0.65": 28.57,
+            "0.7": 28.57,
+            "0.75": 28.57,
+            "0.8": 28.57,
+            "0.85": 28.57,
+            "0.9": 14.29,
+            "0.95": 14.29,
+            "average": 32.86
+          },
+          "MR-R1": {
+            "0.5": 71.43,
+            "0.55": 42.86,
+            "0.6": 42.86,
+            "0.65": 28.57,
+            "0.7": 28.57,
+            "0.75": 28.57,
+            "0.8": 28.57,
+            "0.85": 28.57,
+            "0.9": 14.29,
+            "0.95": 14.29
+          }
+        },
+        "short": {
+          "MR-mAP": {
+            "0.5": 0.0,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0,
+            "average": 0.0
+          },
+          "MR-R1": {
+            "0.5": 0.0,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0
+          }
+        }
+      },
+      "M1": {
+        "brief": {
+          "MR-full-R1@0.5": 16.67,
+          "MR-full-R1@0.7": 8.33,
+          "MR-full-mAP": 8.25,
+          "MR-full-mAP@0.5": 10.0,
+          "MR-full-mAP@0.75": 9.17,
+          "MR-long-mAP": 22.5,
+          "MR-middle-mAP": 6.43,
+          "MR-short-mAP": 0.0
+        },
+        "full": {
+          "MR-mAP": {
+            "0.5": 10.0,
+            "0.55": 10.0,
+            "0.6": 9.17,
+            "0.65": 9.17,
+            "0.7": 9.17,
+            "0.75": 9.17,
+            "0.8": 9.17,
+            "0.85": 8.33,
+            "0.9": 8.33,
+            "0.95": 0.0,
+            "average": 8.25
+          },
+          "MR-R1": {
+            "0.5": 16.67,
+            "0.55": 16.67,
+            "0.6": 8.33,
+            "0.65": 8.33,
+            "0.7": 8.33,
+            "0.75": 8.33,
+            "0.8": 8.33,
+            "0.85": 8.33,
+            "0.9": 8.33,
+            "0.95": 0.0
+          }
+        },
+        "long": {
+          "MR-mAP": {
+            "0.5": 25.0,
+            "0.55": 25.0,
+            "0.6": 25.0,
+            "0.65": 25.0,
+            "0.7": 25.0,
+            "0.75": 25.0,
+            "0.8": 25.0,
+            "0.85": 25.0,
+            "0.9": 25.0,
+            "0.95": 0.0,
+            "average": 22.5
+          },
+          "MR-R1": {
+            "0.5": 25.0,
+            "0.55": 25.0,
+            "0.6": 25.0,
+            "0.65": 25.0,
+            "0.7": 25.0,
+            "0.75": 25.0,
+            "0.8": 25.0,
+            "0.85": 25.0,
+            "0.9": 25.0,
+            "0.95": 0.0
+          }
+        },
+        "middle": {
+          "MR-mAP": {
+            "0.5": 14.29,
+            "0.55": 14.29,
+            "0.6": 7.14,
+            "0.65": 7.14,
+            "0.7": 7.14,
+            "0.75": 7.14,
+            "0.8": 7.14,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0,
+            "average": 6.43
+          },
+          "MR-R1": {
+            "0.5": 14.29,
+            "0.55": 14.29,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0
+          }
+        },
+        "short": {
+          "MR-mAP": {
+            "0.5": 0.0,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0,
+            "average": 0.0
+          },
+          "MR-R1": {
+            "0.5": 0.0,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0
+          }
+        }
+      }
+    }
+  },
+  "owned_service_gpu_telemetry": {
+    "start_unix": 1791926059.710651,
+    "observed_until_unix": 1791932327.565732,
+    "peak_memory_per_gpu_mib": {
+      "GPU-REDACTED-03": 20631,
+      "GPU-REDACTED-04": 20631
+    },
+    "allocated_gpu_hours": 3.4821417127715217,
+    "scope": "QVH-owned service lifetime, including startup and idle time; GPU memory includes server allocation"
+  }
+}

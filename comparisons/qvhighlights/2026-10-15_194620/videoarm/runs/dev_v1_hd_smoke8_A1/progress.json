@@ -1,0 +1,12 @@
+{
+  "run_id": "dev_v1_hd_smoke8_A1",
+  "task": "hd",
+  "method": "A1",
+  "planned": 8,
+  "statuses": {
+    "failed": 6,
+    "succeeded": 2
+  },
+  "latest_qid": 6536,
+  "updated": 1791935849.6769176
+}

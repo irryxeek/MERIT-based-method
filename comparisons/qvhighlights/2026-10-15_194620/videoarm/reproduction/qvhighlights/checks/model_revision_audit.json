@@ -1,0 +1,7 @@
+{
+  "metadata_revisions": [
+    "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b"
+  ],
+  "matches_requested_revision": true,
+  "model_path": "/path/to/storage/MemDreamer/models/Qwen3-VL-8B-Instruct"
+}

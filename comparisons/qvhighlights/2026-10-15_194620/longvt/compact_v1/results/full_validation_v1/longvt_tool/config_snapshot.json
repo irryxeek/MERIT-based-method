@@ -1,0 +1,48 @@
+{
+  "seed": 42,
+  "clip_seconds": 2,
+  "score_min": 0,
+  "score_max": 4,
+  "global_max_frames": 64,
+  "local_max_frames": 32,
+  "max_pixels": 50176,
+  "max_tool_calls": 2,
+  "max_override_segments": 5,
+  "max_output_tokens": 2048,
+  "analysis_max_output_tokens": 768,
+  "score_max_output_tokens": 512,
+  "temperature": 0,
+  "top_p": 1,
+  "format_retries": 1,
+  "save_local_frames": true,
+  "generation_protocol": "unconstrained_evidence_analysis_then_background_and_local_time_overrides",
+  "score_finalization_constraint": "none_strict_client_validation",
+  "format_retry_constraint": "vllm_json_schema_background_and_max_5_local_time_overrides",
+  "time_override_to_clip_rule": "clip_midpoint_in_half_open_interval_max_on_overlap",
+  "deterministic_syntax_cleanup": [
+    "remove_outer_markdown_fence",
+    "append_one_missing_outer_object_brace_only_when_delimiter_counts_prove_it"
+  ],
+  "request_timeout_seconds": 1200,
+  "failure_fallback": "all_zero",
+  "duration_tolerance_seconds": 1.5,
+  "duration_tolerance_rationale": "minimum tenth-second ceiling covering the official archive maximum annotation-minus-media gap of 1.471 seconds",
+  "media_max_height": 480,
+  "server_max_model_len": 65536,
+  "evaluation_scope": "QVHighlights validation, all 1550 released query-video pairs",
+  "experiment_arms": [
+    "global_64_uniform_frames_no_tools",
+    "tool_64_uniform_global_frames_max_2_crops_32_frames_each"
+  ],
+  "mode": "tool",
+  "model": "longvideotool/LongVT-RFT",
+  "api_base": "http://127.0.0.1:18006/v1",
+  "manifest_path": "/path/to/workspace/LongVT/reproduction/qvhighlights/manifests/full_validation.json",
+  "manifest_sha256": "9562c40acc639df3fc37d6e5aedd43db0b69e4f152899391f43a61bc2f10217f",
+  "config_path": "/path/to/workspace/LongVT/reproduction/qvhighlights/configs/full_validation_global64_tool.json",
+  "config_sha256": "49091e0ed3218d3cd9d99775a418fb97d289efbd0c4162f1001bed5d61d7de85",
+  "source_sha256": {
+    "/path/to/workspace/LongVT/reproduction/qvhighlights/scripts/run_inference.py": "d34d6e48983996fc5a90d38843abca5430edc2df7e672f0ab3cb8065cadded87",
+    "/path/to/workspace/LongVT/reproduction/qvhighlights/scripts/inference_common.py": "d02368b8afb1c8ed9dc2e889bfa6b9865fbb691afba1f5dbafa03d20c37cf734"
+  }
+}

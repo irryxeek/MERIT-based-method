@@ -1,0 +1,2 @@
+{"qid": 5095, "source_id": "k7k1mP3fD6I", "metrics": {"HL-min-Fair-mAP": 0.3283475783475784, "HL-min-Fair-Hit1": 1.0, "HL-min-Good-mAP": 0.27706552706552706, "HL-min-Good-Hit1": 1.0, "HL-min-VeryGood-mAP": 0.05128205128205129, "HL-min-VeryGood-Hit1": 0.0}}
+{"qid": 6536, "source_id": "uO9JsMIgowg", "metrics": {"HL-min-Fair-mAP": 0.1711711711711712, "HL-min-Fair-Hit1": 0.0, "HL-min-Good-mAP": 0.09538950715421303, "HL-min-Good-Hit1": 0.0, "HL-min-VeryGood-mAP": 0.04809220985691574, "HL-min-VeryGood-Hit1": 0.0}}

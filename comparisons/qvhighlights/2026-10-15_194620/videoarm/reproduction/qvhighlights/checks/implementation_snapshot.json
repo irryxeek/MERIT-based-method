@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-14 18:50:06 +0800",
+  "code": {
+    "open_source_qvh/videoarm/__init__.py": "8e16193842168271b176729324e86dd3866d86e0d31cc6f98f078cbbc2028093",
+    "open_source_qvh/videoarm/qvhighlights/__init__.py": "b4c9bd882b741b87f37b119422d05c0b76eb426657c6445a1913fcbb7b41a7ae",
+    "open_source_qvh/videoarm/qvhighlights/backend.py": "0f687a009c973573378266f148bd05b94b54ec8e5a7efc2493b6f14c11515ae4",
+    "open_source_qvh/videoarm/qvhighlights/common.py": "24d0cbb161716cd4599eef7e1629fb9e95dc1f1438d6007b9e208958bafae1a4",
+    "open_source_qvh/videoarm/qvhighlights/contracts.py": "058f0cbe3eb8e7ae54e54c7e5be056c8a0aebb6b6bd0d6f0fa5c92b2f35f9099",
+    "open_source_qvh/videoarm/qvhighlights/execution.py": "a9e8ef810be35a7f3d126f7c00b2116e08ca3deb45a984939c67a9f99259341f",
+    "open_source_qvh/videoarm/qvhighlights/media.py": "d1ce89530a7e58bd7a2b6f1254cb4334922d663e280a427483db8a3cb0c545f0",
+    "open_source_qvh/videoarm/qvhighlights/pipeline.py": "9782b8a092b1d6dbbb101f91b61b2cd9abad5ed449a986268516f108544436b3",
+    "open_source_qvh/videoarm/qvhighlights/prompts.py": "8ec7f0005604021b002055236c8efb5d78e79bd41d29832f5bf16ea14ae47c31",
+    "open_source_qvh/videoarm/qvhighlights/state.py": "34b9be4f53b8536c24159e50be11f3df0a22e7c782e9346b274481fdd5867fdd",
+    "reproduction/qvhighlights/tools/_bootstrap.py": "fe0e15fde846308374a38541725ae2c233dab1da31e93525ed60d4bbf92e202f",
+    "reproduction/qvhighlights/tools/advance_qvh.py": "1f63118be84e919abfd0058b23262b09782cd76c4bd6c98efa533047f81c578b",
+    "reproduction/qvhighlights/tools/audit_stop_contract.py": "c79f5f67a64925d802268c5ebaf1c607fdb214b14ae981b53887f2484eeaf4ec",
+    "reproduction/qvhighlights/tools/benchmark_qvh_concurrency.py": "4beba1a00117f4b2f3f52c879e69607fdcd465c2cb35033c2976831d0cc20ae1",
+    "reproduction/qvhighlights/tools/check_initial_cache_v2.py": "40ea0faaac34b582ba547e3abd5f7f892e8be3e565f7e53117b87de7f041a918",
+    "reproduction/qvhighlights/tools/freeze_qvh.py": "0bcfe0aca713a2b9f4fe43024d6419a61a2613ff41f588d024fa2cbc0e4f8428",
+    "reproduction/qvhighlights/tools/launch_qvh_service.py": "d798ad1faa0d3c76beb0cbf6f6262aada6756ceb3723cdb99d145b68b51000e8",
+    "reproduction/qvhighlights/tools/prepare_qvh.py": "123a5c4be6a8e213fa481ee86bb531ad7712b1abb8c6ffcfc960559ac7f6c1a7",
+    "reproduction/qvhighlights/tools/probe_qvh_backend.py": "9300aaafcf8da9886186846ba255fb2fbdb3ba58f2864b954dc49d6ac896c9c8",
+    "reproduction/qvhighlights/tools/record_gpu_telemetry.py": "067b46c8a13a101f6ba10a52a3c39bee4bb95001d6fcb2c92686256d3d13296d",
+    "reproduction/qvhighlights/tools/refresh_progress.py": "99899400dadf3c82895a88ca5410c04f484a0a8c8aaed80957c6d7994264297a",
+    "reproduction/qvhighlights/tools/report_qvh.py": "b1dd2fa9bcf9df0bc9a461a6a0463e1a7b3bb1306d04df50cb04f2d2fb6edb3d",
+    "reproduction/qvhighlights/tools/run_qvh.py": "13b8e28b711bf969831d5aeb453d3198bfd7664ec6d2bdd590088083703224b7",
+    "reproduction/qvhighlights/tools/score_qvh.py": "1e2f36f509725ef9c69d8fa9c4ca053955751392f2caf4af54c822c409bd7995",
+    "reproduction/qvhighlights/tools/snapshot_environment.py": "189f080c549b2cac6fb42c803b6f5f2ee69b1d3dc2d8e2f59727e9eb7ab0f2b9",
+    "reproduction/qvhighlights/tools/validate_predictions.py": "2558af6a08dbb9370df582a85f0979bf6e92a9d041779ee7444c11bc4d33928b",
+    "reproduction/qvhighlights/tools/verify_qvh_service.py": "021df3e6c1809cfe02042d4abcc559377d99eedadc1998f13f48dc26d3533961",
+    "reproduction/qvhighlights/tools/write_handoff.py": "077626aebc409ea8fb242522dc482e050456e5c04733f1946ebe851dee7e1013"
+  },
+  "configs": {
+    "dev_low_v2.json": "bd5f5d8f0897cb73fe732ba13cbe87fc463e9b8d15b6c8db41f84f006aefd09f",
+    "default_v1.json": "d7e4a3c58b3a5856294b170e71eed72cb230e1241f03b4afd17871f0247328ed",
+    "dev_low_v1.json": "aac171ca40ee5d03b2278c6802cec24dbb5aa84d2fdf04cd8676bc338086b2a3",
+    "default_v2.json": "8a82b048588810e62c1a27321429bea2a3258d6938292c282bf4712f1b5ad111",
+    "execution_m1.json": "714ddc74dac43fa9024b0c5bf3e32dcb7c1b6a6d7e69276b49467febe3bac962"
+  },
+  "scope": "engineering snapshot, not the pre-val formal freeze"
+}

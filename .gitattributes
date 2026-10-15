@@ -1,0 +1,2 @@
+# Preserve frozen archive bytes and their SHA-256 across checkout platforms.
+comparisons/qvhighlights/** -text -whitespace

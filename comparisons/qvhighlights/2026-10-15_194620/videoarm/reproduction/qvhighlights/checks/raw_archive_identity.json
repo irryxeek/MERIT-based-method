@@ -1,0 +1,8 @@
+{
+  "path": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/archive/qvhilights_videos.tar.gz",
+  "bytes": 143734787897,
+  "sha256": "f9017fcf8e0a2c2ef53f3548d8aaa0b1d23a023806b75b0b3499833b5e9539df",
+  "elapsed_seconds": 227.0854251384735,
+  "source": "https://nlp.cs.unc.edu/data/jielei/qvh/qvhilights_videos.tar.gz",
+  "acquisition": "read-only reuse of pre-existing official archive; no new video download"
+}

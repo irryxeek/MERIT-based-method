@@ -1,0 +1,449 @@
+{
+  "costs": {
+    "/path/to/storage/videoarm-repro/qvh_data/runs/dev_v1_hd_smoke8_B0": {
+      "planned": 8,
+      "succeeded": 8,
+      "failures": [],
+      "totals": {
+        "requests": 32,
+        "controllers": 0,
+        "images": 600,
+        "input_tokens": 127888,
+        "output_tokens": 8681,
+        "local_frames": 0,
+        "active_seconds": 357.62392798496876,
+        "retries": 0,
+        "cache_hits": 0,
+        "shared_cache_hits": 0,
+        "actual_requests": 32,
+        "actual_images": 600,
+        "actual_input_tokens": 127888,
+        "actual_output_tokens": 8681,
+        "uncertain_requests": 0
+      },
+      "unique_frames_sum_over_queries": 600,
+      "elapsed_p50_p95_seconds": [
+        44.42702958700829,
+        47.44993895004445
+      ],
+      "tool_frequency": {},
+      "early_stop_queries": 0,
+      "requests_with_uncertain_usage": 0,
+      "format_or_contract_failures": 0,
+      "empty_mr_responses": 0,
+      "truncated_responses": 0,
+      "budget_interrupted_queries": 0,
+      "mr_candidates_without_direct_sample_pts": 0,
+      "cold_equivalent_model_request_seconds": 311.70882164494833,
+      "peak_gpu_memory_mib": 41262,
+      "gpu_hours": 0.1986799599916493,
+      "gpu_telemetry_note": "TP2 allocated GPU hours over active query work; excludes startup/idle; peak is sum of two GPU allocations sampled every 5 seconds, may miss brief spikes"
+    },
+    "/path/to/storage/videoarm-repro/qvh_data/runs/dev_v1_hd_smoke8_B1": {
+      "planned": 8,
+      "succeeded": 8,
+      "failures": [],
+      "totals": {
+        "requests": 72,
+        "controllers": 0,
+        "images": 1200,
+        "input_tokens": 260086,
+        "output_tokens": 17852,
+        "local_frames": 600,
+        "active_seconds": 391.33126716699917,
+        "retries": 0,
+        "cache_hits": 0,
+        "shared_cache_hits": 32,
+        "actual_requests": 40,
+        "actual_images": 600,
+        "actual_input_tokens": 132198,
+        "actual_output_tokens": 9171,
+        "uncertain_requests": 0
+      },
+      "unique_frames_sum_over_queries": 600,
+      "elapsed_p50_p95_seconds": [
+        48.95094047446037,
+        52.142556462463105
+      ],
+      "tool_frequency": {
+        "clip_analyzer": 40
+      },
+      "early_stop_queries": 0,
+      "requests_with_uncertain_usage": 0,
+      "format_or_contract_failures": 0,
+      "empty_mr_responses": 0,
+      "truncated_responses": 0,
+      "budget_interrupted_queries": 0,
+      "mr_candidates_without_direct_sample_pts": 0,
+      "cold_equivalent_model_request_seconds": 621.6985659847851,
+      "peak_gpu_memory_mib": 41262,
+      "gpu_hours": 0.21740625953722176,
+      "gpu_telemetry_note": "TP2 allocated GPU hours over active query work; excludes startup/idle; peak is sum of two GPU allocations sampled every 5 seconds, may miss brief spikes"
+    },
+    "/path/to/storage/videoarm-repro/qvh_data/runs/dev_v1_hd_smoke8_M1": {
+      "planned": 8,
+      "succeeded": 2,
+      "failures": [
+        {
+          "qid": 2953,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6099,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6415,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8429,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8796,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9291,
+          "status": "failed",
+          "error": "ValueError: controller_2 invalid after at most one retry: controller action schema mismatch"
+        }
+      ],
+      "totals": {
+        "requests": 98,
+        "controllers": 39,
+        "images": 1458,
+        "input_tokens": 416097,
+        "output_tokens": 12608,
+        "local_frames": 134,
+        "active_seconds": 229.79717544815503,
+        "retries": 6,
+        "cache_hits": 0,
+        "shared_cache_hits": 32,
+        "actual_requests": 66,
+        "actual_images": 858,
+        "actual_input_tokens": 288209,
+        "actual_output_tokens": 3927,
+        "uncertain_requests": 0
+      },
+      "unique_frames_sum_over_queries": 600,
+      "elapsed_p50_p95_seconds": [
+        18.918859665020136,
+        65.54781536808002
+      ],
+      "tool_frequency": {
+        "clip_analyzer": 27
+      },
+      "early_stop_queries": 0,
+      "requests_with_uncertain_usage": 0,
+      "format_or_contract_failures": 12,
+      "empty_mr_responses": 0,
+      "truncated_responses": 0,
+      "budget_interrupted_queries": 2,
+      "mr_candidates_without_direct_sample_pts": 0,
+      "cold_equivalent_model_request_seconds": 486.27296992449556,
+      "peak_gpu_memory_mib": 41262,
+      "gpu_hours": 0.12766509747119725,
+      "gpu_telemetry_note": "TP2 allocated GPU hours over active query work; excludes startup/idle; peak is sum of two GPU allocations sampled every 5 seconds, may miss brief spikes"
+    },
+    "/path/to/storage/videoarm-repro/qvh_data/runs/dev_v1_hd_smoke8_A1": {
+      "planned": 8,
+      "succeeded": 2,
+      "failures": [
+        {
+          "qid": 2953,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6099,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6415,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8429,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8796,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9291,
+          "status": "failed",
+          "error": "ValueError: controller_2 invalid after at most one retry: controller action schema mismatch"
+        }
+      ],
+      "totals": {
+        "requests": 98,
+        "controllers": 39,
+        "images": 1458,
+        "input_tokens": 399455,
+        "output_tokens": 13022,
+        "local_frames": 134,
+        "active_seconds": 242.47617793898098,
+        "retries": 6,
+        "cache_hits": 0,
+        "shared_cache_hits": 32,
+        "actual_requests": 66,
+        "actual_images": 858,
+        "actual_input_tokens": 271567,
+        "actual_output_tokens": 4341,
+        "uncertain_requests": 0
+      },
+      "unique_frames_sum_over_queries": 600,
+      "elapsed_p50_p95_seconds": [
+        18.880745563976234,
+        68.28999148770527
+      ],
+      "tool_frequency": {
+        "clip_analyzer": 27
+      },
+      "early_stop_queries": 0,
+      "requests_with_uncertain_usage": 0,
+      "format_or_contract_failures": 12,
+      "empty_mr_responses": 0,
+      "truncated_responses": 0,
+      "budget_interrupted_queries": 2,
+      "mr_candidates_without_direct_sample_pts": 0,
+      "cold_equivalent_model_request_seconds": 499.3543700539158,
+      "peak_gpu_memory_mib": 41262,
+      "gpu_hours": 0.13470898774387832,
+      "gpu_telemetry_note": "TP2 allocated GPU hours over active query work; excludes startup/idle; peak is sum of two GPU allocations sampled every 5 seconds, may miss brief spikes"
+    }
+  },
+  "paired": {
+    "planned": 8,
+    "common_success": 2,
+    "common_coverage": 0.25,
+    "common_success_ci": {
+      "HL-min-Fair-mAP": {
+        "estimate": -7.791358121546797,
+        "ci95": [
+          -10.498575498575496,
+          -5.084140744518098
+        ],
+        "clusters": 2,
+        "queries": 2,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "HL-min-Fair-Hit1": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "clusters": 2,
+        "queries": 2,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "HL-min-Good-mAP": {
+        "estimate": -3.2430763812561825,
+        "ci95": [
+          -4.515669515669519,
+          -1.9704832468428468
+        ],
+        "clusters": 2,
+        "queries": 2,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "HL-min-Good-Hit1": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "clusters": 2,
+        "queries": 2,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "HL-min-VeryGood-mAP": {
+        "estimate": -3.731496586657519,
+        "ci95": [
+          -5.982905982905982,
+          -1.4800871904090553
+        ],
+        "clusters": 2,
+        "queries": 2,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "HL-min-VeryGood-Hit1": {
+        "estimate": -50.0,
+        "ci95": [
+          -100.0,
+          0.0
+        ],
+        "clusters": 2,
+        "queries": 2,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      }
+    },
+    "custom_full_plan_failure_zero_ci": {
+      "HL-min-Fair-mAP": {
+        "estimate": -55.18068864241265,
+        "ci95": [
+          -76.04170532028601,
+          -33.06002642199013
+        ],
+        "clusters": 8,
+        "queries": 8,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "HL-min-Fair-Hit1": {
+        "estimate": -37.5,
+        "ci95": [
+          -75.0,
+          -12.5
+        ],
+        "clusters": 8,
+        "queries": 8,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "HL-min-Good-mAP": {
+        "estimate": -48.05275478070185,
+        "ci95": [
+          -67.23082291952106,
+          -27.095782224644854
+        ],
+        "clusters": 8,
+        "queries": 8,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "HL-min-Good-Hit1": {
+        "estimate": -37.5,
+        "ci95": [
+          -75.0,
+          -12.5
+        ],
+        "clusters": 8,
+        "queries": 8,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "HL-min-VeryGood-mAP": {
+        "estimate": -34.944696327863326,
+        "ci95": [
+          -50.16207399626518,
+          -19.882220980748453
+        ],
+        "clusters": 8,
+        "queries": 8,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "HL-min-VeryGood-Hit1": {
+        "estimate": -50.0,
+        "ci95": [
+          -87.5,
+          -12.5
+        ],
+        "clusters": 8,
+        "queries": 8,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      }
+    },
+    "official_common_success_scores": {
+      "B1": {
+        "brief": {
+          "HL-min-Fair-mAP": 32.77,
+          "HL-min-Fair-Hit1": 50.0,
+          "HL-min-Good-mAP": 21.87,
+          "HL-min-Good-Hit1": 50.0,
+          "HL-min-VeryGood-mAP": 8.7,
+          "HL-min-VeryGood-Hit1": 50.0
+        },
+        "HL-min-Fair": {
+          "HL-mAP": 32.77,
+          "HL-Hit1": 50.0
+        },
+        "HL-min-Good": {
+          "HL-mAP": 21.87,
+          "HL-Hit1": 50.0
+        },
+        "HL-min-VeryGood": {
+          "HL-mAP": 8.7,
+          "HL-Hit1": 50.0
+        }
+      },
+      "M1": {
+        "brief": {
+          "HL-min-Fair-mAP": 24.98,
+          "HL-min-Fair-Hit1": 50.0,
+          "HL-min-Good-mAP": 18.62,
+          "HL-min-Good-Hit1": 50.0,
+          "HL-min-VeryGood-mAP": 4.97,
+          "HL-min-VeryGood-Hit1": 0.0
+        },
+        "HL-min-Fair": {
+          "HL-mAP": 24.98,
+          "HL-Hit1": 50.0
+        },
+        "HL-min-Good": {
+          "HL-mAP": 18.62,
+          "HL-Hit1": 50.0
+        },
+        "HL-min-VeryGood": {
+          "HL-mAP": 4.97,
+          "HL-Hit1": 0.0
+        }
+      }
+    }
+  },
+  "owned_service_gpu_telemetry": {
+    "start_unix": 1791926059.710651,
+    "observed_until_unix": 1791935855.213737,
+    "peak_memory_per_gpu_mib": {
+      "GPU-REDACTED-03": 20631,
+      "GPU-REDACTED-04": 20631
+    },
+    "allocated_gpu_hours": 5.441946160131031,
+    "scope": "QVH-owned service lifetime, including startup and idle time; GPU memory includes server allocation"
+  }
+}

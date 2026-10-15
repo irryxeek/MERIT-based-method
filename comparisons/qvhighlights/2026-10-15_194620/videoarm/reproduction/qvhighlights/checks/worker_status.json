@@ -1,0 +1,11 @@
+{
+  "status": "paused_by_user_or_service_stop",
+  "phase": "P3",
+  "started_unix": 1791945461.1843517,
+  "heartbeat_unix": 1791946137.29793,
+  "task": "hd",
+  "split": "val",
+  "method": "M1",
+  "run_id": "formal_c0c8ae9799ad_hd_val_M1",
+  "updated_unix": 1791975001.380026
+}

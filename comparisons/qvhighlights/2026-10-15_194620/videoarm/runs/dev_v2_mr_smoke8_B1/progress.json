@@ -1,0 +1,12 @@
+{
+  "run_id": "dev_v2_mr_smoke8_B1",
+  "task": "mr",
+  "method": "B1",
+  "planned": 8,
+  "statuses": {
+    "failed": 2,
+    "succeeded": 6
+  },
+  "latest_qid": 6536,
+  "updated": 1791942692.1536727
+}

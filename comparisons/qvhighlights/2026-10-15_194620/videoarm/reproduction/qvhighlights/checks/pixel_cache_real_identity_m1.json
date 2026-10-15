@@ -1,0 +1,9 @@
+{
+  "qid": 2953,
+  "frames": 24,
+  "cold_equals_warm": true,
+  "matches_registered_v2_request_pixels": true,
+  "cold_decode_encode_seconds": 1.5419456080417149,
+  "cached_sample_seconds": 0.034476122993510216,
+  "scope": "one real video initial sampling PTS/JPEG fixture; CPU pixel cache speed only, not full model speedup"
+}

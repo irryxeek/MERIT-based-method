@@ -1,0 +1,1057 @@
+[
+  {
+    "project": "VideoARM",
+    "run_id": "dev_low_v1_mr_dev50_B1",
+    "task": "mr",
+    "method": "B1",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "failed": 9,
+      "succeeded": 41
+    },
+    "predictions": 41,
+    "requests": {
+      "completed": 359
+    },
+    "prediction_file": "videoarm/runs/dev_low_v1_mr_dev50_B1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_low_v1_mr_dev50_B1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_low_v1_mr_dev50_B1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 21.95,
+      "MR-full-R1@0.7": 4.88,
+      "MR-full-mAP": 7.0,
+      "MR-full-mAP@0.5": 21.1,
+      "MR-full-mAP@0.75": 3.35,
+      "MR-long-mAP": 6.92,
+      "MR-middle-mAP": 10.71,
+      "MR-short-mAP": 0.73
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 5.741666666666666,
+      "MR-full-mAP@0.5": 17.3,
+      "MR-full-mAP@0.75": 2.75,
+      "MR-full-R1@0.5": 18.0,
+      "MR-full-R1@0.7": 4.0
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_low_v1_mr_dev50_M1",
+    "task": "mr",
+    "method": "M1",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "failed": 38,
+      "succeeded": 12
+    },
+    "predictions": 12,
+    "requests": {
+      "completed": 397
+    },
+    "prediction_file": "videoarm/runs/dev_low_v1_mr_dev50_M1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_low_v1_mr_dev50_M1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_low_v1_mr_dev50_M1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 25.0,
+      "MR-full-R1@0.7": 0.0,
+      "MR-full-mAP": 4.47,
+      "MR-full-mAP@0.5": 11.39,
+      "MR-full-mAP@0.75": 4.17,
+      "MR-long-mAP": 11.25,
+      "MR-middle-mAP": 1.88,
+      "MR-short-mAP": 1.0
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 1.0733333333333333,
+      "MR-full-mAP@0.5": 2.733333333333333,
+      "MR-full-mAP@0.75": 1.0,
+      "MR-full-R1@0.5": 6.0,
+      "MR-full-R1@0.7": 0.0
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_hd_dev50_B0",
+    "task": "hd",
+    "method": "B0",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "succeeded": 50
+    },
+    "predictions": 50,
+    "requests": {
+      "completed": 200
+    },
+    "prediction_file": "videoarm/runs/dev_v1_hd_dev50_B0/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_hd_dev50_B0/state.sqlite.gz",
+    "scores_file": null,
+    "official_score_scope": "not_scored",
+    "official_metrics": null,
+    "custom_full_plan_failure_zero_metrics": null,
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_hd_dev50_B1",
+    "task": "hd",
+    "method": "B1",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "succeeded": 50
+    },
+    "predictions": 50,
+    "requests": {
+      "completed": 450
+    },
+    "prediction_file": "videoarm/runs/dev_v1_hd_dev50_B1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_hd_dev50_B1/state.sqlite.gz",
+    "scores_file": null,
+    "official_score_scope": "not_scored",
+    "official_metrics": null,
+    "custom_full_plan_failure_zero_metrics": null,
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_hd_dev50_M1",
+    "task": "hd",
+    "method": "M1",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "failed": 28,
+      "paused": 1,
+      "pending": 14,
+      "succeeded": 7
+    },
+    "predictions": 7,
+    "requests": {
+      "completed": 431,
+      "inflight": 1
+    },
+    "prediction_file": "videoarm/runs/dev_v1_hd_dev50_M1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_hd_dev50_M1/state.sqlite.gz",
+    "scores_file": null,
+    "official_score_scope": "not_scored",
+    "official_metrics": null,
+    "custom_full_plan_failure_zero_metrics": null,
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_hd_smoke8_A1",
+    "task": "hd",
+    "method": "A1",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "failed": 6,
+      "succeeded": 2
+    },
+    "predictions": 2,
+    "requests": {
+      "completed": 98
+    },
+    "prediction_file": "videoarm/runs/dev_v1_hd_smoke8_A1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_hd_smoke8_A1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v1_hd_smoke8_A1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "HL-min-Fair-mAP": 32.86,
+      "HL-min-Fair-Hit1": 50.0,
+      "HL-min-Good-mAP": 22.37,
+      "HL-min-Good-Hit1": 50.0,
+      "HL-min-VeryGood-mAP": 9.13,
+      "HL-min-VeryGood-Hit1": 50.0
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "HL-min-Fair-mAP": 8.214474463047521,
+      "HL-min-Fair-Hit1": 12.5,
+      "HL-min-Good-mAP": 5.593541243869439,
+      "HL-min-Good-Hit1": 12.5,
+      "HL-min-VeryGood-mAP": 2.282034817351598,
+      "HL-min-VeryGood-Hit1": 12.5
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_hd_smoke8_B0",
+    "task": "hd",
+    "method": "B0",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "succeeded": 8
+    },
+    "predictions": 8,
+    "requests": {
+      "completed": 32
+    },
+    "prediction_file": "videoarm/runs/dev_v1_hd_smoke8_B0/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_hd_smoke8_B0/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v1_hd_smoke8_B0/scores.json",
+    "official_score_scope": "complete_official_submission",
+    "official_metrics": {
+      "HL-min-Fair-mAP": 54.09,
+      "HL-min-Fair-Hit1": 62.5,
+      "HL-min-Good-mAP": 45.68,
+      "HL-min-Good-Hit1": 62.5,
+      "HL-min-VeryGood-mAP": 33.64,
+      "HL-min-VeryGood-Hit1": 62.5
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "HL-min-Fair-mAP": 54.093147984435156,
+      "HL-min-Fair-Hit1": 62.5,
+      "HL-min-Good-mAP": 45.67716156550854,
+      "HL-min-Good-Hit1": 62.5,
+      "HL-min-VeryGood-mAP": 33.64132742969318,
+      "HL-min-VeryGood-Hit1": 62.5
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_hd_smoke8_B1",
+    "task": "hd",
+    "method": "B1",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "succeeded": 8
+    },
+    "predictions": 8,
+    "requests": {
+      "completed": 72
+    },
+    "prediction_file": "videoarm/runs/dev_v1_hd_smoke8_B1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_hd_smoke8_B1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v1_hd_smoke8_B1/scores.json",
+    "official_score_scope": "complete_official_submission",
+    "official_metrics": {
+      "HL-min-Fair-mAP": 61.42,
+      "HL-min-Fair-Hit1": 50.0,
+      "HL-min-Good-mAP": 52.71,
+      "HL-min-Good-Hit1": 50.0,
+      "HL-min-VeryGood-mAP": 36.19,
+      "HL-min-VeryGood-Hit1": 50.0
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "HL-min-Fair-mAP": 61.42467301139701,
+      "HL-min-Fair-Hit1": 50.0,
+      "HL-min-Good-mAP": 52.70844270844861,
+      "HL-min-Good-Hit1": 50.0,
+      "HL-min-VeryGood-mAP": 36.186874592100416,
+      "HL-min-VeryGood-Hit1": 50.0
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_hd_smoke8_M1",
+    "task": "hd",
+    "method": "M1",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "failed": 6,
+      "succeeded": 2
+    },
+    "predictions": 2,
+    "requests": {
+      "completed": 98
+    },
+    "prediction_file": "videoarm/runs/dev_v1_hd_smoke8_M1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_hd_smoke8_M1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v1_hd_smoke8_M1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "HL-min-Fair-mAP": 24.98,
+      "HL-min-Fair-Hit1": 50.0,
+      "HL-min-Good-mAP": 18.62,
+      "HL-min-Good-Hit1": 50.0,
+      "HL-min-VeryGood-mAP": 4.97,
+      "HL-min-VeryGood-Hit1": 0.0
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "HL-min-Fair-mAP": 6.2439843689843695,
+      "HL-min-Fair-Hit1": 12.5,
+      "HL-min-Good-mAP": 4.655687927746751,
+      "HL-min-Good-Hit1": 12.5,
+      "HL-min-VeryGood-mAP": 1.2421782642370878,
+      "HL-min-VeryGood-Hit1": 0.0
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_mr_dev50_A1",
+    "task": "mr",
+    "method": "A1",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "failed": 38,
+      "succeeded": 12
+    },
+    "predictions": 12,
+    "requests": {
+      "completed": 396
+    },
+    "prediction_file": "videoarm/runs/dev_v1_mr_dev50_A1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_mr_dev50_A1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v1_mr_dev50_A1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 25.0,
+      "MR-full-R1@0.7": 0.0,
+      "MR-full-mAP": 5.5,
+      "MR-full-mAP@0.5": 18.33,
+      "MR-full-mAP@0.75": 4.17,
+      "MR-long-mAP": 11.25,
+      "MR-middle-mAP": 1.88,
+      "MR-short-mAP": 1.88
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 1.3200000000000003,
+      "MR-full-mAP@0.5": 4.4,
+      "MR-full-mAP@0.75": 1.0,
+      "MR-full-R1@0.5": 6.0,
+      "MR-full-R1@0.7": 0.0
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_mr_dev50_B0",
+    "task": "mr",
+    "method": "B0",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "failed": 16,
+      "succeeded": 34
+    },
+    "predictions": 34,
+    "requests": {
+      "completed": 116
+    },
+    "prediction_file": "videoarm/runs/dev_v1_mr_dev50_B0/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_mr_dev50_B0/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v1_mr_dev50_B0/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 35.29,
+      "MR-full-R1@0.7": 17.65,
+      "MR-full-mAP": 17.55,
+      "MR-full-mAP@0.5": 32.6,
+      "MR-full-mAP@0.75": 17.4,
+      "MR-long-mAP": 40.56,
+      "MR-middle-mAP": 12.72,
+      "MR-short-mAP": 2.27
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 11.936666666666666,
+      "MR-full-mAP@0.5": 22.166666666666664,
+      "MR-full-mAP@0.75": 11.833333333333336,
+      "MR-full-R1@0.5": 24.0,
+      "MR-full-R1@0.7": 12.0
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_mr_dev50_B1",
+    "task": "mr",
+    "method": "B1",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "failed": 10,
+      "succeeded": 40
+    },
+    "predictions": 40,
+    "requests": {
+      "completed": 358
+    },
+    "prediction_file": "videoarm/runs/dev_v1_mr_dev50_B1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_mr_dev50_B1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v1_mr_dev50_B1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 50.0,
+      "MR-full-R1@0.7": 27.5,
+      "MR-full-mAP": 24.1,
+      "MR-full-mAP@0.5": 42.73,
+      "MR-full-mAP@0.75": 21.4,
+      "MR-long-mAP": 39.38,
+      "MR-middle-mAP": 25.56,
+      "MR-short-mAP": 0.4
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 19.278333333333336,
+      "MR-full-mAP@0.5": 34.18333333333334,
+      "MR-full-mAP@0.75": 17.116666666666667,
+      "MR-full-R1@0.5": 40.0,
+      "MR-full-R1@0.7": 22.0
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_mr_dev50_M1",
+    "task": "mr",
+    "method": "M1",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "failed": 37,
+      "succeeded": 13
+    },
+    "predictions": 13,
+    "requests": {
+      "completed": 391
+    },
+    "prediction_file": "videoarm/runs/dev_v1_mr_dev50_M1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_mr_dev50_M1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v1_mr_dev50_M1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 15.38,
+      "MR-full-R1@0.7": 7.69,
+      "MR-full-mAP": 7.62,
+      "MR-full-mAP@0.5": 9.23,
+      "MR-full-mAP@0.75": 8.46,
+      "MR-long-mAP": 22.5,
+      "MR-middle-mAP": 5.62,
+      "MR-short-mAP": 0.0
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 1.98,
+      "MR-full-mAP@0.5": 2.4,
+      "MR-full-mAP@0.75": 2.2,
+      "MR-full-R1@0.5": 4.0,
+      "MR-full-R1@0.7": 2.0
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_mr_smoke8_A1",
+    "task": "mr",
+    "method": "A1",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "failed": 6,
+      "succeeded": 2
+    },
+    "predictions": 2,
+    "requests": {
+      "completed": 64
+    },
+    "prediction_file": "videoarm/runs/dev_v1_mr_smoke8_A1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_mr_smoke8_A1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v1_mr_smoke8_A1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-mAP": 7.5,
+      "MR-full-mAP@0.5": 75.0,
+      "MR-full-mAP@0.75": 0.0,
+      "MR-full-R1@0.5": 100.0,
+      "MR-full-R1@0.7": 0.0,
+      "MR-short-mAP": null,
+      "MR-middle-mAP": 7.5,
+      "MR-long-mAP": null
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 1.8750000000000002,
+      "MR-full-mAP@0.5": 18.75,
+      "MR-full-mAP@0.75": 0.0,
+      "MR-full-R1@0.5": 25.0,
+      "MR-full-R1@0.7": 0.0
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_mr_smoke8_B0",
+    "task": "mr",
+    "method": "B0",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "failed": 2,
+      "succeeded": 6
+    },
+    "predictions": 6,
+    "requests": {
+      "completed": 18
+    },
+    "prediction_file": "videoarm/runs/dev_v1_mr_smoke8_B0/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_mr_smoke8_B0/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v1_mr_smoke8_B0/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 33.33,
+      "MR-full-R1@0.7": 33.33,
+      "MR-full-mAP": 17.92,
+      "MR-full-mAP@0.5": 29.17,
+      "MR-full-mAP@0.75": 20.83,
+      "MR-long-mAP": 70.0,
+      "MR-middle-mAP": 18.0,
+      "MR-short-mAP": 0.0
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 13.4375,
+      "MR-full-mAP@0.5": 21.875,
+      "MR-full-mAP@0.75": 15.625,
+      "MR-full-R1@0.5": 25.0,
+      "MR-full-R1@0.7": 25.0
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_mr_smoke8_B1",
+    "task": "mr",
+    "method": "B1",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "failed": 2,
+      "succeeded": 6
+    },
+    "predictions": 6,
+    "requests": {
+      "completed": 59
+    },
+    "prediction_file": "videoarm/runs/dev_v1_mr_smoke8_B1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_mr_smoke8_B1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v1_mr_smoke8_B1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 66.67,
+      "MR-full-R1@0.7": 33.33,
+      "MR-full-mAP": 22.08,
+      "MR-full-mAP@0.5": 58.33,
+      "MR-full-mAP@0.75": 20.83,
+      "MR-long-mAP": 90.0,
+      "MR-middle-mAP": 18.5,
+      "MR-short-mAP": 0.83
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 16.5625,
+      "MR-full-mAP@0.5": 43.75,
+      "MR-full-mAP@0.75": 15.625,
+      "MR-full-R1@0.5": 50.0,
+      "MR-full-R1@0.7": 25.0
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v1_mr_smoke8_M1",
+    "task": "mr",
+    "method": "M1",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v1",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "failed": 6,
+      "succeeded": 2
+    },
+    "predictions": 2,
+    "requests": {
+      "completed": 64
+    },
+    "prediction_file": "videoarm/runs/dev_v1_mr_smoke8_M1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v1_mr_smoke8_M1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v1_mr_smoke8_M1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-mAP": 0.0,
+      "MR-full-mAP@0.5": 0.0,
+      "MR-full-mAP@0.75": 0.0,
+      "MR-full-R1@0.5": 0.0,
+      "MR-full-R1@0.7": 0.0,
+      "MR-short-mAP": null,
+      "MR-middle-mAP": 0.0,
+      "MR-long-mAP": null
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 0.0,
+      "MR-full-mAP@0.5": 0.0,
+      "MR-full-mAP@0.75": 0.0,
+      "MR-full-R1@0.5": 0.0,
+      "MR-full-R1@0.7": 0.0
+    },
+    "historical_contract_issue": true
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v2_hd_dev50_M1",
+    "task": "hd",
+    "method": "M1",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v2_stop_contract",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "failed": 5,
+      "succeeded": 45
+    },
+    "predictions": 45,
+    "requests": {
+      "completed": 429
+    },
+    "prediction_file": "videoarm/runs/dev_v2_hd_dev50_M1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v2_hd_dev50_M1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v2_hd_dev50_M1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "HL-min-Fair-mAP": 57.54,
+      "HL-min-Fair-Hit1": 60.0,
+      "HL-min-Good-mAP": 47.84,
+      "HL-min-Good-Hit1": 55.56,
+      "HL-min-VeryGood-mAP": 29.42,
+      "HL-min-VeryGood-Hit1": 44.44
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "HL-min-Fair-mAP": 51.78561918934883,
+      "HL-min-Fair-Hit1": 54.0,
+      "HL-min-Good-mAP": 43.052287231844005,
+      "HL-min-Good-Hit1": 50.0,
+      "HL-min-VeryGood-mAP": 26.47571415078685,
+      "HL-min-VeryGood-Hit1": 40.0
+    },
+    "historical_contract_issue": false
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v2_hd_smoke8_M1",
+    "task": "hd",
+    "method": "M1",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v2_stop_contract",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "succeeded": 8
+    },
+    "predictions": 8,
+    "requests": {
+      "completed": 60
+    },
+    "prediction_file": "videoarm/runs/dev_v2_hd_smoke8_M1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v2_hd_smoke8_M1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v2_hd_smoke8_M1/scores.json",
+    "official_score_scope": "complete_official_submission",
+    "official_metrics": {
+      "HL-min-Fair-mAP": 54.08,
+      "HL-min-Fair-Hit1": 62.5,
+      "HL-min-Good-mAP": 48.24,
+      "HL-min-Good-Hit1": 62.5,
+      "HL-min-VeryGood-mAP": 33.97,
+      "HL-min-VeryGood-Hit1": 62.5
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "HL-min-Fair-mAP": 54.07909426353158,
+      "HL-min-Fair-Hit1": 62.5,
+      "HL-min-Good-mAP": 48.235000913597645,
+      "HL-min-Good-Hit1": 62.5,
+      "HL-min-VeryGood-mAP": 33.966186605269336,
+      "HL-min-VeryGood-Hit1": 62.5
+    },
+    "historical_contract_issue": false
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v2_mr_dev50_B0",
+    "task": "mr",
+    "method": "B0",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v2_stop_contract",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "failed": 19,
+      "succeeded": 31
+    },
+    "predictions": 31,
+    "requests": {
+      "completed": 120
+    },
+    "prediction_file": "videoarm/runs/dev_v2_mr_dev50_B0/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v2_mr_dev50_B0/state.sqlite.gz",
+    "scores_file": null,
+    "official_score_scope": "not_scored",
+    "official_metrics": null,
+    "custom_full_plan_failure_zero_metrics": null,
+    "historical_contract_issue": false
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v2_mr_dev50_B1",
+    "task": "mr",
+    "method": "B1",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v2_stop_contract",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "failed": 2,
+      "paused": 1,
+      "pending": 27,
+      "succeeded": 20
+    },
+    "predictions": 20,
+    "requests": {
+      "completed": 163,
+      "inflight": 1
+    },
+    "prediction_file": "videoarm/runs/dev_v2_mr_dev50_B1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v2_mr_dev50_B1/state.sqlite.gz",
+    "scores_file": null,
+    "official_score_scope": "not_scored",
+    "official_metrics": null,
+    "custom_full_plan_failure_zero_metrics": null,
+    "historical_contract_issue": false
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v2_mr_dev50_M1",
+    "task": "mr",
+    "method": "M1",
+    "split": "dev50",
+    "protocol": "qvh_video_only_v2_stop_contract",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 50,
+    "statuses": {
+      "failed": 13,
+      "succeeded": 37
+    },
+    "predictions": 37,
+    "requests": {
+      "completed": 278
+    },
+    "prediction_file": "videoarm/runs/dev_v2_mr_dev50_M1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v2_mr_dev50_M1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v2_mr_dev50_M1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 32.43,
+      "MR-full-R1@0.7": 18.92,
+      "MR-full-mAP": 18.72,
+      "MR-full-mAP@0.5": 30.86,
+      "MR-full-mAP@0.75": 18.69,
+      "MR-long-mAP": 34.17,
+      "MR-middle-mAP": 14.35,
+      "MR-short-mAP": 1.5
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 13.85,
+      "MR-full-mAP@0.5": 22.83333333333333,
+      "MR-full-mAP@0.75": 13.833333333333336,
+      "MR-full-R1@0.5": 24.0,
+      "MR-full-R1@0.7": 14.0
+    },
+    "historical_contract_issue": false
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v2_mr_smoke8_A1",
+    "task": "mr",
+    "method": "A1",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v2_stop_contract",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "failed": 2,
+      "succeeded": 6
+    },
+    "predictions": 6,
+    "requests": {
+      "completed": 49
+    },
+    "prediction_file": "videoarm/runs/dev_v2_mr_smoke8_A1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v2_mr_smoke8_A1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v2_mr_smoke8_A1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 50.0,
+      "MR-full-R1@0.7": 16.67,
+      "MR-full-mAP": 11.25,
+      "MR-full-mAP@0.5": 37.5,
+      "MR-full-mAP@0.75": 4.17,
+      "MR-long-mAP": 0.0,
+      "MR-middle-mAP": 24.0,
+      "MR-short-mAP": 0.0
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 8.4375,
+      "MR-full-mAP@0.5": 28.125,
+      "MR-full-mAP@0.75": 3.125,
+      "MR-full-R1@0.5": 37.5,
+      "MR-full-R1@0.7": 12.5
+    },
+    "historical_contract_issue": false
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v2_mr_smoke8_B0",
+    "task": "mr",
+    "method": "B0",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v2_stop_contract",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "failed": 2,
+      "succeeded": 6
+    },
+    "predictions": 6,
+    "requests": {
+      "completed": 18
+    },
+    "prediction_file": "videoarm/runs/dev_v2_mr_smoke8_B0/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v2_mr_smoke8_B0/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v2_mr_smoke8_B0/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 33.33,
+      "MR-full-R1@0.7": 33.33,
+      "MR-full-mAP": 17.92,
+      "MR-full-mAP@0.5": 29.17,
+      "MR-full-mAP@0.75": 20.83,
+      "MR-long-mAP": 70.0,
+      "MR-middle-mAP": 18.0,
+      "MR-short-mAP": 0.0
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 13.4375,
+      "MR-full-mAP@0.5": 21.875,
+      "MR-full-mAP@0.75": 15.625,
+      "MR-full-R1@0.5": 25.0,
+      "MR-full-R1@0.7": 25.0
+    },
+    "historical_contract_issue": false
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v2_mr_smoke8_B1",
+    "task": "mr",
+    "method": "B1",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v2_stop_contract",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "failed": 2,
+      "succeeded": 6
+    },
+    "predictions": 6,
+    "requests": {
+      "completed": 59
+    },
+    "prediction_file": "videoarm/runs/dev_v2_mr_smoke8_B1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v2_mr_smoke8_B1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v2_mr_smoke8_B1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 66.67,
+      "MR-full-R1@0.7": 33.33,
+      "MR-full-mAP": 22.08,
+      "MR-full-mAP@0.5": 58.33,
+      "MR-full-mAP@0.75": 20.83,
+      "MR-long-mAP": 90.0,
+      "MR-middle-mAP": 18.5,
+      "MR-short-mAP": 0.83
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 16.5625,
+      "MR-full-mAP@0.5": 43.75,
+      "MR-full-mAP@0.75": 15.625,
+      "MR-full-R1@0.5": 50.0,
+      "MR-full-R1@0.7": 25.0
+    },
+    "historical_contract_issue": false
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "dev_v2_mr_smoke8_M1",
+    "task": "mr",
+    "method": "M1",
+    "split": "smoke8",
+    "protocol": "qvh_video_only_v2_stop_contract",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 8,
+    "statuses": {
+      "failed": 2,
+      "succeeded": 6
+    },
+    "predictions": 6,
+    "requests": {
+      "completed": 54
+    },
+    "prediction_file": "videoarm/runs/dev_v2_mr_smoke8_M1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/dev_v2_mr_smoke8_M1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/dev_v2_mr_smoke8_M1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 33.33,
+      "MR-full-R1@0.7": 16.67,
+      "MR-full-mAP": 7.08,
+      "MR-full-mAP@0.5": 20.83,
+      "MR-full-mAP@0.75": 4.17,
+      "MR-long-mAP": 0.0,
+      "MR-middle-mAP": 19.0,
+      "MR-short-mAP": 0.0
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 5.3125,
+      "MR-full-mAP@0.5": 15.625,
+      "MR-full-mAP@0.75": 3.125,
+      "MR-full-R1@0.5": 25.0,
+      "MR-full-R1@0.7": 12.5
+    },
+    "historical_contract_issue": false
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "formal_c0c8ae9799ad_hd_val_M1",
+    "task": "hd",
+    "method": "M1",
+    "split": "val",
+    "protocol": "qvh_video_only_v2_stop_contract",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 1550,
+    "statuses": {
+      "failed": 34,
+      "paused": 4,
+      "pending": 1093,
+      "succeeded": 419
+    },
+    "predictions": 419,
+    "requests": {
+      "completed": 3275
+    },
+    "prediction_file": "videoarm/runs/formal_c0c8ae9799ad_hd_val_M1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/formal_c0c8ae9799ad_hd_val_M1/state.sqlite.gz",
+    "scores_file": null,
+    "official_score_scope": "not_scored",
+    "official_metrics": null,
+    "custom_full_plan_failure_zero_metrics": null,
+    "historical_contract_issue": false
+  },
+  {
+    "project": "VideoARM",
+    "run_id": "formal_c0c8ae9799ad_mr_val_M1",
+    "task": "mr",
+    "method": "M1",
+    "split": "val",
+    "protocol": "qvh_video_only_v2_stop_contract",
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "planned": 1550,
+    "statuses": {
+      "failed": 437,
+      "succeeded": 1113
+    },
+    "predictions": 1113,
+    "requests": {
+      "completed": 7056
+    },
+    "prediction_file": "videoarm/runs/formal_c0c8ae9799ad_mr_val_M1/predictions.jsonl",
+    "state_snapshot": "videoarm/runs/formal_c0c8ae9799ad_mr_val_M1/state.sqlite.gz",
+    "scores_file": "videoarm/runs/formal_c0c8ae9799ad_mr_val_M1/scores.json",
+    "official_score_scope": "official_success_subset_only",
+    "official_metrics": {
+      "MR-full-R1@0.5": 42.32,
+      "MR-full-R1@0.7": 25.61,
+      "MR-full-mAP": 20.7,
+      "MR-full-mAP@0.5": 37.76,
+      "MR-full-mAP@0.75": 19.58,
+      "MR-long-mAP": 31.9,
+      "MR-middle-mAP": 16.85,
+      "MR-short-mAP": 2.48
+    },
+    "custom_full_plan_failure_zero_metrics": {
+      "MR-full-mAP": 14.863844046634368,
+      "MR-full-mAP@0.5": 27.116784302913317,
+      "MR-full-mAP@0.75": 14.059015190305516,
+      "MR-full-R1@0.5": 30.387096774193548,
+      "MR-full-R1@0.7": 18.387096774193548
+    },
+    "historical_contract_issue": false
+  }
+]

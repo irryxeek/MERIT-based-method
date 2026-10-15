@@ -1,0 +1,31 @@
+{
+  "model": "longvideotool/LongVT-RFT",
+  "models_endpoint": [
+    {
+      "id": "longvideotool/LongVT-RFT",
+      "created": 1790514222,
+      "object": "model",
+      "owned_by": "vllm",
+      "shutdown_date": null,
+      "root": "/path/to/storage/longvt-repro/cache/huggingface/hub/models--longvideotool--LongVT-RFT/snapshots/16ed9314e4ea600dc4682b172a614252f2f383ad",
+      "parent": null,
+      "max_model_len": 65536,
+      "permission": [
+        {
+          "id": "modelperm-822ed1d1cf89f491",
+          "object": "model_permission",
+          "created": 1790514222,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    }
+  ]
+}

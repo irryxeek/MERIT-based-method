@@ -1,0 +1,12 @@
+{"qid": 1441, "source_id": "_0ipsQzLdzA", "metrics": {"MR-full-mAP": 0.0, "MR-full-mAP@0.5": 0.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 1491, "source_id": "1EUUociNmG0", "metrics": {"MR-full-mAP": 0.0, "MR-full-mAP@0.5": 0.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 2379, "source_id": "V1O76JCsPg0", "metrics": {"MR-full-mAP": 0.0, "MR-full-mAP@0.5": 0.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 2953, "source_id": "D2Fk3Zke6Kc", "metrics": {"MR-full-mAP": 0.1, "MR-full-mAP@0.5": 1.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 1.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 3084, "source_id": "Svn-uWQ_Gbo", "metrics": {"MR-full-mAP": 0.06000000000000001, "MR-full-mAP@0.5": 0.2, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 1.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 5220, "source_id": "5-prFsuWdqs", "metrics": {"MR-full-mAP": 0.0, "MR-full-mAP@0.5": 0.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 5761, "source_id": "Hi4qIbImolM", "metrics": {"MR-full-mAP": 0.0, "MR-full-mAP@0.5": 0.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 6680, "source_id": "wEbLiJ1A6vg", "metrics": {"MR-full-mAP": 0.0, "MR-full-mAP@0.5": 0.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 9121, "source_id": "q6co7MJs7Uw", "metrics": {"MR-full-mAP": 0.0, "MR-full-mAP@0.5": 0.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 9217, "source_id": "GjmRjtGYh6o", "metrics": {"MR-full-mAP": 0.45, "MR-full-mAP@0.5": 0.5, "MR-full-mAP@0.75": 0.5, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 9233, "source_id": "_3t2jEtJX8g", "metrics": {"MR-full-mAP": 0.0, "MR-full-mAP@0.5": 0.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0}}
+{"qid": 9291, "source_id": "JwL8krWmFZ0", "metrics": {"MR-full-mAP": 0.05, "MR-full-mAP@0.5": 0.5, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 1.0, "MR-full-R1@0.7": 0.0}}

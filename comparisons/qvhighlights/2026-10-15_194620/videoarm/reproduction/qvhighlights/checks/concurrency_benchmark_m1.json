@@ -1,0 +1,56 @@
+{
+  "registered": "/path/to/storage/videoarm-repro/qvh_data/probes/concurrency_m1_v1/registered.json",
+  "summary": {
+    "1": {
+      "requests": 24,
+      "wall_seconds": 184.80067399097607,
+      "requests_per_second": 0.12986965621766042,
+      "http_errors": 0,
+      "contract_errors": 0,
+      "exact_raw_agreement_with_first_serial": 19,
+      "latency_p50_p95_seconds": [
+        9.399312226014445,
+        12.632810992520534
+      ],
+      "input_tokens": 119712,
+      "output_tokens": 5209,
+      "speedup_over_serial": 1.0
+    },
+    "2": {
+      "requests": 24,
+      "wall_seconds": 85.16397945402423,
+      "requests_per_second": 0.28180928314835735,
+      "http_errors": 0,
+      "contract_errors": 0,
+      "exact_raw_agreement_with_first_serial": 11,
+      "latency_p50_p95_seconds": [
+        7.980285522527993,
+        11.2420121236064
+      ],
+      "input_tokens": 119712,
+      "output_tokens": 5172,
+      "speedup_over_serial": 2.1699393942804273
+    },
+    "4": {
+      "requests": 24,
+      "wall_seconds": 51.557099765050225,
+      "requests_per_second": 0.46550329846655253,
+      "http_errors": 0,
+      "contract_errors": 0,
+      "exact_raw_agreement_with_first_serial": 14,
+      "latency_p50_p95_seconds": [
+        8.559162841032958,
+        11.36415998522134
+      ],
+      "input_tokens": 119712,
+      "output_tokens": 5202,
+      "speedup_over_serial": 3.584388470901725
+    }
+  },
+  "selected_query_workers": 4,
+  "max_num_seqs": 4,
+  "actual_requests": 72,
+  "selection_rule": "maximum measured throughput among HTTP-error-free settings with no additional contract failures; never ground-truth score selection",
+  "output_note": "temperature/seed fixed; batch scheduling can change exact outputs, agreement is reported",
+  "scope": "fixed real request replay; no autonomous-quality or complete-query speedup claim"
+}

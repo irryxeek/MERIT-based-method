@@ -1,0 +1,35 @@
+{
+  "sources": {
+    "/path/to/workspace/LongVT/reproduction/qvhighlights/lora_sft/data/pilot_dev.jsonl": {
+      "sha256": "7758ed1b5fa1d91b76a28e2016a200644cb2b5e96449cd576a0b2032098e167a",
+      "bytes": 128529
+    },
+    "/path/to/workspace/LongVT/reproduction/qvhighlights/lora_sft/data/pilot_dev_ground_truth.jsonl": {
+      "sha256": "ac70d5b2481671e00dae99e9b67f9ce9106c4124e0a731a4ed525db85a2593b2",
+      "bytes": 56218
+    },
+    "/path/to/workspace/LongVT/reproduction/qvhighlights/lora_sft/data/overlap_audit.json": {
+      "sha256": "9c5c7a3633a08c6119ec7985d962db8b2ba08c8567feae2de1f442dcf1a76bd2",
+      "bytes": 290
+    },
+    "/path/to/workspace/LongVT/reproduction/qvhighlights/manifests/full_validation.json": {
+      "sha256": "9562c40acc639df3fc37d6e5aedd43db0b69e4f152899391f43a61bc2f10217f",
+      "bytes": 833479
+    },
+    "/path/to/workspace/LongVT/reproduction/qvhighlights/manifests/validation_ground_truth.jsonl": {
+      "sha256": "fcc5f9cd46423957ae19749e9b4929481e4a06cba2aaf909510f21623743b7c3",
+      "bytes": 821102
+    }
+  },
+  "dev_rows": 100,
+  "smoke_rows": 8,
+  "validation_rows": 1550,
+  "dev_val_source_overlap": [],
+  "label_fields_removed": [
+    "target_scores",
+    "target_text",
+    "saliency_scores",
+    "relevant_clip_ids",
+    "relevant_windows"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "status": "complete_official_submission",
+  "task": "hd",
+  "coverage": {
+    "planned": 8,
+    "predicted": 8,
+    "missing_qids": []
+  },
+  "official_metrics": {
+    "brief": {
+      "HL-min-Fair-mAP": 54.08,
+      "HL-min-Fair-Hit1": 62.5,
+      "HL-min-Good-mAP": 48.24,
+      "HL-min-Good-Hit1": 62.5,
+      "HL-min-VeryGood-mAP": 33.97,
+      "HL-min-VeryGood-Hit1": 62.5
+    },
+    "HL-min-Fair": {
+      "HL-mAP": 54.08,
+      "HL-Hit1": 62.5
+    },
+    "HL-min-Good": {
+      "HL-mAP": 48.24,
+      "HL-Hit1": 62.5
+    },
+    "HL-min-VeryGood": {
+      "HL-mAP": 33.97,
+      "HL-Hit1": 62.5
+    }
+  },
+  "undefined_duration_groups": [],
+  "custom_full_plan_failure_zero_metrics": {
+    "HL-min-Fair-mAP": 54.07909426353158,
+    "HL-min-Fair-Hit1": 62.5,
+    "HL-min-Good-mAP": 48.235000913597645,
+    "HL-min-Good-Hit1": 62.5,
+    "HL-min-VeryGood-mAP": 33.966186605269336,
+    "HL-min-VeryGood-Hit1": 62.5
+  },
+  "custom_policy": "sum successful official per-query unrounded metrics / original planned query count; missing queries contribute metric zero, never fabricated predictions",
+  "official_log": "",
+  "manifest_sha256": "e0b649014d98a9e318a53bc8dd5ad2113568e5cbb30d80176fe87776eea264e9",
+  "predictions_sha256": "b72f18aaa8a25d3d1f36aae92eb63a9a446cb16b7e9c57d563f6bd4c59f49eb9",
+  "gt_sha256": "fd28404187468f57cf99242be2963127dc9b4aef26c7de3cb9469569801f2625",
+  "predictions_path": "/path/to/storage/videoarm-repro/qvh_data/runs/dev_v2_hd_smoke8_M1/predictions.jsonl",
+  "gt_path": "/path/to/storage/videoarm-repro/reproduction/qvhighlights/external/moment_detr/data/highlight_train_release.jsonl"
+}

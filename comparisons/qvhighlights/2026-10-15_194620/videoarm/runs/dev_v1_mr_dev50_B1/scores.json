@@ -1,0 +1,155 @@
+{
+  "status": "official_success_subset_only",
+  "task": "mr",
+  "coverage": {
+    "planned": 50,
+    "predicted": 40,
+    "missing_qids": [
+      1206,
+      2216,
+      4994,
+      5220,
+      5409,
+      6415,
+      6536,
+      6701,
+      7673,
+      9908
+    ]
+  },
+  "official_metrics": {
+    "brief": {
+      "MR-full-R1@0.5": 50.0,
+      "MR-full-R1@0.7": 27.5,
+      "MR-full-mAP": 24.1,
+      "MR-full-mAP@0.5": 42.73,
+      "MR-full-mAP@0.75": 21.4,
+      "MR-long-mAP": 39.38,
+      "MR-middle-mAP": 25.56,
+      "MR-short-mAP": 0.4
+    },
+    "full": {
+      "MR-mAP": {
+        "0.5": 42.73,
+        "0.55": 32.73,
+        "0.6": 30.85,
+        "0.65": 27.02,
+        "0.7": 24.52,
+        "0.75": 21.4,
+        "0.8": 18.73,
+        "0.85": 18.0,
+        "0.9": 15.0,
+        "0.95": 10.0,
+        "average": 24.1
+      },
+      "MR-R1": {
+        "0.5": 50.0,
+        "0.55": 40.0,
+        "0.6": 37.5,
+        "0.65": 30.0,
+        "0.7": 27.5,
+        "0.75": 25.0,
+        "0.8": 22.5,
+        "0.85": 20.0,
+        "0.9": 15.0,
+        "0.95": 10.0
+      }
+    },
+    "long": {
+      "MR-mAP": {
+        "0.5": 52.08,
+        "0.55": 52.08,
+        "0.6": 52.08,
+        "0.65": 43.75,
+        "0.7": 43.75,
+        "0.75": 41.67,
+        "0.8": 33.33,
+        "0.85": 33.33,
+        "0.9": 25.0,
+        "0.95": 16.67,
+        "average": 39.38
+      },
+      "MR-R1": {
+        "0.5": 50.0,
+        "0.55": 50.0,
+        "0.6": 50.0,
+        "0.65": 41.67,
+        "0.7": 41.67,
+        "0.75": 41.67,
+        "0.8": 33.33,
+        "0.85": 33.33,
+        "0.9": 25.0,
+        "0.95": 16.67
+      }
+    },
+    "middle": {
+      "MR-mAP": {
+        "0.5": 54.62,
+        "0.55": 40.19,
+        "0.6": 35.38,
+        "0.65": 27.69,
+        "0.7": 23.85,
+        "0.75": 20.0,
+        "0.8": 19.23,
+        "0.85": 15.38,
+        "0.9": 11.54,
+        "0.95": 7.69,
+        "average": 25.56
+      },
+      "MR-R1": {
+        "0.5": 53.85,
+        "0.55": 38.46,
+        "0.6": 34.62,
+        "0.65": 26.92,
+        "0.7": 23.08,
+        "0.75": 19.23,
+        "0.8": 19.23,
+        "0.85": 15.38,
+        "0.9": 11.54,
+        "0.95": 7.69
+      }
+    },
+    "short": {
+      "MR-mAP": {
+        "0.5": 1.67,
+        "0.55": 0.38,
+        "0.6": 0.38,
+        "0.65": 0.38,
+        "0.7": 0.38,
+        "0.75": 0.38,
+        "0.8": 0.38,
+        "0.85": 0.0,
+        "0.9": 0.0,
+        "0.95": 0.0,
+        "average": 0.4
+      },
+      "MR-R1": {
+        "0.5": 0.0,
+        "0.55": 0.0,
+        "0.6": 0.0,
+        "0.65": 0.0,
+        "0.7": 0.0,
+        "0.75": 0.0,
+        "0.8": 0.0,
+        "0.85": 0.0,
+        "0.9": 0.0,
+        "0.95": 0.0
+      }
+    }
+  },
+  "undefined_duration_groups": [],
+  "custom_full_plan_failure_zero_metrics": {
+    "MR-full-mAP": 19.278333333333336,
+    "MR-full-mAP@0.5": 34.18333333333334,
+    "MR-full-mAP@0.75": 17.116666666666667,
+    "MR-full-R1@0.5": 40.0,
+    "MR-full-R1@0.7": 22.0
+  },
+  "custom_policy": "sum successful official per-query unrounded metrics / original planned query count; missing queries contribute metric zero, never fabricated predictions",
+  "official_log": "short: [0, 10], 13/40=32.50 examples.\nmiddle: [10, 30], 26/40=65.00 examples.\nlong: [30, 150], 12/40=30.00 examples.\nfull: [0, 150], 40/40=100.00 examples.\n",
+  "manifest_sha256": "4fa88cdbbc35211e68ba27a9b5af61c372c89a33b45d0411b63a9119f3dbc110",
+  "predictions_sha256": "9819df08263954c9d21607f69d4d9c4c0adc7929edfcf5212c2f64199e13edf3",
+  "gt_sha256": "fd28404187468f57cf99242be2963127dc9b4aef26c7de3cb9469569801f2625",
+  "predictions_path": "/path/to/storage/videoarm-repro/qvh_data/runs/dev_v1_mr_dev50_B1/predictions.jsonl",
+  "gt_path": "/path/to/storage/videoarm-repro/reproduction/qvhighlights/external/moment_detr/data/highlight_train_release.jsonl"
+}

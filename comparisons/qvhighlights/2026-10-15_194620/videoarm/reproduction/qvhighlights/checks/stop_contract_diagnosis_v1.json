@@ -1,0 +1,139 @@
+{
+  "checked_at": "2026-10-14T09:32:09.620991+08:00",
+  "completed_controller_responses": 864,
+  "failure_patterns": [
+    {
+      "error": "controller action schema mismatch",
+      "keys": [
+        "action",
+        "end",
+        "start"
+      ],
+      "action": "stop",
+      "finish_reason": "stop",
+      "count": 267
+    }
+  ],
+  "root_cause": "Stop action incorrectly requires tool question; model emits valid JSON with stop/start/end; identical retry repeats missing field",
+  "scope": "engineering development repair before formal val/test; preserve v1 source, config, predictions, scores, requests, budgets and failures",
+  "source_archive": "/path/to/storage/videoarm-repro/reproduction/qvhighlights/archive/v1_stop_contract_20261014_093209",
+  "runs_before_pause": [
+    {
+      "run": "dev_low_v1_mr_dev50_B1",
+      "counts": {
+        "failed": 9,
+        "succeeded": 41
+      }
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "counts": {
+        "failed": 38,
+        "succeeded": 12
+      }
+    },
+    {
+      "run": "dev_v1_hd_dev50_B0",
+      "counts": {
+        "succeeded": 50
+      }
+    },
+    {
+      "run": "dev_v1_hd_dev50_B1",
+      "counts": {
+        "succeeded": 50
+      }
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "counts": {
+        "failed": 28,
+        "pending": 14,
+        "running": 1,
+        "succeeded": 7
+      }
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "counts": {
+        "failed": 6,
+        "succeeded": 2
+      }
+    },
+    {
+      "run": "dev_v1_hd_smoke8_B0",
+      "counts": {
+        "succeeded": 8
+      }
+    },
+    {
+      "run": "dev_v1_hd_smoke8_B1",
+      "counts": {
+        "succeeded": 8
+      }
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "counts": {
+        "failed": 6,
+        "succeeded": 2
+      }
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "counts": {
+        "failed": 38,
+        "succeeded": 12
+      }
+    },
+    {
+      "run": "dev_v1_mr_dev50_B0",
+      "counts": {
+        "failed": 16,
+        "succeeded": 34
+      }
+    },
+    {
+      "run": "dev_v1_mr_dev50_B1",
+      "counts": {
+        "failed": 10,
+        "succeeded": 40
+      }
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "counts": {
+        "failed": 37,
+        "succeeded": 13
+      }
+    },
+    {
+      "run": "dev_v1_mr_smoke8_A1",
+      "counts": {
+        "failed": 6,
+        "succeeded": 2
+      }
+    },
+    {
+      "run": "dev_v1_mr_smoke8_B0",
+      "counts": {
+        "failed": 2,
+        "succeeded": 6
+      }
+    },
+    {
+      "run": "dev_v1_mr_smoke8_B1",
+      "counts": {
+        "failed": 2,
+        "succeeded": 6
+      }
+    },
+    {
+      "run": "dev_v1_mr_smoke8_M1",
+      "counts": {
+        "failed": 6,
+        "succeeded": 2
+      }
+    }
+  ]
+}

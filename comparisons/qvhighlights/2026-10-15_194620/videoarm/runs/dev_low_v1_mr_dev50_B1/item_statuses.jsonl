@@ -1,0 +1,50 @@
+{"qid": 140, "status": "succeeded", "error": null, "updated": 1791933459.027242}
+{"qid": 479, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791933142.5608442}
+{"qid": 1206, "status": "succeeded", "error": null, "updated": 1791932999.1582918}
+{"qid": 1347, "status": "succeeded", "error": null, "updated": 1791933174.625324}
+{"qid": 1441, "status": "succeeded", "error": null, "updated": 1791932555.7403603}
+{"qid": 1491, "status": "succeeded", "error": null, "updated": 1791933512.6764135}
+{"qid": 1680, "status": "succeeded", "error": null, "updated": 1791932879.26158}
+{"qid": 1821, "status": "succeeded", "error": null, "updated": 1791933490.2010176}
+{"qid": 2216, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791933079.4350593}
+{"qid": 2379, "status": "succeeded", "error": null, "updated": 1791932970.9798431}
+{"qid": 2424, "status": "succeeded", "error": null, "updated": 1791933427.0606802}
+{"qid": 2605, "status": "succeeded", "error": null, "updated": 1791933404.792753}
+{"qid": 2953, "status": "succeeded", "error": null, "updated": 1791932391.9373486}
+{"qid": 3084, "status": "succeeded", "error": null, "updated": 1791932600.5579739}
+{"qid": 3788, "status": "succeeded", "error": null, "updated": 1791933192.4683988}
+{"qid": 3823, "status": "succeeded", "error": null, "updated": 1791932524.6379223}
+{"qid": 3839, "status": "succeeded", "error": null, "updated": 1791932834.9674535}
+{"qid": 4276, "status": "succeeded", "error": null, "updated": 1791932693.1287696}
+{"qid": 4994, "status": "succeeded", "error": null, "updated": 1791933101.2264576}
+{"qid": 5095, "status": "succeeded", "error": null, "updated": 1791932411.5431397}
+{"qid": 5220, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791933228.5469403}
+{"qid": 5245, "status": "succeeded", "error": null, "updated": 1791933248.1221623}
+{"qid": 5409, "status": "failed", "error": "ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline", "updated": 1791933125.3672729}
+{"qid": 5549, "status": "succeeded", "error": null, "updated": 1791933295.134972}
+{"qid": 5761, "status": "succeeded", "error": null, "updated": 1791932770.9105372}
+{"qid": 6099, "status": "succeeded", "error": null, "updated": 1791932455.005051}
+{"qid": 6415, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791932352.688579}
+{"qid": 6536, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791932501.7861168}
+{"qid": 6544, "status": "succeeded", "error": null, "updated": 1791932954.367262}
+{"qid": 6680, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791933275.0711339}
+{"qid": 6701, "status": "failed", "error": "ValueError: overview invalid after at most one retry: truncated/nonterminal model response", "updated": 1791933062.7984142}
+{"qid": 6763, "status": "succeeded", "error": null, "updated": 1791932624.076612}
+{"qid": 7184, "status": "succeeded", "error": null, "updated": 1791933360.7908607}
+{"qid": 7593, "status": "succeeded", "error": null, "updated": 1791932579.5411148}
+{"qid": 7673, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791933317.6600153}
+{"qid": 7712, "status": "succeeded", "error": null, "updated": 1791932858.5628815}
+{"qid": 8091, "status": "succeeded", "error": null, "updated": 1791932934.496328}
+{"qid": 8110, "status": "succeeded", "error": null, "updated": 1791933340.2256968}
+{"qid": 8429, "status": "succeeded", "error": null, "updated": 1791932479.6742647}
+{"qid": 8699, "status": "succeeded", "error": null, "updated": 1791933381.196382}
+{"qid": 8796, "status": "succeeded", "error": null, "updated": 1791932432.0249794}
+{"qid": 9121, "status": "succeeded", "error": null, "updated": 1791932746.5076618}
+{"qid": 9199, "status": "succeeded", "error": null, "updated": 1791932641.7289677}
+{"qid": 9217, "status": "succeeded", "error": null, "updated": 1791933213.283184}
+{"qid": 9233, "status": "succeeded", "error": null, "updated": 1791932817.6563747}
+{"qid": 9291, "status": "succeeded", "error": null, "updated": 1791932374.1553903}
+{"qid": 9517, "status": "succeeded", "error": null, "updated": 1791932794.6598327}
+{"qid": 9908, "status": "succeeded", "error": null, "updated": 1791932915.0454242}
+{"qid": 10227, "status": "succeeded", "error": null, "updated": 1791932664.3040986}
+{"qid": 10284, "status": "succeeded", "error": null, "updated": 1791932894.2820802}

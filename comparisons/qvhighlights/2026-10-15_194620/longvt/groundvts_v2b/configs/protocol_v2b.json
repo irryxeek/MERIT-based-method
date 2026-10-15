@@ -1,0 +1,57 @@
+{
+  "experiment_id": "longvt_qvhighlights_groundvts_clipspan_inference_v2b",
+  "seed": 42,
+  "tracking": "disabled",
+  "model": {
+    "repository": "longvideotool/LongVT-RFT",
+    "revision": "16ed9314e4ea600dc4682b172a614252f2f383ad",
+    "local_path": "/path/to/storage/longvt-repro/cache/huggingface/hub/models--longvideotool--LongVT-RFT/snapshots/16ed9314e4ea600dc4682b172a614252f2f383ad",
+    "dtype": "bfloat16",
+    "tensor_parallel_size": 2,
+    "max_model_len": 65536,
+    "physical_gpu_indices": [6, 7],
+    "served_model_name": "longvideotool/LongVT-RFT"
+  },
+  "data": {
+    "clip_seconds": 2.0,
+    "global_max_frames": 64,
+    "local_max_frames": 32,
+    "max_pixels": 50176,
+    "evaluation_scope": "all 1550 official QVHighlights validation queries",
+    "dev_source": "source-video-grouped train-derived pilot_dev, 100 queries",
+    "inference_manifest_fields_only": ["qid", "vid", "query", "source_video_id", "source_start_seconds", "source_end_seconds", "duration", "num_clips", "video_path", "actual_duration", "media_timeline", "media_source"]
+  },
+  "output_protocol": {
+    "type": "strict_json_2s_clip_spans",
+    "span_encoding": "start_clip:end_clip_exclusive",
+    "span_constraint": "compact_regex_pattern_for_all_legal_ranges",
+    "levels": {"very_important": 4, "important": 3, "less_important": 2},
+    "unlisted_clip_score": 0,
+    "overlap_resolution": "maximum_score",
+    "order_canonicalization": "sort_by_start_clip_losslessly_and_record",
+    "format_retries": 1,
+    "failure_fallback": "all_zero",
+    "evidence_max_tokens": 768,
+    "final_max_tokens": 2048
+  },
+  "inference": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 42,
+    "request_timeout_seconds": 1200,
+    "infra_retries": 2,
+    "max_tool_calls": 2,
+    "tool_enabled_condition": "tool",
+    "global_condition": "global",
+    "structured_outputs_backend": "xgrammar",
+    "structured_outputs_disable_fallback": true,
+    "crop_start_must_be_below_official_duration": true,
+    "crop_end_clamped_to_official_duration": true,
+    "crop_frames_at_or_after_official_duration_dropped": true
+  },
+  "evaluator": {
+    "repository": "/path/to/storage/longvt-repro/benchmark_sources/moment_detr",
+    "commit": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca",
+    "hit1_tie_rule": "official_numpy_argmax_first"
+  }
+}

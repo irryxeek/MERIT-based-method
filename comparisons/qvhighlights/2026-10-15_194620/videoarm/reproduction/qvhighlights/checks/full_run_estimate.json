@@ -1,0 +1,32 @@
+{
+  "mr_M1": {
+    "measured_dev_queries": 50,
+    "successful_dev_queries": 37,
+    "query_workers": 4,
+    "measured_dev_wall_seconds": 508.6885432470008,
+    "seconds_per_query_observed_wall": 10.173770864940016,
+    "seconds_per_query_cold_initializer_correction": 1.9271106702795548,
+    "seconds_per_planned_query": 12.100881535219571,
+    "val_hours": 5.210101772108426,
+    "test_hours": 5.183210924252383,
+    "allocated_gpu_hours_val_tp2": 10.420203544216852,
+    "tokens_per_query": 28913.88,
+    "dev_disk_bytes": 73641286,
+    "caveat": "end-to-end development wall throughput plus approximate cold initialization correction from replay benchmark; failures can bias low"
+  },
+  "hd_M1": {
+    "measured_dev_queries": 50,
+    "successful_dev_queries": 45,
+    "query_workers": 4,
+    "measured_dev_wall_seconds": 428.76282656699186,
+    "seconds_per_query_observed_wall": 8.575256531339837,
+    "seconds_per_query_cold_initializer_correction": 11.182207195765923,
+    "seconds_per_planned_query": 19.75746372710576,
+    "val_hours": 8.506685771392757,
+    "test_hours": 8.462780296443633,
+    "allocated_gpu_hours_val_tp2": 17.013371542785514,
+    "tokens_per_query": 39554.04,
+    "dev_disk_bytes": 143626960,
+    "caveat": "end-to-end development wall throughput plus approximate cold initialization correction from replay benchmark; failures can bias low"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "verified_at": "2026-10-15T19:49:58+08:00",
+  "source_artifacts_verified": 480,
+  "source_files_rechecked": true,
+  "longvt_complete_prediction_runs": 4,
+  "longvt_predictions": 6200,
+  "longvt_metrics_recomputed_and_matched": 4,
+  "longvt_frozen_source_files_checked": [
+    "longvt/compact_v1/scripts/inference_common.py",
+    "longvt/compact_v1/scripts/run_inference.py",
+    "longvt/groundvts_v2b/scripts/interval_protocol_v2.py",
+    "longvt/groundvts_v2b/scripts/run_interval_inference.py"
+  ],
+  "videoarm_runs_validated": 28,
+  "videoarm_sqlite_backups_quick_check": "all_ok_at_backup",
+  "common_available_hd_predictions": 419,
+  "common_native_success_hd_predictions": 405,
+  "annotation_semantic_equality": true,
+  "limitations": [
+    "VideoARM HD full-validation score is unavailable; no new partial score is presented.",
+    "No new inference, training, selected reruns, or resumption of paused jobs.",
+    "Current MERIT predictions were not copied or scored while the main experiment is active."
+  ],
+  "verification_scope": "Historical verification of the original local archive before public redaction; see publication_verification.json for the public export."
+}

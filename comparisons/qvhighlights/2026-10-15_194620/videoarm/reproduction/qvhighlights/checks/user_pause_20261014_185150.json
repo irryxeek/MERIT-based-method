@@ -1,0 +1,77 @@
+{
+  "paused_at": "2026-10-14T18:51:50.717931+08:00",
+  "request": "暂停当前任务，释放gpu",
+  "status": "paused_by_user",
+  "worker": {
+    "status": "paused_by_user_or_service_stop",
+    "phase": "P3",
+    "started_unix": 1791945461.1843517,
+    "heartbeat_unix": 1791946137.29793,
+    "task": "hd",
+    "split": "val",
+    "method": "M1",
+    "run_id": "formal_c0c8ae9799ad_hd_val_M1",
+    "updated_unix": 1791975001.380026
+  },
+  "worker_service": {
+    "MainPID": "0",
+    "ActiveState": "inactive",
+    "SubState": "dead",
+    "UnitFileState": "disabled"
+  },
+  "model_and_telemetry_services": "stopped and transient units collected",
+  "released_gpus": [
+    {
+      "index": 4,
+      "uuid": "GPU-REDACTED-04",
+      "memory_mib": 18,
+      "utilization_percent": 0
+    },
+    {
+      "index": 5,
+      "uuid": "GPU-REDACTED-03",
+      "memory_mib": 18,
+      "utilization_percent": 0
+    }
+  ],
+  "gpu_compute_processes_present": false,
+  "auto_start_disabled": true,
+  "runs": [
+    {
+      "run_id": "formal_c0c8ae9799ad_hd_val_M1",
+      "statuses": {
+        "failed": 34,
+        "paused": 4,
+        "pending": 1093,
+        "succeeded": 419
+      },
+      "requests": {
+        "completed": 3275
+      },
+      "paused_qids": [
+        6590,
+        6656,
+        9684,
+        10033
+      ],
+      "prediction_sha256": "c9a3edda37f7282bec430e19b6c64a66ac2aabb741d37cfc808ae5286b22c577"
+    },
+    {
+      "run_id": "formal_c0c8ae9799ad_mr_val_M1",
+      "statuses": {
+        "failed": 437,
+        "succeeded": 1113
+      },
+      "requests": {
+        "completed": 7056
+      },
+      "paused_qids": [],
+      "prediction_sha256": "cf5a482b6f2e56da40d9bfafad335c2c63648c86216d5600d302aa7035db418b"
+    }
+  ],
+  "frozen_code_drift": [],
+  "retained": "code/config/logs/predictions/SQLite checkpoints/request budgets and original frame evidence",
+  "resume_requires": "user instruction to resume; same protocol and existing state",
+  "svhighlights": "remains paused; no SVHighlights service changed",
+  "other_users": "no commands sent to other-user GPU processes"
+}

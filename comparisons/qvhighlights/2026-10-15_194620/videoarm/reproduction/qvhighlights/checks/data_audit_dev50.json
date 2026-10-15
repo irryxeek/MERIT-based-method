@@ -1,0 +1,105 @@
+{
+  "annotation_sha256": {
+    "train": "fd28404187468f57cf99242be2963127dc9b4aef26c7de3cb9469569801f2625",
+    "val": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02",
+    "test": "0462f0cb582b54913671ba5ebfc325931ffa6d422c60cb72520749fc6d5d05a3"
+  },
+  "splits": {
+    "train": {
+      "queries": 7218,
+      "segments": 7100,
+      "source_videos": 2214,
+      "media_queries": 7218,
+      "missing_qids": []
+    },
+    "val": {
+      "queries": 1550,
+      "segments": 1519,
+      "source_videos": 474,
+      "media_queries": 1550,
+      "missing_qids": []
+    },
+    "test": {
+      "queries": 1542,
+      "segments": 1529,
+      "source_videos": 476,
+      "media_queries": 1542,
+      "missing_qids": []
+    }
+  },
+  "sampling": {
+    "seed": 42,
+    "algorithm": "SHA256 of canonical JSON [42,source,source_id]; first query per source ranked by SHA256 [42,query,qid,vid]; first 50 sources; smoke first 8",
+    "dev50_qids": [
+      6415,
+      9291,
+      2953,
+      5095,
+      8796,
+      6099,
+      8429,
+      6536,
+      3823,
+      1441,
+      7593,
+      3084,
+      6763,
+      9199,
+      10227,
+      4276,
+      9121,
+      5761,
+      9517,
+      9233,
+      3839,
+      7712,
+      1680,
+      10284,
+      9908,
+      8091,
+      6544,
+      2379,
+      1206,
+      6701,
+      2216,
+      4994,
+      5409,
+      479,
+      1347,
+      3788,
+      9217,
+      5220,
+      5245,
+      6680,
+      5549,
+      7673,
+      8110,
+      7184,
+      8699,
+      2605,
+      2424,
+      140,
+      1821,
+      1491
+    ],
+    "smoke8_qids": [
+      6415,
+      9291,
+      2953,
+      5095,
+      8796,
+      6099,
+      8429,
+      6536
+    ],
+    "train_sha256": "fd28404187468f57cf99242be2963127dc9b4aef26c7de3cb9469569801f2625"
+  },
+  "media_root": "/path/to/storage/longvt-repro/benchmark_data/QVHighlights/videos_full/videos",
+  "data_root": "/path/to/storage/videoarm-repro/qvh_data",
+  "probe_mode": "dev50",
+  "probe": {
+    "planned": 50,
+    "passed": 49,
+    "failed": 1
+  }
+}

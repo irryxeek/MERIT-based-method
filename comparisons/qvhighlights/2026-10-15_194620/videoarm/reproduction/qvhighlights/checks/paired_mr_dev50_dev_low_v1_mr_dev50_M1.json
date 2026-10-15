@@ -1,0 +1,715 @@
+{
+  "costs": {
+    "/path/to/storage/videoarm-repro/qvh_data/runs/dev_low_v1_mr_dev50_B1": {
+      "planned": 50,
+      "succeeded": 41,
+      "failures": [
+        {
+          "qid": 479,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 2216,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 5220,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 5409,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline"
+        },
+        {
+          "qid": 6415,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6536,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6680,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6701,
+          "status": "failed",
+          "error": "ValueError: overview invalid after at most one retry: truncated/nonterminal model response"
+        },
+        {
+          "qid": 7673,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        }
+      ],
+      "totals": {
+        "requests": 359,
+        "controllers": 0,
+        "images": 5616,
+        "input_tokens": 1175457,
+        "output_tokens": 26904,
+        "local_frames": 2940,
+        "active_seconds": 1178.9458671842585,
+        "retries": 15,
+        "cache_hits": 0,
+        "shared_cache_hits": 49,
+        "actual_requests": 310,
+        "actual_images": 4440,
+        "actual_input_tokens": 955875,
+        "actual_output_tokens": 18976,
+        "uncertain_requests": 0
+      },
+      "unique_frames_sum_over_queries": 4140,
+      "elapsed_p50_p95_seconds": [
+        22.17684010748053,
+        32.00870546206424
+      ],
+      "tool_frequency": {
+        "clip_analyzer": 245
+      },
+      "early_stop_queries": 0,
+      "requests_with_uncertain_usage": 0,
+      "format_or_contract_failures": 29,
+      "empty_mr_responses": 14,
+      "truncated_responses": 2,
+      "budget_interrupted_queries": 0,
+      "mr_candidates_without_direct_sample_pts": 0,
+      "cold_equivalent_model_request_seconds": 1283.7115236634272,
+      "peak_gpu_memory_mib": 41262,
+      "gpu_hours": 0.6549699262134769,
+      "gpu_telemetry_note": "TP2 allocated GPU hours over active query work; excludes startup/idle; peak is sum of two GPU allocations sampled every 5 seconds, may miss brief spikes"
+    },
+    "/path/to/storage/videoarm-repro/qvh_data/runs/dev_low_v1_mr_dev50_M1": {
+      "planned": 50,
+      "succeeded": 12,
+      "failures": [
+        {
+          "qid": 140,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 479,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 1206,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 1441,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 1680,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 1821,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 2216,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 2424,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 2605,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 3084,
+          "status": "failed",
+          "error": "ValueError: controller_3 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 3788,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 3823,
+          "status": "failed",
+          "error": "ValueError: controller_3 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 4276,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 4994,
+          "status": "failed",
+          "error": "ValueError: controller_4 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 5095,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 5245,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 5409,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 5549,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6099,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6415,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6536,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 6544,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 6701,
+          "status": "failed",
+          "error": "ValueError: overview invalid after at most one retry: truncated/nonterminal model response"
+        },
+        {
+          "qid": 6763,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 7184,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 7593,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 7673,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8091,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8110,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8429,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8699,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 8796,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9199,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9291,
+          "status": "failed",
+          "error": "ValueError: controller_4 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9517,
+          "status": "failed",
+          "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 9908,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        },
+        {
+          "qid": 10227,
+          "status": "failed",
+          "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch"
+        },
+        {
+          "qid": 10284,
+          "status": "failed",
+          "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query"
+        }
+      ],
+      "totals": {
+        "requests": 397,
+        "controllers": 188,
+        "images": 7968,
+        "input_tokens": 1767397,
+        "output_tokens": 25127,
+        "local_frames": 1548,
+        "active_seconds": 1107.9710108482977,
+        "retries": 40,
+        "cache_hits": 0,
+        "shared_cache_hits": 49,
+        "actual_requests": 348,
+        "actual_images": 6792,
+        "actual_input_tokens": 1547815,
+        "actual_output_tokens": 17199,
+        "uncertain_requests": 0
+      },
+      "unique_frames_sum_over_queries": 1716,
+      "elapsed_p50_p95_seconds": [
+        23.342776103003416,
+        49.56170228464761
+      ],
+      "tool_frequency": {
+        "clip_analyzer": 127,
+        "scene_snapper": 2
+      },
+      "early_stop_queries": 0,
+      "requests_with_uncertain_usage": 0,
+      "format_or_contract_failures": 79,
+      "empty_mr_responses": 16,
+      "truncated_responses": 2,
+      "budget_interrupted_queries": 20,
+      "mr_candidates_without_direct_sample_pts": 0,
+      "cold_equivalent_model_request_seconds": 1294.418366502854,
+      "peak_gpu_memory_mib": 41262,
+      "gpu_hours": 0.6155394504712766,
+      "gpu_telemetry_note": "TP2 allocated GPU hours over active query work; excludes startup/idle; peak is sum of two GPU allocations sampled every 5 seconds, may miss brief spikes"
+    }
+  },
+  "paired": {
+    "planned": 50,
+    "common_success": 10,
+    "common_coverage": 0.2,
+    "common_success_ci": {
+      "MR-full-mAP": {
+        "estimate": -3.425,
+        "ci95": [
+          -16.06729166666667,
+          10.241666666666665
+        ],
+        "clusters": 10,
+        "queries": 10,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-mAP@0.5": {
+        "estimate": -11.333333333333334,
+        "ci95": [
+          -43.0,
+          15.666666666666666
+        ],
+        "clusters": 10,
+        "queries": 10,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-mAP@0.75": {
+        "estimate": 1.2500000000000007,
+        "ci95": [
+          -9.999999999999998,
+          14.583333333333334
+        ],
+        "clusters": 10,
+        "queries": 10,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-R1@0.5": {
+        "estimate": 0.0,
+        "ci95": [
+          -40.0,
+          40.0
+        ],
+        "clusters": 10,
+        "queries": 10,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-R1@0.7": {
+        "estimate": -10.0,
+        "ci95": [
+          -30.0,
+          0.0
+        ],
+        "clusters": 10,
+        "queries": 10,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      }
+    },
+    "custom_full_plan_failure_zero_ci": {
+      "MR-full-mAP": {
+        "estimate": -4.668333333333333,
+        "ci95": [
+          -9.3435,
+          -0.5232500000000012
+        ],
+        "clusters": 50,
+        "queries": 50,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-mAP@0.5": {
+        "estimate": -14.566666666666665,
+        "ci95": [
+          -24.867499999999996,
+          -4.733333333333333
+        ],
+        "clusters": 50,
+        "queries": 50,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-mAP@0.75": {
+        "estimate": -1.75,
+        "ci95": [
+          -6.75,
+          2.0833333333333335
+        ],
+        "clusters": 50,
+        "queries": 50,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-R1@0.5": {
+        "estimate": -12.0,
+        "ci95": [
+          -24.0,
+          0.0
+        ],
+        "clusters": 50,
+        "queries": 50,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      },
+      "MR-full-R1@0.7": {
+        "estimate": -4.0,
+        "ci95": [
+          -10.0,
+          0.0
+        ],
+        "clusters": 50,
+        "queries": 50,
+        "resamples": 10000,
+        "seed": 42,
+        "unit": "source YouTube video; all its queries stay together",
+        "warning": "small development set; CI excludes systematic model and annotation bias"
+      }
+    },
+    "official_common_success_scores": {
+      "B1": {
+        "brief": {
+          "MR-full-R1@0.5": 30.0,
+          "MR-full-R1@0.7": 10.0,
+          "MR-full-mAP": 8.79,
+          "MR-full-mAP@0.5": 25.0,
+          "MR-full-mAP@0.75": 3.75,
+          "MR-long-mAP": 0.0,
+          "MR-middle-mAP": 20.0,
+          "MR-short-mAP": 1.9
+        },
+        "full": {
+          "MR-mAP": {
+            "0.5": 25.0,
+            "0.55": 15.0,
+            "0.6": 15.0,
+            "0.65": 15.0,
+            "0.7": 3.75,
+            "0.75": 3.75,
+            "0.8": 3.75,
+            "0.85": 3.33,
+            "0.9": 3.33,
+            "0.95": 0.0,
+            "average": 8.79
+          },
+          "MR-R1": {
+            "0.5": 30.0,
+            "0.55": 20.0,
+            "0.6": 20.0,
+            "0.65": 20.0,
+            "0.7": 10.0,
+            "0.75": 10.0,
+            "0.8": 10.0,
+            "0.85": 10.0,
+            "0.9": 10.0,
+            "0.95": 0.0
+          }
+        },
+        "long": {
+          "MR-mAP": {
+            "0.5": 0.0,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0,
+            "average": 0.0
+          },
+          "MR-R1": {
+            "0.5": 0.0,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0
+          }
+        },
+        "middle": {
+          "MR-mAP": {
+            "0.5": 42.86,
+            "0.55": 28.57,
+            "0.6": 28.57,
+            "0.65": 28.57,
+            "0.7": 14.29,
+            "0.75": 14.29,
+            "0.8": 14.29,
+            "0.85": 14.29,
+            "0.9": 14.29,
+            "0.95": 0.0,
+            "average": 20.0
+          },
+          "MR-R1": {
+            "0.5": 42.86,
+            "0.55": 28.57,
+            "0.6": 28.57,
+            "0.65": 28.57,
+            "0.7": 14.29,
+            "0.75": 14.29,
+            "0.8": 14.29,
+            "0.85": 14.29,
+            "0.9": 14.29,
+            "0.95": 0.0
+          }
+        },
+        "short": {
+          "MR-mAP": {
+            "0.5": 4.0,
+            "0.55": 4.0,
+            "0.6": 4.0,
+            "0.65": 4.0,
+            "0.7": 1.0,
+            "0.75": 1.0,
+            "0.8": 1.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0,
+            "average": 1.9
+          },
+          "MR-R1": {
+            "0.5": 0.0,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0
+          }
+        }
+      },
+      "M1": {
+        "brief": {
+          "MR-full-R1@0.5": 30.0,
+          "MR-full-R1@0.7": 0.0,
+          "MR-full-mAP": 5.37,
+          "MR-full-mAP@0.5": 13.67,
+          "MR-full-mAP@0.75": 5.0,
+          "MR-long-mAP": 15.0,
+          "MR-middle-mAP": 2.14,
+          "MR-short-mAP": 1.0
+        },
+        "full": {
+          "MR-mAP": {
+            "0.5": 13.67,
+            "0.55": 5.0,
+            "0.6": 5.0,
+            "0.65": 5.0,
+            "0.7": 5.0,
+            "0.75": 5.0,
+            "0.8": 5.0,
+            "0.85": 5.0,
+            "0.9": 5.0,
+            "0.95": 0.0,
+            "average": 5.37
+          },
+          "MR-R1": {
+            "0.5": 30.0,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0
+          }
+        },
+        "long": {
+          "MR-mAP": {
+            "0.5": 16.67,
+            "0.55": 16.67,
+            "0.6": 16.67,
+            "0.65": 16.67,
+            "0.7": 16.67,
+            "0.75": 16.67,
+            "0.8": 16.67,
+            "0.85": 16.67,
+            "0.9": 16.67,
+            "0.95": 0.0,
+            "average": 15.0
+          },
+          "MR-R1": {
+            "0.5": 0.0,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0
+          }
+        },
+        "middle": {
+          "MR-mAP": {
+            "0.5": 21.43,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0,
+            "average": 2.14
+          },
+          "MR-R1": {
+            "0.5": 28.57,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0
+          }
+        },
+        "short": {
+          "MR-mAP": {
+            "0.5": 10.0,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0,
+            "average": 1.0
+          },
+          "MR-R1": {
+            "0.5": 20.0,
+            "0.55": 0.0,
+            "0.6": 0.0,
+            "0.65": 0.0,
+            "0.7": 0.0,
+            "0.75": 0.0,
+            "0.8": 0.0,
+            "0.85": 0.0,
+            "0.9": 0.0,
+            "0.95": 0.0
+          }
+        }
+      }
+    }
+  },
+  "owned_service_gpu_telemetry": {
+    "start_unix": 1791926059.710651,
+    "observed_until_unix": 1791934621.4586892,
+    "peak_memory_per_gpu_mib": {
+      "GPU-REDACTED-03": 20631,
+      "GPU-REDACTED-04": 20631
+    },
+    "allocated_gpu_hours": 4.7565266889996,
+    "scope": "QVH-owned service lifetime, including startup and idle time; GPU memory includes server allocation"
+  }
+}

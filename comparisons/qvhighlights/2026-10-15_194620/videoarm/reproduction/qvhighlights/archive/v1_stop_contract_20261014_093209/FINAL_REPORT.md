@@ -1,0 +1,186 @@
+# VideoARM 在 QVHighlights 上的开源模型迁移评测
+
+产物核对时间：2026-10-14 09:15:45 +0800。依据文件和独立 SQLite 状态库生成。
+
+已实现独立 MR/HD 推理、标签隔离、PTS 采样、记忆摘要、B0/B1/M1/A1、预算、恢复、严格预测校验、固定官方评分和源视频聚类 bootstrap。
+
+离线验证：`{"status": "passed", "count": 32, "pytest_log": "reproduction/qvhighlights/logs/pytest_final_checked.log", "ruff_log": "reproduction/qvhighlights/logs/ruff_final_checked.log", "scope": "isolated QVH CPU regression tests and F/E9 static checks; no real model inference", "verified_unix": 1791909500.0972106}`。真实自主运行数据库 17；已有评分文件 14；执行状态 `running`。
+
+真实推理和完整评测仅按下表及 progress.json 认定。作者示例和 CPU 合成测试不属于本方法成绩。空表表示暂无已评分真实运行。
+
+| run_id | 提交状态 | 成功/计划 query | 官方指标 |
+|---|---|---:|---|
+| dev_low_v1_mr_dev50_B1 | official_success_subset_only | 41/50 | {"MR-full-R1@0.5": 21.95, "MR-full-R1@0.7": 4.88, "MR-full-mAP": 7.0, "MR-full-mAP@0.5": 21.1, "MR-full-mAP@0.75": 3.35, "MR-long-mAP": 6.92, "MR-middle-mAP": 10.71, "MR-short-mAP": 0.73} |
+| dev_low_v1_mr_dev50_M1 | official_success_subset_only | 12/50 | {"MR-full-R1@0.5": 25.0, "MR-full-R1@0.7": 0.0, "MR-full-mAP": 4.47, "MR-full-mAP@0.5": 11.39, "MR-full-mAP@0.75": 4.17, "MR-long-mAP": 11.25, "MR-middle-mAP": 1.88, "MR-short-mAP": 1.0} |
+| dev_v1_hd_smoke8_A1 | official_success_subset_only | 2/8 | {"HL-min-Fair-mAP": 32.86, "HL-min-Fair-Hit1": 50.0, "HL-min-Good-mAP": 22.37, "HL-min-Good-Hit1": 50.0, "HL-min-VeryGood-mAP": 9.13, "HL-min-VeryGood-Hit1": 50.0} |
+| dev_v1_hd_smoke8_B0 | complete_official_submission | 8/8 | {"HL-min-Fair-mAP": 54.09, "HL-min-Fair-Hit1": 62.5, "HL-min-Good-mAP": 45.68, "HL-min-Good-Hit1": 62.5, "HL-min-VeryGood-mAP": 33.64, "HL-min-VeryGood-Hit1": 62.5} |
+| dev_v1_hd_smoke8_B1 | complete_official_submission | 8/8 | {"HL-min-Fair-mAP": 61.42, "HL-min-Fair-Hit1": 50.0, "HL-min-Good-mAP": 52.71, "HL-min-Good-Hit1": 50.0, "HL-min-VeryGood-mAP": 36.19, "HL-min-VeryGood-Hit1": 50.0} |
+| dev_v1_hd_smoke8_M1 | official_success_subset_only | 2/8 | {"HL-min-Fair-mAP": 24.98, "HL-min-Fair-Hit1": 50.0, "HL-min-Good-mAP": 18.62, "HL-min-Good-Hit1": 50.0, "HL-min-VeryGood-mAP": 4.97, "HL-min-VeryGood-Hit1": 0.0} |
+| dev_v1_mr_dev50_A1 | official_success_subset_only | 12/50 | {"MR-full-R1@0.5": 25.0, "MR-full-R1@0.7": 0.0, "MR-full-mAP": 5.5, "MR-full-mAP@0.5": 18.33, "MR-full-mAP@0.75": 4.17, "MR-long-mAP": 11.25, "MR-middle-mAP": 1.88, "MR-short-mAP": 1.88} |
+| dev_v1_mr_dev50_B0 | official_success_subset_only | 34/50 | {"MR-full-R1@0.5": 35.29, "MR-full-R1@0.7": 17.65, "MR-full-mAP": 17.55, "MR-full-mAP@0.5": 32.6, "MR-full-mAP@0.75": 17.4, "MR-long-mAP": 40.56, "MR-middle-mAP": 12.72, "MR-short-mAP": 2.27} |
+| dev_v1_mr_dev50_B1 | official_success_subset_only | 40/50 | {"MR-full-R1@0.5": 50.0, "MR-full-R1@0.7": 27.5, "MR-full-mAP": 24.1, "MR-full-mAP@0.5": 42.73, "MR-full-mAP@0.75": 21.4, "MR-long-mAP": 39.38, "MR-middle-mAP": 25.56, "MR-short-mAP": 0.4} |
+| dev_v1_mr_dev50_M1 | official_success_subset_only | 13/50 | {"MR-full-R1@0.5": 15.38, "MR-full-R1@0.7": 7.69, "MR-full-mAP": 7.62, "MR-full-mAP@0.5": 9.23, "MR-full-mAP@0.75": 8.46, "MR-long-mAP": 22.5, "MR-middle-mAP": 5.62, "MR-short-mAP": 0.0} |
+| dev_v1_mr_smoke8_A1 | official_success_subset_only | 2/8 | {"MR-full-mAP": 7.5, "MR-full-mAP@0.5": 75.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 100.0, "MR-full-R1@0.7": 0.0, "MR-short-mAP": null, "MR-middle-mAP": 7.5, "MR-long-mAP": null} |
+| dev_v1_mr_smoke8_B0 | official_success_subset_only | 6/8 | {"MR-full-R1@0.5": 33.33, "MR-full-R1@0.7": 33.33, "MR-full-mAP": 17.92, "MR-full-mAP@0.5": 29.17, "MR-full-mAP@0.75": 20.83, "MR-long-mAP": 70.0, "MR-middle-mAP": 18.0, "MR-short-mAP": 0.0} |
+| dev_v1_mr_smoke8_B1 | official_success_subset_only | 6/8 | {"MR-full-R1@0.5": 66.67, "MR-full-R1@0.7": 33.33, "MR-full-mAP": 22.08, "MR-full-mAP@0.5": 58.33, "MR-full-mAP@0.75": 20.83, "MR-long-mAP": 90.0, "MR-middle-mAP": 18.5, "MR-short-mAP": 0.83} |
+| dev_v1_mr_smoke8_M1 | official_success_subset_only | 2/8 | {"MR-full-mAP": 0.0, "MR-full-mAP@0.5": 0.0, "MR-full-mAP@0.75": 0.0, "MR-full-R1@0.5": 0.0, "MR-full-R1@0.7": 0.0, "MR-short-mAP": null, "MR-middle-mAP": 0.0, "MR-long-mAP": null} |
+
+## 数据与时间轴
+
+| split | query | 数据集片段 | 源 YouTube 视频 | 有媒体 query |
+|---|---:|---:|---:|---:|
+| train | 7218 | 7100 | 2214 | 7218 |
+| val | 1550 | 1519 | 474 | 1550 |
+| test | 1542 | 1529 | 476 | 1542 |
+
+dev50 完整 PTS 与首尾解码通过 50/50；全量检查 10148/10148，失败 0。
+
+初始 0.25 秒一致性检查隔离 222 个片段；标注减媒体时长差异 −0.411078 至 1.742875 秒，原始检查保留。登记的 identity-PTS 映射要求每个官方 clip 有真实帧，不改变标注、像素或 clip 数量。部分末尾片段的可见时长不足 2 秒；单帧不能证明整段动作。预测与解码使用当前数据集片段起点，不叠加文件名中的源偏移。
+
+## 评测、成本与方法限制
+
+固定官方评测器 commit `b7e553ac3b0c898ee6b85e03ee507c064eab89ca`。作者 1,550-query 示例结果与参考文件完全一致，这只验证评测器安装。逐 query 使用同一官方 AP/IoU/三位标注者函数，并核对聚合。开发子集缺少某个时长组时，该组为未定义，使用非空组的官方函数，未修改官方文件。
+
+完整合法覆盖才标记完整官方提交；部分结果另外报告 B1/M1 共同成功子集和原计划分母的失败指标记零自定义汇总。不会伪造预测使评测运行。常量或全零 HD 向量仍有官方排序分数，不能直接当作零指标。配对 bootstrap 保留原始精度，seed=42、10,000 次，按源 YouTube 视频聚类。
+
+此次 sensory/result/working-objective 表达与论文 HM³ 及公开代码的三个工具列表存在差异。working 只保留短行动目的；时间范围工具接口、独立 MR/HD 输出、HD 全片初始化与固定摘要为任务适配，不称为论文所有机制或其 QVHighlights 分数的完整恢复。详见 METHOD_DELTA.md。
+
+A1 只传不可变初始化、最新工具语义和去语义化覆盖记账。HD 累积输出分数保存在程序状态中，不交回 Controller；MR 最终聚合也只看最新工具记录。历史像素和全文保留在旁路 trace，A1 无回查接口。
+
+预算默认高点为 120 局部帧；登记低点为 60 局部帧、每动作最多 12 帧，B1 仍执行五个均匀局部观察，窗口宽度缩至默认 0.6，HD 区间按完整 clip 对齐。这是开发成本敏感性实验，不能声称两方法总计算完全匹配。
+
+真实 smoke/dev 成本测量后才生成 checks/full_run_estimate.json，提供完整 val/test 的时间、存储和 GPU 小时估计；该文件缺失时，没有实测估计。冷启动请求/token/图像和共享初始化后的实际新增成本分别记账。GPU 服务监控包含启动和空闲时间。
+
+## 剩余问题与恢复
+
+执行阻塞：`{"status": "running", "phase": "P2", "free_indices": [6]}`。实时资源见 checks/gpu_readiness.json；仅空闲且无计算进程的两张 GPU 可用于默认 BF16 TP=2。
+
+独立 videoarm-qvh-worker.service 等待资源，通过真实 binding/forced 接口检查后执行自主 smoke8/dev50、低/高预算诊断，保存估时、冻结、val/test 预测、评分和报告。接口错误会保存具体原因并停止该依赖阶段，不清零预算或用新的正式 run_id 重试。videoarm-qvh-media-audit.service 独立完成 CPU 审计。
+
+现有 SVHighlights 推理继续暂停；其源码、配置、timer、ledger 和预测保持冻结。所有环境、运行、评分、恢复和暂停命令见 README.md。尚未完成的工作由 progress.json 和各 run/state.sqlite 标识；工程完成不能代替真实推理验收。
+
+## B1/M1 配对统计与实际成本
+
+下表为 M1−B1，单位为百分点；共同成功集与自定义全计划失败记零口径分开。原始完整指标、三阈值 HD 与覆盖率均在 checks/paired_*.json。暂无真实结果时，下表为空。
+
+| 比较文件 | 口径 | 指标 | 差值 | 95% CI | 有效源视频簇 |
+|---|---|---|---:|---|---:|
+| paired_hd_smoke8_dev_v1_hd_smoke8_M1.json | common_success_ci | HL-min-Fair-mAP | -7.791358121546797 | [-10.498575498575496, -5.084140744518098] | 2 |
+| paired_hd_smoke8_dev_v1_hd_smoke8_M1.json | common_success_ci | HL-min-Fair-Hit1 | 0.0 | [0.0, 0.0] | 2 |
+| paired_hd_smoke8_dev_v1_hd_smoke8_M1.json | common_success_ci | HL-min-Good-mAP | -3.2430763812561825 | [-4.515669515669519, -1.9704832468428468] | 2 |
+| paired_hd_smoke8_dev_v1_hd_smoke8_M1.json | common_success_ci | HL-min-Good-Hit1 | 0.0 | [0.0, 0.0] | 2 |
+| paired_hd_smoke8_dev_v1_hd_smoke8_M1.json | common_success_ci | HL-min-VeryGood-mAP | -3.731496586657519 | [-5.982905982905982, -1.4800871904090553] | 2 |
+| paired_hd_smoke8_dev_v1_hd_smoke8_M1.json | common_success_ci | HL-min-VeryGood-Hit1 | -50.0 | [-100.0, 0.0] | 2 |
+| paired_hd_smoke8_dev_v1_hd_smoke8_M1.json | custom_full_plan_failure_zero_ci | HL-min-Fair-mAP | -55.18068864241265 | [-76.04170532028601, -33.06002642199013] | 8 |
+| paired_hd_smoke8_dev_v1_hd_smoke8_M1.json | custom_full_plan_failure_zero_ci | HL-min-Fair-Hit1 | -37.5 | [-75.0, -12.5] | 8 |
+| paired_hd_smoke8_dev_v1_hd_smoke8_M1.json | custom_full_plan_failure_zero_ci | HL-min-Good-mAP | -48.05275478070185 | [-67.23082291952106, -27.095782224644854] | 8 |
+| paired_hd_smoke8_dev_v1_hd_smoke8_M1.json | custom_full_plan_failure_zero_ci | HL-min-Good-Hit1 | -37.5 | [-75.0, -12.5] | 8 |
+| paired_hd_smoke8_dev_v1_hd_smoke8_M1.json | custom_full_plan_failure_zero_ci | HL-min-VeryGood-mAP | -34.944696327863326 | [-50.16207399626518, -19.882220980748453] | 8 |
+| paired_hd_smoke8_dev_v1_hd_smoke8_M1.json | custom_full_plan_failure_zero_ci | HL-min-VeryGood-Hit1 | -50.0 | [-87.5, -12.5] | 8 |
+| paired_mr_dev50_dev_low_v1_mr_dev50_M1.json | common_success_ci | MR-full-mAP | -3.425 | [-16.06729166666667, 10.241666666666665] | 10 |
+| paired_mr_dev50_dev_low_v1_mr_dev50_M1.json | common_success_ci | MR-full-mAP@0.5 | -11.333333333333334 | [-43.0, 15.666666666666666] | 10 |
+| paired_mr_dev50_dev_low_v1_mr_dev50_M1.json | common_success_ci | MR-full-mAP@0.75 | 1.2500000000000007 | [-9.999999999999998, 14.583333333333334] | 10 |
+| paired_mr_dev50_dev_low_v1_mr_dev50_M1.json | common_success_ci | MR-full-R1@0.5 | 0.0 | [-40.0, 40.0] | 10 |
+| paired_mr_dev50_dev_low_v1_mr_dev50_M1.json | common_success_ci | MR-full-R1@0.7 | -10.0 | [-30.0, 0.0] | 10 |
+| paired_mr_dev50_dev_low_v1_mr_dev50_M1.json | custom_full_plan_failure_zero_ci | MR-full-mAP | -4.668333333333333 | [-9.3435, -0.5232500000000012] | 50 |
+| paired_mr_dev50_dev_low_v1_mr_dev50_M1.json | custom_full_plan_failure_zero_ci | MR-full-mAP@0.5 | -14.566666666666665 | [-24.867499999999996, -4.733333333333333] | 50 |
+| paired_mr_dev50_dev_low_v1_mr_dev50_M1.json | custom_full_plan_failure_zero_ci | MR-full-mAP@0.75 | -1.75 | [-6.75, 2.0833333333333335] | 50 |
+| paired_mr_dev50_dev_low_v1_mr_dev50_M1.json | custom_full_plan_failure_zero_ci | MR-full-R1@0.5 | -12.0 | [-24.0, 0.0] | 50 |
+| paired_mr_dev50_dev_low_v1_mr_dev50_M1.json | custom_full_plan_failure_zero_ci | MR-full-R1@0.7 | -4.0 | [-10.0, 0.0] | 50 |
+| paired_mr_dev50_dev_v1_mr_dev50_M1.json | common_success_ci | MR-full-mAP | -4.625 | [-27.416666666666668, 15.875] | 12 |
+| paired_mr_dev50_dev_v1_mr_dev50_M1.json | common_success_ci | MR-full-mAP@0.5 | -20.416666666666668 | [-51.666666666666664, 7.5] | 12 |
+| paired_mr_dev50_dev_v1_mr_dev50_M1.json | common_success_ci | MR-full-mAP@0.75 | -0.8333333333333334 | [-25.0, 23.333333333333332] | 12 |
+| paired_mr_dev50_dev_v1_mr_dev50_M1.json | common_success_ci | MR-full-R1@0.5 | -25.0 | [-58.333333333333336, 8.333333333333334] | 12 |
+| paired_mr_dev50_dev_v1_mr_dev50_M1.json | common_success_ci | MR-full-R1@0.7 | -8.333333333333334 | [-33.333333333333336, 16.666666666666668] | 12 |
+| paired_mr_dev50_dev_v1_mr_dev50_M1.json | custom_full_plan_failure_zero_ci | MR-full-mAP | -17.298333333333336 | [-27.538333333333334, -7.77825] | 50 |
+| paired_mr_dev50_dev_v1_mr_dev50_M1.json | custom_full_plan_failure_zero_ci | MR-full-mAP@0.5 | -31.78333333333333 | [-45.133750000000006, -18.883333333333336] | 50 |
+| paired_mr_dev50_dev_v1_mr_dev50_M1.json | custom_full_plan_failure_zero_ci | MR-full-mAP@0.75 | -14.916666666666668 | [-26.6, -4.216666666666667] | 50 |
+| paired_mr_dev50_dev_v1_mr_dev50_M1.json | custom_full_plan_failure_zero_ci | MR-full-R1@0.5 | -36.0 | [-50.0, -22.0] | 50 |
+| paired_mr_dev50_dev_v1_mr_dev50_M1.json | custom_full_plan_failure_zero_ci | MR-full-R1@0.7 | -20.0 | [-32.0, -8.0] | 50 |
+| paired_mr_smoke8_dev_v1_mr_smoke8_M1.json | common_success_ci | MR-full-mAP | -11.25 | [-12.5, -10.0] | 2 |
+| paired_mr_smoke8_dev_v1_mr_smoke8_M1.json | common_success_ci | MR-full-mAP@0.5 | -100.0 | [-100.0, -100.0] | 2 |
+| paired_mr_smoke8_dev_v1_mr_smoke8_M1.json | common_success_ci | MR-full-mAP@0.75 | 0.0 | [0.0, 0.0] | 2 |
+| paired_mr_smoke8_dev_v1_mr_smoke8_M1.json | common_success_ci | MR-full-R1@0.5 | -100.0 | [-100.0, -100.0] | 2 |
+| paired_mr_smoke8_dev_v1_mr_smoke8_M1.json | common_success_ci | MR-full-R1@0.7 | 0.0 | [0.0, 0.0] | 2 |
+| paired_mr_smoke8_dev_v1_mr_smoke8_M1.json | custom_full_plan_failure_zero_ci | MR-full-mAP | -16.5625 | [-39.0625, -2.5] | 8 |
+| paired_mr_smoke8_dev_v1_mr_smoke8_M1.json | custom_full_plan_failure_zero_ci | MR-full-mAP@0.5 | -43.75 | [-75.0, -12.5] | 8 |
+| paired_mr_smoke8_dev_v1_mr_smoke8_M1.json | custom_full_plan_failure_zero_ci | MR-full-mAP@0.75 | -15.625 | [-40.625, 0.0] | 8 |
+| paired_mr_smoke8_dev_v1_mr_smoke8_M1.json | custom_full_plan_failure_zero_ci | MR-full-R1@0.5 | -50.0 | [-87.5, -12.5] | 8 |
+| paired_mr_smoke8_dev_v1_mr_smoke8_M1.json | custom_full_plan_failure_zero_ci | MR-full-R1@0.7 | -25.0 | [-62.5, 0.0] | 8 |
+
+| run_id | 冷启动等效/新增请求 | 输入/输出 token | 新增输入/输出 token | 呈现/独立帧 | P50/P95 秒 | 活动 GPU 小时 |
+|---|---:|---:|---:|---:|---|---:|
+| dev_low_v1_mr_dev50_B1 | 359/310 | 1175457/26904 | 955875/18976 | 5616/4140 | [22.17684010748053, 32.00870546206424] | 0.6549699262134769 |
+| dev_low_v1_mr_dev50_M1 | 397/348 | 1767397/25127 | 1547815/17199 | 7968/1716 | [23.342776103003416, 49.56170228464761] | 0.6155394504712766 |
+| dev_v1_hd_smoke8_A1 | 98/66 | 399455/13022 | 271567/4341 | 1458/600 | [18.880745563976234, 68.28999148770527] | 0.13470898774387832 |
+| dev_v1_hd_smoke8_B0 | 32/32 | 127888/8681 | 127888/8681 | 600/600 | [44.42702958700829, 47.44993895004445] | 0.1986799599916493 |
+| dev_v1_hd_smoke8_B1 | 72/40 | 260086/17852 | 132198/9171 | 1200/600 | [48.95094047446037, 52.142556462463105] | 0.21740625953722176 |
+| dev_v1_hd_smoke8_M1 | 98/66 | 416097/12608 | 288209/3927 | 1458/600 | [18.918859665020136, 65.54781536808002] | 0.12766509747119725 |
+| dev_v1_mr_dev50_A1 | 396/347 | 2009917/25674 | 1790335/17746 | 9504/2086 | [17.211855409521377, 51.536564654740495] | 0.6804462895738672 |
+| dev_v1_mr_dev50_B0 | 116/108 | 550856/24017 | 514978/22848 | 2784/1200 | [12.090762847976293, 35.331237240077435] | 0.5228558616461103 |
+| dev_v1_mr_dev50_B1 | 358/309 | 1708685/35707 | 1489103/27779 | 8592/6089 | [32.96262670098804, 57.94468113231702] | 1.036621871911468 |
+| dev_v1_mr_dev50_M1 | 391/342 | 2025547/29095 | 1805965/21167 | 9384/2175 | [16.298604702024022, 53.058163125251276] | 0.7542143957760223 |
+| dev_v1_mr_smoke8_A1 | 64/56 | 324596/3632 | 288718/2463 | 1536/311 | [21.418874581548152, 47.111841514933616] | 0.1004627970349975 |
+| dev_v1_mr_smoke8_B0 | 18/17 | 85430/2383 | 80970/2209 | 432/192 | [11.433797915000468, 27.68039187702815] | 0.06010508254500261 |
+| dev_v1_mr_smoke8_B1 | 59/51 | 282734/4564 | 246856/3395 | 1416/990 | [31.260063103516586, 46.243116082021146] | 0.1520609092261293 |
+| dev_v1_mr_smoke8_M1 | 64/56 | 332140/3474 | 296262/2305 | 1536/311 | [22.075943293020828, 45.49663294153869] | 0.10077074511005776 |
+
+未知请求用量的预算账保留保守预约，不能将它当成精确实际 token。峰值显存（5 秒采样可能漏掉短峰）、服务生命周期 GPU 小时、重试、格式失败、空候选、预算中断、工具频率、提前停止、缓存命中与逐 query 失败原因保留在 checks/report_snapshot.json、各配对文件和 run/traces。未运行不填数值。
+
+开发低/高预算质量与上表实际成本一起报告；方法的请求数、Controller 图像呈现和实际 token 并不完全匹配，因此不能将额外推理计算的收益全部归于调度或记忆。
+
+失败实例：
+- dev_low_v1_mr_dev50_B1, qid=479, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_low_v1_mr_dev50_B1, qid=2216, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_low_v1_mr_dev50_B1, qid=5220, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_low_v1_mr_dev50_B1, qid=5409, status=failed: ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_low_v1_mr_dev50_B1, qid=6415, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_low_v1_mr_dev50_M1, qid=140, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_low_v1_mr_dev50_M1, qid=479, status=failed: ValueError: controller_0 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_low_v1_mr_dev50_M1, qid=1206, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_low_v1_mr_dev50_M1, qid=1441, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_low_v1_mr_dev50_M1, qid=1680, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_hd_smoke8_A1, qid=2953, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_hd_smoke8_A1, qid=6099, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_hd_smoke8_A1, qid=6415, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_hd_smoke8_A1, qid=8429, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_hd_smoke8_A1, qid=8796, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_hd_smoke8_M1, qid=2953, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_hd_smoke8_M1, qid=6099, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_hd_smoke8_M1, qid=6415, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_hd_smoke8_M1, qid=8429, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_hd_smoke8_M1, qid=8796, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_A1, qid=140, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_A1, qid=479, status=failed: ValueError: controller_0 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_A1, qid=1206, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_A1, qid=1347, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_A1, qid=1680, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_B0, qid=1206, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_B0, qid=1441, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_B0, qid=1680, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_B0, qid=2216, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_B0, qid=5220, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_B1, qid=1206, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_B1, qid=2216, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_B1, qid=4994, status=failed: ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_B1, qid=5220, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_B1, qid=5409, status=failed: ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_M1, qid=140, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_M1, qid=479, status=failed: ValueError: controller_0 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_M1, qid=1206, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_M1, qid=1441, status=failed: ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_dev50_M1, qid=2216, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_A1, qid=5095, status=failed: ValueError: controller_0 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_A1, qid=6099, status=failed: ValueError: controller_0 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_A1, qid=6415, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_A1, qid=6536, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_A1, qid=8429, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_B0, qid=6536, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_B0, qid=9291, status=failed: ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_B1, qid=6415, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_B1, qid=6536, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_M1, qid=5095, status=failed: ValueError: controller_0 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_M1, qid=6099, status=failed: ValueError: controller_0 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_M1, qid=6415, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_M1, qid=6536, status=failed: ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query; 原请求、图像与解析状态在对应 trace/SQLite。
+- dev_v1_mr_smoke8_M1, qid=8429, status=failed: ValueError: controller_1 invalid after at most one retry: controller action schema mismatch; 原请求、图像与解析状态在对应 trace/SQLite。

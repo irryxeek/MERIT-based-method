@@ -1,0 +1,20 @@
+{
+  "experiment_id": "longvt_qvhighlights_groundvts_clipspan_inference_v2b",
+  "mode": "tool",
+  "model": "longvideotool/LongVT-RFT",
+  "model_revision": "16ed9314e4ea600dc4682b172a614252f2f383ad",
+  "api_base": "http://127.0.0.1:18008/v1",
+  "manifest_path": "/path/to/workspace/LongVT/reproduction/qvhighlights/groundvts_inference_v1/manifests/validation.json",
+  "manifest_sha256": "c747ee62c3ce5afaa58bd0e1c3df1363b05d4a88df9e0c7572e7a91ac00f3e6f",
+  "config_path": "/path/to/workspace/LongVT/reproduction/qvhighlights/groundvts_inference_v1/configs/protocol_v2b.json",
+  "config_sha256": "537986c87d2dfbabb873db245391bd469a7a42f76ceca9707f1e28b29ace6a7d",
+  "prompt_sha256": {
+    "evidence": "60496d113219cf89fa1a42fb94c0e620495bb8e392be91185ee6adbde0c964ea",
+    "finalization": "8c69eba09e33eb78538c98d7a1a4ee113ce9e0ad9cce25fa17873586c3ea4304"
+  },
+  "source_sha256": {
+    "/path/to/workspace/LongVT/reproduction/qvhighlights/groundvts_inference_v1/scripts/run_interval_inference.py": "7b2271246cd6b1db2afbd918073f5240d74135fc804fb067412ae1ceaeb0c349",
+    "/path/to/workspace/LongVT/reproduction/qvhighlights/groundvts_inference_v1/scripts/interval_protocol_v2.py": "dc46010448728e6896c952c1760720707b7230922bd6375811b9162a77c1de76",
+    "/path/to/workspace/LongVT/reproduction/qvhighlights/scripts/inference_common.py": "d02368b8afb1c8ed9dc2e889bfa6b9865fbb691afba1f5dbafa03d20c37cf734"
+  }
+}

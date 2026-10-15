@@ -1,0 +1,37 @@
+{
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "base_url": "http://127.0.0.1:8026/v1",
+  "pid": 18683,
+  "catalog": [
+    {
+      "id": "Qwen/Qwen3-VL-8B-Instruct",
+      "object": "model",
+      "created": 1791926141,
+      "owned_by": "vllm",
+      "root": "/path/to/storage/MemDreamer/models/Qwen3-VL-8B-Instruct",
+      "parent": null,
+      "max_model_len": 32768,
+      "permission": [
+        {
+          "id": "modelperm-875242cfcaa90fcb",
+          "object": "model_permission",
+          "created": 1791926141,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    }
+  ],
+  "command": "/data/linyifei/videoarm-repro/svhighlights/tf_selector/qwen35_9b/env-vllm017/bin/python /data/linyifei/videoarm-repro/svhighlights/tf_selector/qwen35_9b/env-vllm017/bin/vllm serve /path/to/storage/MemDreamer/models/Qwen3-VL-8B-Instruct --host 127.0.0.1 --port 8026 --served-model-name Qwen/Qwen3-VL-8B-Instruct --dtype bfloat16 --tensor-parallel-size 2 --max-model-len 32768 --max-num-seqs 1 --limit-mm-per-prompt {\"image\":24,\"video\":0} --mm-processor-kwargs {\"max_pixels\":1048576} --gpu-memory-utilization 0.8 --enforce-eager --skip-mm-profiling --no-enable-log-requests ",
+  "actual_gpu_uuids": [
+    "GPU-REDACTED-03",
+    "GPU-REDACTED-04"
+  ]
+}

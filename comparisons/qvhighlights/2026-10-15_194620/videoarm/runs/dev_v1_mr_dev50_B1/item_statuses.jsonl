@@ -1,0 +1,50 @@
+{"qid": 140, "status": "succeeded", "error": null, "updated": 1791929601.72493}
+{"qid": 479, "status": "succeeded", "error": null, "updated": 1791929068.972288}
+{"qid": 1206, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791928867.542489}
+{"qid": 1347, "status": "succeeded", "error": null, "updated": 1791929172.3030705}
+{"qid": 1441, "status": "succeeded", "error": null, "updated": 1791928208.4471984}
+{"qid": 1491, "status": "succeeded", "error": null, "updated": 1791929740.5564184}
+{"qid": 1680, "status": "succeeded", "error": null, "updated": 1791928680.7160468}
+{"qid": 1821, "status": "succeeded", "error": null, "updated": 1791929702.6840532}
+{"qid": 2216, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791928959.4673269}
+{"qid": 2379, "status": "succeeded", "error": null, "updated": 1791928830.4119616}
+{"qid": 2424, "status": "succeeded", "error": null, "updated": 1791929562.6093247}
+{"qid": 2605, "status": "succeeded", "error": null, "updated": 1791929528.030569}
+{"qid": 2953, "status": "succeeded", "error": null, "updated": 1791927966.2011833}
+{"qid": 3084, "status": "succeeded", "error": null, "updated": 1791928281.965756}
+{"qid": 3788, "status": "succeeded", "error": null, "updated": 1791929202.5562263}
+{"qid": 3823, "status": "succeeded", "error": null, "updated": 1791928172.6701083}
+{"qid": 3839, "status": "succeeded", "error": null, "updated": 1791928616.0625353}
+{"qid": 4276, "status": "succeeded", "error": null, "updated": 1791928418.80589}
+{"qid": 4994, "status": "failed", "error": "ValueError: final invalid after at most one retry: MR requires an array of at most ten candidates", "updated": 1791929008.2224622}
+{"qid": 5095, "status": "succeeded", "error": null, "updated": 1791927994.600524}
+{"qid": 5220, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791929264.6307814}
+{"qid": 5245, "status": "succeeded", "error": null, "updated": 1791929294.8067932}
+{"qid": 5409, "status": "failed", "error": "ValueError: final invalid after at most one retry: MR candidate outside segment-relative timeline", "updated": 1791929041.1515074}
+{"qid": 5549, "status": "succeeded", "error": null, "updated": 1791929368.5696418}
+{"qid": 5761, "status": "succeeded", "error": null, "updated": 1791928509.3330774}
+{"qid": 6099, "status": "succeeded", "error": null, "updated": 1791928053.6232045}
+{"qid": 6415, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791927911.3876204}
+{"qid": 6536, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791928135.215897}
+{"qid": 6544, "status": "succeeded", "error": null, "updated": 1791928801.2679217}
+{"qid": 6680, "status": "succeeded", "error": null, "updated": 1791929331.637124}
+{"qid": 6701, "status": "failed", "error": "ValueError: overview invalid after at most one retry: truncated/nonterminal model response", "updated": 1791928930.5401835}
+{"qid": 6763, "status": "succeeded", "error": null, "updated": 1791928317.7395725}
+{"qid": 7184, "status": "succeeded", "error": null, "updated": 1791929468.5713282}
+{"qid": 7593, "status": "succeeded", "error": null, "updated": 1791928241.8364334}
+{"qid": 7673, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791929400.1847649}
+{"qid": 7712, "status": "succeeded", "error": null, "updated": 1791928646.9581535}
+{"qid": 8091, "status": "succeeded", "error": null, "updated": 1791928768.50712}
+{"qid": 8110, "status": "succeeded", "error": null, "updated": 1791929435.6185298}
+{"qid": 8429, "status": "succeeded", "error": null, "updated": 1791928102.211663}
+{"qid": 8699, "status": "succeeded", "error": null, "updated": 1791929495.9610937}
+{"qid": 8796, "status": "succeeded", "error": null, "updated": 1791928024.614899}
+{"qid": 9121, "status": "succeeded", "error": null, "updated": 1791928470.5993724}
+{"qid": 9199, "status": "succeeded", "error": null, "updated": 1791928346.6275287}
+{"qid": 9217, "status": "succeeded", "error": null, "updated": 1791929235.446542}
+{"qid": 9233, "status": "succeeded", "error": null, "updated": 1791928583.6646883}
+{"qid": 9291, "status": "succeeded", "error": null, "updated": 1791927940.4509313}
+{"qid": 9517, "status": "succeeded", "error": null, "updated": 1791928539.8982606}
+{"qid": 9908, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791928729.6512804}
+{"qid": 10227, "status": "succeeded", "error": null, "updated": 1791928377.5783927}
+{"qid": 10284, "status": "succeeded", "error": null, "updated": 1791928703.8234541}

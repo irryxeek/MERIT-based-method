@@ -1,0 +1,16 @@
+{
+  "verified_at": "2026-10-15T20:19:40+08:00",
+  "scope": "public_export_after_machine_path_redaction",
+  "archive_artifacts_verified": 480,
+  "longvt_official_metric_runs_recomputed_and_matched": 4,
+  "videoarm_runs_verified": 28,
+  "sqlite_integrity_checks": 28,
+  "predictions_byte_identical_to_local_archive": 32,
+  "read_only_verifier": true,
+  "result": {
+    "status": "verified",
+    "common_hd_predictions": 419,
+    "common_native_hd_predictions": 405,
+    "videoarm_runs": 28
+  }
+}

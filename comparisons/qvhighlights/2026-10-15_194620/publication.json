@@ -1,0 +1,470 @@
+{
+  "exported_at": "2026-10-15T20:18:38+08:00",
+  "source_snapshot": "2026-10-15_194620",
+  "local_archive_manifest_sha256": "fb9445b3c8ace6392ce9c564cf063e96eb2ebcaba361bbe3a5b3b9beaadf9002",
+  "transformation": "Replace machine-specific workspace/storage/container paths, host name and GPU UUIDs; retain predictions, metrics, labels, statuses, budgets, request IDs and original source hashes.",
+  "placeholders": [
+    "/path/to/workspace",
+    "/path/to/storage",
+    "/path/to/other-workspace",
+    "/path/to/other-storage",
+    "/path/to/container",
+    "/path/to/temporary",
+    "ARCHIVE_HOST",
+    "GPU-REDACTED-NN"
+  ],
+  "prediction_files_byte_identical": 32,
+  "original_source_artifacts": 480,
+  "sqlite_ledgers": [
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_low_v1_mr_dev50_B1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 359
+      },
+      "changed_rows": 409,
+      "statuses": {
+        "failed": 9,
+        "succeeded": 41
+      },
+      "prediction_count": 41,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_low_v1_mr_dev50_M1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 397
+      },
+      "changed_rows": 447,
+      "statuses": {
+        "failed": 38,
+        "succeeded": 12
+      },
+      "prediction_count": 12,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_hd_dev50_B0/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 200
+      },
+      "changed_rows": 251,
+      "statuses": {
+        "succeeded": 50
+      },
+      "prediction_count": 50,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_hd_dev50_B1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 450
+      },
+      "changed_rows": 501,
+      "statuses": {
+        "succeeded": 50
+      },
+      "prediction_count": 50,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_hd_dev50_M1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 432
+      },
+      "changed_rows": 469,
+      "statuses": {
+        "failed": 28,
+        "paused": 1,
+        "pending": 14,
+        "succeeded": 7
+      },
+      "prediction_count": 7,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_hd_smoke8_A1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 98
+      },
+      "changed_rows": 107,
+      "statuses": {
+        "failed": 6,
+        "succeeded": 2
+      },
+      "prediction_count": 2,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_hd_smoke8_B0/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 32
+      },
+      "changed_rows": 41,
+      "statuses": {
+        "succeeded": 8
+      },
+      "prediction_count": 8,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_hd_smoke8_B1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 72
+      },
+      "changed_rows": 81,
+      "statuses": {
+        "succeeded": 8
+      },
+      "prediction_count": 8,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_hd_smoke8_M1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 98
+      },
+      "changed_rows": 107,
+      "statuses": {
+        "failed": 6,
+        "succeeded": 2
+      },
+      "prediction_count": 2,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_mr_dev50_A1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 396
+      },
+      "changed_rows": 446,
+      "statuses": {
+        "failed": 38,
+        "succeeded": 12
+      },
+      "prediction_count": 12,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_mr_dev50_B0/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 116
+      },
+      "changed_rows": 166,
+      "statuses": {
+        "failed": 16,
+        "succeeded": 34
+      },
+      "prediction_count": 34,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_mr_dev50_B1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 358
+      },
+      "changed_rows": 408,
+      "statuses": {
+        "failed": 10,
+        "succeeded": 40
+      },
+      "prediction_count": 40,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_mr_dev50_M1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 391
+      },
+      "changed_rows": 441,
+      "statuses": {
+        "failed": 37,
+        "succeeded": 13
+      },
+      "prediction_count": 13,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_mr_smoke8_A1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 64
+      },
+      "changed_rows": 73,
+      "statuses": {
+        "failed": 6,
+        "succeeded": 2
+      },
+      "prediction_count": 2,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_mr_smoke8_B0/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 18
+      },
+      "changed_rows": 27,
+      "statuses": {
+        "failed": 2,
+        "succeeded": 6
+      },
+      "prediction_count": 6,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_mr_smoke8_B1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 59
+      },
+      "changed_rows": 68,
+      "statuses": {
+        "failed": 2,
+        "succeeded": 6
+      },
+      "prediction_count": 6,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v1_mr_smoke8_M1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 64
+      },
+      "changed_rows": 73,
+      "statuses": {
+        "failed": 6,
+        "succeeded": 2
+      },
+      "prediction_count": 2,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v2_hd_dev50_M1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 429
+      },
+      "changed_rows": 480,
+      "statuses": {
+        "failed": 5,
+        "succeeded": 45
+      },
+      "prediction_count": 45,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v2_hd_smoke8_M1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 60
+      },
+      "changed_rows": 69,
+      "statuses": {
+        "succeeded": 8
+      },
+      "prediction_count": 8,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v2_mr_dev50_B0/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 120
+      },
+      "changed_rows": 170,
+      "statuses": {
+        "failed": 19,
+        "succeeded": 31
+      },
+      "prediction_count": 31,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v2_mr_dev50_B1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 164
+      },
+      "changed_rows": 188,
+      "statuses": {
+        "failed": 2,
+        "paused": 1,
+        "pending": 27,
+        "succeeded": 20
+      },
+      "prediction_count": 20,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v2_mr_dev50_M1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 50,
+        "requests": 278
+      },
+      "changed_rows": 328,
+      "statuses": {
+        "failed": 13,
+        "succeeded": 37
+      },
+      "prediction_count": 37,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v2_mr_smoke8_A1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 49
+      },
+      "changed_rows": 58,
+      "statuses": {
+        "failed": 2,
+        "succeeded": 6
+      },
+      "prediction_count": 6,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v2_mr_smoke8_B0/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 18
+      },
+      "changed_rows": 27,
+      "statuses": {
+        "failed": 2,
+        "succeeded": 6
+      },
+      "prediction_count": 6,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v2_mr_smoke8_B1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 59
+      },
+      "changed_rows": 68,
+      "statuses": {
+        "failed": 2,
+        "succeeded": 6
+      },
+      "prediction_count": 6,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/dev_v2_mr_smoke8_M1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 8,
+        "requests": 54
+      },
+      "changed_rows": 63,
+      "statuses": {
+        "failed": 2,
+        "succeeded": 6
+      },
+      "prediction_count": 6,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/formal_c0c8ae9799ad_hd_val_M1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 1550,
+        "requests": 3275
+      },
+      "changed_rows": 3717,
+      "statuses": {
+        "failed": 34,
+        "paused": 4,
+        "pending": 1093,
+        "succeeded": 419
+      },
+      "prediction_count": 419,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    },
+    {
+      "path": "2026-10-15_194620/videoarm/runs/formal_c0c8ae9799ad_mr_val_M1/state.sqlite.gz",
+      "table_counts": {
+        "metadata": 1,
+        "items": 1550,
+        "requests": 7056
+      },
+      "changed_rows": 8569,
+      "statuses": {
+        "failed": 437,
+        "succeeded": 1113
+      },
+      "prediction_count": 1113,
+      "integrity_check": "ok",
+      "row_values_match_declared_redaction": true
+    }
+  ],
+  "historical_documentation": "Copied reports retain dated claims and references to source-only files; public summary states full/partial results separately."
+}

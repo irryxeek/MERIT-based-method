@@ -1,0 +1,12 @@
+{
+  "run_id": "dev_low_v1_mr_dev50_B1",
+  "task": "mr",
+  "method": "B1",
+  "planned": 50,
+  "statuses": {
+    "failed": 9,
+    "succeeded": 41
+  },
+  "latest_qid": 1491,
+  "updated": 1791933512.6791017
+}

@@ -1,0 +1,71 @@
+{
+  "created_at": "2026-10-14T16:12:44.752254+08:00",
+  "comparison": "QVHighlights validation, M1 vs released Moment-DETR repository prediction fixture",
+  "task": "mr",
+  "split": "val",
+  "units": "percentage points",
+  "reference_paper": "https://arxiv.org/html/2107.09609v2#S5.T4",
+  "reference_note": "Official released fixture aggregates exactly reproduce paper Table 4 full-loss/no-ASR-pretraining val row; not a newly run local Moment-DETR checkpoint. Paper test Table 3 is not mixed into validation comparison.",
+  "baseline_predictions_sha256": "df3227ef84985db846f102e75cda43b5f9f962d12b95b990028eed88f1901b40",
+  "gt_sha256": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02",
+  "manifest_sha256": "8ce8d6344b716de7c8b9447d03494266e347788e6ef0eb6130162359b501e9eb",
+  "m1_predictions_sha256": "cf5a482b6f2e56da40d9bfafad335c2c63648c86216d5600d302aa7035db418b",
+  "m1_source_scores": "/path/to/storage/videoarm-repro/qvh_data/runs/formal_c0c8ae9799ad_mr_val_M1/scores.json",
+  "coverage": {
+    "planned": 1550,
+    "baseline_predictions": 1550,
+    "m1_success": 1113,
+    "m1_failed": 437,
+    "m1_failure_percent": 28.193548387096772
+  },
+  "official_baseline_full_val": {
+    "MR-full-mAP": 32.2,
+    "MR-full-mAP@0.5": 54.96,
+    "MR-full-mAP@0.75": 31.01,
+    "MR-full-R1@0.5": 53.94,
+    "MR-full-R1@0.7": 34.84
+  },
+  "m1_full_val_custom_failure_zero": {
+    "MR-full-mAP": 14.863844046634368,
+    "MR-full-mAP@0.5": 27.116784302913317,
+    "MR-full-mAP@0.75": 14.059015190305516,
+    "MR-full-R1@0.5": 30.387096774193548,
+    "MR-full-R1@0.7": 18.387096774193548
+  },
+  "delta_full_val_custom_m1_minus_baseline": {
+    "MR-full-mAP": -17.340392973748408,
+    "MR-full-mAP@0.5": -27.845468323066257,
+    "MR-full-mAP@0.75": -16.95201514137001,
+    "MR-full-R1@0.5": -23.548387096774196,
+    "MR-full-R1@0.7": -16.451612903225804
+  },
+  "common_success_queries": {
+    "query_count": 1113,
+    "selection": "exact M1 succeeded qid set; same ground truth per qid for both methods",
+    "baseline": {
+      "MR-full-mAP": 34.08573590792257,
+      "MR-full-mAP@0.5": 56.92207706397954,
+      "MR-full-mAP@0.75": 33.05942781470635,
+      "MR-full-R1@0.5": 56.33423180592992,
+      "MR-full-R1@0.7": 37.106918238993714
+    },
+    "m1": {
+      "MR-full-mAP": 20.699872661530343,
+      "MR-full-mAP@0.5": 37.76371578572834,
+      "MR-full-mAP@0.75": 19.579041819383242,
+      "MR-full-R1@0.5": 42.318059299191376,
+      "MR-full-R1@0.7": 25.606469002695416
+    },
+    "delta_m1_minus_baseline": {
+      "MR-full-mAP": -13.385863246392226,
+      "MR-full-mAP@0.5": -19.158361278251206,
+      "MR-full-mAP@0.75": -13.480385995323111,
+      "MR-full-R1@0.5": -14.016172506738542,
+      "MR-full-R1@0.7": -11.500449236298298
+    },
+    "selection_bias_note": "Conditional on M1 success; does not replace full validation evaluation"
+  },
+  "hd_status": "formal HD val started; incomplete. Train-selected dev50 HD cannot be directly subtracted from full val baseline.",
+  "conclusion": "No MR improvement over this Moment-DETR baseline in either full-plan failure-zero accounting or exact common-success query comparison.",
+  "comparability_note": "Moment-DETR is trained on QVHighlights; current all-Qwen3-VL-8B video-only M1 has no task fine-tuning. These are performance comparisons under different training and compute settings; no inference-efficiency claim follows."
+}

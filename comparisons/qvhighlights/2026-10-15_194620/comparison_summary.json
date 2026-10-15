@@ -1,0 +1,204 @@
+{
+  "dataset": "QVHighlights",
+  "split": "validation",
+  "planned_queries": 1550,
+  "unique_videos": 1519,
+  "official_evaluator_commit": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca",
+  "runs": [
+    {
+      "project": "LongVT",
+      "protocol": "compact_v1",
+      "method": "global",
+      "task": "hd",
+      "split": "val",
+      "planned": 1550,
+      "predictions": 1550,
+      "native_success": 1534,
+      "failed_fallback": 16,
+      "model": "longvideotool/LongVT-RFT",
+      "model_revision": "16ed9314e4ea600dc4682b172a614252f2f383ad",
+      "official_metrics": {
+        "HL-min-Fair": {
+          "HL-mAP": 30.96,
+          "HL-Hit1": 28.97
+        },
+        "HL-min-Good": {
+          "HL-mAP": 24.47,
+          "HL-Hit1": 26.97
+        },
+        "HL-min-VeryGood": {
+          "HL-mAP": 13.9,
+          "HL-Hit1": 20.65
+        }
+      },
+      "metric_scope": "full_validation_with_declared_zero_vector_fallback",
+      "prediction_file": "longvt/compact_v1/results/full_validation_v1/longvt_global/predictions.jsonl",
+      "metrics_file": "longvt/compact_v1/results/full_validation_v1/longvt_global/metrics.json"
+    },
+    {
+      "project": "LongVT",
+      "protocol": "compact_v1",
+      "method": "tool",
+      "task": "hd",
+      "split": "val",
+      "planned": 1550,
+      "predictions": 1550,
+      "native_success": 1522,
+      "failed_fallback": 28,
+      "model": "longvideotool/LongVT-RFT",
+      "model_revision": "16ed9314e4ea600dc4682b172a614252f2f383ad",
+      "official_metrics": {
+        "HL-min-Fair": {
+          "HL-mAP": 32.17,
+          "HL-Hit1": 31.16
+        },
+        "HL-min-Good": {
+          "HL-mAP": 25.57,
+          "HL-Hit1": 29.16
+        },
+        "HL-min-VeryGood": {
+          "HL-mAP": 14.6,
+          "HL-Hit1": 22.71
+        }
+      },
+      "metric_scope": "full_validation_with_declared_zero_vector_fallback",
+      "prediction_file": "longvt/compact_v1/results/full_validation_v1/longvt_tool/predictions.jsonl",
+      "metrics_file": "longvt/compact_v1/results/full_validation_v1/longvt_tool/metrics.json"
+    },
+    {
+      "project": "LongVT",
+      "protocol": "groundvts_v2b",
+      "method": "global",
+      "task": "hd",
+      "split": "val",
+      "planned": 1550,
+      "predictions": 1550,
+      "native_success": 1550,
+      "failed_fallback": 0,
+      "model": "longvideotool/LongVT-RFT",
+      "model_revision": "16ed9314e4ea600dc4682b172a614252f2f383ad",
+      "official_metrics": {
+        "HL-min-Fair": {
+          "HL-mAP": 32.93,
+          "HL-Hit1": 37.87
+        },
+        "HL-min-Good": {
+          "HL-mAP": 26.18,
+          "HL-Hit1": 36.39
+        },
+        "HL-min-VeryGood": {
+          "HL-mAP": 14.94,
+          "HL-Hit1": 28.45
+        }
+      },
+      "metric_scope": "full_validation_with_declared_zero_vector_fallback",
+      "prediction_file": "longvt/groundvts_v2b/results/full_v2b/longvt_global/predictions.jsonl",
+      "metrics_file": "longvt/groundvts_v2b/results/full_v2b/longvt_global/metrics.json"
+    },
+    {
+      "project": "LongVT",
+      "protocol": "groundvts_v2b",
+      "method": "tool",
+      "task": "hd",
+      "split": "val",
+      "planned": 1550,
+      "predictions": 1550,
+      "native_success": 1550,
+      "failed_fallback": 0,
+      "model": "longvideotool/LongVT-RFT",
+      "model_revision": "16ed9314e4ea600dc4682b172a614252f2f383ad",
+      "official_metrics": {
+        "HL-min-Fair": {
+          "HL-mAP": 33.38,
+          "HL-Hit1": 35.81
+        },
+        "HL-min-Good": {
+          "HL-mAP": 26.52,
+          "HL-Hit1": 33.81
+        },
+        "HL-min-VeryGood": {
+          "HL-mAP": 15.12,
+          "HL-Hit1": 27.23
+        }
+      },
+      "metric_scope": "full_validation_with_declared_zero_vector_fallback",
+      "prediction_file": "longvt/groundvts_v2b/results/full_v2b/longvt_tool/predictions.jsonl",
+      "metrics_file": "longvt/groundvts_v2b/results/full_v2b/longvt_tool/metrics.json"
+    },
+    {
+      "project": "VideoARM",
+      "run_id": "formal_c0c8ae9799ad_hd_val_M1",
+      "task": "hd",
+      "method": "M1",
+      "split": "val",
+      "protocol": "qvh_video_only_v2_stop_contract",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "planned": 1550,
+      "statuses": {
+        "failed": 34,
+        "paused": 4,
+        "pending": 1093,
+        "succeeded": 419
+      },
+      "predictions": 419,
+      "requests": {
+        "completed": 3275
+      },
+      "prediction_file": "videoarm/runs/formal_c0c8ae9799ad_hd_val_M1/predictions.jsonl",
+      "state_snapshot": "videoarm/runs/formal_c0c8ae9799ad_hd_val_M1/state.sqlite.gz",
+      "scores_file": null,
+      "official_score_scope": "not_scored",
+      "official_metrics": null,
+      "custom_full_plan_failure_zero_metrics": null,
+      "historical_contract_issue": false,
+      "metric_scope": "not_scored"
+    },
+    {
+      "project": "VideoARM",
+      "run_id": "formal_c0c8ae9799ad_mr_val_M1",
+      "task": "mr",
+      "method": "M1",
+      "split": "val",
+      "protocol": "qvh_video_only_v2_stop_contract",
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "planned": 1550,
+      "statuses": {
+        "failed": 437,
+        "succeeded": 1113
+      },
+      "predictions": 1113,
+      "requests": {
+        "completed": 7056
+      },
+      "prediction_file": "videoarm/runs/formal_c0c8ae9799ad_mr_val_M1/predictions.jsonl",
+      "state_snapshot": "videoarm/runs/formal_c0c8ae9799ad_mr_val_M1/state.sqlite.gz",
+      "scores_file": "videoarm/runs/formal_c0c8ae9799ad_mr_val_M1/scores.json",
+      "official_score_scope": "official_success_subset_only",
+      "official_metrics": {
+        "MR-full-R1@0.5": 42.32,
+        "MR-full-R1@0.7": 25.61,
+        "MR-full-mAP": 20.7,
+        "MR-full-mAP@0.5": 37.76,
+        "MR-full-mAP@0.75": 19.58,
+        "MR-long-mAP": 31.9,
+        "MR-middle-mAP": 16.85,
+        "MR-short-mAP": 2.48
+      },
+      "custom_full_plan_failure_zero_metrics": {
+        "MR-full-mAP": 14.863844046634368,
+        "MR-full-mAP@0.5": 27.116784302913317,
+        "MR-full-mAP@0.75": 14.059015190305516,
+        "MR-full-R1@0.5": 30.387096774193548,
+        "MR-full-R1@0.7": 18.387096774193548
+      },
+      "historical_contract_issue": false,
+      "metric_scope": "official_success_subset_only"
+    }
+  ],
+  "all_validation_qids_and_bindings_match": true,
+  "common_available_hd_prediction_count": 419,
+  "common_native_success_hd_count": 405,
+  "comparability": "Same validation examples and official HD definitions; models, observations, prompts and failure policies differ. VideoARM HD is partial and is not a full-validation result; MR metrics are not HD metrics."
+}

@@ -1,0 +1,15 @@
+{
+  "run_id": "formal_c0c8ae9799ad_hd_val_M1",
+  "task": "hd",
+  "method": "M1",
+  "planned": 1550,
+  "statuses": {
+    "failed": 34,
+    "paused": 4,
+    "pending": 1093,
+    "succeeded": 419
+  },
+  "latest_qid": 10033,
+  "query_workers": 4,
+  "updated": 1791975001.2137792
+}

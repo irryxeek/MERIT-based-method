@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-14T11:00:52+08:00",
+  "methods": [
+    "M1"
+  ],
+  "tasks": [
+    "mr",
+    "hd"
+  ],
+  "formal_condition_queries": 6184,
+  "formal_freeze_tag": "c0c8ae9799ad",
+  "source": "checks/full_run_estimate.json",
+  "supersedes": "checks/eta_provisional_20261014.json (all methods, no longer current scope)",
+  "inference_hours_point_estimate": 27.3627787641972,
+  "planning_hours_low_central_high": [
+    22.89022301135776,
+    29.73091770240706,
+    44.78044602271552
+  ],
+  "completion_low_central_high": [
+    "2026-10-15T09:54+08:00",
+    "2026-10-15T16:44+08:00",
+    "2026-10-16T07:47+08:00"
+  ],
+  "range_policy": "planning allowance, not a statistical confidence interval: 0.8x / 1.05x / 1.6x measured extrapolation plus 1 hour reporting",
+  "caveats": [
+    "Development initializers were cached; source estimate adds their approximate cold cost using measured request replay speedup.",
+    "Partial development failures can shorten execution and bias estimates low.",
+    "Requires continued availability of the same owned GPU service; batching changes exact outputs despite fixed seed."
+  ]
+}

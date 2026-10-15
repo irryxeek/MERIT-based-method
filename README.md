@@ -11,6 +11,7 @@
 - `tests/test_protocol.py`：时间轴、检索、标签隔离、输出验证、失败处理及恢复测试。
 - [执行记录](docs/execution_status.md)：已完成检查、当前运行位置和进度。
 - [自动执行与恢复](docs/automation.md)：每分钟监控、服务恢复、断点续跑和 systemd 管理命令。
+- [历史实验对比数据](comparisons/qvhighlights/README.md)：LONGVT 四组完整验证结果、VideoARM 的 28 个历史运行、预测、请求账本及逐查询对齐表。
 
 ## 固定实验协议
 
@@ -130,3 +131,9 @@ $MERIT_PY -m merit_qvh.cli evaluate --config "$MERIT_CONFIG" --split val
 ## 开发约定
 
 使用 Python 四空格缩进、`snake_case` 函数/变量和 `test_*.py` 测试命名；Ruff 负责格式与静态检查。增加影响推理或评估的改动时补充相应协议测试。当前目录原有 `AGENTS.md` 按用户要求保留不修改，实际命令与布局以本文为准。
+
+## 历史对比归档
+
+对比数据位于 [comparisons/qvhighlights/](comparisons/qvhighlights/README.md)，约 134 MiB。公开副本替换了机器路径与设备标识，并分别保存原始文件和公开文件的校验和；逐查询预测及指标保持一致。原始本地归档独立保留。
+
+LONGVT 包含 compact v1 和 GroundVTS 启发式 v2b 两套协议，各有 Global/Tool 完整验证预测。VideoARM HD 仅有 419 条成功预测，已明确标为部分结果；MR、HD 和开发集指标分别保存，不能混作完整高光检测基线。

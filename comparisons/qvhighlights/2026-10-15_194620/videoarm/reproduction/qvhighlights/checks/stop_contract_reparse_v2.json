@@ -1,0 +1,4014 @@
+{
+  "diagnostic_only": true,
+  "original_v1_runs_modified": false,
+  "historical_schema_failures": 267,
+  "accepted_by_v2_stop_contract": 267,
+  "cases": [
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 9291,
+      "stage": "controller_4",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 9291,
+      "stage": "controller_4",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 5095,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 5095,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 8796,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 8796,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 6099,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 6099,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 3823,
+      "stage": "controller_3",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 3823,
+      "stage": "controller_3",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 7593,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 7593,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 3084,
+      "stage": "controller_3",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 3084,
+      "stage": "controller_3",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 6763,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 6763,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 9199,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 9199,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 10227,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 10227,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 4276,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 4276,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 9517,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 9517,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 9517,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 8091,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 8091,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 6544,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 6544,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 4994,
+      "stage": "controller_4",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 4994,
+      "stage": "controller_4",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 5409,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 5409,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 479,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 479,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 3788,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 3788,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 5245,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 5245,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 5549,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 5549,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 7673,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 7673,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 8110,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 8110,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 7184,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 7184,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 8699,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 8699,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 2605,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 2605,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 2424,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 2424,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 140,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 140,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 1821,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_low_v1_mr_dev50_M1",
+      "qid": 1821,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 6415,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 6415,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 9291,
+      "stage": "controller_3",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 9291,
+      "stage": "controller_3",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 2953,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 2953,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 5095,
+      "stage": "controller_3",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 5095,
+      "stage": "controller_3",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 8796,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 8796,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 6099,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 6099,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 3823,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 3823,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 1441,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 1441,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 7593,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 7593,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 3084,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 3084,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 6763,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 6763,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 9199,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 9199,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 10227,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 10227,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 4276,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 4276,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 9121,
+      "stage": "controller_5",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 9121,
+      "stage": "controller_5",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 9517,
+      "stage": "controller_2",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 9517,
+      "stage": "controller_2",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 9233,
+      "stage": "controller_4",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 9233,
+      "stage": "controller_4",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 3839,
+      "stage": "controller_2",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 3839,
+      "stage": "controller_2",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 10284,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 10284,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 9908,
+      "stage": "controller_9",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 9908,
+      "stage": "controller_9",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 8091,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 8091,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 6544,
+      "stage": "controller_3",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 6544,
+      "stage": "controller_3",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 1206,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 1206,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 6701,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 6701,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 4994,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 4994,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 5409,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 5409,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 479,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_dev50_M1",
+      "qid": 479,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "qid": 6415,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "qid": 6415,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "qid": 9291,
+      "stage": "controller_2",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "qid": 9291,
+      "stage": "controller_2",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "qid": 2953,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "qid": 2953,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "qid": 8796,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "qid": 8796,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "qid": 6099,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "qid": 6099,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_A1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "qid": 6415,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "qid": 6415,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "qid": 9291,
+      "stage": "controller_2",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "qid": 9291,
+      "stage": "controller_2",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "qid": 2953,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "qid": 2953,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "qid": 8796,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "qid": 8796,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "qid": 6099,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "qid": 6099,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_hd_smoke8_M1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 5095,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 5095,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 8796,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 8796,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 6099,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 6099,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 3823,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 3823,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 7593,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 7593,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 6763,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 6763,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 9199,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 9199,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 10227,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 10227,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 4276,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 4276,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 9517,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 9517,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 8091,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 8091,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 6544,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 6544,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 4994,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 4994,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 5409,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 5409,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 479,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 479,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 1347,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 1347,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 3788,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 3788,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 5245,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 5245,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 5549,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 5549,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 7673,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 7673,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 7184,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 7184,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 8699,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 8699,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 2605,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 2605,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 2424,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 2424,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 140,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 140,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 1821,
+      "stage": "controller_3",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_A1",
+      "qid": 1821,
+      "stage": "controller_3",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 9291,
+      "stage": "controller_4",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 9291,
+      "stage": "controller_4",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 5095,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 5095,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 8796,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 8796,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 6099,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 6099,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 3823,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 3823,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 7593,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 7593,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 6763,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 6763,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 9199,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 9199,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 10227,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 10227,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 4276,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 4276,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 9121,
+      "stage": "controller_4",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 9121,
+      "stage": "controller_4",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 9517,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 9517,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 7712,
+      "stage": "controller_3",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 7712,
+      "stage": "controller_3",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 8091,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 8091,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 6544,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 6544,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 4994,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 4994,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 5409,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 5409,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 479,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 479,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 3788,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 3788,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 5245,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 5245,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 5549,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 5549,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 7673,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 7673,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 8110,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 8110,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 7184,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 7184,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 8699,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 8699,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 2605,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 2605,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 2424,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 2424,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 140,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_dev50_M1",
+      "qid": 140,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_A1",
+      "qid": 5095,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_A1",
+      "qid": 5095,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_A1",
+      "qid": 8796,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_A1",
+      "qid": 8796,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_A1",
+      "qid": 6099,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_A1",
+      "qid": 6099,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_A1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_A1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_M1",
+      "qid": 5095,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_M1",
+      "qid": 5095,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0,\"end\":0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0,
+        "end": 0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_M1",
+      "qid": 8796,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_M1",
+      "qid": 8796,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_M1",
+      "qid": 6099,
+      "stage": "controller_0",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_M1",
+      "qid": 6099,
+      "stage": "controller_0",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_M1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 0,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    },
+    {
+      "run": "dev_v1_mr_smoke8_M1",
+      "qid": 8429,
+      "stage": "controller_1",
+      "attempt": 1,
+      "raw": "{\"action\":\"stop\",\"start\":0.0,\"end\":0.0}",
+      "accepted_by_v2_stop_contract": true,
+      "parsed": {
+        "action": "stop",
+        "start": 0.0,
+        "end": 0.0,
+        "question": ""
+      },
+      "error": null
+    }
+  ],
+  "interpretation": "This is parser verification on saved raw responses, not recovered predictions or new inference quality."
+}

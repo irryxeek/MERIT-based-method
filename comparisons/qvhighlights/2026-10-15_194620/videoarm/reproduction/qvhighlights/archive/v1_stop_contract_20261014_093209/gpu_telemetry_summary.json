@@ -1,0 +1,10 @@
+{
+  "start_unix": 1791926059.710651,
+  "observed_until_unix": 1791941527.4791942,
+  "peak_memory_per_gpu_mib": {
+    "GPU-REDACTED-03": 20631,
+    "GPU-REDACTED-04": 20631
+  },
+  "allocated_gpu_hours": 8.593204747305975,
+  "scope": "QVH-owned service lifetime, including startup and idle time; GPU memory includes server allocation"
+}

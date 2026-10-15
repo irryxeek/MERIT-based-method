@@ -1,0 +1,8 @@
+{"qid": 2953, "status": "succeeded", "error": null, "updated": 1791926860.1292799}
+{"qid": 5095, "status": "failed", "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch", "updated": 1791926864.5646644}
+{"qid": 6099, "status": "failed", "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch", "updated": 1791926874.1471024}
+{"qid": 6415, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791926773.589738}
+{"qid": 6536, "status": "failed", "error": "ValueError: final invalid after at most one retry: empty MR candidates: official R1 cannot score this query", "updated": 1791926925.275476}
+{"qid": 8429, "status": "failed", "error": "ValueError: controller_1 invalid after at most one retry: controller action schema mismatch", "updated": 1791926887.7828138}
+{"qid": 8796, "status": "failed", "error": "ValueError: controller_0 invalid after at most one retry: controller action schema mismatch", "updated": 1791926869.1516051}
+{"qid": 9291, "status": "succeeded", "error": null, "updated": 1791926825.8971725}

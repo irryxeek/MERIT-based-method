@@ -42,3 +42,6 @@ scripts/merit-qvh-supervisor.service
 *.log
 *.pid
 .DS_Store
+
+# Reviewed historical logs belong to the frozen comparison archive.
+!/comparisons/qvhighlights/**/*.log

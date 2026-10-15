@@ -1,0 +1,322 @@
+{
+  "created_at": "2026-10-14T16:17:53.311318+08:00",
+  "task": "hd",
+  "split": "val",
+  "metric_units": "percent; deltas in percentage points",
+  "snapshot_statuses": {
+    "pending": 1513,
+    "running": 4,
+    "succeeded": 29,
+    "failed": 4
+  },
+  "planned": 1550,
+  "finished": 33,
+  "m1_success_count": 29,
+  "m1_success_qids": [
+    721,
+    781,
+    1872,
+    2321,
+    2343,
+    2579,
+    2638,
+    3183,
+    3359,
+    3389,
+    3503,
+    3525,
+    4508,
+    4625,
+    5071,
+    5342,
+    5612,
+    5926,
+    5979,
+    6223,
+    7803,
+    8014,
+    8056,
+    8636,
+    8737,
+    8749,
+    8783,
+    9760,
+    10049
+  ],
+  "finished_qids": [
+    721,
+    781,
+    1872,
+    2321,
+    2343,
+    2579,
+    2638,
+    3183,
+    3359,
+    3389,
+    3403,
+    3407,
+    3503,
+    3525,
+    4508,
+    4625,
+    5071,
+    5342,
+    5612,
+    5926,
+    5979,
+    6223,
+    7803,
+    8014,
+    8056,
+    8636,
+    8737,
+    8749,
+    8783,
+    9280,
+    9760,
+    10029,
+    10049
+  ],
+  "m1_same_success_query_metrics": {
+    "HL-min-Fair-mAP": 61.315507647820276,
+    "HL-min-Fair-Hit1": 75.86206896551724,
+    "HL-min-Good-mAP": 52.84636176823594,
+    "HL-min-Good-Hit1": 65.51724137931035,
+    "HL-min-VeryGood-mAP": 30.203707199416158,
+    "HL-min-VeryGood-Hit1": 58.62068965517241
+  },
+  "m1_finished_queries_custom_failure_zero_metrics": {
+    "HL-min-Fair-mAP": 53.88332490262994,
+    "HL-min-Fair-Hit1": 66.66666666666667,
+    "HL-min-Good-mAP": 46.44074215996491,
+    "HL-min-Good-Hit1": 57.57575757575758,
+    "HL-min-VeryGood-mAP": 26.542651781305107,
+    "HL-min-VeryGood-Hit1": 51.515151515151516
+  },
+  "baselines": [
+    {
+      "method": "LongVT Global 64",
+      "full_validation_queries": 1550,
+      "full_validation_metrics": {
+        "HL-min-Fair-mAP": 30.96,
+        "HL-min-Fair-Hit1": 28.97,
+        "HL-min-Good-mAP": 24.47,
+        "HL-min-Good-Hit1": 26.97,
+        "HL-min-VeryGood-mAP": 13.9,
+        "HL-min-VeryGood-Hit1": 20.65
+      },
+      "same_m1_success_query_count": 29,
+      "same_m1_success_query_metrics": {
+        "HL-min-Fair-mAP": 30.63137238829721,
+        "HL-min-Fair-Hit1": 27.586206896551722,
+        "HL-min-Good-mAP": 22.52597020827659,
+        "HL-min-Good-Hit1": 27.586206896551722,
+        "HL-min-VeryGood-mAP": 12.10143148074183,
+        "HL-min-VeryGood-Hit1": 20.689655172413794
+      },
+      "delta_m1_minus_baseline_on_same_m1_success_queries": {
+        "HL-min-Fair-mAP": 30.684135259523067,
+        "HL-min-Fair-Hit1": 48.275862068965516,
+        "HL-min-Good-mAP": 30.320391559959347,
+        "HL-min-Good-Hit1": 37.931034482758626,
+        "HL-min-VeryGood-mAP": 18.102275718674328,
+        "HL-min-VeryGood-Hit1": 37.93103448275862
+      },
+      "same_finished_query_metrics": {
+        "HL-min-Fair-mAP": 32.36629021328475,
+        "HL-min-Fair-Hit1": 30.303030303030305,
+        "HL-min-Good-mAP": 23.957165738586497,
+        "HL-min-Good-Hit1": 27.272727272727273,
+        "HL-min-VeryGood-mAP": 13.580719247385916,
+        "HL-min-VeryGood-Hit1": 21.21212121212121
+      },
+      "historical_fallback_qids_in_m1_success_subset": [
+        2321
+      ],
+      "prediction_path": "/path/to/workspace/LongVT/reproduction/qvhighlights/results/full_validation_v1/longvt_global/predictions.jsonl",
+      "prediction_sha256": "e3e9553834cdb0a655928dcc4c6f359587eac0be6708e11fd0185b6c2a69681f",
+      "metrics_path": "/path/to/workspace/LongVT/reproduction/qvhighlights/results/full_validation_v1/longvt_global/metrics.json",
+      "metrics_sha256": "fe4c0b6cbc3d14ee97276dd105bf8863a0359e6e1770c9f14745219f7425ae1f"
+    },
+    {
+      "method": "LongVT Tool",
+      "full_validation_queries": 1550,
+      "full_validation_metrics": {
+        "HL-min-Fair-mAP": 32.17,
+        "HL-min-Fair-Hit1": 31.16,
+        "HL-min-Good-mAP": 25.57,
+        "HL-min-Good-Hit1": 29.16,
+        "HL-min-VeryGood-mAP": 14.6,
+        "HL-min-VeryGood-Hit1": 22.71
+      },
+      "same_m1_success_query_count": 29,
+      "same_m1_success_query_metrics": {
+        "HL-min-Fair-mAP": 29.185813453540252,
+        "HL-min-Fair-Hit1": 17.24137931034483,
+        "HL-min-Good-mAP": 20.858027011073435,
+        "HL-min-Good-Hit1": 17.24137931034483,
+        "HL-min-VeryGood-mAP": 11.11927833923008,
+        "HL-min-VeryGood-Hit1": 10.344827586206897
+      },
+      "delta_m1_minus_baseline_on_same_m1_success_queries": {
+        "HL-min-Fair-mAP": 32.12969419428002,
+        "HL-min-Fair-Hit1": 58.62068965517241,
+        "HL-min-Good-mAP": 31.9883347571625,
+        "HL-min-Good-Hit1": 48.27586206896552,
+        "HL-min-VeryGood-mAP": 19.08442886018608,
+        "HL-min-VeryGood-Hit1": 48.275862068965516
+      },
+      "same_finished_query_metrics": {
+        "HL-min-Fair-mAP": 30.941068388464668,
+        "HL-min-Fair-Hit1": 21.21212121212121,
+        "HL-min-Good-mAP": 22.356717339697532,
+        "HL-min-Good-Hit1": 18.181818181818183,
+        "HL-min-VeryGood-mAP": 12.663742917639903,
+        "HL-min-VeryGood-Hit1": 12.121212121212121
+      },
+      "historical_fallback_qids_in_m1_success_subset": [
+        721,
+        9760
+      ],
+      "prediction_path": "/path/to/workspace/LongVT/reproduction/qvhighlights/results/full_validation_v1/longvt_tool/predictions.jsonl",
+      "prediction_sha256": "d593a860fa9af10fb1fdfe1c1afe93861db8ccb4ede969c2cf0c621708a713db",
+      "metrics_path": "/path/to/workspace/LongVT/reproduction/qvhighlights/results/full_validation_v1/longvt_tool/metrics.json",
+      "metrics_sha256": "fef8fd6d1fc9f9e914afa09492e05459dc73074f92fc15a26a4a552fb65b1c55"
+    },
+    {
+      "method": "LongVT GroundVTS-inspired Global",
+      "full_validation_queries": 1550,
+      "full_validation_metrics": {
+        "HL-min-Fair-mAP": 32.93,
+        "HL-min-Fair-Hit1": 37.87,
+        "HL-min-Good-mAP": 26.18,
+        "HL-min-Good-Hit1": 36.39,
+        "HL-min-VeryGood-mAP": 14.94,
+        "HL-min-VeryGood-Hit1": 28.45
+      },
+      "same_m1_success_query_count": 29,
+      "same_m1_success_query_metrics": {
+        "HL-min-Fair-mAP": 36.59039543012345,
+        "HL-min-Fair-Hit1": 41.37931034482759,
+        "HL-min-Good-mAP": 27.3309629589377,
+        "HL-min-Good-Hit1": 34.48275862068966,
+        "HL-min-VeryGood-mAP": 15.088649761549226,
+        "HL-min-VeryGood-Hit1": 27.586206896551722
+      },
+      "delta_m1_minus_baseline_on_same_m1_success_queries": {
+        "HL-min-Fair-mAP": 24.725112217696825,
+        "HL-min-Fair-Hit1": 34.48275862068965,
+        "HL-min-Good-mAP": 25.515398809298237,
+        "HL-min-Good-Hit1": 31.03448275862069,
+        "HL-min-VeryGood-mAP": 15.115057437866932,
+        "HL-min-VeryGood-Hit1": 31.03448275862069
+      },
+      "same_finished_query_metrics": {
+        "HL-min-Fair-mAP": 37.53895224585292,
+        "HL-min-Fair-Hit1": 42.42424242424242,
+        "HL-min-Good-mAP": 28.121428481858615,
+        "HL-min-Good-Hit1": 33.333333333333336,
+        "HL-min-VeryGood-mAP": 16.171769820016284,
+        "HL-min-VeryGood-Hit1": 27.272727272727273
+      },
+      "historical_fallback_qids_in_m1_success_subset": [],
+      "prediction_path": "/path/to/workspace/LongVT/reproduction/qvhighlights/groundvts_inference_v1/results/full_v2b/longvt_global/predictions.jsonl",
+      "prediction_sha256": "61d4ce60291af612b7609e2820eadaff0844e35fec9103e069d4b04d7cf6bfb1",
+      "metrics_path": "/path/to/workspace/LongVT/reproduction/qvhighlights/groundvts_inference_v1/results/full_v2b/longvt_global/metrics.json",
+      "metrics_sha256": "fa550a8688373901ff8cb3dfcc2ad04a4171361c50572782929719859ab7b32f"
+    },
+    {
+      "method": "LongVT GroundVTS-inspired Tool",
+      "full_validation_queries": 1550,
+      "full_validation_metrics": {
+        "HL-min-Fair-mAP": 33.38,
+        "HL-min-Fair-Hit1": 35.81,
+        "HL-min-Good-mAP": 26.52,
+        "HL-min-Good-Hit1": 33.81,
+        "HL-min-VeryGood-mAP": 15.12,
+        "HL-min-VeryGood-Hit1": 27.23
+      },
+      "same_m1_success_query_count": 29,
+      "same_m1_success_query_metrics": {
+        "HL-min-Fair-mAP": 36.78522880002948,
+        "HL-min-Fair-Hit1": 44.827586206896555,
+        "HL-min-Good-mAP": 28.632394095674538,
+        "HL-min-Good-Hit1": 44.827586206896555,
+        "HL-min-VeryGood-mAP": 16.667331030113107,
+        "HL-min-VeryGood-Hit1": 31.03448275862069
+      },
+      "delta_m1_minus_baseline_on_same_m1_success_queries": {
+        "HL-min-Fair-mAP": 24.530278847790797,
+        "HL-min-Fair-Hit1": 31.034482758620683,
+        "HL-min-Good-mAP": 24.2139676725614,
+        "HL-min-Good-Hit1": 20.689655172413794,
+        "HL-min-VeryGood-mAP": 13.53637616930305,
+        "HL-min-VeryGood-Hit1": 27.586206896551722
+      },
+      "same_finished_query_metrics": {
+        "HL-min-Fair-mAP": 38.13711277638206,
+        "HL-min-Fair-Hit1": 45.45454545454545,
+        "HL-min-Good-mAP": 29.60998643125308,
+        "HL-min-Good-Hit1": 42.42424242424242,
+        "HL-min-VeryGood-mAP": 18.012555402070966,
+        "HL-min-VeryGood-Hit1": 30.303030303030305
+      },
+      "historical_fallback_qids_in_m1_success_subset": [],
+      "prediction_path": "/path/to/workspace/LongVT/reproduction/qvhighlights/groundvts_inference_v1/results/full_v2b/longvt_tool/predictions.jsonl",
+      "prediction_sha256": "76fab609874ec93f534efe2c524e8a90ce0fb5351ddff732ea8476a5f1c90dd0",
+      "metrics_path": "/path/to/workspace/LongVT/reproduction/qvhighlights/groundvts_inference_v1/results/full_v2b/longvt_tool/metrics.json",
+      "metrics_sha256": "bc290d19f2774503626af5acee6786dbce2e245dc51426bb4ac2e63527cdd437"
+    },
+    {
+      "method": "Moment-DETR official released prediction fixture",
+      "full_validation_queries": 1550,
+      "full_validation_metrics": {
+        "HL-min-Fair-mAP": 67.77,
+        "HL-min-Fair-Hit1": 66.45,
+        "HL-min-Good-mAP": 58.09,
+        "HL-min-Good-Hit1": 64.45,
+        "HL-min-VeryGood-mAP": 35.65,
+        "HL-min-VeryGood-Hit1": 55.55
+      },
+      "same_m1_success_query_count": 29,
+      "same_m1_success_query_metrics": {
+        "HL-min-Fair-mAP": 74.33152065584594,
+        "HL-min-Fair-Hit1": 75.86206896551724,
+        "HL-min-Good-mAP": 62.46405320495251,
+        "HL-min-Good-Hit1": 68.96551724137932,
+        "HL-min-VeryGood-mAP": 38.48940507571487,
+        "HL-min-VeryGood-Hit1": 65.51724137931035
+      },
+      "delta_m1_minus_baseline_on_same_m1_success_queries": {
+        "HL-min-Fair-mAP": -13.01601300802566,
+        "HL-min-Fair-Hit1": 0.0,
+        "HL-min-Good-mAP": -9.617691436716576,
+        "HL-min-Good-Hit1": -3.448275862068968,
+        "HL-min-VeryGood-mAP": -8.285697876298713,
+        "HL-min-VeryGood-Hit1": -6.896551724137936
+      },
+      "same_finished_query_metrics": {
+        "HL-min-Fair-mAP": 72.2126693567488,
+        "HL-min-Fair-Hit1": 72.72727272727273,
+        "HL-min-Good-mAP": 60.223303495568246,
+        "HL-min-Good-Hit1": 66.66666666666667,
+        "HL-min-VeryGood-mAP": 37.75116130347945,
+        "HL-min-VeryGood-Hit1": 63.63636363636363
+      },
+      "prediction_path": "/path/to/storage/videoarm-repro/reproduction/qvhighlights/external/moment_detr/standalone_eval/sample_val_preds.jsonl",
+      "prediction_sha256": "df3227ef84985db846f102e75cda43b5f9f962d12b95b990028eed88f1901b40",
+      "reference": "https://arxiv.org/html/2107.09609#S5.T4"
+    }
+  ],
+  "snapshot_path": "/path/to/storage/videoarm-repro/qvh_data/preview/local_methods_20261014_161753",
+  "gt_sha256": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02",
+  "limits": [
+    "Early validation snapshot only; do not compare these partial M1 scores directly to historical full-val scores or claim a final gain.",
+    "Same-query comparison conditions on M1 success; discarded M1 failures may cause selection bias.",
+    "Historical LongVT uses trained LongVT-RFT / Qwen2.5-VL family; current M1 uses Qwen3-VL-8B-Instruct. Sampling, resolution, output representation, tool budgets and failure policy differ; this is not a controlled method-only ablation.",
+    "Earlier LongVT full-validation compact protocol includes frozen all-zero fallback scoring; preserve its native official policy.",
+    "MR scores from current M1 do not correspond to historical LongVT HD mAP.",
+    "LoRA has smoke training artifacts but no completed full-val A/B scores were found; VideoSIAH semantic-verification metrics are a different benchmark."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "count": 46,
+  "revision": "v2_stop_contract_m1_parallel_v1",
+  "pytest_log": "reproduction/qvhighlights/logs/pytest_m1_parallel_v1_final.log",
+  "ruff_log": "reproduction/qvhighlights/logs/ruff_m1_parallel_v1_final.log",
+  "scope": "CPU contract/scoring/recovery checks plus overlapping query ledger/cache isolation, pause/resume budgets, pixel identity and parallel GPU time; not model quality",
+  "verified_unix": 1791945407.525629
+}

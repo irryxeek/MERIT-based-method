@@ -1,0 +1,2315 @@
+VideoARM: Agentic Reasoning over Hierarchical Memory
+for Long-Form Video Understanding
+Yufei Yin
+
+Qianke Meng
+
+Minghao Chen
+
+Jiajun Ding
+
+Zhou Yu∗
+
+Zhenwei Shao
+
+Key Laboratory of Complex Systems Modeling and Simulation
+School of Computer Science and Technology, Hangzhou Dianzi University, China
+
+arXiv:2512.12360v2 [cs.CV] 30 Mar 2026
+
+{yinyf, mqk, chenminghao, djj, shaozw, yuz}@hdu.edu.cn
+Code: https://milvlg.github.io/videoarm/
+
+Abstract
+
+Hand-crafted Reasoning Pipeline
+
+(a) VideoTree
+
+User Query
+
+Cluster-1
+
+Long-form video understanding remains challenging due
+to the extended temporal structure and dense multimodal
+cues. Despite recent progress, many existing approaches
+still rely on hand-crafted reasoning pipelines or employ
+token-consuming video preprocessing to guide MLLMs
+in autonomous reasoning. To overcome these limitations, we introduce VideoARM, an Agentic Reasoningover-hierarchical-Memory paradigm for long-form video
+understanding. Instead of static, exhaustive preprocessing, VideoARM performs adaptive, on-the-fly agentic reasoning and memory construction. Specifically, VideoARM
+performs an adaptive and continuous loop of observing,
+thinking, acting, and memorizing, where a controller autonomously invokes tools to interpret the video in a coarseto-fine manner, thereby substantially reducing token consumption. In parallel, a hierarchical multimodal memory continuously captures and updates multi-level clues
+throughout the operation of the agent, providing precise
+contextual information to support the controller in decisionmaking. Experiments on prevalent benchmarks demonstrate
+that VideoARM outperforms the state-of-the-art method,
+DVD, while significantly reducing token consumption for
+long-form videos.
+
+1. Introduction
+Long-form video understanding [5, 17, 26, 29, 41] is a fundamental yet challenging task for multimodal intelligence.
+Such videos, ranging from feature films and documentaries
+to lectures and meetings, contain densely structured information unfolding over extended time scales. Comprehending these sequences requires not only capturing fine-grained
+spatiotemporal details, but also reasoning about the dynamic
+∗ Zhou Yu is the corresponding author
+
+Caption
+&
+Score
+
+Sample
+Cluster
+
+Cluster-i
+
+Video
+
+Tree
+Building
+&
+Leaf
+Selection
+
+Cluster-C
+
+(b) DVD
+
+Answer
+
+Database Construction
+
+Tokenconsuming!
+Sample
+
+User Query
+
+Database
+
+Static
+Clip-1
+
+Clip-i
+
+Segment
+
+Video
+
+Retrieve
+Clip-K
+
+(c) Ours
+
+Perception Pool
+
+Sample
+
+N << K
+in a longform video !
+
+Adaptive, Coarse-to-Fine Reasoning
+
+User Query
+
+Hierarchical
+Memory
+
+Loop-0
+(Coarse)
+
+Video
+
+Loop-i
+
+Update
+Loop-(i+1)
+(Fine)
+
+Frame
+
+Tool Call
+/ Answer
+
+LLM/
+MLLM
+
+Tool Call
+/ Answer
+
+N loops
+MLLM
+Agent
+
+Fixed
+
+Updatable
+
+Figure 1. Comparisons with LLM-based video understanding
+methods. Unlike the hand-crafted reasoning pipeline in VideoTree
+[29] and the token-consuming static database construction in DVD
+[41], our VideoARM performs adaptive, coarse-to-fine video reasoning over a dynamically constructed hierarchical memory, enabling more efficient and flexible long-form video understanding
+within strict token constraints.
+
+evolution of long-range dependencies and semantic relationships throughout the narrative. Recent advances in multimodal large language models (MLLMs) [2, 13, 16, 28, 38]
+have shown strong potential, with capabilities in long-range
+reasoning, contextual association, and cross-modal alignment. Their ability to process long contexts and integrate
+multimodal cues provides a solid foundation for holistic
+long-form video understanding.
+Many previous LLM (MLLM)-based methods [26, 29]
+
+rely on hand-crafted reasoning pipelines. LLoVi [39] operates through a simple two-stage framework, dissecting
+long-range video question answering into short-term visual
+captioning and subsequently employing LLM for reasoning.
+VideoTree [29] (Figure 1 (a)) clusters video segments, generates and scores their captions to build a hierarchical tree
+structure, which is then fed into an LLM for query reasoning.
+Collectively, these manually gated designs limit autonomy
+and blunt the gains from stronger base LLM/MLLMs.
+To tackle these challenges, DVD [41] constructs a cliplevel database and employs a ReAct-like [35] agent to autonomously invoke tools for long-form video understanding,
+as shown in Figure 1 (b). While effective, DVD suffers from
+two limitations: (1) for each video, DVD pre-segments the
+stream into 10-second clips and adopts MLLM to analyze
+each clip and construct a database, which is highly tokenconsuming and introduces substantial redundancy irrelevant
+to the query; (2) during agent execution, DVD embeds the
+query and retrieves from the pre-built database to localize
+key regions. This retrieval-centric paradigm fails to fully
+utilize the native visual reasoning capability of MLLMs,
+and the database cannot be updated on the fly to support the
+dynamics of observation and reflection during video understanding.
+We introduce an Agentic Reasoning-over-hierarchicalMemory paradigm for long-form video understanding
+(VideoARM) to address these issues. VideoARM performs
+adaptive, coarse-to-fine agentic reasoning over a dynamically constructed hierarchical memory, discarding static,
+exhaustive preprocessing (Figure 1 (c)). To operationalize the agentic reasoning paradigm, VideoARM first provides two complementary toolsets that implement coarse-tofine search and evidence refinement: (1) Temporal Scoping
+Tools, which continuously or temporarily limit the agent’s
+focus to query-aligned segments, thereby significantly reducing its token consumption for processing irrelevant information. (2) Multimodal Understanding Tools, which progressively localize, interpret, and abstract query-relevant
+evidence at either global or fine-grained levels. Combining these tools enables exploration across a broad temporal
+range, while also enabling rapid and low-overhead hypothesis testing and evidence gathering at the micro-event level.
+To transform local observations into persistent, queryaware context, VideoARM complements the toolsets with
+a hierarchical multimodal memory (HM3 ) that is dynamically constructed and evolves throughout execution. HM3
+organizes memory into three tiers that, respectively, store
+current perceptual intervals, record intermediate tool outcomes in temporal sequence, and log the controller’s reasoning traces and objectives, transitioning from perception
+to cognition. Building on HM3 and the toolsets above, the
+controller adaptively schedules and invokes tools based on
+multimodal evidence stored in HM3 , fully leveraging multi-
+
+modal planning and reasoning to achieve dynamic, contextaware decision-making throughout the video understanding
+process. Ultimately, VideoARM performs an adaptive and
+continuous loop of observing, thinking, acting, and memorizing, thereby enabling effective, comprehensive long-form
+video understanding.
+We conduct extensive experiments on prevalent longform video understanding datasets, i.e., Video-MME [6],
+LongVideoBench [31], and EgoSchema [14], across different temporal regimes to validate the effectiveness of our
+VideoARM. Notably, compared with the previous state-ofthe-art method DVD [41], our approach achieves better performance while significantly reducing token consumption
+for long-form videos.
+
+2. Related Work
+Video MLLMs. Recent advances in multimodal large language models (MLLMs) [1, 2, 13, 15, 16, 19, 20, 28, 36–38]
+have significantly improved video understanding. Existing
+research primarily focuses on three aspects: Context extension. These methods [24, 30, 40] expand context windows
+to handle long-video understanding, but they struggle with
+redundant frame information and high computational cost.
+Token compression. These methods [21, 23, 33] dynamically compress redundant visual tokens while preserving
+relevant features. However, this compression can lead to
+the loss of fine-grained details, impacting tasks requiring
+precise visual reasoning. Audio integration. These methods [3, 22, 32] integrate dedicated audio encoders to enhance
+multimodal reasoning, but this increases model complexity
+and training costs.
+Video Agent. Agent-based methods [4, 5, 11, 26, 42, 43]
+leverage the multimodal capabilities of LLM/MLLMs to
+integrate visual, audio, and text data, significantly enhancing the ability of frameworks to understand complex video
+content and reason across modalities for more accurate and
+robust interpretations. Some approaches [8, 29, 34] treat
+MLLMs as simple retrieval or reasoning components and
+rely on manually designed strategies to identify keyframes
+or maintain fixed memory structures. However, these methods heavily depend on predefined configurations, which
+constrain the autonomous reasoning and adaptability of
+LLM/MLLMs when processing long videos. Another category of methods [4, 9, 17, 41] develops an agentic search
+paradigm, where agents dynamically interact with clip-level
+databases or retrieved video segments. Deep Video Discovery (DVD) [41] introduces a ReAct-like [35] agent that
+autonomously invokes tools for clip-level reasoning. Nevertheless, these approaches remain limited by token-intensive
+pipelines and their reliance on prebuilt databases. Unlike
+these approaches, VideoARM replaces static, exhaustive
+preprocessing with adaptive, on-the-fly reasoning, while
+simultaneously dynamically storing contextual signals in
+
+Thinking Process
+
+Video (Sampled Frames)
+
+User Query
+
+Memorize
+
+Working
+Memory
+
+Controller
+Answer
+
+Observe &
+Think
+
+User Query
+Which shark species is featured in the video?
+A. Hammerhead shark. B. Great white shark.
+C. Tiger shark.
+D. Mako shark.
+
+Act
+
+Prompt
+
+HM3
+
+Multimodal Understanding Tools
+
+Result Memory
+Result 1:
+Interval; Caption
+
+...
+
+Memorize
+Scene
+Snapper
+
+Audio
+Trans.
+
+Clip
+Analyzer
+
+You are a helpful assistant who answers multistep questions by sequentially invoking
+
+Perception Pool: 0-81637
+
+Tool Invocation
+Start_frame: 0
+End_frame: 81637
+Num_frames: 60
+
+Describe the main scene or
+action in these frames ...
+Localize & Snap
+
+Tool Results
+Caption: The frames depict a journey from a
+busy, sunny beach scene to a vivid exploration
+
+Update
+
+Memory (HM3)
+Steer
+
+Result 2:
+Interval; Q&A; Conf.
+
+...
+
+Thinking Process
+Determine if hammerhead sharks appear
+between 28900 and 32000 frames.
+
+Sensory Memory
+Short-Term
+Perception Pool
+
+Initial broad sampling across entire video to see if
+any frames show the shark species.
+
+Update
+
+Temporal Scoping Tools
+
+...
+Interval
+Localizer
+
+Long-Term
+Perception Pool
+
+Perception Pool: 28800-32000
+
+Clip
+Explorer
+
+Tool Results
+
+HM3
+Hierarchical and Multimodal Memory (HM3)
+(Section 3.2)
+
+Coarse-to-Fine Video Reasoning Agent
+(Section 3.3)
+
+(a) Agentic Reasoning-Over-Hierarchical-Memory Paradigm (VideoARM)
+
+Tool Invocation
+Start Frame: 28800 Analyze this frame sequence
+End Frame: 32000 and answer the question
+Explore & Analyze
+Num_frames: 50
+
+The answer is A.
+
+I got it!
+
+Answer: The frames overwhelmingly feature
+sharks with a highly distinctive cephalofoil
+("hammer-shaped") head, ; Confidence: 1.0.
+
+(b) Reasoning Pipeline of VideoARM
+
+Figure 2. Overview of the agentic reasoning-over-hierarchical-memory paradigm (VideoARM) and an example of its reasoning pipeline.
+
+memory. Moreover, compared to concurrent memory-based
+agents like VideoLucy [43] that rely on text summaries
+and fixed backtracking, VideoARM maintains a hierarchical buffer of raw multimodal evidence within an active
+“observe-think-act-memorize” loop.
+
+3. Method
+3.1. Overview
+VideoARM operates through an iterative loop of observe–think–act–memorize, where an agent decomposes
+user queries, determines the next focus of inspection, and coordinates multimodal tools. Simultaneously, a hierarchical
+multimodal memory continuously captures and organizes
+query-aware clues into a structured substrate. As illustrated
+in Figure 2 (a), VideoARM consists of two core components: (i) a hierarchical and multimodal memory HM3 ; (ii)
+a coarse-to-fine video reasoning agent managed by a controller that adaptively schedules tool invocation and guides
+decision-making over long temporal horizons.
+
+3.2. Hierarchical and Multimodal Memory
+The Hierarchical and Multimodal Memory (HM3 ) serves
+as the contextual knowledge base of VideoARM, and is
+continuously updated during agent execution. It is organized
+into three tiers based on semantic hierarchy:
+Sensory Memory. The Sensory Memory consists of
+a long-term perception pool 𝑃𝑙 and a short-term perception pool 𝑃𝑠 for storing perceptual information, such as key
+frames F . The long-term perception pool 𝑃𝑙 maintains a
+snapshot of the base frame interval currently processed by
+the pipeline, consisting of frames within that temporal segment. It acts as a lightweight, volatile buffer that captures the
+agent’s most recent temporal focus. In contrast, the short-
+
+term perception pool 𝑃𝑠 temporarily holds fine-grained clips
+sampled during local exploration and analysis. It serves as
+a transient workspace for tools, enabling rapid hypothesis
+testing and evidence accumulation at the micro-event level.
+Once the analysis results are written into Result Memory
+(detailed below), the short-term perception pool is cleared
+to free resources for the next reasoning cycle.
+Result Memory. The Result Memory serves as the dynamic workspace that records the intermediate results generated throughout the agent’s operation. It stores the iteration
+index, analyzed frame intervals, and the corresponding tool
+outputs. By maintaining these temporally ordered entries,
+the Result Memory captures a fine-grained history of the
+agent’s perception cues. This allows the controller to reflect
+on past reasoning steps, avoid redundant actions, and adaptively adjust its subsequent strategy based on accumulated
+evidence.
+Working Memory. The Working Memory primarily
+records the controller’s reasoning traces and intended objectives prior to each tool invocation. By externalizing these
+intermediate traces from the MLLM’s context into Working Memory, we can clear tool-related context after every
+call. This design reduces redundancy in the model’s context, mitigates context overflow, and sharpens the focus and
+efficiency of subsequent reasoning. In addition, the persisted traces provide an auditable history that supports error
+analysis and strategy adaptation.
+Overall, the raw perceptual inputs stored in Sensory Memory
+are progressively transformed into fine-grained sethrough the use of
+mantic evidence in Result Memory
+tools, while deeper semantic information, specifically the
+controller’s reasoning traces and intentions, is recorded in
+Working Memory . Together, these components constitute
+a dynamically evolving and hierarchical memory.
+
+3.3. Coarse-to-Fine Video Reasoning Agent
+Prior works commonly follow a bottom-up hierarchical
+pipeline in which fixed, fine-grained memories are preconstructed and subsequently queried by an MLLM for retrieval
+and reasoning [5, 41]. In contrast, by leveraging HM3 ,
+our agent adopts a query-guided, coarse-to-fine reasoning
+pipeline that gradually decomposes global semantics into
+local evidence. Our agent consists of two main components: (i) multimodal toolsets used to determine the range of
+video segments being processed and to gather query-relevant
+evidence from different perspectives. (ii) a controller adaptively reasons, schedules, and invokes tools based on the
+multimodal evidence stored in HM3 .
+3.3.1. Multimodal Toolsets
+To support this coarse-to-fine reasoning pipeline, we design two complementary toolsets: Temporal Scoping Tools
+, which localizes and probes query-relevant temporal regions, and Multimodal Understanding Tools , which summarizes, transcribes, and analyzes local content to provide
+fine-grained evidence. Given a video 𝑉 and its corresponding audio, these tools enable progressive refinement and
+evidence aggregation from global to local levels. We specify each tool in these two toolsets as follows, with the icon
+preceding each tool indicating its corresponding toolset.
+Interval Localizer. The Interval Localizer identifies the
+frame intervals 𝑇𝑙𝑜𝑛𝑔 = [𝑡𝑖 , 𝑡 𝑗 ] in a video that are most relevant to the user query by leveraging contextual signals stored
+in HM3 . In addition, it determines the sampling frame number 𝑁1 (e.g., 150) for each video interval, thereby enabling
+adaptive granularity control over subsequent visual analysis. Next, it uniformly samples 𝑁1 frames from the video
+within 𝑇𝑙𝑜𝑛𝑔 . To accommodate the visual context limits of
+the MLLM, the sampled frames are composited into compact 3×2 image grids, with each tile overlaid by its frame
+index. Finally, it uses these image grids to update the longterm perception pool within Sensory Memory . Through
+continuous evidence integration over the stored information,
+the tool adaptively constrains the agent’s working scope to
+these query-aligned segments and their surrounding context, thereby significantly narrowing the attention range and
+reducing token consumption during the reasoning process.
+Clip Explorer. The Clip Explorer serves a similar role to
+the Interval Localizer, but does not alter the agent’s focused
+segments (i.e., long-term perception pool). Instead, it performs tentative, fine-grained probing within local frame intervals 𝑇𝑙𝑜𝑐𝑎𝑙 around the focused segments. Given the short
+duration of the frame intervals it focuses on, we directly store
+the frames corresponding to these intervals in the short-term
+perception pool within Sensory Memory , without using a
+tiling method, and employ a fixed sampling frame number
+𝑁2 . We also store the audio segment A within intervals in
+the short-term perception pool. Overall, this tool maintains
+
+the agent’s global focus while enabling rapid, low-overhead
+hypothesis testing and evidence gathering at the micro-event
+level.
+Scene Snapper. Scene Snapper specializes in describing
+long temporal segments. This tool analyzes and summarizes
+the frames F stored in the long-term perception pool 𝑃𝑙 ,
+generating a concise caption 𝑉𝐶 that describes the main
+scene. This process provides a compact yet informative
+abstraction of long-term visual content, facilitating highlevel semantic reasoning and efficient memory storage in
+HM3 .
+𝑉𝐶 = SceneSnapper(F ), F ∈ 𝑃𝑙 .
+(1)
+Audio Transcriber. When local visual cues are insufficient or ambiguous, this tool invokes whisper-1 [18] to
+extract the audio segment A from the short-term perception pool 𝑃𝑠 and generate a transcript 𝐴𝐶 , thereby providing
+semantic evidence that complements the visual signals.
+𝐴𝐶 = AudioTrans(A),
+
+A ∈ 𝑃𝑠 .
+
+(2)
+
+Clip Analyzer. Clip Analyzer is focused on capturing
+fine-grained local semantic details. Given the frames F
+stored in short-term perception pool 𝑃𝑠 and a sub-question
+𝑄 𝑠𝑢𝑏 , this tool jointly examines these frames, synthesizing
+cross-clip observations to infer detailed spatial and semantic
+information. It then produces an answer 𝐴𝑠𝑢𝑏 to the subquestion along with a confidence score 𝑆 𝑠𝑢𝑏 that reflects
+the reliability of its reasoning. This tool enables precise
+semantic discrimination and temporal understanding within
+local segments, providing essential fine-grained evidence
+and validation support for long-form video reasoning.
+𝐴𝑠𝑢𝑏 , 𝑆 𝑠𝑢𝑏 = ClipAnalyzer(F , 𝑄 𝑠𝑢𝑏 ),
+
+F ∈ 𝑃𝑠 .
+
+(3)
+
+After the execution of the Multimodal Understanding Tools,
+we update the results along with their corresponding temporal intervals to the Result Memory , serving as localized
+semantic evidence for subsequent reasoning. The short-term
+perception pool is cleared afterward.
+3.3.2. Controller
+To maximize the intrinsic reasoning and planning capacity
+of modern MLLMs, we intentionally avoid rigid workflows
+and pre-defined tool-usage rules. The controller operates
+in a streamlined observe–think–act–memorize loop, akin to
+ReAct-style interaction [35], but grounded by HM3 as a persistent and hierarchical memory. For a given user query, the
+controller reasons over the current observation state (summaries and cues stored in HM3 ), selects an appropriate tool
+and its parameters, executes it, and writes the newly acquired
+evidence back to memory. This loop continually updates
+the context, sharpens internal hypotheses, and progressively
+narrows the search space.
+Action space and state. Let the initial query be 𝑄, the tool
+set 𝑇 𝑆, and the terminal action Answer. Considering the
+
+correspondence between the Temporal Scoping Tools and
+the Multimodal Understanding Tools , we instantiate the
+tool set 𝑇 𝑆 using only the latter. The controller maintains
+an interaction history 𝐻𝑡 and reads from HM3 ’s three tiers.
+At each iteration 𝑡, it forms a reasoning trace 𝑅𝑡 , chooses an
+action 𝐴𝑡 in 𝑇 𝑆 ∪ {Answer} with parameters 𝑃𝑡 (e.g., subquestion 𝑄 𝑠𝑢𝑏 ) and its corresponding Temporal Scoping Tool
+(if not Answer), obtains observations 𝑂 𝑡 (e.g., captions
+𝑉𝐶 ), and writes them back to the HM3 .
+Iterative reasoning loop. Concretely, the controller follows an iterative reasoning loop. It first observes the current
+global-to-local contextual information stored in HM3 , and
+thinks by generating a compact plan 𝑅𝑡 that hypothesizes
+what evidence is missing and which modality would be most
+informative next. Based on this reasoning, it acts by invoking one tool with parameters 𝑃𝑡 . After obtaining the tool’s
+output, it memorizes by appending 𝑂 𝑡 to the Result Memory
+. In addition, the controller’s reasoning trace or intent for
+invoking this tool is recorded into the Working Memory .
+Finally, it refines its internal hypothesis, and if uncertainty
+remains high, the controller repeats the cycle from the observation step. Specially, the process stops when the controller
+either selects Answer in the act stage or reaches the step
+budget 𝑁, and generates the final answer. An example of the
+reasoning pipeline of VideoARM is shown in Figure 2 (b).
+Design principles. By centering the MLLM’s reasoning
+in the loop and coupling it with HM3 ’s dynamically constructed hierarchical memory, the controller acquires an
+autonomous, evidence-guided, and adaptive action policy.
+It balances exploitation—leveraging Audio Transcriber and
+Clip Analyzer for targeted, high-precision semantic analysis and verification within localized intervals—and exploration—using Scene Snapper to gather coarse-to-fine evidence over long temporal spans, refresh HM3 summaries,
+and surface promising regions for subsequent probing. This
+coordination tightens local inference while preserving broad
+temporal coverage and token efficiency. Empirically, the
+query-oriented control mechanism substantially reduces token consumption while maintaining, and often improving,
+temporal coherence and final-answer accuracy on long-form
+video reasoning tasks.
+
+durations range from 11 seconds to 1 hour, with an average
+duration of 1,024 seconds. This benchmark evaluates both
+short- and long-term temporal reasoning and integrates visual, audio, and text modalities. We report all results under
+the “w/o subtitles” (denoted as “w/o sub”) setting, where
+subtitles of videos are unavailable.
+LongVideoBench [31] features 6,678 questions from 3,763
+videos, ranging in duration from a few seconds to an
+hour. We emphasize the longest subset with durations in
+(900𝑠, 3600𝑠] (i.e., long subset), comprising 564 questions
+from 188 videos. In our experiments, we evaluate the validation split consisting of 1,337 question–answer pairs, which
+provides a balanced coverage across various durations and
+scene complexities.
+EgoSchema [14] consists of over 5,031 human-curated
+question–answer pairs derived from the Ego4D dataset.
+Each question corresponds to a three-minute egocentric
+video clip, requiring the model to reason over extended temporal and contextual information. To ensure efficient yet
+representative evaluation, we utilize a subset of 500 question–answer pairs for testing.
+
+4. Experiment
+
+4.3. Main Results
+
+4.1. Benchmarks
+
+Table 1 presents a comprehensive comparison across several prevalent long-video benchmarks. On Video-MME,
+VideoARM consistently outperforms prior methods, including commercial VLMs, open-source VLMs, and other
+training-free approaches, across all evaluation metrics.
+VideoARM also achieves new state-of-the-art performance
+across the LongVideoBench, EgoSchema, MLVU, and
+LVBench benchmarks. Moreover, our method yields substantial gains over its base models (GPT-4o and OpenAI
+o3) on the first three benchmarks, demonstrating the effec-
+
+We evaluate our method on several prevalent longform video understanding benchmarks, including VideoMME [6], LongVideoBench [31], and EgoSchema [14].
+These datasets cover a wide range of temporal scales, scene
+complexities, and multimodal challenges, providing a comprehensive evaluation of long-form video reasoning.
+Video-MME [6] includes 900 videos, totaling 254 hours
+and 2,700 multimodal question–answer pairs. The video
+
+4.2. Implementation Details
+VideoARM follows an agentic, query-guided reasoning
+paradigm. We conduct all experiments by accessing multimodal large language model (MLLM) via API. We use
+OpenAI o3 to implement the Controller and the Temporal
+Scoping Tools, and whisper-1 model [18] to implement the
+Audio Transcriber. For fair comparison, we adopt two configurations (GPT-4.1 or GPT-4o) to implement the Scene
+Snapper and Clip Analyzer. Specially, considering the cost
+factor, we use GPT-4.1 for these two tools in our ablation
+experiments unless otherwise specified. For Interval Localizer, the sampling frame number 𝑁1 ranges from 30 to
+150. Each sampled frame is resized with its short edge set
+to 256, and a tiling strategy is applied to preserve visual
+details. For Clip Explorer, the short edge is set to 512 to
+capture fine-grained spatial details, and the stored audio segments are constrained to 25 MB, due to the limitations of the
+whisper-1 model. We set the step budget 𝑁 to 10 to balance
+performance and efficiency.
+
+Video-MME (w/o sub)
+
+Methods
+
+LongVideoBench
+
+EgoSchema
+
+Short
+
+Medium
+
+Long
+
+Overall
+
+Long
+
+Overall
+
+Commercial VLMs
+Gemini-1.5-Pro [24]
+Gemini-2.0-Flash [24]
+GPT-4o [1]
+OpenAI o3 [16]
+
+81.7
+80.0
+-
+
+74.3
+70.3
+-
+
+67.4
+63.0
+65.3
+63.2
+
+75.0
+71.9
+-
+
+58.6
+45.7
+60.9
+60.6
+
+64.0
+66.7
+67.5
+
+71.1
+71.2
+72.2
+63.2
+
+Open-Source VLMs
+mPLUG-Owl3 [36]
+InternVL2.5-72B [28]
+Qwen2.5-VL-72B [2]
+AdaReTaKe [27]
+
+70.0
+82.8
+80.6
+
+57.7
+70.9
+74.9
+
+50.1
+62.6
+65.0
+
+59.3
+72.1
+73.3
+73.5
+
+-
+
+59.8
+63.6
+60.7
+67.0
+
+76.2
+-
+
+Other Training-Free Approaches
+VideoAgent [26]
+VideoAgent [5]
+VideoTree [29]
+VCA [34]
+Logic-in-Frames [7]
+71.9
+MR. Video [17]
+VideoLucy [43]
+78.6
+DVD [41]
+-
+
+61.9
+72.1
+-
+
+54.2
+55.2
+61.8
+66.8
+67.3
+
+63.0
+72.5
+-
+
+54.2
+61.6
+68.6
+
+71.6
+
+60.2
+63.2
+67.0
+73.6
+73.0
+76.6
+
+VideoARM (ours)
+VideoARM (o3+GPT-4.1)
+VideoARM (o3+GPT-4o)
+
+78.4
+81.3
+
+75.3
+81.2
+
+80.1
+82.8
+
+69.2
+76.4
+
+73.7
+78.0
+
+78.2
+76.2
+
+86.4
+85.8
+
+Method
+
+MLVU
+
+Commercial VLMs
+GPT-4V [1]
+GPT-4o [1]
+
+49.2
+64.6
+
+Open-Sourced MLLMs
+LLaVA-OV-72B [10]
+VideoChat-Flash-7B [12]
+
+66.4
+74.7
+
+Training-Free Approaches
+VideoTree [29]
+VideoLucy [43]
+VideoARM (o3+GPT-4.1)
+
+60.4
+76.1
+81.2
+
+Method
+
+LVBench
+
+Commercial VLMs
+Gemini-1.5-Pro [24]
+GPT-4o [1]
+
+33.1
+48.9
+
+Open-Sourced MLLMs
+Qwen2-VL-72B [25]
+AdaReTaKe [27]
+
+41.3
+53.3
+
+Training-Free Approaches
+VideoLucy [43]
+DVD [41]
+VideoARM (o3+GPT-4.1)
+
+58.8
+76.0
+79.7
+
+Table 1. Comparison with commercial VLMs, open-source VLMs, and other training-free approaches on prevalent long video understanding
+benchmarks. Results are reported as accuracy (%) on different temporal regimes (short, medium, long) and overall.
+
+tiveness of our VideoARM in enhancing long-term multimodal understanding. Taking the example shown in Figure
+3, GPT-4o and OpenAI o3 fail to answer the question, while
+our method progressively identifies key temporal intervals
+and retrieves relevant information through the autonomous
+invocation of tools, ultimately providing the correct answer.
+For a fair comparison with DVD [41], we adopt the same
+backbone configuration (OpenAI o3+GPT-4.1) and still outperform DVD across all metrics. This demonstrates that our
+method can achieve better performance while maintaining
+low token consumption (as discussed in Section 4.5), further
+validating the effectiveness of our approach.
+These results highlight several key advantages of our
+framework. First, the controller adaptively focuses on queryrelevant temporal segments in a coarse-to-fine manner, while
+the hierarchical multimodal memory enables efficient aggregation and reasoning over visual, audio, and textual
+cues. This leads to a more principled and effective use
+of video modalities compared to prior approaches. Second, by leveraging a training-free, tool-augmented pipeline,
+VideoARM achieves state-of-the-art performance without
+any additional model fine-tuning, thereby markedly lowering both computational and memory costs. In summary,
+VideoARM demonstrates that effective video understanding can be achieved in a computation- and modality-efficient
+manner, offering a practical and generalizable solution for
+both long-form and short-form video comprehension tasks.
+
+Controller
+
+Tools
+
+Video-MME
+
+Temporal Scop. MM Und.* Audio Trans.
+
+(long)
+
+Qwen3-VL
+
+Qwen3-VL
+
+GPT-4.1
+
+whisper-1
+
+54.9
+
+GPT-4o
+
+GPT-4o
+
+GPT-4.1
+
+whisper-1
+
+40.5
+
+GPT-5
+
+GPT-5
+
+GPT-4.1
+
+whisper-1
+
+75.5
+
+OpenAI o3
+
+OpenAI o3
+
+GPT-4.1
+
+whisper-1
+
+76.5
+
+OpenAI o3
+
+OpenAI o3
+
+GPT-4o
+
+whisper-1
+
+80.0
+
+Table 2. Ablation on model choices for the controller and toolsets.
+“Temporal Scop.” denotes Temporal Scoping Tools, “MM Und.*”
+denotes Multimodal Understanding tools (excluding Audio Transcriber), and “Audio Trans.” denotes the Audio Transcriber.
+
+4.4. Ablation Study
+For all the ablation studies, we selected 200 question-answer
+pairs from each used dataset as the evaluation subset, based
+on a stratified sampling strategy that preserves the original
+distribution of video types and task categories.
+4.4.1. Model Choices
+We systematically vary the controller and the toolsets to assess their impact on video multimodal reasoning, as shown
+in Table 2. Considering that both the controller and the Temporal Scoping Tools primarily perform decision-making and
+reasoning, we instantiate them with the same model; and
+because whisper-1 is the only officially available audio transcription tool from OpenAI, we fix whisper-1 as the Audio
+Transcriber tool across all experiments. Using OpenAI o3
+
+Multimodal Understanding Tools
+Scene Snapper Audio Transcriber Clip Analyzer
+
+Video-MME
+(long)
+
+✓
+
+69.0
+70.5
+75.5
+76.5
+
+✓
+✓
+✓
+
+✓
+✓
+
+✓
+✓
+
+✓
+
+Table 3. Ablation on the Multimodal Understanding Tools.
+
+Short-term
+
+Memory Type
+Long-term Result
+✓
+
+✓
+✓
+
+✓
+✓
+✓
+
+✓
+✓
+
+✓
+
+✓
+
+✓
+
+✓
+
+Working
+
+Controller
+Context
+
+✓
+✓
+✓
+✓
+✓
+
+Video-MME
+(long)
+72.5
+67.0
+75.5
+74.5
+76.5
+
+Table 4. Ablation on the Hierarchical Multimodal Memory, where
+the Short-term and Long-term denotes the short-term and longterm perception pool in the Sensory Memory, respectively. Context
+denotes that the controller context is not refreshed.
+
+as the controller and GPT-4o for Multimodal Understanding
+Tools (excluding Audio Transcriber) achieves the best score,
+80.0%. Holding the controller fixed to OpenAI o3, replacing
+GPT-4.1 with GPT-4o in Multimodal Understanding Tools
+yields a +3.5% gain, indicating that GPT-4o possesses enhanced multimodal capabilities for captioning and semantic
+analysis. With Multimodal Understanding Tools fixed to
+gpt-4.1, switching the controller from GPT-5 to OpenAI o3
+offers a smaller improvement (+1.0%), placing both in the
+top tier. In contrast, configurations with Qwen3-VL and
+GPT-4o as controllers score 54.9% and 40.5%, respectively,
+substantially below the OpenAI o3/GPT-5 group, suggesting
+limitations in their reasoning and decision-making capabilities, as GPT-5 and OpenAI o3 exhibit stronger temporal
+reasoning and hierarchical planning abilities, while GPT-4o
+and Qwen3-VL remain constrained in complex multi-step
+inference.
+4.4.2. Multimodal Understanding Tools
+We evaluate the contribution of three tools, i.e., Scene
+Snapper (SS), Audio Transcriber (AT), and Clip Analyzer
+(CA), by toggling each component, as shown in Table 3.
+Adding Scene Snapper (SS) on top of AT, CA improves
+the score from 69.0% to 76.5%, showing that long-range
+global summarization effectively guides downstream reasoning. Adding Audio Transcriber (AT) on top of SS, CA
+yields a 6.5% gain, indicating that audio grounding resolves
+visually ambiguous or off-screen events. Adding Clip Analyzer (CA) on top of SS, AT improves the score from
+75.5% to 76.5%, confirming that fine-grained local analysis supplies complementary detail-level evidence. The full
+configuration (SS+AT+CA) yields the best result (76.5%),
+
+𝑁
+
+Video-MME(short)
+
+Video-MME(long)
+
+LongVideoBench
+
+3
+5
+7
+10
+
+87.5
+87.0
+85.5
+84.0
+
+72.0
+74.5
+75.5
+76.5
+
+67.5
+67.5
+69.5
+70.5
+
+Table 5. Ablation study on the step budget 𝑁.
+Sampling Strategy
+
+Video-MME(long)
+
+LongVideoBench
+
+Fixed 𝑁1 = 30
+
+73.5
+
+68.0
+
+Fixed 𝑁1 = 60
+
+74.0
+
+70.5
+
+Adaptive 𝑁1 (Avg.: 49.8)
+
+76.5
+
+70.5
+
+Table 6. Ablation study on the frame sampling strategy of the
+Interval Localizer tool.
+
+demonstrating the synergy among global summarization,
+audio cues, and local semantic verification.
+4.4.3. Hierarchical Multimodal Memory
+We assess the impact of different memory components
+within Hierarchical and Multimodal Memory, as shown in
+Table 4. Excluding the short-term perception pool causes
+a 4.0% performance drop, highlighting the importance of
+quickly testing hypotheses and gathering fine-grained evidence. Removing the long-term perception tool leads to a
+9.5% drop, as the agent loses its ability to narrow its attention, resulting in difficulty accurately locating relevant
+information. Without Result Memory, the agent struggles to
+determine its next steps, causing repeated cycles and invalid
+results. Removing Working Memory results in a 1.0% drop,
+showing that previous reasoning traces contribute meaningfully to the reasoning process. Additionally, relying solely
+on the context within the controller, without HM3 , causes a
+2.0% performance drop, emphasizing HM3 ’s role in capturing key information and relieving the MLLM’s contextual
+burden, thus improving overall reasoning ability.
+4.4.4. Step Budget
+We conduct an ablation study on the step budget 𝑁 to analyze its impact on performance. As shown in Table 5,
+increasing 𝑁 from 3 to 10 leads to consistent improvements
+on long-video datasets, indicating that a larger reasoning
+budget allows the agent to perform deeper exploration and
+evidence refinement. However, the gains on short videos
+are marginal, suggesting that excessive reasoning steps may
+introduce redundancy when the temporal scope is limited.
+Overall, setting 𝑁 = 10 achieves the best balance between
+performance and efficiency.
+4.4.5. Frame Sampling Strategy
+We compare fixed sampling strategies with an adaptive,
+controller-driven strategy for the Interval Localizer tool
+across two long-video benchmarks, as shown in Table 6.
+Using a fixed strategy with 𝑁1 = 60 outperforms 𝑁1 = 30 on
+
+Method
+DVD [41]
+Ours
+
+Video (Sampled Frames)
+
+Theoretical Estimation
+
+Experiment (Video-MME)
+
+1 video & 1 query (30min)
+
+10 video & 30 queries (avg 41.3min)
+
+3.98M
+
+64.21M
+
+0.08M, 1/50 of DVD
+
+1.89M, 1/34 of DVD
+
+...
+
+Table 7. Comparison of token consumption from both theoretical
+estimation and experimental perspectives.
+
+both datasets, indicating that denser coverage generally benefits long-horizon reasoning. The adaptive strategy achieves
+the best result on both datasets, despite using fewer frames
+on average (𝑁1 = 49.8). These results suggest that adapting
+the sampling strategy to interval complexity helps capture
+salient events without over-sampling easy segments, improving both effectiveness and efficiency.
+
+Answer
+Answer: A
+Reason: Archaeologists pointed to the monumental hill-top residence with its
+long, elaborate stone staircase ( Stairway to Heaven )—construction that would
+GPT-o3 have required major resources—as clear evidence that its occupants were
+wealthy land-owning elites, akin to plantation owners.
+Answer: C
+Reason: The presence of sophisticated agricultural tools suggests that the Maya
+GPT-4o were engaged in extensive agriculture, indicating the wealth of plantation owners.
+
+4.5. Token Efficiency Analysis
+To quantitatively demonstrate the computational efficiency
+of our framework, we compare the total token consumption
+for processing a long-form video from both theoretical estimation and experimental perspectives between the retrievalcentric method DVD [41] and our proposed VideoARM.
+Theoretical Estimation. DVD pre-segments each video into
+10-second clips and performs exhaustive captioning and embedding extraction for all segments before reasoning. Following the official DVD configuration, each clip is sampled
+at 𝑟 𝑠 =2 FPS and each frame is encoded by GPT-4.1 vision at
+six 512×512 patches. According to OpenAI’s tokenization
+specification for gpt-4.1 vision, this process incurs a base
+cost of approximately 𝑡 𝑓 =1,105 tokens per frame.1 It is
+important to note that this estimation only accounts for the
+visual token consumption of DVD. In practice, the overall
+cost of DVD is substantially higher because it also includes
+tokens for caption generation, text embeddings, and retrieval
+reasoning, all of which are omitted here for a fair and conservative comparison with our method. Let 𝑇𝑣 denote the
+total video duration (in seconds), 𝑟 𝑠 the frame sampling rate,
+and 𝑡 𝑓 the average tokens per frame. The total visual token
+cost of DVD can be expressed as:
+𝐶DVD = 𝑇𝑣 × 𝑟 𝑠 × 𝑡 𝑓 .
+
+User Query
+What evidence suggests that the Maya at "Stairway to Heaven" were wealthy plantation owners?
+A. The elaborate architecture of their homes.
+B. The presence of gold and silver artifacts in their tombs.
+C. The presence of sophisticated agricultural tools found at the site.
+D. The analysis of food particles in dental plaque reveals a diverse diet.
+
+(4)
+
+For a 30-minute (𝑇𝑣 =1,800 s) video, with 𝑟 𝑠 =2 FPS and
+𝑡 𝑓 =1,105, DVD consumes at least 3.98M visual tokens, excluding additional tokens in captioning and retrieval, representing a conservative lower bound.
+Our VideoARM, instead of densely precomputing features, performs agentic video reasoning in an end-to-end
+manner. Each reasoning iteration consumes approximately
+8,000 tokens, including visual, textual, and memory context,
+and the controller is allowed up to 𝑁=10 iterations. The total
+1 See OpenAI documentation on gpt-4.1 vision tokenization: six
+512×512 tiles contribute ∼170×6 tokens plus a base cost of ∼85 tokens.
+
+Ours
+
+Answer: D
+Step1 Tools: Interval Localizer & Scene Snapper Interval: 0-79800 Frames: 90
+Reason: Initial overview to detect if dental plaque, tools, architecture, or tombs appear.
+Result: The frames depict an archaeological exploration and investigation into the
+Step2 Tools: Clip Explorer & Audio Transcriber
+Interval: 40500-44000
+Reason: Need to capture discussion of dental plaque analysis and what it reveals at lab
+around frames 41000-44000.
+Result: As the team carefully removes the plate, specks of evidence surface
+Step3 Tools: Clip Explorer & Audio Transcriber
+Interval: 44000-45500
+Reason: Capture dialogue in lab about dental plaque analysis and diet evidence.
+Result:
+Chemical analysis of food particles in the plaque gives Stephanie a hint
+about what kind of wealth Stairway's owners had. I'm finding a much greater diversity
+of plant food items that were consumed, ingredients in stews and soups, squash, beans,
+fruit fruits, chili peppers. The bounty suggests that the people who lived at Stairway
+were major plantation owners, operating extensive farms in the valley
+
+Figure 3. Visualization of the responses and underlying reasoning
+processes generated by different methods to a specific question.
+
+token cost is therefore:
+𝐶ARM ≤ 𝑁 × 8,000 = 80,000.
+
+(5)
+
+Therefore, VideoARM consumes ≤1/50 of the tokens required by DVD for a 30-minute video with one query.
+Experiments on Video-MME. Table 7 presents the comparison of token consumption on Video-MME. Our VideoARM
+consumes only 1/34 of the tokens required by DVD when
+processing 10 videos (average 41.3 minutes) with 30 queries.
+This reduction further demonstrates the efficiency of our hierarchical memory and adaptive reasoning design, which
+eliminates redundant information and significantly reduces
+token costs for video understanding.
+
+5. Conclusion
+We introduce VideoARM, a coarse-to-fine video reasoning
+paradigm over hierarchical multimodal memory (HM3 ) for
+long-form video understanding. By leveraging the proposed
+complementary toolsets and HM3 , our method can progressively localize, interpret, and abstract evidence in an adaptive observe–think–act–memorize loop. Extensive experiments on prevalent long-video understanding benchmarks
+demonstrate that VideoARM maintains strong performance
+while significantly reducing token consumption.
+
+Acknowledgments
+This work was supported by the Zhejiang Provincial
+Natural Science Foundation of China under Grant No.
+LQN26F020053, in part by the National Natural Science
+Foundation of China under Grants No. 62422204, in part by
+the Fundamental Research Funds for the Provincial Universities of Zhejiang under Grant No. GK259909299001-040, in
+part by the Zhejiang Provincial Natural Science Foundation
+of China under Grant No. LRG26F020001, in part by the
+Scientific Research Innovation Capability Support Project
+for Young Faculty, in part by the Key Research and Development Program of Zhejiang Province No. 2025C01026, in
+part by the National Natural Science Foundation of China
+No.62206082, in part by the National Natural Science Foundation of China under Grants No.62502135, in part by the
+Zhejiang Provincial Natural Science Foundation of China
+under Grants No. LQN25F030014.
+
+References
+[1] Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad,
+Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko
+Altenschmidt, Sam Altman, Shyamal Anadkat, et al. GPT-4
+technical report. arXiv preprint arXiv:2303.08774, 2023. 2,
+6
+[2] Shuai Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin
+Ge, Sibo Song, Kai Dang, Peng Wang, Shijie Wang, Jun
+Tang, et al. Qwen2.5-VL technical report. arXiv preprint
+arXiv:2502.13923, 2025. 1, 2, 6
+[3] Umberto Cappellazzo, Minsu Kim, Honglie Chen, Pingchuan
+Ma, Stavros Petridis, Daniele Falavigna, Alessio Brutti, and
+Maja Pantic. Large language models are strong audio-visual
+speech recognition learners. In ICASSP 2025-2025 IEEE
+International Conference on Acoustics, Speech and Signal
+Processing (ICASSP), pages 1–5. IEEE, 2025. 2
+[4] Boyu Chen, Zhengrong Yue, Siran Chen, Zikang Wang, Yang
+Liu, Peng Li, and Yali Wang. Lvagent: Long video understanding by multi-round dynamical collaboration of mllm
+agents. arXiv preprint arXiv:2503.10200, 2025. 2
+[5] Yue Fan, Xiaojian Ma, Rujie Wu, Yuntao Du, Jiaqi Li, Zhi
+Gao, and Qing Li. Videoagent: A memory-augmented multimodal agent for video understanding. In European Conference on Computer Vision (ECCV), pages 75–92. Springer,
+2024. 1, 2, 4, 6
+[6] Chaoyou Fu, Yuhan Dai, Yongdong Luo, Lei Li, Shuhuai
+Ren, Renrui Zhang, Zihan Wang, Chenyu Zhou, Yunhang
+Shen, Mengdan Zhang, et al. Video-mme: The first-ever
+comprehensive evaluation benchmark of multi-modal llms
+in video analysis. In Proceedings of the Computer Vision
+and Pattern Recognition Conference (CVPR), pages 24108–
+24118, 2025. 2, 5
+[7] Weiyu Guo, Ziyang Chen, Shaoguang Wang, Jianxiang He,
+Yijie Xu, Jinhui Ye, Ying Sun, and Hui Xiong. Logicin-frames: Dynamic keyframe search via visual semanticlogical verification for long video understanding. arXiv
+preprint arXiv:2503.13139, 2025. 6
+
+[8] Bo He, Hengduo Li, Young Kyun Jang, Menglin Jia, Xuefei Cao, Ashish Shah, Abhinav Shrivastava, and Ser-Nam
+Lim. Ma-lmm: Memory-augmented large multimodal model
+for long-term video understanding. In Proceedings of the
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 13504–13514, 2024. 2
+[9] Soyeong Jeong, Kangsan Kim, Jinheon Baek, and Sung Ju
+Hwang. Videorag: Retrieval-augmented generation over
+video corpus. arXiv preprint arXiv:2501.05874, 2025. 2
+[10] Bo Li, Yuanhan Zhang, Dong Guo, Renrui Zhang, Feng
+Li, Hao Zhang, Kaichen Zhang, Peiyuan Zhang, Yanwei Li,
+Ziwei Liu, et al. Llava-onevision: Easy visual task transfer.
+arXiv preprint arXiv:2408.03326, 2024. 6
+[11] Chuanhao Li, Zhen Li, Chenchen Jing, Shuo Liu, Wenqi
+Shao, Yuwei Wu, Ping Luo, Yu Qiao, and Kaipeng Zhang.
+Searchlvlms: A plug-and-play framework for augmenting
+large vision-language models by searching up-to-date internet knowledge. Advances in Neural Information Processing
+Systems (NeurIPS), 37:64582–64603, 2024. 2
+[12] Xinhao Li, Yi Wang, Jiashuo Yu, Xiangyu Zeng, Yuhan Zhu,
+Haian Huang, Jianfei Gao, Kunchang Li, Yinan He, Chenting
+Wang, Yu Qiao, Yali Wang, and Limin Wang. VideoChatFlash: Hierarchical compression for long-context video modeling. arXiv preprint arXiv:2501.00574, 2024. 6
+[13] Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee.
+Visual instruction tuning. Advances in neural information
+processing systems (NeurIPS), 36:34892–34916, 2023. 1, 2
+[14] Karttikeya Mangalam, Raiymbek Akshulakov, and Jitendra
+Malik. EgoSchema: A diagnostic benchmark for very longform video language understanding. In Advances in Neural
+Information Processing Systems (NeurIPS), 2023. 2, 5
+[15] OpenAI. Introducing GPT-4.1 in the API, 2025. 2
+[16] OpenAI. Introducing OpenAI o3 and o4-mini, 2025. 1, 2, 6
+[17] Ziqi Pang and Yu-Xiong Wang. Mr. video:” mapreduce” is
+the principle for long video understanding. arXiv preprint
+arXiv:2504.16082, 2025. 1, 2, 6
+[18] Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman,
+Christine McLeavey, and Ilya Sutskever. Robust speech
+recognition via large-scale weak supervision. In International conference on machine learning (ICML), pages 28492–
+28518. PMLR, 2023. 4, 5
+[19] Zhenwei Shao, Mingyang Wang, Zhou Yu, Wenwen Pan, Yan
+Yang, Tao Wei, Hongyuan Zhang, Ning Mao, Wei Chen, and
+Jun Yu. Growing a twig to accelerate large vision-language
+models. In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), pages 20064–20074,
+2025. 2
+[20] Zhenwei Shao, Zhou Yu, Jun Yu, Xuecheng Ouyang, Lihao
+Zheng, Zhenbiao Gai, Mingyang Wang, Zhenzhong Kuang,
+and Jiajun Ding. Imp: Highly capable large multimodal
+models for mobile devices. IEEE Transactions on Multimedia
+(TMM), 2025. 2
+[21] Xiaoqian Shen, Yunyang Xiong, Changsheng Zhao, Lemeng
+Wu, Jun Chen, Chenchen Zhu, Zechun Liu, Fanyi Xiao, Balakrishnan Varadarajan, Florian Bordes, et al. Longvu: Spatiotemporal adaptive compression for long video-language
+understanding. arXiv preprint arXiv:2410.17434, 2024. 2
+
+[22] Fangxun Shu, Lei Zhang, Hao Jiang, and Cihang Xie. Audiovisual llm for video understanding. In Proceedings of the
+IEEE International Conference on Computer Vision (ICCV),
+pages 4246–4255, 2025. 2
+[23] Keda Tao, Can Qin, Haoxuan You, Yang Sui, and Huan Wang.
+Dycoke: Dynamic compression of tokens for fast video large
+language models. In Proceedings of the Computer Vision
+and Pattern Recognition Conference (CVPR), pages 18992–
+19001, 2025. 2
+[24] Gemini Team, Rohan Anil, Sebastian Borgeaud, JeanBaptiste Alayrac, Jiahui Yu, Radu Soricut, Johan Schalkwyk,
+Andrew M Dai, Anja Hauth, Katie Millican, et al. Gemini: a
+family of highly capable multimodal models. arXiv preprint
+arXiv:2312.11805, 2023. 2, 6
+[25] Peng Wang, Shuai Bai, Sinan Tan, Shijie Wang, Zhihao Fan,
+Jinze Bai, Keqin Chen, Xuejing Liu, Jialin Wang, Wenbin
+Ge, et al. Qwen2-vl: Enhancing vision-language model’s
+perception of the world at any resolution. arXiv preprint
+arXiv:2409.12191, 2024. 6
+[26] Xiaohan Wang, Yuhui Zhang, Orr Zohar, and Serena YeungLevy. VideoAgent: Long-form video understanding with
+large language model as agent. In European Conference on
+Computer Vision (ECCV), 2024. 1, 2, 6
+[27] Xiao Wang, Qingyi Si, Shiyu Zhu, Jianlong Wu, Li Cao, and
+Liqiang Nie. Adaretake: Adaptive redundancy reduction to
+perceive longer for video-language understanding. In Findings of the Association for Computational Linguistics (ACL),
+pages 5417–5432, 2025. 6
+[28] Yi Wang, Xinhao Li, Ziang Yan, Yinan He, Jiashuo Yu, Xiangyu Zeng, Chenting Wang, Changlian Ma, Haian Huang,
+Jianfei Gao, et al. InternVideo2.5: Empowering video
+MLLMs with long and rich context modeling. arXiv preprint
+arXiv:2501.12386, 2025. 1, 2, 6
+[29] Ziyang Wang, Shoubin Yu, Elias Stengel-Eskin, Jaehong
+Yoon, Feng Cheng, Gedas Bertasius, and Mohit Bansal.
+Videotree: Adaptive tree-based video representation for llm
+reasoning on long videos. In Proceedings of the Computer
+Vision and Pattern Recognition Conference (CVPR), pages
+3272–3283, 2025. 1, 2, 6
+[30] Hongchen Wei and Zhenzhong Chen. Visual context window
+extension: A new perspective for long video understanding.
+In Proceedings of the 33rd ACM International Conference on
+Multimedia (ACM MM), pages 4281–4289, 2025. 2
+[31] Haoning Wu, Dongxu Li, Bei Chen, and Junnan Li.
+Longvideobench: A benchmark for long-context interleaved
+video-language understanding. In Advances in Neural Information Processing Systems (NeurIPS), 2024. 2, 5
+[32] Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He,
+Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang,
+et al. Qwen2. 5-omni technical report. arXiv preprint
+arXiv:2503.20215, 2025. 2
+[33] Chenyu Yang, Xuan Dong, Xizhou Zhu, Weijie Su, Jiahao
+Wang, Hao Tian, Zhe Chen, Wenhai Wang, Lewei Lu, and
+Jifeng Dai. Pvc: Progressive visual token compression for
+unified image and video processing in large vision-language
+models. In Proceedings of the Computer Vision and Pattern
+Recognition Conference (CVPR), pages 24939–24949, 2025.
+2
+
+[34] Zeyuan Yang, Delin Chen, Xueyang Yu, Maohao Shen, and
+Chuang Gan. Vca: Video curious agent for long video understanding. In Proceedings of the IEEE International Conference on Computer Vision (ICCV), pages 20168–20179, 2025.
+2, 6
+[35] Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran,
+Karthik Narasimhan, and Yuan Cao. ReAct: Synergizing
+reasoning and acting in language models. In International
+Conference on Learning Representations (ICLR), 2023. 2, 4
+[36] Jiabo Ye, Haiyang Xu, Haowei Liu, Anwen Hu, Ming Yan,
+Qi Qian, Ji Zhang, Fei Huang, and Jingren Zhou. mPLUGOWL3: Towards long image-sequence understanding in
+multi-modal large language models. In International Conference on Learning Representations (ICLR), 2025. 2, 6
+[37] Zhou Yu, Xuecheng Ouyang, Zhenwei Shao, Meng Wang,
+and Jun Yu. Prophet: Prompting large language models with
+complementary answer heuristics for knowledge-based visual
+question answering. IEEE Transactions on Pattern Analysis
+and Machine Intelligence (TPAMI), 2025.
+[38] Boqiang Zhang, Kehan Li, Zesen Cheng, Zhiqiang Hu,
+Yuqian Yuan, Guanzheng Chen, Sicong Leng, Yuming Jiang,
+Hang Zhang, Xin Li, Peng Jin, Wenqi Zhang, Fan Wang,
+Lidong Bing, and Deli Zhao. Videollama 3: Frontier multimodal foundation models for image and video understanding.
+arXiv preprint arXiv:2501.13106, 2025. 1, 2
+[39] Ce Zhang, Taixi Lu, Md Mohaiminul Islam, Ziyang Wang,
+Shoubin Yu, Mohit Bansal, and Gedas Bertasius. A simple
+llm framework for long-range video question-answering. In
+Proceedings of the 2024 Conference on Empirical Methods
+in Natural Language Processing (EMNLP), pages 21715–
+21737, 2024. 2
+[40] Peiyuan Zhang, Kaichen Zhang, Bo Li, Guangtao Zeng,
+Jingkang Yang, Yuanhan Zhang, Ziyue Wang, Haoran Tan,
+Chunyuan Li, and Ziwei Liu. Long context transfer from
+language to vision. arXiv preprint arXiv:2406.16852, 2024.
+2
+[41] Xiaoyi Zhang, Zhaoyang Jia, Zongyu Guo, Jiahao Li, Bin Li,
+Houqiang Li, and Yan Lu. Deep video discovery: Agentic
+search with tool use for long-form video understanding. arXiv
+preprint arXiv:2505.18079, 2025. 1, 2, 4, 6, 8
+[42] Jun Zhao, Can Zu, Hao Xu, Yi Lu, Wei He, Yiwen Ding, Tao
+Gui, Qi Zhang, and Xuanjing Huang. Longagent: scaling
+language models to 128k context through multi-agent collaboration. arXiv preprint arXiv:2402.11550, 2024. 2
+[43] Jialong Zuo, Yongtai Deng, Lingdong Kong, Jingkang Yang,
+Rui Jin, Yiwei Zhang, Nong Sang, Liang Pan, Ziwei Liu, and
+Changxin Gao. Videolucy: Deep memory backtracking for
+long video understanding. arXiv preprint arXiv:2510.12422,
+2025. 2, 3, 6
+
+Suppmentary Material
+A. Detailed Pipeline of VideoARM
+The detailed reasoning pipeline of VideoARM is illustrated
+in Algorithm 1. The entire process follows a coarse-to-fine,
+iterative reasoning loop. Concretely, we model VideoARM
+
+as an agentic policy 𝜋 𝜃 that, given the video information
+𝐼𝑛 𝑓 𝑜 (i.e., video 𝑉 and query 𝑄) and hierarchical memory
+𝑀 (𝑡 ) = (𝑀𝑠(𝑡 ) , 𝑀𝑟(𝑡 ) , 𝑀𝑤(𝑡 ) ), repeatedly (i) produces a reasoning trace 𝑅𝑡 and samples a tool action ( 𝐴𝑡 , 𝑃𝑡 ) from the
+action space A:
+( 𝐴𝑡 , 𝑃𝑡 ) ∼ 𝜋 𝜃 (· | 𝑅𝑡 , 𝑀 (𝑡 ) ),
+
+𝐴𝑡 ∈ A.
+
+(6)
+
+(ii) invokes the selected tool and its corresponding temporal
+tool 𝑇𝑡 to obtain an observation 𝑂 𝑡 and updates the hierarchical memory 𝑀 (𝑡+1) :
+𝑀𝑠(𝑡 ) = 𝑇𝑡 (𝑀 (𝑡 ) , 𝐼𝑛 𝑓 𝑜),
+𝑂 𝑡 = 𝐴𝑡 (𝑃𝑡 ; 𝑀𝑠(𝑡 ) ),
+𝑀
+
+(𝑡+1)
+
+=𝑀
+
+(𝑡 )
+
+(7)
+
+∪ (𝑅𝑡 , 𝑂 𝑡 ),
+
+and (iii) terminates and outputs the final answer Ans either
+when the sampled action is Answer or when the number of
+loops reaches 𝑁.
+
+B. Subset Analysis in the Ablation Study
+In the ablation study, we construct 200-sample evaluation
+subsets from the original datasets (i.e., VideoMME-Long)
+based on a stratified sampling strategy that preserves the
+original distribution of video types and task categories. Because the domain–task distribution in the full dataset is
+highly imbalanced, these two factors are strongly coupled,
+and we therefore treat the domain and task annotations as
+discrete variables defining a joint empirical distribution.
+To approximate this joint distribution when selecting a
+reduced subset, we apply a two-stage stratified sampling
+strategy. We first compute the empirical joint mass function 𝑝(𝑑, 𝑡) over all domain–task pairs and allocate a target
+sample count 𝑛(𝑑, 𝑡) to each cell proportional to 𝑝(𝑑, 𝑡),
+subject to the global 200-sample budget. Domains are given
+priority: domain-level proportions are matched exactly, and
+the task-level allocation is performed within each domain
+according to their relative frequencies. For cells with extremely small mass, we use floor-based rounding with a
+global residual redistribution step to ensure full coverage
+while avoiding over-sampling rare categories.
+Within each (𝑑, 𝑡) stratum, we then randomly sample the
+required number of videos without replacement. A final
+lightweight balancing pass adjusts only 1–2 samples per
+subset to eliminate minor rounding discrepancies and ensure
+exact alignment with the target domain–task histogram.
+Despite its simplicity, this stratified sampling procedure
+yields 200-sample subsets whose domain closely match
+those of the full dataset, as shown in Figure 4.
+
+C. Limitation and Discussion
+VideoARM already achieves strong performance on longform video understanding while effectively reducing token consumption. However, the current implementation
+of VideoARM has several concrete limitations:
+
+Algorithm 1: Reasoning Pipeline of VideoARM.
+Input : Video 𝑉, Query 𝑄, step budget 𝑁,
+Controller 𝐶, Temporal Scoping tools T𝑡 𝑠 ,
+Multimodal Understanding tools T𝑚𝑢 ,
+Long-term perception pool 𝑃𝑙 , Short-term
+perception pool 𝑃𝑠 , Result Memory 𝑀𝑟 ,
+Working Memory 𝑀𝑤 , action space
+A = T𝑚𝑢 ∪ {Answer}, agentic policy 𝜋 𝜃
+Output Answer to 𝑄
+:
+// Initialize VideoARM
+𝐼𝑛 𝑓 𝑜 = (𝑉, 𝑄); 𝑃𝑙(0) ← Sample(𝑉);
+𝑃𝑠(0) , 𝑀𝑟(0) , 𝑀𝑤(0) ← ∅; 𝑀𝑠(0) = (𝑃𝑙(0) , 𝑃𝑠(0) );
+𝑀 (0) = (𝑀𝑠(0) , 𝑀𝑟(0) , 𝑀𝑤(0) ).
+for 𝑡 ← 1 to 𝑁 do
+// Controller
+Refresh the context of 𝐶.
+𝑅𝑡 ← 𝐶.𝑟𝑒𝑎𝑠𝑜𝑛(𝑀 (𝑡 ) , 𝐼𝑛 𝑓 𝑜)
+( 𝐴𝑡 , 𝑃𝑡 ) ∼ 𝜋 𝜃 (· | 𝑅𝑡 , 𝑀 (𝑡 ) ), 𝐴𝑡 ∈ A
+if 𝐴𝑡 = 𝐴𝑛𝑠𝑤𝑒𝑟 then
+break
+end
+// Temporal Scoping Tools
+Find 𝑇𝑡 ∈ T𝑡 𝑠 corresponding to 𝐴𝑡 ∈ T𝑚𝑢 .
+𝑀𝑠(𝑡 ) ← 𝑇𝑡 (𝑀 (𝑡 ) , 𝐼𝑛 𝑓 𝑜)
+// MM Understanding Tools
+𝑂 𝑡 ← 𝐴𝑡 (𝑃𝑡 ; 𝑀𝑠(𝑡 ) )
+𝑀𝑟(𝑡+1) ← 𝑀𝑟(𝑡 ) ∪ 𝑂 𝑡
+𝑀𝑤(𝑡+1) ← 𝑀𝑤(𝑡 ) ∪ 𝑅𝑡
+𝑃𝑠(𝑡+1) ← ∅
+end
+∗
+Ans ← 𝐶.𝑎𝑛𝑠𝑤𝑒𝑟 (𝑀 (𝑡 ) , 𝐼𝑛 𝑓 𝑜).
+return Ans
+
+First, VideoARM is practically limited by its dependence
+on the quality of the initial temporal and visual sampling,
+which seeds the subsequent reasoning chain. The controller
+builds early hypotheses from sparsely sampled frames and
+short clips; if these miss brief but crucial moments or extremely fine-grained details (e.g., a small object, a subtle
+gesture, or a one-frame change), the agent may struggle to
+initiate a valid reasoning trajectory.
+Although our Temporal Scoping tools can sometimes recover missed evidence by sampling additional clips and revisiting nearby regions, this process is neither guaranteed
+nor efficient, as there is no explicit mechanism to detect early
+mis-localization and trigger targeted re-exploration. Consequently, the performance on very fine-grained or fleeting
+events remains constrained by this initial sampling bottleneck.
+As shown in Figure 5, when the object “the carousel” is
+
+Video-MME: Domain Distribution & Accuracy (Full vs Subset)
+Short Videos
+30.0% 29.5%
+
+Percentage (%)
+
+25
+
+Subset (200) - Correct
+Subset (200) - Wrong
+30
+
+20
+16.7% 16.5%
+15
+89%
+
+13.3% 13.0%
+
+85%
+87% 83%
+
+10
+5
+
+Knowledge
+
+Life Record
+
+73%
+
+Sports
+Competition
+
+85% 92%
+
+Artistic
+Performance
+
+86% 89%
+
+Film &
+Television
+
+3.3% 3.5%
+73% 86%
+Multilingual
+
+Subset (200) - Correct
+Subset (200) - Wrong
+
+23.4% 23.5%
+
+20
+16.6% 16.5%
+15
+83%
+
+10
+87%
+
+0
+
+13.3% 13.5%
+
+Original (900) - Correct
+Original (900) - Wrong
+
+30.1% 30.0%
+
+25
+
+23.3% 24.0%
+
+Percentage (%)
+
+30
+
+Long Videos
+
+Original (900) - Correct
+Original (900) - Wrong
+
+73%
+71%
+
+13.3% 13.5%
+
+85%
+
+76% 67%
+
+81%
+70% 76%
+
+5
+0
+
+13.4% 13.5%
+
+Knowledge
+
+Life Record
+
+73%
+
+Sports
+Competition
+
+Artistic
+Performance
+
+3.3% 3.0%
+67% 83%
+Multilingual
+
+Film &
+Television
+
+Figure 4. Comparison of domain distributions and accuracy statistics between the full Video-MME benchmark and the evaluation subset
+used in our ablation study. The evaluation subset closely matches the domain composition and accuracy trends of the original dataset in
+both short-video and long-video evaluations.
+
+heavily occluded and the query-relevant event occurs within
+a very short time interval, VideoARM struggles to localize the most relevant frames, rendering subsequent correct
+reasoning ineffective.
+Second, the current instantiation of VideoARM still relies
+heavily on proprietary, closed-source MLLMs for both the
+controller and worker agents, and our attempts to migrate the
+framework to fully open-source backbones remain unsatisfactory. In our experiments, directly replacing closed-source
+models with state-of-the-art open-source alternatives causes
+a clear performance drop, largely because many open-source
+models still exhibit weaker multi-step reasoning and longcontext planning, and struggle to align fine-grained visual
+evidence under VideoARM’s “jigsaw-style” video interface,
+where temporally distant frames and clips are densely arranged in grids. Nevertheless, we also see encouraging
+signs that this gap is narrowing—for example, in our tests,
+the latest open-source model Qwen3-VL already matches or
+even surpasses our GPT-4o-based configuration on several
+challenging benchmarks—suggesting that a fully open and
+self-hostable version of VideoARM is a realistic and promising direction as open-source reasoning models continue to
+improve.
+
+User Query
+What is the man doing when the carousel starts spinning for the first time?
+A. He is trying to stand on the balance board on the third level. X
+B. He is jumping from the ground onto the platform.
+C. He is standing on the balance board on the fourth level.
+D. He is having a conversation with the little boy on the ground.
+
+The answer
+is A. (X)
+
+Localization error
+occurred in the
+sixth loop for
+
+I got it!
+
+& Video (Sampled Frames) & Prompt & Video Information
+
+the carousel
+starts spinning for
+
+the first time
+
+VideoARM Pipeline
+Reason
+
+Look at early portion to see when carousel first spins.
+
+Tool
+
+Frame: 0 – 8k
+
+1
+
+Reason
+
+Checking when carousel starts spinning, examine
+progress after 8000.
+
+Tool
+
+Frame: 8k – 16k
+
+2
+
+Reason
+
+Determine if carousel is spinning early.
+
+Tool
+
+Frame: 7k – 8k
+
+3
+
+Reason
+
+Determine if carousel starts spinning within 80009000.
+
+Tool
+
+Frame: 7k – 8k
+
+4
+
+Reason
+
+Inspect what performer is doing around time carousel
+starts (between 8000-8600) to identify action.
+
+Tool
+
+Frame: 7.8k – 8.6k
+
+5
+
+Reason
+
+Inspect what the man is doing as carousel starts
+spinning, around 8100-8200.
+
+Tool
+
+Frame: 8.1k – 8.2k
+
+6
+
+Reason
+
+See what level his balance board is earlier before
+carousel spins.
+
+Tool
+
+Frame: 7k – 7.8k
+
+7
+
+Reason
+
+Examine what the man is doing during carousel first
+spin period.
+
+Tool
+
+Frame: 7.6k – 8.2k
+
+8
+
+Reason
+
+Need to determine if he is on third or fourth level
+when carousel starts spinning (first spin).
+
+Tool
+
+Frame: 8.1k – 8.2k
+
+9
+
+Reason
+
+Determine precise count of balance levels at the
+moment carousel starts spinning.
+
+Tool
+
+Frame: 8.14k–8.18k 10
+
+Perception Pool: 0-8000
+
+Perception Pool: 8140-8180
+
+...
+
+Reasoning
+Loops
+
+...
+
+Figure 5. Visualization of the failure case of VideoARM pipeline.
+
+E. Prompts of VideoARM
+D. More Visualization Results
+
+E.1. Agent System Prompt
+
+Figure 6 shows the additional visualizations of our
+VideoARM pipeline. Our method progressively identifies
+key temporal intervals and retrieves relevant information
+through the autonomous invocation of tools, ultimately providing the correct answer.
+
+Based on the categorization in Table 8, we next present the
+full text of each prompt in a modular and self-contained
+manner. For clarity and reproducibility, the following subsections list the exact system prompt, user prompt, tools list
+and tool prompts used in VideoARM.
+
+VideoARM Pipeline
+
+Video (Sampled Frames)
+Reason
+
+...
+User Query
+
+Tool
+Invocation
+
+When Jane saw Grayson in the office, she shed
+tears. What was Jane's mood at this moment?
+A. Crying with joy. B. Touched.
+C. Regretful.
+D. Sad.
+
+Prompt
+You are a helpful assistant who answers multistep questions by sequentially invoking
+functions. Follow the OBSERVE
+THINK
+ACT
+MEMORY loop:
+OBSERVATION Carefully observe the
+memory.
+THOUGHT Reason step-by-step about which
+function to call next.
+ACTION Call exactly one function that
+moves you closer to the final answer.
+MEMORY Update the (Current Memory in
+the prompt) based on tool outputs.
+You MUST plan extensively before each
+
+Video Information
+Total frames: 68550
+FPS: 23.98
+
+Duration: 2859.1s
+
+Frame Interval1: 0 - 2000; Frame Interval2: 14000 - 16000; Frame Interval3: 28000 - 30000;
+Frame Interval4: 42000 - 44000; Frame Interval5: 56000 - 58000; Frame Number: 50
+Audio: 444-483: Do my knees look fat? 483-527: What? 527-551: I don't know. 551-601: Maybe I
+should just wear pants. 601-629: Don't get nervous. 629-661: What's going on? 661-700: You didn't
+answer the question. 700-750: You and your knees are perfect. 750-810: Okay.
+
+Update Memory (HM3)
+
+Reason
+Tool
+Invocation
+
+Inspect around early office scenes for Jane's tears when she might see Grayson.
+Frame Interval: 4000 – 6000; Frame Number: 60
+Caption: The frames depict a sequence where a woman in an office experiences a startling arrival,
+possibly of a threatening individual, as seen by her hiding and the reaction of a man raising his arms,
+followed by her unconscious on the floor, and concluding with another woman driving and engaging in a
+workout session.
+
+Update Memory (HM3)
+
+Reason
+Tool
+Invocation
+
+Perception Pool: 5200-5350
+
+Determine if Jane appears happy, touched, sad, or regretful when seeing Grayson.
+Frame Interval: 5000 – 5355; Frame Number: 50; Sub Question: What is the woman's emotional
+expression and mood in these frames where she sees the man?
+Answer:
+The man is pointing a gun toward her, which naturally induces fear or panic. The woman's
+reaction, as seen from her body orientation and movements, particularly the frames where she appears
+to be backing away or moving hastily, suggests she is afraid and possibly in shock, trying to assess the
+situation or look for an escape. The circumstances displayed in the frames indicate an imminent threat,
+leading to the hypothesis that she might be feeling anxious, frightened, and urgent about the
+situation. Confidence: 0.9
+
+Update Memory (HM3)
+
+Reason
+Tool
+Invocation
+
+The answer
+is D.
+
+Sample audio across video to locate mentions of Jane and Grayson or crying scene.
+
+Examine Jane's expression and tears when she supposedly sees Grayson around 5200-5350
+Frame Interval: 5200 – 5350; Frame Number: 30
+Caption: A tense confrontation unfolds in an office as a man raises his hands in apparent compliance
+while another individual points a gun, witnessed by a woman who ducks under a desk for safety.
+
+I got it!
+
+Video (Sampled Frames)
+
+VideoARM Pipeline
+
+...
+
+Tool
+Invocation
+
+User Query
+How about the bottom lane at an early time?
+A. The blue side giveups attack.
+B. The red side can farm easily.
+C. It is peaceful for both sides.
+D. The blue side is formidable.
+
+Prompt
+You are a helpful assistant who answers multistep questions by sequentially invoking
+functions. Follow the OBSERVE
+THINK
+ACT
+MEMORY loop:
+OBSERVATION Carefully observe the
+memory.
+THOUGHT Reason step-by-step about which
+function to call next.
+ACTION Call exactly one function that
+moves you closer to the final answer.
+MEMORY Update the (Current Memory in
+the prompt) based on tool outputs.
+You MUST plan extensively before each
+
+Video Information
+Total frames: 63900
+FPS: 29.97
+
+Reason
+
+Duration: 2130.0 s
+
+Perception Pool: 0-3000
+
+Inspect early part of the match to assess bottom lane state.
+Frame Interval: 0 – 3000; Frame Number: 60
+Caption: The frames depict a competitive gaming event showcasing the "Champion Selection" phase for
+a League of Legends match between the teams Bilibili Gaming and Ninjas in Pyjamas, followed by the
+teams preparing on stage as the match progresses.
+
+Update Memory (HM3)
+
+Reason
+Tool
+Invocation
+
+Inspect early part of the match to assess bottom lane state.
+Frame Interval: 6000 – 9000; Frame Number: 60
+Caption: The frames depict a professional League of Legends match with two teams actively engaging
+in strategic plays across different lanes, focusing on tactical positioning and objective control.
+
+Update Memory (HM3)
+
+Reason
+Tool
+Invocation
+
+Need objective analysis for early bottom lane state
+
+Frame Interval: 6000 – 6800; Frame Number: 50; Sub Question: Describe the bottom lane matchup
+state. Which side has lane pressure and who looks stronger?
+Answer: The Blue side (bottom of map) appears formidable with health advantage, better positioning,
+superior creep wave control, and effective champion execution. Confidence: 0.9
+
+Perception Pool: 6000-9000
+
+Perception Pool: 6000-6800
+I got it!
+
+...
+
+...
+The answer
+is D.
+
+Figure 6. Additional visualizations of the VideoARM pipeline. For brevity, the perception pool displays only the short-term or long-term
+pool invoked by the tool in the current loop.
+
+Prompt Name
+
+Purpose
+
+Used By
+
+Agent System Prompt
+
+Defines global reasoning rules (OBSERVE–THINK–ACT–MEMORY), toolcalling constraints, and planning behavior
+Formats the query and memory into a structured prompt for each reasoning step
+Defines available tools, their signatures, and call behaviors for the agent system
+Produces concise event or appearance descriptions for selected clips
+Inspect selected frame intervals and return analysis or evidence
+
+Controller
+
+Agent User Prompt
+Tools List
+Scene Caption Prompt
+Clip Analyzer Tool Prompt
+
+Controller
+Controller
+Scene Snapper
+Clip Analyzer
+
+Table 8. Summary of all prompts used in VideoARM. Each prompt corresponds to one stage of the reasoning pipeline.
+
+E.2. Agent System Prompt
+
+You are a helpful assistant who answers multi-step questions
+by sequentially invoking functions. Follow the OBSERVE →
+THINK → ACT → MEMORY loop:
+• OBSERVATION — Carefully observe the memory.
+• THOUGHT — Reason step-by-step about which function
+to call next.
+• ACTION — Call exactly one function that moves you closer
+to the final answer.
+• MEMORY — Update the current memory based on tool
+outputs.
+Important: You MUST plan extensively before each function
+call, and reflect on the outcomes of previous calls. If uncertain
+about code structure or video content, use tools to inspect
+rather than guessing. Do not rely on blind function calls —
+this degrades reasoning quality.
+Each extracted frame contains the global frame index in white
+text. Each image you see is a 3×2 mosaic. Give the final
+answer only when you are confident; otherwise continue tool
+calls.
+
+In our design, the agent is instantiated as a multi-step reasoning assistant that operates under a clearly defined control
+regime. The system prompt formalizes this behavior by enforcing an explicit OBSERVE → THINK → ACT → MEMORY loop, which structures every reasoning round into four
+interpretable and verifiable stages. This design ensures that
+each action is grounded in the agent’s current evidence, and
+that all new information is immediately incorporated into
+the hierarchical memory for subsequent steps. To maintain
+stable reasoning behavior, the prompt further imposes several core rules: the agent must plan before each tool call,
+reflect on the returned result, inspect code or video segments
+via tools whenever uncertainty arises, and avoid blind or unmotivated tool invocations. We additionally define visual
+conventions—global frame indices overlaid in white and all
+inspected images formatted as 3×2 mosaics—to standardize
+the perceptual input seen by the controller. Finally, the agent
+is instructed to produce a final answer only when it has accumulated sufficient evidence to be confident, ensuring that our
+design favors precision and robustness in long-form video
+reasoning.
+
+E.3. Agent User Prompt
+Video Information
+• Total frames: {total frames}
+• Duration: {duration:.1f} seconds
+• FPS: {fps:.2f}
+Current Memory (JSON):
+{memory json}
+Question:
+{question text}
+Options:
+{question text with options}
+Respond with only the letter (A, B, C, or D) of the correct
+option.
+
+This user prompt template provides a standardized interface between the controller and the underlying tools. Rather
+than issuing free-form queries, the controller is required to
+ground each step in the current question, video metadata,
+and memory state, and to explicitly state missing information before selecting a tool. This structuring encourages the
+agent to decompose the problem into a sequence of targeted
+evidence-gathering operations, instead of jumping directly
+to an answer. By forcing the controller to justify every tool
+call and to specify concrete inputs such as frame intervals or
+clips, the template makes the reasoning process more interpretable and reduces spurious or redundant tool invocations,
+which is crucial for stable long-form video reasoning.
+
+[
+{
+"type": "function",
+"function": {
+"name": "scene_snapper",
+"description": "Scene Snapper - Navigate
+↩→
+to frame ranges, extract images
+↩→
+(default 30 frames), and return an
+↩→
+auto-generated caption.",
+"parameters": {
+"type": "object",
+"properties": {
+"frame_ranges": {
+"type": "array",
+"items": {
+"type": "object",
+"properties": {
+
+"start_frame": { "type":
+↩→
+"integer", "description":
+↩→
+"Starting frame number" },
+"end_frame": { "type":
+↩→
+"integer", "description":
+↩→
+"Ending frame number" }
+},
+"required": ["start_frame",
+↩→
+"end_frame"]
+
+}
+},
+{
+"type": "function",
+"function": {
+"name": "clip_analyzer",
+"description": "Analyze frames within a
+↩→
+specific range by asking a
+↩→
+question.",
+"parameters": {
+"type": "object",
+"properties": {
+"frame_range": {
+"type": "object",
+"properties": {
+"start_frame": { "type":
+↩→
+"integer", "description":
+↩→
+"Starting frame number" },
+"end_frame": { "type":
+↩→
+"integer", "description":
+↩→
+"Ending frame number" }
+},
+"required": ["start_frame",
+↩→
+"end_frame"]
+},
+"question": { "type": "string",
+↩→
+"description": "Question to ask
+↩→
+about the frame range content"
+↩→
+},
+"reason": { "type": "string",
+↩→
+"description": "Short rationale
+↩→
+describing why the tool is being
+↩→
+invoked." }
+},
+"required": ["frame_range",
+↩→
+"question", "reason"]
+}
+}
+}
+
+},
+"description": "Array of frame
+ranges to view. Frames are
+↩→
+distributed proportionally
+↩→
+across ranges."
+↩→
+},
+"num_frames": {
+"type": "integer",
+"description": "Number of frames
+↩→
+to extract across ranges:
+↩→
+30/60/90/150 (default: 30).",
+"enum": [30, 60, 90, 150],
+"default": 30
+},
+"reason": { "type": "string",
+↩→
+"description": "Short rationale
+↩→
+describing why the tool is being
+↩→
+invoked." }
+},
+"required": ["frame_ranges", "reason"]
+}
+}
+},
+{
+"type": "function",
+"function": {
+"name": "audio_transcripter",
+"description": "Extract and transcribe
+↩→
+audio from specific frame ranges
+↩→
+using whisper-1 API. Returns only
+↩→
+segments with global frame indices
+↩→
+and text.",
+"parameters": {
+"type": "object",
+"properties": {
+"frame_ranges": {
+"type": "array",
+"items": {
+"type": "object",
+"properties": {
+"start_frame": { "type":
+↩→
+"integer", "description":
+↩→
+"Starting frame number" },
+"end_frame": { "type":
+↩→
+"integer", "description":
+↩→
+"Ending frame number" }
+},
+"required": ["start_frame",
+↩→
+"end_frame"]
+}
+},
+"reason": { "type": "string",
+↩→
+"description": "Short rationale
+↩→
+describing why the tool is being
+↩→
+invoked." }
+},
+"required": ["frame_ranges", "reason"]
+}
+
+]
+
+The tools list prompt serves as a formal specification for
+all tool interfaces that the agent may invoke during reasoning. By presenting tools in a structured, argument-explicit
+format, we ensure that the controller understands both the capabilities and the constraints associated with each tool. This
+prevents misuse, reduces invalid calls, and promotes interpretability by making each step of the reasoning pipeline
+verifiable.
+E.4. Scene Snapper Prompt
+You are a video frame captioning assistant. Each extracted
+frame displays the global frame index in white text at the topleft. Each picture you see contains one 3×2 mosaic (a single
+image composed of 6 frames). row-major from top-left to
+bottom-right
+Caption the provided{len(frame paths)} frames sampled uniformly from frame range {start frame} -{end frame}. The
+frames represent a continuous sequence from the video. Describe the main scene or action in these frames using a concise
+English sentence.
+
+The Scene Caption Prompt defines a lightweight abstraction mechanism that provides scene-level summaries for
+longer clips. While the Clip Analyzer operates on finegrained evidence, the Scene Captioner complements it by
+generating high-level semantic context that helps the agent
+track global events, locations, or transitions.
+E.5. Clip Analyzer Prompt
+You are an expert video frame analyst. Analyze the provided
+{len(frame paths)} frames sampled uniformly from frame
+range {start frame} -{end frame}and answer the given question. The frames represent a continuous sequence from the
+video. Analyze them collectively to provide a comprehensive
+answer. Each extracted frame displays the global frame index
+in white text at the top-left.
+Analyze this frame sequence and answer the question below.
+IMPORTANT: Your response must include a confidence score
+between 0.0 and 1.0 indicating how confident you are in your
+answer. Format your response as:
+Answer: [Your detailed answer here]
+Confidence: [0.0-1.0]
+Question:
+{question text}
+Options:
+{question text with options}
+
+The Clip Analyzer Prompt specifies the behavior of
+VideoARM’s fine-grained visual inspection tool. The
+prompt ensures that the model focuses on extracting concrete evidence—actions, object states, and temporal transitions—rather than prematurely interpreting or answering the
+user’s question. By explicitly specifying the interval and requiring uniformly sampled frames, we enforce consistency
+across tool calls and prevent biases caused by arbitrary sampling. The structured output schema further improves interpretability, allowing the controller to reason over analyzable
+evidence rather than free-form text. This modular design is
+crucial for long-form videos, where localized events must be
+inspected precisely and repeatedly across multiple reasoning
+rounds.
+
+

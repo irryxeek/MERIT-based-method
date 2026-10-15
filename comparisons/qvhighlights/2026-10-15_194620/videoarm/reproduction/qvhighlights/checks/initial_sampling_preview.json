@@ -1,0 +1,200 @@
+{
+  "qid": 6415,
+  "query": "A woman is reading at a rocky ledge near an ancient stone wall.",
+  "vid": "nqseXA2oerE_60.0_210.0",
+  "frame_mapping": [
+    {
+      "image_id": "b4505ef0612cf3111a1c7925ead2d26b91b56c0f47731ffcce5c6582c35a5bff",
+      "pts": 3.12,
+      "position": 0,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/b4505ef0612cf3111a1c7925ead2d26b91b56c0f47731ffcce5c6582c35a5bff.jpg",
+      "jpeg_sha256": "0c01daaa048346d5d0fcccecec3ddeaa63e1a0749e7ae347032a2e15fd9a250e"
+    },
+    {
+      "image_id": "a28e70237eb937e97dc806f19d813aceae134667f6c09ccb9c615a3199433561",
+      "pts": 9.36,
+      "position": 1,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/a28e70237eb937e97dc806f19d813aceae134667f6c09ccb9c615a3199433561.jpg",
+      "jpeg_sha256": "b649c5cb8db8144c5236027b2605af26fbbb3bbb6a2ec3910a3abd96a06ecead"
+    },
+    {
+      "image_id": "15ac16b9e6d176777613a441ca1b8ff4bff62fb08b50b36333d16db72a87c5ef",
+      "pts": 15.64,
+      "position": 2,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/15ac16b9e6d176777613a441ca1b8ff4bff62fb08b50b36333d16db72a87c5ef.jpg",
+      "jpeg_sha256": "499dc784abbcd4b41a241debfcd0316f851cd3596373948f38e68c2406036dc8"
+    },
+    {
+      "image_id": "98d3c919f218e49b0563632e33f3a0880cdb726aee943892c12f04ffe29d9362",
+      "pts": 21.88,
+      "position": 3,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/98d3c919f218e49b0563632e33f3a0880cdb726aee943892c12f04ffe29d9362.jpg",
+      "jpeg_sha256": "5cd45a03118a8a7b2a4313deb6c66afc17d20bdafc5fc9c8d3232769e415c3b2"
+    },
+    {
+      "image_id": "cf05fe1ac43a32afbc7333764acbd947904e0c9bca57e0686009e76601f465bf",
+      "pts": 28.12,
+      "position": 4,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/cf05fe1ac43a32afbc7333764acbd947904e0c9bca57e0686009e76601f465bf.jpg",
+      "jpeg_sha256": "ee95c15ea5dc9dc33f923fdc671eea667e3df59e80a9d402b1b6dc6e84ea246e"
+    },
+    {
+      "image_id": "f0faece4308059d52a8819ad064cccfdc2df8aa9e4ca439dce74f63b15ea3463",
+      "pts": 34.36,
+      "position": 5,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/f0faece4308059d52a8819ad064cccfdc2df8aa9e4ca439dce74f63b15ea3463.jpg",
+      "jpeg_sha256": "0b3b9f196e845851ebf14bb50ab0e049ca85dcb45407d3ce2cdae5286ad9a13b"
+    },
+    {
+      "image_id": "cd4f1fd12cd70cc4f9154dd2018585d2c5a21634f85aacd5f0c9bb12af706d47",
+      "pts": 40.64,
+      "position": 6,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/cd4f1fd12cd70cc4f9154dd2018585d2c5a21634f85aacd5f0c9bb12af706d47.jpg",
+      "jpeg_sha256": "8e6d0a4ece841af7ef122ef7cc0ff5b14dfac0029c2be00c3371882071ad15bf"
+    },
+    {
+      "image_id": "1b6cad88a49ac27ed91db05441c458790972454c66789666e268e3e3419445f6",
+      "pts": 46.88,
+      "position": 7,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/1b6cad88a49ac27ed91db05441c458790972454c66789666e268e3e3419445f6.jpg",
+      "jpeg_sha256": "474fe3a1cc8f8276287366fe080bb65a69d95995b2c0932b86f3b3f391e24869"
+    },
+    {
+      "image_id": "43aca5da0f98cb9f1f5d49e1db3219c106aff176e185cb3f13b2d0965511d75a",
+      "pts": 53.12,
+      "position": 8,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/43aca5da0f98cb9f1f5d49e1db3219c106aff176e185cb3f13b2d0965511d75a.jpg",
+      "jpeg_sha256": "88175c169f7b591dea6670ff5910ec9e0e75c849048380600c1a2ef80c1b9f7f"
+    },
+    {
+      "image_id": "406970953431e2ce4546f72174e70de12c0ae21ca207d1871f9c45774539fec5",
+      "pts": 59.36,
+      "position": 9,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/406970953431e2ce4546f72174e70de12c0ae21ca207d1871f9c45774539fec5.jpg",
+      "jpeg_sha256": "ba3ca0bfdb8b0b1f6ea0f3f88618c37622bf833528c54280f6a80a4494565ca9"
+    },
+    {
+      "image_id": "f0d00df191ee9e8b10d0f00bb89268b5ce0ef65b25f601974ed4f28f7ea9fd95",
+      "pts": 65.64,
+      "position": 10,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/f0d00df191ee9e8b10d0f00bb89268b5ce0ef65b25f601974ed4f28f7ea9fd95.jpg",
+      "jpeg_sha256": "39c7cc7e51e6a27ae86c505924be1eae2097c82c140acb44324b1d68c96def90"
+    },
+    {
+      "image_id": "8a64e6702b6f6b0d04ff5a20351bbc634da73749562a79eaf7b75763ddcd6556",
+      "pts": 71.88,
+      "position": 11,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/8a64e6702b6f6b0d04ff5a20351bbc634da73749562a79eaf7b75763ddcd6556.jpg",
+      "jpeg_sha256": "07a18d09def15dc115bcf24913a937a6091d5366cd5de042b04cffa4738f3466"
+    },
+    {
+      "image_id": "f8b9fcee96bda6b1a8d94062990058e1b824097250c65cb8175152e3550b1928",
+      "pts": 78.12,
+      "position": 12,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/f8b9fcee96bda6b1a8d94062990058e1b824097250c65cb8175152e3550b1928.jpg",
+      "jpeg_sha256": "515124367671edb4e7981fcefc6baf3492f44e687445e454af6615e3b1677690"
+    },
+    {
+      "image_id": "498aaa3b112e568e36d4fd99c6d8888183e37b790e16de45b8946000683c2691",
+      "pts": 84.36,
+      "position": 13,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/498aaa3b112e568e36d4fd99c6d8888183e37b790e16de45b8946000683c2691.jpg",
+      "jpeg_sha256": "d792595da0110c78468b3975c5449f607acd50af68a4f90e6c4fd058588cc3b4"
+    },
+    {
+      "image_id": "244fa0eaa875849ff7cd4455cdb7a88e9a620378200256cdd1ba527ca70d820d",
+      "pts": 90.64,
+      "position": 14,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/244fa0eaa875849ff7cd4455cdb7a88e9a620378200256cdd1ba527ca70d820d.jpg",
+      "jpeg_sha256": "ba2a72546053745db04646bfd44f2eef4adb3e8c6aa2529e996320aaa98dde3e"
+    },
+    {
+      "image_id": "750222b143be522e9b0418fc662a1a645d15e453f5ab315ea24b69dcb72e7d18",
+      "pts": 96.88,
+      "position": 15,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/750222b143be522e9b0418fc662a1a645d15e453f5ab315ea24b69dcb72e7d18.jpg",
+      "jpeg_sha256": "6ef1691b669e922bf429b53704ad628f432d0c7ce4afa63a30db768d54c16f3e"
+    },
+    {
+      "image_id": "ea3269e663fe60dbd73b1ed28923e710d262d33d09d82b892dd7953c4594a47d",
+      "pts": 103.12,
+      "position": 16,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/ea3269e663fe60dbd73b1ed28923e710d262d33d09d82b892dd7953c4594a47d.jpg",
+      "jpeg_sha256": "5044b305ed79ff1466cd8a38b2b1b34c02e18535a989832dd74488bea602ab8b"
+    },
+    {
+      "image_id": "8e28daf3d3a88ad7f3ec57d06438c3143431a5ac0dd80f641cb2efd54325933d",
+      "pts": 109.36,
+      "position": 17,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/8e28daf3d3a88ad7f3ec57d06438c3143431a5ac0dd80f641cb2efd54325933d.jpg",
+      "jpeg_sha256": "639a0771d239e5e5f9e7c43f9d1ffa0e068bac43fefaebbc4178e039a815dfce"
+    },
+    {
+      "image_id": "7d7a727f05b77fbd8d8ee75e42c18367eb6f787863ac66e4e486883d99dbba16",
+      "pts": 115.64,
+      "position": 18,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/7d7a727f05b77fbd8d8ee75e42c18367eb6f787863ac66e4e486883d99dbba16.jpg",
+      "jpeg_sha256": "f35f896e0ea327388498cc101b12ad98674518889373a8c856f3b9838be51b9f"
+    },
+    {
+      "image_id": "9dc95310b65e5c3ce5edacce0ecfe270e14be34377d87c99fc8b5ab30f464e98",
+      "pts": 121.88,
+      "position": 19,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/9dc95310b65e5c3ce5edacce0ecfe270e14be34377d87c99fc8b5ab30f464e98.jpg",
+      "jpeg_sha256": "81635eef82f96209037251a29fdbfc7f34748d67ff8f7a7a9ef0c4e289a7c71a"
+    },
+    {
+      "image_id": "99cd3eec707c5b20a1d05d7c93de6677202f9152ce28ac6eeba1800e734bdf72",
+      "pts": 128.12,
+      "position": 20,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/99cd3eec707c5b20a1d05d7c93de6677202f9152ce28ac6eeba1800e734bdf72.jpg",
+      "jpeg_sha256": "15efe6e9d8683d05ceff6d5ff34525f7d1bf4e77f97c8f9ddf334096866eb28f"
+    },
+    {
+      "image_id": "20484b327e6f2b912be53e654107ad1beff1e9e564e04695f5ae0ce78ff03051",
+      "pts": 134.36,
+      "position": 21,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/20484b327e6f2b912be53e654107ad1beff1e9e564e04695f5ae0ce78ff03051.jpg",
+      "jpeg_sha256": "2e9cb14c2e7f6955325c54e87408487aa55d0b24f35e343dd942e22dd4bde687"
+    },
+    {
+      "image_id": "9ae9debbbbfc947880f1dc2324c1fb41c5b8c071a9b4af2c2c982830a23dd0e5",
+      "pts": 140.64,
+      "position": 22,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/9ae9debbbbfc947880f1dc2324c1fb41c5b8c071a9b4af2c2c982830a23dd0e5.jpg",
+      "jpeg_sha256": "efd07d64d1fa07e5252feb355e21b64f3b6078699d1ceea05f4d4b56c894b26c"
+    },
+    {
+      "image_id": "7f6e17c1dafced078849032998f3ede4c5042a6b4ca89056f28359dfa6e88aa4",
+      "pts": 146.88,
+      "position": 23,
+      "clip_id": null,
+      "path": "qvh_data/preview/frames/7f6e17c1dafced078849032998f3ede4c5042a6b4ca89056f28359dfa6e88aa4.jpg",
+      "jpeg_sha256": "04506344e462f50415fb607f2b846d32b2a92e3164289bd2fed6f8c3c0aceb11"
+    }
+  ],
+  "purpose": "CPU decode/PTS/order inspection; no model or label read"
+}
