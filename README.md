@@ -7,6 +7,7 @@
 REZE B0、P_abs、P_pair 已完成全部 1,550 条 validation 查询，VeryGood mAP / Hit@1 分别为 **42.99 / 71.68、43.57 / 74.06、43.76 / 76.84**。本轮仅重排前五候选，未加入记忆或回看；此前 A 阶段未通过门槛的结论保留。
 
 - [最新实验报告](docs/reze_fullval_results_2026-10-20.md)：完整指标、配对区间、CLIP / VTG-GPT 对照与成本边界。
+- [REZE 完整执行方案](docs/reze_execution_plan_2026-10-19.md)、[研究方向](docs/reze_research_directions_2026-10-19.md)：比较、记忆、回看和确认阶段的原始设计，附最新执行状态。
 - [结果包与 CPU 复算](comparisons/qvhighlights/reze_fullval_2026-10-20/README.md)：预测、逐查询结果、冻结代码和来源校验。
 - [文档索引](docs/README.md)、[此前结果总汇](docs/reproduction_results_summary_2026-10-19.md)：查阅 MERIT、LongVT、VideoARM 历史结果。
 

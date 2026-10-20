@@ -2,6 +2,14 @@
 
 更新日期：2026-10-20。本页列出已发布到仓库的结果与文档。
 
+## REZE 实验方案
+
+- [完整执行方案 v1](reze_execution_plan_2026-10-19.md)：A 阶段候选比较、B 阶段证据记忆、C 阶段定向回看，以及确认集、预算和推进门槛。
+- [研究方向与设计依据](reze_research_directions_2026-10-19.md)：已有结果诊断、候选方向、简单对照与贡献边界。
+- [冻结参数清单](../comparisons/qvhighlights/reze_fullval_2026-10-20/stage_a/plan.json)、[文档发布清单](reze_plan_publication_2026-10-20.json)：原始方案参数及来源校验和。
+
+方案制定于 2026-10-19；公开版本文首另列截至 2026-10-20 的执行状态。A 阶段及单独授权的全量评分扩展已完成；A 阶段未通过原门槛，B/C 与 confirm100 尚未执行。
+
 ## 最新结果
 
 - [REZE 基线与高光重排：完整 validation](reze_fullval_results_2026-10-20.md)：1,550 查询；B0 / P_abs / P_pair 的 VeryGood mAP 为 **42.99 / 43.57 / 43.76**，Hit@1 为 **71.68 / 74.06 / 76.84**。同时整理 CLIP、VTG-GPT 对照和此前 A 阶段停止结论。

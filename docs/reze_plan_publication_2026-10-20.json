@@ -1,0 +1,54 @@
+{
+  "published_at": "2026-10-20T06:42:07.998667+00:00",
+  "scope": "Publish the existing REZE execution plan and research directions; no new inference or protocol changes.",
+  "source_documents_modified": false,
+  "execution_status_as_of": "2026-10-20",
+  "completed": [
+    "Stage A explore100 with failed continuation gate",
+    "Separately authorized val1550 scoring extension"
+  ],
+  "not_executed": [
+    "Stage B memory",
+    "Stage C revisit",
+    "confirm100"
+  ],
+  "files": [
+    {
+      "path": "docs/reze_execution_plan_2026-10-19.md",
+      "source_label": "MERIT/docs/reze_execution_plan_2026-10-19.md",
+      "source_sha256": "294010e8b0d2263caf468afdc2d5267efe536533a85757cc2abe0262bcce9a15",
+      "public_sha256": "23439395ab59478400d54e203c48ce15b91302326951241b9aa52e3586e6d7d5",
+      "source_bytes": 26862,
+      "public_bytes": 27748,
+      "transformations": [
+        "Add dated execution status without changing experimental stages, prompts, gates or budgets",
+        "Link parameter specification to the already published frozen JSON",
+        "Link baseline evidence to the published result summary",
+        "Replace machine-specific paths with provenance aliases"
+      ]
+    },
+    {
+      "path": "docs/reze_research_directions_2026-10-19.md",
+      "source_label": "MERIT/docs/reze_research_directions_2026-10-19.md",
+      "source_sha256": "00d3946e4857842b2eda8d6e3e64d2d1f5182869351e2a16dd82b942caf15859",
+      "public_sha256": "de97215aea2fbc37e6896e9b4333441c957cf8d45f7998938c5d7179f9778814",
+      "source_bytes": 16218,
+      "public_bytes": 17437,
+      "transformations": [
+        "Add dated execution status; retain original research hypotheses and proposed experiments",
+        "Replace unavailable local source links with published summaries or explicit source filenames",
+        "Identify the offline diagnosis artifacts and command as original-workspace-only",
+        "Clarify that the no-push statement described the original drafting session"
+      ]
+    }
+  ],
+  "parameter_snapshot": {
+    "path": "comparisons/qvhighlights/reze_fullval_2026-10-20/stage_a/plan.json",
+    "original_source_sha256": "c5460466054370db5873543204bb6044c90181ecf11b8393cb39ea13d2dbd4f0",
+    "public_sha256": "ae8b9ee5c43c63ef74c86dd0690c9f5db7afdb829288e1c36dd494ef7ea7d34a",
+    "previous_publication": "comparisons/qvhighlights/reze_fullval_2026-10-20/publication.json"
+  },
+  "limitations": [
+    "Historical offline research diagnosis files and complete raw query records are retained in the original workspace and are not included in this documentation publication."
+  ]
+}
