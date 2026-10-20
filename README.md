@@ -1,6 +1,14 @@
 # MERIT 在 QVHighlights 上的高光检测适配
 
-本项目实现 MERIT 的三键记忆检索、时序邻域过滤和多轮检索，并增加完整时间轴的高光评分。当前只做一套冻结模型的主实验；不训练、不做消融、不用验证集选参数。原论文评估视频问答，**本项目是向 QVHighlights 的迁移适配，并非复现论文已有的 QVHighlights 分数**。
+本项目从 MERIT 的三键记忆检索、时序邻域过滤和完整时间轴高光评分出发，保存 QVHighlights 适配实验及后续零样本对照。原论文评估视频问答，**MERIT 原适配并非复现论文已有的 QVHighlights 分数**。下方运行命令对应原 MERIT 主实验；REZE 最新结果单独归档。
+
+## 最新实验结果（2026-10-20）
+
+REZE B0、P_abs、P_pair 已完成全部 1,550 条 validation 查询，VeryGood mAP / Hit@1 分别为 **42.99 / 71.68、43.57 / 74.06、43.76 / 76.84**。本轮仅重排前五候选，未加入记忆或回看；此前 A 阶段未通过门槛的结论保留。
+
+- [最新实验报告](docs/reze_fullval_results_2026-10-20.md)：完整指标、配对区间、CLIP / VTG-GPT 对照与成本边界。
+- [结果包与 CPU 复算](comparisons/qvhighlights/reze_fullval_2026-10-20/README.md)：预测、逐查询结果、冻结代码和来源校验。
+- [文档索引](docs/README.md)、[此前结果总汇](docs/reproduction_results_summary_2026-10-19.md)：查阅 MERIT、LongVT、VideoARM 历史结果。
 
 ## 资料与实现
 
@@ -12,11 +20,11 @@
 - [执行记录](docs/execution_status.md)：已完成检查、当前运行位置和进度。
 - [自动执行与恢复](docs/automation.md)：每分钟监控、服务恢复、断点续跑和 systemd 管理命令。
 - [历史实验对比数据](comparisons/qvhighlights/README.md)：LONGVT 四组完整验证结果、VideoARM 的 28 个历史运行、预测、请求账本及逐查询对齐表。
-- [后续实验方向报告](docs/research_directions_summary_2026-10-15.md)、[研究方案详版](docs/research_directions_2026-10-15.md)：更新至 2026-10-16，包含适配差异、初始化审计、MERIT 新评分方案及并行计划；新方案尚未实现或运行。
+- [后续实验方向报告](docs/research_directions_summary_2026-10-15.md)、[研究方案详版](docs/research_directions_2026-10-15.md)：2026-10-16 的计划快照，包含适配差异、初始化审计、MERIT 新评分方案及并行计划；后续状态以结果报告为准。
 - [统一结果分析](comparisons/qvhighlights/analysis_2026-10-15/README.md)：MERIT 完整 val、LongVT 对照、VideoARM 同样本子集和时间开销。
 - [MERIT 最终预测与报告](comparisons/qvhighlights/merit_main_2026-10-15/README.md)：1,550 条完整 val，VeryGood mAP **21.67**、Hit@1 **31.23**，含 9 条失败回退。
 
-## 固定实验协议
+## 原 MERIT 主实验的固定协议
 
 | 项目 | 设置 |
 | --- | --- |
@@ -129,7 +137,7 @@ $MERIT_PY -m merit_qvh.cli evaluate --config "$MERIT_CONFIG" --split val
 
 模型放在 `models/`，生成的大文件放在 `artifacts/`。每次运行目录包含 `protocol.json`、源码快照 `source_snapshot/`、数据/模型审计、`memories/`、原始请求 `requests/`、逐查询轨迹 `queries/`、`*_predictions.jsonl` 和 `*_report.json`。报告区分模型正常输出与失败回退。官方示例预测已单独核对评估器；其分数不是本项目结果。
 
-历史进度文档仅代表其中注明的时间点。2026-10-15 主实验已完成，公开的[最终报告](comparisons/qvhighlights/merit_main_2026-10-15/val_report.json)与[预测](comparisons/qvhighlights/merit_main_2026-10-15/val_predictions.jsonl)保持原始字节；完整请求、记忆和图片缓存未随本次导出。新研究方案仍处于讨论与文档阶段。
+历史进度文档仅代表其中注明的时间点。2026-10-15 主实验已完成，公开的[最终报告](comparisons/qvhighlights/merit_main_2026-10-15/val_report.json)与[预测](comparisons/qvhighlights/merit_main_2026-10-15/val_predictions.jsonl)保持原始字节；完整请求、记忆和图片缓存未随本次导出。后续实验结果见上方最新报告与文档索引。
 
 ## 开发约定
 

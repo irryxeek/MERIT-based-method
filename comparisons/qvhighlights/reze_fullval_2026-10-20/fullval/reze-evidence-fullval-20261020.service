@@ -1,0 +1,23 @@
+[Unit]
+Description=REZE frozen P_abs and P_pair full QVHighlights validation
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+
+[Service]
+Type=oneshot
+WorkingDirectory=source_workspaces/QVHighlights-ZeroShot
+ExecStart=source_environment/inference/bin/python source_runs/qvhighlights-zeroshot/reze_evidence_fullval_v1/runs/val1550_pairs/source_snapshot/experiments/reze_fullval/runner.py --run source_runs/qvhighlights-zeroshot/reze_evidence_fullval_v1/runs/val1550_pairs
+Environment=PYTHONUNBUFFERED=1
+Environment=HF_HUB_OFFLINE=1
+Environment=TRANSFORMERS_OFFLINE=1
+Environment=OMP_NUM_THREADS=2
+Environment=MKL_NUM_THREADS=2
+TimeoutStartSec=infinity
+TimeoutStopSec=45
+KillMode=control-group
+Restart=on-failure
+RestartSec=30
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target

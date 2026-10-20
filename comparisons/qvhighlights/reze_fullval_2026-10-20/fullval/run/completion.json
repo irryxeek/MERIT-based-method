@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "completed_at": "2026-10-19T20:14:19.216591+00:00",
+  "queries": 1550,
+  "binding_sha256": "14c115585a3ca5e75c580c06ba7c1f068c07bf877da5a15383c3705fd370927d",
+  "record_receipt_sha256": "708d1b54a187fd19b9215aab33e7b3055d4e5b1db31ee8045fdff50a0f5dcae1",
+  "attempted_requests": 62000,
+  "allocated_gpu_hours": 3.8683222368028427,
+  "worker_restarts": {
+    "0": 0
+  }
+}

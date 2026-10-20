@@ -1,0 +1,102 @@
+{
+  "audited_at": "2026-10-19T15:19:09.719885+00:00",
+  "queries": 100,
+  "passed": true,
+  "raw_logits_and_rankings_replay": true,
+  "source_receipts_valid": true,
+  "paired_requests_with_identical_evidence": 2000,
+  "all_target_frames_previously_seen_by_B0": true,
+  "time_encoding_max_error_seconds": 5.1e-07,
+  "run_costs": {
+    "stage_a_b0": {
+      "wall_seconds": 461.277559,
+      "allocated_gpu_hours": 0.25466102103392285,
+      "attempted_requests": 4960,
+      "worker_restarts": {
+        "0": 0,
+        "1": 0
+      },
+      "physical_gpus": [
+        5,
+        7
+      ]
+    },
+    "stage_a_pairs": {
+      "wall_seconds": 476.793254,
+      "allocated_gpu_hours": 0.2602414977550507,
+      "attempted_requests": 4000,
+      "worker_restarts": {
+        "0": 0,
+        "1": 0
+      },
+      "physical_gpus": [
+        5,
+        7
+      ]
+    }
+  },
+  "engineering": {
+    "time": "2026-10-19T15:03:02.476370+00:00",
+    "checks": {
+      "all_21_full_comparisons_valid_after_tail_fix": true,
+      "all_21_sustained_native_stress_checks_valid": true,
+      "validated_profile_no_worker_restart": true,
+      "late_memory_growth_below_512MiB": true,
+      "reserved_GPU_memory_below_23500MiB": true,
+      "all_engineering_attempts_including_failed_version_below_2500": true,
+      "all_engineering_GPU_hours_below_4": true
+    },
+    "passed": true,
+    "query_gpu_memory_mib": [
+      19865,
+      20167,
+      20167,
+      20505,
+      20505,
+      20805,
+      21143,
+      21143,
+      21143,
+      21143,
+      21143,
+      21143,
+      21143,
+      21143,
+      21181,
+      21181,
+      21181,
+      21181,
+      21181,
+      21219,
+      21219
+    ],
+    "accuracy_not_evaluated": true,
+    "all_engineering_attempted_requests": 2139,
+    "all_engineering_allocated_gpu_hours": 0.1972029838959376,
+    "stress_requests_per_query": 10,
+    "stress_design": "five-candidate cycle in both arms; all candidates appear in both video positions",
+    "full_comparison_design": "Reuse 20 byte-identical full engineering outputs; rerun all 40 calls for qid 688"
+  },
+  "input_tokens": {
+    "B0": 2891064,
+    "P_abs": 1589572,
+    "P_pair": 1607572
+  },
+  "output_tokens": {
+    "B0": 4960,
+    "P_abs": 2000,
+    "P_pair": 2000
+  },
+  "fallbacks": {
+    "P_abs": [],
+    "P_pair": []
+  },
+  "frame_accounting": {
+    "baseline_decoded_frame_occurrences": 29738,
+    "pair_preparation_redecodes_the_baseline_samples": 29738,
+    "candidate_observations_per_query_summed_once": 1997,
+    "note": "Pair preparation decodes the already observed baseline samples again to verify byte-identical input. Model frame counts are presentations, not unique encoder executions; GPU encoder reuse may occur."
+  },
+  "total_reserved_requests_including_engineering_failures": 11099,
+  "audit_script_sha256": "2b8fb15dcf61a081c63c61a62a8a5eb52ae14fb4b31f784f33b5150e832e0da7"
+}

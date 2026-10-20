@@ -1,0 +1,237 @@
+{
+  "evaluated_at": "2026-10-19T20:14:44.690953+00:00",
+  "split": "QVHighlights val1550, previously examined",
+  "queries": 1550,
+  "source_videos": 474,
+  "results": {
+    "B0": {
+      "metrics": {
+        "brief": {
+          "HL-min-Fair-mAP": 80.07,
+          "HL-min-Fair-Hit1": 86.39,
+          "HL-min-Good-mAP": 69.51,
+          "HL-min-Good-Hit1": 84.71,
+          "HL-min-VeryGood-mAP": 42.99,
+          "HL-min-VeryGood-Hit1": 71.68
+        },
+        "HL-min-Fair": {
+          "HL-mAP": 80.07,
+          "HL-Hit1": 86.39
+        },
+        "HL-min-Good": {
+          "HL-mAP": 69.51,
+          "HL-Hit1": 84.71
+        },
+        "HL-min-VeryGood": {
+          "HL-mAP": 42.99,
+          "HL-Hit1": 71.68
+        }
+      },
+      "unrounded_VeryGood": {
+        "mAP": 42.98597673789099,
+        "Hit1": 71.6774193548387
+      },
+      "cost": {
+        "logical_requests": 77308,
+        "input_tokens": 45071825,
+        "output_tokens": 77308,
+        "model_frames": 463764,
+        "inference_seconds": 6400.514564990997
+      },
+      "fallback_queries": 0,
+      "cold_total_tokens": 45149133,
+      "cold_total_token_ratio": 1.0,
+      "tied_max_queries": 146
+    },
+    "P_abs": {
+      "metrics": {
+        "brief": {
+          "HL-min-Fair-mAP": 80.37,
+          "HL-min-Fair-Hit1": 88.77,
+          "HL-min-Good-mAP": 70.03,
+          "HL-min-Good-Hit1": 86.77,
+          "HL-min-VeryGood-mAP": 43.57,
+          "HL-min-VeryGood-Hit1": 74.06
+        },
+        "HL-min-Fair": {
+          "HL-mAP": 80.37,
+          "HL-Hit1": 88.77
+        },
+        "HL-min-Good": {
+          "HL-mAP": 70.03,
+          "HL-Hit1": 86.77
+        },
+        "HL-min-VeryGood": {
+          "HL-mAP": 43.57,
+          "HL-Hit1": 74.06
+        }
+      },
+      "unrounded_VeryGood": {
+        "mAP": 43.56796311785716,
+        "Hit1": 74.06451612903226
+      },
+      "cost": {
+        "logical_requests": 31000,
+        "input_tokens": 24648800,
+        "output_tokens": 31000,
+        "model_frames": 247984,
+        "inference_seconds": 3322.8860288858414
+      },
+      "fallback_queries": 0,
+      "cold_total_tokens": 69828933,
+      "cold_total_token_ratio": 1.5466284369181573,
+      "tied_max_queries": 146
+    },
+    "P_pair": {
+      "metrics": {
+        "brief": {
+          "HL-min-Fair-mAP": 80.39,
+          "HL-min-Fair-Hit1": 89.61,
+          "HL-min-Good-mAP": 70.11,
+          "HL-min-Good-Hit1": 88.0,
+          "HL-min-VeryGood-mAP": 43.76,
+          "HL-min-VeryGood-Hit1": 76.84
+        },
+        "HL-min-Fair": {
+          "HL-mAP": 80.39,
+          "HL-Hit1": 89.61
+        },
+        "HL-min-Good": {
+          "HL-mAP": 70.11,
+          "HL-Hit1": 88.0
+        },
+        "HL-min-VeryGood": {
+          "HL-mAP": 43.76,
+          "HL-Hit1": 76.84
+        }
+      },
+      "unrounded_VeryGood": {
+        "mAP": 43.75731167342743,
+        "Hit1": 76.83870967741936
+      },
+      "cost": {
+        "logical_requests": 31000,
+        "input_tokens": 24927800,
+        "output_tokens": 31000,
+        "model_frames": 247984,
+        "inference_seconds": 3322.8860288858414
+      },
+      "fallback_queries": 0,
+      "cold_total_tokens": 70107933,
+      "cold_total_token_ratio": 1.5528079575747333,
+      "tied_max_queries": 146
+    }
+  },
+  "paired_comparisons": {
+    "P_abs_minus_B0": {
+      "delta_percentage_points": {
+        "mAP": 0.5819863799661723,
+        "Hit1": 2.3870967741935485
+      },
+      "ci95_percentage_points": {
+        "mAP": [
+          0.28851976611314023,
+          0.8792540466161285
+        ],
+        "Hit1": [
+          0.581010641621025,
+          4.177353664695435
+        ]
+      },
+      "query_map_win_tie_loss": [
+        477,
+        712,
+        361
+      ]
+    },
+    "P_pair_minus_B0": {
+      "delta_percentage_points": {
+        "mAP": 0.7713349355364768,
+        "Hit1": 5.161290322580645
+      },
+      "ci95_percentage_points": {
+        "mAP": [
+          0.47923882585365774,
+          1.0639755329003735
+        ],
+        "Hit1": [
+          3.487596882723037,
+          6.8633739576651696
+        ]
+      },
+      "query_map_win_tie_loss": [
+        470,
+        782,
+        298
+      ]
+    },
+    "P_pair_minus_P_abs": {
+      "delta_percentage_points": {
+        "mAP": 0.1893485555703051,
+        "Hit1": 2.774193548387097
+      },
+      "ci95_percentage_points": {
+        "mAP": [
+          -0.05926971077737618,
+          0.44150138018241414
+        ],
+        "Hit1": [
+          1.3071184995737426,
+          4.284865738652643
+        ]
+      },
+      "query_map_win_tie_loss": [
+        361,
+        876,
+        313
+      ]
+    }
+  },
+  "bootstrap": {
+    "unit": "source_video",
+    "resamples": 10000,
+    "seed": 42,
+    "ci": 0.95
+  },
+  "fallbacks": {
+    "B0": [],
+    "P_abs": [],
+    "P_pair": []
+  },
+  "actual_scores_changed": {
+    "P_abs": 1498,
+    "P_pair": 1292
+  },
+  "paired_requests_with_identical_evidence": 31000,
+  "baseline_reused": true,
+  "new_attempted_requests": 62000,
+  "new_returned_attempt_cost": {
+    "requests": 62000,
+    "input_tokens": 49576600,
+    "output_tokens": 62000
+  },
+  "new_allocated_gpu_hours": 3.8683222368028427,
+  "worker_restarts": {
+    "0": 0
+  },
+  "new_elapsed_wall_seconds": 13980.630329,
+  "baseline_historical_wall_seconds": 1949.983078956604,
+  "provenance": {
+    "binding_sha256": "14c115585a3ca5e75c580c06ba7c1f068c07bf877da5a15383c3705fd370927d",
+    "plan_sha256": "f632d13efa2923b075421cad73292cf8f70a448acf1b2101927f5c8671dc70c1",
+    "baseline_completion_sha256": "dfbc0c54439fb5b247773674656c6f5d66de8d0ff015682943aaf87b6549fd65",
+    "labels_sha256": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02",
+    "evaluator_sha256": {
+      "eval.py": "679e43d8f83ca08a682dbe2e4e3f4629ddc2e6911981bcd0c0e54cf1c0cfabca",
+      "utils.py": "7cb2f9733ffb3fe22d0b4044ef7ba82679b85972a3e7e0ac88b3eee44904d637"
+    }
+  },
+  "prior_stage_A_decision": "stop_v1_no_qualifying_stage_A_arm",
+  "automatic_next_stage": null,
+  "limits": [
+    "Full-validation extension requested after the failed Stage-A gate; not an untouched test set.",
+    "Only reorder B0 top-five original scores; no new candidates, memory, or revisit.",
+    "Both arms see A/B videos; P_abs is not single-video absolute scoring.",
+    "Joint batch half-time attribution does not measure independent arm latency."
+  ]
+}

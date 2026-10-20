@@ -1,0 +1,27 @@
+{
+  "schema": "qvh_zeroshot_v1",
+  "split": "val",
+  "expected_queries": 1550,
+  "evaluator_root": "source_dependencies/moment_detr",
+  "labels_path": "source_dependencies/moment_detr/data/highlight_val_release.jsonl",
+  "manifest": "source_workspaces/QVHighlights-ZeroShot/manifests/val_inference.jsonl",
+  "data_audit_sha256": "73edc7f735c3cca016a02b62332cf01d06004c807547f9a3c16e3cade2e90e9b",
+  "primary_metrics": [
+    "HL-min-VeryGood-mAP",
+    "HL-min-VeryGood-Hit1"
+  ],
+  "vtg_gpt": {
+    "upstream_commit": "9d6606140edb36c89ea5ce96a0dc5e50361d108a",
+    "model": "sentence-transformers/paraphrase-distilroberta-base-v2",
+    "revision": "1972a507973d92e15f4f7cd9457d9fcf43ea117f",
+    "local_model": "source_runs/qvhighlights-zeroshot/models/paraphrase-distilroberta-base-v2",
+    "num_bins": 10,
+    "top_k": 8,
+    "gap": 6,
+    "nms_threshold": 0.95,
+    "dtype": "float32",
+    "use_released_captions_and_rephrased_queries": true,
+    "missing_tail_policy": "pad one absent clip with zero, equivalent to official HD evaluator",
+    "failure_policy": "stop and retain checkpoint; never silently exclude queries"
+  }
+}

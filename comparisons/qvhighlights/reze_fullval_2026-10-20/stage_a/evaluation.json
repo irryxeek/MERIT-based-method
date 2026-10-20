@@ -1,0 +1,246 @@
+{
+  "evaluated_at": "2026-10-19T15:18:44.572842+00:00",
+  "split": "explore100_train_exploratory",
+  "queries": 100,
+  "source_videos": 100,
+  "results": {
+    "B0": {
+      "metrics": {
+        "brief": {
+          "HL-min-Fair-mAP": 80.93,
+          "HL-min-Fair-Hit1": 78.0,
+          "HL-min-Good-mAP": 70.33,
+          "HL-min-Good-Hit1": 78.0,
+          "HL-min-VeryGood-mAP": 44.41,
+          "HL-min-VeryGood-Hit1": 71.0
+        },
+        "HL-min-Fair": {
+          "HL-mAP": 80.93,
+          "HL-Hit1": 78.0
+        },
+        "HL-min-Good": {
+          "HL-mAP": 70.33,
+          "HL-Hit1": 78.0
+        },
+        "HL-min-VeryGood": {
+          "HL-mAP": 44.41,
+          "HL-Hit1": 71.0
+        }
+      },
+      "unrounded_VeryGood": {
+        "mAP": 44.41299610247992,
+        "Hit1": 71.0
+      },
+      "fallback_queries": 0,
+      "incremental_cost": {
+        "logical_requests": 4960,
+        "input_tokens": 2891064,
+        "output_tokens": 4960,
+        "model_frames": 29738,
+        "inference_seconds": 390.79230523109436
+      },
+      "cold_total_token_ratio": 1.0,
+      "cold_total_tokens": 2896024,
+      "tied_max_queries": 10
+    },
+    "P_abs": {
+      "metrics": {
+        "brief": {
+          "HL-min-Fair-mAP": 81.33,
+          "HL-min-Fair-Hit1": 85.0,
+          "HL-min-Good-mAP": 70.55,
+          "HL-min-Good-Hit1": 85.0,
+          "HL-min-VeryGood-mAP": 44.71,
+          "HL-min-VeryGood-Hit1": 76.0
+        },
+        "HL-min-Fair": {
+          "HL-mAP": 81.33,
+          "HL-Hit1": 85.0
+        },
+        "HL-min-Good": {
+          "HL-mAP": 70.55,
+          "HL-Hit1": 85.0
+        },
+        "HL-min-VeryGood": {
+          "HL-mAP": 44.71,
+          "HL-Hit1": 76.0
+        }
+      },
+      "unrounded_VeryGood": {
+        "mAP": 44.70606556878841,
+        "Hit1": 76.0
+      },
+      "fallback_queries": 0,
+      "incremental_cost": {
+        "logical_requests": 2000,
+        "input_tokens": 1589572,
+        "output_tokens": 2000,
+        "model_frames": 15976,
+        "inference_seconds": 217.83716464042664
+      },
+      "cold_total_token_ratio": 1.54957141239161,
+      "cold_total_tokens": 4487596,
+      "tied_max_queries": 10
+    },
+    "P_pair": {
+      "metrics": {
+        "brief": {
+          "HL-min-Fair-mAP": 81.35,
+          "HL-min-Fair-Hit1": 87.0,
+          "HL-min-Good-mAP": 70.77,
+          "HL-min-Good-Hit1": 87.0,
+          "HL-min-VeryGood-mAP": 44.58,
+          "HL-min-VeryGood-Hit1": 78.0
+        },
+        "HL-min-Fair": {
+          "HL-mAP": 81.35,
+          "HL-Hit1": 87.0
+        },
+        "HL-min-Good": {
+          "HL-mAP": 70.77,
+          "HL-Hit1": 87.0
+        },
+        "HL-min-VeryGood": {
+          "HL-mAP": 44.58,
+          "HL-Hit1": 78.0
+        }
+      },
+      "unrounded_VeryGood": {
+        "mAP": 44.57840358187131,
+        "Hit1": 78.0
+      },
+      "fallback_queries": 0,
+      "incremental_cost": {
+        "logical_requests": 2000,
+        "input_tokens": 1607572,
+        "output_tokens": 2000,
+        "model_frames": 15976,
+        "inference_seconds": 217.83716464042664
+      },
+      "cold_total_token_ratio": 1.55578683049588,
+      "cold_total_tokens": 4505596,
+      "tied_max_queries": 10
+    }
+  },
+  "paired_comparisons": {
+    "P_abs_minus_B0": {
+      "delta_percentage_points": {
+        "mAP": 0.2930694663085097,
+        "Hit1": 5.0
+      },
+      "ci95_percentage_points": {
+        "mAP": [
+          -0.9107663553530924,
+          1.3946034434937287
+        ],
+        "Hit1": [
+          -3.0,
+          13.0
+        ]
+      },
+      "query_map_win_tie_loss": [
+        34,
+        45,
+        21
+      ]
+    },
+    "P_pair_minus_B0": {
+      "delta_percentage_points": {
+        "mAP": 0.16540747939139722,
+        "Hit1": 7.0
+      },
+      "ci95_percentage_points": {
+        "mAP": [
+          -0.9395580558910414,
+          1.1335270427596729
+        ],
+        "Hit1": [
+          -1.0,
+          15.0
+        ]
+      },
+      "query_map_win_tie_loss": [
+        34,
+        51,
+        15
+      ]
+    },
+    "P_pair_minus_P_abs": {
+      "delta_percentage_points": {
+        "mAP": -0.12766198691711245,
+        "Hit1": 2.0
+      },
+      "ci95_percentage_points": {
+        "mAP": [
+          -0.8988698864996122,
+          0.5290921249453157
+        ],
+        "Hit1": [
+          -4.0,
+          8.0
+        ]
+      },
+      "query_map_win_tie_loss": [
+        24,
+        61,
+        15
+      ]
+    }
+  },
+  "ranking_diagnostics": {
+    "P_abs": {
+      "neutral_unordered_pairs": 898,
+      "both_yes_pairs": 811,
+      "cycles": 0,
+      "query_rank_changed": 99,
+      "actual_scores_changed": 97
+    },
+    "P_pair": {
+      "neutral_unordered_pairs": 535,
+      "both_yes_pairs": 166,
+      "cycles": 0,
+      "query_rank_changed": 86,
+      "actual_scores_changed": 86
+    }
+  },
+  "gate": {
+    "checks": {
+      "P_abs": {
+        "mAP_gain_at_least_1pp": false,
+        "Hit1_drop_at_most_1pp": true,
+        "fallback_queries_at_most_1": true,
+        "cold_total_tokens_at_most_2_25x_B0": true
+      },
+      "P_pair": {
+        "mAP_gain_at_least_1pp": false,
+        "Hit1_drop_at_most_1pp": true,
+        "fallback_queries_at_most_1": true,
+        "cold_total_tokens_at_most_2_25x_B0": true
+      }
+    },
+    "qualified_arms": [],
+    "selected_arm": null,
+    "decision": "stop_v1_no_qualifying_stage_A_arm"
+  },
+  "bootstrap": {
+    "unit": "source_video",
+    "resamples": 10000,
+    "seed": 42,
+    "type": "paired_percentile_95pct"
+  },
+  "provenance": {
+    "pair_binding_sha256": "998b84de7d9cf2f6ffdb76f2d72fa631fbdf15afd2c966867d98b1145864baff",
+    "baseline_binding_sha256": "decb17972fe266cc33346a8c10ad4d4b9ffe9bb27067ca81af075cbb72d79e79",
+    "label_sha256": "fd28404187468f57cf99242be2963127dc9b4aef26c7de3cb9469569801f2625",
+    "evaluator_sha256": {
+      "eval.py": "679e43d8f83ca08a682dbe2e4e3f4629ddc2e6911981bcd0c0e54cf1c0cfabca",
+      "utils.py": "7cb2f9733ffb3fe22d0b4044ef7ba82679b85972a3e7e0ac88b3eee44904d637"
+    }
+  },
+  "limits": [
+    "Exploratory training subset; gates are point-estimate rules, not significance tests.",
+    "P_abs sees B as context and is not an isolated one-video absolute baseline.",
+    "The two new arms share a batch; half-batch time is an accounting allocation, not isolated latency.",
+    "Five-candidate permutation cannot admit missed candidates or resolve equal original scores."
+  ]
+}

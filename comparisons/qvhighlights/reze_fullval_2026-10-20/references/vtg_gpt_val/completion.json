@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "invocation_started": "2026-10-19T07:10:49.202489+00:00",
+  "planned_queries": 1550,
+  "completed_queries": 1550,
+  "updated_at": "2026-10-19T07:12:25.863358+00:00",
+  "invocation_elapsed_seconds": 96.95248627662659,
+  "cache_hits": 7780,
+  "cache_misses": 10820,
+  "finished_at": "2026-10-19T07:12:26.153929+00:00",
+  "cache_equivalence_verified": true,
+  "tail_zero_padded_queries": 13,
+  "scoring_elapsed_seconds_sum": 87.33461737632751,
+  "predictions_sha256": "4e96db14d7df5734108b6febd9804022bff6967b538c0946b252baeb605692ff",
+  "failures": 0
+}

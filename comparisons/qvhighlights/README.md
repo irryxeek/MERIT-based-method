@@ -1,6 +1,8 @@
-# 历史实验对比数据
+# QVHighlights 实验结果归档
 
-最新分析：[MERIT、LongVT 与 VideoARM 的统一评测与配对比较](analysis_2026-10-15/README.md)。包含 MERIT 完整结果、VideoARM 同样本子集评分，以及源视频聚类 bootstrap；仅离线分析，原快照保持不变。
+最新结果：[REZE 全量高光重排（2026-10-20）](reze_fullval_2026-10-20/README.md)。包含三组完整 val 预测、配对区间、调用成本、冻结代码、CLIP / VTG-GPT 对照以及 A 阶段原停止结论；附 CPU 复算入口。
+
+历史分析：[MERIT、LongVT 与 VideoARM 的统一评测与配对比较](analysis_2026-10-15/README.md)。包含 MERIT 完整结果、VideoARM 同样本子集评分，以及源视频聚类 bootstrap；原快照保持不变。
 
 - [MERIT 最终预测与报告](merit_main_2026-10-15/README.md)：完整 val 1,550 条，预测和报告保持原始字节。
 - [VideoARM 初始化审计](analysis_2026-10-15/videoarm_initial_audit.json)：419 条成功记录的初始化与最终输出比较，含双方成功的 413 条子集。

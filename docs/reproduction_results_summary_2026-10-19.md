@@ -1,5 +1,7 @@
 # QVHighlights 复现实验结果总汇
 
+> 2026-10-20 更新入口：[REZE 基线与高光重排全量结果](reze_fullval_results_2026-10-20.md)。新增 CLIP / VTG-GPT / REZE 完整 val 对照及 P_abs / P_pair 扩展；本篇正文保留此前 MERIT、LongVT、VideoARM 的历史汇总。
+
 整理日期：2026-10-19（北京时间）。范围为本项目已有的 MERIT 迁移适配与后续实验，以及已归档的 LongVT、VideoARM 对比结果。最近一轮有结果的新增推理是 2026-10-17 的 R1；本次仅整理已有产物，没有新增推理。
 
 ## 1. 当前结论

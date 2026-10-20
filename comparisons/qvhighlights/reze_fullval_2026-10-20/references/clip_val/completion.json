@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "invocation_started": "2026-10-19T07:19:10.463664+00:00",
+  "planned_queries": 1550,
+  "planned_videos": 1519,
+  "completed_queries": 1550,
+  "completed_videos": 1519,
+  "updated_at": "2026-10-19T07:35:57.464525+00:00",
+  "invocation_elapsed_seconds": 1007.2259984016418,
+  "reused_video_features": 5,
+  "last_video_elapsed_seconds": 2.1271896362304688,
+  "finished_at": "2026-10-19T07:35:57.688157+00:00",
+  "single_frame_check_passed": true,
+  "query_encoding_seconds": 0.5382518768310547,
+  "new_visual_encoding_seconds": 44.37675857543945,
+  "predictions_sha256": "fcf61ead06751f085743515b0b7e31f1c2c58cf6e89dc27d4b3693fbd6a9b1bf",
+  "failures": 0
+}

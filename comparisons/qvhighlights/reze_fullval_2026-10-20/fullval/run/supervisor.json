@@ -1,0 +1,8 @@
+{
+  "allocated_gpu_seconds": 13925.960052490234,
+  "worker_restarts": {
+    "0": 0
+  },
+  "time": "2026-10-19T20:14:05.036346+00:00",
+  "status": "workers_stopped"
+}

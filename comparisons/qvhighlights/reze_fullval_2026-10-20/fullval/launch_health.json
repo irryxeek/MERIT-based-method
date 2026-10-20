@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-19T16:24:41.588306+00:00",
+  "completed_queries": 14,
+  "total_queries": 1550,
+  "fallback_queries": {
+    "P_abs": 0,
+    "P_pair": 0
+  },
+  "matched_directed_pairs": 280,
+  "raw_score_and_evidence_replay_passed": true,
+  "mean_query_seconds": 8.720200061798096,
+  "estimated_remaining_hours": 3.7206186930338543,
+  "worker_restarts": {
+    "0": 0
+  },
+  "model_memory_mib": 21329,
+  "accuracy_not_evaluated": true
+}

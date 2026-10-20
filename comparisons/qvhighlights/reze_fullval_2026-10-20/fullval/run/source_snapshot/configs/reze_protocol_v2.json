@@ -1,0 +1,54 @@
+{
+  "method": "REZE",
+  "implementation": "independent implementation of paper Appendix A; official complete code not located",
+  "paper": "https://arxiv.org/html/2608.04480v1",
+  "paper_html_sha256": "7837b72dea31dd625cea71d83dbd78b6910558a9f962d771d81ca3eb22353c9b",
+  "task": "highlight_detection",
+  "split": "QVHighlights validation, all 1550 queries",
+  "training": "none; no parameter or prompt selection using validation labels",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "dtype": "bfloat16",
+  "quantization": null,
+  "segment_seconds": 3.0,
+  "target_fps": 2.0,
+  "discard_residual_shorter_than_seconds": 0.3,
+  "system_and_user_prompt": "verbatim functional prompts from Appendix A; scripts/reze_core.py",
+  "scoring": {
+    "max_tokens": 1,
+    "temperature": 0,
+    "logprobs": 20,
+    "yes_token_id": 9454,
+    "no_token_id": 2753,
+    "both_present": "two-way softmax of Yes and No log probabilities",
+    "no_absent": "full-vocabulary Yes probability, as in published code",
+    "yes_absent": "0, as in published code",
+    "allowed_token_restriction": false
+  },
+  "hd_readout": "inclusive integer-second endpoints; average overlaps; nearest fill/extrapolation; mean each consecutive 2 seconds; no smoothing, thresholding, or normalization",
+  "local_choices_not_fully_specified_by_paper": {
+    "decode": "decord, original presentation timestamps, last frame starting at or before requested time",
+    "sampling": "equally spaced, start inclusive/end exclusive; full segment: 0,.5,1,1.5,2,2.5 seconds",
+    "residual_frames": "max(2, round(segment_duration * 2)); native processor temporally pads odd counts",
+    "timeline": "segment min(annotation_duration, decoded_end); map to annotation grid with published nearest fill",
+    "frame_resize": "qwen-vl-utils smart_resize factor32, min131072/max786432 pixels per frame; bicubic antialias",
+    "native_video": "joint THWC frames with local clip fps and timestamps; processor resampling/resizing disabled",
+    "environment": "Python3.10.12, torch2.9.0, vLLM0.12.0, transformers4.57.6; RTX4090 24GB",
+    "engine": "TP1, max_len4096, max_seqs8, max_batched_tokens4096, eager, prefix cache disabled, seed0, fixed 1GiB KV cache, skip automatic multimodal profiling; processor size envelope for encoder budget: 6 * 786432 pixels"
+  },
+  "inference_manifest_fields": [
+    "qid",
+    "vid",
+    "query",
+    "duration",
+    "video_path"
+  ],
+  "primary_metrics": [
+    "HL-min-VeryGood-mAP",
+    "HL-min-VeryGood-Hit1"
+  ],
+  "failure_policy": "preserve failures, stop rather than omit or synthesize predictions; at most 2 automatic worker restarts using completed per-query checkpoints",
+  "comparison_scope": "same full validation queries and official HD evaluator as local CLIP/VTG-GPT/MERIT; paper headline test scores are a different split",
+  "protocol_revision": 2,
+  "engineering_amendment": "Bound vLLM encoder cache estimation via processor size {shortest_edge:131072,longest_edge:4718592}; preprocessed video pixels unchanged because do_resize=False. v1 failed with accumulating encoder cache; preserved separately."
+}

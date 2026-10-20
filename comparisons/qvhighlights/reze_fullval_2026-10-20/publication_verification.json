@@ -1,0 +1,210 @@
+{
+  "checked_at": "2026-10-20T05:12:04.298371+00:00",
+  "scope": "CPU publication verification; no new model inference",
+  "public_files_verified": 67,
+  "byte_identical_source_files": 47,
+  "labels_and_official_evaluator_hashes_match": true,
+  "all_five_fullval_predictions_have_1550_unique_matching_queries": true,
+  "official_hd_metrics_recomputed": {
+    "B0": {
+      "brief": {
+        "HL-min-Fair-mAP": 80.07,
+        "HL-min-Fair-Hit1": 86.39,
+        "HL-min-Good-mAP": 69.51,
+        "HL-min-Good-Hit1": 84.71,
+        "HL-min-VeryGood-mAP": 42.99,
+        "HL-min-VeryGood-Hit1": 71.68
+      },
+      "HL-min-Fair": {
+        "HL-mAP": 80.07,
+        "HL-Hit1": 86.39
+      },
+      "HL-min-Good": {
+        "HL-mAP": 69.51,
+        "HL-Hit1": 84.71
+      },
+      "HL-min-VeryGood": {
+        "HL-mAP": 42.99,
+        "HL-Hit1": 71.68
+      }
+    },
+    "P_abs": {
+      "brief": {
+        "HL-min-Fair-mAP": 80.37,
+        "HL-min-Fair-Hit1": 88.77,
+        "HL-min-Good-mAP": 70.03,
+        "HL-min-Good-Hit1": 86.77,
+        "HL-min-VeryGood-mAP": 43.57,
+        "HL-min-VeryGood-Hit1": 74.06
+      },
+      "HL-min-Fair": {
+        "HL-mAP": 80.37,
+        "HL-Hit1": 88.77
+      },
+      "HL-min-Good": {
+        "HL-mAP": 70.03,
+        "HL-Hit1": 86.77
+      },
+      "HL-min-VeryGood": {
+        "HL-mAP": 43.57,
+        "HL-Hit1": 74.06
+      }
+    },
+    "P_pair": {
+      "brief": {
+        "HL-min-Fair-mAP": 80.39,
+        "HL-min-Fair-Hit1": 89.61,
+        "HL-min-Good-mAP": 70.11,
+        "HL-min-Good-Hit1": 88.0,
+        "HL-min-VeryGood-mAP": 43.76,
+        "HL-min-VeryGood-Hit1": 76.84
+      },
+      "HL-min-Fair": {
+        "HL-mAP": 80.39,
+        "HL-Hit1": 89.61
+      },
+      "HL-min-Good": {
+        "HL-mAP": 70.11,
+        "HL-Hit1": 88.0
+      },
+      "HL-min-VeryGood": {
+        "HL-mAP": 43.76,
+        "HL-Hit1": 76.84
+      }
+    },
+    "clip_val": {
+      "brief": {
+        "HL-min-Fair-mAP": 69.81,
+        "HL-min-Fair-Hit1": 77.29,
+        "HL-min-Good-mAP": 59.57,
+        "HL-min-Good-Hit1": 74.65,
+        "HL-min-VeryGood-mAP": 36.5,
+        "HL-min-VeryGood-Hit1": 61.68
+      },
+      "HL-min-Fair": {
+        "HL-mAP": 69.81,
+        "HL-Hit1": 77.29
+      },
+      "HL-min-Good": {
+        "HL-mAP": 59.57,
+        "HL-Hit1": 74.65
+      },
+      "HL-min-VeryGood": {
+        "HL-mAP": 36.5,
+        "HL-Hit1": 61.68
+      }
+    },
+    "vtg_gpt_val": {
+      "brief": {
+        "HL-min-Fair-mAP": 67.02,
+        "HL-min-Fair-Hit1": 77.03,
+        "HL-min-Good-mAP": 57.54,
+        "HL-min-Good-Hit1": 74.19,
+        "HL-min-VeryGood-mAP": 35.1,
+        "HL-min-VeryGood-Hit1": 61.23
+      },
+      "HL-min-Fair": {
+        "HL-mAP": 67.02,
+        "HL-Hit1": 77.03
+      },
+      "HL-min-Good": {
+        "HL-mAP": 57.54,
+        "HL-Hit1": 74.19
+      },
+      "HL-min-VeryGood": {
+        "HL-mAP": 35.1,
+        "HL-Hit1": 61.23
+      }
+    }
+  },
+  "reze_per_query_scores_and_all_three_paired_intervals_match": true,
+  "recomputed_paired_comparisons": {
+    "P_abs_minus_B0": {
+      "delta_percentage_points": {
+        "mAP": 0.5819863799661723,
+        "Hit1": 2.3870967741935485
+      },
+      "ci95_percentage_points": {
+        "mAP": [
+          0.28851976611314023,
+          0.8792540466161285
+        ],
+        "Hit1": [
+          0.581010641621025,
+          4.177353664695435
+        ]
+      },
+      "query_map_win_tie_loss": [
+        477,
+        712,
+        361
+      ]
+    },
+    "P_pair_minus_B0": {
+      "delta_percentage_points": {
+        "mAP": 0.7713349355364768,
+        "Hit1": 5.161290322580645
+      },
+      "ci95_percentage_points": {
+        "mAP": [
+          0.47923882585365774,
+          1.0639755329003735
+        ],
+        "Hit1": [
+          3.487596882723037,
+          6.8633739576651696
+        ]
+      },
+      "query_map_win_tie_loss": [
+        470,
+        782,
+        298
+      ]
+    },
+    "P_pair_minus_P_abs": {
+      "delta_percentage_points": {
+        "mAP": 0.1893485555703051,
+        "Hit1": 2.774193548387097
+      },
+      "ci95_percentage_points": {
+        "mAP": [
+          -0.05926971077737618,
+          0.44150138018241414
+        ],
+        "Hit1": [
+          1.3071184995737426,
+          4.284865738652643
+        ]
+      },
+      "query_map_win_tie_loss": [
+        361,
+        876,
+        313
+      ]
+    }
+  },
+  "top_five_score_permutation_verified": true,
+  "actual_scores_changed": {
+    "P_abs": 1498,
+    "P_pair": 1292
+  },
+  "attempt_ledger_and_recorded_costs_consistent": true,
+  "stage_a_stop_decision_preserved": true,
+  "environment": {
+    "python": "3.10.12",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "scikit-learn": "1.7.2"
+    }
+  },
+  "verifier_sha256": "4d5426b1e46907889164de05de265a96301f00c51d3b41458ca1f3c741b1fe40",
+  "requirements_sha256": "7874b9d64f2404e9696656dfb62e74c3d0072d25810fb8c502642643494f2fc3",
+  "limitations": [
+    "Original per-request logits, video pixels and complete raw records are not in this bundle.",
+    "Source hash receipts identify original files, including files transformed for publication.",
+    "Fallback counts and frame-evidence audits are historical records, not reaudited model outputs.",
+    "Stage-A training metrics were not reevaluated; only its file hashes and stop decision were checked.",
+    "Shared-batch timing does not measure independent arm latency."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "evaluated_at": "2026-10-19T07:36:00.959391+00:00",
+  "queries": 1550,
+  "coverage": "full requested split",
+  "split": "val",
+  "metrics": {
+    "brief": {
+      "HL-min-Fair-mAP": 69.81,
+      "HL-min-Fair-Hit1": 77.29,
+      "HL-min-Good-mAP": 59.57,
+      "HL-min-Good-Hit1": 74.65,
+      "HL-min-VeryGood-mAP": 36.5,
+      "HL-min-VeryGood-Hit1": 61.68
+    },
+    "HL-min-Fair": {
+      "HL-mAP": 69.81,
+      "HL-Hit1": 77.29
+    },
+    "HL-min-Good": {
+      "HL-mAP": 59.57,
+      "HL-Hit1": 74.65
+    },
+    "HL-min-VeryGood": {
+      "HL-mAP": 36.5,
+      "HL-Hit1": 61.68
+    }
+  },
+  "constant_score_queries": 0,
+  "tied_max_queries": 2,
+  "predictions_sha256": "fcf61ead06751f085743515b0b7e31f1c2c58cf6e89dc27d4b3693fbd6a9b1bf",
+  "label_sha256": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02",
+  "evaluator_hashes": {
+    "eval.py": "679e43d8f83ca08a682dbe2e4e3f4629ddc2e6911981bcd0c0e54cf1c0cfabca",
+    "utils.py": "7cb2f9733ffb3fe22d0b4044ef7ba82679b85972a3e7e0ac88b3eee44904d637"
+  }
+}

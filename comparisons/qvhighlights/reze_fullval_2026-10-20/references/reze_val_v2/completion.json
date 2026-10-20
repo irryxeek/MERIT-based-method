@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "completed_at": "2026-10-19T09:22:15.569092+00:00",
+  "completed_queries": 1550,
+  "prediction_failures": 0,
+  "predictions_sha256": "af8efe26f9cd3966e5d3c6b306d87913af8f38f096035bf891df8fa864063452",
+  "binding_sha256": "01881fdf4b9016fb3eb26445d5341fe7014e804ca9a2ad238786da23ef2946df",
+  "record_receipt_sha256": "a39913db215aa3d0a15a62131766df861c1882f237b781c51d5414dc41f5c4a3",
+  "wall_seconds_this_launch": 1949.983078956604
+}

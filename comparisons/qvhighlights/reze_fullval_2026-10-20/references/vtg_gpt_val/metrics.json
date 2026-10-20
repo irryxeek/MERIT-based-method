@@ -1,0 +1,22 @@
+{
+  "brief": {
+    "HL-min-Fair-mAP": 67.02,
+    "HL-min-Fair-Hit1": 77.03,
+    "HL-min-Good-mAP": 57.54,
+    "HL-min-Good-Hit1": 74.19,
+    "HL-min-VeryGood-mAP": 35.1,
+    "HL-min-VeryGood-Hit1": 61.23
+  },
+  "HL-min-Fair": {
+    "HL-mAP": 67.02,
+    "HL-Hit1": 77.03
+  },
+  "HL-min-Good": {
+    "HL-mAP": 57.54,
+    "HL-Hit1": 74.19
+  },
+  "HL-min-VeryGood": {
+    "HL-mAP": 35.1,
+    "HL-Hit1": 61.23
+  }
+}

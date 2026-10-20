@@ -1,0 +1,76 @@
+{
+  "schema": "reze_evidence_fullval_extension_v1",
+  "date": "2026-10-20",
+  "authorization": "User requested full inference after stage A completed; execute a separate full-validation extension.",
+  "prior_stage_A_decision": "stop_v1_no_qualifying_stage_A_arm",
+  "prior_stage_A_report_sha256": "2dfaaf4ff7da9233c5ac87a5d288a234fafb5c15e265eecec52742b6ed836063",
+  "research_scope": "Frozen stage-A P_abs and P_pair on all 1550 validation queries; reuse B0; no memory, revisit, training, threshold or prompt selection.",
+  "split_previously_examined": true,
+  "queries": 1550,
+  "video_segments": 1519,
+  "source_videos": 474,
+  "arms": [
+    "B0",
+    "P_abs",
+    "P_pair"
+  ],
+  "baseline_run": "source_runs/qvhighlights-zeroshot/runs/reze_val_v2",
+  "baseline_completion_sha256": "dfbc0c54439fb5b247773674656c6f5d66de8d0ff015682943aaf87b6549fd65",
+  "baseline_prediction_sha256": "af8efe26f9cd3966e5d3c6b306d87913af8f38f096035bf891df8fa864063452",
+  "manifest_sha256": "177b2a040a8124195e4bd3026b1527a9fc3e029416b0a3131ecd031424b2e492",
+  "frozen_method_sources": {
+    "scripts/common.py": "2ca173967f7a9f8797b786fed25a1308835812fd9a6a8d3beeac3ad7e6e2dc9c",
+    "scripts/reze_core.py": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d",
+    "scripts/reze_media.py": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e",
+    "scripts/reze_backend.py": "0c9eb0e4c5b8e1df4877732076424fa92b9316d18fd68f9d5ae2178aae8ec3c5",
+    "configs/reze_protocol_v2.json": "6133c11e56f6793d7b17cc2fb9b5fad2fea42e9e2a5127e4baac24b24c2dd434",
+    "manifests/reze_model_audit.json": "76f708f3290eeff38a51ba70e11ff0c1d1fcedcb4f69100b401ab0adc5addaac",
+    "scripts/summarize.py": "d462951027cd027065e721756753e1ae377447a8deb66bc1ab4f14cbf71206ec",
+    "experiments/reze_evidence/__init__.py": "c9fdb7fd6f434822db47bcd123098ca8917bfda35b78fc60bd532fba9dc14704",
+    "experiments/reze_evidence/backend.py": "6a49716739d184dee3259982c278ec30f68761718360d4879cfbed639acdc1ab",
+    "experiments/reze_evidence/candidate_frames.py": "c1945a8245969fd30e2a78545f2fa058021a6167a862a8e5a1cdde1bbb27a7c7",
+    "experiments/reze_evidence/launch.py": "eb5137a34716dbb7e05040f55309b957c2ef2326bbc2ed659de263b94640ba45",
+    "experiments/reze_evidence/protocol.py": "4d3f7ba852ac8c40bf69a542ab0c88ef8c02c259368a05d4cb2b41c8a11ba289",
+    "experiments/reze_evidence/ranking.py": "c9d2b4598e00811a65352325b4f6252c6b9c1e43a90df23388c04c22369a7519",
+    "experiments/reze_evidence/stage_a_eval.py": "ff521dc32d7ff15823f9e8f20817ae01559d7307c8702d9017cbf53a2dd82186",
+    "experiments/reze_evidence/worker.py": "508362255cb464b5d67dd6e26077cf9b46b8026c500007d89d7a944bc95c5adb"
+  },
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "model_audit_sha256": "76f708f3290eeff38a51ba70e11ff0c1d1fcedcb4f69100b401ab0adc5addaac",
+  "store": "source_runs/qvhighlights-zeroshot/reze_evidence_fullval_v1",
+  "run_name": "val1550_pairs",
+  "archive": "source_workspaces/QVHighlights-ZeroShot/results/reze_evidence_fullval_v1",
+  "result_document": "source_workspaces/MERIT/docs/reze_fullval_results_2026-10-20.md",
+  "physical_gpus": [
+    5
+  ],
+  "logical_requests_max": 62000,
+  "attempt_requests_max": 68200,
+  "max_gpu_hours": 8.0,
+  "max_worker_restarts": 2,
+  "stalled_seconds": 900,
+  "service": "reze-evidence-fullval-20261020.service",
+  "labels_path": "source_dependencies/moment_detr/data/highlight_val_release.jsonl",
+  "labels_sha256": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02",
+  "evaluator_root": "source_dependencies/moment_detr",
+  "evaluator_sha256": {
+    "eval.py": "679e43d8f83ca08a682dbe2e4e3f4629ddc2e6911981bcd0c0e54cf1c0cfabca",
+    "utils.py": "7cb2f9733ffb3fe22d0b4044ef7ba82679b85972a3e7e0ac88b3eee44904d637"
+  },
+  "primary_metric": "HL-min-VeryGood mAP",
+  "secondary_metrics": [
+    "HL-min-VeryGood Hit1",
+    "Fair mAP/Hit1",
+    "Good mAP/Hit1"
+  ],
+  "bootstrap": {
+    "unit": "source_video",
+    "resamples": 10000,
+    "seed": 42,
+    "ci": 0.95
+  },
+  "fallback_policy": "Retain every query; use frozen B0 scores and explicitly record semantic/evidence failures; infrastructure failures leave the run incomplete.",
+  "evaluation_policy": "Evaluate all three arms once complete; preserve both arms regardless of result; no adaptive continuation into memory or revisit.",
+  "cost_policy": "Report incremental and cold-start tokens, actual attempted calls including retries, GPU-hours, wall time; shared batch time is not independent arm latency.",
+  "recovery": "Atomic per-query records, bounded worker retries, user systemd with linger, pinned code and data hashes; no other jobs terminated."
+}

@@ -1,0 +1,16 @@
+{
+  "python": "3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]",
+  "packages": {
+    "torch": "2.9.0",
+    "torchvision": "0.24.0",
+    "numpy": "2.2.6",
+    "decord": "0.6.0",
+    "Pillow": "12.3.0",
+    "ftfy": "6.3.1",
+    "regex": "2026.9.10"
+  },
+  "cuda_visible_devices": "GPU-REDACTED",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "model_dtype": "torch.float16",
+  "model_load_seconds": 6.302916526794434
+}
