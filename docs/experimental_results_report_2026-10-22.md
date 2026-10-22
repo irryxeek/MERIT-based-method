@@ -1,6 +1,6 @@
 # 高光检测与视频摘要实验结果汇总报告
 
-> 发布说明：指标、结论和统计范围沿用本地报告；仅调整引用链接。尚未发布的支持资料标注为“本地”，不提供失效的文件链接。
+> 发布说明（2026-10-22）：保留原报告的日期、指标和结论；调整引用链接与机器路径。历史命令和本地资料不表示本仓库附带完整运行环境，详见[报告发布约定](report_publication_workflow.md)。
 
 整理日期：**2026-10-22（北京时间）**。覆盖本项目已归档的 MERIT、LongVT、VideoARM、CLIP、VTG-GPT、REZE 实验，以及 REZE 在 QFVS、MR.HiSum、TVSum 上的迁移测试。
 
@@ -155,7 +155,7 @@ UMT 协议对每位标注者按严格大于其中位数二值化，在预测 top
 
 all50 包含 UMT 的 40 条训练划分视频，本次未用于训练或提示调参；该分数不能混作固定 val10 成绩。其余 40 条平均为 53.29，因此 61.32 与 54.89 的差异来自统计范围。全 50 条中 39 条高于随机期望、36 条高于常数。
 
-全部正式请求都有 Yes/No 双侧概率，无整视频常数预测。第二分片首次 smoke 遇到 vLLM 多模态错误，按原配置重试后完成，未跳过视频。来源：执行与评估报告（本地：`reze_tvsum_execution_2026-10-22.md`）。
+全部正式请求都有 Yes/No 双侧概率，无整视频常数预测。第二分片首次 smoke 遇到 vLLM 多模态错误，按原配置重试后完成，未跳过视频。来源：[执行与评估报告](reze_tvsum_execution_2026-10-22.md)。
 
 ### 5.2 MR.HiSum：可用测试集 1,888 条完成
 
@@ -169,7 +169,7 @@ all50 包含 UMT 的 40 条训练划分视频，本次未用于训练或提示�
 
 REZE 相对随机期望的配对提升为 **+3.30 pp [2.75, 3.87]**、**+2.75 pp [2.09, 3.42]**；摘要 F1 比常数对照低 **18.34 pp**。因此，高光排序存在有限收益，但当前摘要生成效果较差。
 
-先前 pilot100 为 **58.33 / 23.97 / 39.21**，单独保留；全量运行重新覆盖这些视频，不能把两组汇总均值变化解释为受控退化或独立重复验证。1,888 条是全部可用集，不是官方 2,000 条完整 test，缺失样本可能影响代表性。来源：全量报告（本地：`reze_mrhisum_full_execution_2026-10-21.md`）、pilot 报告（本地：`reze_mrhisum_execution_2026-10-21.md`）。
+先前 pilot100 为 **58.33 / 23.97 / 39.21**，单独保留；全量运行重新覆盖这些视频，不能把两组汇总均值变化解释为受控退化或独立重复验证。1,888 条是全部可用集，不是官方 2,000 条完整 test，缺失样本可能影响代表性。来源：[全量报告](reze_mrhisum_full_execution_2026-10-21.md)、[pilot 报告](reze_mrhisum_execution_2026-10-21.md)。
 
 ### 5.3 QFVS：四查询 pilot
 
@@ -185,7 +185,7 @@ REZE 相对随机期望的配对提升为 **+3.30 pp [2.75, 3.87]**、**+2.75 pp
 
 Oracle Precision / Recall / F1 为 **40.81 / 37.20 / 38.63**，三位用户参考摘要的平均 F1 为 **36.26**。Oracle 是官方聚合参考摘要，并非推理时向模型提供标签。
 
-均匀和随机是事后补充、同预算的诊断对照；随机数值来自 1,000 次选片均值。当前仅 P04 超过两种对照，不足以支持扩展到全部 180 查询。来源：四查询分析（本地：`reze_qfvs_analysis_2026-10-20.md`）。
+均匀和随机是事后补充、同预算的诊断对照；随机数值来自 1,000 次选片均值。当前仅 P04 超过两种对照，不足以支持扩展到全部 180 查询。来源：[四查询分析](reze_qfvs_analysis_2026-10-20.md)。
 
 ### 5.4 尚无有效成绩的项目
 
@@ -280,11 +280,11 @@ TVSum、MR.HiSum、QFVS 的 No 输出比例分别约 93.19%、91.30%、99.54%，
 |---|---|
 | QV REZE 全量指标、配对区间、预测与成本 | [结果 JSON](../comparisons/qvhighlights/reze_fullval_2026-10-20/fullval/results/evaluation.json)、[归档与 CPU 复算](../comparisons/qvhighlights/reze_fullval_2026-10-20/README.md) |
 | MERIT / LongVT / VideoARM、开发实验和历史失败 | [完整历史汇总](reproduction_results_summary_2026-10-19.md)、[对比数据索引](../comparisons/qvhighlights/README.md) |
-| TVSum 最终机器结果 | evaluation.json（本地：`reze_tvsum_full50_v1/evaluation.json`）、执行报告（本地：`reze_tvsum_execution_2026-10-22.md`） |
-| MR.HiSum 最终机器结果 | evaluation.json（本地：`reze_mrhisum_full1888_v2/evaluation.json`）、执行报告（本地：`reze_mrhisum_full_execution_2026-10-21.md`） |
-| QFVS 最终机器结果与对照 | evaluation.json（本地：`reze_qfvs_pilot4_v1/evaluation.json`）、诊断报告（本地：`reze_qfvs_analysis_2026-10-20.md`） |
-| TVSum / MR.HiSum 完成核验及摘要诊断 | analysis.json（本地：`reze_transfer_2026-10-22/analysis.json`）、分析脚本（本地：`analyze_reze_transfer_results.py`） |
-| 更详细的原因分析与适配依据 | 跨数据集分析（本地：`reze_cross_dataset_results_analysis_2026-10-22.md`） |
-| 无成绩项目的状态 | SVHighlights 状态指针（本地：`reze_svhighlights_current_run.local.json`）、TVHighlights 数据核查（本地：`tvhighlights_download_2026-10-21.md`） |
+| TVSum 最终机器结果 | evaluation.json（本地资料：`$ZEROSHOT_ARTIFACT_ROOT/reze_tvsum_full50_v1/evaluation.json`）、[执行报告](reze_tvsum_execution_2026-10-22.md) |
+| MR.HiSum 最终机器结果 | evaluation.json（本地资料：`$ZEROSHOT_ARTIFACT_ROOT/reze_mrhisum_full1888_v2/evaluation.json`）、[执行报告](reze_mrhisum_full_execution_2026-10-21.md) |
+| QFVS 最终机器结果与对照 | evaluation.json（本地资料：`$ZEROSHOT_ARTIFACT_ROOT/reze_qfvs_pilot4_v1/evaluation.json`）、[诊断报告](reze_qfvs_analysis_2026-10-20.md) |
+| TVSum / MR.HiSum 完成核验及摘要诊断 | analysis.json（本地资料：`$ZEROSHOT_ARTIFACT_ROOT/analyses/reze_transfer_2026-10-22/analysis.json`）、分析脚本（本地资料：`../scripts/analyze_reze_transfer_results.py`） |
+| 更详细的原因分析与适配依据 | [跨数据集分析](reze_cross_dataset_results_analysis_2026-10-22.md) |
+| 无成绩项目的状态 | SVHighlights 状态指针（本地资料：`reze_svhighlights_current_run.local.json`）、[TVHighlights 数据核查](tvhighlights_download_2026-10-21.md) |
 
-本次发布汇总报告与文档索引；标为“本地”的资料尚未随本次上传，其他相对链接指向已发布的文档与精选归档。完整运行产物保留在研究工作区，冻结预测、失败尝试、源码快照和既有报告未改动。
+已发布的详细报告与归档使用仓库内链接；未附的原始运行产物及实现依赖标注为本地资料。机器路径使用发布约定中的来源别名。冻结预测、失败尝试、源码快照和原始报告保留原状。

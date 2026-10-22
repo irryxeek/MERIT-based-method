@@ -1,5 +1,7 @@
 # QVHighlights 复现实验结果总汇
 
+> 发布说明（2026-10-22）：保留原报告的日期、指标和结论；调整引用链接与机器路径。历史命令和本地资料不表示本仓库附带完整运行环境，详见[报告发布约定](report_publication_workflow.md)。
+
 > 2026-10-20 更新入口：[REZE 基线与高光重排全量结果](reze_fullval_results_2026-10-20.md)。新增 CLIP / VTG-GPT / REZE 完整 val 对照及 P_abs / P_pair 扩展；本篇正文保留此前 MERIT、LongVT、VideoARM 的历史汇总。
 
 整理日期：2026-10-19（北京时间）。范围为本项目已有的 MERIT 迁移适配与后续实验，以及已归档的 LongVT、VideoARM 对比结果。最近一轮有结果的新增推理是 2026-10-17 的 R1；本次仅整理已有产物，没有新增推理。
@@ -53,7 +55,7 @@ MERIT 相对 v2b Tool 的 VeryGood mAP 增益为 **+6.55 pp，95% CI [5.87, 7.23
 
 LongVT 自身的工具收益依协议而变：compact v1 的 Tool−Global 为 +0.70 mAP、+2.06 Hit@1；v2b 为约 +0.19 mAP，区间 [−0.31, 0.68]，Hit@1 约 −1.23。v2b Tool 有 107 条查询发生局部工具拒绝，但最终预测有效，不能将它们当成表中的查询失败。
 
-来源：[统一分析及机器结果](../comparisons/qvhighlights/analysis_2026-10-15/README.md)、[MERIT 最终报告](/ssd/linyifei/merit-qvhighlights/runs/merit_qvh_main_v1-15f5f6e4ee00/val_report.json)、[LongVT compact 报告](../comparisons/qvhighlights/2026-10-15_194620/longvt/compact_v1/FULL_VALIDATION_REPORT.md)、[LongVT v2b 报告](../comparisons/qvhighlights/2026-10-15_194620/longvt/groundvts_v2b/FINAL_REPORT_ZH.md)。
+来源：[统一分析及机器结果](../comparisons/qvhighlights/analysis_2026-10-15/README.md)、[MERIT 最终报告](../comparisons/qvhighlights/merit_main_2026-10-15/val_report.json)、[LongVT compact 报告](../comparisons/qvhighlights/2026-10-15_194620/longvt/compact_v1/FULL_VALIDATION_REPORT.md)、[LongVT v2b 报告](../comparisons/qvhighlights/2026-10-15_194620/longvt/groundvts_v2b/FINAL_REPORT_ZH.md)。
 
 ## 4. VideoARM：部分 HD、初始化审计与 MR
 
@@ -104,7 +106,7 @@ D0 相对 M0 的表中 mAP 高 8.08 点、Hit@1 高 19 点。H1−D0 的未舍�
 
 H1 在共同成功样本中选中 2,038/7,212 个 2s 格，实际改变 644 个；D0/H1 各有 96/97 条最高分并列。局部重评分仍用 D0 原图、没有读取记忆文字，所以本轮主要检验选区和再评分，未检验新证据获取。预留的源视频不重叠 confirmation100 未启动。
 
-来源：[100 条实施报告](merit_hd_adapter_implementation_2026-10-16.md)、[原始指标](/ssd/linyifei/merit-qvhighlights/hd_v2/runs/merit_hd_v2-86cf964003c6/explore_report.json)、[配对诊断](../comparisons/qvhighlights/hd_adapter_analysis_2026-10-16/analysis.json)。
+来源：[100 条实施报告](merit_hd_adapter_implementation_2026-10-16.md)、原始指标（本地资料：`$MERIT_ARTIFACT_ROOT/hd_v2/runs/merit_hd_v2-86cf964003c6/explore_report.json`）、配对诊断（本地资料：`../comparisons/qvhighlights/hd_adapter_analysis_2026-10-16/analysis.json`）。
 
 ## 6. 固定 train20：证据记忆、粒度、消融与读取修复
 
@@ -125,7 +127,7 @@ H1 在共同成功样本中选中 2,038/7,212 个 2s 格，实际改变 644 个�
 
 224 个成功建库窗口中，222 个只有一个事件，尚未形成可靠的细粒度“传球→射门→进球”证据链。E1/E2/E3 是共享计算的阶段结果，不能当作严格匹配的模块消融。
 
-来源：[pilot 报告](highlight_evidence_pilot_2026-10-16.md)、[指标 JSON](../comparisons/qvhighlights/highlight_evidence_pilot_2026-10-16/v4/report.json)。
+来源：[pilot 报告](highlight_evidence_pilot_2026-10-16.md)、指标 JSON（本地资料：`../comparisons/qvhighlights/highlight_evidence_pilot_2026-10-16/v4/report.json`）。
 
 ### 6.2 固定候选和输入帧：C10/F2 粒度与可靠性修复
 
@@ -157,7 +159,7 @@ H1 在共同成功样本中选中 2,038/7,212 个 2s 格，实际改变 644 个�
 
 42 次新增评分全部成功，但四组均低于 D0。仅帧局部重评分本身已经下降，随后加描述/cue 也未恢复；暂不能把所有下降归于记忆内容。离线将选区分数投影回 D0 原分数集合后，A/B 为 26.07，C/D 为 25.88 mAP，提示局部与未更新区域的评分尺度值得检查；该投影只是事后诊断，没有模型重跑，也不是正式新方法成绩。
 
-来源：[消融报告](highlight_memory_ablation_2026-10-16.md)、[指标 JSON](../comparisons/qvhighlights/highlight_memory_ablation_2026-10-16/run/report.json)。
+来源：[消融报告](highlight_memory_ablation_2026-10-16.md)、指标 JSON（本地资料：`../comparisons/qvhighlights/highlight_memory_ablation_2026-10-16/run/report.json`）。
 
 ### 6.4 完整视频 2s 记忆评分与 R1
 
@@ -183,7 +185,7 @@ R1 将长同分尾段由 17/20 降到 8/20，但仍有 5 条整段常数。去�
 
 R1 达到预设开发门槛，按冻结规则停止，**R2 没有运行**。门槛通过不代表统计显著；ID/引用由解码约束固定，其合法性不证明模型真正理解了证据。
 
-来源：[纯记忆测试](highlight_memory_only_2026-10-16.md)、[读取问题诊断](highlight_memory_only_analysis_2026-10-17.md)、[R1 报告](highlight_memory_reader_run_2026-10-17.md)、[R1 原始指标](../comparisons/qvhighlights/highlight_memory_reader_2026-10-17/report.json)。
+来源：[纯记忆测试](highlight_memory_only_2026-10-16.md)、[读取问题诊断](highlight_memory_only_analysis_2026-10-17.md)、[R1 报告](highlight_memory_reader_run_2026-10-17.md)、R1 原始指标（本地资料：`../comparisons/qvhighlights/highlight_memory_reader_2026-10-17/report.json`）。
 
 ## 7. 调用与时间开销
 
@@ -226,7 +228,7 @@ LongVT compact 的 Global/Tool 平均单样本记录为 9.09/10.98 秒，v2b 为
 
 MERIT 新适配的预热请求重放中，1/2/4 路并发的 12 请求墙钟为 70.47/50.71/43.35 秒，因此冻结四路并发。部分评分随批处理变化，该结果仅证明当时服务吞吐改善，不是完整冷启动加速。
 
-来源：[统一时间分析](../comparisons/qvhighlights/analysis_2026-10-15/timing_comparison.json)、各轮 `report.json` 与实施报告、[同20条 D0 历史成本](../comparisons/qvhighlights/highlight_memory_only_2026-10-16/analysis/historical_D0_cost.json)。
+来源：[统一时间分析](../comparisons/qvhighlights/analysis_2026-10-15/timing_comparison.json)、各轮 `report.json` 与实施报告、同20条 D0 历史成本（本地资料：`../comparisons/qvhighlights/highlight_memory_only_2026-10-16/analysis/historical_D0_cost.json`）。
 
 ## 8. 工程失败、旧版本和未执行项目
 
@@ -264,15 +266,15 @@ smoke5 的旧/新目录结果相同，复用检查不算两次独立有效性证
 | --- | --- |
 | MERIT / LongVT 完整集、VideoARM 同子集 | [统一 analysis.json](../comparisons/qvhighlights/analysis_2026-10-15/analysis.json) |
 | LongVT / VideoARM 历史归档及来源哈希 | [2026-10-15 快照](../comparisons/qvhighlights/2026-10-15_194620/README.md) |
-| MERIT train100 | [原始 explore_report.json](/ssd/linyifei/merit-qvhighlights/hd_v2/runs/merit_hd_v2-86cf964003c6/explore_report.json)、[项目内配对分析](../comparisons/qvhighlights/hd_adapter_analysis_2026-10-16/analysis.json) |
-| 证据 pilot | [v4 report.json](../comparisons/qvhighlights/highlight_evidence_pilot_2026-10-16/v4/report.json) |
-| C10/F2 修复前 | [report.json](../comparisons/qvhighlights/highlight_memory_granularity_2026-10-16/run/report.json) |
-| C10/F2 修复后 | [report.json](../comparisons/qvhighlights/highlight_memory_repair_2026-10-16/run/report.json) |
-| A/B/C/D 消融 | [report.json](../comparisons/qvhighlights/highlight_memory_ablation_2026-10-16/run/report.json) |
-| 全视频纯记忆 | [report.json](../comparisons/qvhighlights/highlight_memory_only_2026-10-16/run/report.json) |
-| R1 | [report.json](../comparisons/qvhighlights/highlight_memory_reader_2026-10-17/report.json)、[原始请求与审计归档](../comparisons/qvhighlights/highlight_memory_reader_2026-10-17/README.md) |
+| MERIT train100 | 原始 explore_report.json（本地资料：`$MERIT_ARTIFACT_ROOT/hd_v2/runs/merit_hd_v2-86cf964003c6/explore_report.json`）、项目内配对分析（本地资料：`../comparisons/qvhighlights/hd_adapter_analysis_2026-10-16/analysis.json`） |
+| 证据 pilot | v4 report.json（本地资料：`../comparisons/qvhighlights/highlight_evidence_pilot_2026-10-16/v4/report.json`） |
+| C10/F2 修复前 | report.json（本地资料：`../comparisons/qvhighlights/highlight_memory_granularity_2026-10-16/run/report.json`） |
+| C10/F2 修复后 | report.json（本地资料：`../comparisons/qvhighlights/highlight_memory_repair_2026-10-16/run/report.json`） |
+| A/B/C/D 消融 | report.json（本地资料：`../comparisons/qvhighlights/highlight_memory_ablation_2026-10-16/run/report.json`） |
+| 全视频纯记忆 | report.json（本地资料：`../comparisons/qvhighlights/highlight_memory_only_2026-10-16/run/report.json`） |
+| R1 | report.json（本地资料：`../comparisons/qvhighlights/highlight_memory_reader_2026-10-17/report.json`）、原始请求与审计归档（本地资料：`../comparisons/qvhighlights/highlight_memory_reader_2026-10-17/README.md`） |
 
-各轮 JSON 保留 Fair/Good/VeryGood 完整指标、覆盖率及成本，本汇总的小样本主表只展开 VeryGood。旧文档中的“运行中”是当时快照，例如 `execution_status.md` 的 866/1,550 进度；当前完成情况以最终报告为准。项目内归档含预测、协议、审计与原始响应副本；部分完整原件仍在本机 `/ssd/linyifei/merit-qvhighlights/`，绝对路径仅本机可访问。
+各轮 JSON 保留 Fair/Good/VeryGood 完整指标、覆盖率及成本，本汇总的小样本主表只展开 VeryGood。旧文档中的“运行中”是当时快照，例如 `execution_status.md` 的 866/1,550 进度；当前完成情况以最终报告为准。项目内归档含预测、协议、审计与原始响应副本；部分完整原件仍在本机 `$MERIT_ARTIFACT_ROOT/`，绝对路径仅本机可访问。
 
 本次只读核对既有结果并新增汇总与入口链接，不改历史预测、失败记录或 `AGENTS.md`。其他数据集、未完成 LongVT LoRA 训练、未导入项目的 LongVT 开发试跑不在本汇总范围；本表不将它们视为已完成的 QVHighlights 对比。
 

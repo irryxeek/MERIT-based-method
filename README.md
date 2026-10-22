@@ -2,9 +2,13 @@
 
 本项目从 MERIT 的三键记忆检索、时序邻域过滤和完整时间轴高光评分出发，保存 QVHighlights 适配实验及后续零样本对照。原论文评估视频问答，**MERIT 原适配并非复现论文已有的 QVHighlights 分数**。下方运行命令对应原 MERIT 主实验；REZE 最新结果单独归档。
 
+**发布约定：以后每次推送更新，一并同步新增或修改的实验报告、结果分析、研究方案和文档索引。** 详见[报告同步发布约定](docs/report_publication_workflow.md)和[本次同步清单](docs/report_publication_manifest.json)。
+
 ## 最新实验结果（2026-10-22）
 
 [实验结果汇总报告](docs/experimental_results_report_2026-10-22.md) 汇总 QVHighlights 主实验、MERIT 开发对照及 REZE 跨数据集测试。TVSum 固定 val10 / all50 的 Top-5 mAP 为 **61.32 / 54.89**；MR.HiSum 可用 test 1,888 条的 mAP50 / mAP15 / 摘要 F1 为 **57.00 / 23.90 / 38.27**；QFVS 四查询 Oracle F1 为 **38.63**。不同指标和样本范围分别讨论，含计算开销、适配分析及尚未完成项目。
+
+[会议纪要后的推进计划](docs/next_steps_after_meeting_2026-10-22.md) 将下一阶段分为补齐 SVHighlights 基线、候选对照、同预算定向补证及长视频粗到细验证，包含 MERIT / LensWalk 分工和推进门槛；新实验尚未启动。详细数据集报告与 MERIT 开发实验已补齐，见[文档索引](docs/README.md)。
 
 REZE B0、P_abs、P_pair 已完成全部 1,550 条 validation 查询，VeryGood mAP / Hit@1 分别为 **42.99 / 71.68、43.57 / 74.06、43.76 / 76.84**。本轮仅重排前五候选，未加入记忆或回看；此前 A 阶段未通过门槛的结论保留。
 

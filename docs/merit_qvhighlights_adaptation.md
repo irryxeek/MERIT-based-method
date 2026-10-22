@@ -1,6 +1,9 @@
 # MERIT 在 QVHighlights 上的适配总结
 
-> 发布说明：以下进度和进程信息是所标日期的本机历史记录；运行产物未上传。路径已映射为仓库示例布局，实际运行目录由本地配置及源码哈希决定。
+> 发布说明（2026-10-22）：保留原报告的日期、指标和结论；调整引用链接与机器路径。历史命令和本地资料不表示本仓库附带完整运行环境，详见[报告发布约定](report_publication_workflow.md)。
+
+2026-10-16 更新：本文保留原始 0–100 评分协议。新增的密集初始化与局部重评分、
+并发执行和 100 条探索实验，见[新适配实现记录](merit_hd_adapter_implementation_2026-10-16.md)。
 
 记录日期：2026-10-15。本文总结当前已实现的方案，实验进度为文末注明时间的快照。
 
@@ -70,7 +73,7 @@
 上述数字是记录时的快照。最新状态以运行目录中的 `val_progress.json`、`runtime/automation_status.json` 和最终 `val_report.json` 为准：
 
 ```text
-artifacts/runs/merit_qvh_main_v1-15f5f6e4ee00/
+$MERIT_ARTIFACT_ROOT/runs/merit_qvh_main_v1-15f5f6e4ee00/
 ```
 
 ## 相关实现与文档

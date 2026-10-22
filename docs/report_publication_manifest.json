@@ -1,0 +1,431 @@
+{
+  "updated_at": "2026-10-22T11:44:46.144019+00:00",
+  "scope": "All active MERIT docs/*.md except the curated index, plus related QVHighlights-ZeroShot docs/*.md. Historical frozen plan publications retained. Raw experiment artifacts are not implicitly published.",
+  "standing_user_instruction": "Whenever pushing project updates, include newly created or updated reports, analyses, research plans, and document indexes.",
+  "path_aliases": {
+    "$PUBLICATION_ROOT": "source location; configure separately",
+    "$MERIT_ROOT": "source location; configure separately",
+    "$ZEROSHOT_ROOT": "source location; configure separately",
+    "$LONGVT_ROOT": "source location; configure separately",
+    "$VIDEOARM_ROOT": "source location; configure separately",
+    "$ZEROSHOT_ARTIFACT_ROOT": "source location; configure separately",
+    "$MERIT_ARTIFACT_ROOT": "source location; configure separately",
+    "$SHARED_DATA_ROOT": "source location; configure separately",
+    "$WORKSPACE_PARENT": "source location; configure separately",
+    "$DATA_PARENT": "source location; configure separately"
+  },
+  "files": [
+    {
+      "source": "MERIT:docs/experimental_results_report_2026-10-22.md",
+      "destination": "docs/experimental_results_report_2026-10-22.md",
+      "source_sha256": "973497c953ef1cd1ed59e36b94884349e2133e718f351bd996385699b4ddcfbc",
+      "publication_sha256": "b3fbd59743be9ab1ca4c6afccf99d6418999882b7751cbb77bd42a8a01b22d41",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "$ZEROSHOT_ARTIFACT_ROOT/analyses/reze_transfer_2026-10-22/analysis.json",
+        "$ZEROSHOT_ARTIFACT_ROOT/reze_mrhisum_full1888_v2/evaluation.json",
+        "$ZEROSHOT_ARTIFACT_ROOT/reze_qfvs_pilot4_v1/evaluation.json",
+        "$ZEROSHOT_ARTIFACT_ROOT/reze_tvsum_full50_v1/evaluation.json",
+        "../scripts/analyze_reze_transfer_results.py",
+        "reze_svhighlights_current_run.local.json"
+      ]
+    },
+    {
+      "source": "MERIT:docs/highlight_evidence_pilot_2026-10-16.md",
+      "destination": "docs/highlight_evidence_pilot_2026-10-16.md",
+      "source_sha256": "d05e5b52b1057c80fda05a9edebdde674495b080af52b52081a159672bc16a4f",
+      "publication_sha256": "dc881772f5d12a3bf8779c5ee2c7f570797f8525ca3779d685d427e04a46e654",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../comparisons/qvhighlights/highlight_evidence_pilot_2026-10-16/README.md",
+        "../comparisons/qvhighlights/highlight_evidence_pilot_2026-10-16/diagnosis/analysis.json",
+        "../comparisons/qvhighlights/highlight_evidence_pilot_2026-10-16/diagnosis/per_query.json",
+        "../comparisons/qvhighlights/highlight_evidence_pilot_2026-10-16/v4/report.json",
+        "../experiments/hd_adapter/pipeline.py",
+        "../experiments/highlight_evidence/README.md",
+        "../scripts/analyze_highlight_pilot.py"
+      ]
+    },
+    {
+      "source": "MERIT:docs/highlight_evidence_research_2026-10-16.md",
+      "destination": "docs/highlight_evidence_research_2026-10-16.md",
+      "source_sha256": "176dad91935d3f18c192cd7fdc83a1914f974e79a81c0d5f890f8cddb2f32789",
+      "publication_sha256": "49095431bdf8555ef255f266a3ab6212fd44f405c399ec6adeff30a51b32d1e6",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../comparisons/qvhighlights/hd_adapter_analysis_2026-10-16/analysis.json",
+        "../comparisons/qvhighlights/hd_adapter_analysis_2026-10-16/per_query.json",
+        "../configs/highlight_value_schema.example.json",
+        "../experiments/highlight_evidence/README.md",
+        "../scripts/analyze_hd_adapter.py"
+      ]
+    },
+    {
+      "source": "MERIT:docs/highlight_memory_ablation_2026-10-16.md",
+      "destination": "docs/highlight_memory_ablation_2026-10-16.md",
+      "source_sha256": "c2c9e1d8b240514c88c2c7652871f319325515927f092429205902c4197c15dd",
+      "publication_sha256": "09d0cecac98d38149b2302375dea3fafbe63a6a670f21ed476d5e207cd1e6531",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../comparisons/qvhighlights/highlight_memory_ablation_2026-10-16/README.md",
+        "../experiments/highlight_evidence/memory_ablation.py",
+        "../tests/test_highlight_memory_ablation.py"
+      ]
+    },
+    {
+      "source": "MERIT:docs/highlight_memory_granularity_2026-10-16.md",
+      "destination": "docs/highlight_memory_granularity_2026-10-16.md",
+      "source_sha256": "4cae6ea4df06c04931d66fda3e4ecc7b085dbdeb20d5a7fc2bc8c9707965a303",
+      "publication_sha256": "be1b216a4f18f97406d8eddfb6b69db58831180e1a8c44c755d5ea4fb7c10de5",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../comparisons/qvhighlights/highlight_memory_granularity_2026-10-16/README.md",
+        "../experiments/highlight_evidence/granularity.py",
+        "../scripts/audit_highlight_granularity.py"
+      ]
+    },
+    {
+      "source": "MERIT:docs/highlight_memory_only_2026-10-16.md",
+      "destination": "docs/highlight_memory_only_2026-10-16.md",
+      "source_sha256": "a91adc09d6d261e419b86a40d61dd57f17aed4fab27a24f27fff5101a8f90554",
+      "publication_sha256": "04838fe953537e7c4d91084064ce3806131ce4c5738650700b1fbb12132da9bd",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../comparisons/qvhighlights/highlight_memory_only_2026-10-16/README.md",
+        "../experiments/highlight_evidence/memory_only.py",
+        "../tests/test_highlight_memory_only.py"
+      ]
+    },
+    {
+      "source": "MERIT:docs/highlight_memory_only_analysis_2026-10-17.md",
+      "destination": "docs/highlight_memory_only_analysis_2026-10-17.md",
+      "source_sha256": "9f7787653d6bea87b995f24e61278ee93ace11a28e50506cbaf79f5a65d79fa1",
+      "publication_sha256": "fb690cdb7c73909dce0f2bcf5aadf92f8753b773faa94cca5601190e076760ec",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../comparisons/qvhighlights/highlight_memory_only_2026-10-16/README.md",
+        "../comparisons/qvhighlights/highlight_memory_only_analysis_2026-10-17/analysis.json",
+        "../comparisons/qvhighlights/highlight_memory_only_analysis_2026-10-17/analyze.py"
+      ]
+    },
+    {
+      "source": "MERIT:docs/highlight_memory_reader_plan_2026-10-17.md",
+      "destination": "docs/highlight_memory_reader_plan_2026-10-17.md",
+      "source_sha256": "4722a9790b5c79848e4b24d9d36ea4b8831a747dd9b8494fb9728e3c1fcb758b",
+      "publication_sha256": "2d782f6b637af48d150f69916f0799dfc9498397247c463f5c560d27953cfb41",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/highlight_memory_reader_run_2026-10-17.md",
+      "destination": "docs/highlight_memory_reader_run_2026-10-17.md",
+      "source_sha256": "73d90fe3f7b30a07ea8eb438c5a441527ce4813df74e6c02e9868116e5ca4f66",
+      "publication_sha256": "429aa144ecf2fe9b7581e161f4536579e16be69eee63025daae13b06c90be5f1",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../comparisons/qvhighlights/highlight_memory_reader_2026-10-17/README.md",
+        "../experiments/highlight_evidence/memory_reader.py",
+        "../tests/test_highlight_memory_reader.py"
+      ]
+    },
+    {
+      "source": "MERIT:docs/highlight_memory_repair_2026-10-16.md",
+      "destination": "docs/highlight_memory_repair_2026-10-16.md",
+      "source_sha256": "abe81eee603de7de66f6c606594d47daed6a7ff85017a02b57dcf53d8ecfe765",
+      "publication_sha256": "07df5930d546e6d87d0db1f257da0b2157753ba3d15b332611303e193536a823",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../comparisons/qvhighlights/highlight_memory_repair_2026-10-16/README.md",
+        "../experiments/highlight_evidence/granularity.py",
+        "../experiments/highlight_evidence/robust_client.py",
+        "../experiments/highlight_evidence/robust_memory.py",
+        "../scripts/analyze_highlight_memory_repair.py",
+        "../scripts/audit_highlight_granularity.py",
+        "../tests/test_highlight_memory_repair.py"
+      ]
+    },
+    {
+      "source": "MERIT:docs/merit_hd_adapter_implementation_2026-10-16.md",
+      "destination": "docs/merit_hd_adapter_implementation_2026-10-16.md",
+      "source_sha256": "c130eb034649d9abe4895cf4603930ed0c1a64ee5d8b34dfdd66831d69c32a2a",
+      "publication_sha256": "fc11ed09e5230547f56f57b3a4d071b6c8d8dd0176d6b6cc61765f4718820f62",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../experiments/hd_adapter/README.md",
+        "../scripts/audit_hd_adapter.py",
+        "hd_adapter_current_run.local.json"
+      ]
+    },
+    {
+      "source": "MERIT:docs/merit_method_additions_2026-10-16.md",
+      "destination": "docs/merit_method_additions_2026-10-16.md",
+      "source_sha256": "f597912923e2b7b66d2df92e0a19e11f0e606a1dd5653e6c796a4f276819e078",
+      "publication_sha256": "4b509bb915ccfc617f3474b03b73692120267dece396eb6f7d33b6743f9ea907",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../comparisons/qvhighlights/hd_adapter_analysis_2026-10-16/README.md",
+        "../configs/highlight_value_schema.example.json",
+        "../experiments/highlight_evidence/README.md"
+      ]
+    },
+    {
+      "source": "MERIT:docs/merit_qvhighlights_adaptation.md",
+      "destination": "docs/merit_qvhighlights_adaptation.md",
+      "source_sha256": "0f484f9a42c17ab0f7628b1a40badfaea5e2c7dab5e71de78f8640810d4dd387",
+      "publication_sha256": "3c4aef96bc48879471ce8c4a1706f112c77a8f3578d93a9a73c1d3fdc30cbcd2",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/next_steps_after_meeting_2026-10-22.md",
+      "destination": "docs/next_steps_after_meeting_2026-10-22.md",
+      "source_sha256": "31faa71faa74b235cdaa52f38d45e812cda6a0fc81987bff0d67f85b9e319bf4",
+      "publication_sha256": "6e498f70ca822bdc32f23688a44687c022da7655f627ba1f7b4fd25b998b2cdc",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/qfvs_raw_videos_2026-10-20.md",
+      "destination": "docs/qfvs_raw_videos_2026-10-20.md",
+      "source_sha256": "8ef066c3a641d9daa6019488d066040194fbe059a1c2fafe1a281811fe2a108b",
+      "publication_sha256": "a241f807128aea6a2c4002dcf10ff130cdb0947a7a4d207ad9e4ec13dd0318a7",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "qfvs_raw_videos.local.json"
+      ]
+    },
+    {
+      "source": "MERIT:docs/report_publication_workflow.md",
+      "destination": "docs/report_publication_workflow.md",
+      "source_sha256": "0e65a12aee8e5624a708e858cacf3a1507a5673451a3f4f73a0e86b010b14c43",
+      "publication_sha256": "0e65a12aee8e5624a708e858cacf3a1507a5673451a3f4f73a0e86b010b14c43",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/reproduction_results_summary_2026-10-19.md",
+      "destination": "docs/reproduction_results_summary_2026-10-19.md",
+      "source_sha256": "0c67386d704904a0410b5d5d74110cfdb9eaa7594b9cb0012b9dbff38a82efdc",
+      "publication_sha256": "73ed57b76fff01aa9fb3f2b8173a5c336d555761801e0fabb1a78403c9cdf4a1",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "$MERIT_ARTIFACT_ROOT/hd_v2/runs/merit_hd_v2-86cf964003c6/explore_report.json",
+        "../comparisons/qvhighlights/hd_adapter_analysis_2026-10-16/analysis.json",
+        "../comparisons/qvhighlights/highlight_evidence_pilot_2026-10-16/v4/report.json",
+        "../comparisons/qvhighlights/highlight_memory_ablation_2026-10-16/run/report.json",
+        "../comparisons/qvhighlights/highlight_memory_granularity_2026-10-16/run/report.json",
+        "../comparisons/qvhighlights/highlight_memory_only_2026-10-16/analysis/historical_D0_cost.json",
+        "../comparisons/qvhighlights/highlight_memory_only_2026-10-16/run/report.json",
+        "../comparisons/qvhighlights/highlight_memory_reader_2026-10-17/README.md",
+        "../comparisons/qvhighlights/highlight_memory_reader_2026-10-17/report.json",
+        "../comparisons/qvhighlights/highlight_memory_repair_2026-10-16/run/report.json"
+      ]
+    },
+    {
+      "source": "MERIT:docs/reze_cross_dataset_2026-10-20.md",
+      "destination": "docs/reze_cross_dataset_2026-10-20.md",
+      "source_sha256": "18c759be34e58a00580ebae153eae03473a7905d7fee0f7ad35ac0d9c5fb33a8",
+      "publication_sha256": "afc72c03d3c2bfb00f1fbe230671cdc8d4a3ae54cbbda0e78e9540849fa78991",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/reze_cross_dataset_results_analysis_2026-10-22.md",
+      "destination": "docs/reze_cross_dataset_results_analysis_2026-10-22.md",
+      "source_sha256": "9870d777240bd0a07143f26a8fc649bf8413147eecaf5bf0c20956d6c7d7177b",
+      "publication_sha256": "939baa9ac85abfa77b11e886907613f59d343579acd638f7720b1e2e8ab6ea59",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../scripts/analyze_reze_transfer_results.py"
+      ]
+    },
+    {
+      "source": "MERIT:docs/reze_execution_plan_2026-10-19.md",
+      "destination": "docs/reze_execution_plan_2026-10-19.md",
+      "source_sha256": "294010e8b0d2263caf468afdc2d5267efe536533a85757cc2abe0262bcce9a15",
+      "publication_sha256": "23439395ab59478400d54e203c48ce15b91302326951241b9aa52e3586e6d7d5",
+      "basis": "preserve_existing_publication_and_2026-10-20_manifest",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/reze_execution_status_2026-10-19.md",
+      "destination": "docs/reze_execution_status_2026-10-19.md",
+      "source_sha256": "a220eb7c47ce39aa5086b1ae255b0fc3dc55e8c9f1aa273954d5fe5841369b6b",
+      "publication_sha256": "a2472f78a8b9845354825d484ae33a49d5e414143de7e71ec45e7b0bdc4cacb5",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../configs/reze_evidence_plan_v1.json"
+      ]
+    },
+    {
+      "source": "MERIT:docs/reze_fullval_execution_2026-10-20.md",
+      "destination": "docs/reze_fullval_execution_2026-10-20.md",
+      "source_sha256": "4041420575baa933b499d38efb642fbbc24f6bd6d951537e2c56ee39a54be0e9",
+      "publication_sha256": "4b53ccd5cc7dfe529dc0a755a9f980f3d1f5fcb729cd9641bebc4e0ce7eba0b1",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../configs/reze_evidence_fullval_v1.json"
+      ]
+    },
+    {
+      "source": "MERIT:docs/reze_fullval_results_2026-10-20.md",
+      "destination": "docs/reze_fullval_results_2026-10-20.md",
+      "source_sha256": "d853cc02cd16073aaf34762aab8c86c5a70ea93105b6785c19fb320e3d29936e",
+      "publication_sha256": "014ff7c87989d05df2a181cb2b5c3f9aa1cd88e560576e35610cbfd560fbbee2",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/reze_mrhisum_execution_2026-10-21.md",
+      "destination": "docs/reze_mrhisum_execution_2026-10-21.md",
+      "source_sha256": "38b707269bb6d07200b52e11458a32d264d4b0d00f33d01c9fa591ee939decfe",
+      "publication_sha256": "b475930bbace1a718914226a3200e2276bcc37e5687822b88122f793f5986951",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "reze_mrhisum_pilot100.local.json"
+      ]
+    },
+    {
+      "source": "MERIT:docs/reze_mrhisum_full_execution_2026-10-21.md",
+      "destination": "docs/reze_mrhisum_full_execution_2026-10-21.md",
+      "source_sha256": "12a54cd81164c2f6f599a4f513c2c2b3d3f65ce6e3342113bfbfcf8a92d2cc79",
+      "publication_sha256": "8f8c3a6558cc9f3c5ec0b8b45e9f302101cd3ce3126a3f3800599b3a4f13e6ed",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "reze_mrhisum_current_run.local.json"
+      ]
+    },
+    {
+      "source": "MERIT:docs/reze_qfvs_analysis_2026-10-20.md",
+      "destination": "docs/reze_qfvs_analysis_2026-10-20.md",
+      "source_sha256": "1d676d93ca34d6c395cc59801158032c99b7d0057da6e2b0db9a892574dbf0bd",
+      "publication_sha256": "9884601d7d9b533955eb61aa6789a64ccc90030463b3fca840f784e43b4a61ef",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../scripts/analyze_qfvs_pilot.py"
+      ]
+    },
+    {
+      "source": "MERIT:docs/reze_qfvs_execution_2026-10-20.md",
+      "destination": "docs/reze_qfvs_execution_2026-10-20.md",
+      "source_sha256": "f28ac366ce6a4212375713760d2311f388c4fbf88f5f003382bf7526358ce18c",
+      "publication_sha256": "57a7840a1cd81181b2b71c7854e6769ca3c6b04b71c018398262f5cecc4cc39e",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "reze_qfvs_current_run.local.json"
+      ]
+    },
+    {
+      "source": "MERIT:docs/reze_research_directions_2026-10-19.md",
+      "destination": "docs/reze_research_directions_2026-10-19.md",
+      "source_sha256": "00d3946e4857842b2eda8d6e3e64d2d1f5182869351e2a16dd82b942caf15859",
+      "publication_sha256": "de97215aea2fbc37e6896e9b4333441c957cf8d45f7998938c5d7179f9778814",
+      "basis": "preserve_existing_publication_and_2026-10-20_manifest",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/reze_stage_a_results_2026-10-19.md",
+      "destination": "docs/reze_stage_a_results_2026-10-19.md",
+      "source_sha256": "2dfaaf4ff7da9233c5ac87a5d288a234fafb5c15e265eecec52742b6ed836063",
+      "publication_sha256": "f08d3288a952b90aa92e442961ce7b559a4e530b5f65ab1f3af1175c907c1271",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "$ZEROSHOT_ROOT/experiments/reze_evidence/README.md",
+        "$ZEROSHOT_ROOT/results/reze_evidence_v1/stage_a/evaluation.json",
+        "$ZEROSHOT_ROOT/results/reze_evidence_v1/stage_a/execution_accounting.json",
+        "$ZEROSHOT_ROOT/results/reze_evidence_v1/stage_a/per_query.jsonl"
+      ]
+    },
+    {
+      "source": "MERIT:docs/reze_tvsum_execution_2026-10-22.md",
+      "destination": "docs/reze_tvsum_execution_2026-10-22.md",
+      "source_sha256": "44f68b6e334cf2d6789c197f942eeaeea3dd39b3007800a65b155affeb7a57bf",
+      "publication_sha256": "3ab0b363450ed447153711109b178420227fedddb34f0e84c3a56d93c3e017a4",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "$ZEROSHOT_ROOT/experiments/reze_tvsum/README.md",
+        "reze_tvsum_current_run.local.json"
+      ]
+    },
+    {
+      "source": "MERIT:docs/tvhighlights_download_2026-10-21.md",
+      "destination": "docs/tvhighlights_download_2026-10-21.md",
+      "source_sha256": "5a64f7e05ef92e7b18aeda4bfc4085c453c5147c624b01fc894e5de19d86d9ec",
+      "publication_sha256": "fdba96d34baa5025cf6340735d40bb8bdc908cd1cc333c2da03a9ead99419688",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/tvsum_mrhisum_download_2026-10-20.md",
+      "destination": "docs/tvsum_mrhisum_download_2026-10-20.md",
+      "source_sha256": "ff135241cd5c5d658b783165bd72bba4271060540fbabb9bee10c8679c44cc14",
+      "publication_sha256": "a54d12ef4b0d4e5eaefd1b6bff8096456aa85b950075488c3ce30db204e4f78d",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "tvsum_mrhisum_download.local.json"
+      ]
+    },
+    {
+      "source": "QVHighlights-ZeroShot:docs/PROTOCOL.md",
+      "destination": "docs/zeroshot_baselines/PROTOCOL.md",
+      "source_sha256": "9db0c741baa0b3ff89d664470c35775f640a0bd14b1814e08e257e5858182934",
+      "publication_sha256": "13bb2f32fa57161143c69d90e91a2b6c7b846ae4f538a2eed3b65a9ab88652bc",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": []
+    },
+    {
+      "source": "QVHighlights-ZeroShot:docs/RESULTS_2026-10-19.md",
+      "destination": "docs/zeroshot_baselines/RESULTS_2026-10-19.md",
+      "source_sha256": "701bc3f235858259badbcb6aac25f633a46b01ec544b0252282b55bee2c9ada2",
+      "publication_sha256": "5fe67d9286c778fbedc2bb5d29be84c90d09a17d3dac8c59f16e5db8c48ffcd0",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": [
+        "../results/clip_val/metrics.json",
+        "../results/paired_per_query.csv",
+        "../results/summary.json",
+        "../results/validation_receipt.json",
+        "../results/vtg_gpt_val/metrics.json"
+      ]
+    },
+    {
+      "source": "QVHighlights-ZeroShot:docs/REZE_PROTOCOL.md",
+      "destination": "docs/zeroshot_baselines/REZE_PROTOCOL.md",
+      "source_sha256": "1095998d5b4d08e74a94fd4279e1591cee58dc88c1a12a139c6afa51ffa7ce1e",
+      "publication_sha256": "c0823f4e0d24efafb0311803f9c61f98f0963f5b936e5c700cfa546742d05611",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": []
+    },
+    {
+      "source": "QVHighlights-ZeroShot:docs/REZE_RESULTS_2026-10-19.md",
+      "destination": "docs/zeroshot_baselines/REZE_RESULTS_2026-10-19.md",
+      "source_sha256": "6a2d28217f3fa27777344fdb14bdca0ac666b4080c50b972bf8dfa787e5ed130",
+      "publication_sha256": "21b1264dcd54009287f1dd23a9ec2a43cb9d7fd4ee02da8c62e36a3642035215",
+      "basis": "research_workspace_markdown_with_publication_links_and_path_aliases",
+      "local_only_references": []
+    }
+  ],
+  "indexes": [
+    {
+      "source": "MERIT:README.md",
+      "destination": "README.md",
+      "source_sha256": "94d1dd7c35014439861bac4166c02c83b8e25cfdcbd71423614a8d4f7c9199e4",
+      "publication_sha256": "fe376b1fc1133a65e13404bd1aa7646979be7f521e50bb0013f02898e9074968",
+      "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
+    },
+    {
+      "source": "MERIT:docs/README.md",
+      "destination": "docs/README.md",
+      "source_sha256": "217ff5731dbd8541846b3b35eefd2edb0e2faae7e5e160b7d28a307b9d1100d9",
+      "publication_sha256": "11a19ecbaa4e5b5cfb666eee586b0b48721b9f9eefbf202af6fb29cdd3d67602",
+      "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
+    }
+  ],
+  "validation": {
+    "content_equivalent_except_publication_notes_links_and_paths": 34,
+    "preserved_frozen_plan_documents": 2,
+    "local_links_checked": 236,
+    "active_reports_covered": 32,
+    "raw_prediction_or_metric_changes": false,
+    "AGENTS_modified": false
+  }
+}
