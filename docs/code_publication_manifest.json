@@ -287,22 +287,22 @@
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/README.md",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/README.md",
       "source_sha256": "08134a777613bf36a8535d0c50b088857a6d1d5c3ba3b6eeb4be48d35b5bc90e",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
-      "publication_sha256": "31b75ea19b5f28855f63799670d6eacaac40de323b59eb68d94b11e23d83c1cf"
+      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
+      "publication_sha256": "e57516fc1a745fcc0ce371ee6393b01a35fb722a050931a272c0d38c686c78c4"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/dispatch.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/dispatch.py",
       "source_sha256": "e1c5b55d61e2973cdf38374fe51190ac4fa912958668fbce0cc1aa3194027c67",
-      "publication_changes": "unchanged",
-      "publication_sha256": "e1c5b55d61e2973cdf38374fe51190ac4fa912958668fbce0cc1aa3194027c67"
+      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
+      "publication_sha256": "c8ba532de2af05d8c2112a909848405348f1d48271376655a971fc282b77f663"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/evaluate.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/evaluate.py",
       "source_sha256": "e42012b95d29ba0da219fd245183d50d8dff46d9d27c46bd659cf4e87b619e1c",
-      "publication_changes": "unchanged",
-      "publication_sha256": "e42012b95d29ba0da219fd245183d50d8dff46d9d27c46bd659cf4e87b619e1c"
+      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
+      "publication_sha256": "ed339373ac2ffe4a1af214f8e6728b7865b9ef395dffdaf1ad3659047f721306"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/media.py",
@@ -315,22 +315,22 @@
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/preflight_media.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/preflight_media.py",
       "source_sha256": "279726362699c19ca21e63af6de45f20a1fdccf0310fbd8bd4bf43c26bda80d8",
-      "publication_changes": "unchanged",
-      "publication_sha256": "279726362699c19ca21e63af6de45f20a1fdccf0310fbd8bd4bf43c26bda80d8"
+      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
+      "publication_sha256": "c81a281199bc3df6e253462dc406af8bc205764a1a6d3b85bccf309679977544"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/prepare.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/prepare.py",
       "source_sha256": "7e8017317b2dc216afe6e010c52aca9bd36ca9f57dde4206bbdaaae5eac6357f",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
-      "publication_sha256": "4263e5800d2112ca6fe2b608400de89eab27cb6b025d3f22f036422d48d23276"
+      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
+      "publication_sha256": "2f47db56015a43db018d6a1f2b7ebe6235bb7e5633e26ec726b230b6d98b35c7"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/shared.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/shared.py",
       "source_sha256": "d47afe651c01c16a7fad834ce3518412a308bc53d88ec116a9953a5d4378257f",
-      "publication_changes": "unchanged",
-      "publication_sha256": "d47afe651c01c16a7fad834ce3518412a308bc53d88ec116a9953a5d4378257f"
+      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
+      "publication_sha256": "8501fd4acb6851fb04457c8ef6f7a36cf1815d0ed13b36edc37073549c4cc6cf"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/tests/test_qfvs.py",
@@ -392,8 +392,8 @@
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/worker.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/worker.py",
       "source_sha256": "b3e49ee6ac525f579024003233c343b7eb553452e8700e4b4ef2ee5dcafd95ce",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
-      "publication_sha256": "add386ab326ffa446925a340f27c2c13f662e9edb504e0aec345cc69f2875a77"
+      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
+      "publication_sha256": "b7fc6a1a2f68ee3b940538f621dd6a42fac32f36fcc92e9d29dbc2a519d4b134"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/README.md",
@@ -1460,6 +1460,26 @@
       "publication_sha256": "0a8ff46774ff770d270ae320ad869b19073e6d23ed1844791dafaface1704af5"
     },
     {
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/adaptation.py",
+      "basis": "New development in the Git-managed repository",
+      "publication_sha256": "4668f72f90d321ed6a0b368ca2e7a395fdbd273d099e02b116e4f9c47e77d7a7"
+    },
+    {
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/compare_adaptation.py",
+      "basis": "New development in the Git-managed repository",
+      "publication_sha256": "aa706e0f59b45b213e92d945ec0ed7bc1e67300a0c1b3f64bab45b9cde910488"
+    },
+    {
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/pairing.py",
+      "basis": "New development in the Git-managed repository",
+      "publication_sha256": "98e4b3639c2b1403b5de5746fceb6c126e612196b1d374c0c224d0e99263a612"
+    },
+    {
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/tests/test_adaptation.py",
+      "basis": "New development in the Git-managed repository",
+      "publication_sha256": "55667d049ac9a6f9a22eb7091afee4298349533b7577cda02643ce2165b785c1"
+    },
+    {
       "destination": "baselines/zeroshot/scripts/prepare_pair_plan.py",
       "publication_sha256": "19711bdb8ae0e813f7e6dc3f19964e703d66972a2e0024853fe49da9ab3dc3fc"
     },
@@ -1477,7 +1497,7 @@
     },
     {
       "destination": "docs/reproduction_index.md",
-      "publication_sha256": "9b0c3019dd80e0acf912440e06324fc09f5f94d226c8d01974824ac1b21a9612"
+      "publication_sha256": "5c323241564ee656db6ce3a8fc26cad33a1c36c7b784b8af09fcb9356592d713"
     },
     {
       "destination": "requirements-reproduction.txt",
@@ -1504,10 +1524,23 @@
     "third_party/moment_detr": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca"
   },
   "validation": {
+    "recorded_at": "2026-10-22T13:22:07.409055+00:00",
+    "scope": "QFVS adaptation; prior repository-wide validation retained separately",
+    "qfvs_cpu_tests_passed": 26,
+    "qfvs_cpu_tests_skipped": 1,
+    "real_video_preprocessing_probes": 12,
+    "real_input_pairing_probes_passed": true,
+    "baseline_original_metrics_reproduced": true,
+    "new_formal_requests_at_validation": 0,
+    "gpu_status_at_validation": "waiting_for_idle_gpu_6",
+    "existing_predictions_changed": false
+  },
+  "previous_validation": {
     "cpu_tests_passed": 280,
     "cpu_tests_skipped_external_inputs": 12,
     "cli_help_entrypoints": 25,
     "gpu_inference_started": false,
     "existing_predictions_changed": false
-  }
+  },
+  "updated_at": "2026-10-22T13:22:07.409055+00:00"
 }

@@ -20,8 +20,10 @@ from shared import (
 )
 
 # isort: split
+from adaptation import ACTION_MODE, make_qfvs_request
 from media import StreamVideo
-from reze_backend import make_engine, make_request, score_requests
+from pairing import check_paired_trace, paired_receipt
+from reze_backend import make_engine, score_requests
 
 
 def reserve(run, binding_hash, qid, start, count, gpu_uuid, purpose):
@@ -46,6 +48,8 @@ def main():
     args = parser.parse_args()
     run = args.run.resolve()
     binding, rows, binding_hash = load_run(run)
+    parent = paired_receipt(run, binding)
+    prompt_mode = binding.get("prompt_mode", ACTION_MODE)
     if sha256(run / "model_verification.json") != binding["model_verification_sha256"]:
         raise ValueError("Model verification receipt changed")
     model = json.loads((run / "model_verification.json").read_text())
@@ -93,10 +97,11 @@ def main():
                 if charged + 1 > binding["maximum_charged_requests"]:
                     raise RuntimeError("Cumulative request budget exhausted during GPU smoke")
                 clips, trace = video.read(start, 1)
+                check_paired_trace(parent, row, start, video.segments[start : start + 1], trace)
                 path, attempt = reserve(run, binding_hash, row["qid"], start, 1, actual_uuid, "gpu_smoke")
                 charged += 1
                 records, elapsed = score_requests(
-                    engine, sampling, [make_request(tokenizer, row["query"], clips[0])], ids
+                    engine, sampling, [make_qfvs_request(tokenizer, row["query"], clips[0], prompt_mode)], ids
                 )
                 chunk = {
                     "binding_sha256": binding_hash,
@@ -168,7 +173,8 @@ def main():
             if charged + len(segments) > binding["maximum_charged_requests"]:
                 raise RuntimeError("Frozen cumulative request budget exhausted")
             clips, trace = video.read(start, batch_size)
-            requests = [make_request(tokenizer, row["query"], clip) for clip in clips]
+            check_paired_trace(parent, row, start, segments, trace, batch_size)
+            requests = [make_qfvs_request(tokenizer, row["query"], clip, prompt_mode) for clip in clips]
             attempt_path, attempt = reserve(run, binding_hash, qid, start, len(clips), actual_uuid, "inference")
             charged += len(clips)
             records, elapsed = score_requests(engine, sampling, requests, ids)

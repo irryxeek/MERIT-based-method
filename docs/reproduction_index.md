@@ -111,3 +111,5 @@ python -m pytest experiments/reze_svhighlights/tests -q
 ```
 
 每条命令单独启动解释器。缺少原视频或 tokenizer 时，相关集成检查显式跳过；CPU 测试通过不代表已重新验证 GPU 精度或取得新的指标。发布完整性检查见 `scripts/verify_publication.py`。
+
+QFVS 新增的概念提示配对消融、固定时间选择及当前进度见[优化执行报告](reze_qfvs_adaptation_2026-10-22.md)；该入口仍限制原四个开发查询。

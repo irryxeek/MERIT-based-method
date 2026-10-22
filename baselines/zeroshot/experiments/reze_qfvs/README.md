@@ -1,5 +1,33 @@
 # REZE transfer to QFVS
 
+## Concept prompt and temporal-selection ablation (2026-10-22)
+
+The optional `--prompt-mode visual_concept_or_v1 --paired-baseline OLD_RUN` keeps
+the original four diagnostic queries, model, 3-second windows, input pixels and
+2% native-shot budget. It changes action verification to visual concept presence
+(OR), with Building explicitly meaning an architectural structure. This is a
+task adaptation, not the original REZE prompt or an unseen test set.
+
+`compare_adaptation.py --run NEW_RUN --baseline-only` first evaluates the frozen
+B0 scores with original Top-k and temporal suppression. After new inference,
+the dispatcher evaluates all four prompt/selector combinations and Uniform.
+The one predeclared suppression radius is two 5-second shots (10 seconds between
+centers); greedy selection keeps exactly `floor(n_shots * 0.02)` shots. It uses
+scores and timestamps only, makes no new model requests and performs no parameter
+search. Temporal distance is a proxy for coverage, not proof of semantic diversity.
+
+Prepare a new directory, run its frozen `preflight_media.py`, then its frozen
+`dispatch.py`; use a user timer for bounded retries when an allocated GPU becomes
+idle. Every new model input is checked against the original checkpoint's frame
+IDs, timestamps and RGB hash before inference. Original predictions remain intact.
+The 20,356 main requests, 12 smoke requests, and at most 48 retry requests share a
+20,416-request ceiling. Do not expand to `full180` through this adaptation option.
+
+The protocol and progress are recorded in
+[the adaptation report](../../../../docs/reze_qfvs_adaptation_2026-10-22.md).
+
+## Original transfer protocol
+
 > 发布版入口：[统一复现索引](../../../../docs/reproduction_index.md)。下文保留原实验协议和当时的执行记录；路径与 GPU 以本机配置为准，历史父运行缓存需另行提供。
 
 This isolated workflow reuses the unchanged local QV B0 REZE scorer:

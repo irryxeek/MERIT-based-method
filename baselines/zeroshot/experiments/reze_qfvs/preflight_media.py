@@ -5,7 +5,9 @@ import time
 from pathlib import Path
 
 import numpy as np
+from adaptation import ACTION_MODE, make_qfvs_request
 from media import StreamVideo
+from pairing import check_paired_trace, paired_receipt
 from shared import atomic_json, load_run, qfvs_scores, utc_now
 
 
@@ -14,8 +16,8 @@ def main():
     parser.add_argument("--run", type=Path, required=True)
     args = parser.parse_args()
     binding, rows, binding_hash = load_run(args.run)
+    parent = paired_receipt(args.run, binding)
     import torch
-    from reze_backend import make_request
     from transformers import AutoTokenizer
     from vllm.config import ModelConfig
     from vllm.multimodal import MULTIMODAL_REGISTRY
@@ -50,7 +52,8 @@ def main():
                 raise ValueError("Invalid video tensor")
             if not (2 <= len(clips[0]["video"]) <= 6):
                 raise ValueError("Unexpected frame count")
-            request = make_request(tokenizer, row["query"], clips[0])
+            check_paired_trace(parent, row, index, video.segments[index : index + 1], trace)
+            request = make_qfvs_request(tokenizer, row["query"], clips[0], binding.get("prompt_mode", ACTION_MODE))
             processed = processor.apply(request["prompt"], request["multi_modal_data"], request["mm_processor_kwargs"])
             placeholders = processed["mm_placeholders"]["video"]
             prompt_tokens = len(processed["prompt_token_ids"])
@@ -87,6 +90,7 @@ def main():
             "gpu_used": False,
             "model_called": False,
             "label_values_read": False,
+            "paired_input_pixels_checked": parent is not None,
             "videos": result,
         },
     )

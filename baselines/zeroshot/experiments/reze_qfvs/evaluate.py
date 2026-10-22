@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 import numpy as np
+from adaptation import ACTION_MODE, CONCEPT_MODE
 from shared import atomic_json, load_query_chunks, load_run, qfvs_scores, select_summary, sha256, utc_now
 
 # isort: split
@@ -97,6 +98,7 @@ def main():
         "status": "complete",
         "evaluated_at": utc_now(),
         "binding_sha256": binding_hash,
+        "prompt_mode": binding.get("prompt_mode", ACTION_MODE),
         "scope": binding["scope"],
         "n_queries": len(rows),
         "n_videos": 4,
@@ -129,6 +131,13 @@ def main():
             "pilot4 is a diagnostic subset, not the complete 180-query benchmark.",
         ],
     }
+    if binding.get("prompt_mode") == CONCEPT_MODE:
+        report["limitations"][1] = (
+            "Adapted visual concept OR prompt with explicit Building noun disambiguation; not the original REZE prompt."
+        )
+        report["limitations"].append(
+            "These four queries were already used in diagnosis; this is a development ablation."
+        )
     atomic_json(run / "predictions.json", predictions)
     atomic_json(run / "evaluation.json", report)
     lines = [

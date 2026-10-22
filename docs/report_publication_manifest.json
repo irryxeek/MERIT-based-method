@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T13:04:35.817887+00:00",
+  "updated_at": "2026-10-22T13:22:07.409055+00:00",
   "scope": "All active MERIT docs/*.md except the curated index, plus related QVHighlights-ZeroShot docs/*.md. Historical frozen plan publications retained. Raw experiment artifacts are not implicitly published.",
   "standing_user_instruction": "Whenever pushing project updates, include newly created or updated reports, analyses, research plans, and document indexes.",
   "path_aliases": {
@@ -379,21 +379,37 @@
       "local_only_references": [],
       "source_sha256": "76b1e3c091255e882f50e17db3d15d405aa867db1a3f8b6b002323fdff70c6a3",
       "publication_sha256": "76b1e3c091255e882f50e17db3d15d405aa867db1a3f8b6b002323fdff70c6a3"
+    },
+    {
+      "source": "MERIT:docs/reze_qfvs_adaptation_2026-10-22.md",
+      "destination": "docs/reze_qfvs_adaptation_2026-10-22.md",
+      "basis": "QFVS development ablation protocol and current execution report",
+      "local_only_references": [],
+      "source_sha256": "0548eea7c41d6082f453b11bea12e0bef74ea5c9d4f7dc6051b6ff0122003cc4",
+      "publication_sha256": "c541b22a6709ad2e79295f24c172770753e2401c32647033e605a87af3db518b"
+    },
+    {
+      "source": "MERIT:docs/artifacts/reze_qfvs_adaptation_2026-10-22/baseline_controls.json",
+      "destination": "docs/artifacts/reze_qfvs_adaptation_2026-10-22/baseline_controls.json",
+      "basis": "Exact CPU ablation result copied from the new run; no new model calls",
+      "local_only_references": [],
+      "source_sha256": "f2a9b930b93feac6496a7841a5518844f1e51f0db8f724839fe4209002029028",
+      "publication_sha256": "f2a9b930b93feac6496a7841a5518844f1e51f0db8f724839fe4209002029028"
     }
   ],
   "indexes": [
     {
       "source": "MERIT:README.md",
       "destination": "README.md",
-      "source_sha256": "1b431123c6fb83fabbb3a1a26ffd97840ede8c7809355ac98c81524b29dcede9",
-      "publication_sha256": "ecbd3a2dbceb6f12f3333697473c5aa2c5f9e78e619c8cfb494c7cf25a140165",
+      "source_sha256": "321ec2de98ef975309b0ea015b1ad55cd263f0b79466c97cc6d72fc643e43832",
+      "publication_sha256": "e6e78d4166c8638fe48e17b4d049f1b8a4bc13039c50c478b635414db9051edd",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     },
     {
       "source": "MERIT:docs/README.md",
       "destination": "docs/README.md",
-      "source_sha256": "217ff5731dbd8541846b3b35eefd2edb0e2faae7e5e160b7d28a307b9d1100d9",
-      "publication_sha256": "7ac836cd8704131cfb2ba788f136505b56fe8cf38d5ca75163888dd9435c929b",
+      "source_sha256": "3f03c0616fa7fa35952702049d16586d5d407ac6468a62cdceccb67340451b20",
+      "publication_sha256": "1419a8bd2eff432efd2ec8c325c3fad9b8d48b838b1b78db9c3b37bd63e253af",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     }
   ],

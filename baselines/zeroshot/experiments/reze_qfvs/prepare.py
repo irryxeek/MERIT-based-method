@@ -7,6 +7,8 @@ import os
 import shutil
 from pathlib import Path
 
+from adaptation import ACTION_MODE, CONCEPT_MODE, CONCEPT_SYSTEM_PROMPT, SUPPRESSION_RADIUS_SHOTS
+from pairing import freeze_baseline
 from shared import HERE, atomic_json, query_text, segments_for, sha256, utc_now, write_jsonl
 
 QV = Path(os.environ.get("ZEROSHOT_ROOT", "baselines/zeroshot"))
@@ -18,7 +20,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--run", type=Path, required=True)
     parser.add_argument("--scope", choices=["pilot4", "full180"], default="pilot4")
+    parser.add_argument("--prompt-mode", choices=[ACTION_MODE, CONCEPT_MODE], default=ACTION_MODE)
+    parser.add_argument("--paired-baseline", type=Path)
     args = parser.parse_args()
+    if args.prompt_mode == CONCEPT_MODE and (args.scope != "pilot4" or args.paired_baseline is None):
+        parser.error("The concept ablation requires --scope pilot4 and --paired-baseline")
+    if args.prompt_mode == ACTION_MODE and args.paired_baseline is not None:
+        parser.error("Use --paired-baseline only for the new concept prompt ablation")
     if not os.environ.get("REPRO_GPU_UUIDS", "").strip():
         parser.error("Set REPRO_GPU_UUIDS to the allocated NVIDIA GPU UUIDs")
     run = args.run.resolve()
@@ -52,7 +60,7 @@ def main():
                 "vid": vid,
                 "query_name": name,
                 "concepts": concepts,
-                "query": query_text(concepts),
+                "query": query_text(concepts, args.prompt_mode),
                 "duration": video["duration_seconds"],
                 "video_path": str(path),
                 "media_sha256": video["sha256"],
@@ -84,6 +92,10 @@ def main():
         label_hashes[name] = sha256(target)
     atomic_json(run / "media_verification.json", media_receipts)
     audit = json.loads((QV / "manifests/reze_model_audit.json").read_text())
+    if args.paired_baseline is not None:
+        receipt = freeze_baseline(args.paired_baseline, rows, audit, label_hashes)
+        atomic_json(run / "paired_baseline.json", receipt)
+        shutil.copy2(original / "Dense_per_shot_tags/Dictionary.txt", run / "evaluation_inputs/Dictionary.txt")
     model_stats = {}
     for name, expected in audit["files"].items():
         path = Path(audit["model_path"]) / name
@@ -161,6 +173,25 @@ def main():
         "training": False,
         "QFVS_published_REZE_result": False,
     }
+    binding["prompt_mode"] = args.prompt_mode
+    if args.prompt_mode == CONCEPT_MODE:
+        binding.update(
+            schema="reze_qfvs_concept_ablation_v1",
+            method="QFVS-specific concept prompt adaptation of the local REZE implementation",
+            query_template="Concept 1: {concept_1}. Concept 2: {concept_2}.",
+            query_semantics="Visual OR presence; Building denotes an architectural structure, not an action",
+            system_prompt=CONCEPT_SYSTEM_PROMPT,
+            paired_baseline_sha256=sha256(run / "paired_baseline.json"),
+            concept_dictionary_sha256=sha256(run / "evaluation_inputs/Dictionary.txt"),
+            selector_ablation={
+                "conditions": ["B0_topk", "B0_temporal", "Concept_topk", "Concept_temporal"],
+                "suppression_radius_shots": SUPPRESSION_RADIUS_SHOTS,
+                "suppression_radius_seconds": 5 * SUPPRESSION_RADIUS_SHOTS,
+                "selection_uses_labels": False,
+                "hyperparameter_search": False,
+            },
+            development_scope="Previously diagnosed pilot4; not an unseen confirmation set",
+        )
     atomic_json(run / "binding.json", binding)
     atomic_json(
         run / "status.json",

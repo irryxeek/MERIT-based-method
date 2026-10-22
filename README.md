@@ -165,3 +165,7 @@ $MERIT_PY -m merit_qvh.cli evaluate --config "$MERIT_CONFIG" --split val
 对比数据位于 [comparisons/qvhighlights/](comparisons/qvhighlights/README.md)，约 134 MiB。公开副本替换了机器路径与设备标识，并分别保存原始文件和公开文件的校验和；逐查询预测及指标保持一致。原始本地归档独立保留。
 
 LONGVT 包含 compact v1 和 GroundVTS 启发式 v2b 两套协议，各有 Global/Tool 完整验证预测。VideoARM HD 仅有 419 条成功预测，已明确标为部分结果；MR、HD 和开发集指标分别保存，不能混作完整高光检测基线。
+
+## QFVS 优化验证（2026-10-22）
+
+[本轮执行报告](docs/reze_qfvs_adaptation_2026-10-22.md)记录固定四查询的概念提示与时间选择消融。原分数增加时间抑制后 Oracle F1 为 40.41，仍低于同预算 Uniform 50.15；新提示任务已配置自动等待 GPU 6。该结果属于开发诊断，不能代表全量 180 查询。

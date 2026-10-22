@@ -10,11 +10,17 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "vendor"))
 
+from adaptation import ACTION_MODE, CONCEPT_MODE, concept_query  # noqa: E402
 from common import atomic_json, read_jsonl, sha256, utc_now, write_jsonl  # noqa: E402, F401
+from pairing import paired_receipt  # noqa: E402
 from reze_core import extract_pyes, segments_for, segments_to_curve  # noqa: E402, F401
 
 
-def query_text(concepts):
+def query_text(concepts, prompt_mode=ACTION_MODE):
+    if prompt_mode == CONCEPT_MODE:
+        return concept_query(concepts)
+    if prompt_mode != ACTION_MODE:
+        raise ValueError("Unknown QFVS prompt mode")
     aliases = {"Cupglass": "cup or glass", "Musicalinstrument": "musical instrument", "Petsanimal": "pet or animal"}
     if len(concepts) != 2:
         raise ValueError("QFVS release queries must have exactly two concepts")
@@ -73,13 +79,14 @@ def load_run(run):
         raise ValueError("Query scope mismatch")
     checked = set()
     for row in rows:
-        if set(row) != allowed or row["query"] != query_text(row["concepts"]):
+        if set(row) != allowed or row["query"] != query_text(row["concepts"], binding.get("prompt_mode", ACTION_MODE)):
             raise ValueError("Unexpected inference fields or query")
         if row["vid"] not in checked:
             stat = Path(row["video_path"]).stat()
             if stat.st_size != row["media_size"] or stat.st_mtime_ns != row["media_mtime_ns"]:
                 raise ValueError(f"Verified media changed: {row['vid']}")
             checked.add(row["vid"])
+    paired_receipt(run, binding)
     return binding, rows, sha256(run / "binding.json")
 
 

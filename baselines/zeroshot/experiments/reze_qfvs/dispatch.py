@@ -59,6 +59,27 @@ def worker_environment(gpu):
     }
 
 
+def finish_comparison(run):
+    binding = json.loads((run / "binding.json").read_text())
+    if not binding.get("paired_baseline_sha256") or (run / "comparison.json").exists():
+        return
+    result = subprocess.run(
+        [sys.executable, str(HERE / "compare_adaptation.py"), "--run", str(run)],
+        capture_output=True,
+        text=True,
+        timeout=1800,
+    )
+    (run / "comparison.log").write_text(result.stdout + result.stderr)
+    if result.returncode:
+        state = {"status": "comparison_failed", "updated_at": utc_now(), "returncode": result.returncode}
+        atomic_json(run / "stopped.json", state)
+        atomic_json(run / "status.json", state)
+    else:
+        state = json.loads((run / "status.json").read_text())
+        state.update(comparison_sha256=sha256(run / "comparison.json"), updated_at=utc_now())
+        atomic_json(run / "status.json", state)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--run", type=Path, required=True)
@@ -69,7 +90,10 @@ def main():
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
             return
-        if (run / "complete.json").exists() or (run / "stopped.json").exists():
+        if (run / "stopped.json").exists():
+            return
+        if (run / "complete.json").exists():
+            finish_comparison(run)
             return
         binding, rows, binding_hash = load_run(run)
         preflight = json.loads((run / "media_preflight.json").read_text())
@@ -183,6 +207,7 @@ def main():
                     "evaluation_sha256": sha256(run / "evaluation.json"),
                 },
             )
+            finish_comparison(run)
 
 
 if __name__ == "__main__":
