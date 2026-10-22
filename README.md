@@ -16,6 +16,8 @@
 
 ## 最新实验结果（2026-10-22）
 
+[数据集说明](docs/datasets_inputs_outputs_metrics_2026-10-22.md) 整理六个数据集的特点、输入输出和评价指标，区分原任务与本项目适配协议，并列出当前实验覆盖。
+
 [实验结果汇总报告](docs/experimental_results_report_2026-10-22.md) 汇总 QVHighlights 主实验、MERIT 开发对照及 REZE 跨数据集测试。TVSum 固定 val10 / all50 的 Top-5 mAP 为 **61.32 / 54.89**；MR.HiSum 可用 test 1,888 条的 mAP50 / mAP15 / 摘要 F1 为 **57.00 / 23.90 / 38.27**；QFVS 四查询 Oracle F1 为 **38.63**。不同指标和样本范围分别讨论，含计算开销、适配分析及尚未完成项目。
 
 [会议纪要后的推进计划](docs/next_steps_after_meeting_2026-10-22.md) 将下一阶段分为补齐 SVHighlights 基线、候选对照、同预算定向补证及长视频粗到细验证，包含 MERIT / LensWalk 分工和推进门槛；新实验尚未启动。详细数据集报告与 MERIT 开发实验已补齐，见[文档索引](docs/README.md)。

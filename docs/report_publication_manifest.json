@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T13:22:07.409055+00:00",
+  "updated_at": "2026-10-22T14:02:03.287097+00:00",
   "scope": "All active MERIT docs/*.md except the curated index, plus related QVHighlights-ZeroShot docs/*.md. Historical frozen plan publications retained. Raw experiment artifacts are not implicitly published.",
   "standing_user_instruction": "Whenever pushing project updates, include newly created or updated reports, analyses, research plans, and document indexes.",
   "path_aliases": {
@@ -395,21 +395,29 @@
       "local_only_references": [],
       "source_sha256": "f2a9b930b93feac6496a7841a5518844f1e51f0db8f724839fe4209002029028",
       "publication_sha256": "f2a9b930b93feac6496a7841a5518844f1e51f0db8f724839fe4209002029028"
+    },
+    {
+      "source": "MERIT:docs/datasets_inputs_outputs_metrics_2026-10-22.md",
+      "destination": "docs/datasets_inputs_outputs_metrics_2026-10-22.md",
+      "source_sha256": "ad912e2c447213e6c6e5d9dcfdb9065cfdeb3c9429bf89063df823a895caed0a",
+      "publication_sha256": "e66f7c9a1c508020e40461b6d8db5a0df57e8f97a4b1ea9e8834235a6c74a0c3",
+      "basis": "research_workspace_markdown_with_repository_relative_publication_links",
+      "local_only_references": []
     }
   ],
   "indexes": [
     {
       "source": "MERIT:README.md",
       "destination": "README.md",
-      "source_sha256": "321ec2de98ef975309b0ea015b1ad55cd263f0b79466c97cc6d72fc643e43832",
-      "publication_sha256": "e6e78d4166c8638fe48e17b4d049f1b8a4bc13039c50c478b635414db9051edd",
+      "source_sha256": "b47feb45e7dcaa20e0fbd4da3edfaa3857781febc73915a24ad3062a49162743",
+      "publication_sha256": "78bf5166f6e3c056ffa0b7058c000d8429e15aaeb5c99ab19b94e8fdd10823fd",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     },
     {
       "source": "MERIT:docs/README.md",
       "destination": "docs/README.md",
-      "source_sha256": "3f03c0616fa7fa35952702049d16586d5d407ac6468a62cdceccb67340451b20",
-      "publication_sha256": "1419a8bd2eff432efd2ec8c325c3fad9b8d48b838b1b78db9c3b37bd63e253af",
+      "source_sha256": "8c9eaf2e8ee7a09418e4101e16c6ae080960a29195151cdd62b843e3f109ca24",
+      "publication_sha256": "163f83c737e284aa10a8b046da85591bebcd3023150382a2557e8b465d5cffd4",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     }
   ],
