@@ -2,11 +2,13 @@
 
 本项目从 MERIT 的三键记忆检索、时序邻域过滤和完整时间轴高光评分出发，保存 QVHighlights 适配实验及后续零样本对照。原论文评估视频问答，**MERIT 原适配并非复现论文已有的 QVHighlights 分数**。下方运行命令对应原 MERIT 主实验；REZE 最新结果单独归档。
 
-## 最新实验结果（2026-10-20）
+## 最新实验结果（2026-10-22）
+
+[实验结果汇总报告](docs/experimental_results_report_2026-10-22.md) 汇总 QVHighlights 主实验、MERIT 开发对照及 REZE 跨数据集测试。TVSum 固定 val10 / all50 的 Top-5 mAP 为 **61.32 / 54.89**；MR.HiSum 可用 test 1,888 条的 mAP50 / mAP15 / 摘要 F1 为 **57.00 / 23.90 / 38.27**；QFVS 四查询 Oracle F1 为 **38.63**。不同指标和样本范围分别讨论，含计算开销、适配分析及尚未完成项目。
 
 REZE B0、P_abs、P_pair 已完成全部 1,550 条 validation 查询，VeryGood mAP / Hit@1 分别为 **42.99 / 71.68、43.57 / 74.06、43.76 / 76.84**。本轮仅重排前五候选，未加入记忆或回看；此前 A 阶段未通过门槛的结论保留。
 
-- [最新实验报告](docs/reze_fullval_results_2026-10-20.md)：完整指标、配对区间、CLIP / VTG-GPT 对照与成本边界。
+- [QVHighlights 全量实验报告](docs/reze_fullval_results_2026-10-20.md)：完整指标、配对区间、CLIP / VTG-GPT 对照与成本边界。
 - [REZE 完整执行方案](docs/reze_execution_plan_2026-10-19.md)、[研究方向](docs/reze_research_directions_2026-10-19.md)：比较、记忆、回看和确认阶段的原始设计，附最新执行状态。
 - [结果包与 CPU 复算](comparisons/qvhighlights/reze_fullval_2026-10-20/README.md)：预测、逐查询结果、冻结代码和来源校验。
 - [文档索引](docs/README.md)、[此前结果总汇](docs/reproduction_results_summary_2026-10-19.md)：查阅 MERIT、LongVT、VideoARM 历史结果。
