@@ -1,0 +1,4 @@
+# Additions to the verified root runtime; no environment changes performed.
+-r ../../requirements-runtime.txt
+av==17.1.0
+vllm==0.12.0

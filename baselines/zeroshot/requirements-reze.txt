@@ -1,0 +1,5 @@
+# Read-only reuse of the existing inference environment; do not upgrade it in place.
+-r requirements.txt
+vllm==0.12.0
+qwen-vl-utils==0.0.14
+av==17.1.0

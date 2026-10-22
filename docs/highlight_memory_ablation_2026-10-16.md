@@ -113,8 +113,8 @@ B/C/D 使用相同节点与前文集合，不根据剩余引用删减节点。D 
 
 ## 实现与验证
 
-memory_ablation.py（本地资料：`../experiments/highlight_evidence/memory_ablation.py`） 包含冻结、执行、评估和实际请求审计。
-回归测试（本地资料：`../tests/test_highlight_memory_ablation.py`） 覆盖两类节点的 cue 清除、共同前文保留、
+[memory_ablation.py](../experiments/highlight_evidence/memory_ablation.py) 包含冻结、执行、评估和实际请求审计。
+[回归测试](../tests/test_highlight_memory_ablation.py) 覆盖两类节点的 cue 清除、共同前文保留、
 四条件仅记忆字段不同、失败组回退、其他组继续、D 不重发和无候选不推理。
 完整 CPU 测试 99 项通过，新增文件通过 Ruff 检查与格式检查。
 

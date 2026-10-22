@@ -1,0 +1,116 @@
+{
+  "recorded_at": "2026-10-19T15:23:26.461066+00:00",
+  "plan_id": "reze_evidence_v1",
+  "execution_status": "complete_stopped_by_prespecified_stage_A_gate",
+  "plan_sha256": "c5460466054370db5873543204bb6044c90181ecf11b8393cb39ea13d2dbd4f0",
+  "completed_stages": [
+    "engineering",
+    "A_explore100"
+  ],
+  "stage_A_gate": {
+    "checks": {
+      "P_abs": {
+        "mAP_gain_at_least_1pp": false,
+        "Hit1_drop_at_most_1pp": true,
+        "fallback_queries_at_most_1": true,
+        "cold_total_tokens_at_most_2_25x_B0": true
+      },
+      "P_pair": {
+        "mAP_gain_at_least_1pp": false,
+        "Hit1_drop_at_most_1pp": true,
+        "fallback_queries_at_most_1": true,
+        "cold_total_tokens_at_most_2_25x_B0": true
+      }
+    },
+    "qualified_arms": [],
+    "selected_arm": null,
+    "decision": "stop_v1_no_qualifying_stage_A_arm"
+  },
+  "physical_gpus": [
+    5,
+    7
+  ],
+  "service": "reze-evidence-v1-20261019.service",
+  "service_status": "inactive_disabled_after_completion",
+  "official_metrics": {
+    "B0": {
+      "brief": {
+        "HL-min-Fair-mAP": 80.93,
+        "HL-min-Fair-Hit1": 78.0,
+        "HL-min-Good-mAP": 70.33,
+        "HL-min-Good-Hit1": 78.0,
+        "HL-min-VeryGood-mAP": 44.41,
+        "HL-min-VeryGood-Hit1": 71.0
+      },
+      "HL-min-Fair": {
+        "HL-mAP": 80.93,
+        "HL-Hit1": 78.0
+      },
+      "HL-min-Good": {
+        "HL-mAP": 70.33,
+        "HL-Hit1": 78.0
+      },
+      "HL-min-VeryGood": {
+        "HL-mAP": 44.41,
+        "HL-Hit1": 71.0
+      }
+    },
+    "P_abs": {
+      "brief": {
+        "HL-min-Fair-mAP": 81.33,
+        "HL-min-Fair-Hit1": 85.0,
+        "HL-min-Good-mAP": 70.55,
+        "HL-min-Good-Hit1": 85.0,
+        "HL-min-VeryGood-mAP": 44.71,
+        "HL-min-VeryGood-Hit1": 76.0
+      },
+      "HL-min-Fair": {
+        "HL-mAP": 81.33,
+        "HL-Hit1": 85.0
+      },
+      "HL-min-Good": {
+        "HL-mAP": 70.55,
+        "HL-Hit1": 85.0
+      },
+      "HL-min-VeryGood": {
+        "HL-mAP": 44.71,
+        "HL-Hit1": 76.0
+      }
+    },
+    "P_pair": {
+      "brief": {
+        "HL-min-Fair-mAP": 81.35,
+        "HL-min-Fair-Hit1": 87.0,
+        "HL-min-Good-mAP": 70.77,
+        "HL-min-Good-Hit1": 87.0,
+        "HL-min-VeryGood-mAP": 44.58,
+        "HL-min-VeryGood-Hit1": 78.0
+      },
+      "HL-min-Fair": {
+        "HL-mAP": 81.35,
+        "HL-Hit1": 87.0
+      },
+      "HL-min-Good": {
+        "HL-mAP": 70.77,
+        "HL-Hit1": 87.0
+      },
+      "HL-min-VeryGood": {
+        "HL-mAP": 44.58,
+        "HL-Hit1": 78.0
+      }
+    }
+  },
+  "tests_passed": 44,
+  "final_integrity_audit_passed": true,
+  "total_reserved_requests_including_failed_engineering": 11099,
+  "formal_allocated_gpu_hours": 0.5149025187889735,
+  "report": "docs/reze_stage_a_results_2026-10-19.md",
+  "small_archive": "${ZEROSHOT_ROOT}/results/reze_evidence_v1",
+  "artifact_root": "${ZEROSHOT_ARTIFACT_ROOT}/reze_evidence_v1",
+  "not_executed_due_to_gate": [
+    "memory",
+    "revisit",
+    "confirm100",
+    "val1550"
+  ]
+}

@@ -117,8 +117,8 @@ Memory_text 是从同一套完整 cue 记忆中移除结构字段，描述可能
 
 ## 实现与验证
 
-- memory_only.py（本地资料：`../experiments/highlight_evidence/memory_only.py`）：冻结、全量建库、纯文本评分、官方评估和请求审计。
-- 回归测试（本地资料：`../tests/test_highlight_memory_only.py`）：完整时间轴、D0 隔离、无图片评分、图边禁用、失败策略、上下文超限和未知中断记账。
+[- memory_only.py](../experiments/highlight_evidence/memory_only.py)：冻结、全量建库、纯文本评分、官方评估和请求审计。
+[- 回归测试](../tests/test_highlight_memory_only.py)：完整时间轴、D0 隔离、无图片评分、图边禁用、失败策略、上下文超限和未知中断记账。
 - 已完成 110 项 CPU 测试；新文件通过 Ruff 静态检查与格式检查。
 
 实际请求审计核对了 300 次建库、40 次纯文本评分、全部 1,499 张输入图片和 20 对评分条件。

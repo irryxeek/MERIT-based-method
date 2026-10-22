@@ -160,6 +160,6 @@ flowchart LR
 - [完整研究方案](highlight_evidence_research_2026-10-16.md)
 - [原 MERIT 的 QVHighlights 适配](merit_qvhighlights_adaptation.md)
 - [M0/D0/H1 实现与实验结果](merit_hd_adapter_implementation_2026-10-16.md)
-- 四类 cue 配置（本地资料：`../configs/highlight_value_schema.example.json`）
-- 新模块原型与运行说明（本地资料：`../experiments/highlight_evidence/README.md`）
+[- 四类 cue 配置](../configs/highlight_value_schema.example.json)
+[- 新模块原型与运行说明](../experiments/highlight_evidence/README.md)
 - [本地 MERIT 论文](../papers/MERIT_2608.07663v2.pdf)

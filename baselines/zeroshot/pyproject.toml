@@ -1,0 +1,16 @@
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = ["third_party", "experiments/**/vendor"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/test_protocol.py" = ["E402"]
+"tests/test_clip_media.py" = ["E402"]
+"tests/test_reze_core.py" = ["E402"]
+"tests/test_reze_checkpoints.py" = ["E402"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

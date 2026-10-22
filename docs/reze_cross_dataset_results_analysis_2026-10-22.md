@@ -134,7 +134,7 @@ TVSum、MR.HiSum、QFVS 的 No 分别约 93.19%、91.30%、99.54%，但全部正
 - [TVSum 执行记录及最终结果](reze_tvsum_execution_2026-10-22.md)。
 - [MR.HiSum 全量可用集](reze_mrhisum_full_execution_2026-10-21.md)。
 - [QFVS 既有诊断](reze_qfvs_analysis_2026-10-20.md)。
-- CPU 诊断脚本（本地资料：`../scripts/analyze_reze_transfer_results.py`）。
+[- CPU 诊断脚本](../scripts/analyze_reze_transfer_results.py)。
 - 本机诊断：`$ZEROSHOT_ARTIFACT_ROOT/analyses/reze_transfer_2026-10-22/analysis.json`，含来源哈希、TVSum 完成核验、全部 MR.HiSum 逐视频诊断；不修改原实验。
 
 ```bash

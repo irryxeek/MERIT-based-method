@@ -1,0 +1,1513 @@
+{
+  "published_date": "2026-10-22",
+  "base_commit": "d431fffab0ad2f8993483b76ac2be68b1d3e7157",
+  "scope": "Active MERIT implementation and zero-shot workspace, portable deployment/configuration, tests and documentation. Frozen comparisons and original AGENTS are unchanged.",
+  "files": [
+    {
+      "source": "QVHighlights-ZeroShot:README.md",
+      "destination": "baselines/zeroshot/README.md",
+      "source_sha256": "b554a8c2bc172977487c3ae4aaf8654ee4f580bedb17cab481ce82900847655e",
+      "publication_sha256": "c97aef68fa20a2b48f6b14a37b03bc3c9b98d51e3d69ef54b8f283c8aebd27ae",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:configs/clip_protocol_v1.json",
+      "destination": "baselines/zeroshot/configs/clip_protocol_v1.json",
+      "source_sha256": "9225318c368e58589acf9ecdc2b79f38dcca8acff6c1eb83806eaa2beea950c4",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "95d4aa7d56402fd4ce8175cab0c9aa63d4075c4490064779c529af8c4b711d24"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:configs/protocol_v1.json",
+      "destination": "baselines/zeroshot/configs/protocol_v1.example.json",
+      "source_sha256": "5ed90b494c7dbb9d55c16f2d9636186a670ab0a2ad75b2cd9d5c53a3316d5ef8",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "e63bb0b19d3391d27ea744c1fe4f83f709139f0aea184f6f039b109062fd1b52"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:configs/reze_protocol_v1.json",
+      "destination": "baselines/zeroshot/configs/reze_protocol_v1.json",
+      "source_sha256": "15c6ec296ee48964d3efc0657a11095db4e0a7f1de668e8659deb664104ba43f",
+      "publication_changes": "unchanged",
+      "publication_sha256": "15c6ec296ee48964d3efc0657a11095db4e0a7f1de668e8659deb664104ba43f"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:configs/reze_protocol_v2.json",
+      "destination": "baselines/zeroshot/configs/reze_protocol_v2.json",
+      "source_sha256": "6133c11e56f6793d7b17cc2fb9b5fad2fea42e9e2a5127e4baac24b24c2dd434",
+      "publication_changes": "unchanged",
+      "publication_sha256": "6133c11e56f6793d7b17cc2fb9b5fad2fea42e9e2a5127e4baac24b24c2dd434"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_evidence/README.md",
+      "destination": "baselines/zeroshot/experiments/reze_evidence/README.md",
+      "source_sha256": "20c26dd86435d07b7fa4c85ef290eea22f2d1c69bbae87f58b47756c123d5595",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "b79dd4bc61171a346363d522f30b5606fc7422fadfdfe2e5ce9a1c85ac98d270"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_evidence/__init__.py",
+      "destination": "baselines/zeroshot/experiments/reze_evidence/__init__.py",
+      "source_sha256": "c9fdb7fd6f434822db47bcd123098ca8917bfda35b78fc60bd532fba9dc14704",
+      "publication_changes": "unchanged",
+      "publication_sha256": "c9fdb7fd6f434822db47bcd123098ca8917bfda35b78fc60bd532fba9dc14704"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_evidence/backend.py",
+      "destination": "baselines/zeroshot/experiments/reze_evidence/backend.py",
+      "source_sha256": "6a49716739d184dee3259982c278ec30f68761718360d4879cfbed639acdc1ab",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "a26ef6c9ab3981cda771c377e81f353dbe47ab69e4b76e118624705e345e750f"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_evidence/candidate_frames.py",
+      "destination": "baselines/zeroshot/experiments/reze_evidence/candidate_frames.py",
+      "source_sha256": "c1945a8245969fd30e2a78545f2fa058021a6167a862a8e5a1cdde1bbb27a7c7",
+      "publication_changes": "unchanged",
+      "publication_sha256": "c1945a8245969fd30e2a78545f2fa058021a6167a862a8e5a1cdde1bbb27a7c7"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_evidence/launch.py",
+      "destination": "baselines/zeroshot/experiments/reze_evidence/launch.py",
+      "source_sha256": "eb5137a34716dbb7e05040f55309b957c2ef2326bbc2ed659de263b94640ba45",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "d57a9b997d1cfe19440cbe2b2d65b9cb6e045e481ac14b8ae20009bdec4013bc"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_evidence/protocol.py",
+      "destination": "baselines/zeroshot/experiments/reze_evidence/protocol.py",
+      "source_sha256": "4d3f7ba852ac8c40bf69a542ab0c88ef8c02c259368a05d4cb2b41c8a11ba289",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "36cc14e0db405989babe6ecdd77ad996b89dacfd8a8e25dd25c51ee38b0f4d8f"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_evidence/ranking.py",
+      "destination": "baselines/zeroshot/experiments/reze_evidence/ranking.py",
+      "source_sha256": "c9d2b4598e00811a65352325b4f6252c6b9c1e43a90df23388c04c22369a7519",
+      "publication_changes": "unchanged",
+      "publication_sha256": "c9d2b4598e00811a65352325b4f6252c6b9c1e43a90df23388c04c22369a7519"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_evidence/stage_a_eval.py",
+      "destination": "baselines/zeroshot/experiments/reze_evidence/stage_a_eval.py",
+      "source_sha256": "ff521dc32d7ff15823f9e8f20817ae01559d7307c8702d9017cbf53a2dd82186",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "cd9d18fbb869e4419419ce232223c2708f364886eec9e65ce373708aebfe2f97"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_evidence/worker.py",
+      "destination": "baselines/zeroshot/experiments/reze_evidence/worker.py",
+      "source_sha256": "508362255cb464b5d67dd6e26077cf9b46b8026c500007d89d7a944bc95c5adb",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "1c067fc4e23adc69ee4fd2330c7693befd5dd2cca894a2c28639ccec67ead06b"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_fullval/README.md",
+      "destination": "baselines/zeroshot/experiments/reze_fullval/README.md",
+      "source_sha256": "0f6fef88e7cc627f4d6b16d18e042e532b86bda9dc236a668a44cd5e18672bfe",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "9fd0ad6a81f806fe86bd1991587a5ccc57f11e808588ea4cb48f6342901ac20a"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_fullval/runner.py",
+      "destination": "baselines/zeroshot/experiments/reze_fullval/runner.py",
+      "source_sha256": "a97b332734ace4b1507108038eb98aade44fd78ba15c42f82a753abf81719181",
+      "publication_changes": "unchanged",
+      "publication_sha256": "a97b332734ace4b1507108038eb98aade44fd78ba15c42f82a753abf81719181"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/README.md",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/README.md",
+      "source_sha256": "0784b53c2806708bfe10f5a1c3aa19d0827a250405dfdd287b7cae9f3f2f0d61",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "c94edb92179f6970d46c735b55b35974e4e2685277e1765dae5bbcdbb226432d"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/aggregate_shards.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/aggregate_shards.py",
+      "source_sha256": "af404f9349d017bd5906a442fa6528debc83f56b982d24fe168621e1bccd2c88",
+      "publication_changes": "unchanged",
+      "publication_sha256": "af404f9349d017bd5906a442fa6528debc83f56b982d24fe168621e1bccd2c88"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/dispatch.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/dispatch.py",
+      "source_sha256": "55a9c167fa7fbea590ecefcb76d9e1a217c4da89b4eec7db90373c991065f2e5",
+      "publication_changes": "unchanged",
+      "publication_sha256": "55a9c167fa7fbea590ecefcb76d9e1a217c4da89b4eec7db90373c991065f2e5"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/evaluate.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/evaluate.py",
+      "source_sha256": "2717f54ebbad27e4781e53a68d6963657f061212f3d940c9352b320ba9906955",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2717f54ebbad27e4781e53a68d6963657f061212f3d940c9352b320ba9906955"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/media.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/media.py",
+      "source_sha256": "32f7d26982c15d3c36805cfbaa9a22ec58190be5f92aaf5806242ac18570b685",
+      "publication_changes": "unchanged",
+      "publication_sha256": "32f7d26982c15d3c36805cfbaa9a22ec58190be5f92aaf5806242ac18570b685"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/preflight_media.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/preflight_media.py",
+      "source_sha256": "5afc3bd39d72a895c967f66ba46b9ee05ab755fd630b6208846f0637008ac22c",
+      "publication_changes": "unchanged",
+      "publication_sha256": "5afc3bd39d72a895c967f66ba46b9ee05ab755fd630b6208846f0637008ac22c"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/prepare.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/prepare.py",
+      "source_sha256": "fa6b06d57a29e47a0cc292eb9a62577133ff7b4f5e0a61434bf397cca41cdfe1",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "1c8757abba46e4abd44666d50e303582bdc6b45d8bb2ca0b5812d6e3094079d8"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/run_shard.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/run_shard.py",
+      "source_sha256": "cff09688c64491a59072c9bf5c3539fc09366ca9c9723f05dcc1d8c47d888d4f",
+      "publication_changes": "unchanged",
+      "publication_sha256": "cff09688c64491a59072c9bf5c3539fc09366ca9c9723f05dcc1d8c47d888d4f"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/shared.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/shared.py",
+      "source_sha256": "c1a31b20278891098f7d076481a6114ab9d6a054546829cb56559c0e09253839",
+      "publication_changes": "unchanged",
+      "publication_sha256": "c1a31b20278891098f7d076481a6114ab9d6a054546829cb56559c0e09253839"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/tests/test_evaluator_entrypoint.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/tests/test_evaluator_entrypoint.py",
+      "source_sha256": "7fdd2493385cf89399b1a5ba5e99bf7953530e55481036c6e06384bdd36545b1",
+      "publication_changes": "unchanged",
+      "publication_sha256": "7fdd2493385cf89399b1a5ba5e99bf7953530e55481036c6e06384bdd36545b1"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/tests/test_full_run.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/tests/test_full_run.py",
+      "source_sha256": "a24f8313a89927059c7c0f2ed3ccb04cf62186edb4f3785a7dfc5e3d3005b442",
+      "publication_changes": "unchanged",
+      "publication_sha256": "a24f8313a89927059c7c0f2ed3ccb04cf62186edb4f3785a7dfc5e3d3005b442"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/tests/test_mrhisum.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/tests/test_mrhisum.py",
+      "source_sha256": "dd844f715628435b4dbec252368d6ba0b122b75871d14805bcbeb3076d074a83",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "d2a3db00edd7dd57aa3a6fff316c2ff3d3284635a3d2b980249f44e04f34fbfa"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/vendor/MRHiSum.LICENSE",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/vendor/MRHiSum.LICENSE",
+      "source_sha256": "d27d2466a47b7b1537b09dc3985c31de396882a477e08f1a16af93e6190eb6c5",
+      "publication_changes": "unchanged",
+      "publication_sha256": "d27d2466a47b7b1537b09dc3985c31de396882a477e08f1a16af93e6190eb6c5"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/vendor/common.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/vendor/common.py",
+      "source_sha256": "2ca173967f7a9f8797b786fed25a1308835812fd9a6a8d3beeac3ad7e6e2dc9c",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "0cc052a75d32b22c48b2925552afb81323709f222a0b9616f25e474cecd792b1"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/vendor/model/mrhisum_dataset.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/vendor/model/mrhisum_dataset.py",
+      "source_sha256": "88cf6c8f62b0b4f958482386a51edd8c60bd314fae95bb8eaea003a7c5fc85b8",
+      "publication_changes": "unchanged",
+      "publication_sha256": "88cf6c8f62b0b4f958482386a51edd8c60bd314fae95bb8eaea003a7c5fc85b8"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/vendor/model/solver.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/vendor/model/solver.py",
+      "source_sha256": "4a22934ce5535d41089e23e66023a7e75e2242ec0e20b5a99ddee87379c97916",
+      "publication_changes": "unchanged",
+      "publication_sha256": "4a22934ce5535d41089e23e66023a7e75e2242ec0e20b5a99ddee87379c97916"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/vendor/model/utils/evaluate_map.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/vendor/model/utils/evaluate_map.py",
+      "source_sha256": "95f91efc9cc8533bbd9cfc47b942eb8aec4757ef2979532b480f4736a208cda1",
+      "publication_changes": "unchanged",
+      "publication_sha256": "95f91efc9cc8533bbd9cfc47b942eb8aec4757ef2979532b480f4736a208cda1"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/vendor/model/utils/evaluation_metrics.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/vendor/model/utils/evaluation_metrics.py",
+      "source_sha256": "caae37024ef6ff4145711349dcd899a24c731d3d0ccd3026dec59c7a2a0ba62c",
+      "publication_changes": "unchanged",
+      "publication_sha256": "caae37024ef6ff4145711349dcd899a24c731d3d0ccd3026dec59c7a2a0ba62c"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/vendor/model/utils/generate_summary.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/vendor/model/utils/generate_summary.py",
+      "source_sha256": "82b55ce1c5e45366c3e850117c0a667246264b1f617010e8feb340f13aa2916d",
+      "publication_changes": "unchanged",
+      "publication_sha256": "82b55ce1c5e45366c3e850117c0a667246264b1f617010e8feb340f13aa2916d"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/vendor/model/utils/knapsack_implementation.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/vendor/model/utils/knapsack_implementation.py",
+      "source_sha256": "7c5fe1aa4c1238a097e9f07f165a4e7af47fa4a193fe907392187cca6948d3ea",
+      "publication_changes": "unchanged",
+      "publication_sha256": "7c5fe1aa4c1238a097e9f07f165a4e7af47fa4a193fe907392187cca6948d3ea"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/vendor/reze_backend.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/vendor/reze_backend.py",
+      "source_sha256": "0c9eb0e4c5b8e1df4877732076424fa92b9316d18fd68f9d5ae2178aae8ec3c5",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "2179cbbe435bb3dc3ec2cfc0dd63b9a87012a1a390efa6c2d7fd5d9fb953ea18"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/vendor/reze_core.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/vendor/reze_core.py",
+      "source_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d",
+      "publication_changes": "unchanged",
+      "publication_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/vendor/reze_media.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/vendor/reze_media.py",
+      "source_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_mrhisum/worker.py",
+      "destination": "baselines/zeroshot/experiments/reze_mrhisum/worker.py",
+      "source_sha256": "1a7ee62791330c43a036dc8e3ffa642cf7be734de3b5f9c20ecb5d690a83b007",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "f7da92c83faa7058ae3feca0216d63304c74221677aa47a2cccf1df39399c6b6"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/README.md",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/README.md",
+      "source_sha256": "08134a777613bf36a8535d0c50b088857a6d1d5c3ba3b6eeb4be48d35b5bc90e",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "31b75ea19b5f28855f63799670d6eacaac40de323b59eb68d94b11e23d83c1cf"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/dispatch.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/dispatch.py",
+      "source_sha256": "e1c5b55d61e2973cdf38374fe51190ac4fa912958668fbce0cc1aa3194027c67",
+      "publication_changes": "unchanged",
+      "publication_sha256": "e1c5b55d61e2973cdf38374fe51190ac4fa912958668fbce0cc1aa3194027c67"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/evaluate.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/evaluate.py",
+      "source_sha256": "e42012b95d29ba0da219fd245183d50d8dff46d9d27c46bd659cf4e87b619e1c",
+      "publication_changes": "unchanged",
+      "publication_sha256": "e42012b95d29ba0da219fd245183d50d8dff46d9d27c46bd659cf4e87b619e1c"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/media.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/media.py",
+      "source_sha256": "38c8c71252a99d333a6a596b477cf136ba403fdebcb1fb472169b4587df346c1",
+      "publication_changes": "unchanged",
+      "publication_sha256": "38c8c71252a99d333a6a596b477cf136ba403fdebcb1fb472169b4587df346c1"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/preflight_media.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/preflight_media.py",
+      "source_sha256": "279726362699c19ca21e63af6de45f20a1fdccf0310fbd8bd4bf43c26bda80d8",
+      "publication_changes": "unchanged",
+      "publication_sha256": "279726362699c19ca21e63af6de45f20a1fdccf0310fbd8bd4bf43c26bda80d8"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/prepare.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/prepare.py",
+      "source_sha256": "7e8017317b2dc216afe6e010c52aca9bd36ca9f57dde4206bbdaaae5eac6357f",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "4263e5800d2112ca6fe2b608400de89eab27cb6b025d3f22f036422d48d23276"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/shared.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/shared.py",
+      "source_sha256": "d47afe651c01c16a7fad834ce3518412a308bc53d88ec116a9953a5d4378257f",
+      "publication_changes": "unchanged",
+      "publication_sha256": "d47afe651c01c16a7fad834ce3518412a308bc53d88ec116a9953a5d4378257f"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/tests/test_qfvs.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/tests/test_qfvs.py",
+      "source_sha256": "a71a52ec3935b6e173e9af80b0605a3dee91fe69844f3825b4ed72076860d0e4",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "75aba4934d12c165b3e6999d2bbcd16ee0f78bef95ac658ea4920d12640b907a"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/UniVTG.LICENSE",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/UniVTG.LICENSE",
+      "source_sha256": "cd359473e1f1047b0b89d43ca657171d077ee56ac9aff7491111dfff8fb04ab5",
+      "publication_changes": "unchanged",
+      "publication_sha256": "cd359473e1f1047b0b89d43ca657171d077ee56ac9aff7491111dfff8fb04ab5"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/common.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/common.py",
+      "source_sha256": "2ca173967f7a9f8797b786fed25a1308835812fd9a6a8d3beeac3ad7e6e2dc9c",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "0cc052a75d32b22c48b2925552afb81323709f222a0b9616f25e474cecd792b1"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/qfvs_eval.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/qfvs_eval.py",
+      "source_sha256": "ee0073abca365964c20885df08ed7407bb91bed036173a32c95e72bf68ead8a1",
+      "publication_changes": "unchanged",
+      "publication_sha256": "ee0073abca365964c20885df08ed7407bb91bed036173a32c95e72bf68ead8a1"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/reze_backend.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/reze_backend.py",
+      "source_sha256": "0c9eb0e4c5b8e1df4877732076424fa92b9316d18fd68f9d5ae2178aae8ec3c5",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "2179cbbe435bb3dc3ec2cfc0dd63b9a87012a1a390efa6c2d7fd5d9fb953ea18"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/reze_core.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/reze_core.py",
+      "source_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d",
+      "publication_changes": "unchanged",
+      "publication_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/reze_media.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/reze_media.py",
+      "source_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/univtg_config.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/univtg_config.py",
+      "source_sha256": "541e6a9b1505bb084a3d1c2eb0d8cba7cee2dc5debba25c884c2e83934c16c0e",
+      "publication_changes": "unchanged",
+      "publication_sha256": "541e6a9b1505bb084a3d1c2eb0d8cba7cee2dc5debba25c884c2e83934c16c0e"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/worker.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/worker.py",
+      "source_sha256": "b3e49ee6ac525f579024003233c343b7eb553452e8700e4b4ef2ee5dcafd95ce",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "add386ab326ffa446925a340f27c2c13f662e9edb504e0aec345cc69f2875a77"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/README.md",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/README.md",
+      "source_sha256": "dd5698183ed30a75caf70f3750791bb2a2e38742e9aa0ce8cf6268475a3d1ecb",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "9f9d47cfd8defacca20da29f4b174e562a1c6b149ca81a23841f1ee69a4dc39a"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/dispatch.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/dispatch.py",
+      "source_sha256": "937d328f3295cb2192e23a9dc2f3bbc47b3ce095c588bec43c5b709bc9f35860",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "c258abf0b8edec0376c32bd9fba4eb967c502fbb7cc9480b0dc7060cd805cf22"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/evaluate.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/evaluate.py",
+      "source_sha256": "fe26e04b1bdd927213c700f3f860c8e5cd1958e6539588dd40cde11ee62750b8",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "0973c78a98dc92a31269547bf41006a836f5d186de6ab1fed3c7527b3f00702b"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/media.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/media.py",
+      "source_sha256": "f66771a1a3ddaf97d689767e15c8c33b57048cf3fa85a47c30e851513c1d5cac",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "38c8c71252a99d333a6a596b477cf136ba403fdebcb1fb472169b4587df346c1"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/preflight_media.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/preflight_media.py",
+      "source_sha256": "83ea435a963a22c908e88d6ca5b049aa7156c5eec81697647a68fa78bfed587d",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "a9d17363f54b7b41657ba67d0f747cc4d0078d08255b9d1fcb0bba54c799832f"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/prepare.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/prepare.py",
+      "source_sha256": "23a8f2519758e902ef7b208e9e9328d64f112ab3490314958dffaf48adfc1bf2",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "cd9ce510e2278898027c53c0ad4770c1ebd367e57b8575961184d026586c0f27"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/shared.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/shared.py",
+      "source_sha256": "e7de0c2db9a4fc47dd6c9ac3557bfdbf8e539c570ee21825f92e84c3210362ce",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "8b1ae322b2cabcf4d463da4bb5fff26684eabdb86bf1aaccf6c8d02936e73889"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/tests/test_svh.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/tests/test_svh.py",
+      "source_sha256": "36b999435ae3f59df7023290275d70cb3a58ad37ae77ecf1bcc3361a7464bd5e",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "0568afd902acb0e266cbeab11657dccc5b12a23fd008fa74ba0b1fa057fe34a8"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/vendor/SVHighlights.LICENSE",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/vendor/SVHighlights.LICENSE",
+      "source_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "publication_changes": "unchanged",
+      "publication_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/vendor/common.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/vendor/common.py",
+      "source_sha256": "2ca173967f7a9f8797b786fed25a1308835812fd9a6a8d3beeac3ad7e6e2dc9c",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "0cc052a75d32b22c48b2925552afb81323709f222a0b9616f25e474cecd792b1"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/vendor/reze_backend.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/vendor/reze_backend.py",
+      "source_sha256": "0c9eb0e4c5b8e1df4877732076424fa92b9316d18fd68f9d5ae2178aae8ec3c5",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "2179cbbe435bb3dc3ec2cfc0dd63b9a87012a1a390efa6c2d7fd5d9fb953ea18"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/vendor/reze_core.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/vendor/reze_core.py",
+      "source_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d",
+      "publication_changes": "unchanged",
+      "publication_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/vendor/reze_media.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/vendor/reze_media.py",
+      "source_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/vendor/svhighlights_eval.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/vendor/svhighlights_eval.py",
+      "source_sha256": "fbf9191cae964fdc1461c0f6a47b6b854df7aff7bc89ed3210814be617f9ef0d",
+      "publication_changes": "unchanged",
+      "publication_sha256": "fbf9191cae964fdc1461c0f6a47b6b854df7aff7bc89ed3210814be617f9ef0d"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/worker.py",
+      "destination": "baselines/zeroshot/experiments/reze_svhighlights/worker.py",
+      "source_sha256": "0ef899edb6d5edbb23c3aaa4d630e0ab68dc46645fe968fda3d83b7ab5ca3ae1",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "8218ac2d0c001801a5b6f62a1f8b47aeadb50e801dd26d6bd6236201bdf1cc4a"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/README.md",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/README.md",
+      "source_sha256": "356b00609daf81af0b4a45ba1e160705e8d8c31e0c9aafcdfa723568a62d2a12",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "bde09640d69b0e884812d2261747a80722e871b6198f48f877df89c383c7b1cc"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/aggregate_shards.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/aggregate_shards.py",
+      "source_sha256": "cb0b0412cda9e1928a50088c2df3cfcd2f0235ce3bef4ceb9f58731400181f44",
+      "publication_changes": "unchanged",
+      "publication_sha256": "cb0b0412cda9e1928a50088c2df3cfcd2f0235ce3bef4ceb9f58731400181f44"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/dataset.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/dataset.py",
+      "source_sha256": "5b767e724000af49a7c16e5ac5b6c7ccfa41a83cc802f73dfcc90346b1f6df12",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "433fc6c359e7d862ff9cec8a84fcb3192d6d12c6598a3e75a5175b63d88cc4ec"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/dispatch.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/dispatch.py",
+      "source_sha256": "593799c5062b088c83d3507ba8fafe6d1c6a5e8f553ac24b5fe6ff4c9d5d6e86",
+      "publication_changes": "unchanged",
+      "publication_sha256": "593799c5062b088c83d3507ba8fafe6d1c6a5e8f553ac24b5fe6ff4c9d5d6e86"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/evaluate.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/evaluate.py",
+      "source_sha256": "bee20c2f498c34b936b6ccceacb57361f42be3ee3465aea6b98a7c9f5bf893bd",
+      "publication_changes": "unchanged",
+      "publication_sha256": "bee20c2f498c34b936b6ccceacb57361f42be3ee3465aea6b98a7c9f5bf893bd"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/launch.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/launch.py",
+      "source_sha256": "dd0301ff6fca600ae2cd914254ccb3e6b1ed271868b3f48941325f281e577c65",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "48939bb3c5d394c17459213d5ed5bb37f551a65f21c603a314758ebdb68f4afb"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/media.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/media.py",
+      "source_sha256": "32f7d26982c15d3c36805cfbaa9a22ec58190be5f92aaf5806242ac18570b685",
+      "publication_changes": "unchanged",
+      "publication_sha256": "32f7d26982c15d3c36805cfbaa9a22ec58190be5f92aaf5806242ac18570b685"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/metrics.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/metrics.py",
+      "source_sha256": "31ba16cf322a387caeed7000fc22a56d620353e1d04bcda6ef0d58e650523f76",
+      "publication_changes": "unchanged",
+      "publication_sha256": "31ba16cf322a387caeed7000fc22a56d620353e1d04bcda6ef0d58e650523f76"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/preflight_media.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/preflight_media.py",
+      "source_sha256": "2f199dfb69f6b35a8b7f5d2291635dddf6fcc934f90d20b6b7aa4ceb6c6e85ce",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2f199dfb69f6b35a8b7f5d2291635dddf6fcc934f90d20b6b7aa4ceb6c6e85ce"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/prepare.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/prepare.py",
+      "source_sha256": "87cae7b4a6c25b75691d87d9b98758afd75efd92e0143d62611ec1be43aaff94",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "c338b3ff0fb17b391e17f1a3ff7f7d6e4745a344a7ed72577eb2de1437fb4780"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/run_shard.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/run_shard.py",
+      "source_sha256": "94b8d437a2204a8a76e5b92456e2ab011495a2bdc6640828f1221efbd069be6e",
+      "publication_changes": "unchanged",
+      "publication_sha256": "94b8d437a2204a8a76e5b92456e2ab011495a2bdc6640828f1221efbd069be6e"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/shared.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/shared.py",
+      "source_sha256": "86fef00fcce0ce24dc59d2bc5beb0aa5a07570dbb51b856dfecd480ee16a24db",
+      "publication_changes": "unchanged",
+      "publication_sha256": "86fef00fcce0ce24dc59d2bc5beb0aa5a07570dbb51b856dfecd480ee16a24db"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/tests/test_tvsum.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/tests/test_tvsum.py",
+      "source_sha256": "bf3f3777830f247a706d6d83f53a6380c2856e26fe5227605cbc8608810c5a18",
+      "publication_changes": "unchanged",
+      "publication_sha256": "bf3f3777830f247a706d6d83f53a6380c2856e26fe5227605cbc8608810c5a18"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/vendor/UMT.LICENSE",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/vendor/UMT.LICENSE",
+      "source_sha256": "0dad367e2d17083ba5c863b274e527a38e59b45189957d0a71d27030d53ef540",
+      "publication_changes": "unchanged",
+      "publication_sha256": "0dad367e2d17083ba5c863b274e527a38e59b45189957d0a71d27030d53ef540"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/vendor/common.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/vendor/common.py",
+      "source_sha256": "2ca173967f7a9f8797b786fed25a1308835812fd9a6a8d3beeac3ad7e6e2dc9c",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "0cc052a75d32b22c48b2925552afb81323709f222a0b9616f25e474cecd792b1"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/vendor/reze_backend.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/vendor/reze_backend.py",
+      "source_sha256": "0c9eb0e4c5b8e1df4877732076424fa92b9316d18fd68f9d5ae2178aae8ec3c5",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "2179cbbe435bb3dc3ec2cfc0dd63b9a87012a1a390efa6c2d7fd5d9fb953ea18"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/vendor/reze_core.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/vendor/reze_core.py",
+      "source_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d",
+      "publication_changes": "unchanged",
+      "publication_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/vendor/reze_media.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/vendor/reze_media.py",
+      "source_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/vendor/umt_static.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/vendor/umt_static.py",
+      "source_sha256": "1fc45d81bfd53469a005f2c1d6f76f3831a1ed5a188f8d265c3396f8bbae451c",
+      "publication_changes": "unchanged",
+      "publication_sha256": "1fc45d81bfd53469a005f2c1d6f76f3831a1ed5a188f8d265c3396f8bbae451c"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/vendor/umt_tvsum.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/vendor/umt_tvsum.py",
+      "source_sha256": "f7c962a7abb061d37844eb4baa1503e0e3dba54caa5483d97f68287776e7f347",
+      "publication_changes": "unchanged",
+      "publication_sha256": "f7c962a7abb061d37844eb4baa1503e0e3dba54caa5483d97f68287776e7f347"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/worker.py",
+      "destination": "baselines/zeroshot/experiments/reze_tvsum/worker.py",
+      "source_sha256": "1a7ee62791330c43a036dc8e3ffa642cf7be734de3b5f9c20ecb5d690a83b007",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "f7da92c83faa7058ae3feca0216d63304c74221677aa47a2cccf1df39399c6b6"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:manifests/reze_model_audit.json",
+      "destination": "baselines/zeroshot/manifests/reze_model_audit.example.json",
+      "source_sha256": "76f708f3290eeff38a51ba70e11ff0c1d1fcedcb4f69100b401ab0adc5addaac",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "f26f9d15bd42eec985353bdda2760414780cdb8822bbf918c66196dc9bbcaa95"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:pyproject.toml",
+      "destination": "baselines/zeroshot/pyproject.toml",
+      "source_sha256": "ee14e8a6a745a914ba865e9702d65e2dd509c81478b4fa9e5c6f68a88708c33e",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "29375fa6d8300aee0552a4b49fe44bc07fe7349a59989d7f0dc951f55fc33d8e"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:requirements-reze.txt",
+      "destination": "baselines/zeroshot/requirements-reze.txt",
+      "source_sha256": "fa6ea771fef3facb764224ced5019d263887702c1ccf4ea884221da05ec56dce",
+      "publication_changes": "unchanged",
+      "publication_sha256": "fa6ea771fef3facb764224ced5019d263887702c1ccf4ea884221da05ec56dce"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:requirements.txt",
+      "destination": "baselines/zeroshot/requirements.txt",
+      "source_sha256": "333a0291d492c434e37429e020976fcc90baaddfa8b1867dd832ec5086dcf0bf",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "fc0ea9a8721e3df5fc5fc0cb905e84f2aaf86e944109e467b2e3c7e1cc9c73b3"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/audit_reze_evidence.py",
+      "destination": "baselines/zeroshot/scripts/audit_reze_evidence.py",
+      "source_sha256": "2b8fb15dcf61a081c63c61a62a8a5eb52ae14fb4b31f784f33b5150e832e0da7",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2b8fb15dcf61a081c63c61a62a8a5eb52ae14fb4b31f784f33b5150e832e0da7"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/check_reze_backend.py",
+      "destination": "baselines/zeroshot/scripts/check_reze_backend.py",
+      "source_sha256": "ea5931e9de36d2a53b0d7932be7cb27bd9b332c571876874c54fdf862e451a3b",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "2f635be064ef40ee5c1bd4061693c4c9bf6e6835245af540dc02a252803710f6"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/check_reze_sustained.py",
+      "destination": "baselines/zeroshot/scripts/check_reze_sustained.py",
+      "source_sha256": "473e8820d76f4085e59c1ff1a36db1abc894e8d4796123c92f268cdba64498eb",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "ef1d01593f0a23df8b4e6436d33ae9cc46f4b018eccddf5b17323c2b759d94e4"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/clip_media.py",
+      "destination": "baselines/zeroshot/scripts/clip_media.py",
+      "source_sha256": "a7da5b90a3d8dd851a4387970a1055938dbd7e025a7dd6583e72842c07ceb462",
+      "publication_changes": "unchanged",
+      "publication_sha256": "a7da5b90a3d8dd851a4387970a1055938dbd7e025a7dd6583e72842c07ceb462"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/common.py",
+      "destination": "baselines/zeroshot/scripts/common.py",
+      "source_sha256": "2ca173967f7a9f8797b786fed25a1308835812fd9a6a8d3beeac3ad7e6e2dc9c",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "0cc052a75d32b22c48b2925552afb81323709f222a0b9616f25e474cecd792b1"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/evaluate.py",
+      "destination": "baselines/zeroshot/scripts/evaluate.py",
+      "source_sha256": "396de43aa3e983a2083986abc4be2d7f797fc5d25c80543337d055fec58f87b5",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "f4416274dbd07b689aa69d537c28d6c9f6618e85b32166591aaf0030ac654de4"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/launch_reze.py",
+      "destination": "baselines/zeroshot/scripts/launch_reze.py",
+      "source_sha256": "5f67431d00e067b03fee1d43e6c4b18cc9adb768e5f3e8d49ec02db3cbce27ac",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "999c64e0bfae71c48c4729648cae0bf200d48bbb964aa0af83c330205dad4f76"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/monitor_reze.py",
+      "destination": "baselines/zeroshot/scripts/monitor_reze.py",
+      "source_sha256": "7986c6dc9c0da32f3efe7b59ad0f4a8f103abf79d09d6ff5cb744f78b9dff676",
+      "publication_changes": "unchanged",
+      "publication_sha256": "7986c6dc9c0da32f3efe7b59ad0f4a8f103abf79d09d6ff5cb744f78b9dff676"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/prepare.py",
+      "destination": "baselines/zeroshot/scripts/prepare.py",
+      "source_sha256": "a84c0526474e66db12c6478f958ab9e81c8aba0acc2028fefef2d13fcc01f9f2",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "630408389b0ed6659f20a49c0b853c984b1e96c50359de52b67a75db289bf859"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/reze_backend.py",
+      "destination": "baselines/zeroshot/scripts/reze_backend.py",
+      "source_sha256": "0c9eb0e4c5b8e1df4877732076424fa92b9316d18fd68f9d5ae2178aae8ec3c5",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "2179cbbe435bb3dc3ec2cfc0dd63b9a87012a1a390efa6c2d7fd5d9fb953ea18"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/reze_core.py",
+      "destination": "baselines/zeroshot/scripts/reze_core.py",
+      "source_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d",
+      "publication_changes": "unchanged",
+      "publication_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/reze_media.py",
+      "destination": "baselines/zeroshot/scripts/reze_media.py",
+      "source_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/reze_run_io.py",
+      "destination": "baselines/zeroshot/scripts/reze_run_io.py",
+      "source_sha256": "f11d2c6858154403dbd7cb469126794c930824edba8627a122d24816a7e0dac1",
+      "publication_changes": "unchanged",
+      "publication_sha256": "f11d2c6858154403dbd7cb469126794c930824edba8627a122d24816a7e0dac1"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/run_clip.py",
+      "destination": "baselines/zeroshot/scripts/run_clip.py",
+      "source_sha256": "47e18448b80864be93dea93ce65301fbe58e14bdfcb9e5d1f49802ec019fac2a",
+      "publication_changes": "unchanged",
+      "publication_sha256": "47e18448b80864be93dea93ce65301fbe58e14bdfcb9e5d1f49802ec019fac2a"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/run_clip.sh",
+      "destination": "baselines/zeroshot/scripts/run_clip.sh",
+      "source_sha256": "3969db8b3b6d2cae23f582518a23070f36664a6809a09689836739241c39e0a2",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "53c54e01a33fab7733b854df4b0067ff636899c02b65a72ff22e27bf5e9766f4"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/run_reze_worker.py",
+      "destination": "baselines/zeroshot/scripts/run_reze_worker.py",
+      "source_sha256": "1791af6ed2edba919584988f0d4b20e07b388d4b14d34dd7f951748b97fae654",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "c4aeb6b2330f01ee3a1a4a4179814e56027893a7fe21ee5c1f505bdd39ce8986"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/run_vtg.sh",
+      "destination": "baselines/zeroshot/scripts/run_vtg.sh",
+      "source_sha256": "f141a6c68fcd0c2e1cf8dccb314868558b4c38589ca1065f5eeaa031ce6da658",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "7885f57a146f110c699ea06031d97ada9666484db4067f04f48f04f6a28625ec"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/run_vtg_gpt.py",
+      "destination": "baselines/zeroshot/scripts/run_vtg_gpt.py",
+      "source_sha256": "39f7823ced46e8aa6b594dc5e32e6af5c55d8999870ab6396122a84705572e9c",
+      "publication_changes": "unchanged",
+      "publication_sha256": "39f7823ced46e8aa6b594dc5e32e6af5c55d8999870ab6396122a84705572e9c"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/summarize.py",
+      "destination": "baselines/zeroshot/scripts/summarize.py",
+      "source_sha256": "d462951027cd027065e721756753e1ae377447a8deb66bc1ab4f14cbf71206ec",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "7df550866114bc62bf9cc19103c0d500288476bb26e4cddf9911e4d3eee33828"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:scripts/summarize_reze.py",
+      "destination": "baselines/zeroshot/scripts/summarize_reze.py",
+      "source_sha256": "78f7b876770dab594ae237d3af1f93d24aa51dd97e55ff6c6e46725a7b38b8fe",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "e56dc1f38e4532b3bc71b4c46196b2cb3fa407146e519dc7590215208a91f6bd"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:tests/test_clip_media.py",
+      "destination": "baselines/zeroshot/tests/test_clip_media.py",
+      "source_sha256": "44c2d032c3a38e6cef2e38255b7bbe69a2d3be775f165528186113fa393fcc73",
+      "publication_changes": "unchanged",
+      "publication_sha256": "44c2d032c3a38e6cef2e38255b7bbe69a2d3be775f165528186113fa393fcc73"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:tests/test_protocol.py",
+      "destination": "baselines/zeroshot/tests/test_protocol.py",
+      "source_sha256": "2b5e0ad5d236cb0abd60586b9457cd765f5d1679fd21981b1651b1aef6dda7cc",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2b5e0ad5d236cb0abd60586b9457cd765f5d1679fd21981b1651b1aef6dda7cc"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:tests/test_reze_checkpoints.py",
+      "destination": "baselines/zeroshot/tests/test_reze_checkpoints.py",
+      "source_sha256": "2f74e01e9ea8832a66ca99119753509d78764598d68971a2e0a991059e0a73cd",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2f74e01e9ea8832a66ca99119753509d78764598d68971a2e0a991059e0a73cd"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:tests/test_reze_core.py",
+      "destination": "baselines/zeroshot/tests/test_reze_core.py",
+      "source_sha256": "6fdcf8c75c6ad71f699f440244576ddd070ab384e7ab93566e9e4e030e5f7284",
+      "publication_changes": "unchanged",
+      "publication_sha256": "6fdcf8c75c6ad71f699f440244576ddd070ab384e7ab93566e9e4e030e5f7284"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:tests/test_reze_evidence.py",
+      "destination": "baselines/zeroshot/tests/test_reze_evidence.py",
+      "source_sha256": "6f9a4ed2da7978c5e8716bd2bc4f24f2aed9fcd73cab584ac522def290051cf4",
+      "publication_changes": "unchanged",
+      "publication_sha256": "6f9a4ed2da7978c5e8716bd2bc4f24f2aed9fcd73cab584ac522def290051cf4"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:tests/test_reze_fullval.py",
+      "destination": "baselines/zeroshot/tests/test_reze_fullval.py",
+      "source_sha256": "217e5930301587ab79d2c767bd52d5735926689d7cb5fea3bc8fcb1139dbcb71",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "50ebf0cd0c99dad9558b95e8b866a46b57fe17bbb919c934da410fd262dd7fc3"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:tests/test_reze_native_processor.py",
+      "destination": "baselines/zeroshot/tests/test_reze_native_processor.py",
+      "source_sha256": "846a01403e04bbdd967990c067a9a1237145840561e8895a8dbd8b67641d07bc",
+      "publication_changes": "unchanged",
+      "publication_sha256": "846a01403e04bbdd967990c067a9a1237145840561e8895a8dbd8b67641d07bc"
+    },
+    {
+      "source": "MERIT:configs/automation_v1.json",
+      "destination": "configs/automation_v1.example.json",
+      "source_sha256": "c4cc6e5434766d96cbc9b0653cc07b71189d0858f07d0b5e1ac8938e082d2adf",
+      "publication_sha256": "979ab7b5065c87a616cdfe8f63ac76276b233ab3f6df98d6df6c988eda3b55bd",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report"
+    },
+    {
+      "source": "MERIT:configs/hd_adapter.local.json",
+      "destination": "configs/hd_adapter.example.json",
+      "source_sha256": "040c9436fbc8b193da546f26fea5c9c6cabdb10f7b8e292475653e42966b59d5",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "2eaa21912778fd334baebd9f9cc8066540072a69d5f053e44cec9db1fdb78637"
+    },
+    {
+      "source": "MERIT:configs/highlight_value_schema.example.json",
+      "destination": "configs/highlight_value_schema.example.json",
+      "source_sha256": "5209a5e9d83af73dc4d4b19b670f0755c82e5ccb974628d57276cd89f49e80dd",
+      "publication_changes": "unchanged",
+      "publication_sha256": "5209a5e9d83af73dc4d4b19b670f0755c82e5ccb974628d57276cd89f49e80dd"
+    },
+    {
+      "source": "MERIT:configs/main_gpu_v1.json",
+      "destination": "configs/main_gpu_v1.json",
+      "source_sha256": "371842900ec300bffe4ed00c37e31247f802a01702fc4175d8734e44cfc30d39",
+      "publication_sha256": "9d4de3ca412b9eeab182e6687de4b86d31ad2a834624cfc68d71fd716bbec872",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report"
+    },
+    {
+      "source": "MERIT:configs/main_v1.json",
+      "destination": "configs/main_v1.json",
+      "source_sha256": "24de9e3ad937564a6b6bdab34bbdd0a1fe3d6267764603f54c6d585748a2641f",
+      "publication_sha256": "410b11b44e8d8c5c2b24d0be52bf292c21005c8af93b5f05b56e8f899a3e0ad8",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report"
+    },
+    {
+      "source": "MERIT:configs/reze_evidence_fullval_v1.json",
+      "destination": "configs/reze_evidence_fullval_v1.example.json",
+      "source_sha256": "f632d13efa2923b075421cad73292cf8f70a448acf1b2101927f5c8671dc70c1",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "b13bc2c9ec91c0342f7a0ade4a946a2ed39db0f1a75d6cda9b86f899a95224ab"
+    },
+    {
+      "source": "MERIT:configs/reze_evidence_plan_v1.json",
+      "destination": "configs/reze_evidence_plan_v1.example.json",
+      "source_sha256": "c5460466054370db5873543204bb6044c90181ecf11b8393cb39ea13d2dbd4f0",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "b09be060254259c363263d06e784cc4f0fffd2a7340f75d7518cf3bb601502ac"
+    },
+    {
+      "source": "MERIT:configs/reze_evidence_execution_v1.json",
+      "destination": "docs/reze_stage_a_execution_record_2026-10-19.json",
+      "source_sha256": "dc78c25d532465f0b2a219af49486fce9ef627883b10b2e38c53cd153a0e8882",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "75f7389d1482bb1fa18e12fb1bfb0a8c626919cbcfef04ac9728d589e9a1b518"
+    },
+    {
+      "source": "MERIT:experiments/hd_adapter/README.md",
+      "destination": "experiments/hd_adapter/README.md",
+      "source_sha256": "91b51b0a58a8bcd5beca78c12cdfbda9d771c995675d54ade6bb903fcec92541",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "901a0671df28952e93710b639eb31626d6e6d9e0e5543018f2b5209fc5f57e72"
+    },
+    {
+      "source": "MERIT:experiments/hd_adapter/__init__.py",
+      "destination": "experiments/hd_adapter/__init__.py",
+      "source_sha256": "583e444a0f4b0adaf94f4062391f5a70ec5616812ec4485160eb75da18a21c75",
+      "publication_changes": "unchanged",
+      "publication_sha256": "583e444a0f4b0adaf94f4062391f5a70ec5616812ec4485160eb75da18a21c75"
+    },
+    {
+      "source": "MERIT:experiments/hd_adapter/benchmark.py",
+      "destination": "experiments/hd_adapter/benchmark.py",
+      "source_sha256": "9b3047f06ad226c6d461b145c72542b6b842033777d2e6760440cb213d291639",
+      "publication_changes": "unchanged",
+      "publication_sha256": "9b3047f06ad226c6d461b145c72542b6b842033777d2e6760440cb213d291639"
+    },
+    {
+      "source": "MERIT:experiments/hd_adapter/client.py",
+      "destination": "experiments/hd_adapter/client.py",
+      "source_sha256": "e5a30ee1ac44118b7aee6bf56b4c40d3f53ace73830fb0cf5a9695686b6b987e",
+      "publication_changes": "unchanged",
+      "publication_sha256": "e5a30ee1ac44118b7aee6bf56b4c40d3f53ace73830fb0cf5a9695686b6b987e"
+    },
+    {
+      "source": "MERIT:experiments/hd_adapter/media.py",
+      "destination": "experiments/hd_adapter/media.py",
+      "source_sha256": "6225ca8733da93c805c6ce28e5e6d29dd9d65fb1cda6f7d888b359e937599024",
+      "publication_changes": "unchanged",
+      "publication_sha256": "6225ca8733da93c805c6ce28e5e6d29dd9d65fb1cda6f7d888b359e937599024"
+    },
+    {
+      "source": "MERIT:experiments/hd_adapter/pipeline.py",
+      "destination": "experiments/hd_adapter/pipeline.py",
+      "source_sha256": "ba5b20f35e89c8a2b3716cc52b052bf1ccb6fc70df857af04fccf6c572ea58fd",
+      "publication_changes": "unchanged",
+      "publication_sha256": "ba5b20f35e89c8a2b3716cc52b052bf1ccb6fc70df857af04fccf6c572ea58fd"
+    },
+    {
+      "source": "MERIT:experiments/hd_adapter/prepare.py",
+      "destination": "experiments/hd_adapter/prepare.py",
+      "source_sha256": "b592e6e948b8eb34f4ffef0931533783c88d3f02bca14fbfada0aa925b117066",
+      "publication_changes": "unchanged",
+      "publication_sha256": "b592e6e948b8eb34f4ffef0931533783c88d3f02bca14fbfada0aa925b117066"
+    },
+    {
+      "source": "MERIT:experiments/hd_adapter/processor_audit.py",
+      "destination": "experiments/hd_adapter/processor_audit.py",
+      "source_sha256": "d82fb24f8464ee0997b8862cb478449a9cb42f0d92bf45fd5c17b9621bdaa25b",
+      "publication_changes": "unchanged",
+      "publication_sha256": "d82fb24f8464ee0997b8862cb478449a9cb42f0d92bf45fd5c17b9621bdaa25b"
+    },
+    {
+      "source": "MERIT:experiments/hd_adapter/prompts.py",
+      "destination": "experiments/hd_adapter/prompts.py",
+      "source_sha256": "2b2f9dd5173856a8d6b046c45646ae4b3f8a9ac60c12dc35c4f13bd5556f582a",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2b2f9dd5173856a8d6b046c45646ae4b3f8a9ac60c12dc35c4f13bd5556f582a"
+    },
+    {
+      "source": "MERIT:experiments/hd_adapter/requirements-runtime.txt",
+      "destination": "experiments/hd_adapter/requirements-runtime.txt",
+      "source_sha256": "c2a7b6c3465301176717ba4c3076ae391f4416d1650c8c8324062cda4a9c62a1",
+      "publication_changes": "unchanged",
+      "publication_sha256": "c2a7b6c3465301176717ba4c3076ae391f4416d1650c8c8324062cda4a9c62a1"
+    },
+    {
+      "source": "MERIT:experiments/hd_adapter/runner.py",
+      "destination": "experiments/hd_adapter/runner.py",
+      "source_sha256": "de2c15675cfaf5f1f74f32b9a4168083ee8b6df30f53c24861d314c9a85788a6",
+      "publication_changes": "unchanged",
+      "publication_sha256": "de2c15675cfaf5f1f74f32b9a4168083ee8b6df30f53c24861d314c9a85788a6"
+    },
+    {
+      "source": "MERIT:experiments/hd_adapter/service.py",
+      "destination": "experiments/hd_adapter/service.py",
+      "source_sha256": "44741ee0d0da425ba796dc6aaef8382afe3bfbf33d7582227c02334b8b544a3b",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "86f539f9f314ce9b894469f6e72c465ce388c6e7354df23c89a6787681fe8518"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/README.md",
+      "destination": "experiments/highlight_evidence/README.md",
+      "source_sha256": "74eab08d80f6429575a8110717a2735640fcabff7b8c6a6704053c033ffb8192",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "8ba96dae9e6a9c23bb4e36005f809c0da966d99d5552dc14921f2c1c46f3f9d8"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/__init__.py",
+      "destination": "experiments/highlight_evidence/__init__.py",
+      "source_sha256": "b923c8d9bd60b012ae51550d9d391d6b078945976a14bcfadabe4db17a0049d5",
+      "publication_changes": "unchanged",
+      "publication_sha256": "b923c8d9bd60b012ae51550d9d391d6b078945976a14bcfadabe4db17a0049d5"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/cli.py",
+      "destination": "experiments/highlight_evidence/cli.py",
+      "source_sha256": "2b504cce1808f0aba351da4350ba46c649562b0b06c1d5f5b484f3f203d3c248",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2b504cce1808f0aba351da4350ba46c649562b0b06c1d5f5b484f3f203d3c248"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/controller.py",
+      "destination": "experiments/highlight_evidence/controller.py",
+      "source_sha256": "b3a9729136c71cc46b0f903dc41d0894629546e533b181323af918a2f8017f9a",
+      "publication_changes": "unchanged",
+      "publication_sha256": "b3a9729136c71cc46b0f903dc41d0894629546e533b181323af918a2f8017f9a"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/granularity.py",
+      "destination": "experiments/highlight_evidence/granularity.py",
+      "source_sha256": "71aa53c4943e83be8e1ca7283e968313df7e41eaaffce718080104b1bcfc671f",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "08f8849e576491506c5a5091dde8faa23bdf25d778907ded6920443d9bd9e033"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/inference.py",
+      "destination": "experiments/highlight_evidence/inference.py",
+      "source_sha256": "803d2136b758f3f989d645a9d77d77ca89394188a6485dead82cbfa6259ad27c",
+      "publication_changes": "unchanged",
+      "publication_sha256": "803d2136b758f3f989d645a9d77d77ca89394188a6485dead82cbfa6259ad27c"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/media.py",
+      "destination": "experiments/highlight_evidence/media.py",
+      "source_sha256": "76cdc43432dbb5c2a4d96a79ea31e55b3dd646f9fd72ec964d90a142f4d5e024",
+      "publication_changes": "unchanged",
+      "publication_sha256": "76cdc43432dbb5c2a4d96a79ea31e55b3dd646f9fd72ec964d90a142f4d5e024"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/memory.py",
+      "destination": "experiments/highlight_evidence/memory.py",
+      "source_sha256": "6ad60d92799679bea4fe9168010682f6695621dc22f36c177c74dd1ed713f3dc",
+      "publication_changes": "unchanged",
+      "publication_sha256": "6ad60d92799679bea4fe9168010682f6695621dc22f36c177c74dd1ed713f3dc"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/memory_ablation.py",
+      "destination": "experiments/highlight_evidence/memory_ablation.py",
+      "source_sha256": "0e6eda1569710037f8e7b46d172b117d0c9f8666cc7fbaf14769c41aa1913ff2",
+      "publication_changes": "unchanged",
+      "publication_sha256": "0e6eda1569710037f8e7b46d172b117d0c9f8666cc7fbaf14769c41aa1913ff2"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/memory_only.py",
+      "destination": "experiments/highlight_evidence/memory_only.py",
+      "source_sha256": "f25dd3ae016e4c8764cde02ab9ef61fb38a48c580f9cbe8937c88de1848f04e9",
+      "publication_changes": "unchanged",
+      "publication_sha256": "f25dd3ae016e4c8764cde02ab9ef61fb38a48c580f9cbe8937c88de1848f04e9"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/memory_reader.py",
+      "destination": "experiments/highlight_evidence/memory_reader.py",
+      "source_sha256": "b31fafb49b50e7205e8ec4e27d0b39acb72f22835da06b1d5be46d24875dcaf3",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "bf61e5771f249a97550ec485f982368009a997ac4504226219e67e8f83057c88"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/pilot.py",
+      "destination": "experiments/highlight_evidence/pilot.py",
+      "source_sha256": "87aae7957b4caad2360466eb2fe37657ce8239931a9864b1ffc00f1aa5d71d9d",
+      "publication_changes": "unchanged",
+      "publication_sha256": "87aae7957b4caad2360466eb2fe37657ce8239931a9864b1ffc00f1aa5d71d9d"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/pilot_components.py",
+      "destination": "experiments/highlight_evidence/pilot_components.py",
+      "source_sha256": "0eab186d743c0aebbbb31321916293ad83e34cf46696949d707c6b8e185898ab",
+      "publication_changes": "unchanged",
+      "publication_sha256": "0eab186d743c0aebbbb31321916293ad83e34cf46696949d707c6b8e185898ab"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/planner.py",
+      "destination": "experiments/highlight_evidence/planner.py",
+      "source_sha256": "76056400d5dc53bf1439f7080c50f13a905f26308a2c6172d8e4c18173aed26c",
+      "publication_changes": "unchanged",
+      "publication_sha256": "76056400d5dc53bf1439f7080c50f13a905f26308a2c6172d8e4c18173aed26c"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/robust_client.py",
+      "destination": "experiments/highlight_evidence/robust_client.py",
+      "source_sha256": "1e28b2be9485c724ea84d49d9c0d638ef7f391be1374a3be25f32a947dcb9a41",
+      "publication_changes": "unchanged",
+      "publication_sha256": "1e28b2be9485c724ea84d49d9c0d638ef7f391be1374a3be25f32a947dcb9a41"
+    },
+    {
+      "source": "MERIT:experiments/highlight_evidence/robust_memory.py",
+      "destination": "experiments/highlight_evidence/robust_memory.py",
+      "source_sha256": "fce7e9a6d7a8bbce7c7504510286320cc21add9da5e1ab3bf2c4cd5ac4721ca1",
+      "publication_changes": "unchanged",
+      "publication_sha256": "fce7e9a6d7a8bbce7c7504510286320cc21add9da5e1ab3bf2c4cd5ac4721ca1"
+    },
+    {
+      "source": "MERIT:pyproject.toml",
+      "destination": "pyproject.toml",
+      "source_sha256": "260a4e942e08563f1f8db77418120679cc7e3a3e6b706c339707a243ee9f8086",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "4d27a569235b3e2d94d92f904bbc96c4f0344541f5604f0e3e2cf204aedc5a80"
+    },
+    {
+      "source": "MERIT:requirements-dev.txt",
+      "destination": "requirements-dev.txt",
+      "source_sha256": "ca6fe471aae4e49a59483dcf6e29744fa4c0f38f5a735f5fd2d49aff82410bf9",
+      "publication_sha256": "ca6fe471aae4e49a59483dcf6e29744fa4c0f38f5a735f5fd2d49aff82410bf9",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:requirements-runtime.txt",
+      "destination": "requirements-runtime.txt",
+      "source_sha256": "4746c7c54c38cb80c912d1a640aba52675f4cfff7b5b9e2fc444b7cb1c40f627",
+      "publication_sha256": "4746c7c54c38cb80c912d1a640aba52675f4cfff7b5b9e2fc444b7cb1c40f627",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:scripts/analyze_hd_adapter.py",
+      "destination": "scripts/analyze_hd_adapter.py",
+      "source_sha256": "7dbd872af87e1bc40725a7c4c007476813e954e276138cc62efc4bcd76c66d8e",
+      "publication_changes": "unchanged",
+      "publication_sha256": "7dbd872af87e1bc40725a7c4c007476813e954e276138cc62efc4bcd76c66d8e"
+    },
+    {
+      "source": "MERIT:scripts/analyze_highlight_memory_repair.py",
+      "destination": "scripts/analyze_highlight_memory_repair.py",
+      "source_sha256": "13c1787ff3867d62de0305085edd213c21c325549e17ac9cb79f3e70cae11acc",
+      "publication_changes": "unchanged",
+      "publication_sha256": "13c1787ff3867d62de0305085edd213c21c325549e17ac9cb79f3e70cae11acc"
+    },
+    {
+      "source": "MERIT:scripts/analyze_highlight_pilot.py",
+      "destination": "scripts/analyze_highlight_pilot.py",
+      "source_sha256": "45180aedd9052dad9e489de2cd8c37c36a11b172478629982a5f4c23fe18f161",
+      "publication_changes": "unchanged",
+      "publication_sha256": "45180aedd9052dad9e489de2cd8c37c36a11b172478629982a5f4c23fe18f161"
+    },
+    {
+      "source": "MERIT:scripts/analyze_qfvs_pilot.py",
+      "destination": "scripts/analyze_qfvs_pilot.py",
+      "source_sha256": "f53ff458d8d5c3c77a35386070309b26936a4da347a7e38d0a3a90a5c5943094",
+      "publication_changes": "unchanged",
+      "publication_sha256": "f53ff458d8d5c3c77a35386070309b26936a4da347a7e38d0a3a90a5c5943094"
+    },
+    {
+      "source": "MERIT:scripts/analyze_reze_transfer_results.py",
+      "destination": "scripts/analyze_reze_transfer_results.py",
+      "source_sha256": "b587ca7ca9930e394e352d8ef83a428b0875e11d2092beded00de90ff40da8b4",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "4501a0089fa39e597e025b32ed59376a79e935c164198a2b5af196034a6ff142"
+    },
+    {
+      "source": "MERIT:scripts/audit_hd_adapter.py",
+      "destination": "scripts/audit_hd_adapter.py",
+      "source_sha256": "d6f35b3a053aa2acf4e36b081111a910a678628a6c33ca5634eb61839392fec1",
+      "publication_changes": "unchanged",
+      "publication_sha256": "d6f35b3a053aa2acf4e36b081111a910a678628a6c33ca5634eb61839392fec1"
+    },
+    {
+      "source": "MERIT:scripts/audit_highlight_granularity.py",
+      "destination": "scripts/audit_highlight_granularity.py",
+      "source_sha256": "50a50e4b7fced37fdce4938727e6c3ed01ef400e099b8b3a82f2c614efcd0655",
+      "publication_changes": "unchanged",
+      "publication_sha256": "50a50e4b7fced37fdce4938727e6c3ed01ef400e099b8b3a82f2c614efcd0655"
+    },
+    {
+      "source": "MERIT:scripts/audit_qfvs_videos.py",
+      "destination": "scripts/audit_qfvs_videos.py",
+      "source_sha256": "50fe80c3f8f1d03f9e676c5ec7d3d5a06ed166a923506290ceaf0543b4f912f5",
+      "publication_changes": "unchanged",
+      "publication_sha256": "50fe80c3f8f1d03f9e676c5ec7d3d5a06ed166a923506290ceaf0543b4f912f5"
+    },
+    {
+      "source": "MERIT:scripts/audit_tvsum_release.py",
+      "destination": "scripts/audit_tvsum_release.py",
+      "source_sha256": "942d5189ea1a59a4cc64c3cda8d1f7a0f74ab15047b7f7d20db34f89e15c911f",
+      "publication_changes": "unchanged",
+      "publication_sha256": "942d5189ea1a59a4cc64c3cda8d1f7a0f74ab15047b7f7d20db34f89e15c911f"
+    },
+    {
+      "source": "MERIT:scripts/check_retrieval.py",
+      "destination": "scripts/check_retrieval.py",
+      "source_sha256": "fcfbda1a605c51d1dfabb850bda3a50f41c0c3c7f43f576a901ee29839e20f3b",
+      "publication_sha256": "fcfbda1a605c51d1dfabb850bda3a50f41c0c3c7f43f576a901ee29839e20f3b",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:scripts/download_benchmark_assets.py",
+      "destination": "scripts/download_benchmark_assets.py",
+      "source_sha256": "5866d5e3bb2979fd2b0a4d0fa743f7f67f4d3d8a4cfb0348e72ed13b9da99600",
+      "publication_changes": "unchanged",
+      "publication_sha256": "5866d5e3bb2979fd2b0a4d0fa743f7f67f4d3d8a4cfb0348e72ed13b9da99600"
+    },
+    {
+      "source": "MERIT:scripts/download_mrhisum_videos.py",
+      "destination": "scripts/download_mrhisum_videos.py",
+      "source_sha256": "914c51e6200e2b8014b50b7056587b7b1c8c54bfe10eba81925a0c8bb038a0a5",
+      "publication_changes": "unchanged",
+      "publication_sha256": "914c51e6200e2b8014b50b7056587b7b1c8c54bfe10eba81925a0c8bb038a0a5"
+    },
+    {
+      "source": "MERIT:scripts/download_qfvs_videos.py",
+      "destination": "scripts/download_qfvs_videos.py",
+      "source_sha256": "4a247e00290bdf61ea854c0f10cf9d3c77d5b205245b9b4c379b05f901160827",
+      "publication_changes": "unchanged",
+      "publication_sha256": "4a247e00290bdf61ea854c0f10cf9d3c77d5b205245b9b4c379b05f901160827"
+    },
+    {
+      "source": "MERIT:scripts/experiment_supervisor.py",
+      "destination": "scripts/experiment_supervisor.py",
+      "source_sha256": "529f89f4a2eea4157808e525238871b5687c7c5fbc6432d2ab040a0ce1c4506e",
+      "publication_sha256": "529f89f4a2eea4157808e525238871b5687c7c5fbc6432d2ab040a0ce1c4506e",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:scripts/fetch_embedding.py",
+      "destination": "scripts/fetch_embedding.py",
+      "source_sha256": "6214e08623758ed16e958f39ed2d104dfe2f3b4009108800eba6d61a59296e7f",
+      "publication_sha256": "6214e08623758ed16e958f39ed2d104dfe2f3b4009108800eba6d61a59296e7f",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:scripts/merit-qvh-supervisor.service",
+      "destination": "scripts/merit-qvh-supervisor.service.example",
+      "source_sha256": "49cac1b5e74c07a7b453ae060c2d6aecb699b1da84ab3995d8f1c5542c6c21b9",
+      "publication_sha256": "fc9c14f6d828e2f4a91d16bb8617994204e147c0e2ff02db681c44580242ccc5",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report"
+    },
+    {
+      "source": "MERIT:scripts/prepare_frames.py",
+      "destination": "scripts/prepare_frames.py",
+      "source_sha256": "04151ad6a5c6f094668ced15968a55fd47ca4567d2e2dac72cf954b47d46de63",
+      "publication_sha256": "04151ad6a5c6f094668ced15968a55fd47ca4567d2e2dac72cf954b47d46de63",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:scripts/prepare_tvsum_release.py",
+      "destination": "scripts/prepare_tvsum_release.py",
+      "source_sha256": "fbf64a9252b1aa199ba87f7f3c8b2e71a4a131af1d22764ceac22d980babd1f0",
+      "publication_changes": "unchanged",
+      "publication_sha256": "fbf64a9252b1aa199ba87f7f3c8b2e71a4a131af1d22764ceac22d980babd1f0"
+    },
+    {
+      "source": "MERIT:scripts/resume_validation.py",
+      "destination": "scripts/resume_validation.py",
+      "source_sha256": "e1cea0d298a77cf1682b10e6978796de93e9c00eee5c81f39082da09a9000d41",
+      "publication_sha256": "e1cea0d298a77cf1682b10e6978796de93e9c00eee5c81f39082da09a9000d41",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:scripts/retry_mrhisum_downloads.py",
+      "destination": "scripts/retry_mrhisum_downloads.py",
+      "source_sha256": "39f91016a892c563e3fc1d9caaa7b6b3c2c48735ff942fc36619c4a2ff75a50f",
+      "publication_changes": "unchanged",
+      "publication_sha256": "39f91016a892c563e3fc1d9caaa7b6b3c2c48735ff942fc36619c4a2ff75a50f"
+    },
+    {
+      "source": "MERIT:scripts/reuse_after_failure_fix.py",
+      "destination": "scripts/reuse_after_failure_fix.py",
+      "source_sha256": "17880d0318e2dac9fc03a7b4c037aa173f14b079cf375de0d02000e6d8899ae5",
+      "publication_sha256": "17880d0318e2dac9fc03a7b4c037aa173f14b079cf375de0d02000e6d8899ae5",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:scripts/reuse_smoke_memories.py",
+      "destination": "scripts/reuse_smoke_memories.py",
+      "source_sha256": "8cf990dc5f1dfb6c95ccea091e63c337ad3bf216f4e3365109a889fb2d52f514",
+      "publication_sha256": "8cf990dc5f1dfb6c95ccea091e63c337ad3bf216f4e3365109a889fb2d52f514",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:scripts/run_main.py",
+      "destination": "scripts/run_main.py",
+      "source_sha256": "fc2b1936123340a441a267c7c78844dac1afbfb3e9a37b7514576807e83cd11a",
+      "publication_sha256": "fc2b1936123340a441a267c7c78844dac1afbfb3e9a37b7514576807e83cd11a",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:scripts/serve_vlm.sh",
+      "destination": "scripts/serve_vlm.sh",
+      "source_sha256": "962ec57d1c25fbbccd6f9921dcb0fead49ad395e41b77ea1fa7bfde7863e9235",
+      "publication_sha256": "e48b12982615d26b286967764ef7368a6cc51f06a8cdd73706ab79b347d55df5",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report"
+    },
+    {
+      "source": "MERIT:src/merit_qvh/__init__.py",
+      "destination": "src/merit_qvh/__init__.py",
+      "source_sha256": "31f6885b24678cf1a8e28eb324553f18d92aa25e57880871b77685441ad4fbeb",
+      "publication_sha256": "31f6885b24678cf1a8e28eb324553f18d92aa25e57880871b77685441ad4fbeb",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:src/merit_qvh/cli.py",
+      "destination": "src/merit_qvh/cli.py",
+      "source_sha256": "6d5d01b819dd0ad2b25d96b96a4a9426c7e92749b613ca7f1ba52040a97998b1",
+      "publication_sha256": "6d5d01b819dd0ad2b25d96b96a4a9426c7e92749b613ca7f1ba52040a97998b1",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:src/merit_qvh/client.py",
+      "destination": "src/merit_qvh/client.py",
+      "source_sha256": "db21641efd72395d8edaf3bc2556ab839144e9838649c09e3246af44519376cd",
+      "publication_sha256": "db21641efd72395d8edaf3bc2556ab839144e9838649c09e3246af44519376cd",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:src/merit_qvh/core.py",
+      "destination": "src/merit_qvh/core.py",
+      "source_sha256": "9a40df641a6335466bb3cf82fadabd20f2ccc268d8acccfd42f75d620a4172aa",
+      "publication_sha256": "9a40df641a6335466bb3cf82fadabd20f2ccc268d8acccfd42f75d620a4172aa",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:src/merit_qvh/embedding.py",
+      "destination": "src/merit_qvh/embedding.py",
+      "source_sha256": "c03728ef60a3460b3c9c72e4f40d89bd72ad3137a2c25fd9ca14dfca033c3ffc",
+      "publication_sha256": "c03728ef60a3460b3c9c72e4f40d89bd72ad3137a2c25fd9ca14dfca033c3ffc",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:src/merit_qvh/media.py",
+      "destination": "src/merit_qvh/media.py",
+      "source_sha256": "294a37ba277e2ab9e7218701b94414cc18ea7ff894273d10743a17f478d8a3f2",
+      "publication_sha256": "294a37ba277e2ab9e7218701b94414cc18ea7ff894273d10743a17f478d8a3f2",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:src/merit_qvh/pipeline.py",
+      "destination": "src/merit_qvh/pipeline.py",
+      "source_sha256": "91e996c25a0ed06a1f5c8666d153fab5f25e20637b8d531f228cabad69f4bc2d",
+      "publication_sha256": "91e996c25a0ed06a1f5c8666d153fab5f25e20637b8d531f228cabad69f4bc2d",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:src/merit_qvh/prompts.py",
+      "destination": "src/merit_qvh/prompts.py",
+      "source_sha256": "eb7d65cef9c41a2ced96d04ad6b8f5698ba0ea6da8dcf232ad3b4055ba6fd3ff",
+      "publication_sha256": "eb7d65cef9c41a2ced96d04ad6b8f5698ba0ea6da8dcf232ad3b4055ba6fd3ff",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:tests/test_automation.py",
+      "destination": "tests/test_automation.py",
+      "source_sha256": "111449d275a421c1610187dbb23223f51847cc3e7a7333a7247880a9b88770fa",
+      "publication_sha256": "111449d275a421c1610187dbb23223f51847cc3e7a7333a7247880a9b88770fa",
+      "publication_changes": "unchanged"
+    },
+    {
+      "source": "MERIT:tests/test_dataset_downloads.py",
+      "destination": "tests/test_dataset_downloads.py",
+      "source_sha256": "e2710265acba75a8e6d0ff91fda04cd6e60afa045c16ae0a1d16faca88b062ca",
+      "publication_changes": "unchanged",
+      "publication_sha256": "e2710265acba75a8e6d0ff91fda04cd6e60afa045c16ae0a1d16faca88b062ca"
+    },
+    {
+      "source": "MERIT:tests/test_hd_adapter.py",
+      "destination": "tests/test_hd_adapter.py",
+      "source_sha256": "88fdf00d447c0f2541b2f66e0266db802ee6265cffe00b232815e58c201a7c46",
+      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "publication_sha256": "4a3bee1495c8df5e2bc5855c1b643a04905c3dbd2ebfaf3523dfcbaafaec27bf"
+    },
+    {
+      "source": "MERIT:tests/test_highlight_evidence.py",
+      "destination": "tests/test_highlight_evidence.py",
+      "source_sha256": "ae88ab916c46e317d5d916e6dda112a6cb091c1804cca0286877b796bdd738c3",
+      "publication_changes": "unchanged",
+      "publication_sha256": "ae88ab916c46e317d5d916e6dda112a6cb091c1804cca0286877b796bdd738c3"
+    },
+    {
+      "source": "MERIT:tests/test_highlight_granularity.py",
+      "destination": "tests/test_highlight_granularity.py",
+      "source_sha256": "0ad2bff88804bac81ad59b28a38345c45c1a455b4c7ac3c9e1d765ae25afdef6",
+      "publication_changes": "unchanged",
+      "publication_sha256": "0ad2bff88804bac81ad59b28a38345c45c1a455b4c7ac3c9e1d765ae25afdef6"
+    },
+    {
+      "source": "MERIT:tests/test_highlight_memory_ablation.py",
+      "destination": "tests/test_highlight_memory_ablation.py",
+      "source_sha256": "a914b8a7d10b7f4cc141e88bea894f5595577d2004c0e968dd92eaadc0810d4d",
+      "publication_changes": "unchanged",
+      "publication_sha256": "a914b8a7d10b7f4cc141e88bea894f5595577d2004c0e968dd92eaadc0810d4d"
+    },
+    {
+      "source": "MERIT:tests/test_highlight_memory_only.py",
+      "destination": "tests/test_highlight_memory_only.py",
+      "source_sha256": "b0f0a5ae755fafcb4d058aa8c6e8c74cd73d8a3b4f57531064356122d6067f51",
+      "publication_changes": "unchanged",
+      "publication_sha256": "b0f0a5ae755fafcb4d058aa8c6e8c74cd73d8a3b4f57531064356122d6067f51"
+    },
+    {
+      "source": "MERIT:tests/test_highlight_memory_reader.py",
+      "destination": "tests/test_highlight_memory_reader.py",
+      "source_sha256": "6250e83ff5cc20a28fe469cfd8a726708f5227bcbb12611b0f74255ed58a7ccd",
+      "publication_changes": "unchanged",
+      "publication_sha256": "6250e83ff5cc20a28fe469cfd8a726708f5227bcbb12611b0f74255ed58a7ccd"
+    },
+    {
+      "source": "MERIT:tests/test_highlight_memory_repair.py",
+      "destination": "tests/test_highlight_memory_repair.py",
+      "source_sha256": "2ee20a8da4df75447a9cfe5ca72bb07e07866e04496d43e71e602dbad9c5a913",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2ee20a8da4df75447a9cfe5ca72bb07e07866e04496d43e71e602dbad9c5a913"
+    },
+    {
+      "source": "MERIT:tests/test_highlight_pilot.py",
+      "destination": "tests/test_highlight_pilot.py",
+      "source_sha256": "2a1c259c8021e05631d0ad235f202c90ae177aa973e38071618137c7f803f02f",
+      "publication_changes": "unchanged",
+      "publication_sha256": "2a1c259c8021e05631d0ad235f202c90ae177aa973e38071618137c7f803f02f"
+    },
+    {
+      "source": "MERIT:tests/test_mrhisum_retries.py",
+      "destination": "tests/test_mrhisum_retries.py",
+      "source_sha256": "0944685b26d099f3270fdbf1c8c370587059950dff339e6fb184a477e20f1ca6",
+      "publication_changes": "unchanged",
+      "publication_sha256": "0944685b26d099f3270fdbf1c8c370587059950dff339e6fb184a477e20f1ca6"
+    },
+    {
+      "source": "MERIT:tests/test_protocol.py",
+      "destination": "tests/test_protocol.py",
+      "source_sha256": "29e5b8d8fa421f1ad29f64de76869f4396947c7f6d570d8d6464b20996b5c55c",
+      "publication_sha256": "29e5b8d8fa421f1ad29f64de76869f4396947c7f6d570d8d6464b20996b5c55c",
+      "publication_changes": "unchanged"
+    }
+  ],
+  "publication_only": [
+    {
+      "destination": ".gitattributes",
+      "publication_sha256": "41cdbfbe95d7443979d9cf6b049cb53e7485d490fa2d72328f5e09d6718073f0"
+    },
+    {
+      "destination": ".gitignore",
+      "publication_sha256": "bc2d3f3c774b2bf06c8fcb1ac6ee57d27253f5da52f43bf3957dfa3465deb43c"
+    },
+    {
+      "destination": ".gitmodules",
+      "publication_sha256": "0a8ff46774ff770d270ae320ad869b19073e6d23ed1844791dafaface1704af5"
+    },
+    {
+      "destination": "baselines/zeroshot/scripts/prepare_pair_plan.py",
+      "publication_sha256": "19711bdb8ae0e813f7e6dc3f19964e703d66972a2e0024853fe49da9ab3dc3fc"
+    },
+    {
+      "destination": "baselines/zeroshot/scripts/prepare_reze_inputs.py",
+      "publication_sha256": "f018a7ed2f1d7e80e625b2ea89986655d45773296b933c17726872c8012739da"
+    },
+    {
+      "destination": "baselines/zeroshot/tests/test_publication_inputs.py",
+      "publication_sha256": "8d97596eb5129feb87c1177a7862c4d6c09e958d8dfb6149e9b67f8b6bf2c844"
+    },
+    {
+      "destination": "configs/paths.example.sh",
+      "publication_sha256": "c4475e4b1e3ca6b152c52c12d3d59b9b351b4bcf336a11da1470b52ef4ce7be9"
+    },
+    {
+      "destination": "docs/reproduction_index.md",
+      "publication_sha256": "9b0c3019dd80e0acf912440e06324fc09f5f94d226c8d01974824ac1b21a9612"
+    },
+    {
+      "destination": "requirements-reproduction.txt",
+      "publication_sha256": "0ec3dea9b922e033301c28ddc89eb4ce21808ab9674d11bc339149b449295142"
+    },
+    {
+      "destination": "scripts/materialize_config.py",
+      "publication_sha256": "a153df80729754bea9dab1aa4c8adfb8b4a66abe368c6290027979be87242ad1"
+    },
+    {
+      "destination": "scripts/verify_publication.py",
+      "publication_sha256": "6a335c89dafc915b6ae6ea99b76c3402de65762e441412705f55722b7ebdd0b7"
+    },
+    {
+      "destination": "tests/test_publication_config.py",
+      "publication_sha256": "00afc67706eebe48fac515b6ef40eacc54a730202a72dbfd37931b8ab7fe77f7"
+    }
+  ],
+  "submodules": {
+    "baselines/zeroshot/third_party/CLIP": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+    "baselines/zeroshot/third_party/VTG-GPT": "9d6606140edb36c89ea5ce96a0dc5e50361d108a",
+    "third_party/MR.HiSum": "aeb667f71239887034c2974062a341d312762867",
+    "third_party/merit": "6edea6e1ea55af0f6d2e32c46ac170699e955993",
+    "third_party/moment_detr": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca"
+  },
+  "validation": {
+    "cpu_tests_passed": 280,
+    "cpu_tests_skipped_external_inputs": 12,
+    "cli_help_entrypoints": 25,
+    "gpu_inference_started": false,
+    "existing_predictions_changed": false
+  }
+}

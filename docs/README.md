@@ -2,6 +2,9 @@
 
 更新日期：2026-10-22。以下结果、方案和详细报告均已纳入本仓库；原始运行产物的发布范围以各报告说明为准。
 
+- [实验实现与复现入口](reproduction_index.md)：代码、配置、数据条件、测试与结果对应表。
+- [仓库代码补齐报告](repository_completion_2026-10-22.md)：新增实现、部署修复、验证结果和发布边界。
+
 - [实验结果汇总报告](experimental_results_report_2026-10-22.md)：完整实验、开发对照、跨数据集结果、成本和适配分析。
 - [会议纪要后的推进计划](next_steps_after_meeting_2026-10-22.md)：候选覆盖、同预算定向补证、长视频粗到细及模块消融，新实验尚未启动。
 - [报告同步发布约定](report_publication_workflow.md)：以后每次推送包含新增或修改的报告、方案和索引；[来源及公开文件哈希](report_publication_manifest.json)记录本次覆盖范围。

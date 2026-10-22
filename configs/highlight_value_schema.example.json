@@ -1,0 +1,26 @@
+{
+  "status": "user_named_four_cues_working_definitions_not_frozen",
+  "note": "The user supplied event cue, emotion cue, novelty cue and importance cue. Earlier discussion mentioned five types; no fifth type is inferred. Definitions below are proposed operational meanings. Cue evidence is query-independent; final highlight value is query-dependent. Unknown and inapplicable observations use null levels.",
+  "values": [
+    {
+      "id": "event_cue",
+      "definition": "Visible evidence of what happens: the subject, action, event phase, state transition and observable outcome. Temporal order alone does not prove a causal chain.",
+      "visible_cues": "Pass, shot and visible goal contact; action onset, progression and completion; before/after states. Cite original frames for each observed event; unseen outcomes remain unknown."
+    },
+    {
+      "id": "emotion_cue",
+      "definition": "Observable expression and individual or group reaction. Describe visible behavior without asserting an internal emotional state or inferring unheard audio.",
+      "visible_cues": "Resolvable facial change, arm/body movement, reaction duration and visibly reacting participants. Compare viewpoint and visibility; camera scale or motion alone is not reaction intensity."
+    },
+    {
+      "id": "novelty_cue",
+      "definition": "A distinctive change or deviation relative to an explicitly observed reference in this video. Without an adequate reference, novelty is unknown; a single unusual-looking image cannot establish rarity.",
+      "visible_cues": "A supported change from an earlier routine, an observed reversal or a new action relative to cited prior events. Preserve reference event IDs and times when context support is integrated."
+    },
+    {
+      "id": "importance_cue",
+      "definition": "Context-supported significance for an event's progress, goal or outcome. Store the supporting state/outcome evidence in memory; assess importance for the user's query during retrieval and scoring, separately from mere relevance.",
+      "visible_cues": "Observed goal completion, a supported turning point, an outcome-changing action or a necessary explanatory step. Missing goal/outcome context stays unknown; dramatic reactions alone do not prove importance."
+    }
+  ]
+}

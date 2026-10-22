@@ -40,7 +40,7 @@ D0 将视频划分为 2 秒网格，每格读取一个接近中点的真实帧�
 
 H1 先取得 D0，再用 MERIT 检索选出 10 秒锚点，将相交的 2 秒格重新评分。
 重评分仍使用 D0 的相同 JPEG；MERIT 主要决定选区，局部评分器不读取
-之前的分数或 captions。见 实现（本地资料：`../experiments/hd_adapter/pipeline.py`）。
+之前的分数或 captions。[见 实现](../experiments/hd_adapter/pipeline.py)。
 
 原 M0 的最终评分会读取全视频的分段文字描述和检索区间图像。这是文字层面的
 全局上下文，不等于视觉模型一次看完整条原视频后统一确定所有片段的重要程度。
@@ -143,7 +143,7 @@ v2 支持当前窗口与前两个窗口间的 `before / possible_link`，要求�
 
 ## 复查入口
 
-- 实验入口与恢复命令（本地资料：`../experiments/highlight_evidence/README.md`）
+[- 实验入口与恢复命令](../experiments/highlight_evidence/README.md)
 - [方法新增内容](merit_method_additions_2026-10-16.md)
 - [完整研究方案](highlight_evidence_research_2026-10-16.md)
-- 只读诊断脚本（本地资料：`../scripts/analyze_highlight_pilot.py`）
+[- 只读诊断脚本](../scripts/analyze_highlight_pilot.py)

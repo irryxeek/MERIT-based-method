@@ -4,3 +4,12 @@
 [submodule "third_party/moment_detr"]
 	path = third_party/moment_detr
 	url = https://github.com/jayleicn/moment_detr.git
+[submodule "baseline-clip"]
+	path = baselines/zeroshot/third_party/CLIP
+	url = https://github.com/openai/CLIP.git
+[submodule "baseline-vtg-gpt"]
+	path = baselines/zeroshot/third_party/VTG-GPT
+	url = https://github.com/YoucanBaby/VTG-GPT.git
+[submodule "mrhisum"]
+	path = third_party/MR.HiSum
+	url = https://github.com/MRHiSum/MR.HiSum.git

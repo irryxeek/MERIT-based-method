@@ -283,7 +283,7 @@ TVSum、MR.HiSum、QFVS 的 No 输出比例分别约 93.19%、91.30%、99.54%，
 | TVSum 最终机器结果 | evaluation.json（本地资料：`$ZEROSHOT_ARTIFACT_ROOT/reze_tvsum_full50_v1/evaluation.json`）、[执行报告](reze_tvsum_execution_2026-10-22.md) |
 | MR.HiSum 最终机器结果 | evaluation.json（本地资料：`$ZEROSHOT_ARTIFACT_ROOT/reze_mrhisum_full1888_v2/evaluation.json`）、[执行报告](reze_mrhisum_full_execution_2026-10-21.md) |
 | QFVS 最终机器结果与对照 | evaluation.json（本地资料：`$ZEROSHOT_ARTIFACT_ROOT/reze_qfvs_pilot4_v1/evaluation.json`）、[诊断报告](reze_qfvs_analysis_2026-10-20.md) |
-| TVSum / MR.HiSum 完成核验及摘要诊断 | analysis.json（本地资料：`$ZEROSHOT_ARTIFACT_ROOT/analyses/reze_transfer_2026-10-22/analysis.json`）、分析脚本（本地资料：`../scripts/analyze_reze_transfer_results.py`） |
+| TVSum / MR.HiSum 完成核验及摘要诊断 | analysis.json（本地资料：`$ZEROSHOT_ARTIFACT_ROOT/analyses/reze_transfer_2026-10-22/analysis.json`）、[分析脚本](../scripts/analyze_reze_transfer_results.py) |
 | 更详细的原因分析与适配依据 | [跨数据集分析](reze_cross_dataset_results_analysis_2026-10-22.md) |
 | 无成绩项目的状态 | SVHighlights 状态指针（本地资料：`reze_svhighlights_current_run.local.json`）、[TVHighlights 数据核查](tvhighlights_download_2026-10-21.md) |
 

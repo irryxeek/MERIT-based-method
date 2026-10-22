@@ -64,7 +64,7 @@
 
 ## 文件和查看命令
 
-- 实现：`$ZEROSHOT_ROOT/experiments/reze_tvsum/`，详见实现说明（本地资料：`$ZEROSHOT_ROOT/experiments/reze_tvsum/README.md`）。
+- 实现：`$ZEROSHOT_ROOT/experiments/reze_tvsum/`，[详见实现说明](../baselines/zeroshot/experiments/reze_tvsum/README.md)。
 - 运行：`$ZEROSHOT_ARTIFACT_ROOT/reze_tvsum_full50_v1/`。
 - 本机指针：reze_tvsum_current_run.local.json（本地资料：`reze_tvsum_current_run.local.json`）。
 - 自动产物：`evaluation.json`、`per_video_metrics.jsonl`、`hd_predictions.jsonl`、`REPORT.md`、`complete.json`。

@@ -1,0 +1,141 @@
+{
+  "experiment": "merit_hd_dense_local_v2",
+  "seed": 42,
+  "artifact_root": "${MERIT_ARTIFACT_ROOT}",
+  "annotation_root": "${QVH_EVALUATOR_ROOT}/data",
+  "video_root": "${REPRO_DATA_ROOT}/QVHighlights/videos_full/videos",
+  "evaluator_root": "${QVH_EVALUATOR_ROOT}",
+  "evaluator_commit": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca",
+  "upstream_commit": "6edea6e1ea55af0f6d2e32c46ac170699e955993",
+  "vlm": {
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "weight_path": "${REZE_MODEL_PATH}",
+    "dtype": "bfloat16",
+    "temperature": 0,
+    "timeout_seconds": 600,
+    "transport_retries": 1,
+    "format_retries": 1
+  },
+  "embedding": {
+    "model": "Qwen/Qwen3-Embedding-4B",
+    "revision": "5cf2132abc99cad020ac570b19d031efec650f2b",
+    "weight_path": "${MERIT_ARTIFACT_ROOT}/models/Qwen3-Embedding-4B",
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "batch_size": 16,
+    "max_seq_length": 512,
+    "cpu_threads": 8,
+    "instruction_prefix": null
+  },
+  "memory": {
+    "clip_seconds": 10,
+    "fps": 1,
+    "sample_offset_seconds": 0.5,
+    "image_longest_edge": 448,
+    "jpeg_quality": 90,
+    "key_types": [
+      "event",
+      "object",
+      "summary"
+    ],
+    "caption_max_tokens": 384,
+    "keys_max_tokens": 256
+  },
+  "retrieval": {
+    "top_k": 3,
+    "max_rounds": 3,
+    "neighbor_radius": 1,
+    "filter_max_tokens": 768,
+    "decision_max_tokens": 256
+  },
+  "scoring": {
+    "clip_seconds": 2,
+    "batch_clips": 15,
+    "minimum": 0,
+    "maximum": 100,
+    "max_tokens": 512,
+    "failure_policy": "uniform_zero_full_query_with_explicit_failure_status"
+  },
+  "smoke": {
+    "unique_videos": 5,
+    "source_split": "train"
+  },
+  "full": {
+    "source_split": "val",
+    "expected_queries": 1550,
+    "expected_videos": 1519
+  },
+  "hd": {
+    "data_root": "${MERIT_ARTIFACT_ROOT}/hd_v2/data",
+    "runs_root": "${MERIT_ARTIFACT_ROOT}/hd_v2/runs",
+    "exclusion_manifests": [
+      "${MERIT_ARTIFACT_ROOT}/runs/merit_qvh_main_v1-aa9cced17417/manifests/smoke.jsonl",
+      "${MERIT_ARTIFACT_ROOT}/runs/merit_qvh_main_v1-15f5f6e4ee00/manifests/smoke.jsonl",
+      "${MERIT_ARTIFACT_ROOT}/runs/merit_qvh_main_v1-25ea8063ec26/manifests/smoke.jsonl",
+      "${MERIT_ARTIFACT_ROOT}/runs/merit_qvh_main_v1-0cc38c85ab28/manifests/smoke.jsonl",
+      "${MERIT_ARTIFACT_ROOT}/runs/merit_qvh_main_v1-b0f0709b97e8/manifests/smoke.jsonl",
+      "${VIDEOARM_ARTIFACT_ROOT}/reproduction/qvhighlights/manifests/dev50.jsonl",
+      "${VIDEOARM_ARTIFACT_ROOT}/reproduction/qvhighlights/manifests/smoke8.jsonl",
+      "${MERIT_ROOT}/comparisons/qvhighlights/2026-10-15_194620/longvt/compact_v1/manifests/pilot.json",
+      "${MERIT_ROOT}/comparisons/qvhighlights/2026-10-15_194620/longvt/compact_v1/manifests/smoke.json",
+      "${MERIT_ROOT}/comparisons/qvhighlights/2026-10-15_194620/longvt/compact_v1/manifests/pre_smoke_1.json",
+      "${MERIT_ROOT}/comparisons/qvhighlights/2026-10-15_194620/longvt/groundvts_v2b/manifests/pilot_dev.json",
+      "${MERIT_ROOT}/comparisons/qvhighlights/2026-10-15_194620/longvt/groundvts_v2b/manifests/smoke.json",
+      "${LONGVT_ROOT}/reproduction/qvhighlights/lora_sft/data/dev.jsonl"
+    ],
+    "workers": 4,
+    "image_longest_edge": 672,
+    "jpeg_quality": 90,
+    "batch_clips": 24,
+    "max_tokens": 2048,
+    "minimum": 0,
+    "maximum": 4,
+    "mapping": "union of 2s bins intersecting selected 10s anchors, ascending, once each",
+    "local_visual_evidence": "same midpoint JPEG bytes as initialization",
+    "failure_policy": "per-group uniform zero full query; retain terminal failed requests",
+    "max_queries": 100,
+    "confirm_queries_reserved": 100,
+    "automatic_confirmation": false,
+    "seed": 42,
+    "server": {
+      "vllm": "0.12.0",
+      "port": 8037,
+      "tensor_parallel_size": 2,
+      "dtype": "bfloat16",
+      "max_model_len": 32768,
+      "max_num_seqs": 4,
+      "gpu_memory_utilization": 0.56,
+      "limit_mm_per_prompt": {
+        "image": {
+          "count": 90,
+          "width": 448,
+          "height": 448
+        },
+        "video": 0
+      },
+      "mm_processor_kwargs": {
+        "size": {
+          "shortest_edge": 65536,
+          "longest_edge": 1048576
+        }
+      },
+      "gpu_uuids": [
+        "<GPU_UUID>",
+        "<GPU_UUID>"
+      ]
+    },
+    "gate": {
+      "VG_mAP_gain_pp": 1,
+      "VG_Hit1_max_loss_pp": 1,
+      "failure_rate_no_worse": true,
+      "statistical_significance_claim": false
+    },
+    "automation": {
+      "max_wall_seconds": 21600,
+      "max_worker_restarts": 2,
+      "stall_seconds": 1800
+    },
+    "preflight_report": "${MERIT_ARTIFACT_ROOT}/hd_v2/preflight_v1/benchmark.json"
+  }
+}

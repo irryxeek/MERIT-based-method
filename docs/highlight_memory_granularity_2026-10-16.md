@@ -133,7 +133,7 @@ C10 是共享新结构下的匹配控制。原 E1 允许自由划分、最多四
 
 ## 可追溯位置
 
-- 实现：granularity.py（本地资料：`../experiments/highlight_evidence/granularity.py`）。
+- 实现：[granularity.py](../experiments/highlight_evidence/granularity.py)。
 - CPU 验证：完整 83 个测试通过，新增的粒度控制测试 8 个；相关 Ruff 检查通过。
 - 冻结目录：`$MERIT_ARTIFACT_ROOT/granularity_v1/runs/matched_v1_20261016`。
 - 协议 ID：`f05fe4159ec338e8f2eddfe18d45968c9b739a23034ba78903b283383e2665cc`。
@@ -143,7 +143,7 @@ C10 是共享新结构下的匹配控制。原 E1 允许自由划分、最多四
 
 ## 实际请求审计与结论边界
 
-审计脚本（本地资料：`../scripts/audit_highlight_granularity.py`） 已核对实际请求：36 对共同发出的
+[审计脚本](../scripts/audit_highlight_granularity.py) 已核对实际请求：36 对共同发出的
 建库请求，在移除观察单元划分及相应示例后，其余提示词、模型参数、图片、时间戳和
 前文完全相同；6 对共同成功的 E1 请求仅提供给评分器的记忆内容不同。所有请求使用预先冻结
 的图片，未增加原视频帧；未选中片段的分数未变化。253 个原始输入记录哈希保持一致。

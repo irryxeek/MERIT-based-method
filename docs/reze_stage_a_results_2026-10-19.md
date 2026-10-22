@@ -83,6 +83,6 @@ P_pair 的 1,000 个无序比较中，535 个未达到双向支持门槛；没�
 - 机器可读指标与门槛（本地资料：`$ZEROSHOT_ROOT/results/reze_evidence_v1/stage_a/evaluation.json`）
 - 逐查询结果（本地资料：`$ZEROSHOT_ROOT/results/reze_evidence_v1/stage_a/per_query.jsonl`）
 - 完整性与成本审计（本地资料：`$ZEROSHOT_ROOT/results/reze_evidence_v1/stage_a/execution_accounting.json`）
-- 实现与恢复说明（本地资料：`$ZEROSHOT_ROOT/experiments/reze_evidence/README.md`）
+[- 实现与恢复说明](../baselines/zeroshot/experiments/reze_evidence/README.md)
 - 原始记录：`$ZEROSHOT_ARTIFACT_ROOT/reze_evidence_v1/runs/`。
   每个运行保留源码快照、输入与模型绑定、原始 top20、逐请求提示、帧哈希和断点记录。

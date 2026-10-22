@@ -1,2 +1,6 @@
 # Preserve frozen archive bytes and their SHA-256 across checkout platforms.
 comparisons/qvhighlights/** -text -whitespace
+# Preserve the exact imported evaluator/license bytes, including upstream whitespace.
+baselines/zeroshot/experiments/*/vendor/*.LICENSE -text -whitespace
+baselines/zeroshot/experiments/reze_mrhisum/vendor/model/** -text -whitespace
+baselines/zeroshot/experiments/reze_qfvs/vendor/univtg_config.py -text -whitespace

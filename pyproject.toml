@@ -9,11 +9,16 @@ description = "Frozen-model MERIT adaptation for QVHighlights"
 requires-python = ">=3.10"
 dependencies = ["numpy", "pillow", "decord", "torch", "transformers", "sentence-transformers"]
 
+[project.optional-dependencies]
+hd = ["av"]
+download = ["requests", "scipy", "h5py", "yt-dlp[default]==2026.8.19"]
+dev = ["pytest", "ruff"]
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["src", "experiments"]
 testpaths = ["tests"]
 
 [tool.ruff]

@@ -84,8 +84,8 @@ Hit@1 均为 26.32。全 20 条中 R1 与 D0 只差 0.52 点，部分受益于�
 
 ## 实现与位置
 
-- memory_reader.py（本地资料：`../experiments/highlight_evidence/memory_reader.py`）：固定元数据评分、完整输入的分组输出、阶段门槛、原始响应重放审计。
-- 回归测试（本地资料：`../tests/test_highlight_memory_reader.py`）：原输入不变、标签/D0 隔离、完整覆盖、错误引用、解码语法、失败回退、阶段停止。
+[- memory_reader.py](../experiments/highlight_evidence/memory_reader.py)：固定元数据评分、完整输入的分组输出、阶段门槛、原始响应重放审计。
+[- 回归测试](../tests/test_highlight_memory_reader.py)：原输入不变、标签/D0 隔离、完整覆盖、错误引用、解码语法、失败回退、阶段停止。
 - 运行目录：`$MERIT_ARTIFACT_ROOT/memory_reader_v1/runs/full20_20261017`。
 - 协议：`a65dc3b560ce54701f05d9c5d57c74bd0f80100185a711b9a2239e7ed3a9d330`。
 - 工作服务：`merit-memory-reader-v1-20261017.service`；模型服务：`merit-memory-reader-model-v1-20261017.service`。

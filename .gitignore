@@ -22,6 +22,9 @@ htmlcov/
 id_rsa*
 id_ed25519*
 configs/*.local.json
+configs/*.local.sh
+configs/reze_evidence_plan_v1.json
+configs/reze_evidence_fullval_v1.json
 configs/automation_v1.json
 scripts/merit-qvh-supervisor.service
 
@@ -43,6 +46,14 @@ scripts/merit-qvh-supervisor.service
 *.log
 *.pid
 .DS_Store
+
+# Recreated on each machine; example templates and pinned revisions are tracked.
+/baselines/zeroshot/manifests/*.json
+/baselines/zeroshot/manifests/*.jsonl
+!/baselines/zeroshot/manifests/*.example.json
+/baselines/zeroshot/configs/protocol_v1.json
+/baselines/zeroshot/results/
+/baselines/zeroshot/artifacts/
 
 # Reviewed historical logs belong to the frozen comparison archive.
 !/comparisons/qvhighlights/**/*.log

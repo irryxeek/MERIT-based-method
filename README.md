@@ -1,8 +1,18 @@
-# MERIT 在 QVHighlights 上的高光检测适配
+# MERIT / REZE 视频高光检测实验
 
 本项目从 MERIT 的三键记忆检索、时序邻域过滤和完整时间轴高光评分出发，保存 QVHighlights 适配实验及后续零样本对照。原论文评估视频问答，**MERIT 原适配并非复现论文已有的 QVHighlights 分数**。下方运行命令对应原 MERIT 主实验；REZE 最新结果单独归档。
 
 **发布约定：以后每次推送更新，一并同步新增或修改的实验报告、结果分析、研究方案和文档索引。** 详见[报告同步发布约定](docs/report_publication_workflow.md)和[本次同步清单](docs/report_publication_manifest.json)。
+
+## 实验代码与复现入口（2026-10-22 补齐）
+
+[统一复现索引](docs/reproduction_index.md) 对应 MERIT 适配与记忆实验、REZE QVHighlights 复评及跨数据集实现；[代码补齐报告](docs/repository_completion_2026-10-22.md)记录部署修改、280 项通过的 CPU 测试及 12 项依赖原媒体或 tokenizer 的跳过。新源码入口位于 `experiments/` 和 `baselines/zeroshot/`，历史结果仍在 `comparisons/`。
+
+- [MERIT 密集初始化与局部复评](experiments/hd_adapter/README.md)、[高光记忆与证据实验](experiments/highlight_evidence/README.md)。
+- [CLIP / VTG-GPT / REZE 零样本工作区](baselines/zeroshot/README.md)，包含 QFVS、MR.HiSum、TVSum、SVHighlights。
+- [路径配置](configs/paths.example.sh)、[代码来源清单](docs/code_publication_manifest.json)、[发布完整性检查](scripts/verify_publication.py)。
+
+本轮未运行新的 GPU 实验；SVHighlights 部署修复尚未实卡复测，QFVS 全量和 TVHighlights 仍未完成。历史父运行缓存的要求见复现索引。
 
 ## 最新实验结果（2026-10-22）
 
@@ -57,7 +67,7 @@ cd MERIT-based-method
 git submodule update --init --recursive
 ```
 
-本仓库是原实验的发布副本，`src/`、Python 脚本和测试保持原样。配置路径改为仓库根目录下的示例布局；自动化配置和 systemd 单元提供模板。`AGENTS.md` 原样保留。
+本仓库保留原 MERIT 主实验的 `src/`，并补齐后续实验源码。新增发布入口调整了机器路径和部署参数，历史代码快照保留在 `comparisons/`。自动化配置和 systemd 单元提供模板；`AGENTS.md` 原样保留。
 
 - 视频自行准备到 `data/QVHighlights/videos/<vid>.mp4`。
 - 官方标注和评估器由 `third_party/moment_detr` 子模块提供。

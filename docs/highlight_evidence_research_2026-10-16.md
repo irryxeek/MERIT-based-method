@@ -66,7 +66,7 @@ R1 已完成 20 条，mAP/Hit@1 为 25.55/30.00，通过开发门槛而未执行
 
 ### 3.1 用户提供的四类 cue 与操作定义
 
-用户明确给出 **event cue、emotion cue、novelty cue、importance cue**。用这四类替换上一版助手提出的五类示例；见 cue 配置（本地资料：`../configs/highlight_value_schema.example.json`）。名称来自用户，下表为建议的操作定义，尚未冻结为实验协议。它们是可同时出现的证据维度，不是互斥的事件类别，也不是 QVHighlights 官方标注类型。
+用户明确给出 **event cue、emotion cue、novelty cue、importance cue**。[用这四类替换上一版助手提出的五类示例；见 cue 配置](../configs/highlight_value_schema.example.json)。名称来自用户，下表为建议的操作定义，尚未冻结为实验协议。它们是可同时出现的证据维度，不是互斥的事件类别，也不是 QVHighlights 官方标注类型。
 
 | Cue / 配置 ID | 主要问题 | Memory 保存什么 | 缺证据时查什么 |
 | --- | --- | --- | --- |
@@ -166,7 +166,7 @@ flowchart LR
 
 本节以下保留初版原型完成时的记录。随后已接通四类 cue 的跨事件参照、前两个窗口的证据链接、query 检查项、候选检索、密集评分及 20 条工程 runner，并启动真实模型测试；最新状态以[小规模测试报告](highlight_evidence_pilot_2026-10-16.md)为准。跨镜头实体关联与完整事件聚合仍未实现。
 
-独立实现位于 experiments/highlight_evidence（本地资料：`../experiments/highlight_evidence/README.md`）：
+[独立实现位于 experiments/highlight_evidence](../experiments/highlight_evidence/README.md)：
 
 - 可配置 value schema、视觉 memory 提取接口、事件边/引用校验及价值检索文本导出。
 - 明确的 query 检查项、时序覆盖检查、原 PTS 新帧采样、累计预算控制器。
@@ -180,4 +180,4 @@ flowchart LR
 
 四类 cue 的名称及建议操作定义已写入配置，通用原型无需把维度数量写死。尚待正式实现/集成：按四类 cue 编译 query→criterion、语义/价值索引融合、novelty/importance 的跨事件参照约束、跨窗口实体关联与事件链、候选构造、共同标尺的最终密集评分、新协议冻结和完整 runner。现有函数提供这些环节的接口和约束；当前不应称为端到端已验证方法。
 
-初版离线诊断入口为 [scripts/analyze_hd_adapter.py（本地资料：`../scripts/analyze_hd_adapter.py`）。原始查询/预测/报告输入 SHA-256 与评估器 SHA-256 已记录，诊断前后均核验输入未变。该初版诊断阶段未启动新的 GPU 推理；后续 20 条工程测试及其失败记录见文首链接，仍未运行 confirmation 或全量 val。
+初版离线诊断入口为 [[scripts/analyze_hd_adapter.py](../scripts/analyze_hd_adapter.py)。原始查询/预测/报告输入 SHA-256 与评估器 SHA-256 已记录，诊断前后均核验输入未变。该初版诊断阶段未启动新的 GPU 推理；后续 20 条工程测试及其失败记录见文首链接，仍未运行 confirmation 或全量 val。

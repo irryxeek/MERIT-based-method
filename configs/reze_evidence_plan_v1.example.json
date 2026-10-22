@@ -1,0 +1,180 @@
+{
+  "plan_id": "reze_evidence_v1",
+  "status": "planning_specification_not_an_implemented_runner_config",
+  "date": "2026-10-19",
+  "task": "QVHighlights query-dependent highlight detection",
+  "execution_started": false,
+  "document": "docs/reze_execution_plan_2026-10-19.md",
+  "paths": {
+    "implementation_root_planned": "${ZEROSHOT_ROOT}/experiments/reze_evidence",
+    "artifact_root_planned": "${ZEROSHOT_ARTIFACT_ROOT}/reze_evidence_v1",
+    "small_archive_planned": "${ZEROSHOT_ROOT}/results/reze_evidence_v1",
+    "baseline_run": "${ZEROSHOT_ARTIFACT_ROOT}/runs/reze_val_v2",
+    "python": "${REPRO_PYTHON}",
+    "model": "${REZE_MODEL_PATH}"
+  },
+  "model": {
+    "name": "Qwen3-VL-8B-Instruct",
+    "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+    "dtype": "bfloat16",
+    "quantization": null,
+    "training": false,
+    "temperature": 0,
+    "seed": 0,
+    "tensor_parallel_size": 1,
+    "baseline_engine": "unchanged frozen REZE v2 engine",
+    "new_engine_status": "two-video and 12-frame-context profiles require engineering verification before freeze",
+    "new_engine_initial_max_model_len": 4096,
+    "new_engine_initial_max_num_seqs_pair": 4,
+    "new_engine_initial_max_num_seqs_context": 2,
+    "scoring_max_output_tokens": 1,
+    "scoring_logprobs": 20,
+    "required_tokens": {"Yes": 9454, "No": 2753},
+    "new_arm_missing_required_logprob": "invalid request; never silently set its preference to zero",
+    "allowed_token_restriction": false
+  },
+  "datasets": {
+    "engineering20": {
+      "path": "${MERIT_ARTIFACT_ROOT}/memory_reader_v1/runs/full20_20261017/data/manifests/pilot.jsonl",
+      "sha256": "1e489d8f9e3a716e55ca69afcb6ed581c75efd9a822501b847a2ab35821251a7",
+      "queries": 20,
+      "subset_of_explore100": true,
+      "extra_query_for_sustained21": 7462
+    },
+    "explore100": {
+      "path": "${MERIT_ARTIFACT_ROOT}/hd_v2/data/manifests/explore.jsonl",
+      "sha256": "3d9830ca80a3fcb23704a5adc8cfa01896df0d8bcdb06819f1bddcce07271530",
+      "queries": 100,
+      "source_videos": 100,
+      "annotation_duration_seconds": 14874,
+      "nominal_max_baseline_requests": 4962,
+      "two_second_bins": 7437
+    },
+    "confirm100": {
+      "path": "${MERIT_ARTIFACT_ROOT}/hd_v2/data/manifests/confirm.jsonl",
+      "sha256": "5e850ee65cb814791e1f27014245a212ce1d989cd0f6fe71282978859be624d5",
+      "queries": 100,
+      "source_videos": 100,
+      "annotation_duration_seconds": 14886,
+      "nominal_max_baseline_requests": 4964,
+      "two_second_bins": 7443,
+      "historical_use_audit_required": true
+    },
+    "explore_confirm_source_overlap": 0,
+    "validation": {
+      "queries": 1550,
+      "previously_examined": true,
+      "baseline_prediction_sha256": "af8efe26f9cd3966e5d3c6b306d87913af8f38f096035bf891df8fa864063452",
+      "label_sha256": "f668a1eaea156ec5315e14718999cea043a8cf948d3cafbd8e8d655318c3cd02"
+    },
+    "inference_fields": ["qid", "vid", "query", "duration", "video_path"],
+    "selection_and_bootstrap_seed": 42
+  },
+  "candidates": {
+    "count": 5,
+    "source": "frozen baseline complete 2-second scores",
+    "sort": "descending score, then ascending clip_id",
+    "event_nms": false,
+    "discard_all_no_queries": false,
+    "frame_source": "only already observed baseline frame indices before revisit",
+    "target_nominal_offsets_seconds": [0.0, 0.5, 1.0, 1.5],
+    "target_max_frames": 4,
+    "target_short_tail": "use available observed frames; native temporal padding is counted separately",
+    "new_candidate_admission": false
+  },
+  "ranking": {
+    "ordered_pairs": 20,
+    "absolute_score": "mean P(Yes for A) across the other four candidate contexts",
+    "pair_high_threshold": 0.6,
+    "pair_low_threshold": 0.4,
+    "pair_edge": "p_ij-p_ji if (p_ij>=0.6 and p_ji<=0.4) or the converse; otherwise zero",
+    "pair_rank_score": "sum of four antisymmetric edge values",
+    "tie_break": "original baseline score descending, then clip_id ascending",
+    "output": "permute the original five scores onto the new candidate order; other scores unchanged",
+    "epsilon_tie_breaking": false
+  },
+  "memory": {
+    "build_requests_per_query_max": 5,
+    "frame_offsets_from_target_start_seconds": [-4, -3, -2, -1, 0, 0.5, 1, 1.5, 2, 3, 4, 5],
+    "use_only_baseline_seen_frames": true,
+    "facts_per_candidate_max": 6,
+    "fact_words_max": 30,
+    "build_output_tokens_max": 512,
+    "schema_repair_generation": false,
+    "retrieved_facts_per_pair_max": 8,
+    "serialized_memory_tokens_per_request_max": 1024,
+    "frame_citations_required": true,
+    "query_given_to_fact_builder": false,
+    "selection_is_query_dependent": true,
+    "cues": ["event", "emotion", "novelty", "importance"],
+    "cue_numeric_sum": false,
+    "allowed_graph_edges": ["precedes", "observed_change_from", "reference_for"],
+    "causal_edges": false,
+    "unknown_handling": "omit unsupported criterion from scoring; retain an evidence gap"
+  },
+  "revisit": {
+    "planner_calls_per_query_max": 1,
+    "planner_output_tokens_max": 384,
+    "actions_per_query_max": 2,
+    "new_unique_frames_per_action_max": 12,
+    "observation_output_tokens_max": 512,
+    "action_types": ["dense_target_2s", "context_expand_10s", "reference_inspect_2s"],
+    "reference_target_domain": "one of the existing five candidates",
+    "uniform_control": "hash-ranked candidate centers, same action types and paired feasible frame counts",
+    "uniform_control_seed": 42,
+    "planner_shared_between_targeted_and_control": true,
+    "rescoring_calls_per_arm_max": 20,
+    "new_candidate_admission": false,
+    "generated_or_interpolated_frames": false
+  },
+  "stages": {
+    "A": {"arms": ["B0", "P_abs", "P_pair"], "explore_new_requests_max": 8962},
+    "B_conditional": {"arms": ["P_star_cached", "V_context", "M_flat", "M_graph"], "explore_new_requests_max": 6500},
+    "C_conditional": {"arms": ["M_star_cached", "R_uniform", "R_targeted"], "explore_new_requests_max": 4500},
+    "confirmation": {"max_selected_versions": 1, "include_matched_control_and_ancestors": true, "new_requests_max": 13964},
+    "full_validation_conditional": {
+      "reuse_frozen_B0": true,
+      "pair_selected_new_requests_max": 62000,
+      "memory_selected_new_requests_max": 100750,
+      "revisit_selected_new_requests_max": 139500
+    }
+  },
+  "gates": {
+    "A_min_mAP_gain_over_B0_pp": 1.0,
+    "A_pair_min_mAP_gain_over_absolute_to_keep_complexity_pp": 0.5,
+    "B_C_min_incremental_mAP_gain_pp": 0.5,
+    "max_Hit1_point_estimate_drop_pp": 1.0,
+    "max_new_arm_fallback_queries_per_100": 1,
+    "baseline_missing_prediction_policy": "stop the phase and retain all query identities",
+    "cold_total_token_ratio_max": {"A": 2.25, "B": 4.0, "C": 6.0},
+    "confirmation_min_mAP_gain_over_B0_pp": 1.0,
+    "confirmation_min_mAP_gain_over_matched_control_pp": 0.0,
+    "selection_after_confirmation": false,
+    "confidence_interval": "paired source-video cluster bootstrap, 10000 resamples, seed42; gates are not significance tests",
+    "stable_gain_claim": "full-val mAP gain >=1pp with CI lower bound >0; report Hit1 and costs separately"
+  },
+  "budgets": {
+    "engineering_additional_logical_requests_max": 2500,
+    "all_explore_phases_logical_requests_max": 19962,
+    "all_phases_including_full_max_logical_requests": 175926,
+    "attempt_budget_multiplier_including_transient_retries": 1.1,
+    "allocated_gpu_hours_max": {"engineering": 4, "explore": 6, "confirmation": 6, "full_validation": 24},
+    "stage_A_within_explore_gpu_hours_max": 2,
+    "note": "Caps, not measured runtimes; every arm records cold and cached incremental cost"
+  },
+  "automation": {
+    "preferred_physical_gpus": [4, 5, 6, 7],
+    "occupancy_and_uuid_check_before_launch": true,
+    "stop_unrelated_processes": false,
+    "worker_restarts_max": 2,
+    "transient_request_retry_max": 1,
+    "no_progress_timeout_seconds": 900,
+    "atomic_per_query_checkpoints": true,
+    "success_cache_key": "model+code+prompt+manifest+video+pixel+candidate+protocol hashes",
+    "semantic_or_format_failure_retry": false,
+    "new_arm_failure_fallback": "previous valid parent-arm scores, explicitly counted",
+    "gate_failure": "record rejection, stop adding the rejected module, retain strongest qualifying simpler arm",
+    "reboot_recovery_claim_requires_user_systemd_and_linger_audit": true,
+    "automatic_phase_execution_requires_later_user_instruction_to_execute_this_plan": true
+  }
+}

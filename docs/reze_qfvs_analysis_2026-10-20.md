@@ -81,7 +81,7 @@ QFVS 可以检验长视频中的语义覆盖、去重与跨查询记忆复用，
 - 原实验：`$ZEROSHOT_ARTIFACT_ROOT/reze_qfvs_pilot4_v1/`，原 `REPORT.md` 和预测未修改。
 - 新诊断：`$ZEROSHOT_ARTIFACT_ROOT/analyses/reze_qfvs_pilot4_2026-10-20/diagnostics.json`。
 - 视觉抽查：同目录 `visual_samples.json` 和 `P02_*.png`。
-- 分析脚本（本地资料：`../scripts/analyze_qfvs_pilot.py`）：固定随机种子，记录输入及代码哈希；批量随机评估使用等价的线性分配求解器，原预测、均匀对照及每个查询第一份随机对照共 12 例与冻结官方实现逐项核对，差异低于 `1e-10`。
+[- 分析脚本](../scripts/analyze_qfvs_pilot.py)：固定随机种子，记录输入及代码哈希；批量随机评估使用等价的线性分配求解器，原预测、均匀对照及每个查询第一份随机对照共 12 例与冻结官方实现逐项核对，差异低于 `1e-10`。
 - 原始文本标签与固定 `Tags.mat` 存在 3 个非查询概念的末尾片段标签差异，已记录；本次指标仍使用原冻结 MAT，四个查询涉及的概念列与文本标签完全一致。初始严格一致性检查的停止记录也保留。
 
 复查命令（输出文件已存在时拒绝覆盖）：

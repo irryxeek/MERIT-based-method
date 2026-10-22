@@ -105,12 +105,12 @@ C10 的四次补丁都针对缺乏上下文引用的 `importance_cue`，模型�
 
 ## 实现与验证
 
-- robust_memory.py（本地资料：`../experiments/highlight_evidence/robust_memory.py`）：结构、引用校验、字段补丁及 unknown 降级。
-- robust_client.py（本地资料：`../experiments/highlight_evidence/robust_client.py`）：受限重试、请求账本及中断后重放。
-- granularity.py（本地资料：`../experiments/highlight_evidence/granularity.py`）：`--robust` 新协议开关与窗口级回退；默认旧模式保留。
-- 回归测试（本地资料：`../tests/test_highlight_memory_repair.py`）：覆盖 161 字符 cue、错帧、非法引用、越权补丁、截断、终态失败缓存、断点重放和中间窗口失败。
-- 实际请求审计（本地资料：`../scripts/audit_highlight_granularity.py`）：核对输入图片、候选、前文、输出约束、评分范围与请求账本。
-- 前后对照分析（本地资料：`../scripts/analyze_highlight_memory_repair.py`）：完成率、修复与降级统计、成本和配对指标区间。
+[- robust_memory.py](../experiments/highlight_evidence/robust_memory.py)：结构、引用校验、字段补丁及 unknown 降级。
+[- robust_client.py](../experiments/highlight_evidence/robust_client.py)：受限重试、请求账本及中断后重放。
+[- granularity.py](../experiments/highlight_evidence/granularity.py)：`--robust` 新协议开关与窗口级回退；默认旧模式保留。
+[- 回归测试](../tests/test_highlight_memory_repair.py)：覆盖 161 字符 cue、错帧、非法引用、越权补丁、截断、终态失败缓存、断点重放和中间窗口失败。
+[- 实际请求审计](../scripts/audit_highlight_granularity.py)：核对输入图片、候选、前文、输出约束、评分范围与请求账本。
+[- 前后对照分析](../scripts/analyze_highlight_memory_repair.py)：完成率、修复与降级统计、成本和配对指标区间。
 
 验证命令（使用现有推理环境，不升级依赖）：
 
