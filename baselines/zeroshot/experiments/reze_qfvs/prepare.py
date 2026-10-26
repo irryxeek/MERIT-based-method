@@ -8,7 +8,7 @@ import shutil
 from pathlib import Path
 
 from adaptation import ACTION_MODE, CONCEPT_MODE, CONCEPT_SYSTEM_PROMPT, SUPPRESSION_RADIUS_SHOTS
-from pairing import freeze_baseline
+from pairing import freeze_baseline, freeze_pixel_reference
 from shared import HERE, atomic_json, query_text, segments_for, sha256, utc_now, write_jsonl
 
 QV = Path(os.environ.get("ZEROSHOT_ROOT", "baselines/zeroshot"))
@@ -22,9 +22,15 @@ def main():
     parser.add_argument("--scope", choices=["pilot4", "full180"], default="pilot4")
     parser.add_argument("--prompt-mode", choices=[ACTION_MODE, CONCEPT_MODE], default=ACTION_MODE)
     parser.add_argument("--paired-baseline", type=Path)
+    parser.add_argument("--pixel-reference", type=Path, help="Completed pilot B0 supplying query-independent frame traces")
     args = parser.parse_args()
-    if args.prompt_mode == CONCEPT_MODE and (args.scope != "pilot4" or args.paired_baseline is None):
-        parser.error("The concept ablation requires --scope pilot4 and --paired-baseline")
+    if args.paired_baseline is not None and args.pixel_reference is not None:
+        parser.error("Use --paired-baseline or --pixel-reference, not both")
+    if args.prompt_mode == CONCEPT_MODE:
+        if args.scope == "pilot4" and args.paired_baseline is None:
+            parser.error("The concept pilot requires --paired-baseline")
+        if args.scope == "full180" and (args.pixel_reference is None or args.paired_baseline is not None):
+            parser.error("The full concept validation requires --pixel-reference ORIGINAL_PILOT")
     if args.prompt_mode == ACTION_MODE and args.paired_baseline is not None:
         parser.error("Use --paired-baseline only for the new concept prompt ablation")
     if not os.environ.get("REPRO_GPU_UUIDS", "").strip():
@@ -95,6 +101,10 @@ def main():
     if args.paired_baseline is not None:
         receipt = freeze_baseline(args.paired_baseline, rows, audit, label_hashes)
         atomic_json(run / "paired_baseline.json", receipt)
+    if args.pixel_reference is not None:
+        receipt = freeze_pixel_reference(args.pixel_reference, rows, audit, label_hashes)
+        atomic_json(run / "pixel_reference.json", receipt)
+    if args.prompt_mode == CONCEPT_MODE:
         shutil.copy2(original / "Dense_per_shot_tags/Dictionary.txt", run / "evaluation_inputs/Dictionary.txt")
     model_stats = {}
     for name, expected in audit["files"].items():
@@ -148,7 +158,7 @@ def main():
         "expected_model_requests": calls,
         "maximum_charged_requests": calls + 48 + 12,
         "maximum_worker_attempts": 3,
-        "maximum_active_worker_seconds": (12 if args.scope == "pilot4" else 168) * 3600,
+        "maximum_active_worker_seconds": (12 if args.scope == "pilot4" else 48) * 3600,
         "maximum_worker_stall_seconds": 900,
         "smoke_windows": "first/middle/last retained window per video, 12 GPU requests before full coverage",
         "max_gpus": 1,
@@ -174,6 +184,12 @@ def main():
         "QFVS_published_REZE_result": False,
     }
     binding["prompt_mode"] = args.prompt_mode
+    if args.pixel_reference is not None:
+        binding["pixel_reference_sha256"] = sha256(run / "pixel_reference.json")
+    if args.scope == "full180":
+        binding["previously_diagnosed_qids"] = [items[0]["qid"] for items in rows_by_video]
+        binding["report_groups"] = ["full180", "remaining176", "previously_diagnosed4"]
+        binding["development_scope"] = "All released queries; four diagnosed queries included; same four source videos"
     if args.prompt_mode == CONCEPT_MODE:
         binding.update(
             schema="reze_qfvs_concept_ablation_v1",
@@ -181,7 +197,6 @@ def main():
             query_template="Concept 1: {concept_1}. Concept 2: {concept_2}.",
             query_semantics="Visual OR presence; Building denotes an architectural structure, not an action",
             system_prompt=CONCEPT_SYSTEM_PROMPT,
-            paired_baseline_sha256=sha256(run / "paired_baseline.json"),
             concept_dictionary_sha256=sha256(run / "evaluation_inputs/Dictionary.txt"),
             selector_ablation={
                 "conditions": ["B0_topk", "B0_temporal", "Concept_topk", "Concept_temporal"],
@@ -190,8 +205,12 @@ def main():
                 "selection_uses_labels": False,
                 "hyperparameter_search": False,
             },
-            development_scope="Previously diagnosed pilot4; not an unseen confirmation set",
         )
+        if args.paired_baseline is not None:
+            binding["paired_baseline_sha256"] = sha256(run / "paired_baseline.json")
+            binding["development_scope"] = "Previously diagnosed pilot4; not an unseen confirmation set"
+        else:
+            binding["schema"] = "reze_qfvs_concept_full180_v1"
     atomic_json(run / "binding.json", binding)
     atomic_json(
         run / "status.json",

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T14:02:03.287097+00:00",
+  "updated_at": "2026-10-27T01:17:49.509636+08:00",
   "scope": "All active MERIT docs/*.md except the curated index, plus related QVHighlights-ZeroShot docs/*.md. Historical frozen plan publications retained. Raw experiment artifacts are not implicitly published.",
   "standing_user_instruction": "Whenever pushing project updates, include newly created or updated reports, analyses, research plans, and document indexes.",
   "path_aliases": {
@@ -15,6 +15,46 @@
     "$DATA_PARENT": "source location; configure separately"
   },
   "files": [
+    {
+      "source": "MERIT:docs/revalue_execution_plan_v3_2026-10-23.md",
+      "destination": "docs/revalue_execution_plan_v3_2026-10-23.md",
+      "source_sha256": "c1473cf620361cf5ddda06ad36121fab3410f72a17522b15af66e1d2dd771882",
+      "publication_sha256": "c1473cf620361cf5ddda06ad36121fab3410f72a17522b15af66e1d2dd771882",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": [],
+      "source_document": {
+        "filename": "ReVALUE_高光检测框架与模块图解_原版优化.docx",
+        "document_date": "2026-10-20",
+        "sha256": "880196d15df70b490639ed83a7a8b22168224fea6a4cb9b01a8833c5a05b4f1f",
+        "review_scope": "document body and figures 1-5; original attachment retained locally"
+      }
+    },
+    {
+      "source": "MERIT:docs/reze_qfvs_full_validation_2026-10-23.md",
+      "destination": "docs/reze_qfvs_full_validation_2026-10-23.md",
+      "source_sha256": "12fc5fb93cf94318a7e754f57bfc677b79853bda7e3b2f47012ed2da19c510fb",
+      "publication_sha256": "12fc5fb93cf94318a7e754f57bfc677b79853bda7e3b2f47012ed2da19c510fb",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": [
+        "docs/reze_qfvs_full_current_run.local.json"
+      ]
+    },
+    {
+      "source": "MERIT:docs/reze_next_stage_execution_status_2026-10-23.md",
+      "destination": "docs/reze_next_stage_execution_status_2026-10-23.md",
+      "source_sha256": "7424e9cf216d6330538628c96cebe836b71d423ab183361bb5174513f6d0da5d",
+      "publication_sha256": "7424e9cf216d6330538628c96cebe836b71d423ab183361bb5174513f6d0da5d",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/reze_next_stage_execution_plan_v2_2026-10-23.md",
+      "destination": "docs/reze_next_stage_execution_plan_v2_2026-10-23.md",
+      "source_sha256": "8036396e434176882562849981a127e948799e760e27d5db2c47ef5f1f1f14e6",
+      "publication_sha256": "8036396e434176882562849981a127e948799e760e27d5db2c47ef5f1f1f14e6",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
     {
       "source": "MERIT:docs/experimental_results_report_2026-10-22.md",
       "destination": "docs/experimental_results_report_2026-10-22.md",
@@ -403,35 +443,725 @@
       "publication_sha256": "e66f7c9a1c508020e40461b6d8db5a0df57e8f97a4b1ea9e8834235a6c74a0c3",
       "basis": "research_workspace_markdown_with_repository_relative_publication_links",
       "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_r01_execution_2026-10-25.md",
+      "destination": "docs/revalue_r01_execution_2026-10-25.md",
+      "source_sha256": "3b3c0f4e16e2e329816ac435410d261a88dea93159546d8b89f16ed892ff08cc",
+      "publication_sha256": "1381130d1f9ae9c7b8402ed5ddc7d53ab7f57c85e84f1411f774b2c28870d135",
+      "basis": "research_workspace_markdown_with_portable_path_aliases",
+      "local_only_references": [
+        "Artifact aliases identify local runs; large artifacts are not bundled."
+      ],
+      "publication_changes": "Replace machine-specific artifact paths with documented aliases; metrics, historical status and research originals are unchanged."
+    },
+    {
+      "source": "MERIT:docs/reze_qfvs_full_results_2026-10-25.md",
+      "destination": "docs/reze_qfvs_full_results_2026-10-25.md",
+      "source_sha256": "f1a0e35dc695e485add06feb582799f9234264b562784a6a35283b2797e3913d",
+      "publication_sha256": "ddd884d0962ffec66155bddfa89a19dfd96f806c068cfc42a9f9c69112fff5ed",
+      "basis": "research_workspace_markdown_with_portable_path_aliases",
+      "local_only_references": [
+        "Artifact aliases identify local runs; large artifacts are not bundled."
+      ],
+      "publication_changes": "Replace machine-specific artifact paths with documented aliases; metrics, historical status and research originals are unchanged."
+    },
+    {
+      "source": "MERIT:docs/revalue_r0_repair_protocol_v2_2026-10-25.md",
+      "destination": "docs/revalue_r0_repair_protocol_v2_2026-10-25.md",
+      "source_sha256": "3b35b2440c4357a1fd9f0e86b0fac4b2762a6834b96140d8c036d48bbe857e0e",
+      "publication_sha256": "3b35b2440c4357a1fd9f0e86b0fac4b2762a6834b96140d8c036d48bbe857e0e",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_r0_repair_results_2026-10-25.md",
+      "destination": "docs/revalue_r0_repair_results_2026-10-25.md",
+      "source_sha256": "ccf5b1bc12486ec736a8d15aef0cecb6eb857e4f7c38271188f7a52e149118ba",
+      "publication_sha256": "308c31855d41ec9854db5d7f826d6647996be1fe9f83f3ca32d54d0d104d2418",
+      "basis": "research_workspace_markdown_with_portable_path_aliases",
+      "local_only_references": [
+        "Artifact aliases identify local runs; large artifacts are not bundled."
+      ],
+      "publication_changes": "Replace machine-specific artifact paths with documented aliases; metrics, historical status and research originals are unchanged."
+    },
+    {
+      "source": "MERIT:docs/revalue_r0_monitor_recovery_v3_2026-10-25.md",
+      "destination": "docs/revalue_r0_monitor_recovery_v3_2026-10-25.md",
+      "source_sha256": "31d3e2fd79e916f85ac55cc9226fdb5b9046f1a2b037b101547ec122e3e7a721",
+      "publication_sha256": "31d3e2fd79e916f85ac55cc9226fdb5b9046f1a2b037b101547ec122e3e7a721",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_r0_observation_repair_v4_2026-10-25.md",
+      "destination": "docs/revalue_r0_observation_repair_v4_2026-10-25.md",
+      "source_sha256": "5efcff6644ca277fb4a140f20f54549809f01077c4abbaba4c33e10e061642a5",
+      "publication_sha256": "5efcff6644ca277fb4a140f20f54549809f01077c4abbaba4c33e10e061642a5",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_observer_content_repair_v5_2026-10-25.md",
+      "destination": "docs/revalue_observer_content_repair_v5_2026-10-25.md",
+      "source_sha256": "59f145fc2fbea66f2b7a65c775203a96353c3d0df706835a47896ac0621a17c3",
+      "publication_sha256": "59f145fc2fbea66f2b7a65c775203a96353c3d0df706835a47896ac0621a17c3",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/gpu_resource_policy_2026-10-25.md",
+      "destination": "docs/gpu_resource_policy_2026-10-25.md",
+      "source_sha256": "324da41575a3426d8922a3b70ee4ee3e15e7a596a31f89d166ad01aa35f18756",
+      "publication_sha256": "324da41575a3426d8922a3b70ee4ee3e15e7a596a31f89d166ad01aa35f18756",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_r1_results_2026-10-25.md",
+      "destination": "docs/revalue_r1_results_2026-10-25.md",
+      "source_sha256": "9465acec8f91b2150b6a4c43163a9e963a7343fc2393a714879683ab5b20deaa",
+      "publication_sha256": "9465acec8f91b2150b6a4c43163a9e963a7343fc2393a714879683ab5b20deaa",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_r2_protocol_2026-10-25.md",
+      "destination": "docs/revalue_r2_protocol_2026-10-25.md",
+      "source_sha256": "4e66ca5bb684bd9ca5423e2ebfcb2b95eb9f2a378d63854738c0c7eb00c12948",
+      "publication_sha256": "4e66ca5bb684bd9ca5423e2ebfcb2b95eb9f2a378d63854738c0c7eb00c12948",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_r2_execution_2026-10-25.md",
+      "destination": "docs/revalue_r2_execution_2026-10-25.md",
+      "source_sha256": "4a3afe3371a471428e7fbb6abc939039f6dac62c54ef13883c7e6f9d7fca567c",
+      "publication_sha256": "4a3afe3371a471428e7fbb6abc939039f6dac62c54ef13883c7e6f9d7fca567c",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_r2_diagnosis_2026-10-26.md",
+      "destination": "docs/revalue_r2_diagnosis_2026-10-26.md",
+      "source_sha256": "ce2ae0464ba1bdeba1889ecf4352d4f94643baf3175b118d3e7ed4edd0efbc4a",
+      "publication_sha256": "d202a7c47045f32c2e819f935faebb2022b7e17e58f1662353d0f10f749b3ebf",
+      "basis": "research report with machine path aliases; experimental facts unchanged",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_r2_repair_protocol_v3_2026-10-26.md",
+      "destination": "docs/revalue_r2_repair_protocol_v3_2026-10-26.md",
+      "source_sha256": "24502ead4aa8ed4fc9953dc9fd5d21be7893d733a370b8f71ff49bb229cd98a7",
+      "publication_sha256": "24502ead4aa8ed4fc9953dc9fd5d21be7893d733a370b8f71ff49bb229cd98a7",
+      "basis": "research report with machine path aliases; experimental facts unchanged",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_r2_repair_execution_2026-10-26.md",
+      "destination": "docs/revalue_r2_repair_execution_2026-10-26.md",
+      "source_sha256": "2e9bab62f54144f97836db898c3d43b23396d928a40ad4528622b6d8d146616e",
+      "publication_sha256": "38c5cba3d15cb2c1a65fee6dea0dc6b40b4209b138dc430bdc456191b0698b4e",
+      "basis": "research report with machine path aliases; experimental facts unchanged",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_current_experiment_plan_2026-10-26.md",
+      "destination": "docs/revalue_current_experiment_plan_2026-10-26.md",
+      "source_sha256": "180ca387cbcc17e5a1c6e6ebc766c73c7e0f1b17218ac345c9b657c697685ab4",
+      "publication_sha256": "180ca387cbcc17e5a1c6e6ebc766c73c7e0f1b17218ac345c9b657c697685ab4",
+      "basis": "identical current experiment plan; frozen R2 results and prospective diagnosis separated; no new inference",
+      "local_only_references": [
+        "R2 original run artifacts via $ZEROSHOT_ARTIFACT_ROOT; local machine pointer excluded from publication"
+      ]
+    },
+    {
+      "source": "MERIT:docs/revalue_r2_offline_diagnosis_2026-10-26.md",
+      "destination": "docs/revalue_r2_offline_diagnosis_2026-10-26.md",
+      "source_sha256": "ed72779f456a59a49a14b52126f2561a01fa097c0c5077b0434202dbcf6d0f13",
+      "publication_sha256": "ed72779f456a59a49a14b52126f2561a01fa097c0c5077b0434202dbcf6d0f13",
+      "basis": "identical report; completed offline diagnosis and frozen observation probe separated from HD evaluation",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_r2_observation_probe_protocol_2026-10-26.md",
+      "destination": "docs/revalue_r2_observation_probe_protocol_2026-10-26.md",
+      "source_sha256": "d289efbb12899973ae352dda3fc09c51bdd45d52252e06a020e9d935a7939ac3",
+      "publication_sha256": "d289efbb12899973ae352dda3fc09c51bdd45d52252e06a020e9d935a7939ac3",
+      "basis": "identical report; completed offline diagnosis and frozen observation probe separated from HD evaluation",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_r2_observation_probe_results_2026-10-26.md",
+      "destination": "docs/revalue_r2_observation_probe_results_2026-10-26.md",
+      "source_sha256": "2e3d0a5ffcbc7b1f921a49ca310794b9050a2b044914e0a7ee4a4be92a8523f5",
+      "publication_sha256": "2e3d0a5ffcbc7b1f921a49ca310794b9050a2b044914e0a7ee4a4be92a8523f5",
+      "basis": "identical report; completed offline diagnosis and frozen observation probe separated from HD evaluation",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_frame_grounding_repair_protocol_2026-10-26.md",
+      "destination": "docs/revalue_frame_grounding_repair_protocol_2026-10-26.md",
+      "source_sha256": "bfe871c57d456ea97ade5485cdd971cec2802aaa86fd23c4c3491d1ea0045219",
+      "publication_sha256": "bfe871c57d456ea97ade5485cdd971cec2802aaa86fd23c4c3491d1ea0045219",
+      "basis": "identical frozen repair protocol or completed diagnostic result; post-inference guard and semantic limits explicitly separated",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_frame_grounding_repair_results_2026-10-26.md",
+      "destination": "docs/revalue_frame_grounding_repair_results_2026-10-26.md",
+      "source_sha256": "be675c9af89e986be1d5246a5a66692ac417b469099ab304046ce1297d9cbe58",
+      "publication_sha256": "be675c9af89e986be1d5246a5a66692ac417b469099ab304046ce1297d9cbe58",
+      "basis": "identical frozen repair protocol or completed diagnostic result; post-inference guard and semantic limits explicitly separated",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_next_experiment_plan_2026-10-26.md",
+      "destination": "docs/revalue_next_experiment_plan_2026-10-26.md",
+      "source_sha256": "b2ceb0356867d01b243d68f67865a61769d3d88173226ed35515f160e5d95439",
+      "publication_sha256": "b2ceb0356867d01b243d68f67865a61769d3d88173226ed35515f160e5d95439",
+      "basis": "Identical next-experiment plan; temporary experiment planning subagent review; planning only, no experiment execution",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_memory_compaction_results_2026-10-26.md",
+      "destination": "docs/revalue_memory_compaction_results_2026-10-26.md",
+      "source_sha256": "4aa7eb00b9dc4787ecc48219df55de4ac2429a86a33d53702acc9cb864d98dd1",
+      "publication_sha256": "4aa7eb00b9dc4787ecc48219df55de4ac2429a86a33d53702acc9cb864d98dd1",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_memory_compaction_protocol_2026-10-26.md",
+      "destination": "docs/revalue_memory_compaction_protocol_2026-10-26.md",
+      "source_sha256": "c42b703c54516de97e98d6401a27e6d6a0f368e09e8648ccca17420336174539",
+      "publication_sha256": "c42b703c54516de97e98d6401a27e6d6a0f368e09e8648ccca17420336174539",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_observer_output_probe_protocol_2026-10-26.md",
+      "destination": "docs/revalue_observer_output_probe_protocol_2026-10-26.md",
+      "source_sha256": "56c2df97f025490898b0f0599c563c6cc7901d0630f032f5f98bbe51ff292093",
+      "publication_sha256": "56c2df97f025490898b0f0599c563c6cc7901d0630f032f5f98bbe51ff292093",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_object_presence_protocol_2026-10-26.md",
+      "destination": "docs/revalue_object_presence_protocol_2026-10-26.md",
+      "source_sha256": "8cea6c53a33285cdd1e82ba5736ce4654680476569664026cb334b83f4713a20",
+      "publication_sha256": "8cea6c53a33285cdd1e82ba5736ce4654680476569664026cb334b83f4713a20",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/revalue_object_presence_results_2026-10-27.md",
+      "destination": "docs/revalue_object_presence_results_2026-10-27.md",
+      "source_sha256": "7adb95fc9f532c42cc2e7c56a1aa47816ac8b49d02233ee9cadd4e42d18d89e3",
+      "publication_sha256": "7adb95fc9f532c42cc2e7c56a1aa47816ac8b49d02233ee9cadd4e42d18d89e3",
+      "basis": "research_workspace_markdown_identical_publication_copy",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/experimental_progress_and_issues_2026-10-27.md",
+      "destination": "docs/experimental_progress_and_issues_2026-10-27.md",
+      "basis": "research_workspace_markdown_identical_copy",
+      "local_only_references": [
+        "Raw model, video and run artifacts are not bundled; source locations use documented aliases."
+      ],
+      "source_sha256": "8194e59d00078d077d6d6fe3b92c4e2b5234feed19d81c4bd4d80d0f8a03dd7e",
+      "publication_sha256": "8194e59d00078d077d6d6fe3b92c4e2b5234feed19d81c4bd4d80d0f8a03dd7e"
+    },
+    {
+      "source": "MERIT:docs/reze_svhighlights_pilot7_results_2026-10-27.md",
+      "destination": "docs/reze_svhighlights_pilot7_results_2026-10-27.md",
+      "basis": "research_workspace_markdown_identical_copy",
+      "local_only_references": [
+        "Raw model, video and run artifacts are not bundled; source locations use documented aliases."
+      ],
+      "source_sha256": "03783ddc4d2d9509bc8c8295c4b86d8adb5c1ceeadf206155a94466f2bda4491",
+      "publication_sha256": "03783ddc4d2d9509bc8c8295c4b86d8adb5c1ceeadf206155a94466f2bda4491"
     }
   ],
   "indexes": [
     {
       "source": "MERIT:README.md",
       "destination": "README.md",
-      "source_sha256": "b47feb45e7dcaa20e0fbd4da3edfaa3857781febc73915a24ad3062a49162743",
-      "publication_sha256": "78bf5166f6e3c056ffa0b7058c000d8429e15aaeb5c99ab19b94e8fdd10823fd",
+      "source_sha256": "53489c131b91aef0b960d24a6f5052705a5e414a2b9b854fd1d4cdadaa0a2bd7",
+      "publication_sha256": "fe88f07269c16c5d6058089a33a57f1aa376d60058c9955be3dd793be5727aca",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     },
     {
       "source": "MERIT:docs/README.md",
       "destination": "docs/README.md",
-      "source_sha256": "8c9eaf2e8ee7a09418e4101e16c6ae080960a29195151cdd62b843e3f109ca24",
-      "publication_sha256": "163f83c737e284aa10a8b046da85591bebcd3023150382a2557e8b465d5cffd4",
+      "source_sha256": "4c449216352bd5af98be187b2dd1b4c6c31863a04e3575557712b48ca1b7a0f8",
+      "publication_sha256": "76ea1ada461289ec5d54c03163f97c27009883b24663fd068f8768cadad66fb1",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     }
   ],
   "previous_validation": {
-    "content_equivalent_except_publication_notes_links_and_paths": 34,
-    "preserved_frozen_plan_documents": 2,
-    "local_links_checked": 236,
-    "active_reports_covered": 32,
-    "raw_prediction_or_metric_changes": false,
-    "AGENTS_modified": false
+    "at": "2026-10-26T09:32:19.096075+00:00",
+    "scope": "Next-experiment plan and document indexes only; prior experimental validation retained in history",
+    "temporary_experiment_planning_subagent_review": true,
+    "installed_experiment_agent_definition_found": false,
+    "new_model_calls": 0,
+    "new_gpu_runs": 0,
+    "new_hd_metrics": false,
+    "experimental_code_changed": false,
+    "new_experiment_tests_run": false,
+    "existing_predictions_changed": false,
+    "AGENTS_modified": false,
+    "git_push": false,
+    "publication_check": "passed",
+    "published_files_checked": 342,
+    "source_files_checked": 330,
+    "local_links_checked": 471,
+    "errors": [],
+    "immutable_files_verified": 10,
+    "plan_copies_identical": true,
+    "diff_check": "passed",
+    "publication_validation_at": "2026-10-26T09:33:18.180882+00:00"
   },
   "validation": {
-    "status": "verify_with_scripts/verify_publication.py",
-    "raw_prediction_or_metric_changes": false,
-    "AGENTS_modified": false
+    "at": "2026-10-26T16:19:22.787470+00:00",
+    "scope": "fixed 30-case paired object-presence probe; no new HD metrics",
+    "skill": "academic-research-suite/experiment-agent",
+    "skill_version": "3.23.2",
+    "mode": "run",
+    "revalue_cpu_tests_passed": 150,
+    "test_command": "python -m pytest experiments/revalue/tests -q",
+    "changed_python_ruff": "passed",
+    "new_model_calls": 60,
+    "extra_attempts": 0,
+    "actual_tokens": 26195,
+    "gpu_service_seconds": 120.24775199103169,
+    "gpus_released": true,
+    "independent_human_review_count": 0,
+    "manifest_sha256": "e448f05a2dd024024e6890389d2ef1d2fbf84b384e16fa5cba2ead32d777f616",
+    "ledger_sha256": "477c8e41046d48a40f013b638d356ba886e4d7db1dc366105b85c928ba74aa5d",
+    "source_files_verified": 70,
+    "parent_receipts_verified": 203,
+    "status_agreement_direct": 24,
+    "status_agreement_evidence_first": 24,
+    "reference_cases": 30,
+    "positive_retention_both": 14,
+    "reference_positive": 14,
+    "ambiguous_cases": 6,
+    "abstentions_both": 0,
+    "grammar_status_reachability": "three legal states accepted; invalid state rejected with actual tokenizer and bitmask on CPU",
+    "decision": "targeted_verifier_not_promoted",
+    "new_hd_metrics": false,
+    "A_B_C_started": false,
+    "full_100_started": false,
+    "R3_R4_started": false,
+    "AGENTS_modified": false,
+    "existing_predictions_changed": false,
+    "git_push": false,
+    "immutable_files_verified_prelaunch": 13,
+    "immutable_files_verified_postrun": 13,
+    "publication_check": "passed",
+    "published_files_checked": 359,
+    "source_files_checked": 347,
+    "local_links_checked": 488,
+    "errors": [],
+    "publication_validation_at": "2026-10-26T16:26:20.619868+00:00",
+    "frozen_sources_postrun": 70,
+    "parent_receipts_postrun": 203
+  },
+  "validation_history": [
+    {
+      "status": "verify_with_scripts/verify_publication.py",
+      "scope": "ReVALUE v3 plan, source-document provenance and current-plan indexes; documentation changes only",
+      "raw_prediction_or_metric_changes": false,
+      "AGENTS_modified": false
+    },
+    {
+      "recorded_at": "2026-10-24T19:55:04.512993+00:00",
+      "scope": "ReVALUE R0/R1 implementation, fixed-twenty preparation, durable queue and QFVS completed full180 report",
+      "passed": true,
+      "published_files_checked": 300,
+      "source_files_checked": 288,
+      "local_links_checked": 396,
+      "revalue_cpu_tests_passed": 22,
+      "ruff_revalue": "passed",
+      "real_source_media_queries_verified": 20,
+      "processor_cpu_checks": [
+        "text",
+        "two native old clips",
+        "24 new native source frames"
+      ],
+      "new_gpu_model_requests": 0,
+      "gpu_generation_status": "waiting for idle GPU 4 or 5; R0 gate not yet run",
+      "AGENTS_modified": false,
+      "git_push_performed": false
+    },
+    {
+      "recorded_at": "2026-10-25T02:58:51.946539+00:00",
+      "scope": "ReVALUE R0 v2 repair and fixed-twenty real GPU validation",
+      "passed": true,
+      "published_files_checked": 304,
+      "source_files_checked": 292,
+      "local_links_checked": 404,
+      "errors": [],
+      "revalue_cpu_tests_passed": 30,
+      "ruff_revalue": "passed",
+      "real_source_media_queries_verified": 20,
+      "shared_request_preflight_verified": 160,
+      "new_R0_attempts": 1,
+      "verified_reused_requests": 8,
+      "R0_gate": "running",
+      "binding_sha256": "85bffa50b9fb817b331689cae58cd50d1979d9ef8f904c3504cdddcf37703828",
+      "AGENTS_modified": false,
+      "git_push_performed": false
+    },
+    {
+      "recorded_at": "2026-10-25T03:05:59.519247+00:00",
+      "scope": "ReVALUE R0 v3 repair and fixed-twenty real GPU validation",
+      "passed": true,
+      "published_files_checked": 305,
+      "source_files_checked": 293,
+      "local_links_checked": 407,
+      "errors": [],
+      "revalue_cpu_tests_passed": 33,
+      "ruff_revalue": "passed",
+      "real_source_media_queries_verified": 20,
+      "shared_request_preflight_verified": 160,
+      "new_R0_attempts": 14,
+      "verified_reused_requests": 16,
+      "R0_gate": "running",
+      "binding_sha256": "ea37e40788954124a22e9fc41f4cbc6657c3cfcec87d6c338cb78562ba1c6b5f",
+      "AGENTS_modified": false,
+      "git_push_performed": false
+    },
+    {
+      "recorded_at": "2026-10-25T03:33:07.463479+00:00",
+      "scope": "ReVALUE R0 v4 repair and fixed-twenty real GPU validation",
+      "passed": true,
+      "published_files_checked": 307,
+      "source_files_checked": 295,
+      "local_links_checked": 413,
+      "errors": [],
+      "revalue_cpu_tests_passed": 37,
+      "ruff_revalue": "passed",
+      "real_source_media_queries_verified": 20,
+      "shared_request_preflight_verified": 160,
+      "new_R0_attempts": 98,
+      "verified_reused_requests": 202,
+      "R0_gate": "passed",
+      "binding_sha256": "27f79b20c680b7a219190e7c817bc86963da80e751eb3b7ada6e7a9a1cc9ad65",
+      "AGENTS_modified": false,
+      "git_push_performed": false,
+      "observer_binding_sha256": "64f2cdf3eacaebdea644b6f460bcd2cb5043ed8bb05bb37314dc12f8bf4a210f",
+      "observer_gate": "running",
+      "formal_R1_snapshot": "revalue_r01_v4_2026-10-25",
+      "formal_R1_CPU_tests": 35
+    },
+    {
+      "recorded_at": "2026-10-25T03:37:53.446809+00:00",
+      "scope": "ReVALUE engineering repair, isolated observer v5, frozen v4 R1",
+      "passed": true,
+      "published_files_checked": 307,
+      "source_files_checked": 295,
+      "local_links_checked": 413,
+      "errors": [],
+      "revalue_cpu_tests_passed": 37,
+      "ruff_revalue": "passed",
+      "real_source_media_queries_verified": 20,
+      "shared_request_preflight_verified": 160,
+      "new_R0_attempts": 98,
+      "verified_reused_requests": 202,
+      "R0_gate": "passed",
+      "binding_sha256": "27f79b20c680b7a219190e7c817bc86963da80e751eb3b7ada6e7a9a1cc9ad65",
+      "AGENTS_modified": false,
+      "git_push_performed": false,
+      "observer_binding_sha256": "64f2cdf3eacaebdea644b6f460bcd2cb5043ed8bb05bb37314dc12f8bf4a210f",
+      "observer_gate": "passed",
+      "formal_R1_snapshot": "revalue_r01_v4_2026-10-25",
+      "formal_R1_CPU_tests": 35,
+      "cumulative_R0_attempts": 468,
+      "cumulative_R0_GPU_seconds": 3656.2827694406733,
+      "observer_queries_with_non_unknown": 20
+    },
+    {
+      "recorded_at": "2026-10-25T03:43:49.044441+00:00",
+      "scope": "Any-idle-GPU scheduling for future ReVALUE preparations; current v4 R1 unchanged",
+      "passed": true,
+      "published_files_checked": 309,
+      "source_files_checked": 297,
+      "local_links_checked": 416,
+      "errors": [],
+      "revalue_cpu_tests_passed": 43,
+      "ruff_changed_files": "passed",
+      "live_device_inventory_count": 8,
+      "live_idle_selection_verified": 5,
+      "formal_R1_binding_sha256": "27f79b20c680b7a219190e7c817bc86963da80e751eb3b7ada6e7a9a1cc9ad65",
+      "frozen_R1_source_and_inputs_verified": true,
+      "AGENTS_modified": false,
+      "new_gpu_inference_started": false,
+      "git_push_performed": false
+    },
+    {
+      "passed": true,
+      "published_files_checked": 320,
+      "source_files_checked": 308,
+      "local_links_checked": 429,
+      "errors": [],
+      "recorded_at": "2026-10-25T06:14:43.978233+00:00",
+      "scope": "R1 results and launched frozen R2 v2; exact cache, paired observations, atomic multi-GPU budgets",
+      "revalue_cpu_tests_passed": 58,
+      "ruff_changed_files": "passed",
+      "real_source_media_queries_verified": 100,
+      "exact_R1_request_reuse_preflight_verified": 940,
+      "formal_R2_binding_sha256": "6fc978e9d6e73d85051db384193d143377297a4cff9c186a3242625e73f2fa04",
+      "formal_R2_source_and_inputs_verified": true,
+      "formal_R2_initial_gpu": 4,
+      "R2_v1_preparation_only_no_GPU": true,
+      "GPU_budget_hours_summed": 6,
+      "actual_R2_status": "running",
+      "frozen_R1_results_preserved": true,
+      "AGENTS_modified": false,
+      "git_push_performed": false
+    },
+    {
+      "at": "2026-10-25T20:07:54.057852+00:00",
+      "scope": "ReVALUE R2 v3 repair and formal explore100 rerun",
+      "cpu_tests_passed": 70,
+      "ruff_passed": true,
+      "verified_media_queries": 100,
+      "exact_reuse_requests": 566,
+      "real_smoke_requests": 53,
+      "real_smoke_status": "passed",
+      "failed_smoke_preserved": true,
+      "smoke_observations": 4,
+      "smoke_post_observation_comparisons": 40,
+      "formal_binding_sha256": "b730f089cade44be3d64c7e8166ed3867f014ad9bda2396659145a0df91e2cb1",
+      "formal_status": "running",
+      "formal_gpus": [
+        5,
+        6,
+        7
+      ],
+      "git_push": false
+    },
+    {
+      "at": "2026-10-26T03:40:09.994709+00:00",
+      "scope": "Current ReVALUE experiment plan and indexes; documentation-only consolidation after R2 v3 completion",
+      "formal_status": "complete",
+      "completed_queries": 100,
+      "precision_gate": "not_passed",
+      "formal_evaluation_sha256": "f107e358e6f61a1a52e423b8f737749a5983e7f02992f435b1b1ff9b6752c24d",
+      "source_and_publication_plan_identical": true,
+      "new_gpu_inference_started": false,
+      "existing_predictions_changed": false,
+      "AGENTS_modified": false,
+      "git_push": false,
+      "publication_check": "passed",
+      "published_files_checked": 328,
+      "source_files_checked": 316,
+      "local_links_checked": 445,
+      "metrics_tables_checked": 6,
+      "prediction_vectors_checked": 400,
+      "observation_calls_checked": 28,
+      "frozen_plan_hash_unchanged": true,
+      "diff_check": "passed"
+    },
+    {
+      "at": "2026-10-26T04:18:02.082571+00:00",
+      "scope": "R2 offline diagnosis and frozen 28-request observation-question ablation; focused checks only",
+      "parent_formal_status": "complete",
+      "parent_completed_queries": 100,
+      "parent_evaluation_sha256": "f107e358e6f61a1a52e423b8f737749a5983e7f02992f435b1b1ff9b6752c24d",
+      "parent_record_receipts_verified": 100,
+      "ranking_and_export_replays_passed": 400,
+      "diagnostic_cases_saved": 23,
+      "observation_requests_completed": 28,
+      "observation_extra_attempts": 0,
+      "observation_tokens": 100220,
+      "probe_manifest_sha256": "ddde62edf84bbaa64bacd4ba024c81d4c9f138462f7e112ba6ee407a0184a398",
+      "probe_ledger_sha256": "e878faf3c6235144aeab4f1417ca1628a495ecd99cc4d5c598460a7c52b7af9e",
+      "gpu_service_seconds": 282.45988,
+      "gpu_hours": 0.07846107777777778,
+      "gpu_released": true,
+      "new_focused_cpu_tests_passed": 2,
+      "new_python_files_ruff": "passed",
+      "same_input_frames_verified": true,
+      "decision": "diagnostic_complete_not_promoted",
+      "known_source_citation_errors_remain": true,
+      "independent_human_review": "not_performed",
+      "new_hd_metrics": false,
+      "existing_predictions_changed": false,
+      "R3_R4_started": false,
+      "AGENTS_modified": false,
+      "frozen_plan_hash_unchanged": true,
+      "git_push": false,
+      "publication_check": "passed",
+      "published_files_checked": 334,
+      "source_files_checked": 322,
+      "local_links_checked": 457,
+      "diff_check": "passed",
+      "immutable_file_hashes_verified": 5,
+      "publication_validation_at": "2026-10-26T04:18:28.338173+00:00"
+    },
+    {
+      "at": "2026-10-26T08:33:07.790428+00:00",
+      "scope": "Temporal source binding, empty-visible guard, and fixed 672-frame observation diagnostic; ReVALUE tests only",
+      "revalue_cpu_tests_passed": 86,
+      "changed_python_ruff": "passed",
+      "legacy_memories_replayed": 14,
+      "new_calls": 672,
+      "extra_attempts": 0,
+      "actual_tokens": 257740,
+      "schema_valid_frames": 672,
+      "source_frame_occurrences_verified": 672,
+      "selected_assistant_review_frame_occurrences": 201,
+      "known_scene_error_frames_checked": 7,
+      "independent_human_review": "not_performed",
+      "post_inference_punctuation_only_abstentions": 54,
+      "probe_manifest_sha256": "c98d7963673735b9cd296d611158dbea18632846ae4f3d179c5a8d690dc2f262",
+      "probe_ledger_sha256": "6f2bac41fd5541584d43818f5300f477cd87e5dd3ba43d36c1b13d1d3f3f48f7",
+      "summed_gpu_seconds": 1389.273646,
+      "wall_seconds": 855.752551,
+      "gpus_released": true,
+      "decision": "source_binding_fixed_static_observer_not_promoted",
+      "new_hd_metrics": false,
+      "R3_R4_started": false,
+      "existing_predictions_changed": false,
+      "AGENTS_modified": false,
+      "git_push": false,
+      "publication_check": "passed",
+      "published_files_checked": 341,
+      "source_files_checked": 329,
+      "local_links_checked": 463,
+      "diff_check": "passed",
+      "immutable_files_verified": 7,
+      "frozen_sources_verified": 57,
+      "parent_receipts_verified": 75,
+      "publication_validation_at": "2026-10-26T08:34:35.576154+00:00"
+    },
+    {
+      "at": "2026-10-26T09:32:19.096075+00:00",
+      "scope": "Next-experiment plan and document indexes only; prior experimental validation retained in history",
+      "temporary_experiment_planning_subagent_review": true,
+      "installed_experiment_agent_definition_found": false,
+      "new_model_calls": 0,
+      "new_gpu_runs": 0,
+      "new_hd_metrics": false,
+      "experimental_code_changed": false,
+      "new_experiment_tests_run": false,
+      "existing_predictions_changed": false,
+      "AGENTS_modified": false,
+      "git_push": false,
+      "publication_check": "passed",
+      "published_files_checked": 342,
+      "source_files_checked": 330,
+      "local_links_checked": 471,
+      "errors": [],
+      "immutable_files_verified": 10,
+      "plan_copies_identical": true,
+      "diff_check": "passed",
+      "publication_validation_at": "2026-10-26T09:33:18.180882+00:00"
+    },
+    {
+      "at": "2026-10-26T11:44:12.227798+00:00",
+      "scope": "CPU memory codec/capacity and fixed 37-frame output-contract probe; no new HD predictions",
+      "skill": "academic-research-suite/experiment-agent",
+      "skill_version": "3.23.2",
+      "mode": "run",
+      "revalue_cpu_tests_passed": 135,
+      "changed_python_ruff": "passed",
+      "same_fact_views_passed": 14,
+      "compatibility_records_unchanged": 16,
+      "same_fact_token_reduction_percent": 25.296242774566473,
+      "restored_old_fact_ids_across_views": 104,
+      "restored_non_unknown_fact_ids_across_views": 95,
+      "new_model_calls": 37,
+      "extra_attempts": 0,
+      "actual_tokens": 14774,
+      "gpu_service_seconds": 150.2923533830326,
+      "gpus_released": true,
+      "independent_human_review_count": 0,
+      "cpu_manifest_sha256": "54ef6c5ef0c8a760d32ca23fc92391979efa11cdbb22d103a1dc3eaada60a2da",
+      "probe_manifest_sha256": "840c822d3d712c4c896f681ff5f31118252a96d8e1a0c5a602127009a2365861",
+      "probe_ledger_sha256": "0d1cf66bfae8cf4b9e730b0d35aa984588e3a30df1735b55ccb3a4f287d6eef0",
+      "decision": "output_completeness_improved_observer_not_promoted",
+      "new_hd_metrics": false,
+      "A_B_C_started": false,
+      "full_100_started": false,
+      "R3_R4_started": false,
+      "AGENTS_modified": false,
+      "existing_predictions_changed": false,
+      "git_push": false,
+      "publication_check": "passed",
+      "published_files_checked": 353,
+      "source_files_checked": 341,
+      "local_links_checked": 480,
+      "errors": [],
+      "immutable_files_verified": 13,
+      "frozen_audits": {
+        "revalue_memory_compaction_v1_2026-10-26": {
+          "parents_verified": 1388,
+          "frozen_sources_verified": 45
+        },
+        "revalue_observer_output_v2_2026-10-26": {
+          "parents_verified": 153,
+          "frozen_sources_verified": 65
+        }
+      },
+      "publication_validation_at": "2026-10-26T11:46:46.127854+00:00"
+    }
+  ],
+  "publication_sync": {
+    "date": "2026-10-27",
+    "scope": "Publish the current experiment progress summary, SVHighlights pilot result, and accumulated related reports and implementations.",
+    "new_reports": [
+      "docs/experimental_progress_and_issues_2026-10-27.md",
+      "docs/reze_svhighlights_pilot7_results_2026-10-27.md"
+    ],
+    "publication_only_path_adapters": [
+      "baselines/zeroshot/experiments/revalue/backend.py",
+      "baselines/zeroshot/experiments/revalue/memory_compaction_probe.py",
+      "baselines/zeroshot/experiments/revalue/prepare.py",
+      "baselines/zeroshot/experiments/revalue/evaluate.py",
+      "baselines/zeroshot/experiments/revalue/r2_evaluate.py",
+      "baselines/zeroshot/experiments/reze_agent_v2/evaluate_v1.py",
+      "baselines/zeroshot/experiments/revalue/README.md",
+      "baselines/zeroshot/experiments/revalue/fixtures/object_presence_cases_v1.json"
+    ],
+    "cpu_tests": {
+      "revalue": {
+        "passed": 150
+      },
+      "reze_qfvs": {
+        "passed": 30,
+        "skipped": 1
+      },
+      "reze_svhighlights": {
+        "passed": 9,
+        "skipped": 1
+      },
+      "reze_agent_v2": {
+        "passed": 6
+      }
+    },
+    "changed_python_ruff": "passed",
+    "model_path_and_prepare_cli_checks": "passed",
+    "object_presence_cases_and_labels": "unchanged",
+    "new_gpu_experiments": false,
+    "frozen_runs_and_historical_validation": "unchanged",
+    "publication_verification": {
+      "passed": true,
+      "published_files_checked": 361,
+      "source_files_checked": 349,
+      "local_links_checked": 508,
+      "errors": []
+    },
+    "pending_file_review": {
+      "files": 111,
+      "unmapped_files": 0,
+      "files_over_1_mib": 0,
+      "machine_specific_path_matches": 0,
+      "credential_pattern_matches": 0
+    }
   }
 }

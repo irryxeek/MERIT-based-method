@@ -128,16 +128,19 @@ def main():
             "Two concept queries use OR wording; original strict action verifier prompt remains unchanged.",
             "Fixed 2% summary budget follows the pinned UniVTG default; ties use earlier shot indices.",
             "Primary oracle F1 and secondary mean-user F1 have different reference sets and must not be conflated.",
-            "pilot4 is a diagnostic subset, not the complete 180-query benchmark.",
+            "pilot4 is a diagnostic subset, not the complete 180-query benchmark."
+            if binding["scope"] == "pilot4"
+            else "All 180 released queries, including four previously diagnosed queries on the same four videos.",
         ],
     }
     if binding.get("prompt_mode") == CONCEPT_MODE:
         report["limitations"][1] = (
             "Adapted visual concept OR prompt with explicit Building noun disambiguation; not the original REZE prompt."
         )
-        report["limitations"].append(
-            "These four queries were already used in diagnosis; this is a development ablation."
-        )
+        if binding["scope"] == "pilot4":
+            report["limitations"].append(
+                "These four queries were already used in diagnosis; this is a development ablation."
+            )
     atomic_json(run / "predictions.json", predictions)
     atomic_json(run / "evaluation.json", report)
     lines = [
@@ -159,7 +162,9 @@ def main():
         "",
         f"正式窗口评分 {cost['model_requests']:,} 次；包括检查与中断批次的计费请求 "
         f"{cost['charged_requests_including_smoke_and_interrupted']:,} 次。",
-        "pilot4 的 4 个查询结果不能代表全部 180 查询成绩。逐查询指标和成本见 evaluation.json。",
+        "pilot4 的 4 个查询结果不能代表全部 180 查询成绩。逐查询指标和成本见 evaluation.json。"
+        if binding["scope"] == "pilot4"
+        else "本次覆盖全部 180 查询，包含此前用于诊断的 4 条；不代表未见视频泛化。",
         f"[原生语义指标](https://github.com/showlab/UniVTG/blob/{binding['evaluator_revision']}/eval/qfvs.py)。",
     ]
     (run / "REPORT.md").write_text("\n".join(lines) + "\n")

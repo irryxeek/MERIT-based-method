@@ -107,3 +107,47 @@ def test_streaming_matches_frozen_qv_frames_and_metadata():
         assert left["metadata"] == right["metadata"]
         assert left["rgb_sha256"] == right["rgb_sha256"]
         np.testing.assert_array_equal(left["video"], right["video"])
+
+
+def test_smoke_charges_21_probes_and_reuses_success_without_new_requests(tmp_path, monkeypatch):
+    import worker
+    rows = [{"vid": str(i), "query": "Highlight"} for i in range(7)]
+    trace = {"model_rgb_sha256": ["pixels"]}
+    probes = [{"index": i, "trace": trace} for i in range(3)]
+    (tmp_path / "media_preflight.json").write_text(
+        json.dumps({"videos": [{"vid": r["vid"], "probes": probes} for r in rows]})
+    )
+
+    class FakeVideo:
+        segments = [(0, 3), (3, 6), (6, 9)]
+
+        def __init__(self, row):
+            pass
+
+        def read(self, start, count):
+            return [{}], trace
+
+    p, mode = extract_pyes({9454: -1.0, 2753: -2.0}, 9454, 2753)
+    record = {"pyes": p, "score_mode": mode, "prompt_tokens": 10,
+              "top20": [{"id": 9454, "logprob": -1.0}, {"id": 2753, "logprob": -2.0}]}
+    monkeypatch.setattr(worker, "StreamVideo", FakeVideo)
+    monkeypatch.setattr(worker, "make_request", lambda *args: {})
+    calls = []
+
+    def score(*args):
+        calls.append(1)
+        return [record], 0.01
+
+    monkeypatch.setattr(worker, "score_requests", score)
+    args = (tmp_path, rows, {"maximum_charged_requests": 21}, "binding", None, None, None, None)
+    assert worker.gpu_smoke(*args, 0, "GPU-a") == 21
+    assert len(calls) == 21
+    assert worker.gpu_smoke(*args, 21, "GPU-a") == 21
+    assert len(calls) == 21
+    attempts = [json.loads(p.read_text()) for p in (tmp_path / "request_attempts").glob("*.json")]
+    assert sum(a["requests"] for a in attempts) == 21
+    assert all(a["status"] == "committed" for a in attempts)
+    (tmp_path / "gpu_smoke.json").unlink()
+    with pytest.raises(RuntimeError, match="budget exhausted"):
+        worker.gpu_smoke(*args, 21, "GPU-a")
+    assert len(calls) == 21

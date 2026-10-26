@@ -1,0 +1,377 @@
+{
+  "metadata": {
+    "version": "object_presence_cases_v1",
+    "created_date": "2026-10-26",
+    "parent_run": "$ZEROSHOT_ARTIFACT_ROOT/revalue_observer_output_v2_2026-10-26",
+    "parent_review_pairs": "$ZEROSHOT_ARTIFACT_ROOT/revalue_observer_output_v2_2026-10-26/review_pairs.json",
+    "parent_review_pairs_sha256": "f13733ec3418bb070c6c43492dd4e0d3b53646297cbc72f8eeead63294c5dcdc",
+    "protocol": "$MERIT_ROOT/docs/revalue_object_presence_protocol_2026-10-26.md",
+    "image_count": 15,
+    "case_count": 30,
+    "cases_per_image": 2,
+    "query_count": 7,
+    "pixel_review": {
+      "method": "Each of the 15 original PNG images was individually inspected using view_image before constructing these claims and labels.",
+      "reviewed_image_count": 15,
+      "reviewer": "experiment-agent assistant",
+      "independent_human_review": false
+    },
+    "claim_construction": "Manually constructed neutral English object-presence assertions with locating regions; not automatically discovered evidence gaps.",
+    "reference_provenance": "Pre-inference assistant visual reference labels and reasons, not human ground truth or independent cross-model verification.",
+    "reference_status_counts": {
+      "supported": 14,
+      "contradicted": 10,
+      "cannot_determine": 6
+    },
+    "stratum_counts": {
+      "known_failure": 3,
+      "ordinary_positive": 14,
+      "ordinary_negative": 9,
+      "ambiguous_control": 4
+    },
+    "current_object_presence_outputs_seen": false,
+    "highlight_ground_truth_used": false,
+    "intended_split": "selected development diagnostic",
+    "selection_limitations": [
+      "The 15 images were deliberately selected from a previous 37-image diagnostic, including three historically difficult objects; they are not a random or held-out evaluation sample.",
+      "Two claims share each image and images share seven queries, so the 30 cases are not independent observations.",
+      "The claims, regions and reference labels were constructed by an assistant after viewing the selected images and may reflect selection and annotation biases.",
+      "Historical errors informed selection. No old caption, reference status, reference reason or selection stratum should enter a verifier request.",
+      "Static pixels support only visible object or body-part presence in the specified region; these labels do not establish identity, gender, motion, unseen objects or highlight relevance.",
+      "Blur, occlusion, cropping and unresolved object type are labeled cannot_determine rather than absence.",
+      "Agreement with these assistant labels is a development diagnostic, not an estimate of population accuracy or evidence of downstream mAP improvement."
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "op_v1_001",
+      "image_key": "1129_E_uniform_0_08",
+      "qid": 1129,
+      "object": "drain cover",
+      "region": "the center of the tiled shower floor",
+      "claim": "A round drain cover is visible in the center of the tiled shower floor.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "A dark circular perforated cover is clearly visible among the floor tiles."
+    },
+    {
+      "case_id": "op_v1_002",
+      "image_key": "1129_E_uniform_0_08",
+      "qid": 1129,
+      "object": "shoe",
+      "region": "the foreground foot above the tiled floor",
+      "claim": "A shoe is visible in the foreground foot area above the tiled floor.",
+      "stratum": "ordinary_negative",
+      "reference_status": "contradicted",
+      "reference_reason": "The foreground foot shows bare skin and an exposed heel and toes, with no shoe around the visible foot."
+    },
+    {
+      "case_id": "op_v1_003",
+      "image_key": "1129_E_uniform_1_07",
+      "qid": 1129,
+      "object": "acoustic guitar",
+      "region": "the background on the right side of the image",
+      "claim": "An acoustic guitar is visible in the right background.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "A wooden guitar body and its narrow neck are visible in the right background."
+    },
+    {
+      "case_id": "op_v1_004",
+      "image_key": "1129_E_uniform_1_07",
+      "qid": 1129,
+      "object": "eyeglasses",
+      "region": "across the eyes of the foreground face",
+      "claim": "Eyeglasses are visible across the eyes of the foreground face.",
+      "stratum": "ordinary_negative",
+      "reference_status": "contradicted",
+      "reference_reason": "The eyes and nose bridge are unobstructed, and no eyeglass frames or lenses are visible."
+    },
+    {
+      "case_id": "op_v1_005",
+      "image_key": "1129_E_targeted_1_12",
+      "qid": 1129,
+      "object": "airplane",
+      "region": "the large aircraft area across the center and right of the image",
+      "claim": "An airplane is visible across the center and right of the image.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "An aircraft fuselage, wing and engine are clearly visible on the apron."
+    },
+    {
+      "case_id": "op_v1_006",
+      "image_key": "1129_E_targeted_1_12",
+      "qid": 1129,
+      "object": "jet bridge",
+      "region": "the boarding-structure area at the right edge of the airplane, near the cropped doorway area",
+      "claim": "A jet bridge is visible in the boarding-structure area at the right edge of the airplane.",
+      "stratum": "known_failure",
+      "reference_status": "cannot_determine",
+      "reference_reason": "Only part of a sloping boarding structure is visible at the right crop. Its enclosure, terminal connection and attachment near the aircraft doorway are not resolved well enough to establish a jet bridge."
+    },
+    {
+      "case_id": "op_v1_007",
+      "image_key": "2973_E_targeted_0_12",
+      "qid": 2973,
+      "object": "hand",
+      "region": "the upper foreground above the counter",
+      "claim": "A hand is visible in the upper foreground above the counter.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "A skin-colored hand with distinguishable fingers is visible at the end of the foreground arm."
+    },
+    {
+      "case_id": "op_v1_008",
+      "image_key": "2973_E_targeted_0_12",
+      "qid": 2973,
+      "object": "wristwatch",
+      "region": "the foreground wrist in the upper-right area",
+      "claim": "A wristwatch is visible on the foreground wrist in the upper-right area.",
+      "stratum": "ambiguous_control",
+      "reference_status": "cannot_determine",
+      "reference_reason": "The wrist area is blurred and viewed at an angle; small accessory details are insufficient to confirm or exclude a wristwatch."
+    },
+    {
+      "case_id": "op_v1_009",
+      "image_key": "2973_E_uniform_1_12",
+      "qid": 2973,
+      "object": "food tray",
+      "region": "the lower-right foreground",
+      "claim": "A food tray is visible in the lower-right foreground.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "The colored rim and flat surface of a tray containing food are visible at the lower-right edge."
+    },
+    {
+      "case_id": "op_v1_010",
+      "image_key": "2973_E_uniform_1_12",
+      "qid": 2973,
+      "object": "fork",
+      "region": "the food tray in the lower-right foreground",
+      "claim": "A fork is visible on the food tray in the lower-right foreground.",
+      "stratum": "ambiguous_control",
+      "reference_status": "cannot_determine",
+      "reference_reason": "The tray is partly cropped and food obscures portions of its surface; no sufficiently resolved fork shape or tines can be confirmed, and the obscured areas prevent an absence judgment."
+    },
+    {
+      "case_id": "op_v1_011",
+      "image_key": "3478_E_targeted_1_12",
+      "qid": 3478,
+      "object": "palm tree",
+      "region": "the shoreline in the background",
+      "claim": "A palm tree is visible along the background shoreline.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "Tall narrow trunks with spreading palm fronds are visible along the distant shoreline."
+    },
+    {
+      "case_id": "op_v1_012",
+      "image_key": "3478_E_targeted_1_12",
+      "qid": 3478,
+      "object": "airplane",
+      "region": "the open blue sky in the upper part of the image",
+      "claim": "An airplane is visible in the open blue sky in the upper part of the image.",
+      "stratum": "ordinary_negative",
+      "reference_status": "contradicted",
+      "reference_reason": "The specified sky region is clearly visible and contains no aircraft shape or silhouette."
+    },
+    {
+      "case_id": "op_v1_013",
+      "image_key": "3478_E_targeted_0_12",
+      "qid": 3478,
+      "object": "surfboard",
+      "region": "the lower half of the image",
+      "claim": "A surfboard is visible in the lower half of the image.",
+      "stratum": "ambiguous_control",
+      "reference_status": "cannot_determine",
+      "reference_reason": "Heavy blur and foamy water obscure object boundaries throughout the region; a board outline cannot be reliably distinguished or excluded."
+    },
+    {
+      "case_id": "op_v1_014",
+      "image_key": "3478_E_targeted_0_12",
+      "qid": 3478,
+      "object": "hand",
+      "region": "the lower-right foreground",
+      "claim": "A hand is visible in the lower-right foreground.",
+      "stratum": "ambiguous_control",
+      "reference_status": "cannot_determine",
+      "reference_reason": "The lower-right area is severely blurred and obscured by water; fingers or a hand outline cannot be reliably identified, and lack of resolution does not establish absence."
+    },
+    {
+      "case_id": "op_v1_015",
+      "image_key": "5172_E_targeted_0_12",
+      "qid": 5172,
+      "object": "shirt",
+      "region": "the foreground torso in the lower half of the image",
+      "claim": "A shirt is visible on the foreground torso in the lower half of the image.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "Light blue-green fabric with a neckline clearly covers the visible foreground torso."
+    },
+    {
+      "case_id": "op_v1_016",
+      "image_key": "5172_E_targeted_0_12",
+      "qid": 5172,
+      "object": "eyeglasses",
+      "region": "across the eyes of the foreground face",
+      "claim": "Eyeglasses are visible across the eyes of the foreground face.",
+      "stratum": "ordinary_negative",
+      "reference_status": "contradicted",
+      "reference_reason": "The visible eyes and nose bridge are uncovered, with no eyeglass frames or lenses."
+    },
+    {
+      "case_id": "op_v1_017",
+      "image_key": "5172_E_targeted_1_12",
+      "qid": 5172,
+      "object": "lounge chair",
+      "region": "the left background",
+      "claim": "A lounge chair is visible in the left background.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "A white reclining chair frame and its slatted surface are clearly visible in the left background."
+    },
+    {
+      "case_id": "op_v1_018",
+      "image_key": "5172_E_targeted_1_12",
+      "qid": 5172,
+      "object": "cup",
+      "region": "the exposed towel-covered lounge surface to the left of the foreground knee",
+      "claim": "A cup is visible on the exposed towel-covered lounge surface to the left of the foreground knee.",
+      "stratum": "ordinary_negative",
+      "reference_status": "contradicted",
+      "reference_reason": "The specified exposed towel surface is visible; it has a small flat rectangular object but no cup-shaped object."
+    },
+    {
+      "case_id": "op_v1_019",
+      "image_key": "7971_E_targeted_1_08",
+      "qid": 7971,
+      "object": "hand",
+      "region": "beside the foreground person's face on the right side of the image",
+      "claim": "A hand is visible beside the foreground person's face on the right side of the image.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "An exposed hand and distinguishable fingers are visible beside the face."
+    },
+    {
+      "case_id": "op_v1_020",
+      "image_key": "7971_E_targeted_1_08",
+      "qid": 7971,
+      "object": "smartphone",
+      "region": "the raised hand beside the foreground person's face on the right side of the image",
+      "claim": "A smartphone is visible in the raised hand beside the foreground person's face.",
+      "stratum": "known_failure",
+      "reference_status": "contradicted",
+      "reference_reason": "The indicated visible hand area shows exposed fingers and skin, with no rectangular phone body or screen. This label concerns visible presence in that area, not an object concealed elsewhere."
+    },
+    {
+      "case_id": "op_v1_021",
+      "image_key": "7971_E_uniform_0_12",
+      "qid": 7971,
+      "object": "tree",
+      "region": "the central planted island",
+      "claim": "A tree is visible in the central planted island.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "A trunk with a leafy canopy is clearly visible in the central planted area."
+    },
+    {
+      "case_id": "op_v1_022",
+      "image_key": "7971_E_uniform_0_12",
+      "qid": 7971,
+      "object": "bicycle",
+      "region": "the foreground paving between the central planter and the bottom edge of the image",
+      "claim": "A bicycle is visible on the foreground paving between the central planter and the bottom edge of the image.",
+      "stratum": "ordinary_negative",
+      "reference_status": "contradicted",
+      "reference_reason": "The specified foreground paving is visible and contains no bicycle frame or wheels."
+    },
+    {
+      "case_id": "op_v1_023",
+      "image_key": "881_E_uniform_0_04",
+      "qid": 881,
+      "object": "human head",
+      "region": "above the water on the left side of the pool",
+      "claim": "A human head is visible above the water on the left side of the pool.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "A head with dark hair is visible above a neck and shoulders on the left side of the pool."
+    },
+    {
+      "case_id": "op_v1_024",
+      "image_key": "881_E_uniform_0_04",
+      "qid": 881,
+      "object": "dog",
+      "region": "the central splash area of the pool",
+      "claim": "A dog is visible in the central splash area of the pool.",
+      "stratum": "known_failure",
+      "reference_status": "cannot_determine",
+      "reference_reason": "A small dark shape is partly obscured by spray and water. A diagnostic dog outline or facial features cannot be resolved, and the occlusion prevents ruling out an animal."
+    },
+    {
+      "case_id": "op_v1_025",
+      "image_key": "881_E_targeted_1_12",
+      "qid": 881,
+      "object": "ball",
+      "region": "near the pool edge left of the image center",
+      "claim": "A ball is visible near the pool edge left of the image center.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "A small round multicolored ball is visible near the pool edge."
+    },
+    {
+      "case_id": "op_v1_026",
+      "image_key": "881_E_targeted_1_12",
+      "qid": 881,
+      "object": "cup",
+      "region": "the tiled deck in the bottom-center foreground",
+      "claim": "A cup is visible on the tiled deck in the bottom-center foreground.",
+      "stratum": "ordinary_negative",
+      "reference_status": "contradicted",
+      "reference_reason": "The bottom-center deck tiles are unobstructed and contain no cup-shaped object."
+    },
+    {
+      "case_id": "op_v1_027",
+      "image_key": "9841_E_targeted_0_05",
+      "qid": 9841,
+      "object": "necktie",
+      "region": "the center of the foreground person's chest",
+      "claim": "A necktie is visible at the center of the foreground person's chest.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "A narrow tie with a knot is visible below the shirt collar and between the jacket lapels."
+    },
+    {
+      "case_id": "op_v1_028",
+      "image_key": "9841_E_targeted_0_05",
+      "qid": 9841,
+      "object": "eyeglasses",
+      "region": "across the eyes of the foreground face",
+      "claim": "Eyeglasses are visible across the eyes of the foreground face.",
+      "stratum": "ordinary_negative",
+      "reference_status": "contradicted",
+      "reference_reason": "The foreground eyes and nose bridge are visible without eyeglass frames or lenses."
+    },
+    {
+      "case_id": "op_v1_029",
+      "image_key": "9841_E_uniform_0_23",
+      "qid": 9841,
+      "object": "eyeglasses",
+      "region": "the face of the rightmost seated person in the right panel",
+      "claim": "Eyeglasses are visible on the face of the rightmost seated person in the right panel.",
+      "stratum": "ordinary_positive",
+      "reference_status": "supported",
+      "reference_reason": "Dark eyeglass frames are clearly visible around the rightmost person's eyes."
+    },
+    {
+      "case_id": "op_v1_030",
+      "image_key": "9841_E_uniform_0_23",
+      "qid": 9841,
+      "object": "eyeglasses",
+      "region": "the face of the leftmost seated person in the left panel",
+      "claim": "Eyeglasses are visible on the face of the leftmost seated person in the left panel.",
+      "stratum": "ordinary_negative",
+      "reference_status": "contradicted",
+      "reference_reason": "The leftmost person's visible eye area and nose bridge have no eyeglass frames or lenses."
+    }
+  ]
+}

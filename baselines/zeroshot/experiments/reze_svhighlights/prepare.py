@@ -18,6 +18,7 @@ META = Path(os.environ.get("SVH_INFERENCE_MANIFEST", "data/SVHighlights/inferenc
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--run", type=Path, required=True)
+    parser.add_argument("--previous-run", type=Path, help="Preserve the failed predecessor and its consumed budget")
     args = parser.parse_args()
     if not os.environ.get("REPRO_GPU_UUIDS", "").strip():
         parser.error("Set REPRO_GPU_UUIDS to the allocated NVIDIA GPU UUIDs")
@@ -109,8 +110,20 @@ def main():
         shutil.copy2(path, target)
         source_hashes[name] = sha256(path)
     calls = sum(len(segments_for(r["duration"])) for r in rows)
+    inherited = {"requests": 0, "active_worker_seconds": 0}
+    if args.previous_run:
+        parent = args.previous_run.resolve()
+        old = json.loads((parent / "binding.json").read_text())
+        if old["selected_ids"] != [r["vid"] for r in rows] or not (parent / "stopped.json").exists():
+            raise ValueError("Recovery must retain the stopped seven-video predecessor")
+        spent = json.loads((parent / "worker_attempts.json").read_text())
+        inherited = {"run": str(parent), "binding_sha256": sha256(parent / "binding.json"),
+                     "attempts_sha256": sha256(parent / "worker_attempts.json"),
+                     "active_worker_seconds": sum(a["seconds"] for a in spent),
+                     "requests": sum(json.loads(p.read_text())["requests"]
+                                     for p in (parent / "request_attempts").glob("*.json"))}
     binding = {
-        "schema": "reze_original_svh_pilot7_v1",
+        "schema": "reze_original_svh_pilot7_recovery_v2",
         "created_at": utc_now(),
         "method": "REZE Appendix A independently implemented, unchanged QV B0 scorer",
         "dataset": "SVHighlights",
@@ -133,9 +146,13 @@ def main():
         "evaluator": "unmodified official metric functions; strict IDs and lengths checked before calls",
         "batch_size": 16,
         "expected_model_requests_upper_bound": calls,
-        "maximum_charged_requests": calls + 3 * 16,
+        "maximum_charged_requests": calls + 3 * 16 - inherited["requests"],
         "maximum_worker_attempts": 3,
-        "maximum_active_worker_seconds": 12 * 3600,
+        "maximum_active_worker_seconds": 12 * 3600 - inherited["active_worker_seconds"],
+        "maximum_worker_stall_seconds": 900,
+        "require_gpu_smoke": True,
+        "engineering_requests": 21,
+        "inherited_budget": inherited,
         "gpu_candidates": [uuid.strip() for uuid in os.environ.get("REPRO_GPU_UUIDS", "").split(",") if uuid.strip()],
         "max_gpus": 1,
         "require_no_other_compute_process": True,

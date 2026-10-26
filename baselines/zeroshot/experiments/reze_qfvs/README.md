@@ -1,5 +1,32 @@
 # REZE transfer to QFVS
 
+## Full180 validation (2026-10-23)
+
+The user explicitly authorized full validation after the four-query pilot.
+Run original `reze_action_v1` and the unchanged `visual_concept_or_v1` on all
+180 released queries, assigning one allocated GPU to each independent run.
+Both use `--scope full180 --pixel-reference ORIGINAL_B0_PILOT`; the reference
+supplies query-independent pixel traces for each video, never reused scores.
+Every inference window checks the original frame IDs, timestamps and RGB hashes.
+Freeze separate new directories; retain all previous runs and their failures.
+
+Each prompt requires 916,020 formal requests plus 12 GPU probes. The frozen
+ceiling is 916,080 charged requests, three worker attempts and 48 active worker
+hours per run. The two runs therefore use at most two allocated GPUs, with
+independent checkpoints, idle-device checks, 15-minute stall detection and
+bounded recovery. Keep the existing model, prompts, 3-second windows, 2 fps,
+5-second readout, 2% summary budget and 10-second suppression radius unchanged.
+
+Run `preflight_media.py` and `dispatch.py` from each frozen source snapshot.
+`aggregate_full.py --experiment EXPERIMENT_ROOT` polls a frozen `experiment.json`
+containing both run paths and binding hashes. Once both runs complete, it
+verifies scores and input traces one query at a time, then reports B0 Top-k,
+B0 temporal, Concept Top-k, Concept temporal and Uniform in `comparison.json`
+and `REPORT.md`. It separately reports full180, remaining176 and the four
+previously diagnosed queries. The remaining176 use the same four videos;
+they do not establish generalization to unseen videos. No metric-driven tuning
+or automatic expansion to other datasets is part of this run.
+
 ## Concept prompt and temporal-selection ablation (2026-10-22)
 
 The optional `--prompt-mode visual_concept_or_v1 --paired-baseline OLD_RUN` keeps
@@ -21,7 +48,8 @@ Prepare a new directory, run its frozen `preflight_media.py`, then its frozen
 idle. Every new model input is checked against the original checkpoint's frame
 IDs, timestamps and RGB hash before inference. Original predictions remain intact.
 The 20,356 main requests, 12 smoke requests, and at most 48 retry requests share a
-20,416-request ceiling. Do not expand to `full180` through this adaptation option.
+20,416-request ceiling. This historical pilot does not automatically expand;
+the separately authorized full180 workflow is described above.
 
 The protocol and progress are recorded in
 [the adaptation report](../../../../docs/reze_qfvs_adaptation_2026-10-22.md).

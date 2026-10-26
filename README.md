@@ -4,6 +4,20 @@
 
 **发布约定：以后每次推送更新，一并同步新增或修改的实验报告、结果分析、研究方案和文档索引。** 详见[报告同步发布约定](docs/report_publication_workflow.md)和[本次同步清单](docs/report_publication_manifest.json)。
 
+**资源约定：[后续新运行可使用任意空闲 GPU](docs/gpu_resource_policy_2026-10-25.md)。** 可独立拆分的任务优先多卡并行，已有冻结运行保留原配置。
+
+**阶段总结：[实验成果与问题（2026-10-27）](docs/experimental_progress_and_issues_2026-10-27.md)。** REZE 候选复评已在 val1550 提升指标；ReVALUE 记忆与定向观察尚无稳定精度收益，当前优先验证视觉证据可靠性。跨数据集范围及限制一并列出。
+
+**最新执行结果：[ReVALUE 定向物体证据核查](docs/revalue_object_presence_results_2026-10-27.md)。** 60/60 次请求完成，150 项 CPU 测试通过；两臂状态完全相同，14 个明确正例全部保留，六个模糊例均未选择无法判断。更长提示未改善判断，内容关未通过；未启动新 HD 评估。见[冻结协议](docs/revalue_object_presence_protocol_2026-10-26.md)。
+
+**此前容量与输出结果：[ReVALUE 来源压缩与 37 次观察输出探针](docs/revalue_memory_compaction_results_2026-10-26.md)。** 14 视图节省 25.30% token，累计补回 104 个旧事实 ID；135 项 CPU 测试通过。字符限制修复改善句子完整性，但视觉内容仍未通过，A/B/C 和新 100 条未启动。原[下一轮计划](docs/revalue_next_experiment_plan_2026-10-26.md)保留为快照，实际顺序见新协议。
+
+**此前来源修复：[ReVALUE 来源绑定修复与 672 次单帧验证](docs/revalue_frame_grounding_repair_results_2026-10-26.md)。** 来源时间、片外引用与空描述入库已修复，86 项测试通过；固定跨场景错误得到纠正，但仍有视觉误判与记忆容量代价，单帧观察未晋级正式评分。见[本轮冻结协议](docs/revalue_frame_grounding_repair_protocol_2026-10-26.md)、[此前 28 次观察对照](docs/revalue_r2_observation_probe_results_2026-10-26.md)及[离线诊断](docs/revalue_r2_offline_diagnosis_2026-10-26.md)。R3/R4 未启动。
+
+**整体框架与阶段快照：[现阶段方案](docs/revalue_current_experiment_plan_2026-10-26.md)。** 父 R2 修复版完成 100/100、零技术回退、7 条配对观察，观察组 mAP / Hit@1 为 44.41 / 71.00，精度未过门槛；后续观察诊断未新增 HD 指标，下一轮细化安排见上方新计划。[总体设计 v3](docs/revalue_execution_plan_v3_2026-10-23.md)、[R2 修复协议](docs/revalue_r2_repair_protocol_v3_2026-10-26.md)、[故障诊断](docs/revalue_r2_diagnosis_2026-10-26.md)及[启动快照](docs/revalue_r2_repair_execution_2026-10-26.md)保留。[ReVALUE 代码入口](baselines/zeroshot/experiments/revalue/README.md)。
+
+**QFVS 全量验证已完成：[结果报告](docs/reze_qfvs_full_results_2026-10-25.md)。** 两组均 180/180；概念加时间分散 Oracle F1 为 44.86，均匀对照为 46.62，已单列剩余 176 条。原[启动记录](docs/reze_qfvs_full_validation_2026-10-23.md)保留冻结配置。
+
 ## 实验代码与复现入口（2026-10-22 补齐）
 
 [统一复现索引](docs/reproduction_index.md) 对应 MERIT 适配与记忆实验、REZE QVHighlights 复评及跨数据集实现；[代码补齐报告](docs/repository_completion_2026-10-22.md)记录部署修改、280 项通过的 CPU 测试及 12 项依赖原媒体或 tokenizer 的跳过。新源码入口位于 `experiments/` 和 `baselines/zeroshot/`，历史结果仍在 `comparisons/`。
@@ -12,7 +26,7 @@
 - [CLIP / VTG-GPT / REZE 零样本工作区](baselines/zeroshot/README.md)，包含 QFVS、MR.HiSum、TVSum、SVHighlights。
 - [路径配置](configs/paths.example.sh)、[代码来源清单](docs/code_publication_manifest.json)、[发布完整性检查](scripts/verify_publication.py)。
 
-本轮未运行新的 GPU 实验；SVHighlights 部署修复尚未实卡复测，QFVS 全量和 TVHighlights 仍未完成。历史父运行缓存的要求见复现索引。
+10 月 22 日代码补齐本身未运行 GPU 实验；10 月 23 日已完成 SVHighlights 七场基线和 QFVS 四查询优化；QFVS 全量验证已于 10 月 24 日完成，TVHighlights 数据尚不可用。历史父运行缓存的要求见复现索引。
 
 ## 最新实验结果（2026-10-22）
 
@@ -20,7 +34,7 @@
 
 [实验结果汇总报告](docs/experimental_results_report_2026-10-22.md) 汇总 QVHighlights 主实验、MERIT 开发对照及 REZE 跨数据集测试。TVSum 固定 val10 / all50 的 Top-5 mAP 为 **61.32 / 54.89**；MR.HiSum 可用 test 1,888 条的 mAP50 / mAP15 / 摘要 F1 为 **57.00 / 23.90 / 38.27**；QFVS 四查询 Oracle F1 为 **38.63**。不同指标和样本范围分别讨论，含计算开销、适配分析及尚未完成项目。
 
-[会议纪要后的推进计划](docs/next_steps_after_meeting_2026-10-22.md) 将下一阶段分为补齐 SVHighlights 基线、候选对照、同预算定向补证及长视频粗到细验证，包含 MERIT / LensWalk 分工和推进门槛；新实验尚未启动。详细数据集报告与 MERIT 开发实验已补齐，见[文档索引](docs/README.md)。
+[会议纪要后的推进计划](docs/next_steps_after_meeting_2026-10-22.md) 将下一阶段分为补齐 SVHighlights 基线、候选对照、同预算定向补证及长视频粗到细验证，包含 MERIT / LensWalk 分工和推进门槛；最新启动状态见上方执行记录。详细数据集报告与 MERIT 开发实验已补齐，见[文档索引](docs/README.md)。
 
 REZE B0、P_abs、P_pair 已完成全部 1,550 条 validation 查询，VeryGood mAP / Hit@1 分别为 **42.99 / 71.68、43.57 / 74.06、43.76 / 76.84**。本轮仅重排前五候选，未加入记忆或回看；此前 A 阶段未通过门槛的结论保留。
 

@@ -1,6 +1,6 @@
 # REZE original scorer on SVHighlights
 
-> 发布版入口：[统一复现索引](../../../../docs/reproduction_index.md)。下文保留原实验协议和当时的执行记录；路径与 GPU 以本机配置为准，历史父运行缓存需另行提供。
+> 发布版入口：[统一复现索引](https://github.com/irryxeek/MERIT-based-method/blob/main/docs/reproduction_index.md)。路径与 GPU 以本机配置为准，历史父运行缓存需另行提供。
 
 This isolated workflow transfers the frozen QV B0 implementation to a fixed
 seven-video SVHighlights development pilot. It preserves the Qwen3-VL-8B-Instruct
@@ -12,8 +12,7 @@ It adds no memory, reranking, sport cues, or model training.
 
 The local VideoARM store has 270 complete trimmed videos from the 320-video
 dataset. Existing media/label-count receipts accept 201 and quarantine 69;
-50 sources, including all basketball videos, are unavailable. QFVS has features
-and annotations but no raw video; VideoSIAH is a question-answering benchmark.
+50 sources, including all basketball videos, are unavailable.
 
 Select one video per available sport from the historical common 20-video
 development prediction set, using the lowest `sha256("42:vid")`.
@@ -42,15 +41,24 @@ Use the existing inference environment; no dependency upgrades are needed.
 PY=${REPRO_PYTHON}
 cd ${ZEROSHOT_ROOT}/experiments/reze_svhighlights
 "$PY" -m pytest tests -q
-"$PY" prepare.py --run ${ZEROSHOT_ARTIFACT_ROOT}/reze_svhighlights_pilot7_v1
+"$PY" prepare.py --run ${ZEROSHOT_ARTIFACT_ROOT}/reze_svhighlights_pilot7_gpu5_v2 \
+  --previous-run ${ZEROSHOT_ARTIFACT_ROOT}/reze_svhighlights_pilot7_v1
 ```
 
 Run `dispatch.py --run <directory>` from the frozen `source_snapshot/`.
-The registered user timer checks GPUs 4–7, chooses one only when it has no
-compute job, and resumes committed chunks. It never stops unrelated jobs.
+Set `REPRO_GPU_UUIDS` before preparation. The registered recovery timer checks
+only the frozen allocated GPU (GPU 5 in the current run), requires no compute
+job and resumes committed chunks. It never stops unrelated jobs.
 Three worker attempts and 12 active worker hours bound the run; interrupted
 batches count against the cumulative request budget. Separate CPU evaluation
 starts after the GPU worker exits. A completed or stopped run cannot relaunch.
+
+Recovery v2 preserves the failed predecessor, subtracts its consumed active time
+and model requests, and verifies numeric device addressing against the actual
+torch UUID. Seven videos each receive first/middle/last CPU and GPU probes before
+formal scoring: 21 engineering calls share the 19,062 total request cap with
+19,014 formal windows and any interrupted work. No-progress timeout is 900 seconds.
+GPU smoke completion is cached; its request reservations survive restart.
 
 Read `status.json`, `worker_attempt_*.log`, `evaluation.json` and `REPORT.md`.
 Compare REZE with stored Uniform-Refine AV and VideoARM AV predictions on exactly

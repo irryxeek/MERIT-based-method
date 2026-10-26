@@ -1,10 +1,52 @@
 # 文档索引
 
+- [阶段实验成果与问题总结（2026-10-27）](experimental_progress_and_issues_2026-10-27.md)：全量候选复评收益、ReVALUE 记忆与回看结果、跨数据集成绩、可靠性瓶颈和下一步顺序。
+
+- [SVHighlights 七场结果](reze_svhighlights_pilot7_results_2026-10-27.md)：补齐已于 10 月 23 日完成的原方法测试，HL-mAP 16.27；输入与预算限制单列。
+
+- [ReVALUE 定向物体核查结果（2026-10-27）](revalue_object_presence_results_2026-10-27.md)：60/60 次完成，两臂状态完全相同；14 个明确正例全部保留，但六个模糊例均未弃答，内容关未通过。见[冻结协议](revalue_object_presence_protocol_2026-10-26.md)。
+
+- [ReVALUE 来源压缩与观察输出探针结果（2026-10-26）](revalue_memory_compaction_results_2026-10-26.md)：14 视图节省 25.30% token，累计补回 104 个旧事实 ID；37/37 输出对照完成，135 项 CPU 测试通过。句子完整性改善但观察内容未通过，暂停 A/B/C 比较。见[CPU 协议](revalue_memory_compaction_protocol_2026-10-26.md)及[输出探针协议](revalue_observer_output_probe_protocol_2026-10-26.md)。
+
+- [ReVALUE 下一轮实验计划：来源压缩与旧证据保留（2026-10-26）](revalue_next_experiment_plan_2026-10-26.md)：保留原设计快照；本轮已完成 CPU 容量与 37 次输出探针，后续审查将内容关前置于 A/B/C 比较，实际决定见最新结果。
+
+- [ReVALUE 来源绑定修复与单帧验证（2026-10-26）](revalue_frame_grounding_repair_results_2026-10-26.md)：672/672 次完成，86 项测试通过；来源接口和空事实过滤已修复，单帧观察仍为诊断用途，尚无新 HD 指标。见[冻结协议](revalue_frame_grounding_repair_protocol_2026-10-26.md)。
+
+- [ReVALUE 离线诊断与 28 次观察对照结果（2026-10-26）](revalue_r2_observation_probe_results_2026-10-26.md)：已执行下一步，技术检查通过，查询盲观察仍有来源/时间错配，未晋级评分重跑；[逐案例诊断](revalue_r2_offline_diagnosis_2026-10-26.md)、[冻结协议](revalue_r2_observation_probe_protocol_2026-10-26.md)。
+
+- [ReVALUE 现阶段实验方案（2026-10-26）](revalue_current_experiment_plan_2026-10-26.md)：上午整理快照；完整框架、R2 结果、R3 功能验收与扩大条件。后续已完成诊断，下一轮细化安排见本页顶部。
+
+- [ReVALUE R2 修复启动记录（2026-10-26）](revalue_r2_repair_execution_2026-10-26.md)：保留启动快照；现已完成 100/100、零技术回退、7 条配对观察，精度未过门槛，结果见上方方案。[诊断](revalue_r2_diagnosis_2026-10-26.md)、[修复协议](revalue_r2_repair_protocol_v3_2026-10-26.md)。
+
+- [ReVALUE R2 旧轮启动记录（2026-10-25）](revalue_r2_execution_2026-10-25.md)：v2 启动快照；该轮现已完成，问题与修复见上方新记录。
+
+- [ReVALUE R1 结果（2026-10-25）](revalue_r1_results_2026-10-25.md)：20/20 完成；决策记忆与直接比较持平，尚未证明记忆收益。
+
+- [ReVALUE R2 执行协议（2026-10-25）](revalue_r2_protocol_2026-10-25.md)：100 条、五条件、配对观察、940 次缓存核验与共享多卡预算。
+
+- [GPU 使用约定（2026-10-25）](gpu_resource_policy_2026-10-25.md)：后续新运行使用任意空闲卡，可拆分任务优先并行；不修改现有冻结运行。
+
+- [ReVALUE R0 故障修复与验证（2026-10-25）](revalue_r0_repair_results_2026-10-25.md)：v1 故障根因、紧凑输出、引用约束与显存修复；当时 37 项测试与原 20 条检查通过，v5 修正全 unknown 退化；R1 启动段落为历史快照。
+
+- [工程修复协议 v2](revalue_r0_repair_protocol_v2_2026-10-25.md)：160 次严格复用、140 次新验证及不重置的累计预算。
+
+- [ReVALUE R0/R1 启动记录（2026-10-25）](revalue_r01_execution_2026-10-25.md)：保留 v1 准备快照，当前状态见上方修复报告。
+
+- [QFVS 全量 180 查询结果（2026-10-25）](reze_qfvs_full_results_2026-10-25.md)：两组全量完成；180/176 查询五组对照、成本和结论边界。
+
+- [ReVALUE 执行方案 v3（2026-10-23）](revalue_execution_plan_v3_2026-10-23.md)：总体设计基线；对齐原版图解的五类价值、两层记忆、四态比较、四类补看、事件选择和完整边界。原预算、门槛与冻结内容保留，当前顺序见上方现阶段方案。
+
+- [QFVS 全量验证执行记录（2026-10-23）](reze_qfvs_full_validation_2026-10-23.md)：全部 180 查询的冻结配置、双卡分工、五组对照、176 条单独报告与自动恢复。
+
+- [下一阶段执行记录（2026-10-23）](reze_next_stage_execution_status_2026-10-23.md)：前一轮启动快照；QFVS 四查询、SVHighlights 七场及 QV V1 已完成，Agent 四组尚未运行。
+
+- [历史执行方案 v2（2026-10-23）](reze_next_stage_execution_plan_v2_2026-10-23.md)：保留原实验引用；未启动的 Agent 部分由 v3 替代，文中的进度和五类价值待定描述属于历史快照。
+
 - [数据集特点、输入输出与评价指标](datasets_inputs_outputs_metrics_2026-10-22.md)：六个数据集的任务区别、标注含义、当前适配协议与实验范围。
 
-- [QFVS 概念提示与时间选择优化](reze_qfvs_adaptation_2026-10-22.md)：固定四查询的配对消融；原分数时间选择 F1 为 40.41，新提示等待 GPU 6。
+- [QFVS 概念提示与时间选择优化](reze_qfvs_adaptation_2026-10-22.md)：固定四查询的配对消融；原分数时间选择 F1 为 40.41，新提示运行与 GPU 迁移见最新执行记录。
 
-更新日期：2026-10-22。以下结果、方案和详细报告均已纳入本仓库；原始运行产物的发布范围以各报告说明为准。
+更新日期：2026-10-27。R2 观察组仍为 mAP / Hit@1 44.41 / 71.00。最新完成 60 次定向物体核查：两臂均与助手参考一致 24/30，未通过内容关。此前压缩容量通过；尚无新 HD 指标，未启动 A/B/C、100 条复核或 R3/R4。历史计划与启动快照按原日期保留。
 
 - [实验实现与复现入口](reproduction_index.md)：代码、配置、数据条件、测试与结果对应表。
 - [仓库代码补齐报告](repository_completion_2026-10-22.md)：新增实现、部署修复、验证结果和发布边界。

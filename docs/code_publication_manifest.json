@@ -286,219 +286,219 @@
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/README.md",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/README.md",
-      "source_sha256": "08134a777613bf36a8535d0c50b088857a6d1d5c3ba3b6eeb4be48d35b5bc90e",
-      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
-      "publication_sha256": "e57516fc1a745fcc0ce371ee6393b01a35fb722a050931a272c0d38c686c78c4"
+      "source_sha256": "ac2582edf6497d004664234de783178c5091a89878ee5b58db1a8654e6d9f298",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
+      "publication_sha256": "b5b61009869fec96b9e00af334b50a8d6fbd97b1c4d38b50ceb037e83b4bdda6"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/dispatch.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/dispatch.py",
-      "source_sha256": "e1c5b55d61e2973cdf38374fe51190ac4fa912958668fbce0cc1aa3194027c67",
-      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
-      "publication_sha256": "c8ba532de2af05d8c2112a909848405348f1d48271376655a971fc282b77f663"
+      "source_sha256": "0718d7706223f908faf6153c3e22f4dea17ca855ac5490afa760e6ac2fbb4e1c",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
+      "publication_sha256": "0718d7706223f908faf6153c3e22f4dea17ca855ac5490afa760e6ac2fbb4e1c"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/evaluate.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/evaluate.py",
-      "source_sha256": "e42012b95d29ba0da219fd245183d50d8dff46d9d27c46bd659cf4e87b619e1c",
-      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
-      "publication_sha256": "ed339373ac2ffe4a1af214f8e6728b7865b9ef395dffdaf1ad3659047f721306"
+      "source_sha256": "5f29eb018993c25ea0286220b83854ae39823dcd7b878c43472ce6b2b681c53b",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
+      "publication_sha256": "5f29eb018993c25ea0286220b83854ae39823dcd7b878c43472ce6b2b681c53b"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/media.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/media.py",
       "source_sha256": "38c8c71252a99d333a6a596b477cf136ba403fdebcb1fb472169b4587df346c1",
-      "publication_changes": "unchanged",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
       "publication_sha256": "38c8c71252a99d333a6a596b477cf136ba403fdebcb1fb472169b4587df346c1"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/preflight_media.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/preflight_media.py",
-      "source_sha256": "279726362699c19ca21e63af6de45f20a1fdccf0310fbd8bd4bf43c26bda80d8",
-      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
+      "source_sha256": "c81a281199bc3df6e253462dc406af8bc205764a1a6d3b85bccf309679977544",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
       "publication_sha256": "c81a281199bc3df6e253462dc406af8bc205764a1a6d3b85bccf309679977544"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/prepare.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/prepare.py",
-      "source_sha256": "7e8017317b2dc216afe6e010c52aca9bd36ca9f57dde4206bbdaaae5eac6357f",
-      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
-      "publication_sha256": "2f47db56015a43db018d6a1f2b7ebe6235bb7e5633e26ec726b230b6d98b35c7"
+      "source_sha256": "b745365216ec3ac38e5bafd63764813dbca47ad9f6110a3c1e851dade8093bee",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
+      "publication_sha256": "b745365216ec3ac38e5bafd63764813dbca47ad9f6110a3c1e851dade8093bee"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/shared.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/shared.py",
-      "source_sha256": "d47afe651c01c16a7fad834ce3518412a308bc53d88ec116a9953a5d4378257f",
-      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
+      "source_sha256": "8501fd4acb6851fb04457c8ef6f7a36cf1815d0ed13b36edc37073549c4cc6cf",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
       "publication_sha256": "8501fd4acb6851fb04457c8ef6f7a36cf1815d0ed13b36edc37073549c4cc6cf"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/tests/test_qfvs.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/tests/test_qfvs.py",
-      "source_sha256": "a71a52ec3935b6e173e9af80b0605a3dee91fe69844f3825b4ed72076860d0e4",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "source_sha256": "75aba4934d12c165b3e6999d2bbcd16ee0f78bef95ac658ea4920d12640b907a",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
       "publication_sha256": "75aba4934d12c165b3e6999d2bbcd16ee0f78bef95ac658ea4920d12640b907a"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/UniVTG.LICENSE",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/UniVTG.LICENSE",
       "source_sha256": "cd359473e1f1047b0b89d43ca657171d077ee56ac9aff7491111dfff8fb04ab5",
-      "publication_changes": "unchanged",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
       "publication_sha256": "cd359473e1f1047b0b89d43ca657171d077ee56ac9aff7491111dfff8fb04ab5"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/common.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/common.py",
-      "source_sha256": "2ca173967f7a9f8797b786fed25a1308835812fd9a6a8d3beeac3ad7e6e2dc9c",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "source_sha256": "0cc052a75d32b22c48b2925552afb81323709f222a0b9616f25e474cecd792b1",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
       "publication_sha256": "0cc052a75d32b22c48b2925552afb81323709f222a0b9616f25e474cecd792b1"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/qfvs_eval.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/qfvs_eval.py",
       "source_sha256": "ee0073abca365964c20885df08ed7407bb91bed036173a32c95e72bf68ead8a1",
-      "publication_changes": "unchanged",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
       "publication_sha256": "ee0073abca365964c20885df08ed7407bb91bed036173a32c95e72bf68ead8a1"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/reze_backend.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/reze_backend.py",
-      "source_sha256": "0c9eb0e4c5b8e1df4877732076424fa92b9316d18fd68f9d5ae2178aae8ec3c5",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "source_sha256": "2179cbbe435bb3dc3ec2cfc0dd63b9a87012a1a390efa6c2d7fd5d9fb953ea18",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
       "publication_sha256": "2179cbbe435bb3dc3ec2cfc0dd63b9a87012a1a390efa6c2d7fd5d9fb953ea18"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/reze_core.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/reze_core.py",
       "source_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d",
-      "publication_changes": "unchanged",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
       "publication_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/reze_media.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/reze_media.py",
       "source_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e",
-      "publication_changes": "unchanged",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
       "publication_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/vendor/univtg_config.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/vendor/univtg_config.py",
       "source_sha256": "541e6a9b1505bb084a3d1c2eb0d8cba7cee2dc5debba25c884c2e83934c16c0e",
-      "publication_changes": "unchanged",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
       "publication_sha256": "541e6a9b1505bb084a3d1c2eb0d8cba7cee2dc5debba25c884c2e83934c16c0e"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/worker.py",
       "destination": "baselines/zeroshot/experiments/reze_qfvs/worker.py",
-      "source_sha256": "b3e49ee6ac525f579024003233c343b7eb553452e8700e4b4ef2ee5dcafd95ce",
-      "publication_changes": "QFVS concept-presence and temporal selection ablation with frozen B0 pairing; see docs/reze_qfvs_adaptation_2026-10-22.md",
+      "source_sha256": "b7fc6a1a2f68ee3b940538f621dd6a42fac32f36fcc92e9d29dbc2a519d4b134",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout",
       "publication_sha256": "b7fc6a1a2f68ee3b940538f621dd6a42fac32f36fcc92e9d29dbc2a519d4b134"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/README.md",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/README.md",
-      "source_sha256": "dd5698183ed30a75caf70f3750791bb2a2e38742e9aa0ce8cf6268475a3d1ecb",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
-      "publication_sha256": "9f9d47cfd8defacca20da29f4b174e562a1c6b149ca81a23841f1ee69a4dc39a"
+      "source_sha256": "07172b6ce59bd338ec74a086fe7dc3a55a706e99633b3fb2a6386801dc932c19",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
+      "publication_sha256": "07172b6ce59bd338ec74a086fe7dc3a55a706e99633b3fb2a6386801dc932c19"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/dispatch.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/dispatch.py",
-      "source_sha256": "937d328f3295cb2192e23a9dc2f3bbc47b3ce095c588bec43c5b709bc9f35860",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
-      "publication_sha256": "c258abf0b8edec0376c32bd9fba4eb967c502fbb7cc9480b0dc7060cd805cf22"
+      "source_sha256": "91aee1bd5323a6342976f79da30ab7603f7831b1dbff0745b69d28733285ff44",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
+      "publication_sha256": "91aee1bd5323a6342976f79da30ab7603f7831b1dbff0745b69d28733285ff44"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/evaluate.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/evaluate.py",
-      "source_sha256": "fe26e04b1bdd927213c700f3f860c8e5cd1958e6539588dd40cde11ee62750b8",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "source_sha256": "0973c78a98dc92a31269547bf41006a836f5d186de6ab1fed3c7527b3f00702b",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
       "publication_sha256": "0973c78a98dc92a31269547bf41006a836f5d186de6ab1fed3c7527b3f00702b"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/media.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/media.py",
-      "source_sha256": "f66771a1a3ddaf97d689767e15c8c33b57048cf3fa85a47c30e851513c1d5cac",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "source_sha256": "38c8c71252a99d333a6a596b477cf136ba403fdebcb1fb472169b4587df346c1",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
       "publication_sha256": "38c8c71252a99d333a6a596b477cf136ba403fdebcb1fb472169b4587df346c1"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/preflight_media.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/preflight_media.py",
-      "source_sha256": "83ea435a963a22c908e88d6ca5b049aa7156c5eec81697647a68fa78bfed587d",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "source_sha256": "a9d17363f54b7b41657ba67d0f747cc4d0078d08255b9d1fcb0bba54c799832f",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
       "publication_sha256": "a9d17363f54b7b41657ba67d0f747cc4d0078d08255b9d1fcb0bba54c799832f"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/prepare.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/prepare.py",
-      "source_sha256": "23a8f2519758e902ef7b208e9e9328d64f112ab3490314958dffaf48adfc1bf2",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
-      "publication_sha256": "cd9ce510e2278898027c53c0ad4770c1ebd367e57b8575961184d026586c0f27"
+      "source_sha256": "d21481ad91d1bd5f7627f172dae4340b0b52c8de0296ce1f9b4c2679ffe26f47",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
+      "publication_sha256": "d21481ad91d1bd5f7627f172dae4340b0b52c8de0296ce1f9b4c2679ffe26f47"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/shared.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/shared.py",
-      "source_sha256": "e7de0c2db9a4fc47dd6c9ac3557bfdbf8e539c570ee21825f92e84c3210362ce",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "source_sha256": "8b1ae322b2cabcf4d463da4bb5fff26684eabdb86bf1aaccf6c8d02936e73889",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
       "publication_sha256": "8b1ae322b2cabcf4d463da4bb5fff26684eabdb86bf1aaccf6c8d02936e73889"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/tests/test_svh.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/tests/test_svh.py",
-      "source_sha256": "36b999435ae3f59df7023290275d70cb3a58ad37ae77ecf1bcc3361a7464bd5e",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
-      "publication_sha256": "0568afd902acb0e266cbeab11657dccc5b12a23fd008fa74ba0b1fa057fe34a8"
+      "source_sha256": "6920ad5686e631b6cbfd89aef3cfaaf4359d328362f827277411b9cd13840cfa",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
+      "publication_sha256": "6920ad5686e631b6cbfd89aef3cfaaf4359d328362f827277411b9cd13840cfa"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/vendor/SVHighlights.LICENSE",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/vendor/SVHighlights.LICENSE",
       "source_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
-      "publication_changes": "unchanged",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
       "publication_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/vendor/common.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/vendor/common.py",
-      "source_sha256": "2ca173967f7a9f8797b786fed25a1308835812fd9a6a8d3beeac3ad7e6e2dc9c",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "source_sha256": "0cc052a75d32b22c48b2925552afb81323709f222a0b9616f25e474cecd792b1",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
       "publication_sha256": "0cc052a75d32b22c48b2925552afb81323709f222a0b9616f25e474cecd792b1"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/vendor/reze_backend.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/vendor/reze_backend.py",
-      "source_sha256": "0c9eb0e4c5b8e1df4877732076424fa92b9316d18fd68f9d5ae2178aae8ec3c5",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
+      "source_sha256": "2179cbbe435bb3dc3ec2cfc0dd63b9a87012a1a390efa6c2d7fd5d9fb953ea18",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
       "publication_sha256": "2179cbbe435bb3dc3ec2cfc0dd63b9a87012a1a390efa6c2d7fd5d9fb953ea18"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/vendor/reze_core.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/vendor/reze_core.py",
       "source_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d",
-      "publication_changes": "unchanged",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
       "publication_sha256": "c98207b9731441afdbd2b40f16fd19a5c5bd9ca4c953e69a195a1b1bc9fc166d"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/vendor/reze_media.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/vendor/reze_media.py",
       "source_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e",
-      "publication_changes": "unchanged",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
       "publication_sha256": "2b482eaf4c002d6d10947ddb5371fe18f3a3c1d2b5d65bc16246889409b8032e"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/vendor/svhighlights_eval.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/vendor/svhighlights_eval.py",
       "source_sha256": "fbf9191cae964fdc1461c0f6a47b6b854df7aff7bc89ed3210814be617f9ef0d",
-      "publication_changes": "unchanged",
+      "publication_changes": "unchanged official evaluator",
       "publication_sha256": "fbf9191cae964fdc1461c0f6a47b6b854df7aff7bc89ed3210814be617f9ef0d"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_svhighlights/worker.py",
       "destination": "baselines/zeroshot/experiments/reze_svhighlights/worker.py",
-      "source_sha256": "0ef899edb6d5edbb23c3aaa4d630e0ab68dc46645fe968fda3d83b7ab5ca3ae1",
-      "publication_changes": "portable deployment, configuration, documentation or CPU regression updates; see repository completion report",
-      "publication_sha256": "8218ac2d0c001801a5b6f62a1f8b47aeadb50e801dd26d6bd6236201bdf1cc4a"
+      "source_sha256": "81b9d4594e1bfd0dfda47d53def18a763bf1096090482765c86712bb4e645a9d",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained",
+      "publication_sha256": "81b9d4594e1bfd0dfda47d53def18a763bf1096090482765c86712bb4e645a9d"
     },
     {
       "source": "QVHighlights-ZeroShot:experiments/reze_tvsum/README.md",
@@ -1444,6 +1444,489 @@
       "source_sha256": "29e5b8d8fa421f1ad29f64de76869f4396947c7f6d570d8d6464b20996b5c55c",
       "publication_sha256": "29e5b8d8fa421f1ad29f64de76869f4396947c7f6d570d8d6464b20996b5c55c",
       "publication_changes": "unchanged"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_agent_v2/README.md",
+      "destination": "baselines/zeroshot/experiments/reze_agent_v2/README.md",
+      "source_sha256": "22074474f42345773166266502ce8a24cb7674d6171168376b412aaedfe2c522",
+      "publication_sha256": "22074474f42345773166266502ce8a24cb7674d6171168376b412aaedfe2c522",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_agent_v2/__init__.py",
+      "destination": "baselines/zeroshot/experiments/reze_agent_v2/__init__.py",
+      "source_sha256": "473e5ce999e341cb64f32dbafb2fa2aa1b56cb72b4afbc2b1c148f53dfe8e2cf",
+      "publication_sha256": "473e5ce999e341cb64f32dbafb2fa2aa1b56cb72b4afbc2b1c148f53dfe8e2cf",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_agent_v2/core.py",
+      "destination": "baselines/zeroshot/experiments/reze_agent_v2/core.py",
+      "source_sha256": "8e6ca96c7f0a5b09c35334ab5348c321c014d17481e930f6b9248ae5f64ddf83",
+      "publication_sha256": "8e6ca96c7f0a5b09c35334ab5348c321c014d17481e930f6b9248ae5f64ddf83",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_agent_v2/dispatch_v1.py",
+      "destination": "baselines/zeroshot/experiments/reze_agent_v2/dispatch_v1.py",
+      "source_sha256": "62aba9ee320622c34c3813482653d5064dc299de5930586b2b3fbed0f233b6d7",
+      "publication_sha256": "62aba9ee320622c34c3813482653d5064dc299de5930586b2b3fbed0f233b6d7",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_agent_v2/evaluate_v1.py",
+      "destination": "baselines/zeroshot/experiments/reze_agent_v2/evaluate_v1.py",
+      "source_sha256": "7380c0da5a0809ccaec4ec21903945f75b371aec9178115bc815447ced360e33",
+      "publication_sha256": "d924f3a766f7b2ded734dad34fd52de0ea1b0ae7a3fe27eddeda6069dff8da80",
+      "publication_changes": "Use REZE_QV_EVALUATOR or QVH_EVALUATOR_ROOT for the official evaluator location."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_agent_v2/prepare_v1.py",
+      "destination": "baselines/zeroshot/experiments/reze_agent_v2/prepare_v1.py",
+      "source_sha256": "d32c87dd387d36de6a6b4afa5e496d7e576ab5e6511264ea302801f449b26b58",
+      "publication_sha256": "d32c87dd387d36de6a6b4afa5e496d7e576ab5e6511264ea302801f449b26b58",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_agent_v2/tests/test_v1.py",
+      "destination": "baselines/zeroshot/experiments/reze_agent_v2/tests/test_v1.py",
+      "source_sha256": "209a0c8f28dd77bd507756d8cc009f3154789e02a3ebe8bf192f69d107e5cb8d",
+      "publication_sha256": "209a0c8f28dd77bd507756d8cc009f3154789e02a3ebe8bf192f69d107e5cb8d",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_agent_v2/worker_v1.py",
+      "destination": "baselines/zeroshot/experiments/reze_agent_v2/worker_v1.py",
+      "source_sha256": "ca667c452eaba250b72c8a96069c8f0884cacb36cd0be59cff41ecb2abdb386b",
+      "publication_sha256": "ca667c452eaba250b72c8a96069c8f0884cacb36cd0be59cff41ecb2abdb386b",
+      "publication_changes": "V1 candidate protocol or SVHighlights v2 recovery; frozen historical snapshots retained"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/adaptation.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/adaptation.py",
+      "source_sha256": "4668f72f90d321ed6a0b368ca2e7a395fdbd273d099e02b116e4f9c47e77d7a7",
+      "publication_sha256": "4668f72f90d321ed6a0b368ca2e7a395fdbd273d099e02b116e4f9c47e77d7a7",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/aggregate_full.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/aggregate_full.py",
+      "source_sha256": "eb61a84c62a7a401345d84d1e891a1aa288e7fe754fac98aa6752905b70023d1",
+      "publication_sha256": "eb61a84c62a7a401345d84d1e891a1aa288e7fe754fac98aa6752905b70023d1",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/compare_adaptation.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/compare_adaptation.py",
+      "source_sha256": "aa706e0f59b45b213e92d945ec0ed7bc1e67300a0c1b3f64bab45b9cde910488",
+      "publication_sha256": "aa706e0f59b45b213e92d945ec0ed7bc1e67300a0c1b3f64bab45b9cde910488",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/pairing.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/pairing.py",
+      "source_sha256": "5e79fe9f29ce10f9bd72f5902917f93971cc311c22da7d892045b40db5e3a7eb",
+      "publication_sha256": "5e79fe9f29ce10f9bd72f5902917f93971cc311c22da7d892045b40db5e3a7eb",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/tests/test_adaptation.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/tests/test_adaptation.py",
+      "source_sha256": "55667d049ac9a6f9a22eb7091afee4298349533b7577cda02643ce2165b785c1",
+      "publication_sha256": "55667d049ac9a6f9a22eb7091afee4298349533b7577cda02643ce2165b785c1",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/reze_qfvs/tests/test_full.py",
+      "destination": "baselines/zeroshot/experiments/reze_qfvs/tests/test_full.py",
+      "source_sha256": "da13600a266819d6fccf48c32e8bb7396b4e8e036ffdc0ab7843a3317e51e7f1",
+      "publication_sha256": "da13600a266819d6fccf48c32e8bb7396b4e8e036ffdc0ab7843a3317e51e7f1",
+      "publication_changes": "Full180 paired validation, frozen pixel references, bounded execution and complete/development-excluded reporting; README links adapted to publication layout"
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/__init__.py",
+      "destination": "baselines/zeroshot/experiments/revalue/__init__.py",
+      "source_sha256": "2eb2e2121209d71ac70ede9039155809aad82b4d3a6c467ec3cbe475b0c7b74b",
+      "publication_sha256": "2eb2e2121209d71ac70ede9039155809aad82b4d3a6c467ec3cbe475b0c7b74b",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/backend.py",
+      "destination": "baselines/zeroshot/experiments/revalue/backend.py",
+      "source_sha256": "59385882ec5b8b14f58016f86402fbcdc1aa7efbd796464c9480fdafe694792b",
+      "publication_sha256": "6003443369f8cf8a667c807471e952acaec8f9c6c95f930cb89221db543e1801",
+      "publication_changes": "Use REZE_MODEL_PATH instead of a machine-specific model location; model identity remains configurable."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/budget.py",
+      "destination": "baselines/zeroshot/experiments/revalue/budget.py",
+      "source_sha256": "a0cfca1cb182b5f7fec6be54cb7b7d89c2c29f7e6a04a339cf58507acc091f68",
+      "publication_sha256": "a0cfca1cb182b5f7fec6be54cb7b7d89c2c29f7e6a04a339cf58507acc091f68",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/comparison.py",
+      "destination": "baselines/zeroshot/experiments/revalue/comparison.py",
+      "source_sha256": "ccd4abeedde498ea85e1258a385ec953617d8355ed17433b7f5ed78e16fa5d70",
+      "publication_sha256": "ccd4abeedde498ea85e1258a385ec953617d8355ed17433b7f5ed78e16fa5d70",
+      "publication_changes": "Temporal evidence binding, scoped citation validation, same-source still-observer diagnosis and deterministic empty-fact guard. Frozen inference snapshots retained; README deployment path adjustments retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/controller.py",
+      "destination": "baselines/zeroshot/experiments/revalue/controller.py",
+      "source_sha256": "da6308fe705962fa663e994b7481316d3d3bc7f43457d53995fdf5170c969321",
+      "publication_sha256": "da6308fe705962fa663e994b7481316d3d3bc7f43457d53995fdf5170c969321",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/dispatch.py",
+      "destination": "baselines/zeroshot/experiments/revalue/dispatch.py",
+      "source_sha256": "eb09a119089eda68b2c417f782ccbdbb81c70fa2aba00ee3c455ead4c4aa3177",
+      "publication_sha256": "eb09a119089eda68b2c417f782ccbdbb81c70fa2aba00ee3c455ead4c4aa3177",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/evaluate.py",
+      "destination": "baselines/zeroshot/experiments/revalue/evaluate.py",
+      "source_sha256": "915540399814a7cb04a184988f4346155cd218ce29084433d1f1558983415902",
+      "publication_sha256": "3498640e5ab840ae695d4e140048a8244426aad57f446ce08f0e34113e7212f1",
+      "publication_changes": "Use QVH_EVALUATOR_ROOT for the official evaluator location; evaluation logic is unchanged."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/exporters.py",
+      "destination": "baselines/zeroshot/experiments/revalue/exporters.py",
+      "source_sha256": "fdbda1a58d3a288533cbb2699131bbdf0d925b210321e63fd0cec34412f13eae",
+      "publication_sha256": "fdbda1a58d3a288533cbb2699131bbdf0d925b210321e63fd0cec34412f13eae",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/io_utils.py",
+      "destination": "baselines/zeroshot/experiments/revalue/io_utils.py",
+      "source_sha256": "492972cb8d76dcb42261e548a140875389968bb988e7ab48c29a334a197ce269",
+      "publication_sha256": "492972cb8d76dcb42261e548a140875389968bb988e7ab48c29a334a197ce269",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/memory.py",
+      "destination": "baselines/zeroshot/experiments/revalue/memory.py",
+      "source_sha256": "2f981f58ae01202881baf795042bae831d06788a6ed2566ec331eaea3a028055",
+      "publication_sha256": "2f981f58ae01202881baf795042bae831d06788a6ed2566ec331eaea3a028055",
+      "publication_changes": "Temporal evidence binding, scoped citation validation, same-source still-observer diagnosis and deterministic empty-fact guard. Frozen inference snapshots retained; README deployment path adjustments retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/observer.py",
+      "destination": "baselines/zeroshot/experiments/revalue/observer.py",
+      "source_sha256": "27ca3f15632eb35b0f75dc80ae4e3afe225582f45fce649842ebda8c08e2681d",
+      "publication_sha256": "27ca3f15632eb35b0f75dc80ae4e3afe225582f45fce649842ebda8c08e2681d",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/prepare.py",
+      "destination": "baselines/zeroshot/experiments/revalue/prepare.py",
+      "source_sha256": "e396bfaafc40c78d0dfb6f971c337307677636c56d67749927f3be7e5f5bb7b4",
+      "publication_sha256": "c60b6db938e57676fdbf6619e42891d3659dd13095d34039266cb02b765b1962",
+      "publication_changes": "Resolve artifact defaults through ZEROSHOT_ARTIFACT_ROOT and expose --pair-run / --candidate-decision; frozen research inputs are unchanged."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/prompts.py",
+      "destination": "baselines/zeroshot/experiments/revalue/prompts.py",
+      "source_sha256": "0211aa89b20c822daecddc1f6877a5bad1b555d0c6c0ee5eb22dfaafdc1f7568",
+      "publication_sha256": "0211aa89b20c822daecddc1f6877a5bad1b555d0c6c0ee5eb22dfaafdc1f7568",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/schema.py",
+      "destination": "baselines/zeroshot/experiments/revalue/schema.py",
+      "source_sha256": "9a53701090654dbf07c1682b5f43e064f330e17056fbf1e2dfb3bc06300638d4",
+      "publication_sha256": "9a53701090654dbf07c1682b5f43e064f330e17056fbf1e2dfb3bc06300638d4",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/selector.py",
+      "destination": "baselines/zeroshot/experiments/revalue/selector.py",
+      "source_sha256": "fe31992c2a4620ca15b7c44df4e7c51ffd15877447e67b95c495844e2911bbb7",
+      "publication_sha256": "fe31992c2a4620ca15b7c44df4e7c51ffd15877447e67b95c495844e2911bbb7",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/conftest.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/conftest.py",
+      "source_sha256": "eb781226948e93cfe32c38a6807ca0cbabc616c713b026be378fb624fe7ed612",
+      "publication_sha256": "eb781226948e93cfe32c38a6807ca0cbabc616c713b026be378fb624fe7ed612",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/test_contracts.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/test_contracts.py",
+      "source_sha256": "efa1ee5d9020a28da1b430f6e321d601118ae28cdd2ff11301710d3e3232f3af",
+      "publication_sha256": "efa1ee5d9020a28da1b430f6e321d601118ae28cdd2ff11301710d3e3232f3af",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/test_workflow.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/test_workflow.py",
+      "source_sha256": "39e5c27f6a820eec1e02fec3732de79ffe3032e512eccb0ca0c168b9a06acab7",
+      "publication_sha256": "39e5c27f6a820eec1e02fec3732de79ffe3032e512eccb0ca0c168b9a06acab7",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/worker.py",
+      "destination": "baselines/zeroshot/experiments/revalue/worker.py",
+      "source_sha256": "69a14ad7df96d6ce90dd8a778b29d4cf417f43977331e574b6ed63c567205e39",
+      "publication_sha256": "69a14ad7df96d6ce90dd8a778b29d4cf417f43977331e574b6ed63c567205e39",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/repair.py",
+      "destination": "baselines/zeroshot/experiments/revalue/repair.py",
+      "source_sha256": "719735fbc8f7e9fab428c5394f02978edb58eb0dd7a68c4bbb977f44534036ef",
+      "publication_sha256": "719735fbc8f7e9fab428c5394f02978edb58eb0dd7a68c4bbb977f44534036ef",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/test_repair.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/test_repair.py",
+      "source_sha256": "4dae71b1953a72be2bc29cd1f25ad749fe3f2e129fc7b7f7076667e0fd44c32f",
+      "publication_sha256": "4dae71b1953a72be2bc29cd1f25ad749fe3f2e129fc7b7f7076667e0fd44c32f",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/test_dispatch.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/test_dispatch.py",
+      "source_sha256": "f623e77fc7cab1f3fc8da9c70bdfcaf8c8cafa66cc9f243d62b38558f4cc1e4f",
+      "publication_sha256": "f623e77fc7cab1f3fc8da9c70bdfcaf8c8cafa66cc9f243d62b38558f4cc1e4f",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/r2_dispatch.py",
+      "destination": "baselines/zeroshot/experiments/revalue/r2_dispatch.py",
+      "source_sha256": "c1df526319c2c17e22c5df9456683fc3a9f56ae4f54afa22effafc194b7d899c",
+      "publication_sha256": "c1df526319c2c17e22c5df9456683fc3a9f56ae4f54afa22effafc194b7d899c",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/r2_evaluate.py",
+      "destination": "baselines/zeroshot/experiments/revalue/r2_evaluate.py",
+      "source_sha256": "03ddcdeec751e3df60a68eb457d38a0d330f380b0c8998d4aa445fd473c9daad",
+      "publication_sha256": "a4f981d8baed1a49031775d25ed1e6fad22c55d2f739f0ddc89cff10e7bb561b",
+      "publication_changes": "Use QVH_EVALUATOR_ROOT for the official evaluator location; evaluation logic is unchanged."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/r2_observer.py",
+      "destination": "baselines/zeroshot/experiments/revalue/r2_observer.py",
+      "source_sha256": "dc207c8262dd82e3ba1b0f04960320fd9f31ac5ce9cc4f47b2ed76130cc39d6c",
+      "publication_sha256": "dc207c8262dd82e3ba1b0f04960320fd9f31ac5ce9cc4f47b2ed76130cc39d6c",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/r2_planner.py",
+      "destination": "baselines/zeroshot/experiments/revalue/r2_planner.py",
+      "source_sha256": "fb7bb55d83acff5e277cfc971c63673bb4a7ba41839419f8325294973bbfb80d",
+      "publication_sha256": "fb7bb55d83acff5e277cfc971c63673bb4a7ba41839419f8325294973bbfb80d",
+      "publication_changes": "Temporal evidence binding, scoped citation validation, same-source still-observer diagnosis and deterministic empty-fact guard. Frozen inference snapshots retained; README deployment path adjustments retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/r2_prepare.py",
+      "destination": "baselines/zeroshot/experiments/revalue/r2_prepare.py",
+      "source_sha256": "467669453dc144e1bedef1e807f423d9e98fa922ce2d68e56096b002d037f467",
+      "publication_sha256": "467669453dc144e1bedef1e807f423d9e98fa922ce2d68e56096b002d037f467",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/r2_protocol.py",
+      "destination": "baselines/zeroshot/experiments/revalue/r2_protocol.py",
+      "source_sha256": "21a0ad40d5c30a735a7d8cd8ffac99c10c7befded175d0b739c4c53c1311b860",
+      "publication_sha256": "21a0ad40d5c30a735a7d8cd8ffac99c10c7befded175d0b739c4c53c1311b860",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/r2_worker.py",
+      "destination": "baselines/zeroshot/experiments/revalue/r2_worker.py",
+      "source_sha256": "1a3d6671c65c2cec7a49b78ccb2c1f1e393775e6ec0b44b911cb8d413d984a2e",
+      "publication_sha256": "1a3d6671c65c2cec7a49b78ccb2c1f1e393775e6ec0b44b911cb8d413d984a2e",
+      "publication_changes": "Temporal evidence binding, scoped citation validation, same-source still-observer diagnosis and deterministic empty-fact guard. Frozen inference snapshots retained; README deployment path adjustments retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/test_r2.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/test_r2.py",
+      "source_sha256": "32744b641cc98e3d1b04403d5329dc7b83a16b6ad4b21ad480fddb01a6ec3f73",
+      "publication_sha256": "32744b641cc98e3d1b04403d5329dc7b83a16b6ad4b21ad480fddb01a6ec3f73",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/r2_repair_smoke.py",
+      "destination": "baselines/zeroshot/experiments/revalue/r2_repair_smoke.py",
+      "source_sha256": "9b0314ce037df25ffa6fe13020625167d351e15642544e9e6b1b26d599275e68",
+      "publication_sha256": "9b0314ce037df25ffa6fe13020625167d351e15642544e9e6b1b26d599275e68",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/r2_repair_prepare.py",
+      "destination": "baselines/zeroshot/experiments/revalue/r2_repair_prepare.py",
+      "source_sha256": "319e3a062184b735f64af0d7c9c7edf08c1a5c1fba10d2ff2b4c1f6ff6780281",
+      "publication_sha256": "319e3a062184b735f64af0d7c9c7edf08c1a5c1fba10d2ff2b4c1f6ff6780281",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/task_grounding.py",
+      "destination": "baselines/zeroshot/experiments/revalue/task_grounding.py",
+      "source_sha256": "99bf93114f0e1461b49a8d42d6d820ed5baa75c19485e2f3dba5459cfb358c28",
+      "publication_sha256": "99bf93114f0e1461b49a8d42d6d820ed5baa75c19485e2f3dba5459cfb358c28",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/test_r2_repair.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/test_r2_repair.py",
+      "source_sha256": "61c30006197e8b843ed3edd36bd5135c945e2e1125618dda11569e885f69a26c",
+      "publication_sha256": "61c30006197e8b843ed3edd36bd5135c945e2e1125618dda11569e885f69a26c",
+      "publication_changes": "Identical research source; R2 repair: literal task grounding, audited conflict probes, prefix-trie grammar, real-source regression and isolated full rerun. Historical frozen runs retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/r2_diagnose.py",
+      "destination": "baselines/zeroshot/experiments/revalue/r2_diagnose.py",
+      "source_sha256": "9f9e4ea794702009bb31ec235ae79f28f830a2e0d3a20ad6e42fe754fde6d94e",
+      "publication_sha256": "9f9e4ea794702009bb31ec235ae79f28f830a2e0d3a20ad6e42fe754fde6d94e",
+      "publication_changes": "Identical research source; frozen offline rank/source audit or bounded observer-question ablation. No production scoring changes."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/r2_observation_ablation.py",
+      "destination": "baselines/zeroshot/experiments/revalue/r2_observation_ablation.py",
+      "source_sha256": "a492e0ecb3da0249e331f76f3a2ad2aacba83605ff2c112502bdcf627c79e71c",
+      "publication_sha256": "a492e0ecb3da0249e331f76f3a2ad2aacba83605ff2c112502bdcf627c79e71c",
+      "publication_changes": "Identical research source; frozen offline rank/source audit or bounded observer-question ablation. No production scoring changes."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/test_observation_ablation.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/test_observation_ablation.py",
+      "source_sha256": "7d1fcb2eae35d4db265df63504c290114a5a9114ce8dfed90e0fa4e4c6f91e21",
+      "publication_sha256": "7d1fcb2eae35d4db265df63504c290114a5a9114ce8dfed90e0fa4e4c6f91e21",
+      "publication_changes": "Identical research source; frozen offline rank/source audit or bounded observer-question ablation. No production scoring changes."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/evidence_grounding.py",
+      "destination": "baselines/zeroshot/experiments/revalue/evidence_grounding.py",
+      "source_sha256": "5de068b29d4ff9bd9bce9b1efed2f476035038988fbc2b07d3200e8f20d2b5c9",
+      "publication_sha256": "5de068b29d4ff9bd9bce9b1efed2f476035038988fbc2b07d3200e8f20d2b5c9",
+      "publication_changes": "Temporal evidence binding, scoped citation validation, same-source still-observer diagnosis and deterministic empty-fact guard. Frozen inference snapshots retained; README deployment path adjustments retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/frame_observer.py",
+      "destination": "baselines/zeroshot/experiments/revalue/frame_observer.py",
+      "source_sha256": "20a76cdc220184a2a28a70e8410fab1af2aa66198530c06938d42ae86901c6af",
+      "publication_sha256": "20a76cdc220184a2a28a70e8410fab1af2aa66198530c06938d42ae86901c6af",
+      "publication_changes": "Temporal evidence binding, scoped citation validation, same-source still-observer diagnosis and deterministic empty-fact guard. Frozen inference snapshots retained; README deployment path adjustments retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/frame_observer_probe.py",
+      "destination": "baselines/zeroshot/experiments/revalue/frame_observer_probe.py",
+      "source_sha256": "98ad6001fd892d751147d6adfd1f9aba382437745e9a1d2611b5e7e499eec1de",
+      "publication_sha256": "98ad6001fd892d751147d6adfd1f9aba382437745e9a1d2611b5e7e499eec1de",
+      "publication_changes": "Temporal evidence binding, scoped citation validation, same-source still-observer diagnosis and deterministic empty-fact guard. Frozen inference snapshots retained; README deployment path adjustments retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/frame_observer_review.py",
+      "destination": "baselines/zeroshot/experiments/revalue/frame_observer_review.py",
+      "source_sha256": "28d773b633f568cb312c2e62cd50a6d46f47f9280465739afdbc571bf2ad0253",
+      "publication_sha256": "28d773b633f568cb312c2e62cd50a6d46f47f9280465739afdbc571bf2ad0253",
+      "publication_changes": "Temporal evidence binding, scoped citation validation, same-source still-observer diagnosis and deterministic empty-fact guard. Frozen inference snapshots retained; README deployment path adjustments retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/test_evidence_grounding.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/test_evidence_grounding.py",
+      "source_sha256": "34c5bdc73f59902bfd045aa6e312bd389211ca7dfb24183159e33deb27efe681",
+      "publication_sha256": "34c5bdc73f59902bfd045aa6e312bd389211ca7dfb24183159e33deb27efe681",
+      "publication_changes": "Temporal evidence binding, scoped citation validation, same-source still-observer diagnosis and deterministic empty-fact guard. Frozen inference snapshots retained; README deployment path adjustments retained."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/README.md",
+      "destination": "baselines/zeroshot/experiments/revalue/README.md",
+      "source_sha256": "d531bf5d5f9be670a8c72bb1792d785e937fdeeeb82e0d15204e71475755917e",
+      "publication_sha256": "ead5bfd2ae14a56fabcf38f66d3fcc8c43eb8f7057e9cd8bd0c7ef144045f7f6",
+      "publication_changes": "Document portable path configuration and distinguish the publication adapters from frozen experiment source."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/memory_codec.py",
+      "destination": "baselines/zeroshot/experiments/revalue/memory_codec.py",
+      "source_sha256": "4cd1939fd2287611989cc03bec68e4218bc2fa8621f556df980f3a04f739c12f",
+      "publication_sha256": "4cd1939fd2287611989cc03bec68e4218bc2fa8621f556df980f3a04f739c12f",
+      "publication_changes": "Lossless source codec, CPU capacity audit and isolated output-character-limit probe; frozen parent runs and production inference unchanged."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/memory_compaction_probe.py",
+      "destination": "baselines/zeroshot/experiments/revalue/memory_compaction_probe.py",
+      "source_sha256": "ce794416249ed628e2a350742448f408718b8ed08ef9aed2544fceba9b027b6c",
+      "publication_sha256": "77f662696bcb50fdf9543e6aecfd15bc4a15d97cf361c40fd4c49a4004c742f5",
+      "publication_changes": "Share the configured model path from backend; frozen research source is unchanged."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/observer_output_contract.py",
+      "destination": "baselines/zeroshot/experiments/revalue/observer_output_contract.py",
+      "source_sha256": "68580f65e632bc34be726751318d2e3369552594c0cfc4a4829c3f44034c34e6",
+      "publication_sha256": "68580f65e632bc34be726751318d2e3369552594c0cfc4a4829c3f44034c34e6",
+      "publication_changes": "Lossless source codec, CPU capacity audit and isolated output-character-limit probe; frozen parent runs and production inference unchanged."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/observer_output_probe.py",
+      "destination": "baselines/zeroshot/experiments/revalue/observer_output_probe.py",
+      "source_sha256": "f8b4e224668a0f7d3d89b171b96ea6b7360d220700605acb4bae7b88c9d0122a",
+      "publication_sha256": "f8b4e224668a0f7d3d89b171b96ea6b7360d220700605acb4bae7b88c9d0122a",
+      "publication_changes": "Lossless source codec, CPU capacity audit and isolated output-character-limit probe; frozen parent runs and production inference unchanged."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/observer_output_review.py",
+      "destination": "baselines/zeroshot/experiments/revalue/observer_output_review.py",
+      "source_sha256": "a4f0651788a23a24be99fd6f3c3cf9732f9fce116683b54fed5447781f7285bb",
+      "publication_sha256": "a4f0651788a23a24be99fd6f3c3cf9732f9fce116683b54fed5447781f7285bb",
+      "publication_changes": "Lossless source codec, CPU capacity audit and isolated output-character-limit probe; frozen parent runs and production inference unchanged."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/test_memory_codec.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/test_memory_codec.py",
+      "source_sha256": "f0a16c0efde9009006f2c5af6fd175a273d786a0bf94975c68290eb0a0aca218",
+      "publication_sha256": "f0a16c0efde9009006f2c5af6fd175a273d786a0bf94975c68290eb0a0aca218",
+      "publication_changes": "Lossless source codec, CPU capacity audit and isolated output-character-limit probe; frozen parent runs and production inference unchanged."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/test_observer_output_contract.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/test_observer_output_contract.py",
+      "source_sha256": "2db5a726aaa93684092292b5a4c10d1688cd101ad86ba8ebc5893ed7d48abb3a",
+      "publication_sha256": "2db5a726aaa93684092292b5a4c10d1688cd101ad86ba8ebc5893ed7d48abb3a",
+      "publication_changes": "Lossless source codec, CPU capacity audit and isolated output-character-limit probe; frozen parent runs and production inference unchanged."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/test_observer_output_budget.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/test_observer_output_budget.py",
+      "source_sha256": "e227eaf3d12e30fad9c0f3ee35a1b69d787f60bf3e190b3634a11772960e7049",
+      "publication_sha256": "e227eaf3d12e30fad9c0f3ee35a1b69d787f60bf3e190b3634a11772960e7049",
+      "publication_changes": "Lossless source codec, CPU capacity audit and isolated output-character-limit probe; frozen parent runs and production inference unchanged."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/object_presence_contract.py",
+      "destination": "baselines/zeroshot/experiments/revalue/object_presence_contract.py",
+      "source_sha256": "59b3825b2bf2331bc7e8d7c8100f629542e26880989a1705ff6033da5bd8fb51",
+      "publication_sha256": "59b3825b2bf2331bc7e8d7c8100f629542e26880989a1705ff6033da5bd8fb51",
+      "publication_changes": "Fixed 30-case object-presence diagnostic, paired prompts, pre-inference assistant references, bounded 60-call runner; no memory or HD promotion."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/object_presence_probe.py",
+      "destination": "baselines/zeroshot/experiments/revalue/object_presence_probe.py",
+      "source_sha256": "74e27099f4d1c0523db63981fa6f3e2904a373526adb080ce35a80c8e8a604d2",
+      "publication_sha256": "74e27099f4d1c0523db63981fa6f3e2904a373526adb080ce35a80c8e8a604d2",
+      "publication_changes": "Fixed 30-case object-presence diagnostic, paired prompts, pre-inference assistant references, bounded 60-call runner; no memory or HD promotion."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/tests/test_object_presence.py",
+      "destination": "baselines/zeroshot/experiments/revalue/tests/test_object_presence.py",
+      "source_sha256": "39bc63d490da9be709bad93ee786a54c3d8dbfa795d732e7e8982018366f6ccc",
+      "publication_sha256": "39bc63d490da9be709bad93ee786a54c3d8dbfa795d732e7e8982018366f6ccc",
+      "publication_changes": "Fixed 30-case object-presence diagnostic, paired prompts, pre-inference assistant references, bounded 60-call runner; no memory or HD promotion."
+    },
+    {
+      "source": "QVHighlights-ZeroShot:experiments/revalue/fixtures/object_presence_cases_v1.json",
+      "destination": "baselines/zeroshot/experiments/revalue/fixtures/object_presence_cases_v1.json",
+      "source_sha256": "5bfe0dfd3ed2d34c0d92673453357a7b591797b487201bfe4492a39e5fd2a5ef",
+      "publication_sha256": "b6c955ec21bc52205f21d8bcf80151265e4fac9a4dd3f8dfef3bf0e814644f57",
+      "publication_changes": "Replace machine paths in provenance metadata with publication aliases; all cases and reference labels are unchanged."
     }
   ],
   "publication_only": [
@@ -1458,26 +1941,6 @@
     {
       "destination": ".gitmodules",
       "publication_sha256": "0a8ff46774ff770d270ae320ad869b19073e6d23ed1844791dafaface1704af5"
-    },
-    {
-      "destination": "baselines/zeroshot/experiments/reze_qfvs/adaptation.py",
-      "basis": "New development in the Git-managed repository",
-      "publication_sha256": "4668f72f90d321ed6a0b368ca2e7a395fdbd273d099e02b116e4f9c47e77d7a7"
-    },
-    {
-      "destination": "baselines/zeroshot/experiments/reze_qfvs/compare_adaptation.py",
-      "basis": "New development in the Git-managed repository",
-      "publication_sha256": "aa706e0f59b45b213e92d945ec0ed7bc1e67300a0c1b3f64bab45b9cde910488"
-    },
-    {
-      "destination": "baselines/zeroshot/experiments/reze_qfvs/pairing.py",
-      "basis": "New development in the Git-managed repository",
-      "publication_sha256": "98e4b3639c2b1403b5de5746fceb6c126e612196b1d374c0c224d0e99263a612"
-    },
-    {
-      "destination": "baselines/zeroshot/experiments/reze_qfvs/tests/test_adaptation.py",
-      "basis": "New development in the Git-managed repository",
-      "publication_sha256": "55667d049ac9a6f9a22eb7091afee4298349533b7577cda02643ce2165b785c1"
     },
     {
       "destination": "baselines/zeroshot/scripts/prepare_pair_plan.py",
@@ -1524,23 +1987,441 @@
     "third_party/moment_detr": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca"
   },
   "validation": {
-    "recorded_at": "2026-10-22T13:22:07.409055+00:00",
-    "scope": "QFVS adaptation; prior repository-wide validation retained separately",
-    "qfvs_cpu_tests_passed": 26,
-    "qfvs_cpu_tests_skipped": 1,
-    "real_video_preprocessing_probes": 12,
-    "real_input_pairing_probes_passed": true,
-    "baseline_original_metrics_reproduced": true,
-    "new_formal_requests_at_validation": 0,
-    "gpu_status_at_validation": "waiting_for_idle_gpu_6",
-    "existing_predictions_changed": false
+    "at": "2026-10-26T16:19:22.787470+00:00",
+    "scope": "fixed 30-case paired object-presence probe; no new HD metrics",
+    "skill": "academic-research-suite/experiment-agent",
+    "skill_version": "3.23.2",
+    "mode": "run",
+    "revalue_cpu_tests_passed": 150,
+    "test_command": "python -m pytest experiments/revalue/tests -q",
+    "changed_python_ruff": "passed",
+    "new_model_calls": 60,
+    "extra_attempts": 0,
+    "actual_tokens": 26195,
+    "gpu_service_seconds": 120.24775199103169,
+    "gpus_released": true,
+    "independent_human_review_count": 0,
+    "manifest_sha256": "e448f05a2dd024024e6890389d2ef1d2fbf84b384e16fa5cba2ead32d777f616",
+    "ledger_sha256": "477c8e41046d48a40f013b638d356ba886e4d7db1dc366105b85c928ba74aa5d",
+    "source_files_verified": 70,
+    "parent_receipts_verified": 203,
+    "status_agreement_direct": 24,
+    "status_agreement_evidence_first": 24,
+    "reference_cases": 30,
+    "positive_retention_both": 14,
+    "reference_positive": 14,
+    "ambiguous_cases": 6,
+    "abstentions_both": 0,
+    "grammar_status_reachability": "three legal states accepted; invalid state rejected with actual tokenizer and bitmask on CPU",
+    "decision": "targeted_verifier_not_promoted",
+    "new_hd_metrics": false,
+    "A_B_C_started": false,
+    "full_100_started": false,
+    "R3_R4_started": false,
+    "AGENTS_modified": false,
+    "existing_predictions_changed": false,
+    "git_push": false,
+    "immutable_files_verified_prelaunch": 13,
+    "immutable_files_verified_postrun": 13,
+    "publication_check": "passed",
+    "published_files_checked": 359,
+    "source_files_checked": 347,
+    "local_links_checked": 488,
+    "errors": [],
+    "publication_validation_at": "2026-10-26T16:26:20.619868+00:00",
+    "frozen_sources_postrun": 70,
+    "parent_receipts_postrun": 203
   },
   "previous_validation": {
-    "cpu_tests_passed": 280,
-    "cpu_tests_skipped_external_inputs": 12,
-    "cli_help_entrypoints": 25,
-    "gpu_inference_started": false,
-    "existing_predictions_changed": false
+    "at": "2026-10-26T08:33:07.790428+00:00",
+    "scope": "Temporal source binding, empty-visible guard, and fixed 672-frame observation diagnostic; ReVALUE tests only",
+    "revalue_cpu_tests_passed": 86,
+    "changed_python_ruff": "passed",
+    "legacy_memories_replayed": 14,
+    "new_calls": 672,
+    "extra_attempts": 0,
+    "actual_tokens": 257740,
+    "schema_valid_frames": 672,
+    "source_frame_occurrences_verified": 672,
+    "selected_assistant_review_frame_occurrences": 201,
+    "known_scene_error_frames_checked": 7,
+    "independent_human_review": "not_performed",
+    "post_inference_punctuation_only_abstentions": 54,
+    "probe_manifest_sha256": "c98d7963673735b9cd296d611158dbea18632846ae4f3d179c5a8d690dc2f262",
+    "probe_ledger_sha256": "6f2bac41fd5541584d43818f5300f477cd87e5dd3ba43d36c1b13d1d3f3f48f7",
+    "summed_gpu_seconds": 1389.273646,
+    "wall_seconds": 855.752551,
+    "gpus_released": true,
+    "decision": "source_binding_fixed_static_observer_not_promoted",
+    "new_hd_metrics": false,
+    "R3_R4_started": false,
+    "existing_predictions_changed": false,
+    "AGENTS_modified": false,
+    "git_push": false,
+    "publication_check": "passed",
+    "published_files_checked": 341,
+    "source_files_checked": 329,
+    "local_links_checked": 463,
+    "diff_check": "passed",
+    "immutable_files_verified": 7,
+    "frozen_sources_verified": 57,
+    "parent_receipts_verified": 75,
+    "publication_validation_at": "2026-10-26T08:34:35.572578+00:00"
   },
-  "updated_at": "2026-10-22T13:22:07.409055+00:00"
+  "updated_at": "2026-10-27T01:17:49.509636+08:00",
+  "validation_history": [
+    {
+      "recorded_at": "2026-10-23T04:17:38.620816+00:00",
+      "scope": "QFVS full180 execution changes only; prior repository-wide validation retained separately",
+      "cpu_tests_passed": 30,
+      "cpu_tests_skipped_external_inputs": 1,
+      "ruff_changed_files": "passed",
+      "full_manifests_aligned": 180,
+      "cpu_media_probes_passed": 24,
+      "gpu_smoke_requests_passed": 24,
+      "frozen_prompt_and_vendor_core_match_pilot": true
+    },
+    {
+      "recorded_at": "2026-10-24T19:55:04.512993+00:00",
+      "scope": "ReVALUE R0/R1 implementation, fixed-twenty preparation, durable queue and QFVS completed full180 report",
+      "passed": true,
+      "published_files_checked": 300,
+      "source_files_checked": 288,
+      "local_links_checked": 396,
+      "revalue_cpu_tests_passed": 22,
+      "ruff_revalue": "passed",
+      "real_source_media_queries_verified": 20,
+      "processor_cpu_checks": [
+        "text",
+        "two native old clips",
+        "24 new native source frames"
+      ],
+      "new_gpu_model_requests": 0,
+      "gpu_generation_status": "waiting for idle GPU 4 or 5; R0 gate not yet run",
+      "AGENTS_modified": false,
+      "git_push_performed": false
+    },
+    {
+      "recorded_at": "2026-10-25T02:58:51.946539+00:00",
+      "scope": "ReVALUE R0 v2 repair and fixed-twenty real GPU validation",
+      "passed": true,
+      "published_files_checked": 304,
+      "source_files_checked": 292,
+      "local_links_checked": 404,
+      "errors": [],
+      "revalue_cpu_tests_passed": 30,
+      "ruff_revalue": "passed",
+      "real_source_media_queries_verified": 20,
+      "shared_request_preflight_verified": 160,
+      "new_R0_attempts": 1,
+      "verified_reused_requests": 8,
+      "R0_gate": "running",
+      "binding_sha256": "85bffa50b9fb817b331689cae58cd50d1979d9ef8f904c3504cdddcf37703828",
+      "AGENTS_modified": false,
+      "git_push_performed": false
+    },
+    {
+      "recorded_at": "2026-10-25T03:05:59.519247+00:00",
+      "scope": "ReVALUE R0 v3 repair and fixed-twenty real GPU validation",
+      "passed": true,
+      "published_files_checked": 305,
+      "source_files_checked": 293,
+      "local_links_checked": 407,
+      "errors": [],
+      "revalue_cpu_tests_passed": 33,
+      "ruff_revalue": "passed",
+      "real_source_media_queries_verified": 20,
+      "shared_request_preflight_verified": 160,
+      "new_R0_attempts": 14,
+      "verified_reused_requests": 16,
+      "R0_gate": "running",
+      "binding_sha256": "ea37e40788954124a22e9fc41f4cbc6657c3cfcec87d6c338cb78562ba1c6b5f",
+      "AGENTS_modified": false,
+      "git_push_performed": false
+    },
+    {
+      "recorded_at": "2026-10-25T03:33:07.463479+00:00",
+      "scope": "ReVALUE R0 v4 repair and fixed-twenty real GPU validation",
+      "passed": true,
+      "published_files_checked": 307,
+      "source_files_checked": 295,
+      "local_links_checked": 413,
+      "errors": [],
+      "revalue_cpu_tests_passed": 37,
+      "ruff_revalue": "passed",
+      "real_source_media_queries_verified": 20,
+      "shared_request_preflight_verified": 160,
+      "new_R0_attempts": 98,
+      "verified_reused_requests": 202,
+      "R0_gate": "passed",
+      "binding_sha256": "27f79b20c680b7a219190e7c817bc86963da80e751eb3b7ada6e7a9a1cc9ad65",
+      "AGENTS_modified": false,
+      "git_push_performed": false,
+      "observer_binding_sha256": "64f2cdf3eacaebdea644b6f460bcd2cb5043ed8bb05bb37314dc12f8bf4a210f",
+      "observer_gate": "running",
+      "formal_R1_snapshot": "revalue_r01_v4_2026-10-25",
+      "formal_R1_CPU_tests": 35
+    },
+    {
+      "recorded_at": "2026-10-25T03:37:53.446809+00:00",
+      "scope": "ReVALUE engineering repair, isolated observer v5, frozen v4 R1",
+      "passed": true,
+      "published_files_checked": 307,
+      "source_files_checked": 295,
+      "local_links_checked": 413,
+      "errors": [],
+      "revalue_cpu_tests_passed": 37,
+      "ruff_revalue": "passed",
+      "real_source_media_queries_verified": 20,
+      "shared_request_preflight_verified": 160,
+      "new_R0_attempts": 98,
+      "verified_reused_requests": 202,
+      "R0_gate": "passed",
+      "binding_sha256": "27f79b20c680b7a219190e7c817bc86963da80e751eb3b7ada6e7a9a1cc9ad65",
+      "AGENTS_modified": false,
+      "git_push_performed": false,
+      "observer_binding_sha256": "64f2cdf3eacaebdea644b6f460bcd2cb5043ed8bb05bb37314dc12f8bf4a210f",
+      "observer_gate": "passed",
+      "formal_R1_snapshot": "revalue_r01_v4_2026-10-25",
+      "formal_R1_CPU_tests": 35,
+      "cumulative_R0_attempts": 468,
+      "cumulative_R0_GPU_seconds": 3656.2827694406733,
+      "observer_queries_with_non_unknown": 20
+    },
+    {
+      "recorded_at": "2026-10-25T03:43:49.044441+00:00",
+      "scope": "Any-idle-GPU scheduling for future ReVALUE preparations; current v4 R1 unchanged",
+      "passed": true,
+      "published_files_checked": 309,
+      "source_files_checked": 297,
+      "local_links_checked": 416,
+      "errors": [],
+      "revalue_cpu_tests_passed": 43,
+      "ruff_changed_files": "passed",
+      "live_device_inventory_count": 8,
+      "live_idle_selection_verified": 5,
+      "formal_R1_binding_sha256": "27f79b20c680b7a219190e7c817bc86963da80e751eb3b7ada6e7a9a1cc9ad65",
+      "frozen_R1_source_and_inputs_verified": true,
+      "AGENTS_modified": false,
+      "new_gpu_inference_started": false,
+      "git_push_performed": false
+    },
+    {
+      "passed": true,
+      "published_files_checked": 320,
+      "source_files_checked": 308,
+      "local_links_checked": 429,
+      "errors": [],
+      "recorded_at": "2026-10-25T06:14:43.978233+00:00",
+      "scope": "R1 results and launched frozen R2 v2; exact cache, paired observations, atomic multi-GPU budgets",
+      "revalue_cpu_tests_passed": 58,
+      "ruff_changed_files": "passed",
+      "real_source_media_queries_verified": 100,
+      "exact_R1_request_reuse_preflight_verified": 940,
+      "formal_R2_binding_sha256": "6fc978e9d6e73d85051db384193d143377297a4cff9c186a3242625e73f2fa04",
+      "formal_R2_source_and_inputs_verified": true,
+      "formal_R2_initial_gpu": 4,
+      "R2_v1_preparation_only_no_GPU": true,
+      "GPU_budget_hours_summed": 6,
+      "actual_R2_status": "running",
+      "frozen_R1_results_preserved": true,
+      "AGENTS_modified": false,
+      "git_push_performed": false
+    },
+    {
+      "at": "2026-10-25T20:07:54.057852+00:00",
+      "scope": "ReVALUE R2 v3 repair and formal explore100 rerun",
+      "cpu_tests_passed": 70,
+      "ruff_passed": true,
+      "verified_media_queries": 100,
+      "exact_reuse_requests": 566,
+      "real_smoke_requests": 53,
+      "real_smoke_status": "passed",
+      "failed_smoke_preserved": true,
+      "smoke_observations": 4,
+      "smoke_post_observation_comparisons": 40,
+      "formal_binding_sha256": "b730f089cade44be3d64c7e8166ed3867f014ad9bda2396659145a0df91e2cb1",
+      "formal_status": "running",
+      "formal_gpus": [
+        5,
+        6,
+        7
+      ],
+      "git_push": false
+    },
+    {
+      "at": "2026-10-26T04:18:02.082571+00:00",
+      "scope": "R2 offline diagnosis and frozen 28-request observation-question ablation; focused checks only",
+      "parent_formal_status": "complete",
+      "parent_completed_queries": 100,
+      "parent_evaluation_sha256": "f107e358e6f61a1a52e423b8f737749a5983e7f02992f435b1b1ff9b6752c24d",
+      "parent_record_receipts_verified": 100,
+      "ranking_and_export_replays_passed": 400,
+      "diagnostic_cases_saved": 23,
+      "observation_requests_completed": 28,
+      "observation_extra_attempts": 0,
+      "observation_tokens": 100220,
+      "probe_manifest_sha256": "ddde62edf84bbaa64bacd4ba024c81d4c9f138462f7e112ba6ee407a0184a398",
+      "probe_ledger_sha256": "e878faf3c6235144aeab4f1417ca1628a495ecd99cc4d5c598460a7c52b7af9e",
+      "gpu_service_seconds": 282.45988,
+      "gpu_hours": 0.07846107777777778,
+      "gpu_released": true,
+      "new_focused_cpu_tests_passed": 2,
+      "new_python_files_ruff": "passed",
+      "same_input_frames_verified": true,
+      "decision": "diagnostic_complete_not_promoted",
+      "known_source_citation_errors_remain": true,
+      "independent_human_review": "not_performed",
+      "new_hd_metrics": false,
+      "existing_predictions_changed": false,
+      "R3_R4_started": false,
+      "AGENTS_modified": false,
+      "frozen_plan_hash_unchanged": true,
+      "git_push": false,
+      "publication_check": "passed",
+      "published_files_checked": 334,
+      "source_files_checked": 322,
+      "local_links_checked": 457,
+      "diff_check": "passed",
+      "immutable_file_hashes_verified": 5,
+      "publication_validation_at": "2026-10-26T04:18:28.340264+00:00"
+    },
+    {
+      "at": "2026-10-26T08:33:07.790428+00:00",
+      "scope": "Temporal source binding, empty-visible guard, and fixed 672-frame observation diagnostic; ReVALUE tests only",
+      "revalue_cpu_tests_passed": 86,
+      "changed_python_ruff": "passed",
+      "legacy_memories_replayed": 14,
+      "new_calls": 672,
+      "extra_attempts": 0,
+      "actual_tokens": 257740,
+      "schema_valid_frames": 672,
+      "source_frame_occurrences_verified": 672,
+      "selected_assistant_review_frame_occurrences": 201,
+      "known_scene_error_frames_checked": 7,
+      "independent_human_review": "not_performed",
+      "post_inference_punctuation_only_abstentions": 54,
+      "probe_manifest_sha256": "c98d7963673735b9cd296d611158dbea18632846ae4f3d179c5a8d690dc2f262",
+      "probe_ledger_sha256": "6f2bac41fd5541584d43818f5300f477cd87e5dd3ba43d36c1b13d1d3f3f48f7",
+      "summed_gpu_seconds": 1389.273646,
+      "wall_seconds": 855.752551,
+      "gpus_released": true,
+      "decision": "source_binding_fixed_static_observer_not_promoted",
+      "new_hd_metrics": false,
+      "R3_R4_started": false,
+      "existing_predictions_changed": false,
+      "AGENTS_modified": false,
+      "git_push": false,
+      "publication_check": "passed",
+      "published_files_checked": 341,
+      "source_files_checked": 329,
+      "local_links_checked": 463,
+      "diff_check": "passed",
+      "immutable_files_verified": 7,
+      "frozen_sources_verified": 57,
+      "parent_receipts_verified": 75,
+      "publication_validation_at": "2026-10-26T08:34:35.572578+00:00"
+    },
+    {
+      "at": "2026-10-26T11:44:12.227798+00:00",
+      "scope": "CPU memory codec/capacity and fixed 37-frame output-contract probe; no new HD predictions",
+      "skill": "academic-research-suite/experiment-agent",
+      "skill_version": "3.23.2",
+      "mode": "run",
+      "revalue_cpu_tests_passed": 135,
+      "changed_python_ruff": "passed",
+      "same_fact_views_passed": 14,
+      "compatibility_records_unchanged": 16,
+      "same_fact_token_reduction_percent": 25.296242774566473,
+      "restored_old_fact_ids_across_views": 104,
+      "restored_non_unknown_fact_ids_across_views": 95,
+      "new_model_calls": 37,
+      "extra_attempts": 0,
+      "actual_tokens": 14774,
+      "gpu_service_seconds": 150.2923533830326,
+      "gpus_released": true,
+      "independent_human_review_count": 0,
+      "cpu_manifest_sha256": "54ef6c5ef0c8a760d32ca23fc92391979efa11cdbb22d103a1dc3eaada60a2da",
+      "probe_manifest_sha256": "840c822d3d712c4c896f681ff5f31118252a96d8e1a0c5a602127009a2365861",
+      "probe_ledger_sha256": "0d1cf66bfae8cf4b9e730b0d35aa984588e3a30df1735b55ccb3a4f287d6eef0",
+      "decision": "output_completeness_improved_observer_not_promoted",
+      "new_hd_metrics": false,
+      "A_B_C_started": false,
+      "full_100_started": false,
+      "R3_R4_started": false,
+      "AGENTS_modified": false,
+      "existing_predictions_changed": false,
+      "git_push": false,
+      "publication_check": "passed",
+      "published_files_checked": 353,
+      "source_files_checked": 341,
+      "local_links_checked": 480,
+      "errors": [],
+      "immutable_files_verified": 13,
+      "frozen_audits": {
+        "revalue_memory_compaction_v1_2026-10-26": {
+          "parents_verified": 1388,
+          "frozen_sources_verified": 45
+        },
+        "revalue_observer_output_v2_2026-10-26": {
+          "parents_verified": 153,
+          "frozen_sources_verified": 65
+        }
+      },
+      "publication_validation_at": "2026-10-26T11:46:46.127854+00:00"
+    }
+  ],
+  "publication_sync": {
+    "date": "2026-10-27",
+    "scope": "Publish the current experiment progress summary, SVHighlights pilot result, and accumulated related reports and implementations.",
+    "new_reports": [
+      "docs/experimental_progress_and_issues_2026-10-27.md",
+      "docs/reze_svhighlights_pilot7_results_2026-10-27.md"
+    ],
+    "publication_only_path_adapters": [
+      "baselines/zeroshot/experiments/revalue/backend.py",
+      "baselines/zeroshot/experiments/revalue/memory_compaction_probe.py",
+      "baselines/zeroshot/experiments/revalue/prepare.py",
+      "baselines/zeroshot/experiments/revalue/evaluate.py",
+      "baselines/zeroshot/experiments/revalue/r2_evaluate.py",
+      "baselines/zeroshot/experiments/reze_agent_v2/evaluate_v1.py",
+      "baselines/zeroshot/experiments/revalue/README.md",
+      "baselines/zeroshot/experiments/revalue/fixtures/object_presence_cases_v1.json"
+    ],
+    "cpu_tests": {
+      "revalue": {
+        "passed": 150
+      },
+      "reze_qfvs": {
+        "passed": 30,
+        "skipped": 1
+      },
+      "reze_svhighlights": {
+        "passed": 9,
+        "skipped": 1
+      },
+      "reze_agent_v2": {
+        "passed": 6
+      }
+    },
+    "changed_python_ruff": "passed",
+    "model_path_and_prepare_cli_checks": "passed",
+    "object_presence_cases_and_labels": "unchanged",
+    "new_gpu_experiments": false,
+    "frozen_runs_and_historical_validation": "unchanged",
+    "publication_verification": {
+      "passed": true,
+      "published_files_checked": 361,
+      "source_files_checked": 349,
+      "local_links_checked": 508,
+      "errors": []
+    },
+    "pending_file_review": {
+      "files": 111,
+      "unmapped_files": 0,
+      "files_over_1_mib": 0,
+      "machine_specific_path_matches": 0,
+      "credential_pattern_matches": 0
+    }
+  }
 }

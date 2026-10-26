@@ -53,10 +53,15 @@ def freeze_baseline(parent, rows, audit, label_hashes):
 
 
 def paired_receipt(run, binding):
-    if not binding.get("paired_baseline_sha256"):
+    key, name = "paired_baseline_sha256", "paired_baseline.json"
+    if binding.get("pixel_reference_sha256"):
+        if binding.get(key):
+            raise ValueError("Use one pixel reference, not two")
+        key, name = "pixel_reference_sha256", "pixel_reference.json"
+    if not binding.get(key):
         return None
-    path = Path(run) / "paired_baseline.json"
-    if sha256(path) != binding["paired_baseline_sha256"]:
+    path = Path(run) / name
+    if sha256(path) != binding[key]:
         raise ValueError("Paired baseline receipt changed")
     receipt = json.loads(path.read_text())
     if sha256(Path(receipt["run"]) / "binding.json") != receipt["binding_sha256"]:
@@ -64,12 +69,37 @@ def paired_receipt(run, binding):
     return receipt
 
 
+def freeze_pixel_reference(parent, rows, audit, label_hashes):
+    """Reuse query-independent video pixels, never another query's scores."""
+    parent = Path(parent).resolve()
+    old_binding = json.loads((parent / "binding.json").read_text())
+    old_rows = read_jsonl(parent / "inference.jsonl")
+    receipt = freeze_baseline(parent, old_rows, audit, old_binding["labels_sha256"])
+    by_video = {row["vid"]: row for row in old_rows}
+    if len(by_video) != 4 or {r["vid"] for r in rows} != set(by_video):
+        raise ValueError("Pixel reference must cover exactly the same four videos")
+    video_keys = {"vid", "duration", "video_path", "media_sha256", "media_size", "media_mtime_ns", "n_shots"}
+    for row in rows:
+        if any(row[key] != by_video[row["vid"]][key] for key in video_keys):
+            raise ValueError("Pixel reference media identity or native grid differs")
+    for name, digest in old_binding["labels_sha256"].items():
+        if label_hashes.get(name) != digest:
+            raise ValueError("Full validation changed previously frozen evaluation inputs")
+    return {
+        **receipt,
+        "schema": "qfvs_video_pixel_reference_v1",
+        "trace_qid_by_video": {vid: row["qid"] for vid, row in by_video.items()},
+        "reuses_scores": False,
+    }
+
+
 def check_paired_trace(receipt, row, start, segments, trace, batch_size=16):
     if receipt is None:
         return
     parent = Path(receipt["run"])
     begin = start // batch_size * batch_size
-    name = f"chunks/{row['qid']}/{begin:06d}.json"
+    trace_qid = receipt["trace_qid_by_video"][row["vid"]] if "trace_qid_by_video" in receipt else row["qid"]
+    name = f"chunks/{trace_qid}/{begin:06d}.json"
     if sha256(parent / name) != receipt["files"][name]:
         raise ValueError("Paired baseline chunk changed")
     chunk = json.loads((parent / name).read_text())

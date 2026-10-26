@@ -17,6 +17,49 @@ from media import StreamVideo
 from reze_backend import make_engine, make_request, score_requests
 
 
+def gpu_smoke(run, rows, binding, binding_hash, engine, sampling, tokenizer, ids, charged, gpu_uuid):
+    """Verify all 21 media probes on the real engine before formal scoring."""
+    path = run / "gpu_smoke.json"
+    if path.exists():
+        result = json.loads(path.read_text())
+        if result["binding_sha256"] != binding_hash or result["status"] != "passed":
+            raise ValueError("GPU smoke receipt changed")
+        return charged
+    preflight = json.loads((run / "media_preflight.json").read_text())
+    probes_by_vid = {r["vid"]: r["probes"] for r in preflight["videos"]}
+    results = []
+    for row in rows:
+        video = StreamVideo(row)
+        for probe in probes_by_vid[row["vid"]]:
+            index = probe["index"]
+            clips, trace = video.read(index, 1)
+            if trace["model_rgb_sha256"] != probe["trace"]["model_rgb_sha256"]:
+                raise ValueError("GPU smoke pixels differ from CPU preflight")
+            if charged + 1 > binding["maximum_charged_requests"]:
+                raise RuntimeError("Frozen cumulative request budget exhausted during smoke")
+            attempt_path = run / "request_attempts" / f"smoke_{row['vid']}_{index}_{uuid.uuid4().hex}.json"
+            attempt = {"binding_sha256": binding_hash, "requests": 1, "status": "reserved",
+                       "kind": "engineering_smoke", "vid": row["vid"], "start": index,
+                       "started_at": utc_now(), "gpu_uuid": gpu_uuid}
+            atomic_json(attempt_path, attempt)
+            charged += 1
+            records, elapsed = score_requests(
+                engine, sampling, [make_request(tokenizer, row["query"], clips[0])], ids
+            )
+            chunk = {"binding_sha256": binding_hash, "vid": row["vid"], "start": index,
+                     "segments": [list(video.segments[index])], "records": records, "trace": trace}
+            validate_chunk(chunk, binding_hash, row, index, video.segments[index:index + 1])
+            results.append({**chunk, "inference_seconds": elapsed})
+            atomic_json(attempt_path, {**attempt, "status": "committed", "finished_at": utc_now(),
+                                      "input_tokens": sum(r["prompt_tokens"] for r in records)})
+        del video
+    if len(results) != 21:
+        raise ValueError("Expected 21 GPU smoke probes")
+    atomic_json(path, {"status": "passed", "binding_sha256": binding_hash, "checked_at": utc_now(),
+                       "requests": len(results), "probes": results, "accuracy_evaluated": False})
+    return charged
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--run", type=Path, required=True)
@@ -58,6 +101,8 @@ def main():
     engine, sampling, tokenizer, ids = make_engine(model_path=binding["model_path"])
     if ids != {"Yes": 9454, "No": 2753}:
         raise ValueError("Answer token identities changed")
+    if binding.get("require_gpu_smoke"):
+        charged = gpu_smoke(run, rows, binding, binding_hash, engine, sampling, tokenizer, ids, charged, actual_uuid)
     for row in rows:
         vid = row["vid"]
         video = StreamVideo(row)

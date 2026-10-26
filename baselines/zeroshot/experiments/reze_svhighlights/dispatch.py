@@ -131,7 +131,19 @@ def main():
             attempt["pid"] = child.pid
             atomic_json(attempts_path, attempts)
             try:
-                code = child.wait(timeout=remaining)
+                while True:
+                    try:
+                        code = child.wait(timeout=min(15, max(0.1, remaining)))
+                        break
+                    except subprocess.TimeoutExpired:
+                        last_activity = max((run / "status.json").stat().st_mtime,
+                                            Path(log.name).stat().st_mtime, attempt["started_epoch"])
+                        if time.monotonic() - before >= remaining:
+                            attempt["stop_reason"] = "active_time_budget"
+                            raise
+                        if time.time() - last_activity >= binding.get("maximum_worker_stall_seconds", 900):
+                            attempt["stop_reason"] = "no_progress_for_900_seconds"
+                            raise
             except subprocess.TimeoutExpired:
                 import signal
 

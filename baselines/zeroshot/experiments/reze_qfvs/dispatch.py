@@ -104,7 +104,8 @@ def main():
             attempts = json.loads(attempts_path.read_text()) if attempts_path.exists() else []
             for attempt in attempts:
                 if attempt["status"] == "running":
-                    attempt.update(status="interrupted", seconds=max(0, time.time() - attempt["started_epoch"]))
+                    observed = attempt.get("last_observed_epoch", time.time())
+                    attempt.update(status="interrupted", seconds=max(0, observed - attempt["started_epoch"]))
             remaining = binding["maximum_active_worker_seconds"] - sum(a["seconds"] for a in attempts)
             if len(attempts) >= binding["maximum_worker_attempts"] or remaining <= 0:
                 state = {"status": "stopped_at_budget", "updated_at": utc_now(), "attempts": attempts}
@@ -152,6 +153,9 @@ def main():
                             code = child.wait(timeout=min(15, max(0.1, remaining)))
                             break
                         except subprocess.TimeoutExpired:
+                            attempt["last_observed_epoch"] = time.time()
+                            attempt["seconds"] = time.monotonic() - before
+                            atomic_json(attempts_path, attempts)
                             last_activity = max(
                                 (run / "status.json").stat().st_mtime,
                                 Path(log.name).stat().st_mtime,
