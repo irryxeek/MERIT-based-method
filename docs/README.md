@@ -1,5 +1,11 @@
 # 文档索引
 
+- [本周实验进度报告（2026-10-21–27）](weekly_experiment_progress_2026-10-21_to_2026-10-27.md)及[配套 14 页 PPT](presentations/ReVALUE_实验进度汇报_2026-10-21至10-27.pptx)：含跨数据集基线、QVHighlights/ReVALUE 对照、TVSum 迁移与离线诊断；讲稿见[交付目录](presentations/revalue_weekly_2026-10-21_to_2026-10-27/README.md)。
+
+- [TVSum 离线诊断 v1（2026-10-27）](revalue_tvsum_offline_diagnosis_v1_2026-10-27.md)：零新增调用；400 份旧比较、448 条事实来源核验；分解草稿遗漏与容量驱逐，19 项 CPU 测试通过。[TaskSpec 单变量协议](revalue_tvsum_taskspec_protocol_v1_2026-10-27.md)仅准备，400 次/2,457,600 token/1 GPUh 为待授权独立建议。
+
+- [ReVALUE / TVSum val10 跨数据集结果（2026-10-27）](revalue_tvsum_transfer_results_2026-10-27.md)：四组、670 次完成；B0 61.32、P_pair 58.38，C_direct4/E_memory 与 B0 逐项相同。含逐视频结果、同分敏感性、成本与证据问题；[冻结协议](revalue_tvsum_transfer_protocol_2026-10-27.md)。
+
 - [阶段实验成果与问题总结（2026-10-27）](experimental_progress_and_issues_2026-10-27.md)：全量候选复评收益、ReVALUE 记忆与回看结果、跨数据集成绩、可靠性瓶颈和下一步顺序。
 
 - [SVHighlights 七场结果](reze_svhighlights_pilot7_results_2026-10-27.md)：补齐已于 10 月 23 日完成的原方法测试，HL-mAP 16.27；输入与预算限制单列。

@@ -6,9 +6,15 @@
 
 **资源约定：[后续新运行可使用任意空闲 GPU](docs/gpu_resource_policy_2026-10-25.md)。** 可独立拆分的任务优先多卡并行，已有冻结运行保留原配置。
 
+**本周组会汇报（2026-10-21–27）：[进度周报](docs/weekly_experiment_progress_2026-10-21_to_2026-10-27.md) · [14 页 PPT](docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27.pptx)。** 配套逐页讲稿见 [PPT 交付目录](docs/presentations/revalue_weekly_2026-10-21_to_2026-10-27/README.md)。
+
+**最新离线推进：[TVSum 来源链与失败诊断](docs/revalue_tvsum_offline_diagnosis_v1_2026-10-27.md)。** 本轮零新增模型调用，19 项 CPU 测试通过；仅改变通用对象约束的[单变量协议](docs/revalue_tvsum_taskspec_protocol_v1_2026-10-27.md)已准备，400 次正式调用及独立预算仍待授权。[CPU 实现](baselines/zeroshot/experiments/revalue_tvsum_offline/README.md)。
+
+**最新跨数据集结果：[ReVALUE / TVSum val10](docs/revalue_tvsum_transfer_results_2026-10-27.md)。** 四组、670 次完成；B0 / P_pair 为 61.32 / 58.38，C_direct4/E_memory 与 B0 的评分完全相同。通用任务约束和比较决策需修订；含同分敏感性、事实抽查及成本。见[冻结协议](docs/revalue_tvsum_transfer_protocol_2026-10-27.md)与[实现入口](baselines/zeroshot/experiments/revalue_crossdataset/README.md)。
+
 **阶段总结：[实验成果与问题（2026-10-27）](docs/experimental_progress_and_issues_2026-10-27.md)。** REZE 候选复评已在 val1550 提升指标；ReVALUE 记忆与定向观察尚无稳定精度收益，当前优先验证视觉证据可靠性。跨数据集范围及限制一并列出。
 
-**最新执行结果：[ReVALUE 定向物体证据核查](docs/revalue_object_presence_results_2026-10-27.md)。** 60/60 次请求完成，150 项 CPU 测试通过；两臂状态完全相同，14 个明确正例全部保留，六个模糊例均未选择无法判断。更长提示未改善判断，内容关未通过；未启动新 HD 评估。见[冻结协议](docs/revalue_object_presence_protocol_2026-10-26.md)。
+**此前定向核查：[ReVALUE 定向物体证据核查](docs/revalue_object_presence_results_2026-10-27.md)。** 60/60 次请求完成，150 项 CPU 测试通过；两臂状态完全相同，14 个明确正例全部保留，六个模糊例均未选择无法判断。更长提示未改善判断，内容关未通过；未启动新 HD 评估。见[冻结协议](docs/revalue_object_presence_protocol_2026-10-26.md)。
 
 **此前容量与输出结果：[ReVALUE 来源压缩与 37 次观察输出探针](docs/revalue_memory_compaction_results_2026-10-26.md)。** 14 视图节省 25.30% token，累计补回 104 个旧事实 ID；135 项 CPU 测试通过。字符限制修复改善句子完整性，但视觉内容仍未通过，A/B/C 和新 100 条未启动。原[下一轮计划](docs/revalue_next_experiment_plan_2026-10-26.md)保留为快照，实际顺序见新协议。
 

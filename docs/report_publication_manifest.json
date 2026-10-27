@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T01:17:49.509636+08:00",
+  "updated_at": "2026-10-27T16:51:16+08:00",
   "scope": "All active MERIT docs/*.md except the curated index, plus related QVHighlights-ZeroShot docs/*.md. Historical frozen plan publications retained. Raw experiment artifacts are not implicitly published.",
   "standing_user_instruction": "Whenever pushing project updates, include newly created or updated reports, analyses, research plans, and document indexes.",
   "path_aliases": {
@@ -682,21 +682,99 @@
       ],
       "source_sha256": "03783ddc4d2d9509bc8c8295c4b86d8adb5c1ceeadf206155a94466f2bda4491",
       "publication_sha256": "03783ddc4d2d9509bc8c8295c4b86d8adb5c1ceeadf206155a94466f2bda4491"
+    },
+    {
+      "source": "MERIT:docs/revalue_tvsum_transfer_protocol_2026-10-27.md",
+      "destination": "docs/revalue_tvsum_transfer_protocol_2026-10-27.md",
+      "source_sha256": "f0f11fc51c1cc032cc5e24700c7acc30545c802530fd5866e44d629531d40cd2",
+      "publication_sha256": "f0f11fc51c1cc032cc5e24700c7acc30545c802530fd5866e44d629531d40cd2",
+      "basis": "research_workspace_markdown_identical_copy",
+      "local_only_references": [
+        "Raw model, video and run artifacts remain local; source locations use documented aliases."
+      ]
+    },
+    {
+      "source": "MERIT:docs/revalue_tvsum_transfer_results_2026-10-27.md",
+      "destination": "docs/revalue_tvsum_transfer_results_2026-10-27.md",
+      "source_sha256": "7e06f6c54266a56bc303eb75d78a940ac908c403d0ed230bf0b193803f048c67",
+      "publication_sha256": "7e06f6c54266a56bc303eb75d78a940ac908c403d0ed230bf0b193803f048c67",
+      "basis": "research_workspace_markdown_identical_copy",
+      "local_only_references": [
+        "Raw model, video and run artifacts remain local; source locations use documented aliases."
+      ]
+    },
+    {
+      "source": "MERIT:docs/revalue_tvsum_offline_diagnosis_v1_2026-10-27.md",
+      "destination": "docs/revalue_tvsum_offline_diagnosis_v1_2026-10-27.md",
+      "source_sha256": "a22c0b022126488f7622b6ba1e10b399889cade4cda52058b3e7456302dcb299",
+      "publication_sha256": "a22c0b022126488f7622b6ba1e10b399889cade4cda52058b3e7456302dcb299",
+      "basis": "research_workspace_markdown_identical_copy",
+      "local_only_references": [
+        "Frozen original artifacts and CPU audit/prepared specifications remain local; no new model predictions."
+      ]
+    },
+    {
+      "source": "MERIT:docs/revalue_tvsum_taskspec_protocol_v1_2026-10-27.md",
+      "destination": "docs/revalue_tvsum_taskspec_protocol_v1_2026-10-27.md",
+      "source_sha256": "4d45fbfe4dd7df4798a0bed62c650f6663608f65079ffe62d3671bac1ead8bd7",
+      "publication_sha256": "4d45fbfe4dd7df4798a0bed62c650f6663608f65079ffe62d3671bac1ead8bd7",
+      "basis": "research_workspace_markdown_identical_copy",
+      "local_only_references": [
+        "Frozen original artifacts and CPU audit/prepared specifications remain local; no new model predictions."
+      ]
+    },
+    {
+      "source": "MERIT:docs/weekly_experiment_progress_2026-10-21_to_2026-10-27.md",
+      "destination": "docs/weekly_experiment_progress_2026-10-21_to_2026-10-27.md",
+      "basis": "research_workspace_weekly_report_with_presentation_link",
+      "local_only_references": [],
+      "source_sha256": "ebe99b964d4a929d37813e7454806b156f6892e30f7962d045511869df92c0ae",
+      "publication_sha256": "ebe99b964d4a929d37813e7454806b156f6892e30f7962d045511869df92c0ae",
+      "publication_changes": "None."
+    },
+    {
+      "source": "MERIT:docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27.pptx",
+      "destination": "docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27.pptx",
+      "basis": "ppt_master_6.7.3_validated_presentation",
+      "local_only_references": [],
+      "source_sha256": "ab71317dd190f340a2aeed1b2882c1f868f58a34b2e0858f27761570515b971d",
+      "publication_sha256": "ab71317dd190f340a2aeed1b2882c1f868f58a34b2e0858f27761570515b971d",
+      "publication_changes": "None."
+    },
+    {
+      "source": "MERIT:projects/revalue_weekly_20261021_20261027/README.md",
+      "destination": "docs/presentations/revalue_weekly_2026-10-21_to_2026-10-27/README.md",
+      "basis": "curated_presentation_delivery_readme",
+      "local_only_references": [
+        "Local runtime and skill installation paths omitted from the public delivery README."
+      ],
+      "source_sha256": "1b2f66be59b7fd000278a9ee9802b739af9ea899ad287e555b0d3a4be21ee8f5",
+      "publication_sha256": "6be9044735ef8a14918cc18b6c65b4b023d0e33f6f9a0b548c6e27f3049ddbbb",
+      "publication_changes": "Publication copy curated to remove local runtime paths and use repository-relative links."
+    },
+    {
+      "source": "MERIT:projects/revalue_weekly_20261021_20261027/notes/total.md",
+      "destination": "docs/presentations/revalue_weekly_2026-10-21_to_2026-10-27/speaker_notes.md",
+      "basis": "complete_speaker_notes_from_ppt_master_project",
+      "local_only_references": [],
+      "source_sha256": "899084641f4b7c536e428b7f333f478a13e3dcae0a9d7426835d402550986b27",
+      "publication_sha256": "899084641f4b7c536e428b7f333f478a13e3dcae0a9d7426835d402550986b27",
+      "publication_changes": "None."
     }
   ],
   "indexes": [
     {
       "source": "MERIT:README.md",
       "destination": "README.md",
-      "source_sha256": "53489c131b91aef0b960d24a6f5052705a5e414a2b9b854fd1d4cdadaa0a2bd7",
-      "publication_sha256": "fe88f07269c16c5d6058089a33a57f1aa376d60058c9955be3dd793be5727aca",
+      "source_sha256": "52a01df910c5462b43d032c64e50b349c8295d907c30b7e1d6deaaaebf901243",
+      "publication_sha256": "c569a37360107cf7dc97eebdc5c4f48e34f89c15f48984fd19a687efdeba270c",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     },
     {
       "source": "MERIT:docs/README.md",
       "destination": "docs/README.md",
-      "source_sha256": "4c449216352bd5af98be187b2dd1b4c6c31863a04e3575557712b48ca1b7a0f8",
-      "publication_sha256": "76ea1ada461289ec5d54c03163f97c27009883b24663fd068f8768cadad66fb1",
+      "source_sha256": "e885978c7736ca7deb740340915e1bccf6f8ff083441f1ef5c4bbfad59df38de",
+      "publication_sha256": "01e46af9652ff2b5f753f0e3d9a5b35dc9d9ac597cf1e49cd9688427c149c084",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     }
   ],
@@ -1113,10 +1191,15 @@
   ],
   "publication_sync": {
     "date": "2026-10-27",
-    "scope": "Publish the current experiment progress summary, SVHighlights pilot result, and accumulated related reports and implementations.",
+    "scope": "Publish the 2026-10-21 to 2026-10-27 weekly report and presentation, together with the TVSum transfer/offline reports and CPU implementation prepared this cycle.",
     "new_reports": [
       "docs/experimental_progress_and_issues_2026-10-27.md",
-      "docs/reze_svhighlights_pilot7_results_2026-10-27.md"
+      "docs/reze_svhighlights_pilot7_results_2026-10-27.md",
+      "docs/revalue_tvsum_transfer_results_2026-10-27.md",
+      "docs/revalue_tvsum_transfer_protocol_2026-10-27.md",
+      "docs/revalue_tvsum_offline_diagnosis_v1_2026-10-27.md",
+      "docs/revalue_tvsum_taskspec_protocol_v1_2026-10-27.md",
+      "docs/weekly_experiment_progress_2026-10-21_to_2026-10-27.md"
     ],
     "publication_only_path_adapters": [
       "baselines/zeroshot/experiments/revalue/backend.py",
@@ -1150,10 +1233,11 @@
     "new_gpu_experiments": false,
     "frozen_runs_and_historical_validation": "unchanged",
     "publication_verification": {
+      "at": "2026-10-27T16:51:16+08:00",
       "passed": true,
-      "published_files_checked": 361,
-      "source_files_checked": 349,
-      "local_links_checked": 508,
+      "published_files_checked": 380,
+      "source_files_checked": 368,
+      "local_links_checked": 553,
       "errors": []
     },
     "pending_file_review": {
@@ -1162,6 +1246,113 @@
       "files_over_1_mib": 0,
       "machine_specific_path_matches": 0,
       "credential_pattern_matches": 0
+    },
+    "presentation_artifacts": [
+      "docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27.pptx",
+      "docs/presentations/revalue_weekly_2026-10-21_to_2026-10-27/README.md",
+      "docs/presentations/revalue_weekly_2026-10-21_to_2026-10-27/speaker_notes.md"
+    ],
+    "publisher_host_checks": {
+      "pytest": "Not rerun on publisher host: pytest is absent and no REPRO_PYTHON is configured; this cycle's experiment receipts record 18 cross-dataset and 19 offline CPU tests passing.",
+      "ruff": "Not rerun on publisher host because Ruff is absent; this cycle's experiment receipts record Ruff passing.",
+      "python_ast_parse": "Passed for 9 added Python implementation and test files.",
+      "pptx_package": {
+        "passed": true,
+        "slides": 14,
+        "native_charts": 2,
+        "speaker_notes_pages": 14,
+        "zip_integrity": "passed",
+        "sha256": "ab71317dd190f340a2aeed1b2882c1f868f58a34b2e0858f27761570515b971d"
+      },
+      "additional_model_calls_for_publication": 0,
+      "additional_gpu_allocations_for_publication": 0
     }
+  },
+  "crossdataset_tvsum_validation": {
+    "at": "2026-10-27T14:02:48.346443+08:00",
+    "scope": "TVSum fixed UMT val10 four-condition development transfer",
+    "skill": "academic-research-suite/experiment-agent",
+    "skill_version": "3.23.2",
+    "mode": "run",
+    "videos": 10,
+    "conditions": [
+      "B0",
+      "P_pair",
+      "C_direct4",
+      "E_memory"
+    ],
+    "new_model_calls": 670,
+    "extra_attempts": 0,
+    "technical_fallbacks": 0,
+    "actual_tokens": 1106932,
+    "gpu_lifecycle_seconds": 2102.2639784840867,
+    "gpus_released": true,
+    "crossdataset_cpu_tests_passed": 18,
+    "changed_python_ruff": "passed",
+    "native_metric_parity": true,
+    "Top5_mAP_percent": {
+      "B0": 61.31666666666665,
+      "P_pair": 58.38159722222222,
+      "C_direct4": 61.31666666666665,
+      "E_memory": 61.31666666666665
+    },
+    "frozen_sources_verified": 112,
+    "frozen_inputs_verified": 25,
+    "manifest_sha256": "b2be2e23a429a8c0f2663f344f035e8f768242d2939a2259808b6fef30d38317",
+    "predictions_sha256": "cadfa1941bc79ab62566352eddf311c76e31b2edbddc44313e8ad865c2610065",
+    "evaluation_sha256": "fd683dae4c97836999d951551ee8f322ea13fe5fe163eeb27c2cad51a36a59d3",
+    "independent_human_review_count": 0,
+    "assistant_spot_review_videos": 2,
+    "decision": "generic_task_and_comparison_revision_before_expansion",
+    "SVHighlights_new_transfer_started": false,
+    "AGENTS_modified": false,
+    "existing_predictions_changed": false,
+    "git_push": false,
+    "publication_verification": {
+      "passed": true,
+      "published_files_checked": 370,
+      "source_files_checked": 358,
+      "local_links_checked": 516,
+      "errors": []
+    },
+    "diff_check": "passed"
+  },
+  "tvsum_offline_v1_validation": {
+    "at": "2026-10-27T15:31:45.479730+08:00",
+    "marker": "MERIT_TVSUM_OFFLINE_20261027_1500_V1",
+    "mode": "offline validation and plan only",
+    "status": "analysis_complete_protocol_prepared_execution_unauthorized",
+    "new_experiment_model_calls": 0,
+    "new_api_calls": 0,
+    "new_experiment_tokens": 0,
+    "new_gpu_allocations": 0,
+    "new_gpu_seconds": 0,
+    "retries": 0,
+    "cpu_tests": {
+      "passed": 19,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 0.12,
+      "command": "TVSUM_PARENT=<completed_parent> PYTHONDONTWRITEBYTECODE=1 python -m pytest experiments/revalue_tvsum_offline/tests -q -p no:cacheprovider"
+    },
+    "ruff": "passed",
+    "existing_comparisons_source_verified": 400,
+    "synthetic_cpu_contracts": 80,
+    "fact_requests_source_verified": 50,
+    "fact_records_source_verified": 448,
+    "protected_files_verified": 886,
+    "raw_gt_read": false,
+    "metrics_recomputed": false,
+    "new_model_predictions": 0,
+    "prepared_input_count": 400,
+    "prepared_input_sha256": "9c9309d8bb00208cebaad39dba8e06a551970a6c08a2df53bfa0b5c1f4bc91fb",
+    "audit_sha256": "afa4fc959fe9565b541b8f36a3c305dec884479af774574a596938e95e7b5e78",
+    "fact_lineage_sha256": "b70c8025c6502bf55aa6683d64ca0addb18143caf063f9f43ad69135d31ea83f",
+    "budget_books_sha256": "44ea5f0b71fd35a87863f466df8a3192842101918e67d19a6e702df8ac5044a2",
+    "future_budget_authorization": "pending_independent_TVSum_400_attempts_2457600_tokens_3600_GPU_seconds_zero_retries",
+    "old_shard_status_rewritten": false,
+    "AGENTS_modified": false,
+    "git_push": false,
+    "frozen_legacy_sources_or_predictions_changed": false
   }
 }
