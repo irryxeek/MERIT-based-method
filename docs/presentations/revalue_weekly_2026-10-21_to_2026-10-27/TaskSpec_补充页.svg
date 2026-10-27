@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" data-pptx-page-role="content" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24">
+  <defs>
+    <marker id="flow-end" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <polygon points="0,0 10,5 0,10" fill="#267C86"/>
+    </marker>
+  </defs>
+  <rect id="page-background" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="page-title" data-pptx-bounds="64 30 1152 138">
+    <text x="64" y="49" font-size="16" fill="#267C86">ReVALUE / 模块说明</text>
+    <text x="64" y="107" font-size="40" font-weight="bold" fill="#17324D">TaskSpec：把“想看什么”转成任务约束</text>
+    <text x="64" y="151" fill="#526575">一次纯文本模型调用，生成后续比较使用的任务说明</text>
+  </g>
+
+  <g id="query-input" data-pptx-bounds="64 202 272 350">
+    <text x="64" y="240" font-size="28" font-weight="bold" fill="#17324D">01  用户请求</text>
+    <text x="64" y="307" font-size="28" fill="#243447"><tspan x="64" dy="0">“找出</tspan><tspan x="64" dy="43" fill="#267C86" font-weight="bold">穿绿色衣服的女子</tspan><tspan x="64" dy="43"><tspan fill="#267C86" font-weight="bold">跳舞</tspan>的精彩片段。”</tspan></text>
+    <text x="64" y="461" font-size="20" fill="#526575">输入：自然语言 query<tspan x="64" dy="41">示意解析，非实测输出</tspan></text>
+  </g>
+
+  <g id="query-to-task" data-pptx-bounds="344 350 40 24">
+    <line x1="348" y1="362" x2="380" y2="362" stroke="#267C86" stroke-width="2" marker-end="url(#flow-end)"/>
+  </g>
+
+  <g id="taskspec-contract" data-pptx-bounds="392 202 432 350">
+    <rect x="392" y="202" width="432" height="350" fill="#17324D"/>
+    <text x="420" y="241" font-size="28" font-weight="bold" fill="#FFFFFF">02  TaskSpec</text>
+    <text x="420" y="274" font-size="20" fill="#CCD6DF">结构化任务说明</text>
+    <line x1="420" y1="292" x2="796" y2="292" stroke="#CCD6DF" stroke-width="1" stroke-opacity="0.4"/>
+    <g id="taskspec-fields" fill="#FFFFFF">
+      <text x="420" y="327">类型：specific（具体请求）</text>
+      <text x="420" y="366">目的：寻找该女子跳舞的高光</text>
+      <text x="420" y="405">对象：“穿绿色衣服的女子”</text>
+      <text x="420" y="444">事件：“跳舞”</text>
+    </g>
+    <text x="420" y="488" font-size="20" fill="#FFFFFF">数量 / 时长：未指定 → 不添加</text>
+    <text x="420" y="525" font-size="20" fill="#CCD6DF">约束保留原文引用，便于核对</text>
+  </g>
+
+  <g id="task-to-comparison" data-pptx-bounds="832 350 40 24">
+    <line x1="836" y1="362" x2="868" y2="362" stroke="#267C86" stroke-width="2" marker-end="url(#flow-end)"/>
+  </g>
+
+  <g id="comparison-use" data-pptx-bounds="880 202 336 350">
+    <text x="880" y="240" font-size="28" font-weight="bold" fill="#17324D">03  供比较器使用</text>
+    <text x="880" y="278" font-size="20" fill="#526575">结合候选画面与记忆</text>
+    <g id="eligibility-use">
+      <text x="880" y="330" font-weight="bold" fill="#17324D">核对是否符合请求</text>
+      <text x="880" y="360" font-size="20" fill="#526575">满足 / 违反 / 未知</text>
+    </g>
+    <g id="value-use">
+      <text x="880" y="408" font-weight="bold" fill="#17324D">比较相关高光价值</text>
+      <text x="880" y="438" font-size="20" fill="#526575">选择与需求相关的价值维度</text>
+    </g>
+    <g id="evidence-gap-use">
+      <text x="880" y="486" font-weight="bold" fill="#17324D">提出待查证的问题</text>
+      <text x="880" y="516" font-size="20" fill="#526575">例：衣服是否为绿色？</text>
+    </g>
+  </g>
+
+  <g id="module-boundary" data-pptx-bounds="64 590 1152 64">
+    <rect x="64" y="590" width="1152" height="64" fill="#F2F5F8"/>
+    <text x="88" y="631" fill="#243447"><tspan font-weight="bold" fill="#17324D">TaskSpec</tspan> 记录“想看什么”</text>
+    <line x1="615" y1="607" x2="615" y2="637" stroke="#CCD6DF" stroke-width="1"/>
+    <text x="642" y="631" fill="#243447"><tspan font-weight="bold" fill="#267C86">记忆</tspan>记录“看到了什么”</text>
+  </g>
+
+  <g id="page-footer" data-pptx-role="footer" data-pptx-bounds="64 670 1152 26" font-size="16" fill="#526575">
+    <text x="64" y="688">实现依据：schema.py · task_grounding.py · prompts.py</text>
+    <text x="1216" y="688" text-anchor="end">04 / 15</text>
+  </g>
+</svg>

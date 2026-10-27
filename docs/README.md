@@ -1,6 +1,8 @@
 # 文档索引
 
-- [本周实验进度报告（2026-10-21–27）](weekly_experiment_progress_2026-10-21_to_2026-10-27.md)及[配套 14 页 PPT](presentations/ReVALUE_实验进度汇报_2026-10-21至10-27.pptx)：含跨数据集基线、QVHighlights/ReVALUE 对照、TVSum 迁移与离线诊断；讲稿见[交付目录](presentations/revalue_weekly_2026-10-21_to_2026-10-27/README.md)。
+- [本周实验进度报告（2026-10-21–27）](weekly_experiment_progress_2026-10-21_to_2026-10-27.md)、[更新版 15 页 PPT](presentations/ReVALUE_实验进度汇报_2026-10-21至10-27_v2_TaskSpec补充.pptx)及[原 14 页 PPT](presentations/ReVALUE_实验进度汇报_2026-10-21至10-27.pptx)：更新版增加 TaskSpec 介绍，讲稿见[交付目录](presentations/revalue_weekly_2026-10-21_to_2026-10-27/README.md)。
+
+- [四态比较器诊断记录（2026-10-27）](revalue_four_state_comparator_diagnosis_2026-10-27.md)：QV / TVSum 的状态分布、双向胜负、回看触发和待验证原因；基于既有记录，未新增实验模型调用。
 
 - [TVSum 离线诊断 v1（2026-10-27）](revalue_tvsum_offline_diagnosis_v1_2026-10-27.md)：零新增调用；400 份旧比较、448 条事实来源核验；分解草稿遗漏与容量驱逐，19 项 CPU 测试通过。[TaskSpec 单变量协议](revalue_tvsum_taskspec_protocol_v1_2026-10-27.md)仅准备，400 次/2,457,600 token/1 GPUh 为待授权独立建议。
 

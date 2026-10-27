@@ -6,7 +6,9 @@
 
 **资源约定：[后续新运行可使用任意空闲 GPU](docs/gpu_resource_policy_2026-10-25.md)。** 可独立拆分的任务优先多卡并行，已有冻结运行保留原配置。
 
-**本周组会汇报（2026-10-21–27）：[进度周报](docs/weekly_experiment_progress_2026-10-21_to_2026-10-27.md) · [14 页 PPT](docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27.pptx)。** 配套逐页讲稿见 [PPT 交付目录](docs/presentations/revalue_weekly_2026-10-21_to_2026-10-27/README.md)。
+**本周组会汇报（2026-10-21–27）：[进度周报](docs/weekly_experiment_progress_2026-10-21_to_2026-10-27.md) · [更新版 15 页 PPT](docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27_v2_TaskSpec补充.pptx) · [原 14 页版](docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27.pptx)。** 更新版第 4 页介绍 TaskSpec；配套逐页讲稿见 [PPT 交付目录](docs/presentations/revalue_weekly_2026-10-21_to_2026-10-27/README.md)。
+
+**最新比较器讨论：[四态比较器诊断](docs/revalue_four_state_comparator_diagnosis_2026-10-27.md)。** 保留 QV / TVSum 比较状态分布、回看触发及已知结论边界，无新增实验模型调用。
 
 **最新离线推进：[TVSum 来源链与失败诊断](docs/revalue_tvsum_offline_diagnosis_v1_2026-10-27.md)。** 本轮零新增模型调用，19 项 CPU 测试通过；仅改变通用对象约束的[单变量协议](docs/revalue_tvsum_taskspec_protocol_v1_2026-10-27.md)已准备，400 次正式调用及独立预算仍待授权。[CPU 实现](baselines/zeroshot/experiments/revalue_tvsum_offline/README.md)。
 

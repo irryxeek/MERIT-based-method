@@ -2145,7 +2145,7 @@
     "parent_receipts_verified": 75,
     "publication_validation_at": "2026-10-26T08:34:35.572578+00:00"
   },
-  "updated_at": "2026-10-27T16:51:16+08:00",
+  "updated_at": "2026-10-27T18:07:49+08:00",
   "validation_history": [
     {
       "recorded_at": "2026-10-23T04:17:38.620816+00:00",
@@ -2613,5 +2613,11 @@
     "AGENTS_modified": false,
     "git_push": false,
     "frozen_legacy_sources_or_predictions_changed": false
+  },
+  "taskspec_revision_v2": {
+    "at": "2026-10-27T18:07:49+08:00",
+    "scope": "Presentation and documentation only; no source code changes.",
+    "new_experiment_model_calls": 0,
+    "new_gpu_allocations": 0
   }
 }

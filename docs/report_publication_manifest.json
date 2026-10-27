@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T16:51:16+08:00",
+  "updated_at": "2026-10-27T18:07:49+08:00",
   "scope": "All active MERIT docs/*.md except the curated index, plus related QVHighlights-ZeroShot docs/*.md. Historical frozen plan publications retained. Raw experiment artifacts are not implicitly published.",
   "standing_user_instruction": "Whenever pushing project updates, include newly created or updated reports, analyses, research plans, and document indexes.",
   "path_aliases": {
@@ -728,8 +728,8 @@
       "destination": "docs/weekly_experiment_progress_2026-10-21_to_2026-10-27.md",
       "basis": "research_workspace_weekly_report_with_presentation_link",
       "local_only_references": [],
-      "source_sha256": "ebe99b964d4a929d37813e7454806b156f6892e30f7962d045511869df92c0ae",
-      "publication_sha256": "ebe99b964d4a929d37813e7454806b156f6892e30f7962d045511869df92c0ae",
+      "source_sha256": "4af15650d1e17e07a656cb2211c6be65fcb330402eaa33f3385844f78339beee",
+      "publication_sha256": "4af15650d1e17e07a656cb2211c6be65fcb330402eaa33f3385844f78339beee",
       "publication_changes": "None."
     },
     {
@@ -749,7 +749,7 @@
         "Local runtime and skill installation paths omitted from the public delivery README."
       ],
       "source_sha256": "1b2f66be59b7fd000278a9ee9802b739af9ea899ad287e555b0d3a4be21ee8f5",
-      "publication_sha256": "6be9044735ef8a14918cc18b6c65b4b023d0e33f6f9a0b548c6e27f3049ddbbb",
+      "publication_sha256": "8e4096b65ffafb6db0ebce455ad331f273000644544ef295ffc99ccdf6645704",
       "publication_changes": "Publication copy curated to remove local runtime paths and use repository-relative links."
     },
     {
@@ -760,21 +760,77 @@
       "source_sha256": "899084641f4b7c536e428b7f333f478a13e3dcae0a9d7426835d402550986b27",
       "publication_sha256": "899084641f4b7c536e428b7f333f478a13e3dcae0a9d7426835d402550986b27",
       "publication_changes": "None."
+    },
+    {
+      "source": "MERIT:docs/revalue_four_state_comparator_diagnosis_2026-10-27.md",
+      "destination": "docs/revalue_four_state_comparator_diagnosis_2026-10-27.md",
+      "source_sha256": "d005301725dc318aed19ea4efacdbf3c15d819a4f75dfb0d5d7289f528c32056",
+      "publication_sha256": "d005301725dc318aed19ea4efacdbf3c15d819a4f75dfb0d5d7289f528c32056",
+      "basis": "offline_comparator_diagnosis_report",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27_v2_TaskSpec补充.pptx",
+      "destination": "docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27_v2_TaskSpec补充.pptx",
+      "source_sha256": "0154a2d8b595c6c1e5d2a8cc27e8f7a8af2762d25e5503ee91b4cb1401743e6d",
+      "publication_sha256": "0154a2d8b595c6c1e5d2a8cc27e8f7a8af2762d25e5503ee91b4cb1401743e6d",
+      "basis": "weekly_presentation_15_slides_v2",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/ReVALUE_TaskSpec模块介绍_2026-10-27.pptx",
+      "destination": "docs/presentations/ReVALUE_TaskSpec模块介绍_2026-10-27.pptx",
+      "source_sha256": "0b43832c6717d92fde3ba06cbdffcaa3fd064c5efbba3fcfa5931d78901a2871",
+      "publication_sha256": "0b43832c6717d92fde3ba06cbdffcaa3fd064c5efbba3fcfa5931d78901a2871",
+      "basis": "taskspec_supplementary_slide_pptx",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/ReVALUE_TaskSpec模块介绍_2026-10-27.png",
+      "destination": "docs/presentations/ReVALUE_TaskSpec模块介绍_2026-10-27.png",
+      "source_sha256": "ce816d941cdc5289c504aaa3875b6331e305750fc2defc308a7eba43892ea832",
+      "publication_sha256": "ce816d941cdc5289c504aaa3875b6331e305750fc2defc308a7eba43892ea832",
+      "basis": "taskspec_supplementary_slide_preview",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/ReVALUE_TaskSpec模块介绍_2026-10-27_讲稿.md",
+      "destination": "docs/presentations/ReVALUE_TaskSpec模块介绍_2026-10-27_讲稿.md",
+      "source_sha256": "5d529c0adbc5ae524e838e6d1050dbfa210f2a3136c6b324352212c4f25f0a88",
+      "publication_sha256": "5d529c0adbc5ae524e838e6d1050dbfa210f2a3136c6b324352212c4f25f0a88",
+      "basis": "taskspec_supplementary_slide_notes",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_weekly_2026-10-21_to_2026-10-27/speaker_notes_v2.md",
+      "destination": "docs/presentations/revalue_weekly_2026-10-21_to_2026-10-27/speaker_notes_v2.md",
+      "source_sha256": "cb5f5a20299fbb84e72ab93f3a16d09dc5cbe9b9db32e3394b56308d7f3e8ed4",
+      "publication_sha256": "cb5f5a20299fbb84e72ab93f3a16d09dc5cbe9b9db32e3394b56308d7f3e8ed4",
+      "basis": "weekly_presentation_15_slide_notes",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:projects/revalue_weekly_taskspec_v2_20261027/svg_output/04_TaskSpec模块介绍.svg",
+      "destination": "docs/presentations/revalue_weekly_2026-10-21_to_2026-10-27/TaskSpec_补充页.svg",
+      "source_sha256": "6e11e6954ff467311f2cd7c5c5e50bf3d4cfc55bbaac8698c7a6eb1e4ec83d7e",
+      "publication_sha256": "6e11e6954ff467311f2cd7c5c5e50bf3d4cfc55bbaac8698c7a6eb1e4ec83d7e",
+      "basis": "editable_taskspec_slide_source",
+      "local_only_references": []
     }
   ],
   "indexes": [
     {
       "source": "MERIT:README.md",
       "destination": "README.md",
-      "source_sha256": "52a01df910c5462b43d032c64e50b349c8295d907c30b7e1d6deaaaebf901243",
-      "publication_sha256": "c569a37360107cf7dc97eebdc5c4f48e34f89c15f48984fd19a687efdeba270c",
+      "source_sha256": "9889090b9ccab630d46f1a834bd82ab4c3bbbc492a82739a13d7cbfc2fec2790",
+      "publication_sha256": "f299b08918c32235ed9090059183bf527fe99be67dc59e24fdb018ba508160a5",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     },
     {
       "source": "MERIT:docs/README.md",
       "destination": "docs/README.md",
-      "source_sha256": "e885978c7736ca7deb740340915e1bccf6f8ff083441f1ef5c4bbfad59df38de",
-      "publication_sha256": "01e46af9652ff2b5f753f0e3d9a5b35dc9d9ac597cf1e49cd9688427c149c084",
+      "source_sha256": "f53ade5e060492fa72c7b4b6dd6cb174bd71c80eff4516a7d1a1f4623e41571c",
+      "publication_sha256": "9edbba2e137791cff64dc04f750bd1d8f984d172f18b59e2e42a535056127508",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     }
   ],
@@ -1354,5 +1410,20 @@
     "AGENTS_modified": false,
     "git_push": false,
     "frozen_legacy_sources_or_predictions_changed": false
+  },
+  "taskspec_revision_v2": {
+    "at": "2026-10-27T18:07:49+08:00",
+    "scope": "Publish renamed 15-slide weekly deck with TaskSpec, its notes, editable standalone slide and comparator diagnosis.",
+    "source_slide_inserted_at": 4,
+    "slides": 15,
+    "speaker_notes_pages": 15,
+    "native_charts": 2,
+    "native_tables": 4,
+    "preserved_original_slides": 14,
+    "pptx_sha256": "0154a2d8b595c6c1e5d2a8cc27e8f7a8af2762d25e5503ee91b4cb1401743e6d",
+    "new_experiment_model_calls": 0,
+    "new_gpu_allocations": 0,
+    "existing_results_changed": false,
+    "verification_command": "python3 scripts/verify_publication.py --merit-source <MERIT_ROOT> --zeroshot-source <ZEROSHOT_ROOT>"
   }
 }
