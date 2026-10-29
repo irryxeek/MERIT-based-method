@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+  <rect id="background" data-pptx-role="background" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="page-title" data-pptx-bounds="48 24 1184 126"><text x="48" y="49" font-size="18" fill="#237F8C">02 / Direct 整表输出</text><text x="48" y="112" font-size="42" font-weight="700" fill="#17324D">整表输出把视频内所有片段打成同分</text></g>
+  <g id="constant-result" data-pptx-bounds="48 178 458 282">
+    <text x="48" y="310" font-size="112" font-weight="700" fill="#237F8C">25/25</text>
+    <text x="48" y="370" font-size="28" fill="#17324D">有效响应均在视频内同分</text>
+    <text x="48" y="420" font-size="24" fill="#52667A">QV20 + TVSum5</text>
+  </g>
+  <g id="array-example" data-pptx-bounds="548 178 684 282">
+    <text x="548" y="216" font-size="24" fill="#52667A">64 帧 + 真实时间戳 + query</text>
+    <text x="548" y="260" font-size="24" fill="#17324D">Qwen3-VL-8B-Instruct</text>
+    <rect x="548" y="290" width="684" height="86" fill="#F2F5F8"/>
+    <text x="574" y="344" font-size="32" font-weight="700" fill="#17324D">[80, 80, 80, 80, …]</text>
+    <text x="548" y="418" font-size="18" fill="#52667A">常数形式示例；每个 2s 片段输出 0–100 分</text>
+  </g>
+  <g id="diagnosis-limit" data-pptx-bounds="48 502 1184 150" fill="#17324D">
+    <text x="48" y="536" font-size="28"><tspan font-weight="700">原始响应即为常数</tspan>，不是解析器广播造成。</text>
+    <text x="48" y="583" font-size="24" fill="#52667A">QV20：mAP 10.71 / Hit@1 15.00；这不能证明模型完全没有时间理解。</text>
+    <text x="48" y="630" font-size="18" fill="#C76128">TVSum 第 6 条 OOM，Direct 仅完成 5/10；未补跑。</text>
+  </g>
+  <g id="footer" data-pptx-role="footer" data-pptx-bounds="48 672 1184 28" fill="#52667A" font-size="16"><text x="48" y="692">依据：Direct pilot 报告（10.28）</text><text x="1232" y="692" text-anchor="end">03 / 12</text></g>
+</svg>

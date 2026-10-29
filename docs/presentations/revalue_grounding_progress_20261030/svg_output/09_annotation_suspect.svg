@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+  <rect id="background" data-pptx-role="background" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="page-title" data-pptx-bounds="48 24 1184 126"><text x="48" y="49" font-size="18" fill="#237F8C">08 / 案例二：标注或范围疑点</text><text x="48" y="112" font-size="42" font-weight="700" fill="#17324D">疑似漏标：模型找到了前一次布置圣诞树</text></g>
+  <g id="case-evidence" data-pptx-bounds="48 180 780 470"><image href="../images/qv_3676.jpg" x="48" y="182" width="780" height="465.2632" preserveAspectRatio="xMidYMid meet"/></g>
+  <g id="case-interpretation" data-pptx-bounds="864 180 368 470">
+    <text x="864" y="207" font-size="18" fill="#52667A">qid 3676｜布置圣诞树</text>
+    <text x="864" y="259" font-size="28" font-weight="700" fill="#16834E">GT　118–144 s</text>
+    <text x="864" y="306" font-size="28" font-weight="700" fill="#B74343">预测　0–24 s</text>
+    <text x="864" y="357" font-size="24" fill="#17324D">IoU = 0</text>
+    <line x1="864" y1="386" x2="1232" y2="386" stroke="#D5DEE8" stroke-width="1"/>
+    <text x="864" y="430" font-size="24" fill="#17324D">5.83、10.53、15.23 s<tspan x="864" dy="36">可见戴圣诞帽女子整理</tspan><tspan x="864" dy="36">小树，预测内容有依据。</tspan></text>
+    <text x="864" y="566" font-size="24" font-weight="700" fill="#C76128">待人工确认动作与实例范围</text>
+    <text x="864" y="611" font-size="18" fill="#52667A">这是漏标疑点，尚不能确认 GT 错误。</text>
+  </g>
+  <g id="footer" data-pptx-role="footer" data-pptx-bounds="48 672 1184 28" fill="#52667A" font-size="16"><text x="48" y="692">依据：qid 3676 原输入帧证据卡与反例审核；保留发布 GT</text><text x="1232" y="692" text-anchor="end">09 / 12</text></g>
+</svg>

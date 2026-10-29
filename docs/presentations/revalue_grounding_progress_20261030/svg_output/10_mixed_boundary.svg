@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+  <rect id="background" data-pptx-role="background" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="page-title" data-pptx-bounds="48 24 1184 126"><text x="48" y="49" font-size="18" fill="#237F8C">09 / 案例三：模型与标注问题并存</text><text x="48" y="112" font-size="42" font-weight="700" fill="#17324D">边界与标注问题可能同时存在</text></g>
+  <g id="case-evidence" data-pptx-bounds="48 180 780 470"><image href="../images/qv_5466.jpg" x="48" y="182" width="780" height="465.2632" preserveAspectRatio="xMidYMid meet"/></g>
+  <g id="case-interpretation" data-pptx-bounds="864 180 368 470">
+    <text x="864" y="207" font-size="18" fill="#52667A">qid 5466｜展示编辑软件</text>
+    <text x="864" y="252" font-size="24" font-weight="700" fill="#16834E">GT　0–8、48–62 s</text>
+    <text x="864" y="294" font-size="24" font-weight="700" fill="#B74343">预测　38–57 s</text>
+    <text x="864" y="336" font-size="24" fill="#17324D">IoU = 0.3750</text>
+    <line x1="864" y1="364" x2="1232" y2="364" stroke="#D5DEE8" stroke-width="1"/>
+    <text x="864" y="406" font-size="24" fill="#17324D"><tspan font-weight="700" fill="#237F8C">起点疑点：</tspan>38.64 s 已有软件，<tspan x="864" dy="36">GT 从 48 s 开始可能偏晚。</tspan></text>
+    <text x="864" y="499" font-size="24" fill="#17324D"><tspan font-weight="700" fill="#C76128">终点错误：</tspan>约 59 s 仍有软件，<tspan x="864" dy="36">预测在 57 s 结束偏早。</tspan></text>
+    <text x="864" y="603" font-size="18" fill="#52667A">精确秒级边界仍需连续视频核验。</text>
+  </g>
+  <g id="footer" data-pptx-role="footer" data-pptx-bounds="48 672 1184 28" fill="#52667A" font-size="16"><text x="48" y="692">依据：qid 5466 原输入帧证据卡与反例审核</text><text x="1232" y="692" text-anchor="end">10 / 12</text></g>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="cover">
+  <rect id="background" data-pptx-role="background" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="page-title" data-pptx-bounds="48 48 760 344" fill="#17324D">
+    <text x="48" y="78" font-size="24" fill="#237F8C">ReVALUE｜组会后实验进展</text>
+    <text x="48" y="202" font-size="64" font-weight="700">从 Direct 基线<tspan x="48" dy="86">到可核查的定位反例</tspan></text>
+    <text x="48" y="359" font-size="28" fill="#52667A">主线转向 query 驱动的时间定位</text>
+  </g>
+  <g id="counterexample-hook" data-pptx-bounds="864 132 368 368">
+    <rect x="864" y="132" width="368" height="368" fill="#F2F5F8"/>
+    <text x="904" y="276" font-size="112" font-weight="700" fill="#237F8C">52</text>
+    <text x="904" y="330" font-size="28" fill="#17324D">条扩样指标反例</text>
+    <line x1="904" y1="362" x2="1192" y2="362" stroke="#D5DEE8" stroke-width="2"/>
+    <text x="904" y="411" font-size="24" fill="#17324D"><tspan font-weight="700">22 条</tspan>较明确定位错误</text>
+    <text x="904" y="453" font-size="18" fill="#52667A">原始帧助手初筛，待人工复核</text>
+  </g>
+  <g id="scope-and-author" data-pptx-bounds="48 440 760 188" fill="#17324D">
+    <line x1="50" y1="450" x2="766" y2="450" stroke="#237F8C" stroke-width="3"/>
+    <line x1="50" y1="438" x2="50" y2="462" stroke="#237F8C" stroke-width="3"/>
+    <line x1="766" y1="438" x2="766" y2="462" stroke="#237F8C" stroke-width="3"/>
+    <text x="48" y="504" font-size="24">Direct 诊断 → Grounding 测试 → 反例核查</text>
+    <text x="48" y="576" font-size="24">林逸飞　2026.10.28–10.30</text>
+    <text x="48" y="613" font-size="18" fill="#52667A">承接 10 月 27 日组会；实验结果截至 10 月 29 日</text>
+  </g>
+  <g id="footer" data-pptx-role="footer" data-pptx-bounds="48 672 1184 28" fill="#52667A" font-size="16">
+    <text x="48" y="692">依据：组会后工作总结与归档实验报告</text>
+    <text x="1232" y="692" text-anchor="end">01 / 12</text>
+  </g>
+</svg>

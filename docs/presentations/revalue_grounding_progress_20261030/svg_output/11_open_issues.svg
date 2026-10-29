@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+  <rect id="background" data-pptx-role="background" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="page-title" data-pptx-bounds="48 24 1184 126"><text x="48" y="49" font-size="18" fill="#237F8C">10 / 已解决与未解决</text><text x="48" y="112" font-size="42" font-weight="700" fill="#17324D">分批执行可用，定位问题仍需验证</text></g>
+  <g id="completed-engineering" data-pptx-bounds="48 186 520 365">
+    <text x="48" y="227" font-size="30" font-weight="700" fill="#237F8C">已处理的运行保障</text>
+    <line x1="48" y1="251" x2="568" y2="251" stroke="#D5DEE8" stroke-width="1"/>
+    <text x="48" y="301" font-size="24" fill="#17324D">GPU 编号兼容、输入与源码冻结。</text>
+    <text x="48" y="377" font-size="24" fill="#17324D">分批冷启动 worker；<tspan x="48" dy="36">保留账本、失败和进程退出记录。</tspan></text>
+    <text x="48" y="489" font-size="24" fill="#17324D">非法区间严格拒绝，<tspan x="48" dy="36">没有静默交换端点或额外重试。</tspan></text>
+  </g>
+  <g id="unresolved-engineering-and-evidence" data-pptx-bounds="650 186 582 365">
+    <text x="650" y="227" font-size="30" font-weight="700" fill="#C76128">仍未解决的问题</text>
+    <line x1="650" y1="251" x2="1232" y2="251" stroke="#D5DEE8" stroke-width="1"/>
+    <text x="650" y="301" font-size="24" fill="#17324D">OOM：缓存累积仍是主要线索，<tspan x="650" dy="36">尚无独立 GPU 修复验证。</tspan></text>
+    <text x="650" y="398" font-size="24" fill="#17324D">出现非法输出 [150,17]；扩样余 4 条、<tspan x="650" dy="36">TVSum Direct 余 5 条未补跑。</tspan></text>
+    <text x="650" y="495" font-size="24" fill="#17324D">输入仅 64 帧、无声音；动作含义与<tspan x="650" dy="36">精确边界仍需连续视频和人工核验。</tspan></text>
+  </g>
+  <g id="scientific-limit" data-pptx-bounds="48 582 1184 70">
+    <rect x="48" y="582" width="1184" height="70" fill="#F2F5F8"/>
+    <text x="72" y="628" font-size="28" font-weight="700" fill="#17324D">本阶段产出是可追溯的基线与反例；Agent 修复效果尚未验证。</text>
+  </g>
+  <g id="footer" data-pptx-role="footer" data-pptx-bounds="48 672 1184 28" fill="#52667A" font-size="16"><text x="48" y="692">依据：Direct 运行报告、Grounding 扩样报告与反例分析</text><text x="1232" y="692" text-anchor="end">11 / 12</text></g>
+</svg>

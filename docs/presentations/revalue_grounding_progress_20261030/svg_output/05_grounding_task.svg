@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0,0 8,4 0,8" fill="#52667A"/></marker></defs>
+  <rect id="background" data-pptx-role="background" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="page-title" data-pptx-bounds="48 24 1184 126"><text x="48" y="49" font-size="18" fill="#237F8C">04 / 主线切换到 Grounding</text><text x="48" y="112" font-size="42" font-weight="700" fill="#17324D">直接输出时间区间，检验目标在哪里</text></g>
+  <g id="direct-pipeline" data-pptx-bounds="48 175 1184 156">
+    <text x="48" y="213" font-size="24" fill="#17324D">64 帧 + 真实 PTS<tspan x="48" dy="37">+ query</tspan></text>
+    <line x1="328" y1="232" x2="430" y2="232" stroke="#52667A" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="462" y="184" width="280" height="96" fill="#17324D"/>
+    <text x="602" y="224" text-anchor="middle" font-size="28" font-weight="700" fill="#FFFFFF">Qwen 一次调用</text>
+    <text x="602" y="260" text-anchor="middle" font-size="18" fill="#FFFFFF">Direct 原生判断</text>
+    <line x1="764" y1="232" x2="834" y2="232" stroke="#52667A" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="868" y="216" font-size="28" font-weight="700" fill="#237F8C">[start, end]</text>
+    <text x="868" y="255" font-size="24" fill="#52667A">或 not_found / uncertain</text>
+    <text x="48" y="315" font-size="18" fill="#52667A">本轮无候选重排、记忆或回看；评价使用定位 R1，与高光 mAP 分开。</text>
+  </g>
+  <g id="cereal-intervals" data-pptx-bounds="48 355 1184 218">
+    <text x="48" y="385" font-size="24" font-weight="700" fill="#17324D">qid 5073｜准备麦片</text>
+    <text x="1232" y="385" text-anchor="end" font-size="24" fill="#17324D">IoU = 0.6316</text>
+    <g id="cereal-intervals-chartArea">
+      <g stroke="#E7EDF3" stroke-width="1"><line x1="220" y1="418" x2="220" y2="526"/><line x1="410" y1="418" x2="410" y2="526"/><line x1="600" y1="418" x2="600" y2="526"/><line x1="790" y1="418" x2="790" y2="526"/><line x1="980" y1="418" x2="980" y2="526"/><line x1="1170" y1="418" x2="1170" y2="526"/></g>
+      <line x1="220" y1="526" x2="1170" y2="526" stroke="#D5DEE8" stroke-width="1"/>
+      <g fill="#52667A" font-size="18" text-anchor="middle"><text x="220" y="555">0</text><text x="410" y="555">30</text><text x="600" y="555">60</text><text x="790" y="555">90</text><text x="980" y="555">120</text><text x="1170" y="555">150s</text></g>
+      <!-- chart-plot-area: object=cereal-intervals | 220,418,1170,526 -->
+      <text x="48" y="446" font-size="24" fill="#16834E">GT 48–64</text><rect x="524" y="422" width="101.3333" height="28" fill="#16834E"/>
+      <text x="48" y="498" font-size="24" fill="#B74343">预测 52–67</text><rect x="549.3333" y="474" width="95" height="28" fill="#B74343"/>
+    </g>
+  </g>
+  <g id="task-caveat" data-pptx-bounds="48 590 1184 65" fill="#52667A" font-size="18"><text x="48" y="613">同一样本旧整表全 0；这里任务与输出均改变，不能作为严格单变量精度提升。</text><text x="48" y="644">本轮使用正 query，尚未验证负 query 的拒答能力。</text></g>
+  <g id="footer" data-pptx-role="footer" data-pptx-bounds="48 672 1184 28" fill="#52667A" font-size="16"><text x="48" y="692">依据：Grounding 主线说明与首轮结果（10.29）</text><text x="1232" y="692" text-anchor="end">05 / 12</text></g>
+</svg>

@@ -1,0 +1,11 @@
+[
+  {
+    "qid": 6506,
+    "reviewer": "primary assistant cross-review",
+    "original_category": "annotation_or_scope_suspect",
+    "final_category": "mixed",
+    "reason": "GT在80秒结束，但第一处宫殿园林在80–100秒仍延续，存在标注范围疑点；预测同时跨过101.94秒湖面转场、另一宫殿及127.71秒船上画面，存在把不同实例和转场包为单连续区间的可见范围问题。不能把51–130秒整体认可为正确。",
+    "evidence_basis": "Original all64 contact sheet; no additional frames or audio",
+    "original_review_retained": true
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T18:07:49+08:00",
+  "updated_at": "2026-10-30T02:05:40+08:00",
   "scope": "All active MERIT docs/*.md except the curated index, plus related QVHighlights-ZeroShot docs/*.md. Historical frozen plan publications retained. Raw experiment artifacts are not implicitly published.",
   "standing_user_instruction": "Whenever pushing project updates, include newly created or updated reports, analyses, research plans, and document indexes.",
   "path_aliases": {
@@ -816,21 +816,891 @@
       "publication_sha256": "6e11e6954ff467311f2cd7c5c5e50bf3d4cfc55bbaac8698c7a6eb1e4ec83d7e",
       "basis": "editable_taskspec_slide_source",
       "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/progress_after_meeting_2026-10-27_to_2026-10-30.md",
+      "destination": "docs/progress_after_meeting_2026-10-27_to_2026-10-30.md",
+      "source_sha256": "5a922ddf0bd3d41943eb62ef8d7a12078d4a16ad72cc485d82d42887f222c44b",
+      "publication_sha256": "f1886af1348622a82a5a22635dd6440a7ec8ce798f09ebb83e1f54f45b31c85d",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_granularity_protocol_v1_2026-10-28.md",
+      "destination": "docs/qwen_direct_granularity_protocol_v1_2026-10-28.md",
+      "source_sha256": "659961a8ed4efc30b6285e50ea1d8d733b73935f67593b9ad8317bd36dd317b3",
+      "publication_sha256": "b5f794270ec122b5272fb65e8f7080033b05351b20a11c3cccf49d0b169826a1",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_granularity_results_2026-10-29.md",
+      "destination": "docs/qwen_direct_granularity_results_2026-10-29.md",
+      "source_sha256": "5107f0a9843532f2c6080ad9eb81ab974456418dac3902735bde6f95adaab559",
+      "publication_sha256": "8249634fd9f2168e181b8638c4d367659354cedf575bc3a4bcd5056541d32784",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": [
+        {
+          "label": "原始响应、输入、源码和收据归档",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/granularity_qv20_v1_2026-10-29"
+        },
+        {
+          "label": "完整稀疏诊断",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/granularity_qv20_v1_2026-10-29/diagnostic.json"
+        },
+        {
+          "label": "40个目标分数",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/granularity_qv20_v1_2026-10-29/target_scores.csv"
+        },
+        {
+          "label": "20对差分",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/granularity_qv20_v1_2026-10-29/pair_differences.csv"
+        },
+        {
+          "label": "独立账本",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/granularity_qv20_v1_2026-10-29/final_budget_books.json"
+        },
+        {
+          "label": "结果审核",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/granularity_qv20_v1_2026-10-29/result_audit.json"
+        },
+        {
+          "label": "运行健康度",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/granularity_qv20_v1_2026-10-29/runtime_health.json"
+        },
+        {
+          "label": "运行器说明",
+          "source_reference": "$MERIT_ROOT/experiments/direct_granularity_run/README.md"
+        }
+      ]
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_grounding_52_counterexample_analysis_2026-10-29.md",
+      "destination": "docs/qwen_direct_grounding_52_counterexample_analysis_2026-10-29.md",
+      "source_sha256": "224283527f21ae6d73bbaa00fbe2580b9d62a69010cd4d5cdcda60084b221bf5",
+      "publication_sha256": "05f36bbed924507ff414154c7c7bc347ceca1248ed88d74c1126dd3ab2b141ae",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": [
+        {
+          "label": "2781",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_2781_all64.jpg"
+        },
+        {
+          "label": "2760",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_2760_all64.jpg"
+        },
+        {
+          "label": "5466",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_5466_all64.jpg"
+        },
+        {
+          "label": "9319",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_9319_all64.jpg"
+        },
+        {
+          "label": "448",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_448_all64.jpg"
+        },
+        {
+          "label": "3790",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_3790_all64.jpg"
+        },
+        {
+          "label": "3506",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_3506_all64.jpg"
+        },
+        {
+          "label": "7435",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_7435_all64.jpg"
+        },
+        {
+          "label": "10293",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_10293_all64.jpg"
+        },
+        {
+          "label": "5361",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_5361_all64.jpg"
+        },
+        {
+          "label": "4324",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4324_all64.jpg"
+        },
+        {
+          "label": "8894",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_8894_all64.jpg"
+        },
+        {
+          "label": "9491",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_9491_all64.jpg"
+        },
+        {
+          "label": "4165",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4165_all64.jpg"
+        },
+        {
+          "label": "4008",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4008_all64.jpg"
+        },
+        {
+          "label": "6548",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_6548_all64.jpg"
+        },
+        {
+          "label": "6264",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_6264_all64.jpg"
+        },
+        {
+          "label": "4296",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4296_all64.jpg"
+        },
+        {
+          "label": "3676",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_3676_all64.jpg"
+        },
+        {
+          "label": "10032",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_10032_all64.jpg"
+        },
+        {
+          "label": "22",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_22_all64.jpg"
+        },
+        {
+          "label": "4348",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4348_all64.jpg"
+        },
+        {
+          "label": "4024",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4024_all64.jpg"
+        },
+        {
+          "label": "1869",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_1869_all64.jpg"
+        },
+        {
+          "label": "4605",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4605_all64.jpg"
+        },
+        {
+          "label": "5951",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_5951_all64.jpg"
+        },
+        {
+          "label": "2603",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_2603_all64.jpg"
+        },
+        {
+          "label": "6285",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_6285_all64.jpg"
+        },
+        {
+          "label": "6833",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_6833_all64.jpg"
+        },
+        {
+          "label": "9350",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_9350_all64.jpg"
+        },
+        {
+          "label": "4703",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4703_all64.jpg"
+        },
+        {
+          "label": "7038",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_7038_all64.jpg"
+        },
+        {
+          "label": "8975",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_8975_all64.jpg"
+        },
+        {
+          "label": "2677",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_2677_all64.jpg"
+        },
+        {
+          "label": "5267",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_5267_all64.jpg"
+        },
+        {
+          "label": "658",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_658_all64.jpg"
+        },
+        {
+          "label": "2650",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_2650_all64.jpg"
+        },
+        {
+          "label": "4725",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4725_all64.jpg"
+        },
+        {
+          "label": "5538",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_5538_all64.jpg"
+        },
+        {
+          "label": "3631",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_3631_all64.jpg"
+        },
+        {
+          "label": "9105",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_9105_all64.jpg"
+        },
+        {
+          "label": "9160",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_9160_all64.jpg"
+        },
+        {
+          "label": "1835",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_1835_all64.jpg"
+        },
+        {
+          "label": "6506",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_6506_all64.jpg"
+        },
+        {
+          "label": "5206",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_5206_all64.jpg"
+        },
+        {
+          "label": "4249",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4249_all64.jpg"
+        },
+        {
+          "label": "4601",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4601_all64.jpg"
+        },
+        {
+          "label": "8649",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_8649_all64.jpg"
+        },
+        {
+          "label": "5491",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_5491_all64.jpg"
+        },
+        {
+          "label": "4699",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4699_all64.jpg"
+        },
+        {
+          "label": "4660",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_4660_all64.jpg"
+        },
+        {
+          "label": "8105",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_case_audit_v1_2026-10-29/sheets/qv_8105_all64.jpg"
+        }
+      ]
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_grounding_expand100_protocol_v1_2026-10-29.md",
+      "destination": "docs/qwen_direct_grounding_expand100_protocol_v1_2026-10-29.md",
+      "source_sha256": "168a95cb167d072677dd35e49912baaaa291573b474d40d6f93ec09abe8d9fd2",
+      "publication_sha256": "9ab3977839a714696bc201393b64314435904c63e0f7c609ad3b507827835e93",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_grounding_expand100_results_2026-10-29.md",
+      "destination": "docs/qwen_direct_grounding_expand100_results_2026-10-29.md",
+      "source_sha256": "00d7f95e3c8c137e1ecd666ba5839bd5c179959a6b20969c6c8594cb45d97159",
+      "publication_sha256": "c3490b45ebd9514e2ebfbfb176b7c5253cfe2b5e345c003a551dd59f1ee4ca0d",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": [
+        {
+          "label": "qid2781全部64帧",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/grounding_expand100_v1_2026-10-29/counterexample_gallery/qv_2781_all64.png"
+        },
+        {
+          "label": "qid9319全部64帧",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/grounding_expand100_v1_2026-10-29/counterexample_gallery/qv_9319_all64.png"
+        },
+        {
+          "label": "qid2760全部64帧",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/grounding_expand100_v1_2026-10-29/counterexample_gallery/qv_2760_all64.png"
+        },
+        {
+          "label": "qid5466全部64帧",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/grounding_expand100_v1_2026-10-29/counterexample_gallery/qv_5466_all64.png"
+        },
+        {
+          "label": "项目结果包",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/grounding_expand100_v1_2026-10-29/README.md"
+        }
+      ]
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_grounding_expand100_review_2026-10-29.md",
+      "destination": "docs/qwen_direct_grounding_expand100_review_2026-10-29.md",
+      "source_sha256": "3f8780ccc9f1a8b7ca8cb115f645d54c102181fe8d68b8ae8f3aab6e2cb286c2",
+      "publication_sha256": "d8fe43f7ec49040066f66bb24b179acd6fac095a6a8ed07c5aa05dc32ac856ff",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": [
+        {
+          "label": "案例目录",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_v1_1_2026-10-29/counterexample_gallery"
+        },
+        {
+          "label": "完整逐样本表",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_v1_1_2026-10-29/per_query.csv"
+        },
+        {
+          "label": "冻结评价与全部GT／预测",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_v1_1_2026-10-29/diagnostic.json"
+        },
+        {
+          "label": "累计账本",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_v1_1_2026-10-29/ledger.json"
+        },
+        {
+          "label": "退出收据",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_grounding_expand100_v1_1_2026-10-29/campaign_exit.json"
+        }
+      ]
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_grounding_expand100_runtime_amendment_v1_1_2026-10-29.md",
+      "destination": "docs/qwen_direct_grounding_expand100_runtime_amendment_v1_1_2026-10-29.md",
+      "source_sha256": "42e28d9305a952c56b1f210acd355b3cb7bbe57f93e411ab15eeac7cf97eb1c4",
+      "publication_sha256": "bece48861d3ed27fc4b12fcf9d773153c9f2872e6a5027949debc7c6cec7d768",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_grounding_protocol_v1_2026-10-29.md",
+      "destination": "docs/qwen_direct_grounding_protocol_v1_2026-10-29.md",
+      "source_sha256": "c45e43e6b989fd9622d810557d28de8fb94fa533aad7face776dcb3d5cff294f",
+      "publication_sha256": "ff13c8e1c1359ee0510bc9305eafcfba1221b7639bf9ba2b87846d589f1c0b1b",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_grounding_results_2026-10-29.md",
+      "destination": "docs/qwen_direct_grounding_results_2026-10-29.md",
+      "source_sha256": "9c412419a21c0c1ebf2bce009b75fd02395be749e951fa043e62e49e8d332add",
+      "publication_sha256": "a52f041e420c45e4b2a4bb52c710eab21beb6fce952115feeb57411b35707f0c",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": [
+        {
+          "label": "结果包",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/grounding_qv20_v1_2026-10-29/README.md"
+        },
+        {
+          "label": "qid5370的64帧与时间区间",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/grounding_qv20_v1_2026-10-29/counterexample_gallery/qv_5370_all64.png"
+        },
+        {
+          "label": "qid9429的64帧与时间区间",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/grounding_qv20_v1_2026-10-29/counterexample_gallery/qv_9429_all64.png"
+        },
+        {
+          "label": "qid10272的64帧与时间区间",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/grounding_qv20_v1_2026-10-29/counterexample_gallery/qv_10272_all64.png"
+        },
+        {
+          "label": "grounding_qv20_v1_2026-10-29",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/grounding_qv20_v1_2026-10-29/README.md"
+        },
+        {
+          "label": "experiments/direct_grounding",
+          "source_reference": "$MERIT_ROOT/experiments/direct_grounding/README.md"
+        }
+      ]
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_oom_diagnosis_2026-10-28.md",
+      "destination": "docs/qwen_direct_oom_diagnosis_2026-10-28.md",
+      "source_sha256": "92a70b7aa92a77b78e384d52f21c4f6d5ef6dbee34be7c677f7d9920b9beae44",
+      "publication_sha256": "9f193e6799220cad6cf853a8dee67ed5164b9cb7dc51a777b485d0d26411e55e",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": [
+        {
+          "label": "qwen_direct_pilot30_v1_1_2026-10-28",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_pilot30_v1_1_2026-10-28"
+        },
+        {
+          "label": "原始日志第 124 行",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_pilot30_v1_1_2026-10-28/worker.log:124"
+        },
+        {
+          "label": "worker.log:20",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_pilot30_v1_1_2026-10-28/worker.log:20"
+        },
+        {
+          "label": "encoder_cache_manager.py:296",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/v1/core/encoder_cache_manager.py:296"
+        },
+        {
+          "label": "qwen3_vl.py:693",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/model_executor/models/qwen3_vl.py:693"
+        },
+        {
+          "label": "encoder_cache_manager.py:225",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/v1/core/encoder_cache_manager.py:225"
+        },
+        {
+          "label": "gpu_model_runner.py:2163",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/v1/worker/gpu_model_runner.py:2163"
+        },
+        {
+          "label": "gpu_model_runner.py:768",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/v1/worker/gpu_model_runner.py:768"
+        },
+        {
+          "label": "qwen3_vl.py:574",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/model_executor/models/qwen3_vl.py:574"
+        },
+        {
+          "label": "模型配置",
+          "source_reference": "$SHARED_DATA_ROOT/MemDreamer/models/Qwen3-VL-8B-Instruct/config.json"
+        },
+        {
+          "label": "gpu_worker.py:282",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/v1/worker/gpu_worker.py:282"
+        },
+        {
+          "label": "llm.py:363",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/entrypoints/llm.py:363"
+        },
+        {
+          "label": "core.py:471",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/v1/engine/core.py:471"
+        },
+        {
+          "label": "gpu_model_runner.py:601",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/v1/worker/gpu_model_runner.py:601"
+        },
+        {
+          "label": "utils.py:126",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/v1/worker/utils.py:126"
+        },
+        {
+          "label": "scheduler.py:88",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/config/scheduler.py:88"
+        },
+        {
+          "label": "scheduler.py:120",
+          "source_reference": "$SHARED_DATA_ROOT/longvt-repro/env/inference/lib/python3.10/site-packages/vllm/config/scheduler.py:120"
+        },
+        {
+          "label": "diagnose_encoder_cache.py",
+          "source_reference": "$ZEROSHOT_ROOT/experiments/qwen_direct/diagnose_encoder_cache.py"
+        },
+        {
+          "label": "encoder_cache_diagnosis.json",
+          "source_reference": "$ZEROSHOT_ARTIFACT_ROOT/qwen_direct_pilot30_v1_1_2026-10-28/encoder_cache_diagnosis.json"
+        }
+      ]
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_pilot_protocol_v1_2026-10-28.md",
+      "destination": "docs/qwen_direct_pilot_protocol_v1_2026-10-28.md",
+      "source_sha256": "53f54ae6cffde9f53f3afb173107ad378145c057d19ac9c1f3b4b72e6bfb6959",
+      "publication_sha256": "c816675b9375e853ae953ad28aa35d02db2b602924200916b921f5e8dd0f7079",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_pilot_results_2026-10-28.md",
+      "destination": "docs/qwen_direct_pilot_results_2026-10-28.md",
+      "source_sha256": "e1cbf7c289ba8f4e880fbd5bb27f4c2da2efd53e61216f2dab88dcc9949d46e4",
+      "publication_sha256": "8ede18ee47905680898014687ddd8ee588b4d7693561b340edbd4125e8d3e805",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": [
+        {
+          "label": "结果、原文、源码与案例",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/pilot30_2026-10-28/README.md"
+        },
+        {
+          "label": "麦片漏检",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/pilot30_2026-10-28/case_examples/qv_5073.png"
+        },
+        {
+          "label": "救援全等分",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/pilot30_2026-10-28/case_examples/qv_9429.png"
+        },
+        {
+          "label": "指标命中对照",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/pilot30_2026-10-28/case_examples/qv_10272.png"
+        },
+        {
+          "label": "TVSum 多阶段视频",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/pilot30_2026-10-28/case_examples/tvsum_J0nA4VgnoCo.png"
+        }
+      ]
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_pilot_runtime_amendment_v1_1_2026-10-28.md",
+      "destination": "docs/qwen_direct_pilot_runtime_amendment_v1_1_2026-10-28.md",
+      "source_sha256": "f97b49abef73579bfdb5bb789d8028b7e0920754cc7ec7580594db9f3107f354",
+      "publication_sha256": "cbc800fff05c6f1e7de09894fdeb64db968a3eb484cfb730131ee9f25660d5af",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_temporal_output_protocol_v1_2026-10-28.md",
+      "destination": "docs/qwen_direct_temporal_output_protocol_v1_2026-10-28.md",
+      "source_sha256": "7989d6342ff1af80e4ca54dbac485e02e420c85f959e968e8ae51e13e6d6ac25",
+      "publication_sha256": "4ae2220595c7a9a628d2995934e3e706c746fb0b6317f3babf3a9654258ccf44",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_temporal_preparation_receipt_v1_2026-10-28.md",
+      "destination": "docs/qwen_direct_temporal_preparation_receipt_v1_2026-10-28.md",
+      "source_sha256": "69e988dc07f7ba86d740a216257a91ad29a4015e58f4e1eccb4cf74efe1fce96",
+      "publication_sha256": "6a2d02f21ac0d7ca0151d6d44ce075378d43a154be8662b4323052c6e804a06b",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": [
+        {
+          "label": "机器可审计收据",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/temporal_binding_protocol_v1_2026-10-28/preparation_receipt.json"
+        },
+        {
+          "label": "冻结输入目录",
+          "source_reference": "$MERIT_ROOT/comparisons/qwen_direct/temporal_binding_protocol_v1_2026-10-28"
+        },
+        {
+          "label": "CPU 契约代码",
+          "source_reference": "$MERIT_ROOT/experiments/direct_temporal_protocol/README.md"
+        }
+      ]
+    },
+    {
+      "source": "MERIT:docs/qwen_direct_temporal_results_2026-10-28.md",
+      "destination": "docs/qwen_direct_temporal_results_2026-10-28.md",
+      "source_sha256": "30d84abf35f39c5ffc083a3a0141af6918878bebb6ed50904efb5eb098f7ce9a",
+      "publication_sha256": "fdbb4496a73ccd50044e03af56566f4cc572c15237de86119674095cbcf6dd0b",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/temporal_grounding_mainline_2026-10-29.md",
+      "destination": "docs/temporal_grounding_mainline_2026-10-29.md",
+      "source_sha256": "9dc9e79017bbdcab777ec39227ea761e85259467e1cfcef3d3f4bbe784f3c2d8",
+      "publication_sha256": "476d75e0184d2a2f388681fba77d19be20f19a1463c097f91e1e6a177f2f32a6",
+      "basis": "report",
+      "publication_changes": "Publication notice and path/link aliases only; scientific content unchanged.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/ReVALUE_Grounding实验进展_2026-10-28至10-30.pptx",
+      "destination": "docs/presentations/ReVALUE_Grounding实验进展_2026-10-28至10-30.pptx",
+      "source_sha256": "bb9b3f8fb14949a2bb40ff11498c07a47a787b3062510c0ac6a20c7ad9b0379e",
+      "publication_sha256": "bb9b3f8fb14949a2bb40ff11498c07a47a787b3062510c0ac6a20c7ad9b0379e",
+      "basis": "presentation_binary",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/ReVALUE_Grounding实验进展_2026-10-28至10-30.pdf",
+      "destination": "docs/presentations/ReVALUE_Grounding实验进展_2026-10-28至10-30.pdf",
+      "source_sha256": "141e4ee3be31a40117a51e65e71ed2709c12881b2205d44f97a7a61a101b9f15",
+      "publication_sha256": "141e4ee3be31a40117a51e65e71ed2709c12881b2205d44f97a7a61a101b9f15",
+      "basis": "presentation_binary",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/design_spec.md",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/design_spec.md",
+      "source_sha256": "a1d295babc1e43fbeeb68cda16c45ac739f91070c95c23febb5afa84e565d831",
+      "publication_sha256": "a1d295babc1e43fbeeb68cda16c45ac739f91070c95c23febb5afa84e565d831",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/spec_lock.md",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/spec_lock.md",
+      "source_sha256": "9aadae504ee468888919f1d08d60a66df98659e01f48efbef678752e0f65a7b7",
+      "publication_sha256": "9aadae504ee468888919f1d08d60a66df98659e01f48efbef678752e0f65a7b7",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/validation/chart_verification.md",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/validation/chart_verification.md",
+      "source_sha256": "10c20f6b0f49fa0050b50bf4f001dafe609915ef84da26d8ef6b5e9bc4dfd8e5",
+      "publication_sha256": "10c20f6b0f49fa0050b50bf4f001dafe609915ef84da26d8ef6b5e9bc4dfd8e5",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/notes/total.md",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/speaker_notes.md",
+      "source_sha256": "c3281bb2053db3c4a06f77cb7d3eb4b9367bc0a35a682e560c5c070acf189355",
+      "publication_sha256": "c3281bb2053db3c4a06f77cb7d3eb4b9367bc0a35a682e560c5c070acf189355",
+      "basis": "speaker_notes",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/svg_output/01_cover.svg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/svg_output/01_cover.svg",
+      "source_sha256": "c5b161ab06ccfdcf9cdc329299dee732b7fc4f7a2880476c10662c4a1eec61ee",
+      "publication_sha256": "c5b161ab06ccfdcf9cdc329299dee732b7fc4f7a2880476c10662c4a1eec61ee",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/svg_output/02_progress.svg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/svg_output/02_progress.svg",
+      "source_sha256": "d164dd0b996aa2508a31686a27bd58046a2d5e56c6b17402b5899c6e38fc15a0",
+      "publication_sha256": "d164dd0b996aa2508a31686a27bd58046a2d5e56c6b17402b5899c6e38fc15a0",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/svg_output/03_constant_scores.svg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/svg_output/03_constant_scores.svg",
+      "source_sha256": "03cf81f9ee31e7933e75d8c365f400196947226aa7fe578fb2bd6f4cc43e9ee6",
+      "publication_sha256": "03cf81f9ee31e7933e75d8c365f400196947226aa7fe578fb2bd6f4cc43e9ee6",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/svg_output/04_output_diagnosis.svg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/svg_output/04_output_diagnosis.svg",
+      "source_sha256": "d28d6aa9ceb6dd4cd6f6c127e2b2859f53f6afad5ed6455f40354e75df393858",
+      "publication_sha256": "d28d6aa9ceb6dd4cd6f6c127e2b2859f53f6afad5ed6455f40354e75df393858",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/svg_output/05_grounding_task.svg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/svg_output/05_grounding_task.svg",
+      "source_sha256": "38a6a232f4842e30c95e035d6f0e3519063037395e800372a88a152467f11b76",
+      "publication_sha256": "38a6a232f4842e30c95e035d6f0e3519063037395e800372a88a152467f11b76",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/svg_output/06_grounding_results.svg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/svg_output/06_grounding_results.svg",
+      "source_sha256": "db2a18004e33b8e776d33216b1eeeb8026979ada971da328297add3290bb0f10",
+      "publication_sha256": "db2a18004e33b8e776d33216b1eeeb8026979ada971da328297add3290bb0f10",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/svg_output/07_failure_taxonomy.svg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/svg_output/07_failure_taxonomy.svg",
+      "source_sha256": "87bdf596fd0aa31a5eeec59616ec4eacdab56cf8b1cad5ccb4454cc7ded34153",
+      "publication_sha256": "87bdf596fd0aa31a5eeec59616ec4eacdab56cf8b1cad5ccb4454cc7ded34153",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/svg_output/08_true_error.svg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/svg_output/08_true_error.svg",
+      "source_sha256": "f25cd4a951659e9d2831608aa59c6220f0e2bff000c6ed8d35119a6d3e9d7939",
+      "publication_sha256": "f25cd4a951659e9d2831608aa59c6220f0e2bff000c6ed8d35119a6d3e9d7939",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/svg_output/09_annotation_suspect.svg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/svg_output/09_annotation_suspect.svg",
+      "source_sha256": "7f3f828f4ec17a7a22418cb067e06790d7f383b01319285c075fff5200c54a96",
+      "publication_sha256": "7f3f828f4ec17a7a22418cb067e06790d7f383b01319285c075fff5200c54a96",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/svg_output/10_mixed_boundary.svg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/svg_output/10_mixed_boundary.svg",
+      "source_sha256": "d0167f899c62ccb56677a317d6c3d6eded10ce4b498a25857d96247594c129f1",
+      "publication_sha256": "d0167f899c62ccb56677a317d6c3d6eded10ce4b498a25857d96247594c129f1",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/svg_output/11_open_issues.svg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/svg_output/11_open_issues.svg",
+      "source_sha256": "d09f76531bd8d3a85d5c6f9135bb94efa82efd6bf8eab7f5efe93d5044bc71f3",
+      "publication_sha256": "d09f76531bd8d3a85d5c6f9135bb94efa82efd6bf8eab7f5efe93d5044bc71f3",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/svg_output/12_next_steps.svg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/svg_output/12_next_steps.svg",
+      "source_sha256": "a12c35e011567e18b3ad5de8b9f19f9c698af69447dd0bcee578b32f50e60413",
+      "publication_sha256": "a12c35e011567e18b3ad5de8b9f19f9c698af69447dd0bcee578b32f50e60413",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/images/qv_3676.jpg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/images/qv_3676.jpg",
+      "source_sha256": "474ac0b7425e344a0a893a0131c5e2f031922f996705d3e8812472f1947670d3",
+      "publication_sha256": "474ac0b7425e344a0a893a0131c5e2f031922f996705d3e8812472f1947670d3",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/images/qv_448.jpg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/images/qv_448.jpg",
+      "source_sha256": "251b763f9969e4b2fe58226009a19d76c16473911f958c343d137703b5542516",
+      "publication_sha256": "251b763f9969e4b2fe58226009a19d76c16473911f958c343d137703b5542516",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/images/qv_5466.jpg",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/images/qv_5466.jpg",
+      "source_sha256": "8d795601e9443565f83693e7a52b016d71edff8dd0a40076eab1860515798cd5",
+      "publication_sha256": "8d795601e9443565f83693e7a52b016d71edff8dd0a40076eab1860515798cd5",
+      "basis": "presentation_source",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/evidence_cards/qv_448.jpg",
+      "destination": "comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/evidence_cards/qv_448.jpg",
+      "source_sha256": "251b763f9969e4b2fe58226009a19d76c16473911f958c343d137703b5542516",
+      "publication_sha256": "251b763f9969e4b2fe58226009a19d76c16473911f958c343d137703b5542516",
+      "basis": "case_evidence_image",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/evidence_cards/qv_4703.jpg",
+      "destination": "comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/evidence_cards/qv_4703.jpg",
+      "source_sha256": "8e8460b836fa1fcc183f7e9f2043452c11c35763045dc610b846a37e69ceb994",
+      "publication_sha256": "8e8460b836fa1fcc183f7e9f2043452c11c35763045dc610b846a37e69ceb994",
+      "basis": "case_evidence_image",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/evidence_cards/qv_3676.jpg",
+      "destination": "comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/evidence_cards/qv_3676.jpg",
+      "source_sha256": "474ac0b7425e344a0a893a0131c5e2f031922f996705d3e8812472f1947670d3",
+      "publication_sha256": "474ac0b7425e344a0a893a0131c5e2f031922f996705d3e8812472f1947670d3",
+      "basis": "case_evidence_image",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/evidence_cards/qv_2603.jpg",
+      "destination": "comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/evidence_cards/qv_2603.jpg",
+      "source_sha256": "717945168a8fb4d1e1a08b299130c860884e9bfa5369ef4747721bbfe7c6b69a",
+      "publication_sha256": "717945168a8fb4d1e1a08b299130c860884e9bfa5369ef4747721bbfe7c6b69a",
+      "basis": "case_evidence_image",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/evidence_cards/qv_5466.jpg",
+      "destination": "comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/evidence_cards/qv_5466.jpg",
+      "source_sha256": "8d795601e9443565f83693e7a52b016d71edff8dd0a40076eab1860515798cd5",
+      "publication_sha256": "8d795601e9443565f83693e7a52b016d71edff8dd0a40076eab1860515798cd5",
+      "basis": "case_evidence_image",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/all52_case_reviews.csv",
+      "destination": "comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/all52_case_reviews.csv",
+      "source_sha256": "181eed51cd6371ea2f6b2a9d9423f85bf587d77c1d3291f3fb50ba1e84e48371",
+      "publication_sha256": "e65d4176ebd682c7626e51f0e28dc07af029292dfdb29fbdfed06eb28ea3ac25",
+      "basis": "case_audit_evidence",
+      "publication_changes": "Machine paths use publication aliases; CRLF normalized to LF. All 52 parsed rows and non-path field values match the source.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/final_case_reviews.json",
+      "destination": "comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/final_case_reviews.json",
+      "source_sha256": "3ae1b1bddc3216bea7faf6401bd1beeedeea1c66b6156fc4292ab35cc67fbfac",
+      "publication_sha256": "0558a9465e6f998293b0b168ba98d135c9a4c01c457b6a5ec20541bdd2546291",
+      "basis": "case_audit_evidence",
+      "publication_changes": "Machine paths use publication aliases; source values and original embedded hashes retained.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/validation_receipt.json",
+      "destination": "comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/validation_receipt.json",
+      "source_sha256": "9341b8447992f01765298463eb257e73a7f979b123a7fe70427f1ea23292378d",
+      "publication_sha256": "9341b8447992f01765298463eb257e73a7f979b123a7fe70427f1ea23292378d",
+      "basis": "case_audit_evidence",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/adjudications.json",
+      "destination": "comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/adjudications.json",
+      "source_sha256": "9f3b8d5256e46bd78e89a9f35e30bd483218551dd3ffe6d13f66d6cafbbfa329",
+      "publication_sha256": "9f3b8d5256e46bd78e89a9f35e30bd483218551dd3ffe6d13f66d6cafbbfa329",
+      "basis": "case_audit_evidence",
+      "publication_changes": "None.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/revalue_grounding_progress_20261030/README.md",
+      "destination": "docs/presentations/revalue_grounding_progress_20261030/README.md",
+      "source_sha256": "233bd513fe6af8e34cd289dd335c43e98d7759b4d54a8869cd5c120959122868",
+      "publication_sha256": "e0e10785fa4487444359a3ceb7e134a2632b073ab0767074e3dbc9c8c0b3b2a8",
+      "basis": "curated_publication_readme_for_selected_report_and_presentation_artifacts",
+      "publication_changes": "Document published subset and portable links; preserve experimental facts.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/README.md",
+      "destination": "comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/README.md",
+      "source_sha256": "637a7bf5c7c2ca45d24694f8ebef6e00295bac58b5340e338fdf1dc7e185bed1",
+      "publication_sha256": "772dd1767be8de493db76a636fa5080076e21a2a1380cc2d49e30a9f97278d26",
+      "basis": "curated_publication_readme_for_selected_report_and_presentation_artifacts",
+      "publication_changes": "Document published subset and portable links; preserve experimental facts.",
+      "local_only_references": []
     }
   ],
   "indexes": [
     {
       "source": "MERIT:README.md",
       "destination": "README.md",
-      "source_sha256": "9889090b9ccab630d46f1a834bd82ab4c3bbbc492a82739a13d7cbfc2fec2790",
-      "publication_sha256": "f299b08918c32235ed9090059183bf527fe99be67dc59e24fdb018ba508160a5",
+      "source_sha256": "0dea149cceb481ad70ed8874ea804489e116844562d7d8c20710f67abfa32af2",
+      "publication_sha256": "d73cc23f21af792a11c977ce8b628f89ef2c6502083566c6d14f95126aac7a55",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     },
     {
       "source": "MERIT:docs/README.md",
       "destination": "docs/README.md",
-      "source_sha256": "f53ade5e060492fa72c7b4b6dd6cb174bd71c80eff4516a7d1a1f4623e41571c",
-      "publication_sha256": "9edbba2e137791cff64dc04f750bd1d8f984d172f18b59e2e42a535056127508",
+      "source_sha256": "43504dddbaadd1e8591053a2a639eee16aac9cf32066740d1bd0d30f7bec35bb",
+      "publication_sha256": "9518a88e4c038e437385df13053d752e03566d64851f8ec90fc922153447588a",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     }
   ],
@@ -1425,5 +2295,73 @@
     "new_gpu_allocations": 0,
     "existing_results_changed": false,
     "verification_command": "python3 scripts/verify_publication.py --merit-source <MERIT_ROOT> --zeroshot-source <ZEROSHOT_ROOT>"
+  },
+  "grounding_progress_publication_2026_10_30": {
+    "at": "2026-10-30T02:04:35+08:00",
+    "scope": "Publish the requested PPT and summary plus this period’s 18 related reports/protocols, editable slide sources, speaker notes, PDF preview and selected counterexample evidence.",
+    "report_count": 18,
+    "new_artifact_count": 50,
+    "slides": 12,
+    "speaker_notes_pages": 12,
+    "native_charts": 1,
+    "native_tables": 2,
+    "pptx_sha256": "bb9b3f8fb14949a2bb40ff11498c07a47a787b3062510c0ac6a20c7ad9b0379e",
+    "experimental_model_calls": 0,
+    "gpu_allocations": 0,
+    "original_predictions_changed": false,
+    "research_sources_changed": false,
+    "AGENTS_modified": false,
+    "prior_index_snapshot": [
+      {
+        "source": "MERIT:README.md",
+        "destination": "README.md",
+        "source_sha256": "9889090b9ccab630d46f1a834bd82ab4c3bbbc492a82739a13d7cbfc2fec2790",
+        "publication_sha256": "f299b08918c32235ed9090059183bf527fe99be67dc59e24fdb018ba508160a5",
+        "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
+      },
+      {
+        "source": "MERIT:docs/README.md",
+        "destination": "docs/README.md",
+        "source_sha256": "f53ade5e060492fa72c7b4b6dd6cb174bd71c80eff4516a7d1a1f4623e41571c",
+        "publication_sha256": "9edbba2e137791cff64dc04f750bd1d8f984d172f18b59e2e42a535056127508",
+        "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
+      }
+    ],
+    "source_audit_before_publication": {
+      "unpublished_reports": 18,
+      "unpublished_experiment_source_files": 69,
+      "changed_curated_source_indexes": 2,
+      "other_published_file_errors": 0
+    },
+    "scope_boundary": "The 69 new experiment source files were identified by the full workspace audit and remain local. This user request publishes the presentation, reports and selected evidence; it is not a complete experiment-code release. Existing source manifests and historical checks are retained.",
+    "raw_runs_and_full_frame_sheets": "Remain local; non-published references are explicitly labelled.",
+    "verification_status": "passed_for_published_artifacts_and_all_current_reports",
+    "publication_verification": {
+      "passed": true,
+      "published_files_checked": 437,
+      "source_files_checked": 0,
+      "local_links_checked": 648,
+      "errors": []
+    },
+    "full_workspace_source_audit": {
+      "passed": false,
+      "published_files_checked": 437,
+      "source_files_checked": 425,
+      "local_links_checked": 648,
+      "unpublished_reports": 0,
+      "published_file_or_source_hash_errors": 0,
+      "unpublished_experiment_source_files": 69,
+      "scope_note": "All remaining findings are new experiment code files outside this presentation/report delivery, already recorded before copying. No check was skipped or reclassified as passed."
+    },
+    "focused_delivery_verification": {
+      "paths": 53,
+      "relative_links_checked": 235,
+      "issues": 0,
+      "pptx_equal_to_research_delivery": true,
+      "slides": 12,
+      "speaker_notes_pages": 12,
+      "original_AGENTS_and_existing_experiments_unchanged": true,
+      "all52_csv_non_path_fields_equal": true
+    }
   }
 }

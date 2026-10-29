@@ -1,0 +1,103 @@
+{
+  "created_at_utc": "2026-10-29T15:38:47.373134+00:00",
+  "verification_status": "ANALYZED; assistant screen, not independent human adjudication",
+  "scope_count": 52,
+  "coverage_count": 52,
+  "unique_qids": 52,
+  "all_assigned_reviews_seen_all64": true,
+  "primary_assistant_distinct_cases_viewed": [
+    2781,
+    9319,
+    2760,
+    5466,
+    9160,
+    6548,
+    3676,
+    9350,
+    4703,
+    2603,
+    448,
+    4165,
+    3506,
+    9105,
+    6506,
+    10032,
+    4605,
+    5538,
+    4699
+  ],
+  "reviewers": "One primary assistant plus three bounded native assistant reviewers; no independent human labels; not agreement statistics",
+  "category_counts": {
+    "annotation_or_scope_suspect": 15,
+    "mixed": 10,
+    "clear_model_error": 22,
+    "insufficient_evidence": 5
+  },
+  "geometry_cross_tab": {
+    "no_overlap": {
+      "annotation_or_scope_suspect": 5,
+      "clear_model_error": 9
+    },
+    "undernarrow": {
+      "annotation_or_scope_suspect": 3,
+      "mixed": 3,
+      "insufficient_evidence": 3,
+      "clear_model_error": 2
+    },
+    "partial_overlap": {
+      "mixed": 4,
+      "annotation_or_scope_suspect": 2,
+      "clear_model_error": 5
+    },
+    "overwide": {
+      "annotation_or_scope_suspect": 4,
+      "clear_model_error": 4,
+      "mixed": 3,
+      "insufficient_evidence": 2
+    },
+    "not_found": {
+      "clear_model_error": 2,
+      "annotation_or_scope_suspect": 1
+    }
+  },
+  "original_source_hashes_before": {
+    "diagnostic.json": "a823738ad6320712b978e972020a019be423dc7fae8db203bfe19f9aec6ccca7",
+    "inputs.json": "e63d48fcf60c3db31e55cf7708c9219d567e1dc987e31b3930934ef89130fe0b",
+    "ledger.json": "b38bc6877a44e14c88fdc744b7e833b2166c6233c513bf5dd3dffd564ec4ce33",
+    "manifest.json": "d9b63d1694e17eea1cc60a217a3b2fd4127127428a1ff880b7c2005b999898a0",
+    "prediction_freeze.json": "af27ed5f73ac8c290de2f7fe850adf699152db593bd637dbb62aac5132d51450"
+  },
+  "original_source_hashes_after": {
+    "diagnostic.json": "a823738ad6320712b978e972020a019be423dc7fae8db203bfe19f9aec6ccca7",
+    "inputs.json": "e63d48fcf60c3db31e55cf7708c9219d567e1dc987e31b3930934ef89130fe0b",
+    "ledger.json": "b38bc6877a44e14c88fdc744b7e833b2166c6233c513bf5dd3dffd564ec4ce33",
+    "manifest.json": "d9b63d1694e17eea1cc60a217a3b2fd4127127428a1ff880b7c2005b999898a0",
+    "prediction_freeze.json": "af27ed5f73ac8c290de2f7fe850adf699152db593bd637dbb62aac5132d51450"
+  },
+  "all52_frame_file_hashes_checked": true,
+  "review_source_hashes": {
+    "review_root.json": "5030b615a4884c57937ba4649ff023eeb62c7e0b7a1086f92ede97266dad5e9b",
+    "review_a.json": "103e5f04bae8ba4e287ac0563a39020595e1c52ed530f09dcee6bad7ff4d2344",
+    "review_b.json": "af4015e4b9f85bcca0584b304ac80ec809ca51e31dee42fbd34e5bda2a9b0710",
+    "review_c.json": "5dce2a613e1bab7ca3a546e16754ee00e569a4db44f5fd11039aec61d017a36d"
+  },
+  "new_experiment_model_calls": 0,
+  "new_experiment_tokens": 0,
+  "new_gpu_allocations": 0,
+  "new_gpu_seconds": 0,
+  "new_source_video_frames_decoded": 0,
+  "new_audio_used": false,
+  "owned_experiment_processes_with_exact_run_argument": [],
+  "historical_ledger_sha256_unchanged": true,
+  "gt_changed": false,
+  "predictions_changed": false,
+  "benchmark_metrics_recalculated_or_adjusted": false,
+  "scope_limits": [
+    "All52 failures, not a random dataset sample",
+    "No causal claim about model mechanism",
+    "No revised GT or scores",
+    "No significance test or population label-error rate",
+    "Sparse silent inputs cannot certify second-level boundaries"
+  ],
+  "push_performed": false
+}

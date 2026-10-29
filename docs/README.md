@@ -1,5 +1,20 @@
 # 文档索引
 
+## 最新：组会后 Direct 与 Grounding 进展（2026-10-28–30）
+
+- [工作总结](progress_after_meeting_2026-10-27_to_2026-10-30.md)、[12 页可编辑 PPT](presentations/ReVALUE_Grounding实验进展_2026-10-28至10-30.pptx)、[PDF 预览](presentations/ReVALUE_Grounding实验进展_2026-10-28至10-30.pdf)、[讲稿与可编辑源页面](presentations/revalue_grounding_progress_20261030/README.md)。
+- [Grounding 主线确认](temporal_grounding_mainline_2026-10-29.md)：以匹配 query 的事件起止区间为主要任务；定位 R1 与高光排序 mAP 分开。
+- [Direct pilot 结果](qwen_direct_pilot_results_2026-10-28.md)：QV20 与 TVSum5 的有效整表输出全部视频内同分；[原协议](qwen_direct_pilot_protocol_v1_2026-10-28.md)、[启动兼容修订](qwen_direct_pilot_runtime_amendment_v1_1_2026-10-28.md)、[OOM 来源链](qwen_direct_oom_diagnosis_2026-10-28.md)。TVSum Direct 仍为 5/10，未补跑。
+- [显式时间键结果](qwen_direct_temporal_results_2026-10-28.md)：20/20 完成，仍在视频内同分；[冻结协议](qwen_direct_temporal_output_protocol_v1_2026-10-28.md)、[准备收据](qwen_direct_temporal_preparation_receipt_v1_2026-10-28.md)。
+- [单目标粒度结果](qwen_direct_granularity_results_2026-10-29.md)：40 次完成，20 对固定目标中 11 对分值不同；该比例不是准确率，未计算新全网格指标。见[冻结协议](qwen_direct_granularity_protocol_v1_2026-10-28.md)。
+- [Grounding QV20 结果](qwen_direct_grounding_results_2026-10-29.md)：20/20 合法，R1@0.5 / R1@0.7 为 70% / 50%；[冻结协议](qwen_direct_grounding_protocol_v1_2026-10-29.md)。
+- [新增 100 条结果](qwen_direct_grounding_expand100_results_2026-10-29.md)：96 次尝试、94 条合法，1 OOM、1 非法区间、4 未尝试；完整分母 R1 为 42% / 28%，52 条合法反例。见[原协议](qwen_direct_grounding_expand100_protocol_v1_2026-10-29.md)、[冷启动分批修订](qwen_direct_grounding_expand100_runtime_amendment_v1_1_2026-10-29.md)及[初始结果审阅](qwen_direct_grounding_expand100_review_2026-10-29.md)。两批均为 train 开发诊断，不是官方全量验证。
+- [52 条反例的语义核查](qwen_direct_grounding_52_counterexample_analysis_2026-10-29.md)：助手初筛 22 条较明确错误、15 条标注／范围疑点、10 条混合、5 条证据不足；[逐例数据与五组代表证据](../comparisons/qwen_direct/grounding_expand100_case_audit_2026-10-29/README.md)。发布 GT 与原指标未更改，仍待独立人工复核，尚无 Agent 修复收益。
+
+本次同步 18 份本阶段报告与方案，以及 PPT、PDF、讲稿和页面源文件；仅更新文档和精选证据，未新增实验。原始运行缓存、模型、完整视频和新运行器代码不属于这次汇报交付；相关引用明确标为本地材料。历史协议中的待授权状态按原日期保留，后续执行事实以对应结果报告为准。
+
+## 上次组会及历史阶段记录
+
 - [本周实验进度报告（2026-10-21–27）](weekly_experiment_progress_2026-10-21_to_2026-10-27.md)、[更新版 15 页 PPT](presentations/ReVALUE_实验进度汇报_2026-10-21至10-27_v2_TaskSpec补充.pptx)及[原 14 页 PPT](presentations/ReVALUE_实验进度汇报_2026-10-21至10-27.pptx)：更新版增加 TaskSpec 介绍，讲稿见[交付目录](presentations/revalue_weekly_2026-10-21_to_2026-10-27/README.md)。
 
 - [四态比较器诊断记录（2026-10-27）](revalue_four_state_comparator_diagnosis_2026-10-27.md)：QV / TVSum 的状态分布、双向胜负、回看触发和待验证原因；基于既有记录，未新增实验模型调用。

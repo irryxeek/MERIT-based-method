@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="ending">
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0,0 8,4 0,8" fill="#237F8C"/></marker></defs>
+  <rect id="background" data-pptx-role="background" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="page-title" data-pptx-bounds="48 24 1184 126"><text x="48" y="49" font-size="18" fill="#237F8C">11 / 下一步实验方向</text><text x="48" y="112" font-size="42" font-weight="700" fill="#17324D">下一步：按错误类型验证局部补证</text></g>
+  <g id="closing-takeaway" data-pptx-bounds="48 164 1184 55"><text x="48" y="201" font-size="30" font-weight="700" fill="#237F8C">先用可靠反例验证补证，再扩大 Agent 实验</text></g>
+  <g id="targeted-evidence-paths" data-pptx-bounds="48 246 806 292">
+    <rect x="48" y="322" width="230" height="104" fill="#17324D"/>
+    <text x="72" y="365" font-size="24" font-weight="700" fill="#FFFFFF">核验较明确错误</text>
+    <text x="72" y="402" font-size="18" fill="#FFFFFF">原帧 + 连续视频片段</text>
+    <g stroke="#237F8C" stroke-width="2"><line x1="278" y1="374" x2="328" y2="374"/><line x1="328" y1="281" x2="328" y2="453"/><line x1="328" y1="281" x2="388" y2="281" marker-end="url(#arrow)"/><line x1="328" y1="453" x2="388" y2="453" marker-end="url(#arrow)"/></g>
+    <text x="412" y="286" font-size="28" font-weight="700" fill="#17324D">选错事件</text>
+    <text x="412" y="333" font-size="24" fill="#52667A">对象、动作、关系和场景<tspan x="412" dy="36">是否同时满足 query？</tspan></text>
+    <text x="412" y="458" font-size="28" font-weight="700" fill="#17324D">边界错误</text>
+    <text x="412" y="505" font-size="24" fill="#52667A">检查起点之前与终点之后</text>
+  </g>
+  <g id="annotation-review-path" data-pptx-bounds="900 246 332 292">
+    <rect x="900" y="246" width="332" height="292" fill="#F2F5F8"/>
+    <text x="928" y="294" font-size="28" font-weight="700" fill="#C76128">标注疑点</text>
+    <text x="928" y="355" font-size="24" fill="#17324D">人工复核重复实例<tspan x="928" dy="36">与 query 动作范围；</tspan><tspan x="928" dy="36">保留发布 GT。</tspan></text>
+    <text x="928" y="493" font-size="18" fill="#52667A">语音相关案例单独核查。</text>
+  </g>
+  <g id="acceptance-metrics" data-pptx-bounds="48 576 1184 76">
+    <line x1="48" y1="577" x2="1232" y2="577" stroke="#237F8C" stroke-width="2"/>
+    <text x="48" y="627" font-size="28" fill="#17324D"><tspan font-weight="700">验收：</tspan>修复率 + 原命中误改 + 全分母 R1 + 调用成本</text>
+  </g>
+  <g id="footer" data-pptx-role="footer" data-pptx-bounds="48 672 1184 28" fill="#52667A" font-size="16"><text x="48" y="692">计划尚未执行；LensWalk / Gemini 代码仍待对接｜依据：组会后工作总结</text><text x="1232" y="692" text-anchor="end">12 / 12</text></g>
+</svg>

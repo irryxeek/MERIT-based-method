@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+  <rect id="background" data-pptx-role="background" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="page-title" data-pptx-bounds="48 24 1184 126"><text x="48" y="49" font-size="18" fill="#237F8C">03 / 输出机制诊断</text><text x="48" y="112" font-size="42" font-weight="700" fill="#17324D">时间键无效；单目标判断出现部分分差</text></g>
+  <g id="output-conditions" data-pptx-bounds="48 190 1184 280" data-pptx-replace-with="table" data-pptx-fallback-sha256="b9aa6b0a1976b32d8ea11a24631d74888c1b11ae590804d8bb57424f544654ea">
+    <metadata type="application/json">{"schema":"ppt-master.semantic-table.v2","name":"output-conditions","x":48,"y":190,"width":1184,"height":280,"columns":[{"text":"输出条件","align":"l","bold":true},{"text":"调用规模","align":"l","bold":true},{"text":"观察结果","align":"l","bold":true}],"rows":[[{"text":"原始评分整表","bold":true},"20 次","20/20 视频内同分"],[{"text":"显式时间键","bold":true},"20 次","仍 20/20 同分，mAP / Hit@1 不变"],[{"text":"单目标 2s 判断","bold":true},"40 次","20 对固定目标：11 对异值，9 对同分"]],"column_widths":[250,190,744],"row_heights":[64,72,72,72],"defaults":{"cell":{"align":"l","valign":"middle","padding":{"left":20,"right":16,"top":8,"bottom":8},"borders":{"left":{"style":"none"},"right":{"style":"none"},"top":{"style":"none"},"bottom":{"style":"solid","color":"#D5DEE8","width":1}}}},"style":{"font_family":"Microsoft YaHei","font_size":24,"header_font_size":24,"band_row":false,"header_fill":"#17324D","header_text":"#FFFFFF","body_text":"#17324D"}}</metadata>
+    <rect x="48" y="190" width="1184" height="64" fill="#17324D"/>
+    <g font-size="24" fill="#FFFFFF" font-weight="700"><text x="68" y="231">输出条件</text><text x="318" y="231">调用规模</text><text x="508" y="231">观察结果</text></g>
+    <g stroke="#D5DEE8" stroke-width="1"><line x1="48" y1="254" x2="1232" y2="254"/><line x1="48" y1="326" x2="1232" y2="326"/><line x1="48" y1="398" x2="1232" y2="398"/><line x1="48" y1="470" x2="1232" y2="470"/></g>
+    <g font-size="24" fill="#17324D"><text x="68" y="300" font-weight="700">原始评分整表</text><text x="318" y="300">20 次</text><text x="508" y="300">20/20 视频内同分</text><text x="68" y="372" font-weight="700">显式时间键</text><text x="318" y="372">20 次</text><text x="508" y="372">仍 20/20 同分，mAP / Hit@1 不变</text><text x="68" y="444" font-weight="700">单目标 2s 判断</text><text x="318" y="444">40 次</text><text x="508" y="444">20 对固定目标：11 对异值，9 对同分</text></g>
+  </g>
+  <g id="granularity-caveat" data-pptx-bounds="48 505 1184 145">
+    <text x="48" y="541" font-size="30" font-weight="700" fill="#237F8C">11/20 是分差比例，不是准确率</text>
+    <text x="48" y="589" font-size="24" fill="#52667A">共享 QV20、原 64 帧与模型；单目标只覆盖 40 个时间格，未计算新全网格精度。<tspan x="48" dy="36">目标范围、输出长度和注意力聚焦共同变化，不能当作纯时间理解因果实验。</tspan></text>
+  </g>
+  <g id="footer" data-pptx-role="footer" data-pptx-bounds="48 672 1184 28" fill="#52667A" font-size="16"><text x="48" y="692">依据：时间键报告（10.28）、单目标粒度报告（10.29）</text><text x="1232" y="692" text-anchor="end">04 / 12</text></g>
+</svg>

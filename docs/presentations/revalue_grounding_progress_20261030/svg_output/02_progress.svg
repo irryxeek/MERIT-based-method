@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+  <rect id="background" data-pptx-role="background" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="page-title" data-pptx-bounds="48 24 1184 126">
+    <text x="48" y="49" font-size="18" fill="#237F8C">01 / 工作边界</text>
+    <text x="48" y="112" font-size="42" font-weight="700" fill="#17324D">已完成基线与诊断，Agent 修复尚待验证</text>
+  </g>
+  <g id="completed-work-sequence" data-pptx-bounds="48 180 1184 300">
+    <text x="48" y="210" font-size="24" fill="#52667A">10.28–10.29 已完成</text>
+    <line x1="80" y1="284" x2="1016" y2="284" stroke="#237F8C" stroke-width="3"/>
+    <g fill="#237F8C"><circle cx="80" cy="284" r="10"/><circle cx="392" cy="284" r="10"/><circle cx="704" cy="284" r="10"/><circle cx="1016" cy="284" r="10"/></g>
+    <g fill="#17324D" font-size="30" font-weight="700">
+      <text x="48" y="346">整表评分</text><text x="360" y="346">单目标诊断</text><text x="672" y="346">直接定位</text><text x="984" y="346">反例核查</text>
+    </g>
+    <g fill="#52667A" font-size="24">
+      <text x="48" y="399">定位同分退化<tspan x="48" dy="36">检验时间键</tspan></text>
+      <text x="360" y="399">固定两处目标<tspan x="360" dy="36">检验输出粒度</tspan></text>
+      <text x="672" y="399">QV20 + 新 100<tspan x="672" dy="36">保留完整分母</tspan></text>
+      <text x="984" y="399">52 条逐例审核<tspan x="984" dy="36">分开四类问题</tspan></text>
+    </g>
+  </g>
+  <g id="future-work-boundary" data-pptx-bounds="48 510 1184 136">
+    <rect x="48" y="510" width="1184" height="136" fill="#F2F5F8"/>
+    <text x="72" y="556" font-size="28" font-weight="700" fill="#C76128">下一步：先验证具体定位错误能否被局部补证修复</text>
+    <text x="72" y="605" font-size="24" fill="#52667A">本阶段尚无记忆、比较器或回看的新增修复收益；此前基线不重复计入。</text>
+  </g>
+  <g id="footer" data-pptx-role="footer" data-pptx-bounds="48 672 1184 28" fill="#52667A" font-size="16"><text x="48" y="692">依据：组会后工作总结（10.30）</text><text x="1232" y="692" text-anchor="end">02 / 12</text></g>
+</svg>

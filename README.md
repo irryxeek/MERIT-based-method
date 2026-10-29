@@ -6,7 +6,9 @@
 
 **资源约定：[后续新运行可使用任意空闲 GPU](docs/gpu_resource_policy_2026-10-25.md)。** 可独立拆分的任务优先多卡并行，已有冻结运行保留原配置。
 
-**本周组会汇报（2026-10-21–27）：[进度周报](docs/weekly_experiment_progress_2026-10-21_to_2026-10-27.md) · [更新版 15 页 PPT](docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27_v2_TaskSpec补充.pptx) · [原 14 页版](docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27.pptx)。** 更新版第 4 页介绍 TaskSpec；配套逐页讲稿见 [PPT 交付目录](docs/presentations/revalue_weekly_2026-10-21_to_2026-10-27/README.md)。
+**最新组会后汇报（2026-10-28–30）：[工作总结](docs/progress_after_meeting_2026-10-27_to_2026-10-30.md) · [12 页可编辑 PPT](docs/presentations/ReVALUE_Grounding实验进展_2026-10-28至10-30.pptx) · [PDF 预览](docs/presentations/ReVALUE_Grounding实验进展_2026-10-28至10-30.pdf) · [讲稿与源页面](docs/presentations/revalue_grounding_progress_20261030/README.md)。** 主线已转向 query 驱动的时间 grounding：完成 Direct 输出机制诊断、QV20 定位和新增 100 条固定清单的部分执行，并审核扩样中的 52 条反例。新增 100 条尝试 96、合法 94，完整分母 R1@0.5 / R1@0.7 为 42% / 28%；助手初筛 22 条较明确定位错误，尚无独立人工复核或 Agent 修复收益。详细结果及冻结协议见[文档索引](docs/README.md)。
+
+**上次组会汇报（2026-10-21–27）：[进度周报](docs/weekly_experiment_progress_2026-10-21_to_2026-10-27.md) · [更新版 15 页 PPT](docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27_v2_TaskSpec补充.pptx) · [原 14 页版](docs/presentations/ReVALUE_实验进度汇报_2026-10-21至10-27.pptx)。** 更新版第 4 页介绍 TaskSpec；配套逐页讲稿见 [PPT 交付目录](docs/presentations/revalue_weekly_2026-10-21_to_2026-10-27/README.md)。下列 10 月 27 日及更早的记录保留各自阶段的结果与边界。
 
 **最新比较器讨论：[四态比较器诊断](docs/revalue_four_state_comparator_diagnosis_2026-10-27.md)。** 保留 QV / TVSum 比较状态分布、回看触发及已知结论边界，无新增实验模型调用。
 
