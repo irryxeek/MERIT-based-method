@@ -3,6 +3,7 @@
 ## 最新：组会后 Direct 与 Grounding 进展（2026-10-28–30）
 
 - [工作总结](progress_after_meeting_2026-10-27_to_2026-10-30.md)、[12 页可编辑 PPT](presentations/ReVALUE_Grounding实验进展_2026-10-28至10-30.pptx)、[PDF 预览](presentations/ReVALUE_Grounding实验进展_2026-10-28至10-30.pdf)、[讲稿与可编辑源页面](presentations/revalue_grounding_progress_20261030/README.md)。
+- [Grounding 反例单页 PPT：qid448](presentations/Grounding反例_qid448_单页介绍_2026-10-30.pptx)、[讲稿与原帧证据](presentations/qv_grounding_counterexample_qid448_20261030/README.md)：标注 92–112 秒为鸡舍，预测 130–145 秒落到道路与花景，IoU=0。属于助手初筛案例；条件核验与重新定位的修正收益尚未验证。
 - [Grounding 主线确认](temporal_grounding_mainline_2026-10-29.md)：以匹配 query 的事件起止区间为主要任务；定位 R1 与高光排序 mAP 分开。
 - [Direct pilot 结果](qwen_direct_pilot_results_2026-10-28.md)：QV20 与 TVSum5 的有效整表输出全部视频内同分；[原协议](qwen_direct_pilot_protocol_v1_2026-10-28.md)、[启动兼容修订](qwen_direct_pilot_runtime_amendment_v1_1_2026-10-28.md)、[OOM 来源链](qwen_direct_oom_diagnosis_2026-10-28.md)。TVSum Direct 仍为 5/10，未补跑。
 - [显式时间键结果](qwen_direct_temporal_results_2026-10-28.md)：20/20 完成，仍在视频内同分；[冻结协议](qwen_direct_temporal_output_protocol_v1_2026-10-28.md)、[准备收据](qwen_direct_temporal_preparation_receipt_v1_2026-10-28.md)。

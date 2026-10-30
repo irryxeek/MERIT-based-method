@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" data-pptx-page-role="content">
+  <!-- P01 modules: core, image. Topology=no: the supplied figure preserves the visual comparison; native copy states the conditional future procedure. -->
+  <rect id="page-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" data-pptx-role="background"/>
+  <g id="section-kicker" data-pptx-bounds="40 24 1200 30" fill="#237F8C" font-size="18">
+    <text x="40" y="44">DIRECT GROUNDING / 反例诊断</text>
+  </g>
+  <g id="page-title" data-pptx-bounds="40 68 1200 58" fill="#17324D" font-size="42" font-weight="bold">
+    <text x="40" y="104">Grounding 反例：把鸡舍定位到了花景</text>
+  </g>
+  <g id="query" data-pptx-bounds="40 132 1200 35" fill="#17324D">
+    <text x="40" y="155"><tspan font-weight="bold">查询：鸡在鸡舍里</tspan><tspan>　The chickens are in a coop.　｜　qid448</tspan></text>
+  </g>
+  <g id="experiment-setup" data-pptx-bounds="40 171 1200 29" fill="#52667A" font-size="18">
+    <text x="40" y="190">Qwen3-VL-8B-Instruct · 整视频均匀 64 帧 + 真实时间戳 · 一次输出起止时间</text>
+  </g>
+  <g id="original-frame-evidence" data-pptx-bounds="40 217 750 448">
+    <image href="../images/qv_448.jpg" x="40" y="217" width="750" height="447.368421" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+  <g id="temporal-result" data-pptx-bounds="824 217 416 180">
+    <g id="interval-values" font-size="28" font-weight="bold">
+      <text x="824" y="244" fill="#16834E">标注　92–112 s</text>
+      <text x="824" y="284" fill="#B74343">预测　130–145 s</text>
+    </g>
+    <text x="824" y="352" font-size="60" font-weight="bold" fill="#B74343">IoU = 0</text>
+    <text x="824" y="390" font-size="18" fill="#52667A">事件位置选错（助手初筛）</text>
+  </g>
+  <g id="diagnosis" data-pptx-bounds="824 408 416 96" fill="#17324D">
+    <text x="824" y="432">目标证据已在输入中，<tspan x="824" dy="34">预测却落到另一场景。</tspan></text>
+    <text x="824" y="496" font-size="18" fill="#52667A">原因待区分：视觉识别或时间关联。</text>
+  </g>
+  <g id="next-test" data-pptx-bounds="824 520 416 146">
+    <rect x="824" y="520" width="416" height="146" fill="#F2F5F8"/>
+    <text x="844" y="553" font-weight="bold" fill="#C76128">下一步验证（未开展）</text>
+    <text x="844" y="588" font-size="22" fill="#17324D">核验“鸡 + 围栏内”条件；<tspan x="844" dy="30">证据不足时重新定位，</tspan><tspan x="844" dy="30">检查修正率与误改率。</tspan></text>
+  </g>
+  <g id="source-and-limits" data-pptx-bounds="40 676 1200 42" font-size="16" fill="#52667A" data-pptx-role="footer">
+    <text x="40" y="690">依据原 64 帧初筛，尚无独立人工复核或修正收益；原预测与 GT 未改动。</text>
+    <text x="40" y="712">来源：QVHighlights qid448 · 52 条反例分析（2026-10-29）</text>
+  </g>
+</svg>

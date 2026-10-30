@@ -1,0 +1,14 @@
+{
+  "artifact": "docs/presentations/Grounding反例_qid448_单页介绍_2026-10-30.pptx",
+  "slides": 1,
+  "speaker_note_pages": 1,
+  "native_text_shapes": 14,
+  "native_pictures": 1,
+  "pptx_bytes": 291867,
+  "pptx_sha256": "316d0e1e525e9c6b75758b3cd0a452b5bc83d102a3af3c9ad6e0c009b93c9433",
+  "evidence_sha256": "251b763f9969e4b2fe58226009a19d76c16473911f958c343d137703b5542516",
+  "evidence_bytes_preserved": true,
+  "required_strings_verified": true,
+  "export_postflight": "passed",
+  "new_experiments": 0
+}

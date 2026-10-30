@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T02:05:40+08:00",
+  "updated_at": "2026-10-30T15:53:02+08:00",
   "scope": "All active MERIT docs/*.md except the curated index, plus related QVHighlights-ZeroShot docs/*.md. Historical frozen plan publications retained. Raw experiment artifacts are not implicitly published.",
   "standing_user_instruction": "Whenever pushing project updates, include newly created or updated reports, analyses, research plans, and document indexes.",
   "path_aliases": {
@@ -1686,6 +1686,105 @@
       "basis": "curated_publication_readme_for_selected_report_and_presentation_artifacts",
       "publication_changes": "Document published subset and portable links; preserve experimental facts.",
       "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/Grounding反例_qid448_单页介绍_2026-10-30.pptx",
+      "destination": "docs/presentations/Grounding反例_qid448_单页介绍_2026-10-30.pptx",
+      "source_sha256": "316d0e1e525e9c6b75758b3cd0a452b5bc83d102a3af3c9ad6e0c009b93c9433",
+      "publication_sha256": "316d0e1e525e9c6b75758b3cd0a452b5bc83d102a3af3c9ad6e0c009b93c9433",
+      "basis": "qid448_single_slide_presentation_and_supporting_material",
+      "publication_changes": "Identical publication copy.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/qv_grounding_counterexample_qid448_20261030/README.md",
+      "destination": "docs/presentations/qv_grounding_counterexample_qid448_20261030/README.md",
+      "source_sha256": "31f02ac841fe0d682a09fbe57feb074e641313f211cd8adf19caeb99591b82e0",
+      "publication_sha256": "adcb14e0b82c4707c96a65f9d0a4f4bebe218a25e6294fff03a4a743b7ec87ea",
+      "basis": "qid448_single_slide_presentation_and_supporting_material",
+      "publication_changes": "Add publication notice and portable link to the already-published case report; preserve the creation-stage record and scientific facts.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/qv_grounding_counterexample_qid448_20261030/design_spec.md",
+      "destination": "docs/presentations/qv_grounding_counterexample_qid448_20261030/design_spec.md",
+      "source_sha256": "9fcd9cc747f856ef6ddf945b693393a7eaa66be7ab7e6c1ff0f11ee959c89627",
+      "publication_sha256": "9fcd9cc747f856ef6ddf945b693393a7eaa66be7ab7e6c1ff0f11ee959c89627",
+      "basis": "qid448_single_slide_presentation_and_supporting_material",
+      "publication_changes": "Identical publication copy.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/qv_grounding_counterexample_qid448_20261030/spec_lock.md",
+      "destination": "docs/presentations/qv_grounding_counterexample_qid448_20261030/spec_lock.md",
+      "source_sha256": "4578ee81fc44d4d56d59e682dd4d1281cca09feeb7b029060bcbae174efeb8a5",
+      "publication_sha256": "4578ee81fc44d4d56d59e682dd4d1281cca09feeb7b029060bcbae174efeb8a5",
+      "basis": "qid448_single_slide_presentation_and_supporting_material",
+      "publication_changes": "Identical publication copy.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/qv_grounding_counterexample_qid448_20261030/notes/total.md",
+      "destination": "docs/presentations/qv_grounding_counterexample_qid448_20261030/notes/total.md",
+      "source_sha256": "f40ecb91e93a1ba47267f07473ef0e0ce51f4ecc1fadecd8f1a2e44f11917721",
+      "publication_sha256": "f40ecb91e93a1ba47267f07473ef0e0ce51f4ecc1fadecd8f1a2e44f11917721",
+      "basis": "qid448_single_slide_presentation_and_supporting_material",
+      "publication_changes": "Identical publication copy.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/qv_grounding_counterexample_qid448_20261030/notes/01_grounding_counterexample.md",
+      "destination": "docs/presentations/qv_grounding_counterexample_qid448_20261030/notes/01_grounding_counterexample.md",
+      "source_sha256": "2eb3aad4842a6220705b8319d100debd8dd6e8c36f587d07256202fbcbe91c7d",
+      "publication_sha256": "2eb3aad4842a6220705b8319d100debd8dd6e8c36f587d07256202fbcbe91c7d",
+      "basis": "qid448_single_slide_presentation_and_supporting_material",
+      "publication_changes": "Identical publication copy.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/qv_grounding_counterexample_qid448_20261030/svg_output/01_grounding_counterexample.svg",
+      "destination": "docs/presentations/qv_grounding_counterexample_qid448_20261030/svg_output/01_grounding_counterexample.svg",
+      "source_sha256": "d18177c355358b7c9ab57b310e903c16a8f40037ba9a4e7a1d34f768dfb01169",
+      "publication_sha256": "d18177c355358b7c9ab57b310e903c16a8f40037ba9a4e7a1d34f768dfb01169",
+      "basis": "qid448_single_slide_presentation_and_supporting_material",
+      "publication_changes": "Identical publication copy.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/qv_grounding_counterexample_qid448_20261030/svg_final/01_grounding_counterexample.svg",
+      "destination": "docs/presentations/qv_grounding_counterexample_qid448_20261030/svg_final/01_grounding_counterexample.svg",
+      "source_sha256": "29ba2530d2c5d32ded49aae58d397f7b192800cc6bb61cf4955a82796fecea7b",
+      "publication_sha256": "05025f4868356b64497bee6f74dddf9c90bd84183ec0d1d069392ce36acded79",
+      "basis": "qid448_single_slide_presentation_and_supporting_material",
+      "publication_changes": "Remove whitespace-only indentation from the generated SVG preview; visible content, embedded image bytes and original source retained.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/qv_grounding_counterexample_qid448_20261030/images/qv_448.jpg",
+      "destination": "docs/presentations/qv_grounding_counterexample_qid448_20261030/images/qv_448.jpg",
+      "source_sha256": "251b763f9969e4b2fe58226009a19d76c16473911f958c343d137703b5542516",
+      "publication_sha256": "251b763f9969e4b2fe58226009a19d76c16473911f958c343d137703b5542516",
+      "basis": "qid448_single_slide_presentation_and_supporting_material",
+      "publication_changes": "Identical publication copy.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/qv_grounding_counterexample_qid448_20261030/validation/delivery_receipt.json",
+      "destination": "docs/presentations/qv_grounding_counterexample_qid448_20261030/validation/delivery_receipt.json",
+      "source_sha256": "396e414516b8dc995a0a9fbf4ad2540db67546a0704648a5d7c843a53325a09d",
+      "publication_sha256": "7ea65d25c531651935a25a9382053cb222687789f799c37e8351a05debda6b73",
+      "basis": "qid448_single_slide_presentation_and_supporting_material",
+      "publication_changes": "Replace machine-specific artifact location with the repository-relative path; all evidence and PPT hashes retained.",
+      "local_only_references": []
+    },
+    {
+      "source": "MERIT:docs/presentations/qv_grounding_counterexample_qid448_20261030/validation/carrier_review.md",
+      "destination": "docs/presentations/qv_grounding_counterexample_qid448_20261030/validation/carrier_review.md",
+      "source_sha256": "4e016bb64df93bd50b980aef0954978ba71411c473e1b1ed8c1f7f70934d5a19",
+      "publication_sha256": "4e016bb64df93bd50b980aef0954978ba71411c473e1b1ed8c1f7f70934d5a19",
+      "basis": "qid448_single_slide_presentation_and_supporting_material",
+      "publication_changes": "Identical publication copy.",
+      "local_only_references": []
     }
   ],
   "indexes": [
@@ -1693,14 +1792,14 @@
       "source": "MERIT:README.md",
       "destination": "README.md",
       "source_sha256": "0dea149cceb481ad70ed8874ea804489e116844562d7d8c20710f67abfa32af2",
-      "publication_sha256": "d73cc23f21af792a11c977ce8b628f89ef2c6502083566c6d14f95126aac7a55",
+      "publication_sha256": "1377bfb98220c11ee52befd1e711ab62ff3e2d5cf84aa4fe5954139fe950b8d9",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     },
     {
       "source": "MERIT:docs/README.md",
       "destination": "docs/README.md",
       "source_sha256": "43504dddbaadd1e8591053a2a639eee16aac9cf32066740d1bd0d30f7bec35bb",
-      "publication_sha256": "9518a88e4c038e437385df13053d752e03566d64851f8ec90fc922153447588a",
+      "publication_sha256": "eacd1911690211283a9d2487baf56e5b0e1a722f34bd002d4b74b3634c913db8",
       "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
     }
   ],
@@ -2363,5 +2462,71 @@
       "original_AGENTS_and_existing_experiments_unchanged": true,
       "all52_csv_non_path_fields_equal": true
     }
+  },
+  "qid448_single_slide_publication_2026_10_30": {
+    "at": "2026-10-30T15:53:02+08:00",
+    "scope": "Publish the requested qid448 single-slide PPT, speaker notes, editable slide source, unchanged evidence image and delivery verification; update document indexes.",
+    "publication_authorization": "User explicitly requested 推送到远程 after delivery of the single-slide PPT.",
+    "new_artifact_count": 11,
+    "slides": 1,
+    "speaker_notes_pages": 1,
+    "native_text_shapes": 14,
+    "native_pictures": 1,
+    "pptx_sha256": "316d0e1e525e9c6b75758b3cd0a452b5bc83d102a3af3c9ad6e0c009b93c9433",
+    "experimental_model_calls": 0,
+    "gpu_allocations": 0,
+    "original_predictions_changed": false,
+    "research_sources_changed": false,
+    "AGENTS_modified": false,
+    "prior_index_snapshot": [
+      {
+        "source": "MERIT:README.md",
+        "destination": "README.md",
+        "source_sha256": "0dea149cceb481ad70ed8874ea804489e116844562d7d8c20710f67abfa32af2",
+        "publication_sha256": "d73cc23f21af792a11c977ce8b628f89ef2c6502083566c6d14f95126aac7a55",
+        "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
+      },
+      {
+        "source": "MERIT:docs/README.md",
+        "destination": "docs/README.md",
+        "source_sha256": "43504dddbaadd1e8591053a2a639eee16aac9cf32066740d1bd0d30f7bec35bb",
+        "publication_sha256": "9518a88e4c038e437385df13053d752e03566d64851f8ec90fc922153447588a",
+        "basis": "curated_publication_index_with_all_report_links_and_standing_user_instruction"
+      }
+    ],
+    "source_audit_before_publication": {
+      "unpublished_reports": 0,
+      "unpublished_experiment_source_files": 69,
+      "published_file_or_source_hash_errors": 0
+    },
+    "scope_boundary": "The same 69 experiment source files already recorded in the previous publication remain outside this single-slide presentation delivery. No new experimental result is claimed.",
+    "verification_status": "passed_for_this_presentation_delivery_and_all_current_reports",
+    "publication_verification": {
+      "passed": true,
+      "published_files_checked": 448,
+      "source_files_checked": 0,
+      "local_links_checked": 658,
+      "errors": []
+    },
+    "full_workspace_source_audit": {
+      "passed": false,
+      "published_files_checked": 448,
+      "source_files_checked": 436,
+      "local_links_checked": 658,
+      "unpublished_reports": 0,
+      "unpublished_experiment_source_files": 69,
+      "new_findings_vs_before": 0,
+      "scope_note": "The full-workspace check remains false only for the same 69 previously recorded unpublished experiment source files; no check was skipped or reclassified."
+    },
+    "focused_delivery_verification": {
+      "paths": 11,
+      "relative_svg_image_links_checked": 1,
+      "issues": 0,
+      "pptx_equal_to_research_delivery": true,
+      "slides": 1,
+      "speaker_notes_pages": 1,
+      "evidence_image_bytes_unchanged": true
+    },
+    "publication_normalization": "Removed one whitespace-only SVG preview line after the Git whitespace check; the delivered PPT and editable svg_output are byte-identical to the research copies."
   }
 }
